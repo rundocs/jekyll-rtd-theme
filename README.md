@@ -1,4 +1,7 @@
 # jekyll-rtd-theme
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)][repository]
 [![](https://img.shields.io/gem/v/jekyll-rtd-theme)][rubygem]
 [![](https://img.shields.io/gem/dt/jekyll-rtd-theme)][rubygem]
@@ -35,3 +38,22 @@ The theme is available as open source under the terms of the [MIT License](https
 [cdn]: https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme/
 [codefactor]: https://www.codefactor.io/repository/github/rundocs/jekyll-rtd-theme
 [gitter]: https://gitter.im/rundocs/jekyll-rtd-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://jakebolam.com"><img src="https://avatars2.githubusercontent.com/u/3534236?v=4" width="100px;" alt=""/><br /><sub><b>Jake Bolam</b></sub></a><br /><a href="#infra-jakebolam" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/rundocs/jekyll-rtd-theme/commits?author=jakebolam" title="Tests">⚠️</a> <a href="https://github.com/rundocs/jekyll-rtd-theme/commits?author=jakebolam" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
