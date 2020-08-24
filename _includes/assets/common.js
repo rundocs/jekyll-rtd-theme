@@ -167,5 +167,5 @@ $(document).ready(function() {
     $(window).bind("resize", function() {
         requestAnimationFrame(function() {});
     });
-    $(window).bind("hashchange", (e) => initialize(location.hash || location.pathname));
+    $(window).bind("hashchange", () => initialize(location.hash || location.pathname));
 });
