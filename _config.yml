@@ -10,7 +10,7 @@ debug:
   in_develop: true
   extension: true
 
-# rtl: true
+rtl: true
 
 readme_index:
   with_frontmatter: true
