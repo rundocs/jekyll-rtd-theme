@@ -17,13 +17,13 @@
 {% if site.rtl == true %}
     {% comment %} theme {% endcomment %}
     {% if site.debug.in_develop == true %}
-        <link rel="stylesheet" href="/assets/css/theme-rtl.css">
+        <link rel="stylesheet" href="{{ '/assets/css/theme-rtl.css' | relative_url }}">
     {% else %}
         <link rel="stylesheet" href="{{ cdn }}/assets/css/theme-rtl{% if site.debug.dist != false %}.min{% endif %}.css">
     {% endif %}
 {% else %}
     {% if site.debug.in_develop == true %}
-        <link rel="stylesheet" href="/assets/css/theme-ltr.css">
+        <link rel="stylesheet" href="{{ '/assets/css/theme-ltr.css' | relative_url }}">
     {% else %}
         {% comment %} theme {% endcomment %}
         <link rel="stylesheet" href="{{ cdn }}/assets/css/theme-ltr{% if site.debug.dist != false %}.min{% endif %}.css">
