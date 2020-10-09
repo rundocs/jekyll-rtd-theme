@@ -1,3 +1,3 @@
-# file1
+# Juniper 1
 
 source: `{{ page.path }}`
