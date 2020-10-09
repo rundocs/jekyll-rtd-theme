@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-# Test Documentation
+# Lista de contenido del curso
 
 ```
 {% raw %}{% include list.liquid all=true %}{% endraw %}
