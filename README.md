@@ -113,4 +113,4 @@ plugins:
 ## The license
 
 The theme is available as open source under the terms of the MIT License
-validar la syntasis - (https://www.markdownguide.org/basic-syntax)
+validar la syntasis - [markdown](https://www.markdownguide.org/basic-syntax)
