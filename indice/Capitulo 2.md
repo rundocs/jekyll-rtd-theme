@@ -2,23 +2,17 @@
 sort: 2
 ---
 
-# Capitulo 2 AppSecure
+# Capitulo 2 Security Certification Track
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+El programa de certificación de seguridad del Programa de certificación de Juniper Networks (JNCP) es un programa que permite a los participantes demostrar su competencia con la tecnología de Juniper Networks. Los candidatos seleccionados demuestran un conocimiento profundo de la tecnología de seguridad en general y del software Junos para dispositivos de la serie SRX.
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+## Ruta de certificacion
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+La pista de certificación de seguridad se muestra a continuación. Haga clic en la pestaña de una certificación determinada para ver sus detalles completos.
 
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a gray border along the left side.
->
-> There should be no margin below this final sentence.
-
-# Titulo 1
-
-This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+| Asociado | Especialista | Profesional  | Experto | 
+| ------- | -------- |-------- |--------  |
+| JNCIA-SEC | JNCIS-SEC  | JNCIP-SEC    | JNCIE-SEC  | 
 
 ## titulo 2
 
