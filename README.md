@@ -15,7 +15,7 @@ This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphi
 ## Quick start
 
 ```yml
-root>: show version
+remote_theme: rundocs/jekyll-rtd-theme
 ```
 
 You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
