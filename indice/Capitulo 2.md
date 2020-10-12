@@ -16,27 +16,27 @@ There should be whitespace between paragraphs. There should be whitespace betwee
 >
 > There should be no margin below this final sentence.
 
-# Header 1
+# Titulo 1
 
 This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
 
-## Header 2
+## titulo 2
 
 > This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
 
-### Header 3
+### titulo 3
 
 ```
 This is a code block following a header.
 ```
 
-#### Header 4
+#### titulo 4
 
 - This is an unordered list following a header.
 - This is an unordered list following a header.
 - This is an unordered list following a header.
 
-##### Header 5
+##### titulo 5
 
 1. This is an ordered list following a header.
 2. This is an ordered list following a header.
