@@ -7,6 +7,7 @@
 {%- assign rest_updated_at = rest.updated_at | default: site.time -%}
 
 {%- assign direction = site.direction | default: "auto" -%}
+{%- assign highlighter_dir = site.highlighter_dir | direction -%}
 {%- assign lang = site.lang | default: "en" -%}
 {%- assign author = docs.owner.name | default: docs.owner_name -%}
 

@@ -88,5 +88,32 @@ html[dir="rtl"] {
       margin-right: unset;
       margin-left: 3px;
     }
+
+    blockquote {
+      border-right: .25em solid #dfe2e5;
+      border-left: none;
+    }
+  }
+}
+
+html[highlighter-direction="rtl"] {
+  .highlighter-rouge {
+      direction: rtl;
+
+      &::after {
+          left: 0 !important;
+          right: unset !important;
+      }
+  }
+}
+
+html[highlighter-direction="ltr"] {
+  .highlighter-rouge {
+      direction: ltr;
+
+      &::after {
+          right: 0 !important;
+          left: unset !important;
+      }
   }
 }

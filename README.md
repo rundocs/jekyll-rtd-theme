@@ -36,15 +36,16 @@ Documentation that can guide how to create with Github pages, please refer to [r
 
 ## Options
 
-| name          | default value        | description       |
-| ------------- | -------------------- | ----------------- |
-| `title`       | repo name            |                   |
-| `description` | repo description     |                   |
-| `url`         | user domain or cname |                   |
-| `baseurl`     | repo name            |                   |
-| `lang`        | `en`                 |                   |
-| `direction`   | `auto`               | `ltr` or `rtl`    |
-| `highlighter` | `rouge`              | Cannot be changed |
+| name              | default value        | description       |
+| ----------------- | -------------------- | ----------------- |
+| `title`           | repo name            |                   |
+| `description`     | repo description     |                   |
+| `url`             | user domain or cname |                   |
+| `baseurl`         | repo name            |                   |
+| `lang`            | `en`                 |                   |
+| `direction`       | `auto`               | `ltr` or `rtl`    |
+| `highlighter`     | `rouge`              | Cannot be changed |
+| `highlighter_dir` | `inherit`            | `ltr` or `rtl`    |
 
 ```yml
 # folders sort
