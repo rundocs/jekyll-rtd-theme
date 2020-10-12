@@ -42,12 +42,12 @@ This is a code block following a header.
 2. This is an ordered list following a header.
 3. This is an ordered list following a header.
 
-```nota
-## Switch:
+```note
+## Nota:
 
 Para este capitulo es importante tener en cuenta que se debe siempre saber la version del sistema operativo que se maneja en los SW.
 
-`inline code`
+`show version`
 
 [`inline code inside link`](./)
 ```
