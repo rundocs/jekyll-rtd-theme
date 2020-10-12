@@ -3,7 +3,19 @@
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=v2)
 ![hinchi026](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-David !!!
+# Capitulo 2 Security Certification Track
+
+El programa de certificación de seguridad del Programa de certificación de Juniper Networks (JNCP) es un programa que permite a los participantes demostrar su competencia con la tecnología de Juniper Networks. Los candidatos seleccionados demuestran un conocimiento profundo de la tecnología de seguridad en general y del software Junos para dispositivos de la serie SRX.
+
+## Ruta de certificación
+
+La ruta de certificación de seguridad se muestra a continuación:
+
+| Asociado | Especialista | Profesional  | Experto | 
+| ------- | -------- |-------- |--------  |
+| JNCIA-SEC | JNCIS-SEC  | JNCIP-SEC    | JNCIE-SEC  | 
+
+
 
 ## Hola mundo
 

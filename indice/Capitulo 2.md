@@ -6,9 +6,9 @@ sort: 2
 
 El programa de certificación de seguridad del Programa de certificación de Juniper Networks (JNCP) es un programa que permite a los participantes demostrar su competencia con la tecnología de Juniper Networks. Los candidatos seleccionados demuestran un conocimiento profundo de la tecnología de seguridad en general y del software Junos para dispositivos de la serie SRX.
 
-## Ruta de certificacion
+## Ruta de certificación
 
-La pista de certificación de seguridad se muestra a continuación. Haga clic en la pestaña de una certificación determinada para ver sus detalles completos.
+La ruta de certificación de seguridad se muestra a continuación:
 
 | Asociado | Especialista | Profesional  | Experto | 
 | ------- | -------- |-------- |--------  |
