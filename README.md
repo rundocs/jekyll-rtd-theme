@@ -5,7 +5,7 @@
 
 David !!!
 
-## What it does?
+## Hola mundo
 
 This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
 
