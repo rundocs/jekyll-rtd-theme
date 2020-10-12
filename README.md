@@ -12,10 +12,10 @@ This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphi
 - [@primer/css](https://github.com/primer/css)
 - [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
 
-## Quick start
+## Linea de comandos
 
 ```yml
-remote_theme: rundocs/jekyll-rtd-theme
+root>: Show version
 ```
 
 You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
@@ -100,4 +100,4 @@ plugins:
 ## The license
 
 The theme is available as open source under the terms of the MIT License
-validar la syntasis --- https://www.markdownguide.org/basic-syntax
+validar la syntasis --- (https://www.markdownguide.org/basic-syntax)
