@@ -94,6 +94,23 @@ html[dir="rtl"] {
       border-left: none;
     }
   }
+
+
+  // fixing list (ul/li) indentations.
+  .markdown-body ul, .markdown-body ol {
+    padding-right: 2em !important;
+  }
+
+  // fixing previous button's icon.
+  .fa-arrow-circle-right:before  {
+    content:"" !important;
+  }
+  
+  // fixing next button's icon.
+  .fa-arrow-circle-left:before {
+    content:"" !important;
+  }
+
 }
 
 html[highlighter-direction="rtl"] {
