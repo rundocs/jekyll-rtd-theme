@@ -2,7 +2,7 @@
 
 Hola amigos este blog lo creo para facilitar el aprendisaje de Juniper Network - Este parte sera dedicada a Seguridad en su primera rama - JNCIA-SEC.
 
-![pash](https://hinchi026.github.io/curso_juniper_jncia/master/Imagenes/pash.png)
+![juniper_logo](https://junipernetworks.allegiancetech.com/surveys/images/MRVCXM/juniper_logo.jpg)
 
 
 
