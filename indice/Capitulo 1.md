@@ -171,7 +171,7 @@ Small images should be shown at their actual size.
 
 Large images should always scale down and fit in the content container.
 
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+![Branching](https://github.com/hinchi026/Curso_Juniper_JNCIA/blob/master/Imagenes/Captura%20de%20Pantalla%202020-10-17%20a%20la(s)%206.19.55%20p.%C2%A0m..png)
 
 ```
 This is the final element on the page and there should be no margin below this.
