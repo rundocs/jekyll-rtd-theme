@@ -1,8 +1,6 @@
 # Curso de Juniper JNCIA
 
-![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=v2)
-![hinchi026](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
-
+Hola amigos este blog lo creo para facilitar el aprendisaje de Juniper Network - Este parte sera dedicada a Seguridad en su primera rama - JNCIA-SEC.
 
 # Capitulo 2 Security Certification Track
 
