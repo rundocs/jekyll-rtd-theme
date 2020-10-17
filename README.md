@@ -24,6 +24,11 @@ La ruta de certificación de seguridad se muestra a continuación:
 
 ## Hola mundo
 
+
+
+![juniper_logo](http://3.bp.blogspot.com/-Kzb62lwHTA8/VQGL_KnVHMI/AAAAAAAAAJI/JYO9O31r70I/s1600/modularizacion.png)
+
+
 This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
 
 - [@primer/css](https://github.com/primer/css)
