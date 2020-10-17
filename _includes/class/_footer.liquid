@@ -33,11 +33,11 @@
             {{- created_time }}-{{ updated_time -}},
         {%- endif -%}
     </span>
-    <a class="text-gray" href="{{ docs.owner_url }}" target="_blank">
+    <a class="text-gray" href="{{ docs.owner_url }}" rel="noreferrer" target="_blank">
         {{- author -}}
     </a>
     {{ __.revision | default: "Revision" }}
-    <a class="text-gray" href="{{ docs.repository_url }}/commit/{{ docs.build_revision }}" title="{{ docs.build_revision }}" target="_blank">
+    <a class="text-gray" href="{{ docs.repository_url }}/commit/{{ docs.build_revision }}" title="{{ docs.build_revision }}" rel="noreferrer" target="_blank">
         {{- docs.build_revision | slice: 0, 7 -}}
     </a>
 </div>
