@@ -4,10 +4,6 @@ Hola amigos este blog lo creo para facilitar el aprendisaje de Juniper Network -
 
 ![juniper_logo](https://junipernetworks.allegiancetech.com/surveys/images/MRVCXM/juniper_logo.jpg)
 
-
-
-
-
 # Capitulo 2 Security Certification Track
 
 El programa de certificación de seguridad del Programa de certificación de Juniper Networks (JNCP) es un programa que permite a los participantes demostrar su competencia con la tecnología de Juniper Networks. Los candidatos seleccionados demuestran un conocimiento profundo de la tecnología de seguridad en general y del software Junos para dispositivos de la serie SRX.
@@ -24,10 +20,10 @@ La ruta de certificación de seguridad se muestra a continuación:
 
 ## Hola mundo
 
-
-
-![juniper_logo](http://3.bp.blogspot.com/-Kzb62lwHTA8/VQGL_KnVHMI/AAAAAAAAAJI/JYO9O31r70I/s1600/modularizacion.png)
-
+```python
+root> show version
+```
+> Validar la vesion del SRX
 
 This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
 
