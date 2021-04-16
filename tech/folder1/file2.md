@@ -1,0 +1,2 @@
+# Ceph : Integrasi Openstack Glance
+
