@@ -1,4 +1,4 @@
-# Curso de Juniper JNCIA
+# Curso de Juniper JNCIA- SEC
 
 Hola amigos este blog lo creo para facilitar el aprendisaje de Juniper Network - Este parte sera dedicada a Seguridad en su primera rama - JNCIA-SEC.
 
