@@ -18,7 +18,7 @@ La ruta de certificación de seguridad se muestra a continuación:
 
 
 
-## Hola mundo
+## Hola mundo esta es la actualizadcion del curso de Juniper
 
 ```python
 root> show version
