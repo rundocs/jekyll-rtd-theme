@@ -2,10 +2,6 @@
 sort: 1
 ---
 
-# Test Documentation
-
-```
-{% raw %}{% include list.liquid all=true %}{% endraw %}
-```
+# 記述方法説明（英語）
 
 {% include list.liquid all=true %}
