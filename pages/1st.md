@@ -1,7 +1,13 @@
 # 1年生
 
 ## yAmA
-元図書館司書の愚者です。なにか本を探したいときには役に立てるかと思います
+| > Name              | yAmA                          |
+|---------------------|-------------------------------|
+| > Hobbies           | Playing Games                 |
+| > Interests         | Many technologies             |
+| > Before            | University Librarian          |
+| > What can be done  | I can help you find books.    |
+
 
 ## いっしー
 石上太智　兵庫県出身　19歳
