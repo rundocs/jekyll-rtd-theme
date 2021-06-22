@@ -9,6 +9,8 @@
 高校まではサッカーをやっていました。
 これからよろしくおねがいします。
 
+伊藤悠太。
+
 ## yAmA
 | > Name              | yAmA                          |
 |---------------------|-------------------------------|
@@ -16,7 +18,6 @@
 | > Interests         | Many technologies             |
 | > Before            | University Librarian          |
 | > What can be done  | I can help you find books.    |
-
 
 ## いっしー
 石上太智　兵庫県出身　19歳
