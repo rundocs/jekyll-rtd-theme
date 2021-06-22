@@ -61,3 +61,5 @@ PCゲームが好きで主にFPSをしています（VALORANT、APEX）
 
 ## 高田寛之です
 
+## Shima
+ゲーム大好きです。主にAPEX、VALORANT、ロケットリーグをしています
