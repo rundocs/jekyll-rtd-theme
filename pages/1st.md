@@ -1,11 +1,11 @@
 # 1年生
 
 ## yAmA
-| >Name    | yAmA  |
-| >Hobbies | Playing Games |
-| >Interests | Many technologies |
-| >Before | University Librarian |
-| >What can be done | I can help you find books. |
+| >Name             | yAmA                          |
+| >Hobbies          | Playing Games                 |
+| >Interests        | Many technologies             |
+| >Before           | University Librarian          |
+| >What can be done | I can help you find books.    |
 
 
 ## 亮
