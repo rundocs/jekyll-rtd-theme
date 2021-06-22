@@ -2,6 +2,7 @@
 
 ## yAmA
 | >Name             | yAmA                          |
+|-------------------|-------------------------------|
 | >Hobbies          | Playing Games                 |
 | >Interests        | Many technologies             |
 | >Before           | University Librarian          |
