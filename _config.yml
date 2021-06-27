@@ -30,4 +30,4 @@ exclude:
   - webpack.config.js
   - jekyll-rtd-theme.gemspec
 
-baseurl: "jennas-runbooks"
+#baseurl: "jennas-runbooks"
