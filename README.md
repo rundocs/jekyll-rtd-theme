@@ -23,5 +23,3 @@
 | `lang`        | `en`                 |                   |
 | `direction`   | `auto`               | `ltr` or `rtl`    |
 | `highlighter` | `rouge`              | Cannot be changed |
-
-```yml
