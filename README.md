@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-{:toc}
+{% include list.liquid all=true %}
 
 <!-- prettier-ignore-start -->
 
