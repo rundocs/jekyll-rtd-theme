@@ -1,3 +1,3 @@
-# DevOps Concepts
+# Concepts
 
 source: `{{ page.path }}`

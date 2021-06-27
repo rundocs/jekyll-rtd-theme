@@ -2,6 +2,8 @@
 
 ## Table of Contents
 
+{:toc}
+
 <!-- prettier-ignore-start -->
 
 | source          | link                                                           |
