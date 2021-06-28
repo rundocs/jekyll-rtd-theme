@@ -2,6 +2,6 @@
 sort: 3
 ---
 
-# Azure
+# Google Cloud
 
 {% include list.liquid all=true %}
