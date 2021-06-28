@@ -1,7 +1,7 @@
 ---
-sort: 4
+sort: 2
 ---
 
-# DevOps
+# Azure
 
 {% include list.liquid all=true %}

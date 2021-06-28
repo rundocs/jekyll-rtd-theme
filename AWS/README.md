@@ -1,7 +1,7 @@
 ---
-sort: 4
+sort: 1
 ---
 
-# DevOps
+# AWS
 
 {% include list.liquid all=true %}
