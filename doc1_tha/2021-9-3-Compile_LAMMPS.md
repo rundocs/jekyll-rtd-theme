@@ -1,7 +1,8 @@
 ---
-layout: post
+sort: 1
 title: Compiling LAMMPS
 ---
+
 
 [Markdown basic syntax](https://www.markdownguide.org/basic-syntax) <br>
 [Kramdown basic syntax](https://kramdown.gettalong.org/converter/html.html#math-support) <br>
