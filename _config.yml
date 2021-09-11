@@ -50,3 +50,7 @@ footer-links:
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
+
+# Tracker
+  gtag: UA-174315734-1
+  adsense: pub-1573099456298501
