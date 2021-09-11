@@ -1,11 +1,8 @@
 ---
 sort: 1
-title: Compiling LAMMPS
 ---
 
-
-[Markdown basic syntax](https://www.markdownguide.org/basic-syntax) <br>
-[Kramdown basic syntax](https://kramdown.gettalong.org/converter/html.html#math-support) <br>
+# Compiling LAMMPS
 
 # Preparation
 ## 1. Prerequisite:
@@ -818,4 +815,11 @@ find_library(TBB_MALLOC_LIBRARY NAMES tbbmalloc PATHS $ENV{TBBROOT}/lib/intel64/
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld -lrt" \
 source compilervars.sh intel64
 source mklvars.sh intel64
+
+
+
+
+
+[Markdown basic syntax](https://www.markdownguide.org/basic-syntax) <br>
+[Kramdown basic syntax](https://kramdown.gettalong.org/converter/html.html#math-support) <br>
 
