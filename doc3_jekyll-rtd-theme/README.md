@@ -1,8 +1,8 @@
 ---
-sort: 3
+sort: 4
 ---
 
-# jekyll-rtd-theme REFERENCE
+# REFERENCES
 
 ```
 {% raw %}{% include list.liquid all=true %}{% endraw %}
