@@ -1,8 +1,8 @@
 ---
-sort: 1
+sort: 3
 ---
 
-# Test Documentation
+# jekyll-rtd-theme DOCS
 
 ```
 {% raw %}{% include list.liquid all=true %}{% endraw %}
