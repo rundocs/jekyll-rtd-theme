@@ -59,8 +59,9 @@ meta:
   .
 
 google:
-  gtag:
-  adsense:
+  gtag: UA-174315734-1
+  adsense: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1573099456298501"
+     crossorigin="anonymous"></script>
 
 mathjax: # this will prased to json, default: {}
 
