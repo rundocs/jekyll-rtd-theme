@@ -14,11 +14,11 @@ sort: 1
 - OpenMPI may the fastest
 - There is no longer USER_ packages from Jul-2021
 - Need CMAKE, newer is better (a newer Cmake version may reduce the probability of error during compiling). Basic cmake: <br>
-```cmake:
+```cmake
 CMake [-D OPTION_A=VALUE_A -D OPTION_B=VALUE_B ...] ../CMake make
 ```
 - Module eviroment
-```shell:
+```shell
 module load <module_name>
 module display <module_name> 
 ```
