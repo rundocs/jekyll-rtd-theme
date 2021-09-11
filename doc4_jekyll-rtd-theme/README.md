@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# jekyll-rtd-theme DOCS
+# jekyll-rtd-theme REFERENCE
 
 ```
 {% raw %}{% include list.liquid all=true %}{% endraw %}
