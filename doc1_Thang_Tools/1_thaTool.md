@@ -4,6 +4,8 @@ sort: 1
 
 # thaTool Module
 
+This modle contains several functions to handle some kinds of data.
+
 # class SwitchFunc
 
 ## 1. class RATIONAL:
