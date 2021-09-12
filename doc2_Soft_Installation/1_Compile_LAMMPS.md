@@ -15,7 +15,7 @@ sort: 1
 - There is no longer USER_ packages from Jul-2021
 - Need CMAKE, newer is better (a newer Cmake version may reduce the probability of error during compiling). Basic cmake: <br>
 ```make
-CMake [-D OPTION_A=VALUE_A -D OPTION_B=VALUE_B ...] ../CMake make
+cmake -D OPTION_A=VALUE_A -D OPTION_B=VALUE_B ...     ../cmake make
 ```
 - Module evironment
 ```shell
@@ -52,40 +52,44 @@ cd lammps_master
 git pull origin master
 ```
 **Some possible error of Git:**
-- git error (if any): Couldn't resolve host 'github.com' while ....
 ```shell
+## git error (if any): Couldn't resolve host 'github.com' while ....
 git config --global --unset http.proxy    
 git config --global --unset https.proxy 
+## local change git
+git reset --hard 
 ```
-- local change git
-```shell git reset --hard ```
 
 ## 3. Packages: 
 
 1. **UFM potential**
+```shell
 cd lammps-folder/src/
 git clone https://github.com/plrodolfo/FluidFreeEnergyforLAMMPS.git USER-FFE
 copy new pair_ufm into /src
 copy new pair_eam.cpp & pair_eam.h into /src and delete corresponding files in /src/MANYBODY
-
-NOTEs:
-include these OPTIONS in Cmake command, to build package-lib automatically:
+```
+NOTEs: include these OPTIONS in Cmake command, to build package-lib automatically:
 
 2. **POEMS package, OPT package**
-`-D PKG_OPT=yes`
-
-3. **MSCG Package**
-`-D PKG_MSCG=yes -D DOWNLOAD_MSCG=yes`
-
-4. **SMD package**
-`-D PKG_USER-SMD=yes -D DOWNLOAD_EIGEN3=yes`
-
-5. **VORONOI package**
-`-D PKG_VORONOI=yes -D DOWNLOAD_VORO=yes`
-
-6. **KSPACE Package**
-* if use MKL for FFT, then need MKL library (if FTWW3 (prior ot choose, then dont need MKL_LIBRARY )
+```make
+-D PKG_OPT=yes
 ```
+3. **MSCG Package**
+```make
+-D PKG_MSCG=yes -D DOWNLOAD_MSCG=yes
+```
+4. **SMD package**
+```make
+-D PKG_USER-SMD=yes -D DOWNLOAD_EIGEN3=yes
+```
+5. **VORONOI package**
+```make
+-D PKG_VORONOI=yes -D DOWNLOAD_VORO=yes
+```
+6. **KSPACE Package**
+- if use MKL for FFT, then need MKL library (if FTWW3 (prior ot choose, then dont need MKL_LIBRARY )
+```make
 -D FFT=MKL  \
 -D MKL_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2019/compilers_and_libraries_2019.5.281/linux/mkl/include  \
 -D MKL_LIBRARY=/uhome/p001cao/local/intel/xe2019/compilers_and_libraries_2019.5.281/linux/mkl/lib/intel64  \
@@ -94,44 +98,49 @@ include these OPTIONS in Cmake command, to build package-lib automatically:
 -D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/fftw/3.3.8-openmpi4.0.1-Intel2019xe-double/include \
 -D FFTW3_LIBRARY=/uhome/p001cao/local/fftw/3.3.8-openmpi4.0.1-Intel2019xe-double/lib \
 ```
-or use FFTW3 from intel_mkl: (not support long-double precision)
-```
+- or use FFTW3 from intel_mkl: (not support long-double precision)
+```make
 -D FFT=FFTW3 
 -D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2018/compilers_and_libraries_2018.0.128/linux/mkl/include/fftw 
 ```
 7. **LAPACK & BLAS**
+```shell
 module load intel/mkl
+```
 Use "intel/mkl" package, then LAPACK & BLAS will be found automatically
 
 8. **OMP package**
-`-D PKG_USER-OMP=yes
--D BUILD_OMP=yes                               
--D PKG_USER-INTEL=no`
-
-9. **make no packages**
+```make
+-D PKG_USER-OMP=yes -D BUILD_OMP=yes -D PKG_USER-INTEL=no
 ```
+9. **make no packages**
+```make
 -D PKG_GPU=no -D PKG_KIM=no -D PKG_LATTE=no -D PKG_MSCG=no -D PKG_KOKKOS=no \
 -D DOWNLOAD_VORO=yes -D DOWNLOAD_EIGEN3=yes \
 -D PKG_USER-ADIOS=no -D PKG_USER-NETCDF=no -D PKG_USER-OMP=no -D PKG_USER-INTEL=no \
 -D PKG_USER-QUIP=no -D PKG_USER-SCAFACOS=no -D PKG_USER-QMMM=no -D PKG_USER-VTK=no \
 -D PKG_USER-H5MD=no \
 ```
-10. **KOKKOS**
-https://lammps.sandia.gov/doc/Build_extras.html#kokkos
-https://github.com/kokkos/kokkos/wiki/Compiling
+10. [**KOKKOS**](https://lammps.sandia.gov/doc/Build_extras.html#kokkos)
 For multicore CPUs using OpenMP, set these 2 variables.
-```
+```make
 -DKokkos_ARCH_WSM=yes                 # HOSTARCH = HOST from list above 
 -DKokkos_ENABLE_OPENMP=yes 
 -DBUILD_OMP=yes
 ```
 11. [**PLUMED package:**](https://lammps.sandia.gov/doc/Build_extras.html#user-plumed)
 **1.pre-compile Plumed separately:**
-`module load plumed`
-`-D PKG_USER-PLUMED=yes -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=static`
+```shell
+module load plumed
+```
+```make
+-D PKG_USER-PLUMED=yes -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=static
+```
 
 **2. self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
-`-D PKG_USER-PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static`
+```make
+-D PKG_USER-PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static
+```
 
 **3. self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
 open file: ../cmake/Modules/Packages/USER-PLUMED.cmake
@@ -156,10 +165,10 @@ CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....
 ```
 add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" 
 
-**12. SMD package:** require Eigen
+12. **SMD package:** require Eigen
 open file: ../cmake/Modules/Packages/USER-SMD.cmake
 change: 
-```
+```make
 URL http...... (line 12)
 URL_MD5
 ```
@@ -169,7 +178,7 @@ GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git
 GIT_TAG  3.3.7
 ```
 
-**13. MLIAP package**
+13. **MLIAP package**
 - require python >3.6
 
 **14. MOLFILE package**
@@ -200,48 +209,72 @@ make
 -D MOLFILE_INCLUDE_DIR=path   # (optional) path where VMD molfile plugin headers are installed
 -D PKG_MOLFILE=yes
 
-**15. PYTHON package** (use 1 of following ways)
-- new numpy require higher GLIBC
-## Module load --> do not need setting in Cmake
+15. **PYTHON package** (use 1 of following ways)
+- Note: new numpy require higher GLIBC
+1. Module load --> do not need setting in Cmake
+```shell
 module load conda/py37Lammps
-## use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far 
+```
+2. use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far 
+```shell
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
+```
+```make
 -DPython_ROOT_DIR=${pyROOT}
-
-### use Python_EXECUTABLE # (Python_EXECUTABLE depend on cmake's version) (but this case still use system Python while compiling, so cannot use on multi-OS with different Versions )
+```
+3. use Python_EXECUTABLE # (Python_EXECUTABLE depend on cmake's version) (but this case still use system Python while compiling, so cannot use on multi-OS with different Versions )
+```shell
 export pyEXE=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
 export pyINC=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/include/python3.7m
 export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.7m.a  
+```
+```make
 -DPython_EXECUTABLE=${pyEXE} -DPython_INCLUDE_DIR=${pyINC} -DPython_LIBRARY=${pyLIB} 
-
-# A. OMPI + GCC
-
-\# "GCC + gold linker" is good now
-cd lammps_master 
-mkdir build   &&   cd build   
-
-## 1. USC1 (eagle)
-- use different openmpi for Eagle vs Lion
-- use external BLAS&LAPACK instead of MKL
-- use FFTW instead of MKL
-- Note: python>3.7.9 require GLIBC new
-- Not use GCC11, will cause error with conda
-
-```shell:
-# Load modules 
-# module load intel/mkl-xe19u5
-# source mklvars.sh intel64
-# module load tool_dev/gsl-2.6
-# export myLAPACK=/uhome/p001cao/local/app/lapack-3.9/liblapack.a
-# export myBLAS=/uhome/p001cao/local/app/blas-3.8/libfblas.a
 ```
 
-```shell:
+# Compiling 
+
+# A. OMPI + GCC
+- "GCC + gold linker" is good now
+- use MKL
+```shell
+module load intel/mkl-xe19u5
+source mklvars.sh intel64
+module load tool_dev/gsl-2.6
+```
+```cmake
+-DFFT=MKL
+```
+- use external BLAS&LAPACK instead of MKL
+```shell
+export myLAPACK=/uhome/p001cao/local/app/lapack-3.9/liblapack.a
+export myBLAS=/uhome/p001cao/local/app/blas-3.8/libfblas.a
+```
+```cmake
+-DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myLAPACK}
+```
+- use FFTW instead of MKL
+```shell
+module load fftw/fftw3.3.8-ompi4.1-gcc11.2
+```
+```cmake
+-DFFT=FFTW3
+```
+   
+## 1. USC1 (eagle)
+- use different openmpi for Eagle vs Lion
+- Note: python>3.7.9 require GLIBC new
+
+```shell
+cd lammps_master 
+mkdir build   &&   cd build
+```
+```shell
 module load tool_dev/binutils-2.36        # gold
 module load tool_dev/cmake-3.21
 module load fftw/fftw3.3.8-ompi4.1-gcc11.2
 module load mpi/ompi4.1.1-gcc11.2-noUCX-eagle
-##
+
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
 export CC=mpicc
 export CXX=mpic++
@@ -249,16 +282,13 @@ export FORTRAN=mpifort
 ## MOLFILE_plugins:
 export PlugIncDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 ## python (require py3) 
-export pyEXE=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
-export pyINC=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/include/python3.7m
-export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/python3.7
+export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 ```
 
-```cmake:
+```cmake
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
--DPython_EXECUTABLE=${pyEXE} -DPython_INCLUDE_DIR=${pyINC} -DPython_LIBRARY=${pyLIB} \
--DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
+-DPython_ROOT_DIR=${pyROOT} -DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
 -DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes \
@@ -270,12 +300,13 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI-master
 ```
-
+```shell
 make -j 8
-test:  mpirun -np 2 lmp_mpi
+# test:  mpirun -np 2 lmp_mpi
 make install
-## -DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myLAPACK}
-##### 2. USC2:    
+```
+## 2. USC2 (cheetah)
+```shell
 #module load mpi/ompi4.0.4-gcc10.1.0-lld
 #module load llvm/llvm-gcc10-lld                    # to use lld 
 ##
@@ -290,6 +321,8 @@ export CXX=mpic++
 export FORTRAN=mpifort
 ## python (require py3) 
 export myPy=/home1/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
+```
+```cmake
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 -DPython_EXECUTABLE=${myPy} \
@@ -303,7 +336,8 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI-master
-# NOTE: 
+```
+NOTE: 
 * must use: export CC=mpicc, export CXX=mpic++...to avoid miss matching compiler
 
 # use FFTW instead of MKL
