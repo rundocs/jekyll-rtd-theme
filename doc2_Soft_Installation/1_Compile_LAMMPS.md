@@ -3,8 +3,8 @@ sort: 1
 ---
 
 # Compiling LAMMPS
-This note is not to tell about what is LAMMPS? but the struggling work to deploy it on some Linux servers.
-![image](https://github.com/lammps/lammps/tree/master/doc/src/JPG)
+This note is not to tell about what is LAMMPS? but the struggling work to deploy it on some servers.
+![Lammps logo](https://www.lammps.org/movies/logo.gif)
 
 ## Preparation
 
@@ -237,7 +237,6 @@ export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.
 
 # A. OMPI + GCC
 ```note
-```
 - must export compilers to to avoid miss matching compilers
 ```shell
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
@@ -273,6 +272,7 @@ module load fftw/fftw3.3.8-ompi4.1-gcc11.2
 ```
 ```cmake
 -DFFT=FFTW3
+```
 ```
    
 ## 1. USC1 (eagle)
