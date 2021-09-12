@@ -71,23 +71,19 @@ copy new pair_eam.cpp & pair_eam.h into /src and delete corresponding files in /
 ```
 NOTEs: include these OPTIONS in Cmake command, to build package-lib automatically:
 
-2. **POEMS package, OPT package**
+2. **POEMS, OPT**
 ```make
 -D PKG_OPT=yes
 ```
-3. **MSCG Package**
+3. **MSCG**
 ```make
 -D PKG_MSCG=yes -D DOWNLOAD_MSCG=yes
 ```
-4. **SMD package**
-```make
--D PKG_USER-SMD=yes -D DOWNLOAD_EIGEN3=yes
-```
-5. **VORONOI package**
+5. **VORONOI**
 ```make
 -D PKG_VORONOI=yes -D DOWNLOAD_VORO=yes
 ```
-6. **KSPACE Package**
+6. **KSPACE**
 - if use MKL for FFT, then need MKL library 
 ```make
 -D FFT=MKL  \
@@ -111,14 +107,13 @@ module load intel/mkl
 ```
 Use "intel/mkl" package, then LAPACK & BLAS will be found automatically
 
-8. **OMP package**
+8. **OMP**
 ```make
 -D PKG_USER-OMP=yes -D BUILD_OMP=yes -D PKG_USER-INTEL=no
 ```
 9. **make no packages**
 ```make
 -D PKG_GPU=no -D PKG_KIM=no -D PKG_LATTE=no -D PKG_MSCG=no -D PKG_KOKKOS=no \
--D DOWNLOAD_VORO=yes -D DOWNLOAD_EIGEN3=yes \
 -D PKG_USER-ADIOS=no -D PKG_USER-NETCDF=no -D PKG_USER-OMP=no -D PKG_USER-INTEL=no \
 -D PKG_USER-QUIP=no -D PKG_USER-SCAFACOS=no -D PKG_USER-QMMM=no -D PKG_USER-VTK=no \
 -D PKG_USER-H5MD=no \
@@ -130,18 +125,18 @@ For multicore CPUs using OpenMP, set these 2 variables.
 -DKokkos_ENABLE_OPENMP=yes 
 -DBUILD_OMP=yes
 ```
-11. [**PLUMED package:**](https://lammps.sandia.gov/doc/Build_extras.html#user-plumed)
+11. [**PLUMED**](https://lammps.sandia.gov/doc/Build_extras.html#user-plumed)
 **1.pre-compile Plumed separately:**
 ```shell
 module load plumed
 ```
 ```make
--D PKG_USER-PLUMED=yes -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=static
+-D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=static
 ```
 
 **2. self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
 ```make
--D PKG_USER-PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static
+-D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static
 ```
 
 **3. self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
@@ -167,7 +162,10 @@ CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....
 ```
 add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" 
 
-12. **SMD package:** require Eigen
+12. **SMD** require Eigen
+```make
+-D PKG_SMD=yes -D DOWNLOAD_EIGEN3=yes
+```
 open file: ../cmake/Modules/Packages/USER-SMD.cmake
 change: 
 ```make
@@ -179,16 +177,15 @@ into:
 GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git 
 GIT_TAG  3.3.7
 ```
-
 13. **MLIAP package**
 - require python >3.6
 
-**14. MOLFILE package**
+14. **MOLFILE package**
 - to dump PDB file, need install VMD-plugins
 - compatible with VMD 1.9 and 1.9.1
 - [Compile VMD](http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html)
 
-**1. compile plugins** (just this is need for Lammps)
+   1. **compile plugins** (just this is need for Lammps)
 http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html
 https://www.discngine.com/blog/2019/5/25/building-the-vmd-molfile-plugin-from-source-code
 ```shell
@@ -198,7 +195,7 @@ make LINUXPPC64
 export PLUGINDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins
 make distrib
 ```
-**2. compile VMD**
+   2. **compile VMD**
 ```shell
 cd vmd-1.9.4a51
 module load compiler/gcc-10.3
@@ -213,18 +210,18 @@ make
 
 15. **PYTHON package** (use 1 of following ways)
 - Note: new numpy require higher GLIBC
-1. Module load --> do not need setting in Cmake
+  1. Module load --> do not need setting in Cmake
 ```shell
 module load conda/py37Lammps
 ```
-2. use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far 
+  2. use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far 
 ```shell
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 ```
 ```make
 -DPython_ROOT_DIR=${pyROOT}
 ```
-3. use Python_EXECUTABLE # (Python_EXECUTABLE depend on cmake's version) (but this case still use system Python while compiling, so cannot use on multi-OS with different Versions )
+  3. use Python_EXECUTABLE # (Python_EXECUTABLE depend on cmake's version) (but this case still use system Python while compiling, so cannot use on multi-OS with different Versions )
 ```shell
 export pyEXE=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
 export pyINC=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/include/python3.7m
@@ -237,7 +234,8 @@ export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.
 # Compiling 
 
 # A. OMPI + GCC
-NOTE: 
+```note
+```
 - must export compilers to to avoid miss matching compilers
 ```shell
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
