@@ -126,7 +126,8 @@ For multicore CPUs using OpenMP, set these 2 variables.
 -DBUILD_OMP=yes
 ```
 11. [**PLUMED**](https://lammps.sandia.gov/doc/Build_extras.html#user-plumed)
-**1.pre-compile Plumed separately:**
+
+  1. **pre-compile Plumed separately:**
 ```shell
 module load plumed
 ```
@@ -134,12 +135,12 @@ module load plumed
 -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=static
 ```
 
-**2. self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
+  2. **self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
 ```make
 -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static
 ```
 
-**3. self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
+  3. **self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
 open file: ../cmake/Modules/Packages/USER-PLUMED.cmake
 ```make
   # find_package(LAPACK REQUIRED)
@@ -184,8 +185,7 @@ GIT_TAG  3.3.7
 - to dump PDB file, need install VMD-plugins
 - compatible with VMD 1.9 and 1.9.1
 - [Compile VMD](http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html)
-
-   1. **compile plugins** (just this is need for Lammps)
+   - **compile plugins** (just this is need for Lammps)
 http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html
 https://www.discngine.com/blog/2019/5/25/building-the-vmd-molfile-plugin-from-source-code
 ```shell
@@ -195,7 +195,7 @@ make LINUXPPC64
 export PLUGINDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins
 make distrib
 ```
-   2. **compile VMD**
+   - **compile VMD**
 ```shell
 cd vmd-1.9.4a51
 module load compiler/gcc-10.3
@@ -209,7 +209,7 @@ make
 -D PKG_MOLFILE=yes
 
 15. **PYTHON package** (use 1 of following ways)
-- Note: new numpy require higher GLIBC
+  - Note: new numpy require higher GLIBC
   1. Module load --> do not need setting in Cmake
 ```shell
 module load conda/py37Lammps
@@ -245,6 +245,9 @@ export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
 ```shell
 module load tool_dev/binutils-2.36
 ```
+```cmake
+-DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt"
+```
 - use MKL
 ```shell
 module load intel/mkl-xe19u5
@@ -271,9 +274,10 @@ module load fftw/fftw3.3.8-ompi4.1-gcc11.2
 ```
    
 ## 1. USC1 (eagle)
+```tip
 - use different openmpi for Eagle vs Lion
 - Note: python>3.7.9 require GLIBC new
-
+```
 ```shell
 cd lammps_master 
 mkdir build   &&   cd build
@@ -286,9 +290,9 @@ module load mpi/ompi4.1.1-gcc11.2-noUCX-eagle
 
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
 export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
-## MOLFILE_plugins:
+# MOLFILE_plugins:
 export PlugIncDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
-## python (require py3) 
+# python (require py3) 
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 ```
 
