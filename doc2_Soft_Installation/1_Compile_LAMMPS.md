@@ -5,8 +5,8 @@ sort: 1
 # Compiling LAMMPS
 
 # Preparation
-## 1. Prerequisite:
 
+## 1. Prerequisite:
 - Compiler: Intel, GCC, Clang,... 
 - MPI implementation: OMPI, IMPI, MPICH,...
 - Libraries depend on which packages will be installed: FFTW, intel MKL,...
@@ -14,10 +14,10 @@ sort: 1
 - OpenMPI may the fastest
 - There is no longer USER_ packages from Jul-2021
 - Need CMAKE, newer is better (a newer Cmake version may reduce the probability of error during compiling). Basic cmake: <br>
-```cmake
+```make
 CMake [-D OPTION_A=VALUE_A -D OPTION_B=VALUE_B ...] ../CMake make
 ```
-- Module eviroment
+- Module evironment
 ```shell
 module load <module_name>
 module display <module_name> 
@@ -34,7 +34,6 @@ tar -xvf lammps-stable_7Aug2019
 cd lammps-stable_7Aug2019
 mkdir build && cd build
 ```
-
 **or download use Git:**
 ```shell
 git clone --branch <tag_name> <repo_url>
@@ -53,14 +52,13 @@ cd lammps_master
 git pull origin master
 ```
 **Some possible error of Git:**
+- git error (if any): Couldn't resolve host 'github.com' while ....
 ```shell
-## git error (if any): Couldn't resolve host 'github.com' while ....
 git config --global --unset http.proxy    
 git config --global --unset https.proxy 
-
-## local change git
-git reset --hard 
 ```
+- local change git
+```shell git reset --hard ```
 
 ## 3. Packages: 
 
