@@ -63,6 +63,7 @@ git reset --hard
 ```
 
 ### 3. Packages: 
+NOTEs: include these OPTIONS in Cmake command, to build package-lib automatically:
 
   1. **UFM potential**
 ```shell
@@ -71,8 +72,6 @@ git clone https://github.com/plrodolfo/FluidFreeEnergyforLAMMPS.git USER-FFE
 copy new pair_ufm into /src
 copy new pair_eam.cpp & pair_eam.h into /src and delete corresponding files in /src/MANYBODY
 ```
-NOTEs: include these OPTIONS in Cmake command, to build package-lib automatically:
-
   2. **POEMS, OPT**
 ```make
 -D PKG_OPT=yes
@@ -103,7 +102,7 @@ NOTEs: include these OPTIONS in Cmake command, to build package-lib automaticall
 -D FFT=FFTW3 
 -D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2018/compilers_and_libraries_2018.0.128/linux/mkl/include/fftw 
 ```
-7. **LAPACK & BLAS**
+7. **LAPACK & BLAS** <br>
 Use "intel/mkl" package, then LAPACK & BLAS will be found automatically
 ```shell
 module load intel/mkl
@@ -120,7 +119,7 @@ module load tool_dev/gsl-2.6
 -D PKG_USER-QUIP=no -D PKG_USER-SCAFACOS=no -D PKG_USER-QMMM=no -D PKG_USER-VTK=no \
 -D PKG_USER-H5MD=no \
 ```
-10. [**KOKKOS**](https://lammps.sandia.gov/doc/Build_extras.html#kokkos)
+10. [**KOKKOS**](https://lammps.sandia.gov/doc/Build_extras.html#kokkos) <br>
 For multicore CPUs using OpenMP, set these 2 variables.
 ```make
 -DKokkos_ARCH_WSM=yes                 # HOSTARCH = HOST from list above 
@@ -141,13 +140,15 @@ module load plumed
 ```
 - **self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
 open file: ../cmake/Modules/Packages/USER-PLUMED.cmake
+
+Comment out these lines:
 ```make
   # find_package(LAPACK REQUIRED)
   # find_package(BLAS REQUIRED)
   # find_package(GSL REQUIRED)
   # list(APPEND PLUMED_LINK_LIBS ${LAPACK_LIBRARIES} ${BLAS_LIBRARIES} GSL::gsl)
 ```
- change lines: 
+change lines: 
 ```make
 # URL http...... (line 65)
 # URL_MD5
@@ -156,8 +157,9 @@ into:
 ```make
 GIT_REPOSITORY https://github.com/plumed/plumed2.git 
 GIT_TAG master                            # hack-the-tree   v2.6.2   v2.7b
-
-CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....   
+```
+```make
+CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....   ...
             --enable-modules=all --enable-asmjit --disable-external-blas --disable-external-lapack
 ```
 add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND 
@@ -167,6 +169,7 @@ add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND
 -D PKG_SMD=yes -D DOWNLOAD_EIGEN3=yes
 ```
 open file: ../cmake/Modules/Packages/USER-SMD.cmake
+
 change: 
 ```make
 URL http...... (line 12)
@@ -177,7 +180,7 @@ into:
 GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git 
 GIT_TAG  3.3.7
 ```
-13. **MLIAP package**
+13. **MLIAP**
 - require python >3.6
 
 14. **MOLFILE package**
@@ -210,7 +213,7 @@ export =/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 -D MOLFILE_INCLUDE_DIR=${PlugIncDIR}
 -D PKG_MOLFILE=yes
 ```
-15. **PYTHON package** (use 1 of following ways)
+15. **PYTHON** (use 1 of following ways)
 Note: new numpy require higher GLIBC
 - use module load --> do not need setting in Cmake
 ```shell
@@ -306,7 +309,7 @@ export PlugIncDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 ```
 
-```cmake
+```make
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 -DPython_ROOT_DIR=${pyROOT} -DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
@@ -342,7 +345,7 @@ export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
 ## python (require py3) 
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
 ```
-```cmake
+```make
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 -DPython_ROOT_DIR=${pyROOT} \
