@@ -235,7 +235,16 @@ export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.
 # Compiling 
 
 # A. OMPI + GCC
+NOTE: 
+- must export compilers to to avoid miss matching compilers
+```shell
+export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
+export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
+```
 - "GCC + gold linker" is good now
+```shell
+module load tool_dev/binutils-2.36
+```
 - use MKL
 ```shell
 module load intel/mkl-xe19u5
@@ -276,9 +285,7 @@ module load fftw/fftw3.3.8-ompi4.1-gcc11.2
 module load mpi/ompi4.1.1-gcc11.2-noUCX-eagle
 
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
-export CC=mpicc
-export CXX=mpic++
-export FORTRAN=mpifort
+export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
 ## MOLFILE_plugins:
 export PlugIncDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 ## python (require py3) 
@@ -309,16 +316,14 @@ make install
 ```shell
 #module load mpi/ompi4.0.4-gcc10.1.0-lld
 #module load llvm/llvm-gcc10-lld                    # to use lld 
-##
+
 module load mpi/ompi4.1.1-gcc10.3
 module load tool_dev/binutils-2.35                # gold 
 module load tool_dev/cmake-3.20.3
 module load fftw/fftw3.3.8-ompi4.1-gcc10.3
-##
+
 export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.1-gcc10.3/bin
-export CC=mpicc
-export CXX=mpic++
-export FORTRAN=mpifort
+export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
 ## python (require py3) 
 export myPy=/home1/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
 ```
@@ -337,12 +342,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI-master
 ```
-NOTE: 
-* must use: export CC=mpicc, export CXX=mpic++...to avoid miss matching compiler
 
-# use FFTW instead of MKL
-module load fftw/fftw3.3.8-ompi4.1-gcc10.2
--DFFT=FFTW3 \
 
 # use Internal LAPACK&BLAS, then no need (GSL & MKL): open file: ../cmake/Modules/Packages/USER_PLUMED.cmake
 comment out line 9-->12: find LAPACK, BLAS, GSL (Plumed build itself, no need GSL anymore)
