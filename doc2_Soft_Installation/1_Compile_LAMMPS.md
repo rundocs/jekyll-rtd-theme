@@ -3,6 +3,8 @@ sort: 1
 ---
 
 # Compiling LAMMPS
+This note is not to tell about what is LAMMPS? but the struggling work to deploy it on some Linux servers.
+![image](https://github.com/lammps/lammps/tree/master/doc/src/JPG)
 
 ## Preparation
 
