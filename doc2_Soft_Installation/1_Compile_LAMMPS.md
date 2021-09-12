@@ -2,8 +2,8 @@
 sort: 1
 ---
 
-# Compiling LAMMPS
-This note is not to tell about what is LAMMPS? but the struggling work to deploy it on some servers.
+# Compiling [LAMMPS](https://lammps.sandia.gov) 
+This note is not to tell about what is LAMMPS? but the struggling work to deploy it on some Linux servers.
 ![Lammps logo](https://www.lammps.org/movies/logo.gif)
 
 ## Preparation
@@ -104,11 +104,11 @@ NOTEs: include these OPTIONS in Cmake command, to build package-lib automaticall
 -D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2018/compilers_and_libraries_2018.0.128/linux/mkl/include/fftw 
 ```
 7. **LAPACK & BLAS**
+Use "intel/mkl" package, then LAPACK & BLAS will be found automatically
 ```shell
 module load intel/mkl
+module load tool_dev/gsl-2.6
 ```
-Use "intel/mkl" package, then LAPACK & BLAS will be found automatically
-
 8. **OMP**
 ```make
 -D PKG_USER-OMP=yes -D BUILD_OMP=yes -D PKG_USER-INTEL=no
@@ -128,21 +128,18 @@ For multicore CPUs using OpenMP, set these 2 variables.
 -DBUILD_OMP=yes
 ```
 11. [**PLUMED**](https://lammps.sandia.gov/doc/Build_extras.html#user-plumed)
-
-  1. **pre-compile Plumed separately:**
+- **pre-compile Plumed separately:**
 ```shell
 module load plumed
 ```
 ```make
 -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=static
 ```
-
-  2. **self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
+- **self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
 ```make
 -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static
 ```
-
-  3. **self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
+- **self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
 open file: ../cmake/Modules/Packages/USER-PLUMED.cmake
 ```make
   # find_package(LAPACK REQUIRED)
@@ -206,24 +203,25 @@ export VMDINSTALLDIR=/uhome/p001cao/local/app/vmd
 cd src
 make
 ```
- path in lib/molfile/Make.lammps: molfile_SYSPATH =-L/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUXPPC64/molfile
+path in lib/molfile/Make.lammps: molfile_SYSPATH =-L/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUXPPC64/molfile
+```make
 -D MOLFILE_INCLUDE_DIR=path   # (optional) path where VMD molfile plugin headers are installed
 -D PKG_MOLFILE=yes
-
+```
 15. **PYTHON package** (use 1 of following ways)
-  - Note: new numpy require higher GLIBC
-  1. Module load --> do not need setting in Cmake
+Note: new numpy require higher GLIBC
+- use module load --> do not need setting in Cmake
 ```shell
 module load conda/py37Lammps
 ```
-  2. use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far 
+- use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far 
 ```shell
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 ```
 ```make
 -DPython_ROOT_DIR=${pyROOT}
 ```
-  3. use Python_EXECUTABLE # (Python_EXECUTABLE depend on cmake's version) (but this case still use system Python while compiling, so cannot use on multi-OS with different Versions )
+- use Python_EXECUTABLE # (Python_EXECUTABLE depend on cmake's version) (but this case still use system Python while compiling, so cannot use on multi-OS with different Versions )
 ```shell
 export pyEXE=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
 export pyINC=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/include/python3.7m
@@ -237,6 +235,7 @@ export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.
 
 # A. OMPI + GCC
 ```note
+```
 - must export compilers to to avoid miss matching compilers
 ```shell
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
@@ -273,10 +272,9 @@ module load fftw/fftw3.3.8-ompi4.1-gcc11.2
 ```cmake
 -DFFT=FFTW3
 ```
-```
    
 ## 1. USC1 (eagle)
-```tip
+```note
 - use different openmpi for Eagle vs Lion
 - Note: python>3.7.9 require GLIBC new
 ```
