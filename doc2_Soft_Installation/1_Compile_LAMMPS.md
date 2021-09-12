@@ -4,9 +4,9 @@ sort: 1
 
 # Compiling LAMMPS
 
-# Preparation
+## Preparation
 
-## 1. Prerequisite:
+### 1. Prerequisite:
 - Compiler: Intel, GCC, Clang,... 
 - MPI implementation: OMPI, IMPI, MPICH,...
 - Libraries depend on which packages will be installed: FFTW, intel MKL,...
@@ -23,7 +23,7 @@ module load <module_name>
 module display <module_name> 
 ```
 
-## 2. Download: 
+### 2. Download: 
 
 [LAMMPS site](https://lammps.sandia.gov/bug.html) <br>
 [Souce code](https://github.com/lammps/lammps) <br>
@@ -60,7 +60,7 @@ git config --global --unset https.proxy
 git reset --hard 
 ```
 
-## 3. Packages: 
+### 3. Packages: 
 
 1. **UFM potential**
 ```shell
@@ -88,12 +88,14 @@ NOTEs: include these OPTIONS in Cmake command, to build package-lib automaticall
 -D PKG_VORONOI=yes -D DOWNLOAD_VORO=yes
 ```
 6. **KSPACE Package**
-- if use MKL for FFT, then need MKL library (if FTWW3 (prior ot choose, then dont need MKL_LIBRARY )
+- if use MKL for FFT, then need MKL library 
 ```make
 -D FFT=MKL  \
 -D MKL_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2019/compilers_and_libraries_2019.5.281/linux/mkl/include  \
 -D MKL_LIBRARY=/uhome/p001cao/local/intel/xe2019/compilers_and_libraries_2019.5.281/linux/mkl/lib/intel64  \
-
+```
+- if FTWW3, then dont need MKL_LIBRARY
+```make
 -D FFT=FFTW3
 -D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/fftw/3.3.8-openmpi4.0.1-Intel2019xe-double/include \
 -D FFTW3_LIBRARY=/uhome/p001cao/local/fftw/3.3.8-openmpi4.0.1-Intel2019xe-double/lib \
