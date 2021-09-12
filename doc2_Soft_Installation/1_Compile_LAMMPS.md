@@ -64,7 +64,7 @@ git reset --hard
 
 ### 3. Packages: 
 
-1. **UFM potential**
+  1. **UFM potential**
 ```shell
 cd lammps-folder/src/
 git clone https://github.com/plrodolfo/FluidFreeEnergyforLAMMPS.git USER-FFE
@@ -73,7 +73,7 @@ copy new pair_eam.cpp & pair_eam.h into /src and delete corresponding files in /
 ```
 NOTEs: include these OPTIONS in Cmake command, to build package-lib automatically:
 
-2. **POEMS, OPT**
+  2. **POEMS, OPT**
 ```make
 -D PKG_OPT=yes
 ```
@@ -109,7 +109,7 @@ Use "intel/mkl" package, then LAPACK & BLAS will be found automatically
 module load intel/mkl
 module load tool_dev/gsl-2.6
 ```
-8. **OMP**
+8. **OpenMP**
 ```make
 -D PKG_USER-OMP=yes -D BUILD_OMP=yes -D PKG_USER-INTEL=no
 ```
@@ -160,7 +160,7 @@ GIT_TAG master                            # hack-the-tree   v2.6.2   v2.7b
 CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....   
             --enable-modules=all --enable-asmjit --disable-external-blas --disable-external-lapack
 ```
-add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" 
+add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND 
 
 12. **SMD** require Eigen
 ```make
@@ -181,11 +181,10 @@ GIT_TAG  3.3.7
 - require python >3.6
 
 14. **MOLFILE package**
-- to dump PDB file, need install VMD-plugins
-- compatible with VMD 1.9 and 1.9.1
-- [Compile VMD](http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html)
+* to dump PDB file, need install VMD-plugins
+* compatible with VMD 1.9 and 1.9.1
+* [Compile VMD](http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html)
    - **compile plugins** (just this is need for Lammps)
-http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html
 https://www.discngine.com/blog/2019/5/25/building-the-vmd-molfile-plugin-from-source-code
 ```shell
 tar zxvf vmd-1.9.src.tar.gz
@@ -203,9 +202,12 @@ export VMDINSTALLDIR=/uhome/p001cao/local/app/vmd
 cd src
 make
 ```
-path in lib/molfile/Make.lammps: molfile_SYSPATH =-L/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUXPPC64/molfile
+* path in lib/molfile/Make.lammps: molfile_SYSPATH =-L/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUXPPC64/molfile
+```shell
+export =/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
+```
 ```make
--D MOLFILE_INCLUDE_DIR=path   # (optional) path where VMD molfile plugin headers are installed
+-D MOLFILE_INCLUDE_DIR=${PlugIncDIR}
 -D PKG_MOLFILE=yes
 ```
 15. **PYTHON package** (use 1 of following ways)
@@ -233,7 +235,7 @@ export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.
 
 # Compiling 
 
-# A. OMPI + GCC
+# A. Open MPI + GCC
 ```note
 ```
 - must export compilers to to avoid miss matching compilers
@@ -272,7 +274,15 @@ module load fftw/fftw3.3.8-ompi4.1-gcc11.2
 ```cmake
 -DFFT=FFTW3
 ```
+- consider linkers
+```
+module load llvm/llvm-gcc10-lld                    # to use lld
+-DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld -lrt" \
+module load tool_dev/binutils-2.35                # gold
+-DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
+```
    
+
 ## 1. USC1 (eagle)
 ```note
 - use different openmpi for Eagle vs Lion
@@ -316,6 +326,7 @@ make -j 8
 # test:  mpirun -np 2 lmp_mpi
 make install
 ```
+
 ## 2. USC2 (cheetah)
 ```shell
 #module load mpi/ompi4.0.4-gcc10.1.0-lld
@@ -329,12 +340,12 @@ module load fftw/fftw3.3.8-ompi4.1-gcc10.3
 export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.1-gcc10.3/bin
 export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
 ## python (require py3) 
-export myPy=/home1/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
+export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
 ```
 ```cmake
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
--DPython_EXECUTABLE=${myPy} \
+-DPython_ROOT_DIR=${pyROOT} \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
 -DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes \
@@ -348,7 +359,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 ```
 
 
-# use Internal LAPACK&BLAS, then no need (GSL & MKL): open file: ../cmake/Modules/Packages/USER_PLUMED.cmake
+\# use Internal LAPACK&BLAS, then no need (GSL & MKL): open file: ../cmake/Modules/Packages/USER_PLUMED.cmake
 comment out line 9-->12: find LAPACK, BLAS, GSL (Plumed build itself, no need GSL anymore)
 --> then, do not need these:
 module load tool_dev/gsl-2.6
@@ -356,61 +367,31 @@ module load intel/mkl-xe19u5
 source mklvars.sh intel64
 -DFFT=MKL \    # must set before Plumed
 
-# load plumed separately (bad alloc)
+\# load plumed separately (bad alloc)
 module load plumed2/2.7htt-gcc
 -DPKG_USER-PLUMED=yes -DDOWNLOAD_PLUMED=no -DPLUMED_MODE=shared \
 
-# consider linker:
-module load llvm/llvm-gcc10-lld                    # to use lld
--DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld -lrt" \
-module load tool_dev/binutils-2.35                # gold
--DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
-
-#openKim: 
+\#openKim: 
 must create module file for openKim to add its PKG's path
 
-
-
-
-######### OMPI3 
-module load compiler/gcc/7.4.0 
-module load mpi/gcc-7.4.0/ompi/3.1.4 
-module load tool_dev/gsl-2.6 
-module load cmake/3.16.2
-#--
-export PATH=gcc-7.4.0/ompi/3.1.4 /......../bin:$PATH
-export CC=mpicc
-export CXX=mpic++
-export FORTRAN=mpifort
-
-cmake ../cmake -C ../cmake/presets/all_on.cmake \
--DBUILD_MPI=yes -DLAMMPS_MACHINE=mpi \
--DBUILD_OMP=yes -DPKG_USER-OMP=yes -DPKG_USER-INTEL=no \
--DBUILD_LIB=yes -DBUILD_SHARED_LIBS=yes -DLAMMPS_EXCEPTIONS=yes \
--DPKG_GPU=no -DPKG_LATTE=no -DPKG_KOKKOS=no -DPKG_KIM=no -DPKG_MSCG=no \
--DDOWNLOAD_VORO=yes -DDOWNLOAD_EIGEN3=yes \
--DPKG_USER-ADIOS=no -DPKG_USER-NETCDF=no -DPKG_USER-QUIP=no -DPKG_USER-SCAFACOS=no \
--DPKG_USER-QMMM=no -DPKG_USER-VTK=no -DPKG_USER-H5MD=no \
--DPKG_USER-PLUMED=yes -DDOWNLOAD_PLUMED=yes\
--DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
--DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/19Mar20-gcc3
-
-##### 3. CAN-GPU    
+## 3. CAN-GPU    
 # https://docs.lammps.org/Build_extras.html#gpu
+```shell
 module load mpi/ompi4.1-gcc7.4-cuda      # cuda-10 only support to gcc-8
 module load cmake-3.20.3
 module load fftw/fftw3.3.8-ompi4.1-gcc7.4
-##
+
 export PATH=$PATH:/home/thang/local/app/openmpi/4.1.1-gcc7.4-cuda/bin
-export CC=mpicc
-export CXX=mpic++
-export FORTRAN=mpifort
-## python (require py3) 
-export myPy=/home/thang/local/app/miniconda3/envs/py37/bin/python
+export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
+# python (require py3) 
+export pyROOT=/home/thang/local/app/miniconda3/envs/py37
+# cuda
 export CUDA_PATH=/home/thang/local/app/cuda-10.2
 export bin2c=/home/thang/local/app/cuda-10.2/bin/bin2c
+```
+```make
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
--DPython_EXECUTABLE=${myPy} \
+-DPython_ROOT_DIR=${pyROOT} \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
 -DPKG_OPENMP=yes -D PKG_OPT=yes -DPKG_INTEL=no -DPKG_KOKKOS=no \
 -DPKG_GPU=yes -DGPU_API=cuda -DGPU_ARCH=sm_60 -DBIN2C=${bin2c} -DGPU_PREC=double \
@@ -422,10 +403,10 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
 -DCMAKE_INSTALL_PREFIX=/home/thang/local/app/lammps/gccOMPI-master
+```
 
 
-
-#####################
+\#####################
 
 KOKKOS (USC 2) - 05May20 (error tbb_malloc  --> change TBB folder in file TBB.cmake)
 
