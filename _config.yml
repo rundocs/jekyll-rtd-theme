@@ -1,10 +1,9 @@
 title: Thang's Notes
+lang: en
 description: You cannot teach a man anything, you can only help him find it within himself. —– Galileo Galilei (1564–1642)
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://tinyurl.com/yflyokje
-
 theme: null
+# remote_theme: rundocs/jekyll-rtd-theme
 
 # debug:
 #   compress: true
