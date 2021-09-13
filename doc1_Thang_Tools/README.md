@@ -4,8 +4,6 @@ sort: 1
 
 # Thang's Tools
 
-```
-{% raw %}{% include list.liquid all=true %}{% endraw %}
-```
+This section contains Python modules to handle some specific tasks.
 
 {% include list.liquid all=true %}
