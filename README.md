@@ -14,9 +14,5 @@ You cannot teach a man anything, you can only help him find it within himself. -
 
 ![my_piture](./assets/images/my_picture3x3.jpg)
 
-<<<<<<< HEAD
 [![pic](./assets/images/fb_icon.png)](https://www.facebook.com/thangckt111) 
-=======
-[![pic](./assets/images/fb_icon.png)](https://www.facebook.com/thangckt111)    
->>>>>>> 8d8c038a80c7c0ad25058c3f19e302cc52e7fa82
 [![pic](./assets/images/linkedin_icon.jpg)](https://www.linkedin.com/in/thang-nguyen-5b458a218/)
