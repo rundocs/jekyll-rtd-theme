@@ -4,10 +4,8 @@ sort: 2
 
 # Compiling GCC-11
 
-The [GNU Compiler]((https://gcc.gnu.org) Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).
-
+The [GNU Compiler](https://gcc.gnu.org) Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).
 ![pic](https://gcc.gnu.org/img/gccegg-65.png)
-
 
 ```note
 - Some applications require C++11, this is only supported on GCC 4.8 or newer
@@ -50,13 +48,11 @@ configure error: uint64_t or int64_t not found     --> need at least gcc-4.5
 
 
 ### USC1: (eagle)
-
 ```shell
 cd gcc-11.2
 git checkout releases/gcc-11.2
 ./contrib/download_prerequisites
-```
-```shell
+
 mkdir build && cd build
 module load compiler/gcc-10.3         # to avoid:  uint64_t or int64_t not found 
 
