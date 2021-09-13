@@ -1,6 +1,5 @@
 # Thang's Notes
 
-[![](https://data.jsdelivr.com/v1/package/npm/analytics/badge)](https://www.jsdelivr.com/package/npm/analytics)
 
 This page dedicates to my personal notes and does not reflect any community standard. 
 
@@ -14,6 +13,5 @@ You cannot teach a man anything, you can only help him find it within himself. -
 
 ![my_piture](./doc1_Thang_Tools/my_picture3x3.jpg)
 
-```yml
-  facebook: thangckt111
-```
+
+[messager](https://www.facebook.com/thangckt111)
