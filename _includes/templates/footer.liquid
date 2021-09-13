@@ -40,15 +40,4 @@
     <a class="text-gray" href="{{ docs.repository_url }}/commit/{{ docs.build_revision }}" title="{{ docs.build_revision }}" rel="noreferrer" target="_blank">
         {{- docs.build_revision | slice: 0, 7 -}}
     </a>
-    {% unless site.url contains "rundocs.io" %}
-        <br>
-        <div class="generator">
-            Built with
-            <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v{{ docs.versions.github-pages }}">GitHub Pages</a>
-            using a
-            <a href="https://github.com/{{ theme_alias | split: '@' | first }}" rel="noreferrer" target="_blank" title="{{ generator }} v{{ version }}">theme</a>
-            provided by
-            <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>.
-        </div>
-    {% endunless %}
 </div>
