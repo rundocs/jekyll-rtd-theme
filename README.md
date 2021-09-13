@@ -9,4 +9,4 @@ It is fun if you can find something helpful here. In other cases, it's not my bu
 > You cannot teach a man anything, you can only help him find it within himself. 
 > —– Galileo Galilei (1564–1642)
 
-![my_piture](my_picture.jpg)
+![my_piture](doc1_Thang_Tools/my_picture.jpg =250x)
