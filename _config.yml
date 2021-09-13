@@ -35,22 +35,7 @@ exclude:
   - jekyll-rtd-theme.gemspec
 
 
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email:
-  facebook: thangckt111
-  flickr:
-  github: 
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: 
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
 
 google:
   gtag: UA-174315734-1
-  adsense: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1573099456298501" 
+  adsense: ca-pub-1573099456298501
