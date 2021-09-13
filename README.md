@@ -10,4 +10,4 @@ You cannot teach a man anything, you can only help him find it within himself.
 Galileo Galilei (1564–1642)
 ```
 
-![my_piture](./doc1_Thang_Tools/my_picture.jpg =250x)
+![my_piture](./doc1_Thang_Tools/my_picture.jpg=250x)
