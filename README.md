@@ -11,7 +11,7 @@ It's fun if you find something helpful here. In other cases, it's not my busines
 You cannot teach a man anything, you can only help him find it within himself. - Galileo Galilei (1564–1642)
 ```
 
-![my_piture](./doc1_Thang_Tools/my_picture3x3.jpg)
+![my_piture](./doc1_Thang_Tools/figure/my_picture3x3.jpg)
 
 
-[messager](https://www.facebook.com/thangckt111)
+[Messenger](https://www.facebook.com/thangckt111)

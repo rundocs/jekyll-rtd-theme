@@ -2,8 +2,10 @@
 sort: 1
 ---
 
-# Compiling [LAMMPS](https://lammps.sandia.gov) 
+# Compiling [LAMMPS](https://www.lammps.org) 
+
 This note is not to tell about what is LAMMPS? but the struggling work to deploy it on some Linux servers.
+
 ![Lammps logo](https://www.lammps.org/movies/logo.gif)
 
 ## Preparation
@@ -38,12 +40,6 @@ mkdir build && cd build
 ```
 **or download use Git:**
 ```shell
-git clone --branch <tag_name> <repo_url>
-## Download specific TAG:  
-git checkout <tag_name>
-git pull origin <tag_name>
-```
-```shell
 git clone --branch patch_20Nov2019 https://github.com/lammps/lammps.git lammps_patch_20Nov2019
 cd lammps_patch_20Nov2019
 git checkout patch_20Nov2019
@@ -52,14 +48,6 @@ git checkout patch_20Nov2019
 git clone https://github.com/lammps/lammps.git    lammps_master
 cd lammps_master
 git pull origin master
-```
-**Some possible error of Git:**
-```shell
-## git error (if any): Couldn't resolve host 'github.com' while ....
-git config --global --unset http.proxy    
-git config --global --unset https.proxy 
-## local change git
-git reset --hard 
 ```
 
 ### 3. Packages: 
