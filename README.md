@@ -3,7 +3,7 @@
 
 This page dedicates to my personal notes and does not reflect any community standard. 
 
-In general, these notes are necessary for some rare situations but maybe helpless in almost others. 
+In general, these notes are inevitable for some rare situations but helpless in almost others. 
 
 It's fun if you find something helpful here. In other cases, it's not my business.
 
