@@ -2,9 +2,9 @@
 sort: 2
 ---
 
-# Compiling [GCC](https://gcc.gnu.org/) 
+# Compiling GCC-11
 
-The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).
+The [GNU Compiler]((https://gcc.gnu.org) Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).
 
 ![pic](https://gcc.gnu.org/img/gccegg-65.png)
 
@@ -13,11 +13,13 @@ The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran
 - Some applications require C++11, this is only supported on GCC 4.8 or newer
 - [intel 2018 support gcc versions 4.3 - 6.3](https://software.intel.com/en-us/articles/intel-c-compiler-180-for-linux-release-notes-for-intel-parallel-studio-xe-2018)
 - compile GCC outside source-dir, to avoid modifying source code when compiling get fail
+- cuda does not support gcc > 8 
 ```
 
 ## 1. Download:
 
-* check all [availabe versions GCC](https://gcc.gnu.org/releases.html)
+* check all availabe versions GCC
+  - [at this link](https://gcc.gnu.org/releases.html)
   - or check this:
   ```shell
   svn ls svn://gcc.gnu.org/svn/gcc/tags | grep gcc | grep release
@@ -28,7 +30,7 @@ The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran
   ```shell
   wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-10.3.0/gcc-10.3.0.tar.gz
   tar xvf gcc-10.3.0.tar.gz
-  ``
+  ```
   - or git
   ```shell
   git clone -b releases/gcc-11.2.0 https://github.com/gcc-mirror/gcc gcc-11.2.0
@@ -37,17 +39,17 @@ The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran
 ## 2. Install
 Include 2 steps:
 - **download prerequisites:**
+```shell
 cd gcc-11.2.0
 ./contrib/download_prerequisites
-
-- [**Configure:**](https://gcc.gnu.org/install/configure.html\
-http://cs.swan.ac.uk/~csoliver/ok-sat-library/internet_html/doc/doc/Gcc/4.6.4/html/gccinstall/configure.html)
+```
+- **Configure:** [see this link](https://gcc.gnu.org/install/configure.html)
 ```note
-configure: error: uint64_t or int64_t not found       --> need at least gcc-4.5
+configure error: uint64_t or int64_t not found     --> need at least gcc-4.5
 ```
 
 
-- **USC1: (eagle)**
+### USC1: (eagle)
 
 ```shell
 cd gcc-11.2
@@ -63,7 +65,7 @@ module load compiler/gcc-10.3         # to avoid:  uint64_t or int64_t not found
 --prefix=/uhome/p001cao/local/app/compiler/gcc-11.2
 ```
 ```make
-make    # note use -j to know what error
+make  -j 20         # not use -j to know what error
 make install
 # check: g++ -v
 ```
@@ -85,9 +87,8 @@ module load compiler/gcc-7.4   # cuda note support gcc > 8
 ## 3. Make module file 
 at directory: /uhome/p001cao/local/share/lmodfiles/GCC --> create file "gcc-11.2"
 
-```tcl
+```shell
 # for Tcl script use only
-
 set             topdir          /uhome/p001cao/local/app/compiler/gcc-11.2
 
 setenv           CC gcc
