@@ -1,7 +1,7 @@
 # Thang's Notes
 
 
-This page dedicates to my personal notes and does not reflect any community standard. 
+This page dedicates to my personal arbitrary notes and does not reflect any either community or third party standard. 
 
 In general, these notes are inevitable for some rare situations but helpless in almost others. 
 
