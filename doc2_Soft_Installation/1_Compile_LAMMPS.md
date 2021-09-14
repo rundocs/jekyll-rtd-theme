@@ -2,9 +2,9 @@
 sort: 1
 ---
 
-# Compiling [LAMMPS](https://www.lammps.org) 
+# Compiling LAMMPS
 
-This note is not to tell about what is LAMMPS? but the struggling work to deploy it on some Linux servers.
+This note is not to tell about what is [LAMMPS](https://www.lammps.org)? but the struggling work to deploy it on some Linux servers.
 
 ![Lammps logo](https://www.lammps.org/movies/logo.gif)
 
