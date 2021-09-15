@@ -40,6 +40,7 @@ cd openmpi-4.1.1
 ```
 
 ## 2. Compiling OpenMPI + GCC
+Need separated installations for: eagle, lion/leopard, cheetah, taycheon <br>
 Installation OPTIONS in README.txt or `./configure -h`
 - Sun Grid: `--with-sge`
 - InfiniBand: `--with-verbs`

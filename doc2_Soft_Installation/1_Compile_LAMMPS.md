@@ -26,6 +26,8 @@ cmake -D OPTION_A=VALUE_A -D OPTION_B=VALUE_B ...     ../cmake make
 module load <module_name>
 module display <module_name> 
 ```
+- Only one installation for 'eagle/lion/leopard/cheetah', but need to load different OpenMPI for each cluster.
+
 
 ### 2. Download: 
 
