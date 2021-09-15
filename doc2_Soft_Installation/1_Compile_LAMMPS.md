@@ -278,6 +278,9 @@ module load tool_dev/binutils-2.35                # gold
 ```note
 - use different openmpi for Eagle vs Lion
 - Note: python>3.7.9 require GLIBC new
+`conda install python=3.7.5 pandas=1.0 numpy=1.19`
+- Use GCC-11 need also update GCC-conda = 11
+`conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`
 ```
 ```shell
 cd lammps_master 
