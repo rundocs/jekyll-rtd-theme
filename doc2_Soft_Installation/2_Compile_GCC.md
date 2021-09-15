@@ -5,6 +5,7 @@ sort: 2
 # Compiling GCC-11
 
 The [GNU Compiler](https://gcc.gnu.org) Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...).
+
 ![pic](https://gcc.gnu.org/img/gccegg-65.png)
 
 ```note

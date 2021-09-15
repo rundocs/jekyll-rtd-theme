@@ -5,6 +5,7 @@ sort: 3
 # Compiling OpenMPI-4
 
 [Open MPI](https://www.open-mpi.org/) is a Message Passing Interface (MPI) library project combining technologies and resources from several other projects (FT-MPI, LA-MPI, LAM/MPI, and PACX-MPI).
+
 ![pic](https://www.open-mpi.org/images/open-mpi-logo.png)
 
 **NOTEs:**
