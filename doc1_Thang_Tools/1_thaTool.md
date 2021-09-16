@@ -23,32 +23,34 @@ Create an Object of SWITCHING FUNCTION
 			
 		Ex: sw = thaTool.SwitchFunc(r0=6.3, swType='RATIONAL', d0=0.0, n=10)
 
-
+---
 ## class basis_transform
-For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) (Phi,Theta,Psi).
-```note
+---
+For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) (Phi,Theta,Psi). <br>
+NOTEs:
 - DCM between 2 basis is unique. Assume a new basis x’y’z’, an old axes xyz, the DCM is: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
-$$\begin{equation} \label{eq_54}
-	\mathbf{R} = \begin{bmatrix}
+$$\begin{aligned}
+	\mathbf{R} = \left( \begin{array}{ccc}
 		R_{11} & R_{12}  & R_{13} \\
 		R_{21} & R_{22}  & R_{23} \\
 		R_{31} & R_{32}  & R_{33} \\
-	\end{bmatrix}
-	= \begin{bmatrix}
+	\end{array} \right)
+	= \left( \begin{array}{ccc}
 		cos(\theta_{x',x}) & cos(\theta_{x',y})  & cos(\theta_{x',z}) \\
 		cos(\theta_{y',x}) & cos(\theta_{y',y})  & cos(\theta_{y',z}) \\
 		cos(\theta_{z',x}) & cos(\theta_{z',y})  & cos(\theta_{z',z}) \\
-	\end{bmatrix}
-\end{equation}$$
+	\end{array} \right)
+\end{aligned}$$
 
 - but there are several posibility of Euler-angles which classed into 2 types: **Proper Euler angles** and **Tait–Bryan angles**
-- DCM can be decomposed as a product of three elemental rotation matrices of 3 Euler-angles, with a **specific order**.
+- DCM can be decomposed as a product of three elemental rotation matrices of 3 Euler-angles, with a **specific order**. The widely used convension in Physic is ZXZ [intrinsic rotations](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations).
+- The implementation in this class using convension $Z(\phi)X(\theta)Z(\psi)$
 
+REFs:
+1. [Bower, Allan F. Applied Mechanics of Solids. CRC Press, 2009. page 711](http://solidmechanics.org/Text/AppendixA/AppendixA.php).
+2. https://link.aps.org/doi/10.1103/PhysRevB.92.180102.
+3. https://en.wikipedia.org/wiki/Euler_angles.
 
-	1. [Bower, Allan F. Applied Mechanics of Solids. CRC Press, 2009. page 711](http://solidmechanics.org/Text/AppendixA/AppendixA.php).
-	2. https://link.aps.org/doi/10.1103/PhysRevB.92.180102.
-	3. https://en.wikipedia.org/wiki/Euler_angles.
-```
 ---
 ### parameters:
 	- Eold: 3x3 array/list, contains 3 mutully orthotropic unit vectors of the OLD basis 
