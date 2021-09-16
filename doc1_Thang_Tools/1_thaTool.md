@@ -50,8 +50,8 @@ REFs:
 ### parameters:
 * Inputs Compulsory: 
 * Inputs Optional: 
-  	- Eold: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
-  	- Enew: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the NEW basis
+ - Eold: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
+ - Enew: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the NEW basis
 * Usage: 
 ```python
 	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
@@ -62,7 +62,7 @@ Calculate direction-cosines-matrix (DCM) between 2 coordinates systems.
 * Inputs Compulsory: 
 * Inputs Optional:
 * Outputs: 
-  	- Q: 3x3 `array`, the rotation matrix or matrix of direction cosines
+ - Q: 3x3 `array`, the rotation matrix or matrix of direction cosines
 * Usage: 
 ```python
 	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
@@ -73,9 +73,9 @@ Calculate direction-cosines-matrix (DCM) between 2 coordinates systems.
 Calculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper Euler angles).
 * Inputs Compulsory: 
 * Inputs Optional:
-  	- unit='rad': 'rad', 'deg'      (default is rad)
+ - unit='rad': 'rad', 'deg'      (default is rad)
 * Outputs: 
-  	- Angle: 1x3 `array` (Phi,Theta,Psi)
+ - Angle: 1x3 `array` (Phi,Theta,Psi)
 * Usage: 
 ```python
 	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
@@ -85,10 +85,10 @@ Calculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper 
 ### basis_transform.rotate_3d(points)
 Rotate a set of points (or set of vectors) from a OLD-coords to NEW-coords
 * Inputs Compulsory:
-	- points: Nx3 `array`, contain coords in OLD coordinates systems
+ - points: Nx3 `array`, contain coords in OLD coordinates systems
 * Inputs Optional:
 * Output:
-	- points: Nx3 `array`, contain coords in NEW coordinates systems
+ - points: Nx3 `array`, contain coords in NEW coordinates systems
 * Usage: 
 ```python
 	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
