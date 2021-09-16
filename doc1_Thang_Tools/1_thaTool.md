@@ -88,8 +88,17 @@ Calculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper 
 * Usage: 
 ```python
 	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
-	Q = BT.EulerAngle(unit='deg')
+	phi,theta,psi = BT.EulerAngle(unit='deg')
 ```
 
-
-
+### basis_transform.rotate_3d(points)
+Rotate a set of points (or set of vectors) from a OLD-coords to NEW-coords
+* Input:
+	- points: Nx3 array, contain coords in OLD coordinates systems
+* Output:
+	- points: Nx3 array, contain coords in NEW coordinates systems
+Example: 
+```py
+	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
+	newP = BT.rotate_3d(P)
+```
