@@ -26,7 +26,7 @@ cmake -D OPTION_A=VALUE_A -D OPTION_B=VALUE_B ...     ../cmake make
 module load <module_name>
 module display <module_name> 
 ```
-- Only one installation for 'eagle/lion/leopard/cheetah', but need to load different OpenMPI for each cluster.
+- Only one installation for `eagle/lion/leopard/cheetah`, but need to load different OpenMPI for each cluster. Also need to load Conda to overwrite default python of the system (different Ver. of python may cause runtime error)
 
 
 ### 2. Download: 
