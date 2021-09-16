@@ -26,7 +26,7 @@ Create an Object of SWITCHING FUNCTION
 ------
 ## class basis_transform
 ------
-For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) (Phi,Theta,Psi). <br>
+For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) (`$\phi,\theta,\psi$` or `$\alpha,\beta,\gamma$`). <br>
 ```note
 - DCM between 2 basis is unique. Assume a new basis x’y’z’, an old axes xyz, the DCM is: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
 $$\begin{aligned}
@@ -38,19 +38,20 @@ $$\begin{aligned}
 	= \left( \begin{array}{ccc}
 		cos(\theta_{x',x}) & cos(\theta_{x',y}) & cos(\theta_{x',z}) \\
 		cos(\theta_{y',x}) & cos(\theta_{y',y}) & cos(\theta_{y',z}) \\
-		cos(\theta_{z',x}) & cos(\theta_{z',y}) & cos(\theta_{z',z}) \\
+		cos(\theta_{z',x}) & cos(\theta_{z',y}) & cos(\theta_{z',z}) 
 	\end{array} \right)
 \end{aligned}$$
 
 - but there are several posibility of Euler-angles which classed into 2 types: **Proper Euler angles** and **Tait–Bryan angles**
 - DCM can be decomposed as a product of three elemental rotation matrices of 3 Euler-angles, with a **specific order**. The widely used convension in Physic is ZXZ [intrinsic rotations](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations).
-- The implementation in this class use the convension $Z(\phi)X(\theta)Z(\psi)$ which the Euler-angles is computed from DCM as:
+- The implementation in this class is the **Proper Euler angles** using the convension $Z(\phi)X(\theta)Z(\psi)$ which the Euler-angles is computed from DCM as:
 $$\begin{aligned}
-	\phi = \arctan (R_{13}/R_{23} \\
-	\theta = \arccos (R_{33} \\
-	\psi = -\arctan (R_{31}/R_{32}
+	\phi &= \arctan (R_{13}/R_{23} \\
+	\theta &= \arccos (R_{33} \\
+	\psi &= -\arctan (R_{31}/R_{32}
 \end{aligned}$$
 - For fully derivation of the relation between DCM and Euler-angles, see the Enhanced_Sampling_methods note.
+
 REFs:
 1. [Bower, Allan F. Applied Mechanics of Solids. CRC Press, 2009. page 711](http://solidmechanics.org/Text/AppendixA/AppendixA.php).
 2. https://link.aps.org/doi/10.1103/PhysRevB.92.180102.
