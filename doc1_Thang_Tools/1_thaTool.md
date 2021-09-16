@@ -23,13 +23,15 @@ Create an Object of SWITCHING FUNCTION
 			
 		Ex: sw = thaTool.SwitchFunc(r0=6.3, swType='RATIONAL', d0=0.0, n=10)
 
-------
+
+-----------------------------------------
 ## class basis_transform
-------
+
 For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or $$(\alpha,\beta,\gamma)$$. <br>
 ```note
 - DCM between 2 basises is unique. Assume a new basis x’y’z’, an old axes xyz, the DCM is: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
-$$\begin{aligned}
+$$
+\begin{aligned}
 	\mathbf{R} = \left( \begin{array}{ccc}
 		R_{11} & R_{12} & R_{13} \\
 		R_{21} & R_{22} & R_{23} \\
@@ -40,32 +42,34 @@ $$\begin{aligned}
 		cos(\theta_{y',x}) & cos(\theta_{y',y}) & cos(\theta_{y',z}) \\
 		cos(\theta_{z',x}) & cos(\theta_{z',y}) & cos(\theta_{z',z}) 
 	\end{array} \right)
-\end{aligned}$$
+\end{aligned}
+$$
 
 - but there are several posibility of Euler-angles which classed into 2 types: **Proper Euler angles** and **Tait–Bryan angles**
 - DCM can be decomposed as a product of three elemental rotation matrices of 3 Euler-angles, with a **specific order**. The widely used convension in Physic is ZXZ [intrinsic rotations](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations).
 - The implementation in this class is the **Proper Euler angles** using the convension $$Z(\phi)X(\theta)Z(\psi)$$ which the Euler-angles is computed from DCM as:
-$$\begin{aligned}
+$$
+\begin{aligned}
 	\phi &= \arctan (R_{13}/R_{23} \\
 	\theta &= \arccos (R_{33} \\
 	\psi &= -\arctan (R_{31}/R_{32}
-\end{aligned}$$
+\end{aligned}
+$$
 - This convension is also be used in [wolfram](https://mathworld.wolfram.com/EulerAngles.html) and [PLUMED](https://www.plumed.org/doc-v2.7/user-doc/html/_f_c_c_u_b_i_c.html). For fully derivation of the relation between DCM and Euler-angles, see Note: Enhanced_Sampling_methods.
 
 REFs:
 1. [Bower, Allan F. Applied Mechanics of Solids. CRC Press, 2009. page 711](http://solidmechanics.org/Text/AppendixA/AppendixA.php).
 2. https://link.aps.org/doi/10.1103/PhysRevB.92.180102.
-3. https://en.wikipedia.org/wiki/Euler_angles.
+3. [https://en.wikipedia.org/wiki/Euler_angles](https://en.wikipedia.org/wiki/Euler_angles)
 ```
 
----
 ### parameters:
 * Inputs: (optional)
   - Eold: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
   - Enew: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the NEW basis
 * Usage: 
 ```python
-BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
+	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
 ```
 
 ### basis_transform.direct_cosine_matrix()
@@ -84,7 +88,7 @@ Calculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper 
 * Input (Optional): 
   - unit='rad': 'rad', 'deg'      (default is rad)
 * Output: 
-  - Angle: 1x3 array (Phi,Theta,Psi)
+  - Angle: 1x3 `array` (Phi,Theta,Psi)
 * Usage: 
 ```python
 	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
@@ -94,11 +98,11 @@ Calculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper 
 ### basis_transform.rotate_3d(points)
 Rotate a set of points (or set of vectors) from a OLD-coords to NEW-coords
 * Input:
-	- points: Nx3 array, contain coords in OLD coordinates systems
+	- points: Nx3 `array`, contain coords in OLD coordinates systems
 * Output:
-	- points: Nx3 array, contain coords in NEW coordinates systems
-Example: 
-```py
+	- points: Nx3 `array`, contain coords in NEW coordinates systems
+* Usage: 
+```python
 	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
 	newP = BT.rotate_3d(P)
 ```
