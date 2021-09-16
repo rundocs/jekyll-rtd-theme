@@ -50,7 +50,7 @@ $$\begin{aligned}
 	\theta &= \arccos (R_{33} \\
 	\psi &= -\arctan (R_{31}/R_{32}
 \end{aligned}$$
-- For fully derivation of the relation between DCM and Euler-angles, see Note: Enhanced_Sampling_methods.
+- This convension is also be used in [wolfram](https://mathworld.wolfram.com/EulerAngles.html) and [PLUMED](https://www.plumed.org/doc-v2.7/user-doc/html/_f_c_c_u_b_i_c.html). For fully derivation of the relation between DCM and Euler-angles, see Note: Enhanced_Sampling_methods.
 
 REFs:
 1. [Bower, Allan F. Applied Mechanics of Solids. CRC Press, 2009. page 711](http://solidmechanics.org/Text/AppendixA/AppendixA.php).
@@ -61,8 +61,8 @@ REFs:
 ---
 ### parameters:
 * Inputs: (optional)
-  - Eold: 3x3 array/list, contains 3 mutully orthotropic unit vectors of the OLD basis 
-  - Enew: 3x3 array/list, contains 3 mutully orthotropic unit vectors of the NEW basis
+  - Eold: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
+  - Enew: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the NEW basis
 * Usage: 
 ```python
 BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
@@ -72,12 +72,24 @@ BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
 Calculate direction-cosines-matrix (DCM) between 2 coordinates systems.
 * Inputs: None
 * Output: 
-  - Q: 3x3 array, the rotation matrix or matrix of direction cosines
+  - Q: 3x3 `array`, the rotation matrix or matrix of direction cosines
 * Usage: 
 ```python
-Q = basis_transform.direct_cosine_matrix()
+	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
+	Q = BT.direct_cosine_matrix()
 ```
 
+### basis_transform.EulerAngle()
+Calculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper Euler angles).
+* Input (Optional): 
+  - unit='rad': 'rad', 'deg'      (default is rad)
+* Output: 
+  - Angle: 1x3 array (Phi,Theta,Psi)
+* Usage: 
+```python
+	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
+	Q = BT.EulerAngle(unit='deg')
+```
 
 
 
