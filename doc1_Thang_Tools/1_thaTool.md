@@ -9,7 +9,7 @@ This modle contains several functions to handle some kinds of data.
 -----------------------------------------
 ## class basis_transform
 
-For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or $$(\alpha,\beta,\gamma)$$. <br>
+For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosine-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or $$(\alpha,\beta,\gamma)$$. <br>
 ```note
 ```
 - DCM between 2 basises is unique. Assume a new basis x’y’z’, an old axes xyz, the DCM is: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
@@ -57,8 +57,8 @@ REFs:
 	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
 ```
 
-### basis_transform.direct_cosine_matrix()
-Calculate direction-cosines-matrix (DCM) between 2 coordinates systems.
+### basis_transform.direction_cosine_matrix()
+Calculate direction-cosine-matrix (DCM) between 2 coordinates systems.
 * Inputs Compulsory: 
 * Inputs Optional:
 * Outputs: 
@@ -66,7 +66,7 @@ Calculate direction-cosines-matrix (DCM) between 2 coordinates systems.
 * Usage: 
 ```python
 	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
-	Q = BT.direct_cosine_matrix()
+	Q = BT.direction_cosine_matrix()
 ```
 
 ### basis_transform.EulerAngle()
