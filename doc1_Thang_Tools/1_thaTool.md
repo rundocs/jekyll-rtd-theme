@@ -26,7 +26,7 @@ Create an Object of SWITCHING FUNCTION
 ------
 ## class basis_transform
 ------
-For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) (\[\phi,\theta,\psi\]` or \[\alpha,\beta,\gamma\]). <br>
+For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or $$(\alpha,\beta,\gamma)$$. <br>
 ```note
 - DCM between 2 basises is unique. Assume a new basis x’y’z’, an old axes xyz, the DCM is: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
 $$\begin{aligned}
@@ -44,13 +44,13 @@ $$\begin{aligned}
 
 - but there are several posibility of Euler-angles which classed into 2 types: **Proper Euler angles** and **Tait–Bryan angles**
 - DCM can be decomposed as a product of three elemental rotation matrices of 3 Euler-angles, with a **specific order**. The widely used convension in Physic is ZXZ [intrinsic rotations](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations).
-- The implementation in this class is the **Proper Euler angles** using the convension $Z(\phi)X(\theta)Z(\psi)$ which the Euler-angles is computed from DCM as:
+- The implementation in this class is the **Proper Euler angles** using the convension $$Z(\phi)X(\theta)Z(\psi)$$ which the Euler-angles is computed from DCM as:
 $$\begin{aligned}
 	\phi &= \arctan (R_{13}/R_{23} \\
 	\theta &= \arccos (R_{33} \\
 	\psi &= -\arctan (R_{31}/R_{32}
 \end{aligned}$$
-- For fully derivation of the relation between DCM and Euler-angles, see the Enhanced_Sampling_methods note.
+- For fully derivation of the relation between DCM and Euler-angles, see Note: Enhanced_Sampling_methods.
 
 REFs:
 1. [Bower, Allan F. Applied Mechanics of Solids. CRC Press, 2009. page 711](http://solidmechanics.org/Text/AppendixA/AppendixA.php).
@@ -63,13 +63,21 @@ REFs:
 * Inputs: (optional)
   - Eold: 3x3 array/list, contains 3 mutully orthotropic unit vectors of the OLD basis 
   - Enew: 3x3 array/list, contains 3 mutully orthotropic unit vectors of the NEW basis
-* Usage: BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
+* Usage: 
+```python
+BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
+```
 
 ### basis_transform.direct_cosine_matrix()
 Calculate direction-cosines-matrix (DCM) between 2 coordinates systems.
 * Inputs: None
 * Output: 
   - Q: 3x3 array, the rotation matrix or matrix of direction cosines
-* Usage: Q = basis_transform.direct_cosine_matrix()
+* Usage: 
+```python
+Q = basis_transform.direct_cosine_matrix()
+```
+
+
 
 
