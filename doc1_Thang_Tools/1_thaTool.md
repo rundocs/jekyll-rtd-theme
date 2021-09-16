@@ -13,6 +13,7 @@ For tranformation/rotation a vector from an oldAxis to a newAxis, we can express
 ```note
 ```
 - DCM between 2 basises is unique. Assume a new basis x’y’z’, an old axes xyz, the DCM is: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
+
 		$$
 		\begin{aligned}
 			\mathbf{R} = \left( \begin{array}{ccc}
@@ -29,7 +30,8 @@ For tranformation/rotation a vector from an oldAxis to a newAxis, we can express
 		$$
 - but there are several posibility of Euler-angles which classed into 2 types: **Proper Euler angles** and **Tait–Bryan angles**
 - DCM can be decomposed as a product of three elemental rotation matrices of 3 Euler-angles, with a **specific order**. The widely used convension in Physic is ZXZ [intrinsic rotations](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations).
-- The implementation in this class is the **Proper Euler angles** using the convension `$$Z(\phi)X(\theta)Z(\psi)$$` which the Euler-angles is computed from DCM as:
+- The implementation in this class is the **Proper Euler angles** using the convension $$Z(\phi)X(\theta)Z(\psi)$$ which the Euler-angles is computed from DCM as:
+
 		$$
 		\begin{aligned}
 			\phi &= \arctan (R_{13}/R_{23}) \\
@@ -51,9 +53,9 @@ REFs:
   	- Eold: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
   	- Enew: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the NEW basis
 * Usage: 
-		```python
-			BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
-		```
+```python
+	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
+```
 
 ### basis_transform.direct_cosine_matrix()
 Calculate direction-cosines-matrix (DCM) between 2 coordinates systems.
@@ -62,10 +64,10 @@ Calculate direction-cosines-matrix (DCM) between 2 coordinates systems.
 * Outputs: 
   	- Q: 3x3 `array`, the rotation matrix or matrix of direction cosines
 * Usage: 
-		```python
-			BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
-			Q = BT.direct_cosine_matrix()
-		```
+```python
+	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
+	Q = BT.direct_cosine_matrix()
+```
 
 ### basis_transform.EulerAngle()
 Calculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper Euler angles).
@@ -75,10 +77,10 @@ Calculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper 
 * Outputs: 
   	- Angle: 1x3 `array` (Phi,Theta,Psi)
 * Usage: 
-		```python
-			BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
-			phi,theta,psi = BT.EulerAngle(unit='deg')
-		```
+```python
+	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
+	phi,theta,psi = BT.EulerAngle(unit='deg')
+```
 
 ### basis_transform.rotate_3d(points)
 Rotate a set of points (or set of vectors) from a OLD-coords to NEW-coords
@@ -88,10 +90,10 @@ Rotate a set of points (or set of vectors) from a OLD-coords to NEW-coords
 * Output:
 	- points: Nx3 `array`, contain coords in NEW coordinates systems
 * Usage: 
-		```python
-			BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
-			newP = BT.rotate_3d(P)
-		```
+```python
+	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
+	newP = BT.rotate_3d(P)
+```
 
 -----------------------------------------
 ## class SwitchFunc
