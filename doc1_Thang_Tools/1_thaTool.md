@@ -28,7 +28,7 @@ Create an Object of SWITCHING FUNCTION
 ## class basis_transform
 
 For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or $$(\alpha,\beta,\gamma)$$. <br>
-```note
+NOTEs:
 - DCM between 2 basises is unique. Assume a new basis x’y’z’, an old axes xyz, the DCM is: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
 $$
 \begin{aligned}
@@ -50,18 +50,18 @@ $$
 - The implementation in this class is the **Proper Euler angles** using the convension $$Z(\phi)X(\theta)Z(\psi)$$ which the Euler-angles is computed from DCM as:
 $$
 \begin{aligned}
-	\phi &= \arctan (R_{13}/R_{23} \\
-	\theta &= \arccos (R_{33} \\
-	\psi &= -\arctan (R_{31}/R_{32}
+	\phi &= \arctan (R_{13}/R_{23}) \\
+	\theta &= \arccos (R_{33}) \\
+	\psi &= -\arctan (R_{31}/R_{32})
 \end{aligned}
 $$
 - This convension is also be used in [wolfram](https://mathworld.wolfram.com/EulerAngles.html) and [PLUMED](https://www.plumed.org/doc-v2.7/user-doc/html/_f_c_c_u_b_i_c.html). For fully derivation of the relation between DCM and Euler-angles, see Note: Enhanced_Sampling_methods.
 
 REFs:
 1. [Bower, Allan F. Applied Mechanics of Solids. CRC Press, 2009. page 711](http://solidmechanics.org/Text/AppendixA/AppendixA.php).
-2. https://link.aps.org/doi/10.1103/PhysRevB.92.180102.
+2. [https://link.aps.org/doi/10.1103/PhysRevB.92.180102](https://link.aps.org/doi/10.1103/PhysRevB.92.180102)
 3. [https://en.wikipedia.org/wiki/Euler_angles](https://en.wikipedia.org/wiki/Euler_angles)
-```
+
 
 ### parameters:
 * Inputs: (optional)
