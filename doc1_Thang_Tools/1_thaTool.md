@@ -26,11 +26,11 @@ Create an Object of SWITCHING FUNCTION
 
 ## class basis_transform
 For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) (Phi,Theta,Psi).
-
-REFs: 
+```note
 	1. Bower, Allan F. Applied Mechanics of Solids. CRC Press, 2009. page 711.
 	2. https://link.aps.org/doi/10.1103/PhysRevB.92.180102.
 	3. https://en.wikipedia.org/wiki/Euler_angles.
+```
 ---
 ### parameters:
 	- Eold: 3x3 array/list, contains 3 mutully orthotropic unit vectors of the OLD basis 
