@@ -29,7 +29,7 @@ For tranformation/rotation a vector from an oldAxis to a newAxis, we can express
 		$$
 - but there are several posibility of Euler-angles which classed into 2 types: **Proper Euler angles** and **Tait–Bryan angles**
 - DCM can be decomposed as a product of three elemental rotation matrices of 3 Euler-angles, with a **specific order**. The widely used convension in Physic is ZXZ [intrinsic rotations](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations).
-- The implementation in this class is the **Proper Euler angles** using the convension $$Z(\phi)X(\theta)Z(\psi)$$ which the Euler-angles is computed from DCM as:
+- The implementation in this class is the **Proper Euler angles** using the convension `$$Z(\phi)X(\theta)Z(\psi)$$` which the Euler-angles is computed from DCM as:
 		$$
 		\begin{aligned}
 			\phi &= \arctan (R_{13}/R_{23}) \\
