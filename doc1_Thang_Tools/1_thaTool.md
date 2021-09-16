@@ -26,9 +26,9 @@ Create an Object of SWITCHING FUNCTION
 ------
 ## class basis_transform
 ------
-For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) (`$\phi,\theta,\psi$` or `$\alpha,\beta,\gamma$`). <br>
+For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosines-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) (\[\phi,\theta,\psi\]` or \[\alpha,\beta,\gamma\]). <br>
 ```note
-- DCM between 2 basis is unique. Assume a new basis x’y’z’, an old axes xyz, the DCM is: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
+- DCM between 2 basises is unique. Assume a new basis x’y’z’, an old axes xyz, the DCM is: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
 $$\begin{aligned}
 	\mathbf{R} = \left( \begin{array}{ccc}
 		R_{11} & R_{12} & R_{13} \\
