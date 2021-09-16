@@ -2,12 +2,7 @@
 sort: 1
 ---
 
-# thaTool Module
-
-This modle contains several functions to handle some kinds of data.
-
------------------------------------------
-## class basis_transform
+# class basis_transform
 
 For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using [direction-cosine-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or $$(\alpha,\beta,\gamma)$$. <br>
 ```note
@@ -47,7 +42,7 @@ REFs:
 3. [https://en.wikipedia.org/wiki/Euler_angles](https://en.wikipedia.org/wiki/Euler_angles)
 
 
-### parameters:
+## parameters:
 * Inputs Compulsory: 
 * Inputs Optional: 
 	- Eold: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
@@ -57,7 +52,7 @@ REFs:
 	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
 ```
 
-### basis_transform.direction_cosine_matrix()
+## basis_transform.direction_cosine_matrix()
 Calculate direction-cosine-matrix (DCM) between 2 coordinates systems.
 * Inputs Compulsory: 
 * Inputs Optional:
@@ -69,7 +64,7 @@ Calculate direction-cosine-matrix (DCM) between 2 coordinates systems.
 	Q = BT.direction_cosine_matrix()
 ```
 
-### basis_transform.EulerAngle()
+## basis_transform.EulerAngle()
 Calculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper Euler angles).
 * Inputs Compulsory: 
 * Inputs Optional:
@@ -82,7 +77,7 @@ Calculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper 
 	phi,theta,psi = BT.EulerAngle(unit='deg')
 ```
 
-### basis_transform.rotate_3d(points)
+## basis_transform.rotate_3d(points)
 Rotate a set of points (or set of vectors) from a OLD-coords to NEW-coords
 * Inputs Compulsory:
 	- points: Nx3 `array`, contain coords in OLD coordinates systems
@@ -96,9 +91,9 @@ Rotate a set of points (or set of vectors) from a OLD-coords to NEW-coords
 ```
 
 -----------------------------------------
-## class SwitchFunc
+# class SwitchFunc
 
-### class RATIONAL:
+## class RATIONAL:
 Create an Object of SWITCHING FUNCTION
 		* Attributes:
 			swType       : (default='RATIONAL') Type of witching function, 
