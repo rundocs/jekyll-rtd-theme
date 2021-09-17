@@ -5,7 +5,10 @@ sort: 1
 # *class* basis_transform
 
 For tranformation/rotation a vector from an old_orient ([coordinate sytem](https://en.wikipedia.org/wiki/Coordinate_system)) to a new_orient, we can express a rotation using either the [direction-cosine-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or a set of three angles, the [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or the Tait–Bryan angles (yaw, pitch, roll) $$(\alpha,\beta,\gamma)$$. Sometimes, Tait–Bryan angles are also called "Euler angles", then the former should be called *proper/classic Euler angles* (normally used in Physic and Algebra). <br>
-- DCM between a new basis XYZ and old basis xyz is defined as: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
+	![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Euler2a.gif/255px-Euler2a.gif)
+	![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Intermediateframes.svg/225px-Intermediateframes.svg.png)
+
+- DCM between a new basis XYZ and old basis xyz is defined as: ([Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php))
 
 	$$
 	\begin{aligned}
@@ -25,10 +28,9 @@ For tranformation/rotation a vector from an old_orient ([coordinate sytem](https
 - DCM can be decomposed as a product of three *elemental rotation matrices* of 3 Euler-angles in a *specific order* which classed into 2 groups: 	
 	- **Proper Euler angles** (z-x-z, x-y-x, y-z-y, z-y-z, x-z-x, y-x-y)
 	- **Tait–Bryan angles** (x-y-z, y-z-x, z-x-y, x-z-y, z-y-x, y-x-z).
-- The widely used convention in Physic is the ZX'Z'' [intrinsic rotation](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations) (rotations about the axes of the rotating coordinate system XYZ, solidary with the moving body, which changes its orientation after each elemental rotation)
+- The widely used convention in Physic is the ZX'Z'' [extrinsic rotation](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations) (rotations about the axes xyz of the original coordinate system, which is assumed to remain motionless)
 
-	![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Euler2a.gif/255px-Euler2a.gif)
-	![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Intermediateframes.svg/225px-Intermediateframes.svg.png)
+
 
 - This class implemented the **Proper Euler angles** using the convension $$Z(\phi)X(\theta)Z(\psi)$$ which the Euler-angles is computed from DCM as:
 
