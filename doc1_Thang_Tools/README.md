@@ -4,7 +4,7 @@ sort: 1
 
 # Codes
 
-This section contains the doc for several in-house codes to handle some specific tasks.
+This section contains the docs for several in-house codes to handle some specific tasks.
 
 ![my_piture](./doc1_Thang_Tools/figure/CUBICswitching.jpg)
 
