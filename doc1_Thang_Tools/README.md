@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Codes
+# Code-docs
 
 This section contains the docs for several in-house codes to handle some specific tasks.
 
