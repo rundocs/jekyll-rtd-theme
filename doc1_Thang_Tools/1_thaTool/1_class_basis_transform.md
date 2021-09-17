@@ -5,7 +5,7 @@ sort: 1
 # *class* basis_transform
 
 For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using either [direction-cosine-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) ($$(\phi,\theta,\psi)$$ or $$(\alpha,\beta,\gamma)$$). <br>
-```note
+```note DCM
 ```
 - DCM between 2 basises is unique. Assume a new basis x’y’z’ and old axes xyz, the DCM is defined as: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
 
