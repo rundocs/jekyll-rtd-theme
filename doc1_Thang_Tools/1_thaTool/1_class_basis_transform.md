@@ -22,9 +22,9 @@ For tranformation/rotation a vector from an old_orient ([coordinate sytem](https
 	\end{aligned}
 	$$
 - but there are several posibilities of Euler-angles (Different authors may use different sets of rotation axes to define Euler angles, or different names for the same angles. Therefore, it's prerequisite to know what is their definition). 
-- DCM can be decomposed as a product of three elemental rotation matrices of 3 Euler-angles in a **specific order** which classed into 2 groups: 	
-	- Proper Euler angles (z-x-z, x-y-x, y-z-y, z-y-z, x-z-x, y-x-y)
-	- Tait–Bryan angles (x-y-z, y-z-x, z-x-y, x-z-y, z-y-x, y-x-z).
+- DCM can be decomposed as a product of three *elemental rotation matrices* of 3 Euler-angles in a *specific order* which classed into 2 groups: 	
+	- **Proper Euler angles** (z-x-z, x-y-x, y-z-y, z-y-z, x-z-x, y-x-y)
+	- **Tait–Bryan angles** (x-y-z, y-z-x, z-x-y, x-z-y, z-y-x, y-x-z).
 - The widely used convention in Physic is the ZX'Z'' [intrinsic rotations](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations).
 
 	![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Euler2a.gif/255px-Euler2a.gif)
