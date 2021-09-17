@@ -2,7 +2,7 @@
 sort: 4
 ---
 
-# 4. thaFreeEnergy Module
+# *module* thaFreeEnergy 
 
 This module contains classes and functions relate to the calcualtion of free energy.
 

@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-# 2. thaFileType Module
+# *module* thaFileType 
 
 This module contains classes and functions to play around file-types.
 

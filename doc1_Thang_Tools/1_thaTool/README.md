@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# 1. thaTool Module
+# *module* thaTool 
 
 This module contains classes and functions to handle some stuffs.
 

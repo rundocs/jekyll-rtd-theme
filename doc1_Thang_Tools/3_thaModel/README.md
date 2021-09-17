@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# 3. thaModel Module
+# *module* thaModel 
 
 This module contains classes and functions to create the models of atomic systems.
 
