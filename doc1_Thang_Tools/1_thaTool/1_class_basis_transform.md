@@ -4,10 +4,8 @@ sort: 1
 
 # *class* basis_transform
 
-For tranformation/rotation a vector from an oldAxis to a newAxis, we can express a rotation using either [direction-cosine-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or by [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) ($$(\phi,\theta,\psi)$$ or $$(\alpha,\beta,\gamma)$$). <br>
-```note DCM
-```
-- DCM between 2 basises is unique. Assume a new basis x’y’z’ and old axes xyz, the DCM is defined as: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
+For tranformation/rotation a vector from an old_orient ([coordinate sytem](https://en.wikipedia.org/wiki/Coordinate_system)) to a new_orient, we can express a rotation using either the [direction-cosine-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or a set of three angles, the [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or the Tait–Bryan angles (yaw, pitch, roll) $$(\alpha,\beta,\gamma)$$). Sometimes, Tait–Bryan angles are also called "Euler angles", then the former is called *proper/classic Euler angles*. <br>
+- DCM between a new basis x’y’z’ and old axes xyz is defined as: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
 
 	$$
 	\begin{aligned}
@@ -23,8 +21,14 @@ For tranformation/rotation a vector from an oldAxis to a newAxis, we can express
 		\end{array} \right)
 	\end{aligned}
 	$$
-- but there are several posibilities of Euler-angles which classed into 2 types: **Proper Euler angles** and **Tait–Bryan angles**
-- DCM can be decomposed as a product of three elemental rotation matrices of 3 Euler-angles in a **specific order**. The widely used convention in Physic is ZXZ [intrinsic rotations](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations).
+- but there are several posibilities of Euler-angles (Different authors may use different sets of rotation axes to define Euler angles, or different names for the same angles. Therefore, it's prerequisite to know what is their definition). 
+- DCM can be decomposed as a product of three elemental rotation matrices of 3 Euler-angles in a **specific order** which classed into 2 groups: 	
+	- Proper Euler angles (z-x-z, x-y-x, y-z-y, z-y-z, x-z-x, y-x-y)
+	- Tait–Bryan angles (x-y-z, y-z-x, z-x-y, x-z-y, z-y-x, y-x-z).
+- The widely used convention in Physic is the ZX'Z'' [intrinsic rotations](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations).
+![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Euler2a.gif/255px-Euler2a.gif)
+![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Intermediateframes.svg/225px-Intermediateframes.svg.png)
+
 - This class implemented the **Proper Euler angles** using the convension $$Z(\phi)X(\theta)Z(\psi)$$ which the Euler-angles is computed from DCM as:
 
 	$$
