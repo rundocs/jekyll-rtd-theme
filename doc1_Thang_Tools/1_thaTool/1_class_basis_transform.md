@@ -48,7 +48,7 @@ REFs:
 2. [https://en.wikipedia.org/wiki/Euler_angles](https://en.wikipedia.org/wiki/Euler_angles)
 
 
-## initilization:
+## Initilization
 * Inputs Compulsory: 
 * Inputs Optional: 
 	- old_orient: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
