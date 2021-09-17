@@ -4,8 +4,8 @@ sort: 1
 
 # *class* basis_transform
 
-For tranformation/rotation a vector from an old_orient ([coordinate sytem](https://en.wikipedia.org/wiki/Coordinate_system)) to a new_orient, we can express a rotation using either the [direction-cosine-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or a set of three angles, the [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or the Tait–Bryan angles (yaw, pitch, roll) $$(\alpha,\beta,\gamma)$$). Sometimes, Tait–Bryan angles are also called "Euler angles", then the former is called *proper/classic Euler angles* (normally used in Physic and Algebra). <br>
-- DCM between a new basis x’y’z’ and old axes xyz is defined as: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
+For tranformation/rotation a vector from an old_orient ([coordinate sytem](https://en.wikipedia.org/wiki/Coordinate_system)) to a new_orient, we can express a rotation using either the [direction-cosine-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or a set of three angles, the [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or the Tait–Bryan angles (yaw, pitch, roll) $$(\alpha,\beta,\gamma)$$. Sometimes, Tait–Bryan angles are also called "Euler angles", then the former should be called *proper/classic Euler angles* (normally used in Physic and Algebra). <br>
+- DCM between a new basis XYZ and old basis xyz is defined as: [Bower 2009, p711](http://solidmechanics.org/Text/AppendixA/AppendixA.php)
 
 	$$
 	\begin{aligned}
@@ -15,9 +15,9 @@ For tranformation/rotation a vector from an old_orient ([coordinate sytem](https
 			R_{31} & R_{32} & R_{33} 
 		\end{array} \right)
 		= \left( \begin{array}{ccc}
-			cos(\theta_{x',x}) & cos(\theta_{x',y}) & cos(\theta_{x',z}) \\
-			cos(\theta_{y',x}) & cos(\theta_{y',y}) & cos(\theta_{y',z}) \\
-			cos(\theta_{z',x}) & cos(\theta_{z',y}) & cos(\theta_{z',z}) 
+			cos(\theta_{X,x}) & cos(\theta_{X,y}) & cos(\theta_{X,z}) \\
+			cos(\theta_{Y,x}) & cos(\theta_{Y,y}) & cos(\theta_{Y,z}) \\
+			cos(\theta_{Z,x}) & cos(\theta_{Z,y}) & cos(\theta_{Z,z}) 
 		\end{array} \right)
 	\end{aligned}
 	$$
@@ -25,7 +25,7 @@ For tranformation/rotation a vector from an old_orient ([coordinate sytem](https
 - DCM can be decomposed as a product of three *elemental rotation matrices* of 3 Euler-angles in a *specific order* which classed into 2 groups: 	
 	- **Proper Euler angles** (z-x-z, x-y-x, y-z-y, z-y-z, x-z-x, y-x-y)
 	- **Tait–Bryan angles** (x-y-z, y-z-x, z-x-y, x-z-y, z-y-x, y-x-z).
-- The widely used convention in Physic is the ZX'Z'' [intrinsic rotations](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations).
+- The widely used convention in Physic is the ZX'Z'' [intrinsic rotation](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations) (rotations about the axes of the rotating coordinate system XYZ, solidary with the moving body, which changes its orientation after each elemental rotation)
 
 	![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Euler2a.gif/255px-Euler2a.gif)
 	![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Intermediateframes.svg/225px-Intermediateframes.svg.png)
@@ -49,17 +49,17 @@ REFs:
 ## Construction:
 * Inputs Compulsory: 
 * Inputs Optional: 
-	- Eold: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
-	- Enew: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the NEW basis
+	- old_orient: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
+	- new_orient: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the NEW basis
 * Usage: 
 ```python
 	oldAxis = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
 	newAxis = [[1, -1, 0], [1, 1, -2], [1, 1, 1,]]
-	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
+	BT = thaTool.basis_transform(old_orient=oldAxis, new_orient=newAxis)
 ```
 * **Attributes:**
-	- Eold: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
-	- Enew: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the NEW basis
+	- old_orient: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
+	- new_orient: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the NEW basis
 
 ## .direction_cosine_matrix()
 The `method` to calculate direction-cosine-matrix (DCM) between 2 coordinates systems.
@@ -69,7 +69,7 @@ The `method` to calculate direction-cosine-matrix (DCM) between 2 coordinates sy
 	- Q: 3x3 `array`, the rotation matrix or matrix of direction cosines
 * Usage: 
 ```python
-	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis)
+	BT = thaTool.basis_transform(old_orient=oldAxis, new_orient=newAxis)
 	Q = BT.direction_cosine_matrix()
 ```
 
@@ -82,7 +82,7 @@ The `method` to alculate Euler Angles (EA) between 2 coordinates systems (intrin
 	- Angle: 1x3 `array` (Phi,Theta,Psi)
 * Usage: 
 ```python
-	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
+	BT = thaTool.basis_transform(old_orient=oldAxis, new_orient=newAxis) 
 	phi,theta,psi = BT.EulerAngle(unit='deg')
 ```
 
@@ -95,7 +95,7 @@ The `method` to rotate a set of points (or set of vectors) from a OLD-coords to 
 	- points: Nx3 `array`, contain coords in NEW coordinates systems
 * Usage: 
 ```python
-	BT = thaTool.basis_transform(Eold=oldAxis, Enew=newAxis) 
+	BT = thaTool.basis_transform(old_orient=oldAxis, new_orient=newAxis) 
 	newP = BT.rotate_3d(P)
 ```
 
