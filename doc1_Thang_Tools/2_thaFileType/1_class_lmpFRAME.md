@@ -110,24 +110,26 @@ The **method** to write DUMP file.
 
 ## .writeDATA()
 The **method** to write DATA file.
-* Parameters:
+* Inputs:
 
-	| Inputs | Default/Possible values | Type | Description |
-	|| Inputs Compulsory ||
-	|:------------------|:------------------------|:----:|:------------|
-	| fileName  | | `string`| the name of DATA file |
-	
-* Inputs Optional:
-
-	| Inputs Optional | Default/Possible values | Type | Description |
-	|:----------------|:------------------------|:----:|:------------|
+	| Parameters | Default/Possible values | Type | Description |
+	|:-----------|:------------------------|:----:|:------------|
+	| **Inputs Compulsory:**|
+	| fileName   |     		| `string`| the name of DATA file |
+	| 						|
+	| **Inputs Optional:** 	|
 	| atom_style | 'atomic'/ 'charge', 'molecular', 'full'| `string`| style of atomistic system |
-	| nFlag      | False/ True    | `boolean`| whether or not include nFlag |
-	| vel        | False/ True    | `boolean`| whether or not write Velocity |
+	| nFlag      | False/ True  | `boolean`| whether or not include nFlag |
+	| vel        | False/ True  | `boolean`| whether or not write Velocity |
 	| FMT		 | '%.6f'   	| `string` | string format for output values |
 	| comment    | ''      		| `string` | the comment |
+
 * Outputs:
-	- a DATA file
+
+	| Parameters | Type | Description |
+	|:-----------|:----:|:------------|
+	| 			 | '.dat'| the DATA file |
+	
 * Usage:
 ```python
 	da.writeDATA('test.dat', atom_style='atomic', nFlag=False, vel=False, FMT='%.4f')
