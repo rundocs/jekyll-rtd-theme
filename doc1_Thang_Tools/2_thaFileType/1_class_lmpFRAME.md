@@ -52,7 +52,7 @@ REFs:
 	- .frame    : `pandas.DataFrame`, data of configuration
 
 ## .readDUMP()
-The `method` create FRAME object by reading DUMP file.
+The **method** create FRAME object by reading DUMP file.
 * Inputs Compulsory: 
 	- fileName: `string', is the name of DUMP file
 * Inputs Optional:
@@ -64,7 +64,7 @@ The `method` create FRAME object by reading DUMP file.
 ```
 
 ## .readDATA()
-The `method` create FRAME object by reading DATA file.
+The **method** create FRAME object by reading DATA file.
 * Inputs Compulsory: 
 	- fileName: `string', is the name of DUMP file
 * Inputs Optional:
@@ -78,7 +78,7 @@ The `method` create FRAME object by reading DATA file.
 ```
 
 ## .createFRAME()
-The `method` create FRAME object with input data.
+The **method** create FRAME object with input data.
 * Inputs Compulsory: 
 	- DataFrame: `pandas.DataFrame`, data of configuration
 * Inputs Optional:
@@ -95,7 +95,7 @@ The `method` create FRAME object with input data.
 
 
 ## .writeDUMP()
-The `method` to write DUMP file.
+The **method** to write DUMP file.
 * Inputs Compulsory: 
 	- fileName: `string', the name of DUMP file
 * Inputs Optional:
@@ -109,7 +109,7 @@ The `method` to write DUMP file.
 ```
 
 ## .writeDATA()
-The `method` to write DATA file.
+The **method** to write DATA file.
 * Inputs Compulsory: 
 	- fileName: `string', the name of DATA file
 * Inputs Optional: 
@@ -128,7 +128,7 @@ The `method` to write DATA file.
 ```
 
 ## .writeXYZ()
-The `method` to write XYZ file.
+The **method** to write XYZ file.
 * Inputs Compulsory: 
 	- fileName: `string', the name of DUMP file
 * Inputs Optional:
