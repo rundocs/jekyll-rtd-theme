@@ -113,6 +113,7 @@ The **method** to write DATA file.
 * Parameters:
 	- fileName: `string', the name of DATA file
 * Inputs Optional:
+
 	| Parameters | Possible values | Type | Description |
 	|:-----------|:----------------|:----:|:------------|
 	| **Inputs Optional**| | | |
