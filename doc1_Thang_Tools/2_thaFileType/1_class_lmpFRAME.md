@@ -110,12 +110,13 @@ The **method** to write DUMP file.
 
 ## .writeDATA()
 The **method** to write DATA file.
-* Inputs:
-	- fileName: `string', the name of DATA file
+* Parameters:
 
-	| Inputs Compulsory | Default/Possible values | Type | Description |
+	| Inputs | Default/Possible values | Type | Description |
+	|| Inputs Compulsory ||
 	|:------------------|:------------------------|:----:|:------------|
 	| fileName  | | `string`| the name of DATA file |
+	
 * Inputs Optional:
 
 	| Inputs Optional | Default/Possible values | Type | Description |
