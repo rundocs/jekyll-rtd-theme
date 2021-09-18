@@ -2,9 +2,9 @@
 sort: 1
 ---
 
-# *class* basis_transform
+# *class* coord_transformation
 
-For tranformation/rotation a vector from an old_orient ([coordinate sytem](https://en.wikipedia.org/wiki/Coordinate_system)) to a new_orient, we can express a rotation using either the [direction-cosine-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM) or a set of three angles, the [Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or the Tait–Bryan angles (yaw, pitch, roll) $$(\alpha,\beta,\gamma)$$. Sometimes, Tait–Bryan angles are also called "Euler angles", then the former should be called *proper/classic Euler angles* (normally used in Physic and Algebra). <br>
+For tranformation/rotation a vector from an old_orient ([coordinate sytem](https://en.wikipedia.org/wiki/Coordinate_system)) to a new_orient, we can express a rotation using either the [direction-cosine-matrix](https://en.wikiversity.org/wiki/PlanetPhysics/Direction_Cosine_Matrix) (DCM), a set of three angles ([Euler-angles](https://en.wikipedia.org/wiki/Euler_angles) $$(\phi,\theta,\psi)$$ or the Tait–Bryan angles (yaw, pitch, roll) $$(\alpha,\beta,\gamma)$$. Sometimes, Tait–Bryan angles are also called "Euler angles", then the former should be called *proper/classic Euler angles* (used in Physic and Algebra)) or the [Hamilton Quaternion](https://en.wikipedia.org/wiki/Quaternion) (Q). There are relations between DCM, Euler angles and Q [Henderson 1977](https://ntrs.nasa.gov/api/citations/19770019231/downloads/19770019231).<br>
 	![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Euler2a.gif/255px-Euler2a.gif)
 	![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Intermediateframes.svg/225px-Intermediateframes.svg.png)
 
@@ -24,28 +24,37 @@ For tranformation/rotation a vector from an old_orient ([coordinate sytem](https
 		\end{array} \right)
 	\end{aligned}
 	$$
-- but there are several posibilities of Euler-angles (Different authors may use different sets of rotation axes to define Euler angles, or different names for the same angles. Therefore, it's prerequisite to know what is their definition). 
-- DCM can be decomposed as a product of three *elemental rotation matrices* of 3 Euler-angles in a *specific order* which classed into 2 groups: 	
+- There are several posibilities of Euler-angles (Different authors may use different sets of rotation axes to define Euler angles, or different names for the same angles. Therefore, it's prerequisite to know what is their definition). 
+- DCM can be decomposed as a product of three *elemental rotation matrices* of 3 Euler-angles in a *specific order*. There are 12 possible Euler angle sets using three rotations, which classed into 2 groups: 	
 	- **Proper Euler angles** (z-x-z, x-y-x, y-z-y, z-y-z, x-z-x, y-x-y)
 	- **Tait–Bryan angles** (x-y-z, y-z-x, z-x-y, x-z-y, z-y-x, y-x-z).
-- The widely used convention in Physic is the ZX'Z'' [extrinsic rotation](https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations) (rotations about the axes xyz of the original coordinate system, which is assumed to remain motionless)
-
-
-
-- This class implemented the **Proper Euler angles** using the convension $$Z(\phi)X(\theta)Z(\psi)$$ which the Euler-angles is computed from DCM as:
+- The most commonly used convention in Physic is ZXZ, which is impelemented in this class to compute *classic Euler angles* (For the derivation of the relation between DCM and Euler-angles, see Note: [Enhanced_Sampling_methods](https://thangckt.github.io/note/))
 
 	$$
 	\begin{aligned}
-		\phi &= \arctan (R_{13}/R_{23}) \\
-		\theta &= \arccos (R_{33}) \\
-		\psi &= -\arctan (R_{31}/R_{32})
+		\mathbf{R} = Z(\phi)X(\theta)Z(\psi)
+		= \left( \begin{array}{ccc}
+			(c_\phi c_\psi - s_\phi c_\theta s_\psi) 		& (c_\phi s_\psi + s_\phi c_\theta c_\psi)	&  	s_\phi s_\theta \\
+			(-s_\phi c_\psi - c_\phi c_\theta s_\psi ) 	& (-s_\phi s_\psi + c_\phi c_\theta c_\psi)	&  c_\phi s_\theta\\
+			s_\theta c_\psi			  							        &  -s_\theta c_\psi							          	&  c_\theta\\
+		\end{array} \right)
 	\end{aligned}
 	$$
-- This convension is also be used in [wolfram](https://mathworld.wolfram.com/EulerAngles.html) and [PLUMED](https://www.plumed.org/doc-v2.7/user-doc/html/_f_c_c_u_b_i_c.html). For the derivation of the relation between DCM and Euler-angles, see Note: [Enhanced_Sampling_methods](https://thangckt.github.io/note/).
+- The classic Euler-angles is then computed from DCM as:
+
+	$$
+	\begin{aligned}
+		\phi &= \arctan(\frac{R_{13}}{- R_{23}} ) \\
+		\theta &= \arctan( \frac{\sqrt{1- R^2_{33} }}{R_{33}}) \\
+		\psi &= \arctan(\frac{R_{31}}{R_{32}}) 
+	\end{aligned}
+	$$
+- This convension may also be used in [wolfram](https://mathworld.wolfram.com/EulerAngles.html) and [PLUMED](https://www.plumed.org/doc-v2.7/user-doc/html/_f_c_c_u_b_i_c.html)
 
 REFs:
 1. [Bower, Allan F. Applied Mechanics of Solids. CRC Press, 2009. page 711](http://solidmechanics.org/Text/AppendixA/AppendixA.php).
 2. [https://en.wikipedia.org/wiki/Euler_angles](https://en.wikipedia.org/wiki/Euler_angles)
+3. [Henderson, D. M. Euler angles, quaternions, and transformation matrices for space shuttle analysis, NASA, 1977](https://ntrs.nasa.gov/api/citations/19770019231/downloads/19770019231.pdf)
 
 
 ## Construction:
@@ -57,7 +66,7 @@ REFs:
 ```python
 	oldAxis = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
 	newAxis = [[1, -1, 0], [1, 1, -2], [1, 1, 1,]]
-	BT = thaTool.basis_transform(old_orient=oldAxis, new_orient=newAxis)
+	BT = thaTool.coord_transformation(old_orient=oldAxis, new_orient=newAxis)
 ```
 * **Attributes:**
 	- old_orient: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
@@ -71,7 +80,7 @@ The `method` to calculate direction-cosine-matrix (DCM) between 2 coordinates sy
 	- Q: 3x3 `array`, the rotation matrix or matrix of direction cosines
 * Usage: 
 ```python
-	BT = thaTool.basis_transform(old_orient=oldAxis, new_orient=newAxis)
+	BT = thaTool.coord_transformation(old_orient=oldAxis, new_orient=newAxis)
 	Q = BT.direction_cosine_matrix()
 ```
 
@@ -84,7 +93,7 @@ The `method` to alculate Euler Angles (EA) between 2 coordinates systems (intrin
 	- Angle: 1x3 `array` (Phi,Theta,Psi)
 * Usage: 
 ```python
-	BT = thaTool.basis_transform(old_orient=oldAxis, new_orient=newAxis) 
+	BT = thaTool.coord_transformation(old_orient=oldAxis, new_orient=newAxis) 
 	phi,theta,psi = BT.EulerAngle(unit='deg')
 ```
 
@@ -97,7 +106,7 @@ The `method` to rotate a set of points (or set of vectors) from a OLD-coords to 
 	- points: Nx3 `array`, contain coords in NEW coordinates systems
 * Usage: 
 ```python
-	BT = thaTool.basis_transform(old_orient=oldAxis, new_orient=newAxis) 
+	BT = thaTool.coord_transformation(old_orient=oldAxis, new_orient=newAxis) 
 	newP = BT.rotate_3d(P)
 ```
 
