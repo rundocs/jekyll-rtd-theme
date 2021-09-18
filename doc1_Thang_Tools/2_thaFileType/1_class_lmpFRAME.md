@@ -110,12 +110,12 @@ The **method** to write DUMP file.
 
 ## .writeDATA()
 The **method** to write DATA file.
-* Inputs Compulsory:
+* Parameters:
 	- fileName: `string', the name of DATA file
 * Inputs Optional:
-
-	|		    | Default\n Possible | Type    | Description |
-	|:----------|----------|:--------|:------------|
+	| Parameters | Possible values | Type | Description |
+	|:-----------|:----------------|:----:|:------------|
+	| **Inputs Optional**| | | |
 	|atom_style | 'atomic' | `string`|`'atomic'/'charge'/'molecular'/'full'`, style of atomistic system |
 	|nFlag      | False    | `boolean`|`False/True`, whether or not include nFlag |
 	|vel        | False    | `boolean`|`False/True`, whether or not write Velocity |
