@@ -44,9 +44,9 @@ For tranformation/rotation a vector from an old_orient ([coordinate sytem](https
 
 	$$
 	\begin{aligned}
-		\phi &= \arctan(\frac{R_{13}}{- R_{23}} ) \\
-		\theta &= \arctan( \frac{\sqrt{1- R^2_{33} }}{R_{33}}) \\
-		\psi &= \arctan(\frac{R_{31}}{R_{32}}) 
+		\phi &= \arctan \left( \frac{R_{13}}{- R_{23}} \right) \\
+		\theta &= \arctan \left( \frac{\sqrt{1- R^2_{33} }}{R_{33}} \right) \\
+		\psi &= \arctan \left( \frac{R_{31}}{R_{32}} \right) 
 	\end{aligned}
 	$$
 - This convension may also be used in [wolfram](https://mathworld.wolfram.com/EulerAngles.html) and [PLUMED](https://www.plumed.org/doc-v2.7/user-doc/html/_f_c_c_u_b_i_c.html)
