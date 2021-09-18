@@ -112,12 +112,12 @@ The **method** to write DUMP file.
 The **method** to write DATA file.
 * Parameters:
 
-	| Inputs  		| Default/Possible values | Type    | Description |
-	|:--------------|:------------------------|:-------:|:------------|
-	|**Compulsory:**|
+	| Inputs-Compulsory | Default/Possible values | Type    | Description |
+	|:------------------|:------------------------|:-------:|:------------|
 	| fileName   |     			| `string`| the name of DATA file |
-	|				|
-	|**Optional:** 	|
+
+	| Inputs-Optional   | Default/Possible values | Type    | Description |
+	|:------------------|:------------------------|:-------:|:------------|
 	| atom_style | 'atomic'/ 'charge', 'molecular', 'full'| `string`| style of atomistic system |
 	| nFlag      | False/ True  | `boolean`| whether or not include nFlag |
 	| vel        | False/ True  | `boolean`| whether or not write Velocity |
