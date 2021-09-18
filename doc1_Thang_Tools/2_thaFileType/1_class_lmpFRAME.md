@@ -116,8 +116,8 @@ The **method** to write DATA file.
 
 	| Parameters | Possible values | Type | Description |
 	|:-----------|:----------------|:----:|:------------|
-	| **Inputs Optional**| | | |
-	|atom_style | `'atomic','charge','molecular','full'`| `string`| style of atomistic system |
+	| **Inputs Optional**|
+	|atom_style | 'atomic','charge','molecular','full'| `string`| style of atomistic system |
 	|nFlag      | False    | `boolean`|`False/True`, whether or not include nFlag |
 	|vel        | False    | `boolean`|`False/True`, whether or not write Velocity |
 	|FMT		    | '%.6f'   | `string` | string format for output values |
