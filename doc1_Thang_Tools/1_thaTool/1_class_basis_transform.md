@@ -77,27 +77,27 @@ The `method` to calculate direction-cosine-matrix (DCM) between 2 coordinates sy
 * Inputs Compulsory: 
 * Inputs Optional:
 * Outputs: 
-	- Q: 3x3 `array`, the rotation matrix or matrix of direction cosines
+	- DCM: 3x3 `array`, the rotation matrix or matrix of direction cosines
 * Usage: 
 ```python
 	BT = thaTool.coord_transformation(old_orient=oldAxis, new_orient=newAxis)
-	Q = BT.direction_cosine_matrix()
+	R = BT.direction_cosine_matrix()
 ```
 
 ## .EulerAngle()
 The `method` to alculate Euler Angles (EA) between 2 coordinates systems (intrinsic ZXZ proper Euler angles).
 * Inputs Compulsory: 
 * Inputs Optional:
-	- unit='rad': 'rad', 'deg'      (default is rad)
+	- unit='rad': 'rad' or 'deg'      (default is rad)
 * Outputs: 
-	- Angle: 1x3 `array` (Phi,Theta,Psi)
+	- Angle: 1x3 `array` $$(\phi,\theta,\psi)$$
 * Usage: 
 ```python
 	BT = thaTool.coord_transformation(old_orient=oldAxis, new_orient=newAxis) 
 	phi,theta,psi = BT.EulerAngle(unit='deg')
 ```
 
-## .rotate_3d(points)
+## .rotate_3d()
 The `method` to rotate a set of points (or set of vectors) from a OLD-coords to NEW-coords
 * Inputs Compulsory:
 	- points: Nx3 `array`, contain coords in OLD coordinates systems

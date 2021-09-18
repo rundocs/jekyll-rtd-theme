@@ -85,10 +85,56 @@ The `method` create FRAME object with input data.
 	- box = [[0,1],[0,1],[0,1]]	: option to input boxSize
 	- boxAngle = [0,0,0]				: option to input boxAngle
 	- mass = []									: option to input atomic masses
-* Outputs: alternate the lmpFRAME object attributes.S
+* Outputs: 
+	- modifying the lmpFRAME object attributes.
 * Usage: 
 ```python
 	da = thaFileType.lmpFRAME()
 	da.createFRAME(DataFrame=df)
 ```
 
+
+## .writeDUMP()
+The `method` to write DUMP file.
+* Inputs Compulsory: 
+	- fileName: `string', the name of DUMP file
+* Inputs Optional:
+	- column: `list` 1xN, contains columns to be written, by default all columns will be written (column = ['id', 'type', 'xu', 'yu', 'zu']  )
+	- FMT = '%.6f': `string', string format for output values.
+* Outputs: 
+	- a DUMP file
+* Usage: 
+```python
+	da.writeDUMP('test.cfg', column=['id','type','x','y','z'], FMT='%.4f')
+```
+
+## .writeDATA()
+The `method` to write DATA file.
+* Inputs Compulsory: 
+	- fileName: `string', the name of DATA file
+* Inputs Optional: 
+	- atom_style = 'atomic'/'charge'/'molecular'/'full': `string`, style of system
+	- nFlag      = False/True: `boolean`, whether or not include nFlag
+	- vel        = Fasle/True: `boolean`, whether or not write Velocity
+	- FMT		     = '%.6f': `string', string format for output values.
+	- comment    = '': `string', the comment.
+* Outputs: 
+	- a DATA file
+* Usage: 
+```python
+	da.writeDATA('test.dat', atom_style='atomic', nFlag=False, vel=False, FMT='%.4f')
+```
+
+## .writeXYZ()
+The `method` to write XYZ file.
+* Inputs Compulsory: 
+	- fileName: `string', the name of DUMP file
+* Inputs Optional:
+	- column=['xu', 'yu', 'zu']: `list` 1xN, contains columns to be written 
+	- FMT = '%.6f': `string', string format for output values.
+* Outputs: 
+	- XYZfile
+* Usage:
+```python
+	da.writeXYZ('test.xyz')
+```
