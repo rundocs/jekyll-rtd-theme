@@ -113,11 +113,13 @@ The `method` to write DATA file.
 * Inputs Compulsory: 
 	- fileName: `string', the name of DATA file
 * Inputs Optional: 
-	- atom_style = 'atomic'/'charge'/'molecular'/'full': `string`, style of system
-	- nFlag      = False/True: `boolean`, whether or not include nFlag
-	- vel        = Fasle/True: `boolean`, whether or not write Velocity
-	- FMT		     = '%.6f': `string', string format for output values.
-	- comment    = '': `string', the comment.
+	|		    | Default  | Type    | Description |
+	|:----------|----------|:--------|:------------|
+	|atom_style | 'atomic' | `string`|`'atomic'/'charge'/'molecular'/'full'`, style of atomistic system |
+	|nFlag      | False    | `boolean`|`False/True`, whether or not include nFlag |
+	|vel        | False    | `boolean`|`False/True`, whether or not write Velocity |
+	|FMT		| '%.6f'   | `string` | string format for output values |
+	|comment    | ''       | `string` | the comment |
 * Outputs: 
 	- a DATA file
 * Usage: 
@@ -130,8 +132,8 @@ The `method` to write XYZ file.
 * Inputs Compulsory: 
 	- fileName: `string', the name of DUMP file
 * Inputs Optional:
-	- column=['xu', 'yu', 'zu']: `list` 1xN, contains columns to be written 
-	- FMT = '%.6f': `string', string format for output values.
+	- column = ['xu', 'yu', 'zu']: `list` 1xN, contains columns to be written 
+	- FMT    = '%.6f': `string', string format for output values.
 * Outputs: 
 	- XYZfile
 * Usage:
