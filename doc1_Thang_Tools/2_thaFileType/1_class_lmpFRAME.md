@@ -102,15 +102,15 @@ The **method** to write DUMP file.
 	|:------------------|:-------:|:------------|
 	| fileName   		| `string`| the name of DATA file |
 
-	| Inputs-Optional   | Default/Possible values | Type    | Description |
-	|:------------------|:------------------------|:-------:|:------------|
-	| column        	| ['id', 'type',...]   	  | `list`	| contains columns to be written, by default all columns will be written |
-	| FMT		 		| '%.6f'   				  | `string`| string format for output values |
+	| Inputs-Optional   | Default/Possible 	| Type    | Description |
+	|:------------------|:------------------|:-------:|:------------|
+	| column        	| ['id', 'type',...]| `list`	| contains columns to be written, by default all columns will be written |
+	| FMT		 		| '%.6f'   			| `string`| string format for output values |
 
 	| Outputs 			| Type    | Description |
 	|:------------------|:-------:|:------------|
 	| 					| '.cfg'  | the DUMP file |
-	
+
 * Usage: 
 ```python
 	da.writeDUMP('test.cfg', column=['id','type','x','y','z'], FMT='%.4f')
@@ -124,13 +124,13 @@ The **method** to write DATA file.
 	|:------------------|:-------:|:------------|
 	| fileName   		| `string`| the name of DATA file |
 
-	| Inputs-Optional   | Default/Possible values | Type    | Description |
-	|:------------------|:------------------------|:-------:|:------------|
+	| Inputs-Optional   | Default/Possible 	| Type    | Description |
+	|:------------------|:------------------|:-------:|:------------|
 	| atom_style 		| 'atomic'/ 'charge', 'molecular', 'full'| `string`| style of atomistic system |
-	| nFlag      		| False/ True  	| `boolean`| whether or not include nFlag |
-	| vel        		| False/ True  	| `boolean`| whether or not write Velocity |
-	| FMT		 		| '%.6f'   		| `string` | string format for output values |
-	| comment    		| ''      		| `string` | the comment |
+	| nFlag      		| False/ True  		| `boolean`| whether or not include nFlag |
+	| vel        		| False/ True  		| `boolean`| whether or not write Velocity |
+	| FMT		 		| '%.6f'   			| `string` | string format for output values |
+	| comment    		| ''      			| `string` | the comment |
 
 	| Outputs 			| Type    | Description |
 	|:------------------|:-------:|:------------|
@@ -143,13 +143,21 @@ The **method** to write DATA file.
 
 ## .writeXYZ()
 The **method** to write XYZ file.
-* Inputs Compulsory: 
-	- fileName: `string', the name of DUMP file
-* Inputs Optional:
-	- column = ['xu', 'yu', 'zu']: `list` 1xN, contains columns to be written 
-	- FMT    = '%.6f': `string', string format for output values.
-* Outputs: 
-	- XYZfile
+* Parameters:
+
+	| Inputs-Compulsory | Type    | Description |
+	|:------------------|:-------:|:------------|
+	| fileName   		| `string`| the name of XYZ file |
+
+	| Inputs-Optional   | Default/Possible 	| Type    | Description |
+	|:------------------|:------------------|:-------:|:------------|
+	| column        	| ['xu', 'yu', 'zu']| `list` 1xN| list contains columns to be written  |
+	| FMT		 		| '%.6f'   			| `string`| string format for output values |
+
+	| Outputs 			| Type    | Description |
+	|:------------------|:-------:|:------------|
+	| 					| '.cfg'  | the DUMP file |
+	
 * Usage:
 ```python
 	da.writeXYZ('test.xyz')
