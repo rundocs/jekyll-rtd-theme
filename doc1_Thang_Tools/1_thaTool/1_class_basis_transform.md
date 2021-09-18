@@ -57,7 +57,7 @@ REFs:
 3. [Henderson, D. M. Euler angles, quaternions, and transformation matrices for space shuttle analysis, NASA, 1977](https://ntrs.nasa.gov/api/citations/19770019231/downloads/19770019231.pdf)
 
 
-## Construction:
+## Initilization
 * Inputs Compulsory: 
 * Inputs Optional: 
 	- old_orient: 3x3 `array/list`, contains 3 mutully orthotropic unit vectors of the OLD basis 
