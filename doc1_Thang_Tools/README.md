@@ -6,6 +6,9 @@ sort: 1
 
 This section contains the docs for several in-house codes to handle some specific tasks.
 
-![](https://code4.com.au/wp-content/uploads/sites/7/2017/11/helloworld-e1552167637619.png)
+```python
+if life is not "bullshit":
+  print("Hello world")
+```
 
 {% include list.liquid all=true %}
