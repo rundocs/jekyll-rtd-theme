@@ -1,64 +1,19 @@
 ---
-sort: 1
+sort: 3
 ---
 
-# *class* lmpFRAME
+# *class* readTEXT
 
-This class create a data-object (single configuration) for the analysis of computing data from LAMMPS. The file formats implemented in this class <br>
-- [LAMMPS DATA Format](https://docs.lammps.org/2001/data_format.html)
-- [LAMMPS DUMP Format](https://docs.lammps.org/dump.html)
-- [PDB format](https://ftp.wwpdb.org/pub/pdb/doc/format_descriptions/Format_v33_Letter.pdf)
-- [XYZ format](https://www.cgl.ucsf.edu/chimera/docs/UsersGuide/xyz.html)
-
-![pic](https://icme.hpc.msstate.edu/mediawiki/images/e/e7/4kovito.gif)
-
-This class implemented several ways to create `lmpFRAME` object <br>
-- create an empty data object
-- createFRAME object with input data
-- read from DUMP file 
-- read from DATA file 
-- read frome PDB file 
+This class contains functions to read data from text file.
 
 REFs:
 
 
 ## Initilization
-The constructor of class, there are several ways to initilize the lmpFRAME object
-* Inputs-Compulsory: <br>
-* Inputs-Optional: <br> 
-	- readDUMP='fileName' |`string` | is the name of DUMP file
-	- readDATA='fileName' |`string` | is the name of DATA file
-		- atom_style = 'atomic'|`string` | option to input type of atomistic system
-		- nFlag = False        |`boolean` | read nFlag or not
-	- readPDB='fileName' |`string` | is the name of PDB file
-	- createFRAME=df |`DataFrame`| pd.DataFrame contains atomic positions and properties of system
-		- box = [[0,1],[0,1],[0,1]]	|`array` `list`3x2| option to input boxSize
-		- boxAngle = [0,0,0]        |`array` `list`1x3| option to input boxAngle
-* Usage: <br> 
-```python
-	# empty object
-	da = thaFileType.lmpFRAME()
-	# oject with input data 
-	da = thaFileType.lmpFRAME(createFRAME=df, box=box, boxAngle=boxAngle)
-	# from DUMP file 
-	da = thaFileType.lmpFRAME(readDUMP='test.cfg')
-	# from DATA file
-	da = thaFileType.lmpFRAME(readDATA='mydata.dat', atom_style='atomic', nFlag=False)
-	# from PDB file
-	da = thaFileType.lmpFRAME(readPDB='test.pdb')
-```
-* **Attributes:** <br> 
-	- .name     = 'Frame created by Thang' |`string` | name of input file
-	- .timestep = 0   |`integer`| the timestep of configuration
-	- .frame    = None |`DataFrame`| DataFrame of per-atom values
-	- .propKey  = None |`list`| column-names of properties
-	- .box		= np.asarray([[0,1],[0,1],[0,1]]) |`array` `list`3x2| option to input boxSize
-	- .boxAngle = np.zeros(3)   				|`array` `list`1x3| option to input boxAngle
-	- .mass		= np.asarray([])  |`array`nx1|	atomic masses
-	- .fmtSTR 	= "%.6f" |`string` | default format for float numbers, don't use %g because it will lost precision
+This is a container class
 
 
-## .createFRAME()
+## .logMFD()
 The **method** create new FRAME object with input data.
 * Inputs-Compulsory: <br>
 	- DataFrame			|`DataFrame`| pd.DataFrame of input data
@@ -73,7 +28,7 @@ The **method** create new FRAME object with input data.
 	da.createFRAME(DataFrame=df)
 ```
 
-## .readDUMP()
+## .misValueMatrixData()
 The **method** create FRAME object by reading DUMP file.
 * Inputs-Compulsory: <br>
 	- fileName   			| `string` | the name of DUMP file 
@@ -86,7 +41,7 @@ The **method** create FRAME object by reading DUMP file.
 	da.readDUMP('dump.cfg')
 ```
 
-## .readDATA()
+## .MatrixData()
 The **method** create FRAME object by reading DATA file.
 * Inputs-Compulsory: <br>
 	- fileName   			| `string` | the name of DATA file 
@@ -105,7 +60,7 @@ The **method** create FRAME object by reading DATA file.
 	da.readDATA('mydata.dat', atom_style='atomic', nFlag=False)
 ```
 
-## .readPDB()
+## .LammpsVAR()
 The **method** create FRAME object by reading PDB file.
 * Inputs-Compulsory: <br>
 	- fileName   			| `string` | the name of PDB file 
@@ -125,7 +80,7 @@ The **method** create FRAME object by reading PDB file.
 	da.readPDB('dump.pdb')
 ```
 
-## .writeDUMP()
+## .PlumedVAR()
 The **method** to write DUMP file.
 * Inputs-Compulsory: <br>
 	- fileName   			| `string` | the name of DUMP file 
@@ -139,7 +94,7 @@ The **method** to write DUMP file.
 	da.writeDUMP('test.cfg', column=['id','type','x','y','z'], fmtSTR='%.4f')
 ```
 
-## .writeDATA()
+## .PlumedBLOCK()
 The **method** to write DATA file.
 * Inputs-Compulsory: <br>
 	- fileName   			| `string` | the name of DATA file 
@@ -156,7 +111,7 @@ The **method** to write DATA file.
 	da.writeDATA('test.dat', atom_style='atomic', nFlag=False, vel=False, fmtSTR='%.4f')
 ```
 
-## .writeXYZ()
+## .LINE()
 The **method** to write XYZ file.
 * Inputs-Compulsory: <br>
 	- fileName   			| `string` | the name of XYZ file 
@@ -170,41 +125,3 @@ The **method** to write XYZ file.
 	da.writeXYZ('test.xyz')
 ```
 
-## .writePDB()
-The **method** to write PDB file.
-* Inputs-Compulsory: <br>
-	- fileName   			| `string` | the name of XYZ file 
-* Inputs-Optional: <br> 
-	- fmtSTR	= '%.6f'   	| `string` | string format for output values 
-* Outputs: <br> 			
-	- file 					| `*.pdb`  | the PDB file 
-* Usage: <br> 
-```python
-	da.writePDB('test.pdb')
-```
-
-## .addColumn()
-The **method** to add new columns to da.frame.
-* Inputs-Compulsory: <br>
-	- data   			| `DataFrame` `Series` `List` | Nxm data of new columns
-* Inputs-Optional: <br> 
-	- newColumn	= data.columns | `list-string` | 1xN list contains names of columns, if do not provide, it take columnNames from DataFrame
-	- replace	= False | `boolean`| replace column if existed
-* Outputs: <br> 			
-	- .frame  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-* Usage: <br> 
-```python
-	da.addColumn(df, myColumn=['col1','col2'], replace=True)
-```
-
-## .deleteColumn()
-The **method** to delete columns from da.frame.
-* Inputs-Compulsory: <br>
-	- delColumns	      | `list-string` | 1xN list contains names of columns to be deleted
-* Inputs-Optional: <br> 
-* Outputs: <br> 			
-	- .frame  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-* Usage: <br> 
-```python
-	da.deleteColumn(delColumns=['col1','col2'])
-```
