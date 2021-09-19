@@ -121,6 +121,7 @@ The **method** to write DATA file.
 * Inputs-Compulsory: <br>
 	- fileName   		| `string`| the name of DATA file 
 * Inputs-Optional: <br> 
+	-----------------------|----------|--------------------
 	- atom_style = 'atomic'| `string` | 'atomic', 'charge', 'molecular', 'full': the style of atomistic system 
 	- nFlag		= False    | `boolean`| whether or not include nFlag 
 	- vel 		= False    | `boolean`| whether or not write Velocity 
