@@ -104,7 +104,7 @@ The **method** to write DUMP file.
 
 	| Inputs-Optional   | Default/Possible 	| Type    | Description |
 	|:------------------|:------------------|:-------:|:------------|
-	| column        	| ['id', 'type',...]| `list`	| contains columns to be written, by default all columns will be written |
+	| column        	| ['id','type',...] | `list` list 1xN| contains columns to be written, by default all columns will be written |
 	| FMT		 		| '%.6f'   			| `string`| string format for output values |
 
 	| Outputs 			| Type    | Description |
@@ -118,24 +118,16 @@ The **method** to write DUMP file.
 
 ## .writeDATA()
 The **method** to write DATA file.
-* Parameters:
-
-	| Inputs-Compulsory | Type    | Description |
-	|:------------------|:-------:|:------------|
-	| fileName   		| `string`| the name of DATA file |
-
-	| Inputs-Optional   | Default/Possible 	| Type    | Description |
-	|:------------------|:------------------|:-------:|:------------|
-	| atom_style 		| 'atomic'/ 'charge', 'molecular', 'full'| `string`| style of atomistic system |
-	| nFlag      		| False/ True  		| `boolean`| whether or not include nFlag |
-	| vel        		| False/ True  		| `boolean`| whether or not write Velocity |
-	| FMT		 		| '%.6f'   			| `string` | string format for output values |
-	| comment    		| ''      			| `string` | the comment |
-
-	| Outputs 			| Type    | Description |
-	|:------------------|:-------:|:------------|
-	| 					| '.dat'  | the DATA file |
-
+* Inputs-Compulsory: <br>
+	- fileName   		| `string`| the name of DATA file 
+* Inputs-Optional: <br> 
+	- atom_style = 'atomic'| `string` | 'atomic', 'charge', 'molecular', 'full': the style of atomistic system 
+	- nFlag		= False    | `boolean`| whether or not include nFlag 
+	- vel 		= False    | `boolean`| whether or not write Velocity 
+	- FMT		= '%.6f'   | `string` | string format for output values 
+	- comment   = ''      | `string` | the comment 
+* Outputs: <br> 			
+	- file | '.dat'  | the DATA file 
 * Usage:
 ```python
 	da.writeDATA('test.dat', atom_style='atomic', nFlag=False, vel=False, FMT='%.4f')
@@ -151,14 +143,37 @@ The **method** to write XYZ file.
 
 	| Inputs-Optional   | Default/Possible 	| Type    | Description |
 	|:------------------|:------------------|:-------:|:------------|
-	| column        	| ['xu', 'yu', 'zu']| `list` 1xN| list contains columns to be written  |
+	| column        	| ['xu','yu','zu']	| `list` 1xN| list contains columns to be written  |
 	| FMT		 		| '%.6f'   			| `string`| string format for output values |
 
 	| Outputs 			| Type    | Description |
 	|:------------------|:-------:|:------------|
 	| 					| '.cfg'  | the DUMP file |
-	
+
 * Usage:
 ```python
 	da.writeXYZ('test.xyz')
 ```
+
+## .writePDB()
+The **method** to write PDB file.
+* Parameters:
+
+	| Inputs-Compulsory | Type    | Description |
+	|:------------------|:-------:|:------------|
+	| fileName   		| `string`| the name of PDB file |
+
+	| Inputs-Optional   | Default/Possible 	| Type    | Description |
+	|:------------------|:------------------|:-------:|:------------|
+	| FMT		 		| '%.6f'   			| `string`| string format for output values |
+
+	| Outputs 			| Type    | Description |
+	|:------------------|:-------:|:------------|
+	| 					| '.pdb'  | the PDB file |
+
+* Usage:
+```python
+	da.writePDB('test.pdb')
+```
+
+
