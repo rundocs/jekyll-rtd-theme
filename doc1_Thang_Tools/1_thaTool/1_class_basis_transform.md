@@ -50,6 +50,7 @@ For tranformation/rotation a vector from an old_orient ([coordinate sytem](https
 	\end{aligned}
 	$$
 - This convension may also be used in [wolfram](https://mathworld.wolfram.com/EulerAngles.html) and [PLUMED](https://www.plumed.org/doc-v2.7/user-doc/html/_f_c_c_u_b_i_c.html)
+- There is function to compute [Euler-angles in scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.transform.Rotation.as_euler.html), but don't use it until you understand what is computed
 
 REFs:
 1. [Bower, Allan F. Applied Mechanics of Solids. CRC Press, 2009. page 711](http://solidmechanics.org/Text/AppendixA/AppendixA.php).
