@@ -42,7 +42,7 @@ REFs:
 	da = thaFileType.lmpFRAME(readDATA='mydata.dat', atom_style='atomic', nFlag=False)
 ```
 * **Attributes:**
-	- .FMT 			: `string`, default format for float numbers.
+	- .fmtSTR 			: `string`, default format for float numbers.
 	- .name 		: `string`, name of input file
 	- .timestep : `integer`, the timestep of configuration
 	- .propKey  : `list`, column-names of properties
@@ -105,7 +105,7 @@ The **method** to write DUMP file.
 	| Inputs-Optional   | Default/Possible 	| Type    | Description |
 	|:------------------|:------------------|:-------:|:------------|
 	| column        	| ['id','type',...] | `list` list 1xN| contains columns to be written, by default all columns will be written |
-	| FMT		 		| '%.6f'   			| `string`| string format for output values |
+	| fmtSTR		 		| '%.6f'   			| `string`| string format for output values |
 
 	| Outputs 			| Type    | Description |
 	|:------------------|:-------:|:------------|
@@ -113,7 +113,7 @@ The **method** to write DUMP file.
 
 * Usage: 
 ```python
-	da.writeDUMP('test.cfg', column=['id','type','x','y','z'], FMT='%.4f')
+	da.writeDUMP('test.cfg', column=['id','type','x','y','z'], fmtSTR='%.4f')
 ```
 
 ## .writeDATA()
@@ -124,13 +124,13 @@ The **method** to write DATA file.
 	- atom_style = 'atomic'| `string` | 'atomic', 'charge', 'molecular', 'full': the style of atomistic system 
 	- nFlag		= False    | `boolean`| whether or not include nFlag 
 	- vel 		= False    | `boolean`| whether or not write Velocity 
-	- FMT		= '%.6f'   | `string` | string format for output values 
+	- fmtSTR		= '%.6f'   | `string` | string format for output values 
 	- comment   = ''      | `string` | the comment 
 * Outputs: <br> 			
 	- file | '.dat'  | the DATA file 
 * Usage:
 ```python
-	da.writeDATA('test.dat', atom_style='atomic', nFlag=False, vel=False, FMT='%.4f')
+	da.writeDATA('test.dat', atom_style='atomic', nFlag=False, vel=False, fmtSTR='%.4f')
 ```
 
 ## .writeXYZ()
@@ -144,7 +144,7 @@ The **method** to write XYZ file.
 	| Inputs-Optional   | Default/Possible 	| Type    | Description |
 	|:------------------|:------------------|:-------:|:------------|
 	| column        	| ['xu','yu','zu']	| `list` 1xN| list contains columns to be written  |
-	| FMT		 		| '%.6f'   			| `string`| string format for output values |
+	| fmtSTR		 		| '%.6f'   			| `string`| string format for output values |
 
 	| Outputs 			| Type    | Description |
 	|:------------------|:-------:|:------------|
@@ -165,7 +165,7 @@ The **method** to write PDB file.
 
 	| Inputs-Optional   | Default/Possible 	| Type    | Description |
 	|:------------------|:------------------|:-------:|:------------|
-	| FMT		 		| '%.6f'   			| `string`| string format for output values |
+	| fmtSTR		 		| '%.6f'   			| `string`| string format for output values |
 
 	| Outputs 			| Type    | Description |
 	|:------------------|:-------:|:------------|
