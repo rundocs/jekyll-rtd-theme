@@ -299,18 +299,17 @@ export PlugIncDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 # python 3
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 
-## configure
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
 -DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
+-DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no \
+-DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_SCAFACOS=no -DPKG_H5MD=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DPKG_KIM=no \
--DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_MESONT=no  \
--DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_ML-QUIP=no -DPKG_SCAFACOS=no \
--DPKG_VTK=no -DPKG_H5MD=no \
+-DPKG_MESONT=no -DPKG_ML-QUIP=yes \
+-DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DPython_ROOT_DIR=${pyROOT} -DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
 -DFFT=FFTW3 \
--DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI-master
 ```
