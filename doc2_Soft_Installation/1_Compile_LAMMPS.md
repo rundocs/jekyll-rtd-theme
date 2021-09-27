@@ -212,8 +212,7 @@ module load conda/py37Lammps
 - use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far 
 ```shell
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
-```
-```make
+
 -DPython_ROOT_DIR=${pyROOT}
 ```
 - use Python_EXECUTABLE # (Python_EXECUTABLE depend on cmake's version) (but this case still use system Python while compiling, so cannot use on multi-OS with different Versions )
@@ -221,8 +220,7 @@ export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 export pyEXE=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
 export pyINC=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/include/python3.7m
 export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.7m.a  
-```
-```shell
+
 -DPython_EXECUTABLE=${pyEXE} -DPython_INCLUDE_DIR=${pyINC} -DPython_LIBRARY=${pyLIB} 
 ```
 
@@ -291,17 +289,17 @@ mkdir build   &&   cd build
 
 module load tool_dev/binutils-2.36         # gold
 module load tool_dev/cmake-3.21
-module load fftw/fftw3.3.8-ompi4.1-gcc11.2
-module load conda/py37Lammps               # python 3
+module load fftw/fftw3.3.8-ompi4.1-gcc11.2            
 module load mpi/ompi4.1.1-gcc11.2-noUCX-eagle
 
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
 export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
-# MOLFILE_plugins:
+# MOLFILE_plugins
 export PlugIncDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
-```
+# python 3
+export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 
-```shell
+## configure
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
@@ -310,7 +308,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_MESONT=no  \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_ML-QUIP=no -DPKG_SCAFACOS=no \
 -DPKG_VTK=no -DPKG_H5MD=no \
--DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
+-DPython_ROOT_DIR=${pyROOT} -DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
 -DFFT=FFTW3 \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
