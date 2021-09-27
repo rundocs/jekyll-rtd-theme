@@ -205,15 +205,15 @@ export =/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 ```
 15. **PYTHON** (use 1 of following ways)
 Note: new numpy require higher GLIBC
-- use module load --> do not need setting in Cmake
+- use module load --> do not need setting in Cmake (but this may intefere some libs - should not use)
 ```shell
 module load conda/py37Lammps
 ```
-- use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far 
+- use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far. 
 ```shell
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 
--DPython_ROOT_DIR=${pyROOT}
+-DPython_ROOT_DIR=${pyROOT}   # this setting must be put on the head of cmake
 ```
 - use Python_EXECUTABLE # (Python_EXECUTABLE depend on cmake's version) (but this case still use system Python while compiling, so cannot use on multi-OS with different Versions )
 ```shell
@@ -301,15 +301,15 @@ export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
+-DPython_ROOT_DIR=${pyROOT} -DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
 -DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
 -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_SCAFACOS=no -DPKG_H5MD=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DPKG_KIM=no \
 -DPKG_MESONT=no -DPKG_ML-QUIP=no \
--DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
--DPython_ROOT_DIR=${pyROOT} -DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
 -DFFT=FFTW3 \
+-DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI-master
 ```
