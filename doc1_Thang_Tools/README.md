@@ -7,8 +7,10 @@ sort: 1
 This section contains the docs for several in-house codes to handle some specific tasks.
 
 ```python
-if life is not "bullshit":
+if "bullshit" not in your_life:
     print("Hello world")
+else:
+    print("bullshit redbull")
 ```
 
 {% include list.liquid all=true %}
