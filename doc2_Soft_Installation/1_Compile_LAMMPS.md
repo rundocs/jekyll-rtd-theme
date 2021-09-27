@@ -306,7 +306,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_SCAFACOS=no -DPKG_H5MD=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DPKG_KIM=no \
--DPKG_MESONT=no -DPKG_ML-QUIP=yes \
+-DPKG_MESONT=no -DPKG_ML-QUIP=no \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DPython_ROOT_DIR=${pyROOT} -DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
 -DFFT=FFTW3 \
