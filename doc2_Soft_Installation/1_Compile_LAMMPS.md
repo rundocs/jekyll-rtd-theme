@@ -18,7 +18,7 @@ This note is not to tell about what is [LAMMPS](https://www.lammps.org)? but the
 - OpenMPI may the fastest
 - There is no longer USER_ packages from Jul-2021
 - Need CMAKE, newer is better (a newer Cmake version may reduce the probability of error during compiling). Basic cmake: <br>
-```make
+```shell
 cmake -D OPTION_A=VALUE_A -D OPTION_B=VALUE_B ...     ../cmake make
 ```
 - Module evironment
@@ -63,32 +63,32 @@ copy new pair_ufm into /src
 copy new pair_eam.cpp & pair_eam.h into /src and delete corresponding files in /src/MANYBODY
 ```
   2. **POEMS, OPT**
-```make
+```shell
 -D PKG_OPT=yes
 ```
 3. **MSCG**
-```make
+```shell
 -D PKG_MSCG=yes -D DOWNLOAD_MSCG=yes
 ```
 5. **VORONOI**
-```make
+```shell
 -D PKG_VORONOI=yes -D DOWNLOAD_VORO=yes
 ```
 6. **KSPACE**
 - if use MKL for FFT, then need MKL library 
-```make
+```shell
 -D FFT=MKL  \
 -D MKL_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2019/compilers_and_libraries_2019.5.281/linux/mkl/include  \
 -D MKL_LIBRARY=/uhome/p001cao/local/intel/xe2019/compilers_and_libraries_2019.5.281/linux/mkl/lib/intel64  \
 ```
 - if FTWW3, then dont need MKL_LIBRARY
-```make
+```shell
 -D FFT=FFTW3
 -D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/fftw/3.3.8-openmpi4.0.1-Intel2019xe-double/include \
 -D FFTW3_LIBRARY=/uhome/p001cao/local/fftw/3.3.8-openmpi4.0.1-Intel2019xe-double/lib \
 ```
 - or use FFTW3 from intel_mkl: (not support long-double precision)
-```make
+```shell
 -D FFT=FFTW3 
 -D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2018/compilers_and_libraries_2018.0.128/linux/mkl/include/fftw 
 ```
@@ -99,11 +99,11 @@ module load intel/mkl
 module load tool_dev/gsl-2.6
 ```
 8. **OpenMP**
-```make
+```shell
 -D PKG_USER-OMP=yes -D BUILD_OMP=yes -D PKG_USER-INTEL=no
 ```
 9. **make no packages**
-```make
+```shell
 -D PKG_GPU=no -D PKG_KIM=no -D PKG_LATTE=no -D PKG_MSCG=no -D PKG_KOKKOS=no \
 -D PKG_USER-ADIOS=no -D PKG_USER-NETCDF=no -D PKG_USER-OMP=no -D PKG_USER-INTEL=no \
 -D PKG_USER-QUIP=no -D PKG_USER-SCAFACOS=no -D PKG_USER-QMMM=no -D PKG_USER-VTK=no \
@@ -111,7 +111,7 @@ module load tool_dev/gsl-2.6
 ```
 10. [**KOKKOS**](https://lammps.sandia.gov/doc/Build_extras.html#kokkos) <br>
 For multicore CPUs using OpenMP, set these 2 variables.
-```make
+```shell
 -DKokkos_ARCH_WSM=yes                 # HOSTARCH = HOST from list above 
 -DKokkos_ENABLE_OPENMP=yes 
 -DBUILD_OMP=yes
@@ -121,52 +121,52 @@ For multicore CPUs using OpenMP, set these 2 variables.
 ```shell
 module load plumed
 ```
-```make
+```shell
 -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=static
 ```
 - **self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
-```make
+```shell
 -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static
 ```
 - **self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
 open file: ../cmake/Modules/Packages/USER-PLUMED.cmake
 
 Comment out these lines:
-```make
+```shell
   # find_package(LAPACK REQUIRED)
   # find_package(BLAS REQUIRED)
   # find_package(GSL REQUIRED)
   # list(APPEND PLUMED_LINK_LIBS ${LAPACK_LIBRARIES} ${BLAS_LIBRARIES} GSL::gsl)
 ```
 change lines: 
-```make
+```shell
 # URL http...... (line 65)
 # URL_MD5
 ```
 into: 
-```make
+```shell
 GIT_REPOSITORY https://github.com/plumed/plumed2.git 
 GIT_TAG master                            # hack-the-tree   v2.6.2   v2.7b
 ```
-```make
+```shell
 CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....   ...
             --enable-modules=all --enable-asmjit --disable-external-blas --disable-external-lapack
 ```
 add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND 
 
 12. **SMD** require Eigen
-```make
+```shell
 -D PKG_SMD=yes -D DOWNLOAD_EIGEN3=yes
 ```
 open file: ../cmake/Modules/Packages/USER-SMD.cmake
 
 change: 
-```make
+```shell
 URL http...... (line 12)
 URL_MD5
 ```
 into:
-```make
+```shell
 GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git 
 GIT_TAG  3.3.7
 ```
@@ -199,7 +199,7 @@ make
 ```shell
 export =/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 ```
-```make
+```shell
 -D MOLFILE_INCLUDE_DIR=${PlugIncDIR}
 -D PKG_MOLFILE=yes
 ```
@@ -222,7 +222,7 @@ export pyEXE=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
 export pyINC=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/include/python3.7m
 export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.7m.a  
 ```
-```make
+```shell
 -DPython_EXECUTABLE=${pyEXE} -DPython_INCLUDE_DIR=${pyINC} -DPython_LIBRARY=${pyLIB} 
 ```
 
@@ -240,7 +240,7 @@ export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
 ```shell
 module load tool_dev/binutils-2.36
 ```
-```cmake
+```shell
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt"
 ```
 - use MKL
@@ -249,7 +249,7 @@ module load intel/mkl-xe19u5
 source mklvars.sh intel64
 module load tool_dev/gsl-2.6
 ```
-```cmake
+```shell
 -DFFT=MKL
 ```
 - use external BLAS&LAPACK instead of MKL
@@ -257,14 +257,14 @@ module load tool_dev/gsl-2.6
 export myLAPACK=/uhome/p001cao/local/app/lapack-3.9/liblapack.a
 export myBLAS=/uhome/p001cao/local/app/blas-3.8/libfblas.a
 ```
-```cmake
+```shell
 -DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myLAPACK}
 ```
 - use FFTW instead of MKL
 ```shell
 module load fftw/fftw3.3.8-ompi4.1-gcc11.2
 ```
-```cmake
+```shell
 -DFFT=FFTW3
 ```
 - consider linkers
