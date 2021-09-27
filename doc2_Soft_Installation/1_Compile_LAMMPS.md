@@ -280,42 +280,37 @@ module load tool_dev/binutils-2.35                # gold
 ```note
 - use different openmpi for Eagle vs Lion
 - Note: python>3.7.9 require GLIBC new
-```
-conda install python=3.7.5 pandas=1.0 numpy=1.19
-```
+`conda install python=3.7.5 pandas=1.0 numpy=1.19`
 - Use GCC-11 need also update GCC-conda = 11
-```
-conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11
-```
+`conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`
 ```
 
 ```shell
 cd lammps_master 
 mkdir build   &&   cd build
 
-module load tool_dev/binutils-2.36        # gold
+module load tool_dev/binutils-2.36         # gold
 module load tool_dev/cmake-3.21
 module load fftw/fftw3.3.8-ompi4.1-gcc11.2
+module load conda/py37Lammps               # python 3
 module load mpi/ompi4.1.1-gcc11.2-noUCX-eagle
 
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
 export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
 # MOLFILE_plugins:
 export PlugIncDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
-# python (require py3) 
-export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 ```
 
 ```shell
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
--DPython_ROOT_DIR=${pyROOT} -DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
 -DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
--DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes \
--DPKG_KIM=no -DDOWNLOAD_KIM=no -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_MESONT=no  \
+-DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DPKG_KIM=yes -DDOWNLOAD_KIM=yes \
+-DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_MESONT=no  \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_ML-QUIP=no -DPKG_SCAFACOS=no \
 -DPKG_VTK=no -DPKG_H5MD=no \
+-DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
 -DFFT=FFTW3 \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
