@@ -51,7 +51,7 @@ Requisites:
 * Inputs-Compulsory: <br>
 	- MDoutFiles: |`list`| of "MDout_replica.txt" files
 * Outputs: <br> 
-	- logPD file: contains logPD-based MeanForce
+	- text file: contains average properties
 * Usage: <br> 
 ```python
 	thaFreeEnergy.replica_MD_average(MDoutFiles)
