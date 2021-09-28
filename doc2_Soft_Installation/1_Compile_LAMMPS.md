@@ -293,7 +293,7 @@ module load fftw/fftw3.3.8-ompi4.1-gcc11.2
 module load mpi/ompi4.1.1-gcc11.2-noUCX-eagle
 
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
-export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
+export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
 # MOLFILE_plugins
 export PlugIncDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 # python 3
@@ -310,7 +310,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_MESONT=no -DPKG_ML-QUIP=no \
 -DFFT=FFTW3 \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
--DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
+-DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI-master
 ```
 ```shell
