@@ -152,9 +152,19 @@ GIT_TAG master                            # hack-the-tree   v2.6.2   v2.7b
 CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....   ...
             --enable-modules=all --enable-asmjit --disable-external-blas --disable-external-lapack
 ```
-add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND 
+add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" 
 
-12. **SMD** require Eigen
+12. [**ML_QUIP**] ([source code](https://github.com/libAtoms/QUIP))
+compile QUIP the minimum requirements are:
+- A working Fortran compiler. QUIP is tested with `gfortran 4.4` and later, and `ifort 11.1`.
+- Linear algebra libraries BLAS and LAPACK. QUIP is tested with reference versions libblas-dev and liblapack-dev on Ubuntu 12.04, and mkl 11.1 with ifort.
+add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" 
+
+13. **MLIAP**
+- require python >3.6
+
+14. **SMD** 
+- require Eigen
 ```shell
 -D PKG_SMD=yes -D DOWNLOAD_EIGEN3=yes
 ```
@@ -170,8 +180,6 @@ into:
 GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git 
 GIT_TAG  3.3.7
 ```
-13. **MLIAP**
-- require python >3.6
 
 14. **MOLFILE package**
 * to dump PDB file, need install VMD-plugins
