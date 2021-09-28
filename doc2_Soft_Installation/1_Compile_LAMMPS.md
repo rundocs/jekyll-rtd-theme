@@ -213,7 +213,7 @@ export =/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 ```
 15. **PYTHON** (use 1 of following ways)
 Note: new numpy require higher GLIBC
-- use module load --> do not need setting in Cmake (but this may intefere some libs - should not use)
+- use module load --> do not need setting in Cmake (but this may intefere some libs: openmpi,lapack,blas,... - should not use)
 ```shell
 module load conda/py37Lammps
 ```
@@ -316,8 +316,8 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_SCAFACOS=no -DPKG_H5MD=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DPKG_KIM=no \
 -DPKG_MESONT=no -DPKG_ML-QUIP=no \
--DFFT=FFTW3 \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
+-DFFT=FFTW3 \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI-master
 ```
