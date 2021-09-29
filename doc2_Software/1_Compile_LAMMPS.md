@@ -93,11 +93,20 @@ copy new pair_eam.cpp & pair_eam.h into /src and delete corresponding files in /
 -D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2018/compilers_and_libraries_2018.0.128/linux/mkl/include/fftw 
 ```
 7. **LAPACK & BLAS** <br>
-Use "intel/mkl" package, then LAPACK & BLAS will be found automatically
-```shell
-module load intel/mkl
-module load tool_dev/gsl-2.6
-```
+  - These packages LAPACK & BLAS: MSCG, ATC, AWPMD, ML-QUIP, LATTE, PLUMED (can self build its libs)
+  - Use "intel/mkl" package, then LAPACK & BLAS will be found automatically
+  ```shell
+  module load intel/mkl
+  module load tool_dev/gsl-2.6
+  ```
+  - Use external LAPACK & BLAS
+    ```shell
+  export myLAPACK=/uhome/p001cao/local/app/lapack-3.10/liblapack.a
+  export myBLAS=/uhome/p001cao/local/app/lapack-3.10/libblas.a
+  
+  -DLAPACK_LIBRARIES=${myLAPACK} -DBLAS_LIBRARIES=${myBLAS}
+  ```
+
 8. **OpenMP**
 ```shell
 -D PKG_USER-OMP=yes -D BUILD_OMP=yes -D PKG_USER-INTEL=no
@@ -117,42 +126,42 @@ For multicore CPUs using OpenMP, set these 2 variables.
 -DBUILD_OMP=yes
 ```
 11. [**PLUMED**](https://lammps.sandia.gov/doc/Build_extras.html#user-plumed)
-- **pre-compile Plumed separately:**
-```shell
-module load plumed
-```
-```shell
--D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=static
-```
-- **self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
-```shell
--D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static
-```
-- **self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
-open file: ../cmake/Modules/Packages/USER-PLUMED.cmake
+  - **pre-compile Plumed separately:**
+  ```shell
+  module load plumed
+  ```
+  ```shell
+  -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=static
+  ```
+  - **self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
+  ```shell
+  -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static
+  ```
+  change lines: 
+  ```shell
+  # URL http...... (line 65)
+  # URL_MD5
+  ```
+  into: 
+  ```shell
+  GIT_REPOSITORY https://github.com/plumed/plumed2.git 
+  GIT_TAG master                            # hack-the-tree   v2.6.2   v2.7b
+  ```
+  ```shell
+  CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....   ...
+              --enable-modules=all --enable-asmjit --disable-external-blas --disable-external-lapack
+  ```
+  add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" <br>
+  - **self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
+  open file: ../cmake/Modules/Packages/USER-PLUMED.cmake
 
-Comment out these lines:
-```shell
-  # find_package(LAPACK REQUIRED)
-  # find_package(BLAS REQUIRED)
-  # find_package(GSL REQUIRED)
-  # list(APPEND PLUMED_LINK_LIBS ${LAPACK_LIBRARIES} ${BLAS_LIBRARIES} GSL::gsl)
-```
-change lines: 
-```shell
-# URL http...... (line 65)
-# URL_MD5
-```
-into: 
-```shell
-GIT_REPOSITORY https://github.com/plumed/plumed2.git 
-GIT_TAG master                            # hack-the-tree   v2.6.2   v2.7b
-```
-```shell
-CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....   ...
-            --enable-modules=all --enable-asmjit --disable-external-blas --disable-external-lapack
-```
-add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" 
+  Comment out these lines:
+  ```shell
+    # find_package(LAPACK REQUIRED)
+    # find_package(BLAS REQUIRED)
+    # find_package(GSL REQUIRED)
+    # list(APPEND PLUMED_LINK_LIBS ${LAPACK_LIBRARIES} ${BLAS_LIBRARIES} GSL::gsl)
+  ```
 
 12. [**ML_QUIP**] ([source code](https://github.com/libAtoms/QUIP))
 compile QUIP the minimum requirements are:
@@ -260,8 +269,8 @@ module load tool_dev/gsl-2.6
 ```
 - use external BLAS&LAPACK instead of MKL
 ```shell
-export myLAPACK=/uhome/p001cao/local/app/lapack-3.9/liblapack.a
-export myBLAS=/uhome/p001cao/local/app/blas-3.8/libfblas.a
+export myLAPACK=/uhome/p001cao/local/app/lapack-3.10/liblapack.a
+export myBLAS=/uhome/p001cao/local/app/lapack-3.10/libblas.a
 ```
 ```shell
 -DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myLAPACK}

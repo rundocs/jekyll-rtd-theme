@@ -39,7 +39,14 @@ make install
 ```
 
 ### module file
+```shell
+# for Tcl script use only
+set     topdir          /uhome/p001cao/local/app/lapack-3.10
 
+prepend-path    INCLUDE 	        $topdir
+prepend-path    LD_LIBRARY_PATH         $topdir
+prepend-path    PKG_CONFIG_PATH 	$topdir/pkgconfig  
+```
 **usage**
 ```shell
 export myLAPACK=/uhome/p001cao/local/app/lapack-3.10/liblapack.a
@@ -56,6 +63,9 @@ ScaLAPACK (Scalable LAPACK) is a library of high-performance linear algebra rout
 - Some guide [here](https://gitlab.com/arm-hpc/packages/-/wikis/packages/scalapack)
 - [SouceCode](https://github.com/Reference-ScaLAPACK/scalapack)
 - see CMAKE options in file CMakeLists.txt
+```note 
+ScaLAPACK can not compute with GCC-11
+```
 ```shell
 git clone https://github.com/Reference-ScaLAPACK/scalapack.git ScaLAPACK
 cd ScaLAPACK
