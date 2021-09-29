@@ -1,13 +1,8 @@
 ---
-sort: 
+sort: 4
 ---
 
 # Compiling LAPACK & ScaLAPACK
-
-```note
-- Install LAPACK need BLAS.
-- Install ScaLAPACK need: 
-```
 
 ## LAPACK & BLAS
 Two of the most common used computational libraries are LAPACK and BLAS.  They are super fast in doing linear algebra operations involving matrices and vectors.
@@ -39,12 +34,13 @@ cmake .. -DCBLAS=on -DLAPACKE=on \
 -DCMAKE_INSTALL_LIBDIR=${myInstallDIR} \
 -DCMAKE_INSTALL_INCLUDEDIR=${myInstallDIR}
 
-# cmake --build . -j --target install
 make -j 8
 make install 
 ```
 
-**module file/usage**
+### module file
+
+**usage**
 ```shell
 export myLAPACK=/uhome/p001cao/local/app/lapack-3.10/liblapack.a
 export myLAPACKE=/uhome/p001cao/local/app/lapack-3.10/liblapacke.a
@@ -61,16 +57,17 @@ ScaLAPACK (Scalable LAPACK) is a library of high-performance linear algebra rout
 - [SouceCode](https://github.com/Reference-ScaLAPACK/scalapack)
 - see CMAKE options in file CMakeLists.txt
 ```shell
-tar -xvf scalapack-2.1.0.tar.gz
-cd scalapack-2.1.0
-mkdir build && cd build
-```
-- Or download from github
-```shell
 git clone https://github.com/Reference-ScaLAPACK/scalapack.git ScaLAPACK
 cd ScaLAPACK
 mkdir build && cd build
 ```
+- Or download release
+```shell
+tar -xvf scalapack-2.1.0.tar.gz
+cd scalapack-2.1.0
+mkdir build && cd build
+```
+
 ```shell
 module load tool_dev/cmake-3.21          
 module load mpi/ompi4.1.1-gcc11.2-noUCX-eagle
@@ -81,6 +78,9 @@ export LD_LIBRARY_PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagl
 
 ### self-build BLAS and LAPACK
 ```shell
+export CFLAGS="-Ofast -mcpu=neoverse-n1" 
+export FFLAGS="-Ofast -mcpu=neoverse-n1 -fallow-argument-mismatch"
+
 cmake .. -DUSE_OPTIMIZED_LAPACK_BLAS=on \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_Fortran_COMPILER=mpif77 \
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/ScaLAPACK-2.1 
