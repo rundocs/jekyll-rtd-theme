@@ -269,10 +269,10 @@ module load tool_dev/gsl-2.6
 ```
 - use external BLAS&LAPACK instead of MKL
 ```shell
+module load tool_dev/gsl-2.6
 export myLAPACK=/uhome/p001cao/local/app/lapack-3.10/liblapack.a
 export myBLAS=/uhome/p001cao/local/app/lapack-3.10/libblas.a
-```
-```shell
+
 -DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myLAPACK}
 ```
 - use FFTW instead of MKL
@@ -311,9 +311,8 @@ module load mpi/ompi4.1.1-gcc11.2-noUCX-eagle
 
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
-# MOLFILE_plugins
+# MOLFILE_plugins/ python 3/ LAPACK&BLAS
 export PlugIncDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
-# python 3
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \

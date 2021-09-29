@@ -38,16 +38,7 @@ make -j 8
 make install 
 ```
 
-### module file
-```shell
-# for Tcl script use only
-set     topdir          /uhome/p001cao/local/app/lapack-3.10
-
-prepend-path    INCLUDE 	        $topdir
-prepend-path    LD_LIBRARY_PATH         $topdir
-prepend-path    PKG_CONFIG_PATH 	$topdir/pkgconfig  
-```
-**usage**
+### usage
 ```shell
 export myLAPACK=/uhome/p001cao/local/app/lapack-3.10/liblapack.a
 export myLAPACKE=/uhome/p001cao/local/app/lapack-3.10/liblapacke.a
