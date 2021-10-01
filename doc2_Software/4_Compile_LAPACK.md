@@ -71,18 +71,19 @@ mkdir build && cd build
 
 ```shell
 module load tool_dev/cmake-3.21          
-module load mpi/ompi4.1.1-gcc10.3-noUCX-eagle 
-export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc10.3-noUCX-eagle-gold/bin:$PATH
-export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpifort
-export LD_LIBRARY_PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc10.3-noUCX-eagle-gold/lib:$LD_LIBRARY_PATH
+module load mpi/ompi4.1.1-gcc11.2-noUCX-eagle
+
+export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
+export CC=mpicc  export CXX=mpic++  export F90=mpif90 export F77=mpif77
+export LD_LIBRARY_PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/lib:$LD_LIBRARY_PATH
+export CFLAGS="-Ofast -march=x86-64" 
+export FFLAGS="-Ofast -march=x86-64 -fallow-argument-mismatch"
 ```
 
 ### self-build BLAS and LAPACK
 ```shell
-export CFLAGS="-Ofast -mcpu=neoverse-n1" 
-export FFLAGS="-Ofast -mcpu=neoverse-n1 -fallow-argument-mismatch"
-
 cmake .. -DUSE_OPTIMIZED_LAPACK_BLAS=on \
+-DSCALAPACK_BUILD_TESTING=no \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_Fortran_COMPILER=mpif77 \
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/ScaLAPACK-2.1 
 ```
@@ -95,5 +96,18 @@ export myBLAS=/uhome/p001cao/local/app/lapack-3.10/libblas.a
 cmake .. -DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myLAPACK} \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_Fortran_COMPILER=mpifort \
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/ScaLAPACK-2.1 
+
+
+
+-DCMAKE_C_FLAGS="-Ofast -mtune=x86-64" -DCMAKE_Fortran_FLAGS="-Ofast -mtune=x86-64 -fallow-argument-mismatch" \
+
+export CFLAGS="-Ofast -mtune=x86-64 " 
+export FFLAGS="-Ofast -mtune=x86-64 -std=legacy"
+
+-DCMAKE_Fortran_FLAGS="-std=legacy" \
+
+export FFLAGS="-std=legacy"
+
 ```
+
 
