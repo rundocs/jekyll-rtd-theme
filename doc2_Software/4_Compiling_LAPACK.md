@@ -71,10 +71,10 @@ mkdir build && cd build
 
 ```shell
 module load tool_dev/cmake-3.21          
-module load mpi/ompi4.1.1-gcc11.2-noUCX-eagle
-export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
+module load mpi/ompi4.1.1-gcc10.3-noUCX-eagle 
+export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc10.3-noUCX-eagle-gold/bin:$PATH
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpifort
-export LD_LIBRARY_PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc10.3-noUCX-eagle-gold/lib:$LD_LIBRARY_PATH
 ```
 
 ### self-build BLAS and LAPACK
