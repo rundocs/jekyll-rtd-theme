@@ -5,6 +5,9 @@ description: You cannot teach a man anything, you can only help him find it with
 theme: null
 # remote_theme: rundocs/jekyll-rtd-theme
 
+# Color scheme supports "light" (default) and "dark"
+color_scheme: dark
+
 # debug:
 #   compress: true
 #   dist: false
