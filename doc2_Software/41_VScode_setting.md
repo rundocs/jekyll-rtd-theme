@@ -9,12 +9,12 @@ sort: 41
 ![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/113px-Visual_Studio_Code_1.35_icon.svg.png)
 
 
-I. Windows
-https://code.visualstudio.com/docs/setup/windows
-Can install the Visual Studio Code installer for Windows, or use Zip archive, extract it and run Code from there.
+## I. [Windows](https://code.visualstudio.com/docs/setup/windows)
+
+Can install the Visual Studio Code installer for Windows, or use Zip archive, extract it and run Code from there. <br>
 By default, VS Code is installed under C:\users\{username}\AppData\Local\Programs\Microsoft VS Code.
 
-I.1. Python in Visual Studio Code
+### Python in Visual Studio Code
 * Install the Python extension for VS Code (Microsoft)
 * Install a Python interpreter
 
@@ -38,7 +38,7 @@ Create or modify an entry for python.pythonPath with the full path to the Python
 
 
 
-II. To change the indentation based on programming language:
+## II. To change the indentation based on programming language:
 
 https://stackoverflow.com/questions/34174207/how-to-change-indentation-in-visual-studio-code
 
@@ -49,9 +49,11 @@ Preferences: Configure language specific settings... (command id: workbench.acti
 Select programming language (for example: lammps)
 Add this code:
 
+```js
 "[lammps]": {
     "editor.tabSize": 2
 }
+```
 
 
 Setting.json
@@ -62,37 +64,50 @@ Setting.json
     "editor.rulers": [80 ],
 
     "workbench.colorTheme": "Monokai++",
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.visible": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.iconTheme": "vscode-icons",
 
     "files.associations": {
-        "*.lmp": "lmps", "*.in": "lmps", "*.mod": "lmps",  "*.lmp*": "lmps", 
-        "*.log": "log", "*.out": "log",
+        "*.lmp": "lmps",
+        "*.in": "lmps",
+        "*.mod": "lmps",
+        "*.lmp*": "lmps",
+        "*.log": "log",
+        "*.out": "log",
         "*.txt": "txt",
+        "*.py": "python",
+        "*.md": "markdown"
     },
 
     "[lmps]": {
         "editor.tabSize": 2,
         "editor.snippetSuggestions": "none",
     },
+
+    "[markdown]": {
+        "editor.tabSize": 4,
+        "editor.snippetSuggestions": "none",
+    },
    
-    "workbench.sideBar.location": "left",
-    "workbench.activityBar.visible": true,
+
     "window.zoomLevel": 0,
 
     "python.testing.cwd": "",
     "python.condaPath": "C:\\DevProgram\\Miniconda3\\condabin",
-    "python.pythonPath": "C:\\DevProgram\\Miniconda3\\envs\\py37\\python",
-    "python.defaultInterpreterPath": "C:\\DevProgram\\miniconda3\\envs\\py37\\python.exe",
-    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
-    "python.showStartPage": false,
+    "python.defaultInterpreterPath": "C:\\DevProgram\\miniconda3\\python.exe",
 
     "C_Cpp.updateChannel": "Insiders",
-    "txtsyntax.highlightLineBorderColor": "",
     "jupyter.sendSelectionToInteractiveWindow": true,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+
+    "security.workspace.trust.enabled": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+
 }
 ```
