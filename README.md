@@ -13,6 +13,6 @@ It's fun if you find something helpful here. In other cases, it isn't my busines
 
 |        |        |
 |--------|--------|
-![](./assets/images/my_picture3x3.jpg)| ![](./assets/images/icon_messenger.png)](https://www.facebook.com/thangckt111) <br>
-                                        ![](./assets/images/icon_linkedin.jpg)](https://www.linkedin.com/in/thang-nguyen-5b458a218) <br>
-                                        ![](./assets/images/icon_email.png)](mailto:caothangckt@gmail.com) |
+![](./assets/images/my_picture3x3.jpg)| [![](./assets/images/icon_messenger.png)](https://www.facebook.com/thangckt111) <br>
+[![](./assets/images/icon_linkedin.jpg)](https://www.linkedin.com/in/thang-nguyen-5b458a218) <br>
+[![](./assets/images/icon_email.png)](mailto:caothangckt@gmail.com) |
