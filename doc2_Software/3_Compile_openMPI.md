@@ -235,7 +235,7 @@ mkdir build_eagle && cd build_eagle
 
 ../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
 --with-sge --with-ucx=${myUCX} --with-knem=${myKNEM}  \
---prefix=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-noUCX-eagle
+--prefix=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-eagle
 ```
 
 
