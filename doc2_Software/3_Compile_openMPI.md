@@ -219,6 +219,7 @@ mpic++ -v
 - 3rd-party libs (ucx,knem,...) can be self-built
 - Use UCX with OMPI-5 and do not need seperate installation for Eagle, Lion?
 - There is no `--with-verb` anymore
+- See news in 5.x [here](https://raw.githubusercontent.com/open-mpi/ompi/v5.0.x/NEWS)
 
 ### USC1: (Cenntos 6.5)
 ```shell
