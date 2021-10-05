@@ -214,3 +214,31 @@ prepend-path   PKG_CONFIG_PATH 	   $topdir/lib/pkgconfig          # this is requ
 module load ompi4.1.1-gcc11.2-noUCX
 mpic++ -v
 ```
+
+## OpenMPI-5
+
+### USC1: (Cenntos 6.5)
+```shell
+module load tool_dev/binutils-2.36                       # gold, should use to avoid link-error
+module load compiler/gcc-11.2
+export myKNEM=/uhome/p001cao/local/app/tool_dev/knem-1.1.4
+```
+
+#### InfiniBand cluster
+```shell
+cd openmpi-5.0.0
+mkdir build_eagle && cd build_eagle 
+
+../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
+--with-sge --without-ucx --with-verbs --with-knem=${myKNEM} \
+--prefix=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-noUCX-eagle
+```
+
+#### no InfiniBand cluster
+```shell
+cd openmpi-4.1.1
+mkdir build_lion && cd build_lion
+../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
+--with-sge --without-ucx --without-verbs --with-knem=${myKNEM} \
+--prefix=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-noUCX-lion
+```
