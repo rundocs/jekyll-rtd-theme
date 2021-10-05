@@ -216,15 +216,16 @@ mpic++ -v
 ```
 
 ## OpenMPI-5
-- 3rd-party libs (ucx,knem,...) can be self-built
-- Use UCX with OMPI-5 and do not need seperate installation for Eagle, Lion?
 - There is no `--with-verb` anymore
+- May use UCX with OMPI-5 and do not need seperate installation for Eagle, Lion?
 - See news in 5.x [here](https://raw.githubusercontent.com/open-mpi/ompi/v5.0.x/NEWS)
 
 ### USC1: (Cenntos 6.5)
 ```shell
 module load tool_dev/binutils-2.36                       # gold, should use to avoid link-error
 module load compiler/gcc-11.2
+export myUCX=/uhome/p001cao/local/app/tool_dev/ucx-1.9
+export myKNEM=/uhome/p001cao/local/app/tool_dev/knem-1.1.4
 ```
 
 #### InfiniBand cluster
@@ -233,7 +234,7 @@ cd openmpi-5.0.0
 mkdir build_eagle && cd build_eagle 
 
 ../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
---with-sge --with-ucx --with-knem --with-psm2 \
+--with-sge --with-psm2 --with-ucx=${myUCX} --with-knem=${myKNEM}  \
 --prefix=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-noUCX-eagle
 ```
 
