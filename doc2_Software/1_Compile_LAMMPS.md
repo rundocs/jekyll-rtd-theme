@@ -383,37 +383,38 @@ module load plumed2/2.7htt-gcc
 must create module file for openKim to add its PKG's path
 
 ## 3. CAN-GPU    
-# https://docs.lammps.org/Build_extras.html#gpu
+- See [GPU package](https://docs.lammps.org/Build_extras.html#gpu)
+
 ```shell
 module load mpi/ompi4.1-gcc7.4-cuda      # cuda-10 only support to gcc-8
 module load cmake-3.20.3
 module load fftw/fftw3.3.8-ompi4.1-gcc7.4
 
 export PATH=$PATH:/home/thang/local/app/openmpi/4.1.1-gcc7.4-cuda/bin
-export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
+export CC=mpicc  export CXX=mpic++  export FORTRAN=mpif90
 # python (require py3) 
 export pyROOT=/home/thang/local/app/miniconda3/envs/py37
 # cuda
 export CUDA_PATH=/home/thang/local/app/cuda-10.2
 export bin2c=/home/thang/local/app/cuda-10.2/bin/bin2c
-```
-```make
+
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPython_ROOT_DIR=${pyROOT} \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
--DPKG_OPENMP=yes -D PKG_OPT=yes -DPKG_INTEL=no -DPKG_KOKKOS=no \
+-DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
 -DPKG_GPU=yes -DGPU_API=cuda -DGPU_ARCH=sm_60 -DBIN2C=${bin2c} -DGPU_PREC=double \
--DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes \
--DPKG_KIM=no -DDOWNLOAD_KIM=no -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_MESONT=no  \
--DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_ML-QUIP=no -DPKG_SCAFACOS=no \
--DPKG_VTK=no -DPKG_H5MD=no \
--DFFT=FFTW3 \
+-DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no \
+-DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_SCAFACOS=no -DPKG_H5MD=no \
+-DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DPKG_KIM=no \
+-DPKG_MESONT=no -DPKG_ML-QUIP=no \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
--DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
+-DFFT=FFTW3 \
+-DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
 -DCMAKE_INSTALL_PREFIX=/home/thang/local/app/lammps/gccOMPI-master
 ```
 
 
+```
 \#####################
 
 KOKKOS (USC 2) - 05May20 (error tbb_malloc  --> change TBB folder in file TBB.cmake)
@@ -435,7 +436,7 @@ find_path(TBB_MALLOC_INCLUDE_DIR NAMES tbb.h PATHS $ENV{TBBROOT}/include/tbb)
 find_library(TBB_MALLOC_LIBRARY NAMES tbbmalloc PATHS $ENV{TBBROOT}/lib/intel64/gcc4.7
 
                                                        $ENV{TBBROOT}/build/linux_intel64_gcc_cc9.2.0_libc2.12_kernel2.6.32_release)
-
+```
 
 https://github.com/kokkos/kokkos/blob/master/BUILD.md
 ##-- must use
