@@ -61,32 +61,39 @@ module load compiler/gcc-11.2
 
 export PATH=$PATH:/uhome/p001cao/local/app/compiler/gcc-11.2/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
-myKNEM=/uhome/p001cao/local/app/tool_dev/knem-1.1.4
-myNUMA=/uhome/p001cao/local/app/tool_dev/numactl-2.0.13
 
-../contrib/configure-release --enable-mt --with-knem=$myKNEM \
-LDFLAGS="-fuse-ld=gold -lrt  -L$myNUMA/lib -Wl,-rpath,$myNUMA/lib" \
-CFLAGS="-I$myNUMA/include" \
+../contrib/configure-release --enable-mt 
 --prefix=/uhome/p001cao/local/app/tool_dev/ucx-1.11
 ```
 
 
-#########################
+Option:
+```shell
+myKNEM=/uhome/p001cao/local/app/tool_dev/knem-1.1.4
+myNUMA=/uhome/p001cao/local/app/tool_dev/numactl-2.0.13
+
+--with-knem=$myKNEM \
+LDFLAGS="-fuse-ld=gold -lrt  -L$myNUMA/lib -Wl,-rpath,$myNUMA/lib" \
+CFLAGS="-I$myNUMA/include" \
+```
+
+Other options:
+```shell
 --disable-numa
 --with-rc --with-ud --with-dc --with-ib-hw-tm --with-dm --with-cm \
 ## consider options
 --with-verbs(=DIR)      Build OpenFabrics support, adding DIR/include,
-                          DIR/lib, and DIR/lib64 to the search path for
-                          headers and libraries
-  --with-rc               Compile with IB Reliable Connection support
-  --with-ud               Compile with IB Unreliable Datagram support
-  --with-dc               Compile with IB Dynamic Connection support
-  --with-mlx5-dv          Compile with mlx5 Direct Verbs support. Direct Verbs
-                          (DV) support provides additional acceleration
-                          capabilities that are not available in a regular
-                          mode.
-  --with-ib-hw-tm         Compile with IB Tag Matching support
-  --with-dm               Compile with Device Memory support
+                        DIR/lib, and DIR/lib64 to the search path for
+                        headers and libraries
+--with-rc               Compile with IB Reliable Connection support
+--with-ud               Compile with IB Unreliable Datagram support
+--with-dc               Compile with IB Dynamic Connection support
+--with-mlx5-dv          Compile with mlx5 Direct Verbs support. Direct Verbs
+                        (DV) support provides additional acceleration
+                        capabilities that are not available in a regular
+                        mode.
+--with-ib-hw-tm         Compile with IB Tag Matching support
+--with-dm               Compile with Device Memory support
 
 --with-cm               Compile with IB Connection Manager support
 
@@ -95,11 +102,11 @@ myNUMA=/home1/p001cao/local/app/tool_dev/numactl-2.0.13
 LDFLAGS="-fuse-ld=gold -lrt  -L$myNUMA/lib -Wl,-rpath,$myNUMA/lib" \
 CFLAGS="-I$myNUMA/include" \
 ##--
-# export myKNEM=/home1/p001cao/local/app/tool_dev/knem1.1.3    
-# export myOFI=/home1/p001cao/local/app/tool_dev/libfabric-1.10.1 
+export myKNEM=/home1/p001cao/local/app/tool_dev/knem1.1.3    
+export myOFI=/home1/p001cao/local/app/tool_dev/libfabric-1.10.1 
 --with-verbs=${myOFI} --with-knem=${myKNEM} \
 https://developer.arm.com/tools-and-software/server-and-hpc/help/porting-and-tuning/building-open-mpi-with-openucx/running-openmpi-with-openucx
-
+```
 
 ####2. Intel
 module load intel/compiler-xe19u5
