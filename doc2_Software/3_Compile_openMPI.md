@@ -228,7 +228,6 @@ module load compiler/gcc-11.2
 export myUCX=/uhome/p001cao/local/app/tool_dev/ucx-1.10
 ```
 
-#### InfiniBand cluster
 ```shell
 cd openmpi-5.0.0
 mkdir build_eagle && cd build_eagle 
@@ -238,12 +237,3 @@ mkdir build_eagle && cd build_eagle
 --prefix=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-eagle
 ```
 
-#### no InfiniBand cluster
-```shell
-cd openmpi-5.0.0
-mkdir build_lion && cd build_lion
-
-../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
---with-sge --with-ucx=${myUCX} --with-knem=${myKNEM}  \
---prefix=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-lion
-```
