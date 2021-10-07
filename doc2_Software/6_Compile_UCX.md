@@ -62,8 +62,7 @@ module load compiler/gcc-11.2
 export PATH=$PATH:/uhome/p001cao/local/app/compiler/gcc-11.2/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
 
-../contrib/configure-release --enable-mt \
---prefix=/uhome/p001cao/local/app/tool_dev/ucx-1.11
+../configure --enable-mt --prefix=/uhome/p001cao/local/app/tool_dev/ucx-1.11
 ```
 
 
