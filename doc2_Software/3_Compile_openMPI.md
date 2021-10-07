@@ -219,7 +219,7 @@ mpic++ -v
 - There is no `--with-verb` anymore. And openib BTL is remove in this version, so InfiniBand must use "ucx PML". [See more](https://www.open-mpi.org/faq/?category=openfabrics
 - May use UCX with OMPI-5 and do not need seperate installation for Eagle, Lion?
 - May not be used with UCX-1.11
-- See news in 5.x [here](https://raw.githubusercontent.com/open-mpi/ompi/v5.0.x/NEWS)
+- See news in 5.x [here](https://github.com/open-mpi/ompi/tree/v5.0.x)
 
 ### USC1: (Cenntos 6.5)
 ```shell
