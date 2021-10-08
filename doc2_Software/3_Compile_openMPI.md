@@ -225,7 +225,7 @@ mpic++ -v
 ```shell
 module load tool_dev/binutils-2.36                       # gold, should use to avoid link-error
 module load compiler/gcc-11.2
-export myUCX=/uhome/p001cao/local/app/tool_dev/ucx-1.10
+export myUCX=/uhome/p001cao/local/app/tool_dev/ucx-1.11
 ```
 
 ```shell
