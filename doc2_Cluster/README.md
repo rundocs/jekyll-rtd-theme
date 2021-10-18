@@ -2,6 +2,6 @@
 sort: 2
 ---
 
-# Installation Notes
+# Deal with Clusters
 
 {% include list.liquid all=true %}
