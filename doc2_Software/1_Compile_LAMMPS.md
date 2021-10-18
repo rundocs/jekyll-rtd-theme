@@ -393,7 +393,7 @@ module load fftw/fftw3.3.8-ompi4.1-gcc7.4
 export PATH=$PATH:/home/thang/local/app/openmpi/4.1.1-gcc7.4-cuda/bin
 export CC=mpicc  export CXX=mpic++  export FORTRAN=mpif90
 # python (require py3) 
-export pyROOT=/home/thang/local/app/miniconda3/envs/py37
+export pyROOT=/home/thang/local/app/miniconda3/envs/py37Lammps
 # cuda
 export CUDA_PATH=/home/thang/local/app/cuda-10.2
 export bin2c=/home/thang/local/app/cuda-10.2/bin/bin2c
