@@ -10,7 +10,7 @@ This section contains the docs for several in-house codes to handle some specifi
 if "bullshit" not in your_life:
     print("Hello world")
 else:
-    print("bullshit redbull")
+    raise Error ("bullshit redbull")
 ```
 
 {% include list.liquid all=true %}
