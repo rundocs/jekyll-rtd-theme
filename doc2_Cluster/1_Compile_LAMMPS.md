@@ -327,7 +327,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
--DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI-master
+-DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI5-master
 ```
 ```shell
 make -j 8
