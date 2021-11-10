@@ -327,7 +327,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
--DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI5-master
+-DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI5-29Sep21
 ```
 ```shell
 make -j 8
@@ -401,7 +401,7 @@ export bin2c=/home/thang/local/app/cuda-10.2/bin/bin2c
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPython_ROOT_DIR=${pyROOT} \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
--DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
+-DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_KOKKOS=no \
 -DPKG_GPU=yes -DGPU_API=cuda -DGPU_ARCH=sm_60 -DBIN2C=${bin2c} -DGPU_PREC=double \
 -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_SCAFACOS=no -DPKG_H5MD=no \
@@ -410,7 +410,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
--DCMAKE_INSTALL_PREFIX=/home/thang/local/app/lammps/gccOMPI-master
+-DCMAKE_INSTALL_PREFIX=/home/thang/local/app/lammps/gccOMPI-29Sep21
 ```
 
 
