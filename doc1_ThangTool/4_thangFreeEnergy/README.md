@@ -2,7 +2,7 @@
 sort: 4
 ---
 
-# *module* thaFreeEnergy 
+# *module* free_energy_cal 
 
 This module contains classes and functions relate to the calcualtion of free energy.
 

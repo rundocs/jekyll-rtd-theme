@@ -2,9 +2,10 @@
 sort: 1
 ---
 
-# code-docs
+# thatool docs
 
 This section contains the docs for several in-house codes to handle some specific tasks.
+These codes are encapsulated into the thatool package.
 
 ```python
 if "bullshit" not in your_life:
