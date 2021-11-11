@@ -5,7 +5,8 @@ sort: 1
 # thatool docs
 
 This section contains the docs for several in-house codes to handle some specific tasks.
-These codes are encapsulated into the thatool package.
+
+Some of these codes are encapsulated into the thatool package.
 
 ```python
 if "bullshit" not in your_life:
