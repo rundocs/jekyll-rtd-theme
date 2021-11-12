@@ -306,7 +306,7 @@ mkdir build   &&   cd build
 
 module load tool_dev/binutils-2.36         # gold
 module load tool_dev/cmake-3.21
-module load fftw/fftw3.3.8-ompi4.1-gcc11.2            
+module load fftw/fftw3.3.10-ompi5.0-gcc11.2            
 module load mpi/ompi5.0.0-gcc11.2
 
 export PATH=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-eagle/bin:$PATH
