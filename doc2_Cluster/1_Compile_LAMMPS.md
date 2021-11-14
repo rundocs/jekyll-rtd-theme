@@ -331,10 +331,26 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI5-29Sep21
 ```
 ```shell
-make -j 8
+make -j 20
 # test:  mpirun -np 2 lmp_mpi
 make install
 ```
+
+```shell
+## Module file
+module load conda/py37Lammps
+module load fftw/fftw3.3.10-ompi5.0-gcc11.2
+# for Tcl script use only
+set     topdir          /uhome/p001cao/local/app/lammps/gccOMPI5-29Sep21
+
+prepend-path    PATH                    $topdir/bin
+prepend-path    LD_LIBRARY_PATH         $topdir/lib64
+prepend-path    INCLUDE                 $topdir/include/lammps
+
+prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUXPPC64/molfile
+```
+
+
 
 ## 2. USC2 (cheetah)
 ```shell
