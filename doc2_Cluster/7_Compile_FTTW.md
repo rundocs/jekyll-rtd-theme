@@ -22,6 +22,7 @@ Compiling FFTW 3.3.10 (Single,Double)
 --enable-sse2: Single, Double
 --enable-long-double : Long-Double Precision 
 --enable-float : Single
+--enable-shared: fBIC
 ```
 
 ### USC1
@@ -31,7 +32,7 @@ export PATH=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-eagle/bin:$PATH
 export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort  export F90=mpif90
 
 ../configure --enable-sse2 \
---enable-threads --enable-openmp --enable-mpi \
+--enable-threads --enable-openmp --enable-mpi --enable-shared \
 --prefix=/uhome/p001cao/local/app/fftw/3.3.10-ompi5.0-gcc11.2
 ```
 

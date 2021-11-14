@@ -318,8 +318,9 @@ export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 -DPython_ROOT_DIR=${pyROOT} -DMOLFILE_INCLUDE_DIR=${PlugIncDIR} \
--DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DLAMMPS_MACHINE=mpi \
--DBUILD_OMP=yes -DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
+-DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
+-DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=yes \
+-DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
 -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_SCAFACOS=no -DPKG_H5MD=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DPKG_KIM=no \
