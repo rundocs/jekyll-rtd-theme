@@ -24,7 +24,7 @@
 
         <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
-                {%- if item.sort -%}
+                {%- if item.sort and site.toc.sort -%}
                     {{ item.sort }}. {{ item.title | default: item.name }}
                 {%- else -%}
                     {{ item.title | default: item.name }}
