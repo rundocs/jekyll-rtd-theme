@@ -298,12 +298,14 @@ module load tool_dev/binutils-2.35                # gold
 `conda install python=3.7.5 pandas=1.0 numpy=1.19`
 - Use GCC-11 need also update GCC-conda = 11
 `conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`
+- install GSL, required by SCAFACOS package
 ```
 
 ```shell
 cd lammps_master 
 mkdir build   &&   cd build
 
+# module load tool_dev/gsl-2.6
 module load tool_dev/binutils-2.36         # gold
 module load tool_dev/cmake-3.21
 module load fftw/fftw3.3.10-ompi5.0-gcc11.2            
