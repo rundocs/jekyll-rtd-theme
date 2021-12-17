@@ -355,6 +355,11 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 
 
 ## 2. USC2 (cheetah)
+```note
+- Use GCC-11 need also update GCC-conda = 11
+`conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`
+```
+
 ```shell
 #module load mpi/ompi4.0.4-gcc10.1.0-lld
 #module load llvm/llvm-gcc10-lld                    # to use lld 
