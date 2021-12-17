@@ -200,6 +200,8 @@ at directory: /uhome/p001cao/local/share/lmodfiles/mpi--> create file "ompi4.1.1
 
 ```shell
 # for Tcl script use only
+module load compiler/gcc-11.2
+
 set     topdir          /uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle
 
 prepend-path   PATH                $topdir/bin
@@ -214,6 +216,7 @@ prepend-path   PKG_CONFIG_PATH 	   $topdir/lib/pkgconfig          # this is requ
 module load ompi4.1.1-gcc11.2-noUCX
 mpic++ -v
 ```
+
 
 ## OpenMPI-5
 - There is no `--with-verb` anymore. And openib BTL is remove in this version, so InfiniBand must use "ucx PML". [See more](https://www.open-mpi.org/faq/?category=openfabrics
@@ -237,3 +240,19 @@ mkdir build_eagle && cd build_eagle
 --prefix=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-eagle
 ```
 
+
+### USC2: (Cenntos 6.9)
+- On Tacheon, UCX may give better performance. 
+
+```shell 
+cd openmpi-5.0.0
+mkdir buildGCC && cd buildGCC
+##
+module load tool_dev/binutils-2.35                        # gold
+module load compiler/gcc-11.2
+export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.11               ## UCX
+
+../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
+--with-sge --with-ucx=${myUCX}  \
+--prefix=/home1/p001cao/local/app/openmpi/5.0.0-gcc11.2
+```

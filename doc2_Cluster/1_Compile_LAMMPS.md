@@ -359,30 +359,30 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 #module load mpi/ompi4.0.4-gcc10.1.0-lld
 #module load llvm/llvm-gcc10-lld                    # to use lld 
 
-module load mpi/ompi4.1.1-gcc10.3
+module load mpi/ompi5.0.0-gcc11.2
 module load tool_dev/binutils-2.35                # gold 
 module load tool_dev/cmake-3.20.3
-module load fftw/fftw3.3.8-ompi4.1-gcc10.3
+module load fftw/fftw3.3.10-ompi5.0-gcc11.2
 
-export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.1-gcc10.3/bin
-export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
+export PATH=$PATH:/home1/p001cao/local/app/openmpi/5.0.0-gcc11.2/bin
+export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
 ## python (require py3) 
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
-```
-```make
+
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 -DPython_ROOT_DIR=${pyROOT} \
--DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
--DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
--DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes \
--DPKG_KIM=no -DDOWNLOAD_KIM=no -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_MESONT=no  \
--DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_ML-QUIP=no -DPKG_SCAFACOS=no \
--DPKG_VTK=no -DPKG_H5MD=no \
--DFFT=FFTW3 \
+-DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
+-DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=yes \
+-DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
+-DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no -DPKG_ML-PACE=no \
+-DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_KIM=no -DPKG_H5MD=no \
+-DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DDOWNLOAD_SCAFACOS=no -DPKG_SCAFACOS=no \
+-DPKG_MESONT=no -DPKG_ML-QUIP=no \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
--DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
--DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI-master
+-DFFT=FFTW3 \
+-DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
+-DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI-dev
 ```
 
 

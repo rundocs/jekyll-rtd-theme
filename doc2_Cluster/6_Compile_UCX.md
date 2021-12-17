@@ -36,22 +36,32 @@ export ACLOCAL_PATH=/home1/p001cao/local/app/tool_dev/libtool-2.4.6/share/acloca
 mkdir build   &&  cd build
 
 ### (install from Release --> no need ./autogen.h)
+```shell
 tar xvf ucx-1.11.2.tar.gz
 cd ucx-1.11.2
-mkdir build   &&  cd build
+mkdir build && cd build
+```
+
 ## USC2
+```shell
 module load tool_dev/binutils-2.35              # gold
-module load compiler/gcc-10.3
-##
-export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-10.3/bin
+module load compiler/gcc-11.2
+
+export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-11.2/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
+
+../contrib/configure-release  --enable-mt  --prefix=/home1/p001cao/local/app/tool_dev/ucx-1.11
+```
+
+Option:
+```shell
 myKNEM=/home1/p001cao/local/app/tool_dev/knem-1.1.4
 myNUMA=/home1/p001cao/local/app/tool_dev/numactl-2.0.13
-##--
-../contrib/configure-release  --enable-mt --with-knem=$myKNEM \
+
+--with-knem=$myKNEM \
 LDFLAGS="-fuse-ld=gold -lrt  -L$myNUMA/lib -Wl,-rpath,$myNUMA/lib" \
 CFLAGS="-I$myNUMA/include" \
---prefix=/home1/p001cao/local/app/tool_dev/ucx-1.10
+```
 
 
 ## USC1 (eagle)
@@ -220,4 +230,20 @@ cd xpmem-2.6.3
 
 ./configure --prefix=/home1/p001cao/local/app/tool_dev/xpmem-2.6.2
 
+
+
+
+## 3. Make module file 
+at directory: /uhome/p001cao/local/share/lmodfiles/GCC --> create file "gcc-11.2"
+
+```shell
+# for Tcl script use only
+set     topdir          /home1/p001cao/local/app/tool_dev/ucx-1.11
+
+prepend-path    PATH                $topdir/bin
+prepend-path    INCLUDE 	        $topdir/include
+prepend-path    LD_LIBRARY_PATH     $topdir/lib
+
+prepend-path    PKG_CONFIG_PATH 	$topdir/lib/pkgconfig  
+```
 

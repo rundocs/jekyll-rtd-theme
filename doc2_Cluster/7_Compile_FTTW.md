@@ -38,13 +38,13 @@ export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort  export F90=mpif90
 
 ### USC2
 ```shell
-module load mpi/ompi4.1.1-gcc10.3
-export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.1-gcc10.3/bin 
+module load mpi/ompi5.0.0-gcc11.2
+export PATH=$PATH:/home1/p001cao/local/app/openmpi/ompi5.0.0-gcc11.2/bin 
 export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort  export F90=mpif90
 
 ../configure --enable-sse2 \
---enable-threads --enable-openmp --enable-mpi \
---prefix=/home1/p001cao/local/app/fftw/3.3.8-ompi4.1-gcc10.3
+--enable-threads --enable-openmp --enable-mpi --enable-shared \
+--prefix=/home1/p001cao/local/app/fftw/3.3.10-ompi5.0-gcc11.2
 ```
 
 ### CAN-GPU
@@ -65,3 +65,20 @@ make install
 validate: 
 Inside "/uhome/p001cao/local/app/fftw/3.3.8-ompi4.1-gcc10.3/lib" you should see at least the files below
 libfftw3.a libfftw3_mpi.a libfftw3_omp.a libfftw3_threads.a .... ....
+
+
+
+## 4. Make module file 
+at directory: /uhome/p001cao/local/share/lmodfiles/mpi--> create file "ompi4.1.1-gcc11.2-noUCX"
+
+```shell
+# for Tcl script use only
+# for Tcl script use only
+set     topdir          /uhome/p001cao/local/app/fftw/3.3.10-ompi5.0-gcc11.2
+
+prepend-path    PATH                $topdir/bin
+prepend-path    INCLUDE 	        $topdir/include
+prepend-path    LD_LIBRARY_PATH     $topdir/lib
+
+prepend-path    PKG_CONFIG_PATH 	$topdir/lib/pkgconfig  
+```

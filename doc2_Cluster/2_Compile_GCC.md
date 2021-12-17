@@ -61,25 +61,33 @@ module load compiler/gcc-10.3         # to avoid:  uint64_t or int64_t not found
 --enable-checking=release --enable-shared --disable-multilib --with-system-zlib \
 --prefix=/uhome/p001cao/local/app/compiler/gcc-11.2
 ```
+
 ```make
 make  -j 20         # not use -j to know what error
 make install
 # check: g++ -v
 ```
 
-- **USC 2** 
+### USC 2
 ```shell 
---prefix=/home1/p001cao/local/app/compiler/gcc-10.3
+mkdir build && cd build
+
+../configure --enable-languages=c,c++,objc,obj-c++,fortran \
+--enable-checking=release --enable-shared --disable-multilib --with-system-zlib \
+--prefix=/home1/p001cao/local/app/compiler/gcc-11.2
 ```
-- **CAN** 
+
+### CAN
 ```shell 
 --prefix=/home/thang/local/app/compiler/gcc-10.3
 ```
-- **CAN_GPU** 
+
+### CAN_GPU
 ```shell 
 module load compiler/gcc-7.4   # cuda note support gcc > 8 
 --prefix=/home/thang/local/app/compiler/gcc-10.3'
 ```
+
 
 ## 3. Make module file 
 at directory: /uhome/p001cao/local/share/lmodfiles/GCC --> create file "gcc-11.2"
