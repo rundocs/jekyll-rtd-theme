@@ -90,16 +90,16 @@ make install
 On Tacheon, UCX may give better performance. 
 
 ```shell 
-cd openmpi-4.1.1
+cd openmpi-4.1.2
 mkdir buildGCC && cd buildGCC
 ##
-module load tool_dev/binutils-2.35                        # gold
-module load compiler/gcc-10.3
-export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.10               ## UCX
+module load tool_dev/binutils-2.37                        # gold
+module load compiler/gcc-11.2
+export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.11               ## UCX
 
 ../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
 --with-sge --without-verbs --with-ucx=${myUCX}  \
---prefix=/home1/p001cao/local/app/openmpi/4.1.1-gcc10.3
+--prefix=/home1/p001cao/local/app/openmpi/4.1.2-gcc11.2
 ```
 
 **without UCX**
@@ -201,6 +201,7 @@ at directory: /uhome/p001cao/local/share/lmodfiles/mpi--> create file "ompi4.1.1
 ```shell
 # for Tcl script use only
 module load compiler/gcc-11.2
+module load tool_dev/binutils-2.37 
 
 set     topdir          /uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle
 
@@ -223,6 +224,7 @@ mpic++ -v
 - May use UCX with OMPI-5 and do not need seperate installation for Eagle, Lion?
 - May not be used with UCX-1.11
 - See news in 5.x [here](https://github.com/open-mpi/ompi/tree/v5.0.x)
+- Should update binutils-2.36 to avoid error: Dwarf Error: found dwarf version '5'
 
 ### USC1: (Cenntos 6.5)
 ```shell
@@ -243,12 +245,13 @@ mkdir build_eagle && cd build_eagle
 
 ### USC2: (Cenntos 6.9)
 - On Tacheon, UCX may give better performance. 
+- Should update binutils-2.36 to avoid error: Dwarf Error: found dwarf version '5'
 
 ```shell 
 cd openmpi-5.0.0
 mkdir buildGCC && cd buildGCC
 ##
-module load tool_dev/binutils-2.35                        # gold
+module load tool_dev/binutils-2.37                        # gold
 module load compiler/gcc-11.2
 export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.11               ## UCX
 
