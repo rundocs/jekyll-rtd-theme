@@ -364,12 +364,12 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 #module load mpi/ompi4.0.4-gcc10.1.0-lld
 #module load llvm/llvm-gcc10-lld                    # to use lld 
 
-module load mpi/ompi5.0.0-gcc11.2
+module load mpi/ompi4.1.2-gcc11.2
 module load tool_dev/binutils-2.37                # gold 
 module load tool_dev/cmake-3.20.3
-module load fftw/fftw3.3.10-ompi5.0-gcc11.2
+module load fftw/fftw3.3.10-ompi4.1-gcc11.2
 
-export PATH=$PATH:/home1/p001cao/local/app/openmpi/5.0.0-gcc11.2/bin
+export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.2-gcc11.2/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
 ## python (require py3) 
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
