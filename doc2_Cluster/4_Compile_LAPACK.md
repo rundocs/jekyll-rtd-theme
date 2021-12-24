@@ -111,3 +111,43 @@ export FFLAGS="-std=legacy"
 ```
 
 
+## OpenBLAS
+OpenBLAS is an open source optimized BLAS (Basic Linear Algebra Subprograms) library based on GotoBLAS2 1.13 BSD version.
+- Installation  [here](https://iq.opengenus.org/install-openblas-from-source/)
+- [SouceCode](https://github.com/xianyi/OpenBLAS)
+- see CMAKE options in file CMakeLists.txt
+
+```note 
+
+```
+```shell
+git clone https://github.com/xianyi/OpenBLAS.git
+cd OpenBLAS
+mkdir build && cd build
+```
+- Or download release
+```shell
+tar -xvf OpenBLAS-0.3.19.tar.gz
+cd OpenBLAS-0.3.19
+mkdir build && cd build
+```
+
+### UCS 2
+```shell
+module load tool_dev/cmake-3.20.3
+module load mpi/ompi5.0.0-gcc11.2
+export PATH=$PATH:/home1/p001cao/local/app/openmpi/5.0.0-gcc11.2/bin
+export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
+
+cmake .. -D CMAKE_BUILD_TYPE=Release \
+-DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/tool_dev/openBLAS-0.3.19
+
+make -j 16 && make install
+```
+
+
+```shell
+## Usage
+export myBLAS=/home1/p001cao/local/app/tool_dev/openBLAS-0.3.19/lib64/libopenblas.a   
+cmake .. -DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myBLAS} \
+```

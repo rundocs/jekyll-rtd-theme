@@ -250,6 +250,7 @@ export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.
 ```shell
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
 export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
+# can use: -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
 ```
 - "GCC + gold linker" is good now
 ```shell
@@ -358,25 +359,31 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 ```note
 - Use GCC-11 need also update GCC-conda = 11
 `conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`
+- to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf'
+- install openBLAS for LAPACK and BLAS, so need load GSL
+- use static link for openBLAS, so need to export it and set cmake var
 ```
 
 ```shell
 #module load mpi/ompi4.0.4-gcc10.1.0-lld
 #module load llvm/llvm-gcc10-lld                    # to use lld 
 
-module load mpi/ompi4.1.2-gcc11.2
 module load tool_dev/binutils-2.37                # gold 
 module load tool_dev/cmake-3.20.3
-module load fftw/fftw3.3.10-ompi4.1-gcc11.2
+module load tool_dev/gsl-2.6
+module load fftw/fftw3.3.10-ompi5.0-gcc11.2
+module load mpi/ompi5.0.0-gcc11.2
 
-export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.2-gcc11.2/bin
+export PATH=$PATH:/home1/p001cao/local/app/openmpi/5.0.0-gcc11.2/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
-## python (require py3) 
+export CFLAGS='-gdwarf-4 -gstrict-dwarf'
+## python (require py3) & BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
+export myBLAS=/home1/p001cao/local/app/tool_dev/openBLAS-0.3.19/lib64/libopenblas.a    
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
--DPython_ROOT_DIR=${pyROOT} \
+-DPython_ROOT_DIR=${pyROOT} -DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myBLAS} \
 -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=yes \
 -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
@@ -386,9 +393,10 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_MESONT=no -DPKG_ML-QUIP=no \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
--DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
--DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI-dev
+-DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI5-dev
 ```
+
+make -j 16 && make install
 
 
 \# use Internal LAPACK&BLAS, then no need (GSL & MKL): open file: ../cmake/Modules/Packages/USER_PLUMED.cmake

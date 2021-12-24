@@ -4,6 +4,7 @@ sort: 6
 
 # Compiling UCX
 
+
 https://github.com/openucx/ucx/wiki/OpenMPI-and-OpenSHMEM-installation-with-UCX
 ##################################
 UCX need to compile OpenMPI to use InfiniBand
@@ -43,6 +44,10 @@ mkdir build && cd build
 ```
 
 ## USC2
+```note
+- Error: No components were able to be opened in the pml framework: not solve 
+```
+
 ```shell
 module load tool_dev/binutils-2.35              # gold
 module load compiler/gcc-11.2

@@ -224,7 +224,7 @@ mpic++ -v
 - May use UCX with OMPI-5 and do not need seperate installation for Eagle, Lion?
 - May not be used with UCX-1.11
 - See news in 5.x [here](https://github.com/open-mpi/ompi/tree/v5.0.x)
-- Should update binutils-2.36 to avoid error: Dwarf Error: found dwarf version '5'
+
 
 ### USC1: (Cenntos 6.5)
 ```shell
