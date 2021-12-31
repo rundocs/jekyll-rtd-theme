@@ -118,7 +118,7 @@ OpenBLAS is an open source optimized BLAS (Basic Linear Algebra Subprograms) lib
 - see CMAKE options in file CMakeLists.txt
 
 ```note 
-
+- to create dynamic link (file *.so), use: -DBUILD_SHARED_LIBS=yes 
 ```
 ```shell
 git clone https://github.com/xianyi/OpenBLAS.git
@@ -136,11 +136,8 @@ mkdir build && cd build
 ```shell
 module load tool_dev/cmake-3.20.3
 module load mpi/ompi5.0.0-gcc11.2
-export PATH=$PATH:/home1/p001cao/local/app/openmpi/5.0.0-gcc11.2/bin
-export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
 
-cmake .. -D CMAKE_BUILD_TYPE=Release \
--DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/tool_dev/openBLAS-0.3.19
+cmake .. -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/tool_dev/openBLAS-0.3.19
 
 make -j 16 && make install
 ```

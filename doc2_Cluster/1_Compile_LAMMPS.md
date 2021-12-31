@@ -370,20 +370,18 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 
 module load tool_dev/binutils-2.37                # gold 
 module load tool_dev/cmake-3.20.3
-module load tool_dev/gsl-2.6
-module load fftw/fftw3.3.10-ompi5.0-gcc11.2
-module load mpi/ompi5.0.0-gcc11.2
+module load fftw/fftw3.3.10-ompi4.1-gcc11.2
+module load mpi/ompi4.1.2-gcc11.2
 
-export PATH=$PATH:/home1/p001cao/local/app/openmpi/5.0.0-gcc11.2/bin
+export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.2-gcc11.2/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
 export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 ## python (require py3) & BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
-export myBLAS=/home1/p001cao/local/app/tool_dev/openBLAS-0.3.19/lib64/libopenblas.a    
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
--DPython_ROOT_DIR=${pyROOT} -DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myBLAS} \
+-DPython_ROOT_DIR=${pyROOT} \
 -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=yes \
 -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
@@ -393,7 +391,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_MESONT=no -DPKG_ML-QUIP=no \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
--DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI5-dev
+-DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI4-dev
 ```
 
 make -j 16 && make install
@@ -406,6 +404,10 @@ module load tool_dev/gsl-2.6
 module load intel/mkl-xe19u5
 source mklvars.sh intel64
 -DFFT=MKL \    # must set before Plumed
+\# or use openBLAS (bad performance)
+module load tool_dev/gsl-2.6
+export myBLAS=/home1/p001cao/local/app/tool_dev/openBLAS-0.3.19/lib64/libopenblas.a 
+-DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myBLAS}    
 
 \# load plumed separately (bad alloc)
 module load plumed2/2.7htt-gcc
@@ -413,6 +415,22 @@ module load plumed2/2.7htt-gcc
 
 \#openKim: 
 must create module file for openKim to add its PKG's path
+
+### Module
+```shell 
+module load tool_dev/gsl-2.6
+module load conda/py37Lammps
+module load fftw/fftw3.3.10-ompi5.0-gcc11.2
+
+# for Tcl script use only
+set     topdir          /home1/p001cao/local/app/lammps/gccOMPI5-dev
+
+prepend-path    PATH                    $topdir/bin
+prepend-path    LD_LIBRARY_PATH         $topdir/lib64
+prepend-path    INCLUDE                 $topdir/include/lammps
+```
+
+
 
 ## 3. CAN-GPU    
 - See [GPU package](https://docs.lammps.org/Build_extras.html#gpu)

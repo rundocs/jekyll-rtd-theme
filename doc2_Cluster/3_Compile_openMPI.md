@@ -96,9 +96,10 @@ mkdir buildGCC && cd buildGCC
 module load tool_dev/binutils-2.37                        # gold
 module load compiler/gcc-11.2
 export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.11               ## UCX
+export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 
 ../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
---with-sge --without-verbs --with-ucx=${myUCX}  \
+--with-sge --with-ucx=${myUCX}  \
 --prefix=/home1/p001cao/local/app/openmpi/4.1.2-gcc11.2
 ```
 
