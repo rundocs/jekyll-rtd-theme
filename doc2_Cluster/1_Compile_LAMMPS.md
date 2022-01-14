@@ -355,7 +355,7 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 
 
 
-## 2. USC2 (cheetah)
+## 2. USC2 (Tacheon)
 ```note
 - Use GCC-11 need also update GCC-conda = 11
 `conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`
@@ -375,7 +375,7 @@ module load mpi/ompi4.1.2-gcc11.2
 
 export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.2-gcc11.2/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
-export CFLAGS='-gdwarf-4 -gstrict-dwarf'
+export CFLAGS='-gdwarf-4 -gstrict-dwarf'      # gcc-11
 ## python (require py3) & BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
 
@@ -450,17 +450,17 @@ export bin2c=/home/thang/local/app/cuda-10.2/bin/bin2c
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPython_ROOT_DIR=${pyROOT} \
--DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
--DPKG_OPENMP=yes -DPKG_INTEL=no -DPKG_KOKKOS=no \
+-DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
+-DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=no \
+-DPKG_INTEL=no -DPKG_KOKKOS=no \
 -DPKG_GPU=yes -DGPU_API=cuda -DGPU_ARCH=sm_60 -DBIN2C=${bin2c} -DGPU_PREC=double \
--DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no \
--DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_SCAFACOS=no -DPKG_H5MD=no \
--DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DPKG_KIM=no \
+-DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no -DPKG_ML-PACE=no \
+-DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_KIM=no -DPKG_H5MD=no \
+-DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DDOWNLOAD_SCAFACOS=no -DPKG_SCAFACOS=no \
 -DPKG_MESONT=no -DPKG_ML-QUIP=no \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
--DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
--DCMAKE_INSTALL_PREFIX=/home/thang/local/app/lammps/gccOMPI-29Sep21
+-DCMAKE_INSTALL_PREFIX=/home/thang/local/app/lammps/gccOMPI-dev
 ```
 
 

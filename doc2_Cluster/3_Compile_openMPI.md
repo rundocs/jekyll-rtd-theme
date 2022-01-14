@@ -95,21 +95,27 @@ mkdir buildGCC && cd buildGCC
 ##
 module load tool_dev/binutils-2.37                        # gold
 module load compiler/gcc-11.2
-export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.11               ## UCX
-export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 
-../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
---with-sge --with-ucx=${myUCX}  \
+export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-11.2/bin
+export CC=gcc export CXX=g++ export FORTRAN=gfortran
+export CFLAGS='-gdwarf-4 -gstrict-dwarf'
+export LDFLAGS="-fuse-ld=gold -lrt"
+export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12               ## UCX
+
+../configure --with-sge --with-ucx=${myUCX} --without-verbs \
 --prefix=/home1/p001cao/local/app/openmpi/4.1.2-gcc11.2
+
+make  -j 16 && make install
 ```
+
 
 **without UCX**
 ```shell 
 module load tool_dev/binutils-2.35                        # gold
 module load compiler/gcc-10.3
+export LDFLAGS="-fuse-ld=gold -lrt"
 
-../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
---with-sge --with-verbs --without-ucx \
+../configure --with-sge --with-verbs --without-ucx  \
 --prefix=/home1/p001cao/local/app/openmpi/4.1.1-gcc10.3-noUCX
 ```
 

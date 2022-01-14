@@ -38,8 +38,8 @@ mkdir build   &&  cd build
 
 ### (install from Release --> no need ./autogen.h)
 ```shell
-tar xvf ucx-1.11.2.tar.gz
-cd ucx-1.11.2
+tar xvf ucx-1.12.0.tar.gz
+cd ucx-1.12.0
 mkdir build && cd build
 ```
 
@@ -50,19 +50,20 @@ mkdir build && cd build
 ```
 
 ```shell
-module load tool_dev/binutils-2.35              # gold
+module load tool_dev/binutils-2.37              # gold
 module load compiler/gcc-11.2
 
 export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-11.2/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
 export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 
-../contrib/configure-release  --enable-optimizations  --enable-mt --with-mlx5-dv  \
---prefix=/home1/p001cao/local/app/tool_dev/ucx-1.11
+../contrib/configure-release  --enable-optimizations  --enable-mt LDFLAGS="-fuse-ld=gold -lrt" \
+--prefix=/home1/p001cao/local/app/tool_dev/ucx-1.12
 ```
 
 Option:
 ```shell
+export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 myKNEM=/home1/p001cao/local/app/tool_dev/knem-1.1.4
 myNUMA=/home1/p001cao/local/app/tool_dev/numactl-2.0.13
 
