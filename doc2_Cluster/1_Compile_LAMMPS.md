@@ -359,7 +359,7 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 ```note
 - Use GCC-11 need also update GCC-conda = 11
 `conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`
-- to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf'
+- Do not use GCC-11 to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf' not solve this error
 - install openBLAS for LAPACK and BLAS, so need load GSL
 - use static link for openBLAS, so need to export it and set cmake var
 ```
@@ -371,12 +371,39 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 module load tool_dev/binutils-2.37                # gold 
 module load tool_dev/cmake-3.20.3
 module load fftw/fftw3.3.10-ompi4.1-gcc11.2
-module load mpi/ompi4.1.2-gcc11.2
+module load mpi/ompi4.1.2-gcc10.3
 
-export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.2-gcc11.2/bin
+export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.2-gcc10.3/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
-export CFLAGS='-gdwarf-4 -gstrict-dwarf'      # gcc-11
 ## python (require py3) & BLAS+LAPACK
+export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
+
+cmake ../cmake -C ../cmake/presets/all_on.cmake \
+-DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
+-DPython_ROOT_DIR=${pyROOT} \
+-DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
+-DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=yes \
+-DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
+-DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no -DPKG_ML-PACE=yes \
+-DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_KIM=no -DPKG_H5MD=no \
+-DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DDOWNLOAD_SCAFACOS=no -DPKG_SCAFACOS=no \
+-DPKG_MESONT=no -DPKG_ML-QUIP=no \
+-DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
+-DFFT=FFTW3 \
+-DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI4-dev
+```
+
+make -j 16 && make install
+
+### use OMPI3 
+- This does not work, due to OMPI3 error
+
+```shell
+module load tool_dev/binutils-2.37                # gold 
+module load cmake/3.16.2 
+module load fftw/3.3.8/gcc-7.4.0/ompi-3.1.4/double
+module load mpi/gcc-7.4.0/ompi/3.1.4
+
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
@@ -391,10 +418,10 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_MESONT=no -DPKG_ML-QUIP=no \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
--DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI4-dev
+-DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI3-dev
 ```
 
-make -j 16 && make install
+
 
 
 \# use Internal LAPACK&BLAS, then no need (GSL & MKL): open file: ../cmake/Modules/Packages/USER_PLUMED.cmake
@@ -434,6 +461,15 @@ prepend-path    INCLUDE                 $topdir/include/lammps
 
 ## 3. CAN-GPU    
 - See [GPU package](https://docs.lammps.org/Build_extras.html#gpu)
+```shell
+# cuda
+export CUDA_PATH=/home/thang/local/app/cuda-10.2
+export bin2c=/home/thang/local/app/cuda-10.2/bin/bin2c
+
+-DPKG_GPU=yes -DGPU_API=cuda -DGPU_ARCH=sm_61 -DBIN2C=${bin2c} -DGPU_PREC=double \
+```
+- for Pascal architect of GPU, use ARCH=sm_60/sm_61
+
 
 ```shell
 module load mpi/ompi4.1-gcc7.4-cuda      # cuda-10 only support to gcc-8
@@ -453,7 +489,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=no \
 -DPKG_INTEL=no -DPKG_KOKKOS=no \
--DPKG_GPU=yes -DGPU_API=cuda -DGPU_ARCH=sm_60 -DBIN2C=${bin2c} -DGPU_PREC=double \
+-DPKG_GPU=yes -DGPU_API=cuda -DGPU_ARCH=sm_61 -DBIN2C=${bin2c} -DGPU_PREC=double \
 -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no -DPKG_ML-PACE=no \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_KIM=no -DPKG_H5MD=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DDOWNLOAD_SCAFACOS=no -DPKG_SCAFACOS=no \

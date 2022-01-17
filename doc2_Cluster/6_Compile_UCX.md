@@ -47,17 +47,19 @@ mkdir build && cd build
 ```note
 - Error: No components were able to be opened in the pml framework: not solve 
 - For GCC-11 to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf'
+export CFLAGS='-gdwarf-4 -gstrict-dwarf'
+- do not use GCC-11
 ```
 
 ```shell
 module load tool_dev/binutils-2.37              # gold
-module load compiler/gcc-11.2
+module load compiler/gcc-10.3
 
 export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-11.2/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
-export CFLAGS='-gdwarf-4 -gstrict-dwarf'
+export LDFLAGS="-fuse-ld=gold -lrt"
 
-../contrib/configure-release  --enable-optimizations  --enable-mt LDFLAGS="-fuse-ld=gold -lrt" \
+../contrib/configure-release  --enable-optimizations  --enable-mt  \
 --prefix=/home1/p001cao/local/app/tool_dev/ucx-1.12
 ```
 
