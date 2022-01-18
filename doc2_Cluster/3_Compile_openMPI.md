@@ -87,8 +87,8 @@ make install
 ```
 
 ### USC2: (Cenntos 6.9)
-On Tacheon, UCX may give better performance. 
-Do not use GCC-11, to avoid error. this does not work `export CFLAGS='-gdwarf-4 -gstrict-dwarf'`
+- On Tacheon, UCX may give better performance. 
+- Do not use GCC-11, to avoid error. this does not work `export CFLAGS='-gdwarf-4 -gstrict-dwarf'`
 
 ```shell 
 cd openmpi-4.1.2

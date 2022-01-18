@@ -46,9 +46,8 @@ mkdir build && cd build
 ## USC2
 ```note
 - Error: No components were able to be opened in the pml framework: not solve 
-- For GCC-11 to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf'
+- do not use GCC-11 to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 export CFLAGS='-gdwarf-4 -gstrict-dwarf'
-- do not use GCC-11
 ```
 
 ```shell
