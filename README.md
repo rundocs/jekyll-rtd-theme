@@ -20,3 +20,4 @@ It's fun if you find something helpful here. In other cases, it isn't my busines
 [![](./assets/images/icon_ORCID.png)](https://orcid.org/0000-0001-9826-5397) 
 
 
+[My CV here](https://thangckt.github.io/cv) 
