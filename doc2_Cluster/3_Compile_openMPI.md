@@ -252,17 +252,25 @@ mkdir build_eagle && cd build_eagle
 
 ### USC2: (Cenntos 6.9)
 - On Tacheon, UCX may give better performance. 
-- Should update binutils-2.36 to avoid error: Dwarf Error: found dwarf version '5'
 
 ```shell 
-cd openmpi-5.0.0
+module load tool_dev/autoconf-2.69b 
+module load tool_dev/libtool-2.4.6
+module load tool_dev/automake-1.14 
+git clone --branch v5.0.x --recursive  https://github.com/open-mpi/ompi.git openmpi_5
+cd openmpi_5
+./autogen.pl
+```
+
+```shell
+cd openmpi-5.0.0rc2
 mkdir buildGCC && cd buildGCC
 ##
 module load tool_dev/binutils-2.37                        # gold
-module load compiler/gcc-11.2
-export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.11               ## UCX
+module load compiler/gcc-10.3
+export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12               ## UCX
 
 ../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
 --with-sge --with-ucx=${myUCX}  \
---prefix=/home1/p001cao/local/app/openmpi/5.0.0-gcc11.2
+--prefix=/home1/p001cao/local/app/openmpi/5.0.0-gcc10.3
 ```

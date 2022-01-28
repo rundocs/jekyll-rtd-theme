@@ -58,7 +58,7 @@ export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-11.2/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
 export LDFLAGS="-fuse-ld=gold -lrt"
 
-../contrib/configure-release  --enable-optimizations  --enable-mt  \
+../configure --enable-mt  \
 --prefix=/home1/p001cao/local/app/tool_dev/ucx-1.12
 ```
 
@@ -71,6 +71,8 @@ myNUMA=/home1/p001cao/local/app/tool_dev/numactl-2.0.13
 --with-knem=$myKNEM \
 LDFLAGS="-fuse-ld=gold -lrt  -L$myNUMA/lib -Wl,-rpath,$myNUMA/lib" \
 CFLAGS="-I$myNUMA/include" \
+
+../contrib/configure-release  --enable-optimizations
 ```
 
 
