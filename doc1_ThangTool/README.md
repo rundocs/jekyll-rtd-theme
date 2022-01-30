@@ -11,7 +11,6 @@ Some of these codes are encapsulated into the `thatool` package.
 ![pic](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Euler2a.gif/255px-Euler2a.gif)
 ![pic](https://icme.hpc.msstate.edu/mediawiki/images/e/e7/4kovito.gif)
 
-
 ```python
 if "bullshit" not in your_life:
     print("Hello world")

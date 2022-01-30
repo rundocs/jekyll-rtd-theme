@@ -100,10 +100,10 @@ module load compiler/gcc-10.3
 export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-10.3/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
 export LDFLAGS="-fuse-ld=gold -lrt"
-export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12               ## UCX
+export myUCX=/home1/p001cao/local/app/tool_dev/ucx-master               ## ucx-1.12  ucx-master
 
 ../configure --with-sge --with-ucx=${myUCX} --without-verbs \
---prefix=/home1/p001cao/local/app/openmpi/4.1.2-gcc10.3
+--prefix=/home1/p001cao/local/app/openmpi/4.1.2-gcc10.3-UCXmaster
 
 make  -j 16 && make install
 ```

@@ -21,23 +21,38 @@ Try to experiment with different TLS's see here for more info.
 ##################################
 
 https://github.com/openucx/ucx/wiki
+
 ##NOTE:
 * OpenMPI 4.0,3 support ucx 1.7 or older
 * OpenMPI 4.0,4 support newer ucx
 
-#### install from Source (work now, but should not be use to avoid runtime errors)
-## Requirements: autoconf-2.69b, libtool-2.4.6, automake-1.14
-# git clone --branch master https://github.com/openucx/ucx  ucx-master
+## 1. install from Source (work now, but should not be use to avoid runtime errors)
+- Requirements: autoconf-2.69b, libtool-2.4.6, automake-1.14
+
+```shell
+git clone --branch master https://github.com/openucx/ucx.git  ucx-master
 cd ucx-master
 module load tool_dev/autoconf-2.69b
 module load tool_dev/automake-1.14
 module load tool_dev/libtool-2.4.6 
-export ACLOCAL_PATH=/home1/p001cao/local/app/tool_dev/libtool-2.4.6/share/aclocal
+# export ACLOCAL_PATH=/home1/p001cao/local/app/tool_dev/libtool-2.4.6/share/aclocal
 ./autogen.sh
-mkdir build   &&  cd build
+mkdir build  &&  cd build
 
-### (install from Release --> no need ./autogen.h)
+module load tool_dev/binutils-2.37              # gold
+module load compiler/gcc-10.3
+
+export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-10.3/bin
+export CC=gcc export CXX=g++ export FORTRAN=gfortran
+export LDFLAGS="-fuse-ld=gold -lrt"
+
+../configure --enable-mt  \
+--prefix=/home1/p001cao/local/app/tool_dev/ucx-master
+```
+
+## 2. install from UCX pre-configured Release --> no need ./autogen.h)
 ```shell
+wget https://github.com/openucx/ucx/releases/download/v1.12.0/ucx-1.12.0.tar.gz
 tar xvf ucx-1.12.0.tar.gz
 cd ucx-1.12.0
 mkdir build && cd build
@@ -54,7 +69,7 @@ export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 module load tool_dev/binutils-2.37              # gold
 module load compiler/gcc-10.3
 
-export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-11.2/bin
+export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-10.3/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
 export LDFLAGS="-fuse-ld=gold -lrt"
 
