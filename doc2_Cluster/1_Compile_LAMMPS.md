@@ -355,7 +355,7 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 
 
 
-## 2. USC2 (Tacheon)
+## 2. USC2 (Tachyon)
 ```note
 - Use GCC-11 need also update GCC-conda = 11
 `conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`
@@ -391,9 +391,10 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI4-dev
-```
+
 
 make -j 16 && make install
+```
 
 
 ### use OMPI5 
