@@ -1,7 +1,7 @@
 title: Documentation
 description: IN2WISE
 
-theme: null
+theme: jekyll-theme-cayman
 
 # debug:
 #   compress: true
