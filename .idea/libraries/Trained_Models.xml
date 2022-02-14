@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Trained_Models">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/tutorials/workbench_tutorial/Trained_Models/mnist_ml.zip!/" />
+      <root url="jar://$PROJECT_DIR$/tutorials/workbench_tutorial/Trained_Models/mnist_dl.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

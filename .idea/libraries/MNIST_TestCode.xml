@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="MNIST_TestCode">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/tutorials/workbench_tutorial/MNIST_TestCode/MNIST_DL_Code.zip!/" />
+      <root url="jar://$PROJECT_DIR$/tutorials/workbench_tutorial/MNIST_TestCode/MNIST_ML_Code.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
