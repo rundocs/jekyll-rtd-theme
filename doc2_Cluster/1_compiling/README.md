@@ -1,7 +1,7 @@
 ---
-sort: 3
+sort: 1
 ---
 
-# App Setting
+# Compiling
 
 {% include list.liquid all=true %}
