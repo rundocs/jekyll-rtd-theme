@@ -4,4 +4,7 @@ gemspec
 
 gem "github-pages", group: :jekyll_plugins
 
-gem 'jekyll-feed'
+# thang's setting
+gem "jekyll-simple-dark"
+gem "jekyll-paginator" # This line isn't necessary if you use github-pages
+
