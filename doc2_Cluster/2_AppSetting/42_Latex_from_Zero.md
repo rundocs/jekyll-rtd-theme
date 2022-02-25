@@ -16,7 +16,7 @@ SyncTeX file: is to jump between PDF/source
 Use [TeXstudio](https://texstudio.org/)
 
 1.a. To put all Aux-compiled files into a folder:
-For MiKTeX with TeXstudio, go to Options --> configuration
+For MiKTeX with TeXstudio, go to `Options --> configuration`
 ```
 ## Use pdflatex compiler:
 --> Build:
