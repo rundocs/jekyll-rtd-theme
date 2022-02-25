@@ -6,29 +6,41 @@ sort: 3
 What is LaTeX?
 LaTeX is a typesetting program that takes a plain text file with various commands in it and converts it to a formatted document based on the commands that it has been given. The source file for the document has a file extension of .tex. For more information on LaTeX, see LaTeX on Athena Basics, provided by the Athena On-Line Help system. 
 
-# LaTex Editor and Compiler
+# I. LaTex Editor and Compiler
 To work with Latex, we need a Latex Editor + a Latex Compiler. The editor is used here is TexStudio, accompanied by MikTex.
 PdfLaTeX options:  https://docs.miktex.org/manual/miktex-pdftex.html
 BibTeX options:    https://docs.miktex.org/manual/miktex-bibtex.html
 SyncTeX file: is to jump between PDF/source
 
-## Latex Editor
-https://texstudio.org/
+## 1. Latex Editor
+Use [TeXstudio](https://texstudio.org/)
+
 1.a. To put all Aux-compiled files into a folder:
-## For MiKTeX with TeXstudio, go to Options --> Configure --> Commands:
+For MiKTeX with TeXstudio, go to Options --> configuration
+```
+## Use pdflatex compiler:
+--> Build:
+Defaul Complier: PdfLatex
+--> Commands:
 PdfLaTeX: pdflatex.exe -synctex=1 -interaction=nonstopmode --aux-directory=auxDIR %.tex
 BibTeX: bibtex.exe auxDIR/%
+```
+```
+## Or Use latexmk compiler:
+--> Build:
+Defaul Complier: Latexmk
+--> Commands:
 latexmk:  latexmk -pdf   -silent -synctex=1 % -auxdir=auxDIR -f -recorder-  
-##Build -->  Install "strawberry perl": https://strawberryperl.com/
-DefaultCompiler: txs:///latexmk
-Log File Seach Paths (in build): auxDIR
-## Log file is important to figure out the error. So if use --aux-directory, must add "Additional Search Paths" for "Log File" is auxDIR
+BibTeX: bibtex.exe auxDIR/%
+-->  Install "strawberry perl": https://strawberryperl.com/
+```
+Log File Seach Paths (in build): `auxDIR`. Log file is important to figure out the error. So if use --aux-directory, must add "Additional Search Paths" for "Log File" is auxDIR
 
 1.b. To put date in filename:
 PdfLaTeX: pdflatex.exe -synctex=1 -interaction=nonstopmode --jobname="%_$(date +'%B_%d_%Y')"  %.tex
 https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/
 
-2. open textstudio on many windows
+1. open textstudio on many windows
 https://tinyurl.com/y8tq5z9p
 right-click shotcut  --> properties --> then include "--start-always" into target
 
@@ -39,7 +51,7 @@ right-click shotcut  --> properties --> then include "--start-always" into targe
 
 
 
-## Latex compiler
+## 2. Latex compiler
 can use Miktex or Livetex
 https://miktex.org/download
 
