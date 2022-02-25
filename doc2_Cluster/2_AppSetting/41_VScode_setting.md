@@ -57,6 +57,8 @@ Add this code:
 
 
 Setting.json
+Open the command palette (either with F1 or Ctrl+Shift+P)
+Type "open settings"
 ```js
 {
     "files.autoSave": "afterDelay",
