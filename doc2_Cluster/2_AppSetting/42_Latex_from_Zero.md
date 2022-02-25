@@ -70,7 +70,7 @@ https://tex.stackexchange.com/questions/108315/how-can-i-set-a-dark-theme-in-tex
 - start TeXstudio -> Options->Load Profile
 - Options->Save current setting
 
-2. Use Language Tool in TexStudio
+## 3. Use Language Tool in TexStudio
 https://tex.stackexchange.com/questions/155148/installing-language-tool-in-texstudio/401103
 - Download Language Tool (https://languagetool.org/download/): get .zip file
 - Unzip LT -> runlanguagetool.jar. Go to Text Checking > Options> Genera, then check Run as server on port>8081
@@ -81,14 +81,15 @@ netstat -aon | findstr 8081
 taskkill /f /pid 19984
 #############
 
-- Configure TextStudio to use LT: (Offline usage -> need file:languagetool-server.jar)
---> Options > Configure TeXstudio... > Language checking >
+### Configure TextStudio to use LT: (Offline usage -> need file:languagetool-server.jar)
+go to `Options --> Configure TeXstudio... > Language checking`
+```
         + set "Server URL" to: http://localhost:8081/
         + set "LT path" to the path of file: languagetool.jar
 * More:
         + set "LT Argument" to "org.languagetool.server.HTTPServer -p 8081"
         + check "Start Language Tool if not running"
-      
+```     
 ![](./figure/fig2_LanguageTool1.png)
 
 
