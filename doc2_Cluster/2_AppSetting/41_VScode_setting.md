@@ -99,7 +99,7 @@ Type "open settings"
     "window.zoomLevel": 0,
 
     "python.testing.cwd": "",
-    "python.condaPath": "C:\\DevProgram\\Miniconda3\\condabin",
+    "python.condaPath": "C:\\DevProgram\\miniconda3\\condabin",
     "python.defaultInterpreterPath": "C:\\DevProgram\\miniconda3\\python.exe",
 
     "C_Cpp.updateChannel": "Insiders",
@@ -110,6 +110,7 @@ Type "open settings"
         "default": "right",
         "jupyter-notebook": "left"
     },
+    "workbench.colorTheme": "Monokai++",
 
 }
 ```
