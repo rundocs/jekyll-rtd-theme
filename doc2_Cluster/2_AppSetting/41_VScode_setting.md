@@ -113,3 +113,9 @@ Type "open settings"
 
 }
 ```
+
+
+## III. Useful extensions
+- Lammps Syntax Highlight       (ThFriedrich)
+- Monokai++                     (Davide Casella)
+- Python                        (Microsoft)
