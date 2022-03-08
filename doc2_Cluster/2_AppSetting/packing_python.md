@@ -139,55 +139,41 @@ conda skeleton pypi thatool
 this will generate a folder 'thatool` contains` file `meta.yaml`
 
 2. Edit meta.yaml and update requirements:
-
-  ```py
-  requirements:
-    host:
-      - python
-      - pip
-    run:
-      - lmfit
-      - matplotlib
-      - pandas
-      - python
-      - scipy
-      - shapely
-  test:
-    imports:
-      - thatool
-      - thatool.filetool
-      - thatool.free_energy_cal
-      - thatool.modeling
-      - thatool.parameter
-      - thatool.utils
-  ```
+```py
+extra:
+  recipe-maintainers:
+    - thangckt
+```
 
 3. Build your package with conda
 The package is now ready to be build with conda:
 ```
 conda-build thatool 
-conda-build thatool -c conda-forge -c anaconda      # or use this one
+conda-build thatool -c conda-forge       # -c conda-forge -c anaconda   
 ```
 This will generate a `conda-package` at location: `C:\DevProgram\miniconda3\conda-bld\win-64`. The conda package we have created is specific to your platform (here win-64). It can be converted to other platforms using [conda convert](https://tinyurl.com/y8k2qzrh).
-```
-conda convert --platform linux-64 C:\DevProgram\miniconda3\conda-bld\win-64\thatool-0.6-py37_0.tar.bz2 -o C:\DevProgram\miniconda3\conda-bld\
-```
 
-4. Upload package to anaconda/conda-forge/bioconda
+1. Upload package to anaconda/conda-forge/bioconda
 Upload to Anaconda.org ([see this](https://tinyurl.com/y7xkbht2))
 ```
 conda install anaconda-client
 anaconda login
 
-anaconda upload C:\DevProgram\miniconda3\conda-bld\win-64\thatool-0.6-py37_0.tar.bz2
-anaconda upload C:\DevProgram\miniconda3\conda-bld\linux-64\thatool-0.6-py37_0.tar.bz2
+anaconda upload C:\DevProgram\miniconda3\conda-bld\win-64\thatool-0.8-py37_0.tar.bz2
+```
+
+```
+conda convert --platform linux-64 C:\DevProgram\miniconda3\conda-bld\win-64\thatool-0.8-py37_0.tar.bz2 -o C:\DevProgram\miniconda3\conda-bld\
+anaconda upload C:\DevProgram\miniconda3\conda-bld\linux-64\thatool-0.8-py37_0.tar.bz2
 ```
 
 if upload completes, the conda package located at:
 https://anaconda.org/thangckt/thatool
 
-To install this package: conda install thatool -c thangckt
-
+To install this package: 
+```
+conda install thatool -c thangckt
+```
 
 ## Ref.
 [1]. https://aaltoscicomp.github.io/python-for-scicomp/packaging/
