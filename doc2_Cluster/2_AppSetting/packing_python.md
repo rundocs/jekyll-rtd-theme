@@ -139,28 +139,28 @@ conda skeleton pypi thatool
 this will generate a folder 'thatool` contains` file `meta.yaml`
 
 2. Edit meta.yaml and update requirements:
-```py 
-requirements:
-  host:
-    - python
-    - pip
-  run:
-    - lmfit
-    - matplotlib
-    - pandas
-    - python
-    - scipy
-    - shapely
 
-test:
-  imports:
-    - thatool
-    - thatool.filetool
-    - thatool.free_energy_cal
-    - thatool.modeling
-    - thatool.parameter
-    - thatool.utils
-```
+  ```py
+  requirements:
+    host:
+      - python
+      - pip
+    run:
+      - lmfit
+      - matplotlib
+      - pandas
+      - python
+      - scipy
+      - shapely
+  test:
+    imports:
+      - thatool
+      - thatool.filetool
+      - thatool.free_energy_cal
+      - thatool.modeling
+      - thatool.parameter
+      - thatool.utils
+  ```
 
 3. Build your package with conda
 The package is now ready to be build with conda:
