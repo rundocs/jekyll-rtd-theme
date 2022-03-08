@@ -39,6 +39,17 @@ project_folder  # (thatool_package)
     │   │   ...
     |   
 ```
+The file `project-folder/thatool/__init__.py` should contain:
+```py
+__author__ = "thangckt"
+__version__ = '0.1'
+from .                  import  data
+from .filetool          import  *
+from .free_energy_cal   import  *
+from .modeling          import  *
+from .parameter         import  *
+from .utils             import  *
+```
 
 ## Testing a local pip install
 To make the package pip-installable we need to add `setup.py` file into the topest level of project-folder:
@@ -84,9 +95,32 @@ pip install .
 ```
 
 ## Public package via PyPI
+Once the package is able to pip-install locally, it is ready for upload. \\
+We need two more things:
+- We will do this using 'Twine' so you need to pip install that, too. `pip install twine`
+- You need an account on [PyPI](https://pypi.org/account/login/).
 
+In `project-folder` folder:
+1. create a source distribution with the following command:
+  ```
+  python setup.py sdist
+  ```
+2. upload to PyPI
+  ```
+  twine upload dist/*
+  ```
 
+  ```
+  Uploading distributions to https://pypi.org/legacy/
+  Enter your username:
+  Enter your password:
+  ```
 
+Now, the package is availabe for install 
+```
+pip install thatool 
+pip install thatool --upgrade
+```
 
 ## Install requirement
 ### Windows 
