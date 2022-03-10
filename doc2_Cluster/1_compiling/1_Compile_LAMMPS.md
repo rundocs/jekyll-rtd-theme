@@ -167,7 +167,7 @@ For multicore CPUs using OpenMP, set these 2 variables.
 compile QUIP the minimum requirements are:
 - A working Fortran compiler. QUIP is tested with `gfortran 4.4` and later, and `ifort 11.1`.
 - Linear algebra libraries BLAS and LAPACK. QUIP is tested with reference versions libblas-dev and liblapack-dev on Ubuntu 12.04, and mkl 11.1 with ifort.
-add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" 
+- modify `ML-QUIP.cmake` : add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" 
 
 13. **MLIAP**
 - require python >3.6
@@ -387,7 +387,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no -DPKG_ML-PACE=no \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_KIM=no -DPKG_H5MD=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DDOWNLOAD_SCAFACOS=no -DPKG_SCAFACOS=no \
--DPKG_MESONT=no -DPKG_ML-QUIP=no \
+-DPKG_MESONT=no -DPKG_ML-QUIP=yes -DDOWNLOAD_QUIP=yes \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI4-dev
@@ -540,8 +540,8 @@ module load cmake-3.18.3
 export PATH=$PATH:/opt/app/openmpi/4.1.0-gcc7.5-cuda10.2/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
 # cuda (python is availabe on Ubuntu)
-export CUDA_PATH=/usr/local/cuda-10.2
-export bin2c=/usr/local/cuda-10.2/bin/bin2c
+export CUDA_PATH=/usr/local/cuda-11.0
+export bin2c=/usr/local/cuda-11.0/bin/bin2c
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPython_ROOT_DIR=${pyROOT} \
@@ -552,12 +552,12 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no -DPKG_ML-PACE=no \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_KIM=no -DPKG_H5MD=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DDOWNLOAD_SCAFACOS=no -DPKG_SCAFACOS=no \
--DPKG_MESONT=no -DPKG_ML-QUIP=yes -DDOWNLOAD_QUIP=yes\
+-DPKG_MESONT=no -DPKG_ML-QUIP=yes -DDOWNLOAD_QUIP=yes -DPKG_ML-IAP=no \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
 -DCMAKE_INSTALL_PREFIX=/opt/app/lammps/master-gpu
 
-make -j 24 && make install
+make -j 24 && sudo make install
 ``` 
 
 
