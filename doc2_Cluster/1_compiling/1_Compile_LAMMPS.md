@@ -487,7 +487,7 @@ prepend-path    INCLUDE                 $topdir/include/lammps
 
 
 
-## 3. CAN-GPU    
+## 3. CAN2-GPU    
 - See [GPU package](https://docs.lammps.org/Build_extras.html#gpu)
 ```shell
 # cuda
@@ -505,7 +505,7 @@ module load cmake-3.20.3
 module load fftw/fftw3.3.8-ompi4.1-gcc7.4
 
 export PATH=$PATH:/home/thang/local/app/openmpi/4.1.1-gcc7.4-cuda/bin
-export CC=mpicc  export CXX=mpic++  export FORTRAN=mpif90
+export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
 # python (require py3) 
 export pyROOT=/home/thang/local/app/miniconda3/envs/py37Lammps
 # cuda
@@ -526,6 +526,42 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DFFT=FFTW3 \
 -DCMAKE_INSTALL_PREFIX=/home/thang/local/app/lammps/gccOMPI-dev
 ```
+
+## 4. CAN4-GPU   
+- python and fftw are availabe by command
+```
+sudo apt-get install -y fftw-dev
+```
+
+```shell
+module load ompi/4.1.0-gcc7.5-cuda10.2      # cuda-10 only support to gcc-8
+module load cmake-3.18.3 
+
+export PATH=$PATH:/opt/app/openmpi/4.1.0-gcc7.5-cuda10.2/bin
+export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
+# cuda (python is availabe on Ubuntu)
+export CUDA_PATH=/usr/local/cuda-10.2
+export bin2c=/usr/local/cuda-10.2/bin/bin2c
+
+cmake ../cmake -C ../cmake/presets/all_on.cmake \
+-DPython_ROOT_DIR=${pyROOT} \
+-DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
+-DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=no \
+-DPKG_INTEL=no -DPKG_KOKKOS=no \
+-DPKG_GPU=yes -DGPU_API=cuda -DGPU_ARCH=sm_61 -DBIN2C=${bin2c} -DGPU_PREC=double \
+-DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no -DPKG_ML-PACE=no \
+-DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_KIM=no -DPKG_H5MD=no \
+-DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DDOWNLOAD_SCAFACOS=no -DPKG_SCAFACOS=no \
+-DPKG_MESONT=no -DPKG_ML-QUIP=yes -DDOWNLOAD_QUIP=yes\
+-DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
+-DFFT=FFTW3 \
+-DCMAKE_INSTALL_PREFIX=/opt/app/lammps/master-gpu
+
+make -j 24 && make install
+``` 
+
+
+
 
 
 ```
