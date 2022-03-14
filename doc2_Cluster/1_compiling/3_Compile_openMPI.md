@@ -263,7 +263,7 @@ cd openmpi_5
 ```
 
 ```shell
-cd openmpi-5.0.0rc2
+cd openmpi-5.0.0rc3
 mkdir buildGCC && cd buildGCC
 ##
 module load tool_dev/binutils-2.37                        # gold
@@ -273,4 +273,6 @@ export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12               ## UCX
 ../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
 --with-sge --with-ucx=${myUCX}  \
 --prefix=/home1/p001cao/local/app/openmpi/5.0.0-gcc10.3
+
+make -j 16 && make install
 ```
