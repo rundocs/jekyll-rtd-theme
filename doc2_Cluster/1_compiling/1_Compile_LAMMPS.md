@@ -370,7 +370,7 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 
 module load tool_dev/binutils-2.37                # gold 
 module load tool_dev/cmake-3.20.3
-module load fftw/fftw3.3.10-ompi4.1-gcc11.2
+module load fftw/fftw3.3.10-ompi4.1-gcc10.3
 module load mpi/ompi4.1.2-gcc10.3
 
 export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.2-gcc10.3/bin
