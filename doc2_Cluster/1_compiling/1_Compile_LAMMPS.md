@@ -167,7 +167,13 @@ For multicore CPUs using OpenMP, set these 2 variables.
 compile QUIP the minimum requirements are:
 - A working Fortran compiler. QUIP is tested with `gfortran 4.4` and later, and `ifort 11.1`.
 - Linear algebra libraries BLAS and LAPACK. QUIP is tested with reference versions libblas-dev and liblapack-dev on Ubuntu 12.04, and mkl 11.1 with ifort.
-- modify `ML-QUIP.cmake` : add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" 
+- modify `ML-QUIP.cmake` : add this command after line 76 (inside ExternalProject_Add(...)): 
+```
+    GIT_REPOSITORY "https://github.com/libAtoms/QUIP/"
+    GIT_TAG          5989901       #   origin/public
+    ...
+    UPDATE_COMMAND "" 
+```
 
 13. **MLIAP**
 - require python >3.6
