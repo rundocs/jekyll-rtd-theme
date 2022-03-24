@@ -35,8 +35,8 @@ sort: 3
 
 [download OpenMPI-4](https://www.open-mpi.org/software/ompi/v4.1/)
 ```shell
-tar xvf openmpi-4.1.1.tar.gz
-cd openmpi-4.1.1
+tar xvf openmpi-4.1.3rc1.tar.gz
+cd openmpi-4.1.3rc1
 ```
 
 ## 2. Compiling OpenMPI + GCC
@@ -91,7 +91,7 @@ make install
 - Do not use GCC-11, to avoid error. this does not work `export CFLAGS='-gdwarf-4 -gstrict-dwarf'`
 
 ```shell 
-cd openmpi-4.1.2
+cd openmpi-4.1.3rc1
 mkdir buildGCC && cd buildGCC
 ##
 module load tool_dev/binutils-2.37                        # gold
@@ -100,10 +100,10 @@ module load compiler/gcc-10.3
 export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-10.3/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
 export LDFLAGS="-fuse-ld=gold -lrt"
-export myUCX=/home1/p001cao/local/app/tool_dev/ucx-master               ## ucx-1.12  ucx-master
+export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12              ## ucx-1.12  ucx-master
 
 ../configure --with-sge --with-ucx=${myUCX} --without-verbs \
---prefix=/home1/p001cao/local/app/openmpi/4.1.2-gcc10.3-UCXmaster
+--prefix=/home1/p001cao/local/app/openmpi/4.1.3-gcc10.3-UCX
 
 make  -j 16 && make install
 ```
