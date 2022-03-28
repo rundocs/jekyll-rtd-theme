@@ -2,7 +2,9 @@
 sort: 3
 ---
 
-# [Publications](https://thangckt.github.io/cv/publications)
+# Publications
 
 <!-- [Publications](https://thangckt.github.io/cv/publications) -->
+
+<meta http-equiv="refresh" content="0; url=https://thangckt.github.io/cv/publications"/>'
 
