@@ -1,6 +1,5 @@
 # Thang's Notes
 
-
 This page dedicates to my personal arbitrary notes and does not reflect any either community or third party mindset. 
 
 In general, these notes are unambiguous for some rare situations but helpless in almost others. 

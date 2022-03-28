@@ -2,6 +2,10 @@
 sort: 1
 ---
 
+# Publications
+
+[Publications](https://thangckt.github.io/cv/publications)
+
 # thang_tool
 
 This section contains the docs for several in-house codes to handle some specific tasks.
