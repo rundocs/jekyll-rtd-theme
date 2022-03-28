@@ -2,7 +2,7 @@
 sort: 4
 ---
 
-# This is an incredibly long caption for a long menu
+<!-- # This is an incredibly long caption for a long menu
 
 ```
 {% raw %}{% include list.liquid all=true %}{% endraw %}
@@ -10,4 +10,4 @@ sort: 4
 {% include list.liquid all=true %}
 ```
 
-{% include list.liquid all=true %}
+{% include list.liquid all=true %} -->
