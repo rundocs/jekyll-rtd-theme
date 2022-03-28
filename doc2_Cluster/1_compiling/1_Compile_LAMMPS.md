@@ -374,12 +374,14 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 #module load mpi/ompi4.0.4-gcc10.1.0-lld
 #module load llvm/llvm-gcc10-lld                    # to use lld 
 
+git pull origin develop
+
 module load tool_dev/binutils-2.37                # gold 
 module load tool_dev/cmake-3.20.3
 module load fftw/fftw3.3.10-ompi4.1-gcc10.3
-module load mpi/ompi4.1.2-gcc10.3
+module load mpi/ompi4.1.3-gcc10.3
 
-export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.2-gcc10.3/bin
+export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.3-gcc10.3/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
 ## python (require py3) & BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
@@ -393,7 +395,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no -DPKG_ML-PACE=no \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_KIM=no -DPKG_H5MD=no \
 -DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DDOWNLOAD_SCAFACOS=no -DPKG_SCAFACOS=no \
--DPKG_MESONT=no -DPKG_ML-QUIP=yes -DDOWNLOAD_QUIP=yes \
+-DPKG_MESONT=no -DPKG_ML-QUIP=no -DDOWNLOAD_QUIP=yes \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI4-dev

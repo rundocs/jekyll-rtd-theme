@@ -103,7 +103,7 @@ export LDFLAGS="-fuse-ld=gold -lrt"
 export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12              ## ucx-1.12  ucx-master
 
 ../configure --with-sge --with-ucx=${myUCX} --without-verbs \
---prefix=/home1/p001cao/local/app/openmpi/4.1.3-gcc10.3-UCX
+--prefix=/home1/p001cao/local/app/openmpi/4.1.3-gcc10.3
 
 make  -j 16 && make install
 ```
