@@ -10,15 +10,15 @@ This note is not to tell about what is [LAMMPS](https://www.lammps.org)? but the
 
 ## Preparation
 
-### 1. Prerequisite:
+### 1. Prerequisite
 
-- Compiler: Intel, GCC, Clang,... 
+- Compiler: Intel, GCC, Clang,...
 - MPI implementation: OMPI, IMPI, MPICH,...
 - Libraries depend on which packages will be installed: FFTW, intel MKL,...
 - Newer LAMMPS may be no longer compatible with an old openMPI, as well FFTW/MKL, so these libs need to be updated too.
 - OpenMPI may the fastest
 - There is no longer USER_ packages from Jul-2021
-- Need CMAKE, newer is better (a newer Cmake version may reduce the probability of error during compiling). Basic cmake: <br>
+- Need CMAKE, newer is better (a newer Cmake version may reduce the probability of error during compiling). Basic cmake:
   
 ```shell
 cmake -D OPTION_A=VALUE_A -D OPTION_B=VALUE_B ...     ../cmake make
@@ -33,116 +33,145 @@ module display <module_name>
 
 - Only one installation for `eagle/lion/leopard/cheetah`, but need to load different OpenMPI for each cluster. Also need to load Conda to overwrite default python of the system (different Ver. of python may cause runtime error)
 
-### 2. Download: 
+### 2. Download
 
-[LAMMPS site](https://lammps.sandia.gov/bug.html) <br>
-[Souce code](https://github.com/lammps/lammps) <br>
-
-**download tar file**
+[LAMMPS site](https://lammps.sandia.gov/bug.html)
+[Souce code](https://github.com/lammps/lammps)
 
 ```shell
+## download tar file
 tar -xvf lammps-stable_7Aug2019
 cd lammps-stable_7Aug2019
 mkdir build && cd build
-```
-**or download use Git:**
-```shell
+
+## or download use Git:
 git clone --branch patch_20Nov2019 https://github.com/lammps/lammps.git lammps_patch_20Nov2019
 cd lammps_patch_20Nov2019
 git checkout patch_20Nov2019
-```
-```shell
+
 git clone https://github.com/lammps/lammps.git    lammps_dev
 cd lammps_dev
 git pull origin develop
 ```
 
-### 3. Packages: 
+### 3. Packages
+
 NOTEs: include these OPTIONS in Cmake command, to build package-lib automatically:
 
-  1. **UFM potential**
+1.**UFM potential**
+
 ```shell
 cd lammps-folder/src/
 git clone https://github.com/plrodolfo/FluidFreeEnergyforLAMMPS.git USER-FFE
 copy new pair_ufm into /src
 copy new pair_eam.cpp & pair_eam.h into /src and delete corresponding files in /src/MANYBODY
 ```
-  2. **POEMS, OPT**
+
+2.**POEMS, OPT**
+
 ```shell
 -D PKG_OPT=yes
 ```
-3. **MSCG**
+
+3.**MSCG**
+
 ```shell
 -D PKG_MSCG=yes -D DOWNLOAD_MSCG=yes
 ```
-5. **VORONOI**
+
+5.**VORONOI**
+
 ```shell
 -D PKG_VORONOI=yes -D DOWNLOAD_VORO=yes
 ```
-6. **KSPACE**
-- if use MKL for FFT, then need MKL library 
+
+6.**KSPACE**
+
+- if use MKL for FFT, then need MKL library
+
 ```shell
 -D FFT=MKL  \
 -D MKL_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2019/compilers_and_libraries_2019.5.281/linux/mkl/include  \
 -D MKL_LIBRARY=/uhome/p001cao/local/intel/xe2019/compilers_and_libraries_2019.5.281/linux/mkl/lib/intel64  \
 ```
+
 - if FTWW3, then dont need MKL_LIBRARY
+
 ```shell
 -D FFT=FFTW3
 -D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/fftw/3.3.8-openmpi4.0.1-Intel2019xe-double/include \
 -D FFTW3_LIBRARY=/uhome/p001cao/local/fftw/3.3.8-openmpi4.0.1-Intel2019xe-double/lib \
 ```
+
 - or use FFTW3 from intel_mkl: (not support long-double precision)
+
 ```shell
 -D FFT=FFTW3 
 -D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2018/compilers_and_libraries_2018.0.128/linux/mkl/include/fftw 
 ```
-7. **LAPACK & BLAS** <br>
-  - These packages LAPACK & BLAS: MSCG, ATC, AWPMD, ML-QUIP, LATTE, PLUMED (can self build its libs)
-  - Use "intel/mkl" package, then LAPACK & BLAS will be found automatically
+
+7.**LAPACK & BLAS*
+
+- These packages LAPACK & BLAS: MSCG, ATC, AWPMD, ML-QUIP, LATTE, PLUMED (can self build its libs)
+- Use "intel/mkl" package, then LAPACK & BLAS will be found automatically
+
   ```shell
   module load intel/mkl
   module load tool_dev/gsl-2.6
   ```
-  - Use external LAPACK & BLAS
-    ```shell
+
+- Use external LAPACK & BLAS
+
+```shell
   export myLAPACK=/uhome/p001cao/local/app/lapack-3.10/liblapack.a
   export myBLAS=/uhome/p001cao/local/app/lapack-3.10/libblas.a
   
   -DLAPACK_LIBRARIES=${myLAPACK} -DBLAS_LIBRARIES=${myBLAS}
   ```
 
-8. **OpenMP**
+8.**OpenMP**
+
 ```shell
 -D PKG_USER-OMP=yes -D BUILD_OMP=yes -D PKG_USER-INTEL=no
 ```
-9. **make no packages**
+
+9.**make no packages**
+
 ```shell
 -D PKG_GPU=no -D PKG_KIM=no -D PKG_LATTE=no -D PKG_MSCG=no -D PKG_KOKKOS=no \
 -D PKG_USER-ADIOS=no -D PKG_USER-NETCDF=no -D PKG_USER-OMP=no -D PKG_USER-INTEL=no \
 -D PKG_USER-QUIP=no -D PKG_USER-SCAFACOS=no -D PKG_USER-QMMM=no -D PKG_USER-VTK=no \
 -D PKG_USER-H5MD=no \
 ```
-10. [**KOKKOS**](https://lammps.sandia.gov/doc/Build_extras.html#kokkos) <br>
+
+10.[**KOKKOS**](https://lammps.sandia.gov/doc/Build_extras.html#kokkos)
 For multicore CPUs using OpenMP, set these 2 variables.
+
 ```shell
 -DKokkos_ARCH_WSM=yes                 # HOSTARCH = HOST from list above 
 -DKokkos_ENABLE_OPENMP=yes 
 -DBUILD_OMP=yes
 ```
-11. [**PLUMED**](https://lammps.sandia.gov/doc/Build_extras.html#user-plumed)
-  - **pre-compile Plumed separately:**
+
+11.[**PLUMED**](https://lammps.sandia.gov/doc/Build_extras.html#user-plumed)
+- **pre-compile Plumed separately:**
+
   ```shell
   module load plumed
   ```
+
   ```shell
   -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=static
   ```
-  - **self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
+
+- **self-build PLUMED:** will need GSL to link LAPACK, BLAS (require MKL)
+
   ```shell
   -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static
   ```
+
   change lines: 
+
   ```shell
   # URL http...... (line 65)
   # URL_MD5
@@ -168,11 +197,12 @@ For multicore CPUs using OpenMP, set these 2 variables.
     # list(APPEND PLUMED_LINK_LIBS ${LAPACK_LIBRARIES} ${BLAS_LIBRARIES} GSL::gsl)
   ```
 
-12. [**ML_QUIP**] ([source code](https://github.com/libAtoms/QUIP))
+12.[**ML_QUIP**] ([source code](https://github.com/libAtoms/QUIP))
 compile QUIP the minimum requirements are:
 - A working Fortran compiler. QUIP is tested with `gfortran 4.4` and later, and `ifort 11.1`.
 - Linear algebra libraries BLAS and LAPACK. QUIP is tested with reference versions libblas-dev and liblapack-dev on Ubuntu 12.04, and mkl 11.1 with ifort.
 - modify `ML-QUIP.cmake` : add this command after line 76 (inside ExternalProject_Add(...)): 
+
 ```
     GIT_REPOSITORY "https://github.com/libAtoms/QUIP/"
     GIT_TAG          5989901       #   origin/public
@@ -252,7 +282,7 @@ export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.
 -DPython_EXECUTABLE=${pyEXE} -DPython_INCLUDE_DIR=${pyINC} -DPython_LIBRARY=${pyLIB} 
 ```
 
-# Compiling 
+## Compiling
 
 # A. Open MPI + GCC
 ```note
@@ -301,9 +331,9 @@ module load llvm/llvm-gcc10-lld                    # to use lld
 module load tool_dev/binutils-2.35                # gold
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 ```
-   
 
 ## 1. USC1 (eagle)
+
 ```note
 - use different openmpi for Eagle vs Lion
 - Note: python>3.7.9 require GLIBC new
@@ -343,11 +373,11 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DFFT=FFTW3 \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/gccOMPI5-dev
-```
-```shell
+
 make -j 20
 # test:  mpirun -np 2 lmp_mpi
 make install
+
 ```
 
 ```shell
@@ -409,8 +439,7 @@ make -j 16 && make install
 
 ```
 
-
-### use OMPI5 
+### use OMPI5
 
 ```shell
 module load tool_dev/binutils-2.37                # gold 
@@ -433,10 +462,11 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI5-dev
+
 ```
 
+### use OMPI3
 
-### use OMPI3 
 - This does not work, due to OMPI3 error
 
 ```shell
