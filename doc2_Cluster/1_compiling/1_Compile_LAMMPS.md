@@ -56,7 +56,9 @@ git pull origin develop
 
 ### 3. Packages
 
-NOTEs: include these OPTIONS in Cmake command, to build package-lib automatically:
+```note
+- include these OPTIONS in Cmake command, to build package-lib automatically:
+```
 
 1.**UFM potential**
 
@@ -154,6 +156,7 @@ For multicore CPUs using OpenMP, set these 2 variables.
 ```
 
 11.[**PLUMED**](https://lammps.sandia.gov/doc/Build_extras.html#user-plumed)
+
 - **pre-compile Plumed separately:**
 
   ```shell
@@ -170,32 +173,30 @@ For multicore CPUs using OpenMP, set these 2 variables.
   -D PKG_PLUMED=yes -D DOWNLOAD_PLUMED=yes -D PLUMED_MODE=static
   ```
 
-  change lines: 
+```shell
+##change lines:
+    # URL http...... (line 65)
+    # URL_MD5
+## into: 
+      GIT_REPOSITORY https://github.com/plumed/plumed2.git 
+      GIT_TAG master                            # hack-the-tree   v2.6.2   v2.7b
 
-  ```shell
-  # URL http...... (line 65)
-  # URL_MD5
-  ```
-  into: 
-  ```shell
-  GIT_REPOSITORY https://github.com/plumed/plumed2.git 
-  GIT_TAG master                            # hack-the-tree   v2.6.2   v2.7b
-  ```
-  ```shell
-  CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....   ...
-              --enable-modules=all --enable-asmjit --disable-external-blas --disable-external-lapack
-  ```
-  add this command after line 76 (inside ExternalProject_Add(...)): UPDATE_COMMAND "" <br>
-  - **self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
-  open file: ../cmake/Modules/Packages/USER-PLUMED.cmake
+      CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....   ...
+                  --enable-modules=all --enable-asmjit --disable-external-blas --disable-external-lapack
+      ...
+## add this command after line 76 (inside ExternalProject_Add(...)): 
+      UPDATE_COMMAND "" 
+```
 
-  Comment out these lines:
-  ```shell
-    # find_package(LAPACK REQUIRED)
-    # find_package(BLAS REQUIRED)
-    # find_package(GSL REQUIRED)
-    # list(APPEND PLUMED_LINK_LIBS ${LAPACK_LIBRARIES} ${BLAS_LIBRARIES} GSL::gsl)
-  ```
+- **self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
+  open file: ../cmake/Modules/Packages/USER-PLUMED.cmake, Comment out these lines:
+
+```shell
+  # find_package(LAPACK REQUIRED)
+  # find_package(BLAS REQUIRED)
+  # find_package(GSL REQUIRED)
+  # list(APPEND PLUMED_LINK_LIBS ${LAPACK_LIBRARIES} ${BLAS_LIBRARIES} GSL::gsl)
+```
 
 12.[**ML_QUIP**] ([source code](https://github.com/libAtoms/QUIP))
 compile QUIP the minimum requirements are:
@@ -210,33 +211,37 @@ compile QUIP the minimum requirements are:
     UPDATE_COMMAND "" 
 ```
 
-13. **MLIAP**
+13.**MLIAP**
+
 - require python >3.6
 
-14. **SMD** 
+14. **SMD**
+
 - require Eigen
+
 ```shell
 -D PKG_SMD=yes -D DOWNLOAD_EIGEN3=yes
 ```
+
 open file: ../cmake/Modules/Packages/USER-SMD.cmake
 
-change: 
 ```shell
-URL http...... (line 12)
-URL_MD5
-```
-into:
-```shell
-GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git 
-GIT_TAG  3.3.7
+## change: 
+    URL http...... (line 12)
+    URL_MD5
+## into:
+    GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git 
+    GIT_TAG  3.3.7
 ```
 
-14. **MOLFILE package**
-* to dump PDB file, need install VMD-plugins
-* compatible with VMD 1.9 and 1.9.1
-* [Compile VMD](http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html)
-   - **compile plugins** (just this is need for Lammps)
+14.**MOLFILE package**
+
+- to dump PDB file, need install VMD-plugins
+- compatible with VMD 1.9 and 1.9.1
+- [Compile VMD](http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html)
+  + **compile plugins** (just this is need for Lammps)
 https://www.discngine.com/blog/2019/5/25/building-the-vmd-molfile-plugin-from-source-code
+
 ```shell
 tar zxvf vmd-1.9.src.tar.gz
 cd plugins
@@ -244,7 +249,9 @@ make LINUXPPC64
 export PLUGINDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins
 make distrib
 ```
-   - **compile VMD**
+
+  + **compile VMD**
+
 ```shell
 cd vmd-1.9.4a51
 module load compiler/gcc-10.3
@@ -253,27 +260,36 @@ export VMDINSTALLDIR=/uhome/p001cao/local/app/vmd
 cd src
 make
 ```
+
 * path in lib/molfile/Make.lammps: molfile_SYSPATH =-L/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUXPPC64/molfile
+
 ```shell
 export =/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 ```
+
 ```shell
 -D MOLFILE_INCLUDE_DIR=${PlugIncDIR}
 -D PKG_MOLFILE=yes
 ```
+
 15. **PYTHON** (use 1 of following ways)
+
 Note: new numpy require higher GLIBC
 - use module load --> do not need setting in Cmake (but this may intefere some libs: openmpi,lapack,blas,... - should not use)
+
 ```shell
 module load conda/py37Lammps
 ```
+
 - use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far. 
+
 ```shell
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
-
 -DPython_ROOT_DIR=${pyROOT}   # this setting must be put on the head of cmake
 ```
+
 - use Python_EXECUTABLE # (Python_EXECUTABLE depend on cmake's version) (but this case still use system Python while compiling, so cannot use on multi-OS with different Versions )
+
 ```shell
 export pyEXE=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
 export pyINC=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/include/python3.7m
@@ -282,34 +298,42 @@ export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.
 -DPython_EXECUTABLE=${pyEXE} -DPython_INCLUDE_DIR=${pyINC} -DPython_LIBRARY=${pyLIB} 
 ```
 
-## Compiling
+## Compiling with GCC + OMPI
 
-# A. Open MPI + GCC
 ```note
-```
 - must export compilers to to avoid miss matching compilers
+```
+
 ```shell
 export PATH=/uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle/bin:$PATH
 export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort
 # can use: -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpif90 \
 ```
+
 - "GCC + gold linker" is good now
+
 ```shell
 module load tool_dev/binutils-2.36
 ```
+
 ```shell
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt"
 ```
+
 - use MKL
+
 ```shell
 module load intel/mkl-xe19u5
 source mklvars.sh intel64
 module load tool_dev/gsl-2.6
 ```
+
 ```shell
 -DFFT=MKL
 ```
+
 - use external BLAS&LAPACK instead of MKL
+
 ```shell
 module load tool_dev/gsl-2.6
 export myLAPACK=/uhome/p001cao/local/app/lapack-3.10/liblapack.a
@@ -317,22 +341,27 @@ export myBLAS=/uhome/p001cao/local/app/lapack-3.10/libblas.a
 
 -DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myLAPACK}
 ```
+
 - use FFTW instead of MKL
+
 ```shell
 module load fftw/fftw3.3.8-ompi4.1-gcc11.2
 ```
+
 ```shell
 -DFFT=FFTW3
 ```
+
 - consider linkers
-```
+
+```shell
 module load llvm/llvm-gcc10-lld                    # to use lld
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld -lrt" \
 module load tool_dev/binutils-2.35                # gold
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 ```
 
-## 1. USC1 (eagle)
+### 1. USC1 (eagle)
 
 ```note
 - use different openmpi for Eagle vs Lion
@@ -394,7 +423,7 @@ prepend-path    INCLUDE                 $topdir/include/lammps
 prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUXPPC64/molfile
 ```
 
-## 2. USC2 (Tachyon)
+### 2. USC2 (Tachyon)
 
 ```note
 - Use GCC-11 need also update GCC-conda = 11
@@ -439,7 +468,7 @@ make -j 16 && make install
 
 ```
 
-### use OMPI5
+#### use OMPI5
 
 ```shell
 module load tool_dev/binutils-2.37                # gold 
@@ -465,7 +494,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 
 ```
 
-### use OMPI3
+#### use OMPI3
 
 - This does not work, due to OMPI3 error
 
