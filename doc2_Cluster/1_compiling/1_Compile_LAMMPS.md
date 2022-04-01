@@ -11,6 +11,7 @@ This note is not to tell about what is [LAMMPS](https://www.lammps.org)? but the
 ## Preparation
 
 ### 1. Prerequisite:
+
 - Compiler: Intel, GCC, Clang,... 
 - MPI implementation: OMPI, IMPI, MPICH,...
 - Libraries depend on which packages will be installed: FFTW, intel MKL,...
@@ -18,16 +19,19 @@ This note is not to tell about what is [LAMMPS](https://www.lammps.org)? but the
 - OpenMPI may the fastest
 - There is no longer USER_ packages from Jul-2021
 - Need CMAKE, newer is better (a newer Cmake version may reduce the probability of error during compiling). Basic cmake: <br>
+  
 ```shell
 cmake -D OPTION_A=VALUE_A -D OPTION_B=VALUE_B ...     ../cmake make
 ```
+
 - Module evironment
+  
 ```shell
 module load <module_name>
 module display <module_name> 
 ```
-- Only one installation for `eagle/lion/leopard/cheetah`, but need to load different OpenMPI for each cluster. Also need to load Conda to overwrite default python of the system (different Ver. of python may cause runtime error)
 
+- Only one installation for `eagle/lion/leopard/cheetah`, but need to load different OpenMPI for each cluster. Also need to load Conda to overwrite default python of the system (different Ver. of python may cause runtime error)
 
 ### 2. Download: 
 
@@ -35,6 +39,7 @@ module display <module_name>
 [Souce code](https://github.com/lammps/lammps) <br>
 
 **download tar file**
+
 ```shell
 tar -xvf lammps-stable_7Aug2019
 cd lammps-stable_7Aug2019
@@ -47,9 +52,9 @@ cd lammps_patch_20Nov2019
 git checkout patch_20Nov2019
 ```
 ```shell
-git clone https://github.com/lammps/lammps.git    lammps_master
-cd lammps_master
-git pull origin master
+git clone https://github.com/lammps/lammps.git    lammps_dev
+cd lammps_dev
+git pull origin develop
 ```
 
 ### 3. Packages: 
@@ -359,9 +364,8 @@ prepend-path    INCLUDE                 $topdir/include/lammps
 prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUXPPC64/molfile
 ```
 
-
-
 ## 2. USC2 (Tachyon)
+
 ```note
 - Use GCC-11 need also update GCC-conda = 11
 `conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`
@@ -393,11 +397,11 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=no \
 -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
--DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_VTK=no -DPKG_ML-PACE=no \
--DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_KIM=no -DPKG_H5MD=no \
--DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DPKG_SCAFACOS=no -DDOWNLOAD_SCAFACOS=no \
+-DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_VTK=no -DPKG_H5MD=no \
+-DPKG_MESONT=no -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_KIM=no -DPKG_SCAFACOS=no \
+-DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes \
+-DPKG_ML-PACE=no -DPKG_ML-QUIP=no -DDOWNLOAD_QUIP=no -DPKG_ML-HDNNP=no -D DOWNLOAD_N2P2=no \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
--DPKG_MESONT=no -DPKG_ML-QUIP=no -DDOWNLOAD_QUIP=no -DPKG_ML-HDNNP=no -D DOWNLOAD_N2P2=no \
 -DFFT=FFTW3 \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI4-dev
 
