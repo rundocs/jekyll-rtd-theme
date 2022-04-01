@@ -91,7 +91,7 @@ make install
 - Do not use GCC-11, to avoid error. this does not work `export CFLAGS='-gdwarf-4 -gstrict-dwarf'`
 
 ```shell 
-cd openmpi-4.1.3rc1
+cd openmpi-4.1.3
 mkdir buildGCC && cd buildGCC
 ##
 module load tool_dev/binutils-2.37                        # gold
@@ -100,6 +100,7 @@ module load compiler/gcc-10.3
 export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-10.3/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
 export LDFLAGS="-fuse-ld=gold -lrt"
+export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12              ## ucx-1.12  ucx-master
 
 ../configure --with-sge --with-ucx=${myUCX} --without-verbs \
