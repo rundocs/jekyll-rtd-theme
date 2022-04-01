@@ -272,9 +272,10 @@ export =/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
 -D PKG_MOLFILE=yes
 ```
 
-15. **PYTHON** (use 1 of following ways)
+15.**PYTHON** (use 1 of following ways)
 
 Note: new numpy require higher GLIBC
+
 - use module load --> do not need setting in Cmake (but this may intefere some libs: openmpi,lapack,blas,... - should not use)
 
 ```shell
@@ -409,6 +410,8 @@ make install
 
 ```
 
+#### Module file
+
 ```shell
 ## Module file
 module load conda/py37Lammps
@@ -521,9 +524,6 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI3-dev
 ```
 
-
-
-
 \# use Internal LAPACK&BLAS, then no need (GSL & MKL): open file: ../cmake/Modules/Packages/USER_PLUMED.cmake
 comment out line 9-->12: find LAPACK, BLAS, GSL (Plumed build itself, no need GSL anymore)
 --> then, do not need these:
@@ -533,18 +533,19 @@ source mklvars.sh intel64
 -DFFT=MKL \    # must set before Plumed
 \# or use openBLAS (bad performance)
 module load tool_dev/gsl-2.6
-export myBLAS=/home1/p001cao/local/app/tool_dev/openBLAS-0.3.19/lib64/libopenblas.a 
--DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myBLAS}    
+export myBLAS=/home1/p001cao/local/app/tool_dev/openBLAS-0.3.19/lib64/libopenblas.a
+-DBLAS_LIBRARIES=${myBLAS} -DLAPACK_LIBRARIES=${myBLAS}
 
 \# load plumed separately (bad alloc)
 module load plumed2/2.7htt-gcc
 -DPKG_USER-PLUMED=yes -DDOWNLOAD_PLUMED=no -DPLUMED_MODE=shared \
 
-\#openKim: 
+\#openKim:
 must create module file for openKim to add its PKG's path
 
-### Module
-```shell 
+#### Module file1
+
+```shell
 module load tool_dev/gsl-2.6
 module load conda/py37Lammps
 module load fftw/fftw3.3.10-ompi5.0-gcc11.2
@@ -557,10 +558,10 @@ prepend-path    LD_LIBRARY_PATH         $topdir/lib64
 prepend-path    INCLUDE                 $topdir/include/lammps
 ```
 
+### 3. CAN2-GPU
 
-
-## 3. CAN2-GPU    
 - See [GPU package](https://docs.lammps.org/Build_extras.html#gpu)
+
 ```shell
 # cuda
 export CUDA_PATH=/home/thang/local/app/cuda-10.2
@@ -568,8 +569,8 @@ export bin2c=/home/thang/local/app/cuda-10.2/bin/bin2c
 
 -DPKG_GPU=yes -DGPU_API=cuda -DGPU_ARCH=sm_61 -DBIN2C=${bin2c} -DGPU_PREC=double \
 ```
-- for Pascal architect of GPU, use ARCH=sm_60/sm_61
 
+- for Pascal architect of GPU, use ARCH=sm_60/sm_61
 
 ```shell
 module load mpi/ompi4.1-gcc7.4-cuda      # cuda-10 only support to gcc-8
@@ -597,11 +598,14 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DFFT=FFTW3 \
 -DCMAKE_INSTALL_PREFIX=/home/thang/local/app/lammps/gccOMPI-dev
+
 ```
 
-## 4. CAN4-GPU   
+## 4. CAN4-GPU
+
 - python and fftw are availabe by command
-```
+
+```shell
 sudo apt-get install -y fftw-dev
 ```
 
@@ -630,8 +634,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_INSTALL_PREFIX=/opt/app/lammps/master-gpu
 
 make -j 24 && sudo make install
-``` 
-
+```
 
 
 
