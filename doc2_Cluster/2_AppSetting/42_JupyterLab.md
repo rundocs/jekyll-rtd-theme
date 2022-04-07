@@ -13,6 +13,11 @@ conda upgrade nbconvert
 
 ## Use multil envs in Notebook
 - ref: https://tinyurl.com/y7hcfvws ;  https://tinyurl.com/y7hcfvws
+```
+## create new env
+conda create --name py37polymer
+conda activate py37polymer
+conda install jupyterlab
 
 ```
 conda install -n base nb_conda
