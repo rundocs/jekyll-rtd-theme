@@ -22,7 +22,8 @@ conda install jupyterlab
 ## intall extension
 conda install -n base nb_conda
 ```
-Then we can select env in jupyterlab
+Then we can select env in jupyterlab:
+- change kernel
 
 
 # Cluster
