@@ -15,7 +15,7 @@ conda upgrade nbconvert
 - ref: https://tinyurl.com/y7hcfvws ;  https://tinyurl.com/y7hcfvws
 ```
 ## create new env
-conda create --name py37polymer
+conda create --name py37polymer python=3.7
 conda activate py37polymer
 conda install jupyterlab
 
