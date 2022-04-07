@@ -19,10 +19,10 @@ conda create --name py37polymer
 conda activate py37polymer
 conda install jupyterlab
 
-```
+## intall extension
 conda install -n base nb_conda
 ```
-
+Then we can select env in jupyterlab
 
 
 # Cluster
