@@ -23,7 +23,7 @@ conda install jupyterlab
 conda install -n base nb_conda
 ```
 Then we can select env in jupyterlab:
-- change kernel
+- change kernel (this will be save for the next open of .ipynb file)
 
 
 # Cluster
