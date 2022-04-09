@@ -28,7 +28,7 @@
 {%- if site.debug -%}
     {%- assign base = site.baseurl -%}
 {%- else -%}
-    {%- assign base = "/assets/css/theme.min.css" -%}
+    {%- assign base = "https://cdn.jsdelivr.net/gh/" | append: theme_alias -%}
 {%- endif -%}
 
 {% comment %} extra {% endcomment %}
