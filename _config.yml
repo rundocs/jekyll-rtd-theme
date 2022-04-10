@@ -1,12 +1,12 @@
 theme: null
 
 debug:
-  dist: false
+  dist: true
   compress: true
   shortcodes: true
 
 sass:
-    style: compressed
+  style: compressed
 
 readme_index:
   with_frontmatter: true
