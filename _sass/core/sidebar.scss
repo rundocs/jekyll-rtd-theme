@@ -1,6 +1,5 @@
 .sidebar {
   color: $theme-white;
-  background-image: url($dna)
   background: $theme-menu-background;
 
   a {
@@ -16,6 +15,8 @@
 }
 
 .toctree {
+  background-image: url($dna)
+
   a {
     color: $theme-white;
     padding: 0.5em;
