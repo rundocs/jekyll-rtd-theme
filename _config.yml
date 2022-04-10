@@ -4,9 +4,9 @@ description: Just another documentation theme compatible with GitHub Pages
 theme: null
 
 debug:
-   dist: false
-   compress: true
-   shortcodes: true
+  dist: false
+  compress: true
+  shortcodes: true
 
 readme_index:
   with_frontmatter: true
