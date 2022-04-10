@@ -11,7 +11,7 @@
 }
 
 .sidebar-wrap {
-  top: 0;
+  top: 45;
 
   @extend .menu-sm;
 
@@ -21,13 +21,13 @@
 }
 
 .addons-wrap {
-  @extend .menu-sm;
+  top: 0;
 }
 
 .content-wrap {
   &.shift {
     position: fixed;
-    top: 0;
+    top: 45;
     bottom: 0;
     left: 0;
     min-width: 100%;
