@@ -5,9 +5,6 @@ debug:
   compress: true
   shortcodes: true
 
-sass:
-  style: compressed
-
 readme_index:
   with_frontmatter: true
 
