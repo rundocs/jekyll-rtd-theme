@@ -3,10 +3,10 @@ description: Just another documentation theme compatible with GitHub Pages
 
 theme: null
 
-# debug:
-#   compress: true
-#   dist: false
-#   shortcodes: true
+debug:
+   dist: false
+   compress: true
+   shortcodes: true
 
 readme_index:
   with_frontmatter: true
