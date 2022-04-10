@@ -1,7 +1,7 @@
 theme: null
 
 debug:
-  dist: true
+  dist: false
   compress: true
   shortcodes: true
 
