@@ -1,0 +1,11 @@
+.content-wrap {
+    margin-right: $theme-menu-width;
+}
+
+.sidebar-wrap {
+  top: 45px;
+  
+  .sidebar > :last-child {
+    margin-bottom: 5em;
+  }
+}
