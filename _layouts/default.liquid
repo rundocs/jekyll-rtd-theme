@@ -14,8 +14,9 @@ layout: tasks/compress
         {%- include common/opengraph.liquid -%}
         {%- include common/schema.liquid -%}
         {%- include common/links.liquid -%}
-        {%- include rest/styles.liquid -%}
+        {%- include common/google_gtag.liquid-%}
         {%- include common/script.liquid -%}
+        {%- include rest/styles.liquid -%}
         {%- include extra/head.html -%}
     </head>
     <body class="container">
@@ -26,7 +27,6 @@ layout: tasks/compress
         {%- include rest/script.liquid -%}
         {%- include common/mermaid.liquid-%}
         {%- include common/mathjax.liquid-%}
-        {%- include common/google_gtag.liquid-%}
         {%- include common/google_adsense.liquid-%}
     </body>
 </html>
