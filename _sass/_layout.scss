@@ -31,3 +31,9 @@
     margin-bottom: 5em;
   }
 }
+
+@include breakpoint(xl) {
+  .content-wrap {
+    max-width: $width-xl - $theme-menu-width;
+  }
+}
