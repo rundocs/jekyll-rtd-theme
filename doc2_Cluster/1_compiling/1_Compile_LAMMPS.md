@@ -200,11 +200,12 @@ For multicore CPUs using OpenMP, set these 2 variables.
 
 12.[**ML_QUIP**] ([source code](https://github.com/libAtoms/QUIP))
 compile QUIP the minimum requirements are:
-- A working Fortran compiler. QUIP is tested with `gfortran 4.4` and later, and `ifort 11.1`.
-- Linear algebra libraries BLAS and LAPACK. QUIP is tested with reference versions libblas-dev and liblapack-dev on Ubuntu 12.04, and mkl 11.1 with ifort.
-- modify `ML-QUIP.cmake` : add this command after line 76 (inside ExternalProject_Add(...)): 
 
-```
+- A working Fortran compiler. QUIP is tested with `gfortran 4.4` and later, and `ifort 11.1`
+- Linear algebra libraries BLAS and LAPACK. QUIP is tested with reference versions libblas-dev and liblapack-dev on Ubuntu 12.04, and mkl 11.1 with ifort.
+- modify `ML-QUIP.cmake` : add this command after line 76 (inside ExternalProject_Add(...)):
+
+```shell
     GIT_REPOSITORY "https://github.com/libAtoms/QUIP/"
     GIT_TAG          5989901       #   origin/public
     ...
@@ -215,7 +216,7 @@ compile QUIP the minimum requirements are:
 
 - require python >3.6
 
-14. **SMD**
+14.**SMD**
 
 - require Eigen
 
@@ -239,9 +240,8 @@ open file: ../cmake/Modules/Packages/USER-SMD.cmake
 - to dump PDB file, need install VMD-plugins
 - compatible with VMD 1.9 and 1.9.1
 - [Compile VMD](http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html)
-  + **compile plugins** (just this is need for Lammps)
-https://www.discngine.com/blog/2019/5/25/building-the-vmd-molfile-plugin-from-source-code
-
+  - **compile plugins** (just this is need for Lammps) [see this](https://www.discngine.com/blog/2019/5/25/building-the-vmd-molfile-plugin-from-source-code)
+  
 ```shell
 tar zxvf vmd-1.9.src.tar.gz
 cd plugins
@@ -250,7 +250,7 @@ export PLUGINDIR=/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins
 make distrib
 ```
 
-  + **compile VMD**
+- **compile VMD**
 
 ```shell
 cd vmd-1.9.4a51
@@ -261,7 +261,7 @@ cd src
 make
 ```
 
-* path in lib/molfile/Make.lammps: molfile_SYSPATH =-L/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUXPPC64/molfile
+- path in lib/molfile/Make.lammps: molfile_SYSPATH =-L/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUXPPC64/molfile
 
 ```shell
 export =/uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/include
@@ -282,7 +282,7 @@ Note: new numpy require higher GLIBC
 module load conda/py37Lammps
 ```
 
-- use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far. 
+- use Python_ROOT_DIR (same as module load): --> will encounter the error: Anaconda environments prevent CMake from generating a safe runtime search path --> cannot be solved so far.
 
 ```shell
 export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
@@ -461,14 +461,18 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_VTK=no -DPKG_H5MD=no \
 -DPKG_MESONT=no -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_KIM=no -DPKG_SCAFACOS=no \
--DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes \
--DPKG_ML-PACE=no -DPKG_ML-QUIP=no -DDOWNLOAD_QUIP=no -DPKG_ML-HDNNP=no -D DOWNLOAD_N2P2=no \
--DPKG_PLUMED=yes -DDOWNLOAD_PLUMED=yes\
+-DPKG_ML-PACE=no -DPKG_ML-QUIP=no -DPKG_ML-HDNNP=no -DPKG_MDI=no \
+-DPKG_PLUMED=yes \
 -DFFT=FFTW3 \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI4-dev
 
 make -j 16 && make install
 
+```
+
+```shell
+## no need download option
+-DDOWNLOAD_EIGEN3=yes -DDOWNLOAD_VORO=yes -DDOWNLOAD_PLUMED=yes -DDOWNLOAD_QUIP=yes\
 ```
 
 #### use OMPI5
@@ -601,7 +605,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 
 ```
 
-## 4. CAN4-GPU
+### 4. CAN4-GPU
 
 - python and fftw are availabe by command
 
@@ -636,11 +640,8 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 make -j 24 && sudo make install
 ```
 
-
-
-
-```
-\#####################
+```shell
+####################
 
 KOKKOS (USC 2) - 05May20 (error tbb_malloc  --> change TBB folder in file TBB.cmake)
 
@@ -659,9 +660,8 @@ prepend-path    LD_LIBRARY_PATH         $topdir/build/linux_intel64_gcc_cc9.2.0_
 
 find_path(TBB_MALLOC_INCLUDE_DIR NAMES tbb.h PATHS $ENV{TBBROOT}/include/tbb)
 find_library(TBB_MALLOC_LIBRARY NAMES tbbmalloc PATHS $ENV{TBBROOT}/lib/intel64/gcc4.7
+$ENV{TBBROOT}/build/linux_intel64_gcc_cc9.2.0_libc2.12_kernel2.6.32_release)
 
-                                                       $ENV{TBBROOT}/build/linux_intel64_gcc_cc9.2.0_libc2.12_kernel2.6.32_release)
-```
 
 https://github.com/kokkos/kokkos/blob/master/BUILD.md
 ##-- must use
@@ -669,7 +669,9 @@ https://stackoverflow.com/questions/52018092/how-to-set-rpath-and-runpath-with-g
 export myGCC=/home1/p001cao/local/app/compiler/gcc-9.2.0
 -DCMAKE_CXX_LINK_FLAGS="-L${myGCC}/lib64 -Wl,-rpath,${myGCC}/lib64" \
 
-##--
+```
+
+```shell
 module load mpi/ompi4.0.3-gcc9.2.0 
 module load tool_dev/gsl-2.6 
 module load tool_dev/cmake-3.17.2
@@ -688,12 +690,16 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_USER-ADIOS=no -DPKG_USER-NETCDF=no -DPKG_USER-QUIP=no -DPKG_USER-SCAFACOS=no \
 -DPKG_USER-QMMM=no -DPKG_USER-VTK=no -DPKG_USER-H5MD=no \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/05May20-gcc
-C1. OpenSHMEM + GCC
+```
+
+## C1. OpenSHMEM + GCC
+
+```shell
 module load mpi/ompi4.1.0-gcc10.2
 module load tool_dev/binutils-2.35                # gold 
 module load tool_dev/cmake-3.18.0
 module load fftw/fftw3.3.8-ompi4.1-gcc10.2
-##
+
 export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.0-gcc10.2/bin
 export CC=shmemcc
 export CXX=shmemc++
@@ -710,9 +716,9 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_USER-PLUMED=yes -DDOWNLOAD_PLUMED=yes\
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccSHMEM-master
+```
 
-
-D. Compile Lammps19 with openMPI-conda & MKL-conda
+## D. Compile Lammps19 with openMPI-conda & MKL-conda
 
 I. Require:
 
@@ -720,28 +726,16 @@ openMPI & MKL must be installed in conda
 
 Note: not yet support ucx
 
-
+```shell
 conda install -c conda-forge cmake mkl mkl-include libjpeg-turbo libpng 
-
 conda install -c conda-forge openmpi openmpi-mpicc openmpi-mpicxx openmpi-mpifort 
 
-
 # infiniBand
-
 conda install -c conda-forge libibverbs-cos6-x86_64
+```
 
-
-
-II: Load modules 
-
-
+```shell
 module load conda/py37ompi
-
-III: Configure
-
-
-
-
 
 cmake  -C ../cmake/presets/all_on.cmake \
 -D CMAKE_INSTALL_PREFIX=/home1/p001cao/local/lammps/20Nov19conda  \
@@ -756,26 +750,15 @@ cmake  -C ../cmake/presets/all_on.cmake \
 -D FFT=MKL \
 -D MKL_LIBRARY=/home1/p001cao/local/miniconda3/envs/py37ompi/lib \
 -D CMAKE_C_COMPILER=mpicc -D CMAKE_CXX_COMPILER=mpic++ -D CMAKE_Fortran_COMPILER=mpifort \../cmake 
+```
 
+## E. Compile Lammps19 with openMPI4.0.1-gcc7.4.0 on CAN
 
-
-
-
-
-E. Compile Lammps19 with openMPI4.0.1-gcc7.4.0 on CAN
-
-Load modules: 
-
+```shell
 module load mpi/openmpi4.0.2-gcc7.4.0
-
 module load cmake-3.12
 
-
 -D PKG_USER-ATC=no -D PKG_VORONOI=no -D PKG_USER-SMD=no -D PKG_USER-PLUMED=no
-
-use KISS for FTT
-
-Configure:
 
 cmake  -C ../cmake/presets/all_on.cmake \
 -D CMAKE_INSTALL_PREFIX=/home/thang/local/app/lammps/20Nov19 \
@@ -789,15 +772,7 @@ cmake  -C ../cmake/presets/all_on.cmake \
 -D PKG_USER-PLUMED=no -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=shared \
 -D CMAKE_C_COMPILER=mpicc  -D CMAKE_CXX_COMPILER=mpic++ -D CMAKE_Fortran_COMPILER=mpifort \
 ../cmake
-
-
-
-
-
-
-
-
-
+```
 
 B. Lammps on USC2
 
@@ -822,7 +797,7 @@ cd /src/USER-OMP
 * Ninja-cmake available from lammps/19Mar20
 * from lammps/15Apr2020, lammps develop OpenMP with Clang 
 
-##
+```shell
 git clone --branch patch_15Apr2020 https://github.com/lammps/lammps.git lammps_patch_15Apr2020 
 cd lammps_patch_15Apr2020 
 git checkout master
@@ -830,17 +805,11 @@ git pull origin master
 mkdir build 
 cd build
 
-
-Load
+##
 
 module load mpi/ompi4.0.3-clang10 
 module load plumed2/2.7htt-clang 
 module load cmake-3.15.1
-
-
-
-Configure
-
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DBUILD_MPI=yes -DLAMMPS_MACHINE=mpi \
@@ -853,7 +822,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_USER-PLUMED=yes -DDOWNLOAD_PLUMED=no -DPLUMED_MODE=shared \
 -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/15Apr20-clang
-
+```
 
 
 
@@ -861,15 +830,11 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 # USC1
 -DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/19Mar20-clang
 
-
-
 5. MVAPICH-GCC
-
 
 module load mpi/mvapich2-2.3.2-gcc9.2.0
 module load plumed2/2.7htt-mvapich
 module load conda/py37mvapichSupp
-
 
 Configure
 
@@ -887,8 +852,6 @@ cmake ../cmake -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/19Mar20-mva
 
 https://github.com/lammps/lammps/blob/master/lib/message/cslib/src/STUBS_ZMQ/zmq.h
-
-
 
 A. Compile Lammps19 with openMPI-4.0.2, Intel2019xe and MKL (w/wt FFTW-3.3.8) (USC)
 II: Load modules
@@ -932,15 +895,16 @@ cmake  -C ../cmake/presets/all_on.cmake \
 Step 2: compile ( in /build)
 make -j 8
 test: mpirun -np 2 lmp_mpi
-LAMMPS (19 Jul 2019) 
+LAMMPS (19 Jul 2019)
 Total wall time: 0:00:21
 
-step 3: copy file 
+step 3: copy file
 make install
 
 Step 4: create module file
  create file "7Aug19"
-#######################################
+
+```shell
 # for Tcl script use only
 set     topdir          /uhome/p001cao/local/lammps/7Aug19
 set     version         7Aug19
@@ -956,7 +920,7 @@ setenv          LAMMPS                  $topdir
 prepend-path    PATH                                    $topdir/bin
 prepend-path    LD_LIBRARY_PATH         $topdir/lib64
 prepend-path    INCLUDE                            $topdir/include/lammps
-#######################################
+```
 
 save it in: /uhome/p001cao/local/share/lmodfiles/lammps
 Ref:
@@ -964,6 +928,8 @@ https://lammps.sandia.gov/doc/Build_basics.html
 
 #USC2:
 Note: Kokkos may require TBB lib --> might only Intel can work
+
+```shell
 # Download specific TAG: git clone --branch <tag_name> <repo_url>
 git clone --branch stable_3Mar2020 https://github.com/lammps/lammps.git lammps_stable_3Mar2020
 cd lammps_stable_3Mar2020
@@ -1017,9 +983,11 @@ prepend-path    PATH                                    $topdir/bin
 prepend-path    LD_LIBRARY_PATH         $topdir/lib64
 prepend-path    INCLUDE                            $topdir/include/lammps
 ###############################################################
+```
 
+## 2. USC 2
 
-# 2. USC 2:
+```shell
 module load compiler/gcc-10.2              # must load before impi
 module load intel/compiler-xe19u5           # intel include lld linker  require GLIBC 2.15
 module load intel/mkl-xe19u5  
@@ -1028,12 +996,12 @@ source mpivars.sh release
 module load tool_dev/cmake-3.18.0
 module load tool_dev/gsl-2.6
 module load tool_dev/binutils-2.32                # gold 
+
 export PATH=$PATH:/home1/p001cao/local/app/intel/xe19u5/compilers_and_libraries_2019.5.281/linux/bin
 export CC=mpiicc
 export CXX=mpiicpc
 export FORTRAN=mpiifort
 
-Configure
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi \
@@ -1055,11 +1023,8 @@ find_library(TBB_MALLOC_LIBRARY NAMES tbbmalloc PATHS $ENV{TBBROOT}/lib/intel64/
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld -lrt" \
 source compilervars.sh intel64
 source mklvars.sh intel64
+```
 
+[Markdown basic syntax](https://www.markdownguide.org/basic-syntax)
 
-
-
-
-[Markdown basic syntax](https://www.markdownguide.org/basic-syntax) <br>
-[Kramdown basic syntax](https://kramdown.gettalong.org/converter/html.html#math-support) <br>
-
+[Kramdown basic syntax](https://kramdown.gettalong.org/converter/html.html#math-support)
