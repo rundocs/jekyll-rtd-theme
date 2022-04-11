@@ -1,34 +1,71 @@
 .menu-sm {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  width: $theme-menu-width;
-  max-height: 100%;
 
   &.shift {
-    left: 0;
+    right: 0;
   }
 }
 
 .addons-wrap {
-  top: 0;
   left: 0;
-  right: 0;
-  width: 100%;
-  position: fixed;
+  widtht: 100%;
+  @extend .menu-sm;
 }
 
 .content-wrap {
-  top: 45px;
-  margin-right: $theme-menu-width;
+  &.shift {
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    position: fixed;
+  }
 }
 
 .sidebar-wrap {
   top: 45px;
+  bottom: 0;
+  max-height: 100%;
+  width: $theme-menu-width-sm;
+
   @extend .menu-sm;
-  
+
   .sidebar > :last-child {
     margin-bottom: 5em;
+  }
+}
+
+@include breakpoint(md) {
+  .menu-md {
+    width: $theme-menu-width;
+  }
+
+  .sidebar-wrap {
+    right: 0;
+    @extend .menu-md;
+
+    .sidebar {
+      // 20px for scroll
+      width: $theme-menu-width + 20px;
+
+      .header,
+      .toctree {
+        width: $theme-menu-width;
+      }
+    }
+  }
+
+  .addons-wrap {
+    widtht: 100%;
+  }
+
+  .content-wrap {
+    margin-rightt: $theme-menu-width;
+
+    &.shift {
+      position: relative;
+      left: 0;
+      min-width: 0;
+    }
   }
 }
 
