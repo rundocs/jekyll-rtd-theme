@@ -1,8 +1,8 @@
 .menu-sm {
   position: fixed;
   bottom: 0;
-  right: -$theme-menu-width-sm;
-  width: $theme-menu-width-sm;
+  right: 0;
+  width: $theme-menu-width;
   max-height: 100%;
 
   &.shift {
