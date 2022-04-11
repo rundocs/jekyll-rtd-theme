@@ -15,8 +15,8 @@
   &.shift {
     left: 0;
     bottom: 0;
-    min-width: 100%;
     position: fixed;
+	width: 768px !important;
   }
 }
 
@@ -58,7 +58,7 @@
   }
 
   .content-wrap {
-    margin-right: $theme-menu-width;
+    width: 768px !important;
 
     &.shift {
       position: relative;
@@ -70,6 +70,6 @@
 
 @include breakpoint(xl) {
   .content-wrap {
-    max-width: $width-xl - $theme-menu-width;
+    width: 768px !important;
   }
 }
