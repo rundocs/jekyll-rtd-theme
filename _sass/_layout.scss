@@ -1,9 +1,22 @@
+.menu-sm {
+  position: fixed;
+  bottom: 0;
+  right: -$theme-menu-width-sm;
+  width: $theme-menu-width-sm;
+  max-height: 100%;
+
+  &.shift {
+    left: 0;
+  }
+}
+
 .content-wrap {
     margin-right: $theme-menu-width;
 }
 
 .sidebar-wrap {
   top: 45px;
+  @extend .menu-sm;
   
   .sidebar > :last-child {
     margin-bottom: 5em;
