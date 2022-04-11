@@ -16,7 +16,7 @@
     left: 0;
     bottom: 0;
     position: fixed;
-	width: 768px !important;
+	width: 687px !important;
   }
 }
 
@@ -58,7 +58,7 @@
   }
 
   .content-wrap {
-    width: 768px !important;
+    width: 687px !important;
 
     &.shift {
       position: relative;
@@ -70,6 +70,6 @@
 
 @include breakpoint(xl) {
   .content-wrap {
-    width: 768px !important;
+    width: 687px !important;
   }
 }
