@@ -28,7 +28,7 @@
 .content-wrap {
   &.shift {
     position: fixed;
-    top: 0;
+    top: 45px;
     bottom: 0;
     left: $theme-menu-width-sm;
     min-width: 100%;
