@@ -13,6 +13,8 @@ Consider Miniconda for light, and reduce error
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
 Put this file in folder: /uhome/p001cao/local/W_Source_Code
+
+```shell
 cd /uhome/p001cao/local/W_Source_Code
 # Installing:
 module load compiler/gcc-11.2
@@ -26,22 +28,28 @@ bash Miniconda3-py37_4.9.2-Linux-x86_64.sh -u
 choose folder to install:   /uhome/p001cao/local/app/miniconda3
 running conda init?  NO
 ... finish
+```
 
  3. Create Conda module
-
+```
 set     topdir          /uhome/p001cao/local/miniconda3
 prepend-path    PATH                    $topdir/bin
 prepend-path    LD_LIBRARY_PATH         $topdir/lib
 prepend-path    INCLUDE                 $topdir/include
 and put this file into folder:  /uhome/p001cao/local/share/lmodfiles
+```
+
 4. Create Python Environments in conda
 https://manjusri.ucsc.edu/2017/09/08/environment-modules/
 create 2 evironments: python37, python27
+```
 module load conda/conda3
 conda create -n py37Lammps python=3.7.5
 conda create -n py27env python=2.7
+```
 
 create module files for 2 environments
+```
 set     topdir          /uhome/p001cao/local/Miniconda3/envs/py37ompi
 
 prepend-path    PATH                    $topdir/bin
@@ -51,7 +59,7 @@ or :
 ## python27env_conda3
 set     topdir          /uhome/p001cao/local/Anaconda3
 module load conda3
-
+```
 if [ module-info mode load ] {
    puts stdout "source   $topdir/bin/activate py27env"
 }
@@ -64,10 +72,12 @@ Or use conda with specific name of env
 module load conda3
 conda install -n py37env numpy scipy
 
+```
 # or 
 module load conda3
 source activate py37env 
 pip install tess              #  voro++ library
+```
 
 References:
 https://stackoverflow.com/questions/22885134/how-to-load-virtualenv-using-environmental-module-file-tcl-script
@@ -82,20 +92,23 @@ Anaconda: https://www.anaconda.com/distribution/#windows
 Miniconda: https://repo.anaconda.com/miniconda/
 make anaconda available in cmd windows, and can double click to open jypyter file
 add 3 new environment variable path: Environment Variables --> System Variables --> path --> edit
+```
 C:\DevProgram\miniconda3
 C:\DevProgram\miniconda3\Scripts
 C:\DevProgram\miniconda3\Library\bin
+```
 
-## for environment named py37 (should not use to avoid errors, maybe in tf)
+- for environment named py37 (should not use to avoid errors, maybe in tf)
 C:\DevProgram\miniconda3\envs\py37
 C:\DevProgram\miniconda3\envs\py37\Scripts
 C:\DevProgram\miniconda3\envs\py37\Library\bin
 
-# Set default environment in anaconda On Windows: https://tinyurl.com/y2meq2wm
+- Set default environment in anaconda On Windows: https://tinyurl.com/y2meq2wm
 right-lick on: Anaconda Powershell Prompt (miniconda3) shorcut --> properties -->Target:
 change: ...; conda activate 'C:\DevProgram\miniconda3'
 to : ...; conda activate 'C:\DevProgram\miniconda3\envs\py37'
-III. Environments management & install packages
+
+## III. Environments management & install packages
 With conda, you can create, export, list, remove, and update environments that have different versions of Python and/or packages installed in them. Switching or moving between environments is called activating the environment
 1. To see list of all environments:
 conda info --envs             # or
@@ -175,9 +188,12 @@ conda install -c conda-forge/label/prerelease-jupyterlab jupyterlab
 
 Use jupyter-Lab: right-click on ipynb files --> properties --> opens with: (change) --> jupyter-lab
 Use jupyter-clasic: right-click on ipynb files --> properties --> opens with: (change) --> jupyter-notebok 
-# Monokai++ theme: https://www.npmjs.com/package/@hokyjack/jupyterlab-monokai-plus
-# consider monokai++, identical-sublime-monokai theme for VScode
-IV.2 Numpy, scipy, pandas, matplotlib:
+- Monokai++ theme: https://www.npmjs.com/package/@hokyjack/jupyterlab-monokai-plus
+- consider monokai++, identical-sublime-monokai theme for VScode
+
+## IV. Some useful packages Numpy, scipy, pandas, matplotlib:
+
+```
 conda install numpy scipy scikit-learn pandas matplotlib
 
 # mpi4py with openmpi:
@@ -201,3 +217,5 @@ conda install -c openeye openeye-toolkits
 python lib for curve fitting
 https://lmfit.github.io/lmfit-py/model.html
 pip install lmfit
+```
+
