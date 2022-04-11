@@ -10,8 +10,12 @@
   }
 }
 
+.addons-wrap {
+  position: fixed;
+}
+
 .content-wrap {
-    margin-right: $theme-menu-width;
+  margin-right: $theme-menu-width;
 }
 
 .sidebar-wrap {
