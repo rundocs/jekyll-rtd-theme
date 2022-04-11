@@ -20,7 +20,8 @@ layout: tasks/compress
         {%- include extra/head.html -%}
     </head>
     <body class="container">
-        {%- include templates/addons.liquid -%}
+        {%- include common/google_gtag_noscript.liquid-%}
+		{%- include templates/addons.liquid -%}
         {%- include templates/sidebar.liquid -%}
         {%- include templates/content.liquid -%}
         {%- include extra/body.html -%}
