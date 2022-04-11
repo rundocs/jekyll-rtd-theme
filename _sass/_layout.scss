@@ -12,11 +12,14 @@
 
 .addons-wrap {
   top: 0;
+  left: 0;
   right: 0;
+  width: 100%;
   position: fixed;
 }
 
 .content-wrap {
+  top: 45px;
   margin-right: $theme-menu-width;
 }
 
