@@ -10,9 +10,13 @@
   }
 }
 
-.sidebar-wrap {
+.addons-wrap {
   top: 0;
+  @extend .menu-sm;
+}
 
+.sidebar-wrap {
+  top: 45px;
   @extend .menu-sm;
 
   .sidebar > :last-child {
@@ -20,14 +24,10 @@
   }
 }
 
-.addons-wrap {
-  @extend .menu-sm;
-}
-
 .content-wrap {
   &.shift {
     position: fixed;
-    top: 0;
+    top: 45px;
     bottom: 0;
     left: 0;
     min-width: 100%;
