@@ -15,19 +15,19 @@ layout: tasks/compress
         {%- include common/schema.liquid -%}
         {%- include common/links.liquid -%}
         {%- include rest/styles.liquid -%}
-        {%- include extra/head.html -%}
         {%- include common/script.liquid -%}
-        {%- include common/google_adsense.liquid-%}
+        {%- include extra/head.html -%}
         {%- include common/google_gtag.liquid-%}
     </head>
     <body class="container">
         {%- include common/google_gtag_noscript.liquid-%}
-		{%- include templates/addons.liquid -%}
-        {%- include templates/content.liquid -%}
         {%- include templates/sidebar.liquid -%}
+        {%- include templates/content.liquid -%}
+        {%- include templates/addons.liquid -%}
         {%- include extra/body.html -%}
         {%- include rest/script.liquid -%}
         {%- include common/mermaid.liquid-%}
         {%- include common/mathjax.liquid-%}
+        {%- include common/google_adsense.liquid-%}
     </body>
 </html>
