@@ -1,8 +1,8 @@
 # Thang's Notes
 
-This page dedicates to my personal arbitrary notes and does not reflect any either community or third party rule. 
+This page dedicates to my personal arbitrary notes and does not reflect any either community or third party rules. 
 
-In general, these notes are unambiguous for some rare situations but helpless in almost others. 
+In general, these notes are unambiguous for some rare situations but helpless for almost others. 
 
 It's fun if you find something helpful here. In other cases, it isn't my business.
 
