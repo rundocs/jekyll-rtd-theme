@@ -25,5 +25,5 @@ It's fun if you find something helpful here. In other cases, it isn't my busines
 if "bullshit" not in your_life:
     print("Hello world")
 else:
-    raise Error("stuck in redbull bullshit")
+    raise Error("stuck in bullshit")
 ```
