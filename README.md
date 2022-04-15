@@ -20,3 +20,10 @@ It's fun if you find something helpful here. In other cases, it isn't my busines
 
 
 #### [My CV](https://thangckt.github.io/cv)
+
+```python
+if "bullshit" not in your_life:
+    print("Hello world")
+else:
+    raise Error ("bullshit redbull")
+```
