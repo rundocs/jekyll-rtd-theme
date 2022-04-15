@@ -13,11 +13,6 @@ Some of these codes are encapsulated into the `thatool` package.
 ![pic](figure/hBN_PMMA.gif)
 
 
-```python
-if "bullshit" not in your_life:
-    print("Hello world")
-else:
-    raise Error ("bullshit redbull")
-```
+
 
 {% include list.liquid all=true %}
