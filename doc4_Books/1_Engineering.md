@@ -36,6 +36,10 @@ sort: 1
 
 [Equilibrium Thermodynamics](http://202.91.76.90:81/fdScript/RootOfEBooks/E%20BOOKS%20COLLECTION%202020%20%20DATA%202/PHYSICS/Equilibrium%20Thermodynamics%20Second%20Edition%20by%20Mario%20J.%20de%20Oliveira.pdf)
 
+[Quantum Mechanics: Concepts and applications](http://202.91.76.90:81/fdScript/RootOfEBooks/E%20BOOKS%20COLLECTION%202020%20%20DATA%202/PHYSICS/Quantum%20Mechanics%20Concepts%20and%20Applications%20Second%20Edition%20by%20Nouredine%20Zettili.pdf)
+
+[Quantum Theory and Statistical Thermodynamics](http://202.91.76.90:81/fdScript/RootOfEBooks/E%20BOOKS%20COLLECTION%202020%20%20DATA%202/PHYSICS/Quantum%20Theory%20and%20Statistical%20Thermodynamics%20Principles%20and%20Worked%20Examples%20by%20Peter%20Hertel%20(1).pdf)
+
 ## Mathematics
 
 [Advanced Engineering Mathematics - E. Kreyszig](http://www.bau.edu.jo/UserPortal/UserProfile/PostsAttach/59003_3812_1.pdf)
