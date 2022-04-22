@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# BOOKS
+# Bookshelf
 
 <!-- {% include list.liquid all=true %} -->
 
