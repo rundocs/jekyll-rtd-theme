@@ -54,6 +54,8 @@ sort: 1
 
 [Understanding Molecular Simulation - D. Frenkel](https://www.eng.uc.edu/~beaucag/Classes/AdvancedMaterialsThermodynamics/Books/%5BComputational%20science%20(San%20Diego,%20Calif.)%5D%20Daan%20Frenkel_%20Berend%20Smit%20-%20Understanding%20molecular%20simulation%20_%20from%20algorithms%20to%20applications%20(2002,%20Academic%20Press%20)%20-%20libgen.lc.pdf)
 
+[Molecular Modelling: Priciples and Applications](https://chz276.ust.hk/public/Cloud::siqin/References/From-MD-to-MSM/Molecular%20Modelling%20Principles%20and%20Applications.pdf)
+
 [Enhanced sampling methods for molecular dynamics simulations](https://arxiv.org/pdf/2202.04164.pdf)
 
 ## Programming
