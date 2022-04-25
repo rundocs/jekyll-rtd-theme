@@ -216,7 +216,7 @@ compile QUIP the minimum requirements are:
 
 - require python >3.6
 
-14.**SMD**
+14.**MACHDYN**
 
 - require Eigen
 
