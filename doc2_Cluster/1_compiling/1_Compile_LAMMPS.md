@@ -221,7 +221,7 @@ compile QUIP the minimum requirements are:
 - require Eigen
 
 ```shell
--D PKG_SMD=yes -D DOWNLOAD_EIGEN3=yes
+-D MACHDYN=yes -D DOWNLOAD_EIGEN3=yes
 ```
 
 open file: ../cmake/Modules/Packages/USER-SMD.cmake
