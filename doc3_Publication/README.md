@@ -8,7 +8,7 @@ sort: 3
 
 Loading... 
 
-<meta http-equiv="refresh" content="0; url=https://thangckt.github.io/cv/publications"/> 
+<meta http-equiv="refresh" content="0; url=https://thangckt.github.io/publications"/> 
 
 
 
