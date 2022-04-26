@@ -4,7 +4,7 @@ sort: 1
 
 # *class* lmpFRAME
 
-This class create a data-object (single configuration) for the analysis of computing data from LAMMPS. The file formats implemented in this class <br>
+This class create a data-object (single configuration) for the analysis of computing data from LAMMPS. The file formats implemented in this class 
 - [LAMMPS DATA Format](https://docs.lammps.org/2001/data_format.html)
 - [LAMMPS DUMP Format](https://docs.lammps.org/dump.html)
 - [PDB format](https://ftp.wwpdb.org/pub/pdb/doc/format_descriptions/Format_v33_Letter.pdf)
