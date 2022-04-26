@@ -12,6 +12,7 @@ readme_index:
 
 plugins:
   - jemoji
+  - jekyll-gist
   - jekyll-avatar
   - jekyll-mentions
 
