@@ -237,72 +237,119 @@ The method to write DUMP file.
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L587)
 ```python
 .writeDATA(
-   file_name, **kwargs
+   file_name, atom_style = 'atomic', vel = False, iFlag = False, comment = '',
+   FMTstr = None
 )
 ```
 
 ---
-The **method** to write DATA file.
-* Inputs-Compulsory: <br>
-- file_name                     | `string` | the name of DATA file 
----
-        - comment   = ''        | `string` | the comment 
-        - file                                  | `*.dat`  | the DATA file 
-        da.writeDATA('test.dat', atom_style='atomic', iFlag=False, vel=False, FMT='%.4f')
+The method to write DATA file.
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+* **atom_style** (str, optional) : the style of atomistic system, can be 'atomic', 'charge', 'molecular', 'full' . Defaults to 'atomic'.
+* **vel** (bool, optional) : to write Velocity values. Defaults to False.
+* **iFlag** (bool, optional) : to write iFlag tag. Defaults to False.
+* **comment** (str, optional) : comment on second line in DATA file. Defaults to ''.
+* **FMTstr** (str, optional) : string format for output values. Defaults to None, mean use self.FMTstr
+
+
+**Returns**
+
+* **file**  : the DUMP file 
+
+
+**Examples**
+
+>>> da.writeDATA('test.dat', atom_style='atomic', iFlag=False, vel=False, FMT='%.4f')
 
 ### .writeXYZ
-[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L770)
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L764)
 ```python
 .writeXYZ(
-   file_name, **kwargs
+   file_name, column = ['X', 'xu', 'yu', 'zu'], FMTstr = None
 )
 ```
 
 ---
 The `method` to write XYZ file.
-* Inputs-Compulsory: <br>
-- file_name                     | `string` | the name of XYZ file 
----
-        - FMTstr        = '%.6f'        | `string` | string format for output values 
-        - file                                  | `*.cfg`  | the XYZ file 
-        da.writeXYZ('test.xyz')
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+* **column** (list-of-str, optional) : contains columns to be written. Defaults to ['X','xu','yu','zu']
+* **FMTstr** (str, optional) : string format for output values. Defaults to None, mean use self.FMTstr
+
+
+**Returns**
+
+* **file**  : the XYZ file 
+
+
+**Examples**
+
+>>> da.writeXYZ('test.xyz')
 
 ### .writePDB
-[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L817)
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L813)
 ```python
 .writePDB(
-   file_name, **kwargs
+   file_name, writeBox = False
 )
 ```
 
 ---
-The **method** to write PDB file; https://zhanggroup.org/SSIPe/pdb_atom_format.html
-* Inputs-Compulsory: <br>
-- file_name                     | `string` | the name of XYZ file 
----
-        - writeBox = False : write box or not
-        - file                                  | `*.pdb`  | the PDB file 
-        da.writePDB('test.pdb')
+The method to write [PDB file](https://zhanggroup.org/SSIPe/pdb_atom_format.html)
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+* **writeBox** (bool, optional) : write box or not. Defaults to False.
+
+
+**Returns**
+
+* **file**  : the PDB file 
+
+
+**Examples**
+
+>>> da.writePDB('test.pdb')
 
 ### .addColumn
-[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L925)
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L918)
 ```python
 .addColumn(
-   data, **kwargs
+   data, newColumn = None, replace = False
 )
 ```
 
 ---
-The **method** to add new columns to da.atom.
-* Inputs-Compulsory: <br>
-- data                          | `DataFrame` `Series` `List` | Nxm data of new columns
----
-        - replace       = False | `boolean`| replace column if existed
-        - .atom  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-        da.addColumn(df, myColumn=['col1','col2'], replace=True)
+The method to add new columns to da.atom.
+
+
+**Args**
+
+* **data** (pd.DataFrame, pd.Series, list) : Nxm data of new columns
+* **newColumn** (list) : 1xN list contains names of columns. Default to None, mean it will take columnNames from DataFrame
+* **replace** (bool, optional) : replace column if existed. Defaults to False.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : Update da.atom 
+
+
+**Examples**
+
+>>> da.addColumn(df, myColumn=['col1','col2'], replace=True)
 
 ### .deleteColumn
-[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L968)
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L956)
 ```python
 .deleteColumn(
    delColumns
@@ -310,16 +357,26 @@ The **method** to add new columns to da.atom.
 ```
 
 ---
-The **method** to delete columns from da.atom.
-* Inputs-Compulsory: <br>
-- delColumns          | `list-string` | 1xN list contains names of columns to be deleted
----
-* Inputs-Optional: <br> 
-        - .atom  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-        da.deleteColumn(delColumns=['col1','col2'])
+The method to delete columns from da.atom.
+
+
+**Args**
+
+* **data** (pd.DataFrame, pd.Series, list) : Nxm data of new columns
+* **delColumns** (list) : 1xN list contains names of columns to be deleted.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : Update da.atom 
+
+
+**Examples**
+
+>>> da.deleteColumn(delColumns=['col1','col2'])
 
 ### .set_mass
-[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L984)
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L975)
 ```python
 .set_mass(
    element_dict
@@ -327,18 +384,26 @@ The **method** to delete columns from da.atom.
 ```
 
 ---
-The **method** to set masses of atoms in system.
-difine element_dict with 2 keys: 'type', 'atom_symbol'
-element_dict = {'type':[1,2,3], 'atom_symbol'=['C','H','N']}
-* Inputs-Compulsory: <br>
-- element_dict={'type': list_values, 'atom_symbol':list_values}   | `dict` | 1xN list contains names of columns to be deleted
----
-* Inputs-Optional: <br> 
-        - .mass  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-        da.set_mass(element_dict={'type':[1,2,3], 'atom_symbol':['C','H','N']})
+The method to set masses of atoms in system. Before use it, need to define element_dict with 2 keys: 'type', 'atom_symbol'
+element_dict={'type': list_values, 'atom_symbol':list_values}
+
+
+**Args**
+
+* **element_dict** (dict) : a dict to define atom-types and atom-symbols.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : Update da.atom 
+
+
+**Examples**
+
+>>> da.set_mass(element_dict={'type':[1,2,3], 'atom_symbol':['C','H','N']})
 
 ### .combine_frame
-[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1016)
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1008)
 ```python
 .combine_frame(
    LmpFrame, merge_type = False, alignment = 'comXYZ', shift_XYZ = [0, 0, 0],
@@ -347,7 +412,7 @@ element_dict = {'type':[1,2,3], 'atom_symbol'=['C','H','N']}
 ```
 
 ---
-The **method** to combine 2 Lammps Frames.
+The method to combine 2 Lammps Frames.
 
 
 **Args**
@@ -367,19 +432,13 @@ The **method** to combine 2 Lammps Frames.
 Return:
         Update LmpFrame da1
 
+        >>> da1.combine_frame(da2)
 
-**Raises**
-
-* **ValueError**  : _description_
-* **Exception**  : _description_
-
----
-        da1.combine_frame(da2)
-
-NOTEs: cannot combine box_angle
+TO DO:
+        combine box_angle
 
 ### .unwrap_coord_DATA
-[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1187)
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1176)
 ```python
 .unwrap_coord_DATA(
    iFlag = ['x', 'y', 'z'], atom_types = []
@@ -387,18 +446,24 @@ NOTEs: cannot combine box_angle
 ```
 
 ---
-The **method** to upwrap coords in DATA file.
-* Inputs-Compulsory: <br>
-* Inputs-Optional: <br> 
-- iFlag=['x','y','z']: image Flags in data file
-- type=[]: just unwrap some atom-types, default = all-types
+The method to upwrap coords in DATA file.
+
+
+**Args**
+
+* **iFlag** (list, optional) : image Flags in data file. Defaults to ['x','y','z'].
+* **atom_types** (list, optional) : just unwrap some atom-types. Defaults to [], mean unwrap all-types.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : update FRAME
+
 ---
-        - new Object of LmpFrame
-* Usage: <br> 
-* NOTEs: cannot unwrap_coord_data if iFlags are not available.
+        cannot unwrap_coord_data if iFlags are not available.
 
 ### .change_atom_type
-[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1224)
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1216)
 ```python
 .change_atom_type(
    old_type, new_type
@@ -406,11 +471,21 @@ The **method** to upwrap coords in DATA file.
 ```
 
 ---
-The **method** to change types of atoms in system.
-* Inputs-Compulsory: <br>
-- old_type=[1,2,3]: a list
-- new_type=2 :      a scalar (int)
----
-* Inputs-Optional: <br> 
+The method to change types of atoms in system.
 
-        da.chage_atom_type([1,2,3], 2)
+
+
+**Args**
+
+* **old_type** (list) : a list of old-types.
+* **new_type** (int) :  one new-type.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : update FRAME
+
+
+**Examples**
+
+>>> da.chage_atom_type([1,2,3], 2)
