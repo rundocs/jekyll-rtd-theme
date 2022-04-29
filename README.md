@@ -3,13 +3,11 @@
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-Just another documentation theme compatible with GitHub Pages
+This theme is inspired by [jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme) and refactored with the algorithm of [DNA Recombination](https://eq19.github.io).
 
 [![DNA Animation](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](/)
 
 ## What it does?
-
-This theme is inspired by [jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme) and refactored with the algorithm of [DNA Recombination](https://eq19.github.io).
 
 [![DNA Recombination](https://user-images.githubusercontent.com/36441664/88602920-fd84c080-d09d-11ea-970d-dd63c12221fc.png)](https://eq19.github.io)
 
