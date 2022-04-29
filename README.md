@@ -5,15 +5,19 @@
 
 This theme is inspired by [jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme) and refactored with the algorithm of [DNA Recombination](https://eq19.github.io).
 
-[![DNA Recombination](https://user-images.githubusercontent.com/36441664/88602920-fd84c080-d09d-11ea-970d-dd63c12221fc.png)](https://eq19.github.io)
+[![DNA Animation](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](https://eq19.github.io).
 
-![](https://user-images.githubusercontent.com/36441664/84945494-89a3df80-b111-11ea-97d2-8d2597b315af.png)
+![Twin Pairs](https://user-images.githubusercontent.com/36441664/73700083-28f2a800-4718-11ea-97b3-2e9a738dc09e.png)
+
+![Prime Hexagon](https://user-images.githubusercontent.com/36441664/74550123-6dd1d680-4f83-11ea-8810-3b8f4f50a9c0.png)
 
 ## What it does?
 
-[![DNA Animation](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](https://eq19.github.io).
+[![DNA Recombination](https://user-images.githubusercontent.com/36441664/88602920-fd84c080-d09d-11ea-970d-dd63c12221fc.png)](https://eq19.github.io)
 
 ![Recombination Steps](https://user-images.githubusercontent.com/36441664/84945702-c7a10380-b111-11ea-894a-ba31a23732a7.jpeg)
+
+![Mutation](https://user-images.githubusercontent.com/36441664/84945494-89a3df80-b111-11ea-97d2-8d2597b315af.png)
 
 ## Quick start
 
