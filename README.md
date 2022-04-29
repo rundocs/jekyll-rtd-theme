@@ -5,6 +5,8 @@
 
 Just another documentation theme compatible with GitHub Pages
 
+[![DNA Animation](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](/)
+
 ## What it does?
 
 This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
@@ -12,7 +14,7 @@ This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphi
 - [@primer/css](https://github.com/primer/css)
 - [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
 
-[![DNA Recombination](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](/)
+![DNA Recombination](https://user-images.githubusercontent.com/36441664/88602920-fd84c080-d09d-11ea-970d-dd63c12221fc.png)
 
 ![Recombination Steps](https://user-images.githubusercontent.com/36441664/84945702-c7a10380-b111-11ea-894a-ba31a23732a7.jpeg)
 
