@@ -2,209 +2,544 @@
 sort: 1
 ---
 
-# *class* lmpFRAME
+# *class* LmpFrame
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L17)
+```python 
+LmpFrame(
+   dump_file = None, data_file = None, atom_style = 'auto', pdb_file = None,
+   xyz_file = None, from_df = None
+)
+```
 
-This class create a data-object (single configuration) for the analysis of computing data from LAMMPS. The file formats implemented in this class 
+
+---
+Create an Object of single-FRAME of LAMMPS (use for both DATA/DUMP files). The docstring is in Google-style.
+
+This class create a data-object (single configuration) for the analysis of computing data from LAMMPS. The file formats implemented in this class
 - [LAMMPS DATA Format](https://docs.lammps.org/2001/data_format.html)
 - [LAMMPS DUMP Format](https://docs.lammps.org/dump.html)
 - [PDB format](https://ftp.wwpdb.org/pub/pdb/doc/format_descriptions/Format_v33_Letter.pdf)
 - [XYZ format](https://www.cgl.ucsf.edu/chimera/docs/UsersGuide/xyz.html)
 
-![pic](https://icme.hpc.msstate.edu/mediawiki/images/e/e7/4kovito.gif)
+![image](https://icme.hpc.msstate.edu/mediawiki/images/e/e7/4kovito.gif)
 
-This class implemented several ways to create `lmpFRAME` object <br>
+---
+This class implemented several ways to create `lmpFRAME` object
 - create an empty data object
 - createFRAME object with input data
 - read from DUMP file 
 - read from DATA file 
 - read frome PDB file 
 
-REFs:
+
+**Args**
+
+* **dump_file** (str, optional) : filename of DUMP file. Defaults to None.
+* **data_file** (str, optional) : filename of DATA file. Defaults to None.
+* **pdb_file** (str, optional) : filename of PBD file. Defaults to None.
+* **xyz_file** (str, optional) : filename of XYZ file. Defaults to None.
+* **from_df** (pd.DataFrame, optional) : create FRAME from data. Defaults to None.
 
 
-## Initilization
-The constructor of class, there are several ways to initilize the lmpFRAME object
-* Inputs-Compulsory: <br>
-* Inputs-Optional: <br> 
-	- readDUMP='fileName' |`string` | is the name of DUMP file
-	- readDATA='fileName' |`string` | is the name of DATA file
-		- atom_style = 'atomic'|`string` | option to input type of atomistic system
-		- nFlag = False        |`boolean` | read nFlag or not
-	- readPDB='fileName' |`string` | is the name of PDB file
-	- createFRAME=df |`DataFrame`| pd.DataFrame contains atomic positions and properties of system
-		- box = [[0,1],[0,1],[0,1]]	|`array` `list`3x2| option to input boxSize
-		- boxAngle = [0,0,0]        |`array` `list`1x3| option to input boxAngle
-* Usage: <br> 
+**Attributes**
+
+* **file_name** (str) : name of input file
+* **timestep** (int) : the timestep of configuration
+* **box** (3x2 np.array) : the box size
+* **box_angle** (1x3 np.array) : the box angle
+atom(pd.DataFrame) DataFrame of per-atom values
+prop_key(list) column-names of properties
+mass(pd.DataFrame) DataFrame of per-type masses
+FMTstr(str) default format for float numbers, don't use %g because it will lost precision
+
+
+**Examples**
+
 ```python
-	# empty object
-	da = thaFileType.lmpFRAME()
-	# oject with input data 
-	da = thaFileType.lmpFRAME(createFRAME=df, box=box, boxAngle=boxAngle)
-	# from DUMP file 
-	da = thaFileType.lmpFRAME(readDUMP='test.cfg')
-	# from DATA file
-	da = thaFileType.lmpFRAME(readDATA='mydata.dat', atom_style='atomic', nFlag=False)
-	# from PDB file
-	da = thaFileType.lmpFRAME(readPDB='test.pdb')
-```
-* **Attributes:** <br> 
-	- .name     = 'Frame created by Thang' |`string` | name of input file
-	- .timestep = 0   |`integer`| the timestep of configuration
-	- .frame    = None |`DataFrame`| DataFrame of per-atom values
-	- .propKey  = None |`list`| column-names of properties
-	- .box		= np.asarray([[0,1],[0,1],[0,1]]) |`array` `list`3x2| option to input boxSize
-	- .boxAngle = np.zeros(3)   				|`array` `list`1x3| option to input boxAngle
-	- .mass		= np.asarray([])  |`array`nx1|	atomic masses
-	- .fmtSTR 	= "%.6f" |`string` | default format for float numbers, don't use %g because it will lost precision
-
-
-## .createFRAME()
-The **method** create new FRAME object with input data.
-* Inputs-Compulsory: <br>
-	- DataFrame			|`DataFrame`| pd.DataFrame of input data
-* Inputs-Optional: <br> 
-	- box = [[0,1],[0,1],[0,1]]	|`array` `list`3x2| option to input boxSize
-	- boxAngle = [0,0,0]        |`array` `list`1x3| option to input boxAngle
-* Outputs: <br> 
-	- .frame  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-* Usage: <br> 
-```python
-	da = thaFileType.lmpFRAME()
-	da.createFRAME(DataFrame=df)
+# empty object
+da = thatool.lmpFRAME()
+# oject with input data 
+da = thatool.lmpFRAME(from_df=df)
+# from DUMP file 
+da = thatool.lmpFRAME(dump_file='test.cfg')
+# from DATA file
+da = thatool.lmpFRAME(data_file='mydata.dat')
+# from PDB file
+da = thatool.lmpFRAME(pdb_file='test.pdb')
 ```
 
-## .readDUMP()
-The **method** create FRAME object by reading DUMP file.
-* Inputs-Compulsory: <br>
-	- fileName   			| `string` | the name of DUMP file 
-* Inputs-Optional: <br> 
-* Outputs: <br> 
-	- .frame  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-* Usage: <br> 
+---
+.. _Use chain mutator calls
+        https://stackoverflow.com/questions/36484000/use-an-object-method-with-the-initializer-same-line
+
+
+**Methods:**
+
+
+### .createFRAME
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L134)
 ```python
-	da = thaFileType.lmpFRAME()
-	da.readDUMP('dump.cfg')
+.createFRAME(
+   DataFrame, box = None, box_angle = None
+)
 ```
 
-## .readDATA()
-The **method** create FRAME object by reading DATA file.
-* Inputs-Compulsory: <br>
-	- fileName   			| `string` | the name of DATA file 
-* Inputs-Optional: <br> 
-	- atom_style = 'atomic'	| `string` | 'atomic', 'charge', 'molecular', 'full': the style of atomistic system.The format of "data file" depend on the definition of ["atom_style"](https://lammps.sandia.gov/doc/atom_style.html). See [list of atom_style format](https://lammps.sandia.gov/doc/read_data.html#description)
-		- atomic      : atom-ID atom-type x y z
-		- charge      : atom-ID atom-type q x y z
-		- molecular   : atom-ID molecule-ID atom-type x y z
-		- full        : atom-ID molecule-ID atom-type q x y z
-	- nFlag		= False    	| `boolean`| whether or not include nFlag 
-* Outputs: <br> 
-	- .frame  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-* Usage: <br> 
+---
+The method to create new FRAME object with input data.
+
+
+**Args**
+
+* **DataFrame** (pd.DataFrame) :  of input data
+* **box** (3x2 np.array, optional) : option to input boxSize. Defaults to None.
+* **box_angle** (1x3 np.array, optional) : option to input box_angle. Defaults to None.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : update FRAME
+
+
+**Examples**
+
 ```python
-	da = thaFileType.lmpFRAME()
-	da.readDATA('mydata.dat', atom_style='atomic', nFlag=False)
+        da = filetool.lmpFRAME()
+        da.createFRAME(DataFrame=df)
+        # or
+        da = filetool.lmpFRAME(from_df=df)
 ```
 
-## .readPDB()
-The **method** create FRAME object by reading PDB file.
-* Inputs-Compulsory: <br>
-	- fileName   			| `string` | the name of PDB file 
-* Inputs-Optional: <br> 
-* Outputs: <br> 
-	- .frame  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-	- .frame['record_name'] |`string`|
-	- .frame['element'] |'string'| same as column 'type' in DUMP format
-	- .frame['residue_name'] |`string`|
-	- .frame['residue_num'] |`integer`|
-	- .frame['chain'] |`string`|
-	- .frame['occupancy'] |`float`|
-	- .frame['beta'] |`float`|
-* Usage: <br> 
+### .readDUMP
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L171)
 ```python
-	da = thaFileType.lmpFRAME()
-	da.readPDB('dump.pdb')
+.readDUMP(
+   file_name
+)
 ```
 
-## .writeDUMP()
-The **method** to write DUMP file.
-* Inputs-Compulsory: <br>
-	- fileName   			| `string` | the name of DUMP file 
-* Inputs-Optional: <br> 
-	- column =['id','type',...] | `list`1xN| contains columns to be written, by default all columns will be written 
-	- fmtSTR	= '%.6f'   	| `string` | string format for output values 
-* Outputs: <br> 			
-	- file 					| `*.cfg`  | the DUMP file 
-* Usage: <br> 
+---
+The method to create FRAME object by reading DUMP file.
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : update FRAME
+
+
+**Examples**
+
 ```python
-	da.writeDUMP('test.cfg', column=['id','type','x','y','z'], fmtSTR='%.4f')
+        da = filetool.lmpFRAME()
+        da.readDUMP(DataFrame=df)
+        # or
+        da = filetool.lmpFRAME(dump_file='mydata.cfg')
+```
+---
+        use list comprehension in code to get better performance                
+
+### .readDATA
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L234)
+```python
+.readDATA(
+   file_name, atom_style = 'auto'
+)
 ```
 
-## .writeDATA()
-The **method** to write DATA file.
-* Inputs-Compulsory: <br>
-	- fileName   			| `string` | the name of DATA file 
-* Inputs-Optional: <br> 
-	- atom_style = 'atomic'	| `string` | 'atomic', 'charge', 'molecular', 'full': the style of atomistic system 
-	- nFlag		= False    	| `boolean`| whether or not include nFlag 
-	- vel 		= False    	| `boolean`| whether or not write Velocity 
-	- fmtSTR	= '%.6f'   	| `string` | string format for output values 
-	- comment   = ''      	| `string` | the comment 
-* Outputs: <br> 			
-	- file 					| `*.dat`  | the DATA file 
-* Usage: <br> 
+---
+The method to create FRAME object by reading DATA file.
+The style of atomistic system.The format of "data file" depend on the definition of ["atom_style"](https://lammps.sandia.gov/doc/atom_style.html). 
+See [list of atom_style format](https://lammps.sandia.gov/doc/read_data.html#description). Can be detected automatically, or explicitly setting
+- atomic      : atom-ID atom-type x y z
+- charge      : atom-ID atom-type q x y z
+- molecular   : atom-ID molecule-ID atom-type x y z
+- full        : atom-ID molecule-ID atom-type q x y z
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+* **atom_style** (str, optional) : option to choose atom_style. Defaults to 'auto'.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : update FRAME
+
+
+**Examples**
+
 ```python
-	da.writeDATA('test.dat', atom_style='atomic', nFlag=False, vel=False, fmtSTR='%.4f')
+        da = filetool.lmpFRAME(data_file='mydata.dat')
 ```
 
-## .writeXYZ()
-The **method** to write XYZ file.
-* Inputs-Compulsory: <br>
-	- fileName   			| `string` | the name of XYZ file 
-* Inputs-Optional: <br> 
-	- column 	= ['X','xu','yu','zu'] | `list` 1xN| list contains columns to be written  
-	- fmtSTR	= '%.6f'   	| `string` | string format for output values 
-* Outputs: <br> 			
-	- file 					| `*.cfg`  | the XYZ file 
-* Usage: <br> 
+---
+        ```
+
+### .readPDB
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L449)
 ```python
-	da.writeXYZ('test.xyz')
+.readPDB(
+   file_name
+)
 ```
 
-## .writePDB()
-The **method** to write PDB file.
-* Inputs-Compulsory: <br>
-	- fileName   			| `string` | the name of XYZ file 
-* Inputs-Optional: <br> 
-	- fmtSTR	= '%.6f'   	| `string` | string format for output values 
-* Outputs: <br> 			
-	- file 					| `*.pdb`  | the PDB file 
-* Usage: <br> 
+---
+The method to create FRAME object by reading PDB file.
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : update FRAME
+        record_name(str)
+        atom_symbol(str): same as column 'type' in DUMP format
+        residue_name(str)
+        residue_id(int)
+        chain(str)
+        occupancy(float)
+        beta(float)
+
+
+**Examples**
+
 ```python
-	da.writePDB('test.pdb')
+da = filetool.lmpFRAME(pdb_file='mydata.pdb')
 ```
 
-## .addColumn()
-The **method** to add new columns to da.frame.
-* Inputs-Compulsory: <br>
-	- data   			| `DataFrame` `Series` `List` | Nxm data of new columns
-* Inputs-Optional: <br> 
-	- newColumn	= data.columns | `list-string` | 1xN list contains names of columns, if do not provide, it take columnNames from DataFrame
-	- replace	= False | `boolean`| replace column if existed
-* Outputs: <br> 			
-	- .frame  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-* Usage: <br> 
+### .readXYZ
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L507)
 ```python
-	da.addColumn(df, myColumn=['col1','col2'], replace=True)
+.readXYZ(
+   file_name
+)
 ```
 
-## .deleteColumn()
-The **method** to delete columns from da.frame.
-* Inputs-Compulsory: <br>
-	- delColumns	      | `list-string` | 1xN list contains names of columns to be deleted
-* Inputs-Optional: <br> 
-* Outputs: <br> 			
-	- .frame  |`DataFrame`| pd.DataFrame contains positions and properties of configuration
-* Usage: <br> 
+---
+The method to create FRAME object by reading XYZ file.
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : update FRAME
+
+
+**Examples**
+
 ```python
-	da.deleteColumn(delColumns=['col1','col2'])
+da = filetool.lmpFRAME(pdb_file='mydata.pdb')
 ```
+
+### .writeDUMP
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L525)
+```python
+.writeDUMP(
+   file_name, column = None, FMTstr = None
+)
+```
+
+---
+The method to write DUMP file.
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+* **column** (list-of-str, optional) : contains columns to be written. Defaults to None, mean all columns will be written
+* **FMTstr** (str, optional) : string format for output values. Defaults to None, mean use self.FMTstr
+
+
+**Returns**
+
+* **file**  : the DUMP file 
+
+
+**Examples**
+
+```python
+da.writeDUMP('test.cfg', column=['id','type','x','y','z'], FMTstr='%.4f')
+```
+
+### .writeDATA
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L594)
+```python
+.writeDATA(
+   file_name, atom_style = 'atomic', vel = False, iFlag = False, comment = '',
+   FMTstr = None
+)
+```
+
+---
+The method to write DATA file.
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+* **atom_style** (str, optional) : the style of atomistic system, can be 'atomic', 'charge', 'molecular', 'full' . Defaults to 'atomic'.
+* **vel** (bool, optional) : to write Velocity values. Defaults to False.
+* **iFlag** (bool, optional) : to write iFlag tag. Defaults to False.
+* **comment** (str, optional) : comment on second line in DATA file. Defaults to ''.
+* **FMTstr** (str, optional) : string format for output values. Defaults to None, mean use self.FMTstr
+
+
+**Returns**
+
+* **file**  : the DUMP file 
+
+
+**Examples**
+
+```python
+da.writeDATA('test.dat', atom_style='atomic', iFlag=False, vel=False, FMT='%.4f')
+```
+
+### .writeXYZ
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L773)
+```python
+.writeXYZ(
+   file_name, column = ['X', 'xu', 'yu', 'zu'], FMTstr = None
+)
+```
+
+---
+The `method` to write XYZ file.
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+* **column** (list-of-str, optional) : contains columns to be written. Defaults to ['X','xu','yu','zu']
+* **FMTstr** (str, optional) : string format for output values. Defaults to None, mean use self.FMTstr
+
+
+**Returns**
+
+* **file**  : the XYZ file 
+
+
+**Examples**
+
+```python
+da.writeXYZ('test.xyz')
+```
+
+### .writePDB
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L824)
+```python
+.writePDB(
+   file_name, writeBox = False
+)
+```
+
+---
+The method to write [PDB file](https://zhanggroup.org/SSIPe/pdb_atom_format.html)
+
+
+**Args**
+
+* **file_name** (str) : name of input file
+* **writeBox** (bool, optional) : write box or not. Defaults to False.
+
+
+**Returns**
+
+* **file**  : the PDB file 
+
+
+**Examples**
+
+```python
+da.writePDB('test.pdb')
+```
+
+### .addColumn
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L931)
+```python
+.addColumn(
+   data, newColumn = None, replace = False
+)
+```
+
+---
+The method to add new columns to da.atom.
+
+
+**Args**
+
+* **data** (pd.DataFrame, pd.Series, list) : Nxm data of new columns
+* **newColumn** (list) : 1xN list contains names of columns. Default to None, mean it will take columnNames from DataFrame
+* **replace** (bool, optional) : replace column if existed. Defaults to False.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : Update da.atom 
+
+
+**Examples**
+
+```python
+da.addColumn(df, myColumn=['col1','col2'], replace=True)
+```
+
+### .deleteColumn
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L971)
+```python
+.deleteColumn(
+   delColumns
+)
+```
+
+---
+The method to delete columns from da.atom.
+
+
+**Args**
+
+* **data** (pd.DataFrame, pd.Series, list) : Nxm data of new columns
+* **delColumns** (list) : 1xN list contains names of columns to be deleted.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : Update da.atom 
+
+
+**Examples**
+
+```python
+da.deleteColumn(delColumns=['col1','col2'])
+```
+
+### .set_mass
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L992)
+```python
+.set_mass(
+   element_dict
+)
+```
+
+---
+The method to set masses of atoms in system. Before use it, need to define element_dict with 2 keys: 'type', 'atom_symbol'
+element_dict={'type': list_values, 'atom_symbol':list_values}
+
+
+**Args**
+
+* **element_dict** (dict) : a dict to define atom-types and atom-symbols.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : Update da.atom 
+
+
+**Examples**
+
+```python
+da.set_mass(element_dict={'type':[1,2,3], 'atom_symbol':['C','H','N']})
+``` 
+
+### .combine_frame
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1027)
+```python
+.combine_frame(
+   LmpFrame, merge_type = False, alignment = 'comXYZ', shift_XYZ = [0, 0, 0],
+   separate_XYZ = [0, 0, 0], merge_box = True, use_box = 'box1'
+)
+```
+
+---
+The method to combine 2 Lammps Frames.
+
+
+**Args**
+
+* **LmpFrame** (LmpFrame Obj) : an Object of LmpFrame
+* **merge_type** (bool, optional) : merge the same type in 2 LmpFrame. Defaults to False.
+* **alignment** (str, optional) : choose how to align 2 frame. Defaults to 'comXYZ'.
+        + 'comXYZ': align based on COM
+        + 'minXYZ': align based on left corner
+        + 'maxXYZ': align based on right corner
+* **shift_XYZ** (list, optional) : shift a distance from COM aligment. Defaults to [0,0,0].    
+* **separate_XYZ** (list, optional) : Separate 2 frame with a specific value. Defaults to [0,0,0].
+* **merge_box** (bool, optional) : choose to merge box or not. Defaults to True.
+* **use_box** (str, optional) : be used as the box size if merge_box=False. Defaults to 'box1'.
+
+---
+Return:
+        Update LmpFrame da1
+
+        ``` 
+
+TO DO:
+        combine box_angle
+
+### .unwrap_coord_DATA
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1197)
+```python
+.unwrap_coord_DATA(
+   iFlag = ['x', 'y', 'z'], atom_types = []
+)
+```
+
+---
+The method to upwrap coords in DATA file.
+
+
+**Args**
+
+* **iFlag** (list, optional) : image Flags in data file. Defaults to ['x','y','z'].
+* **atom_types** (list, optional) : just unwrap some atom-types. Defaults to [], mean unwrap all-types.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : update FRAME
+
+---
+        cannot unwrap_coord_data if iFlags are not available.
+
+### .change_atom_type
+[source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1237)
+```python
+.change_atom_type(
+   old_type, new_type
+)
+```
+
+---
+The method to change types of atoms in system.
+
+
+
+**Args**
+
+* **old_type** (list) : a list of old-types.
+* **new_type** (int) :  one new-type.
+
+
+**Returns**
+
+* **Obj** (LmpFrame) : update FRAME
+
+
+**Examples**
+
+```python
+da.chage_atom_type([1,2,3], 2)
+``` 
