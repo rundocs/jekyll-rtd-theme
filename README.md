@@ -5,7 +5,7 @@
 
 This theme is inspired by [jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme) and refactored with the algorithm of [DNA Recombination](https://eq19.github.io).
 
-[![DNA Animation](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](/)
+[![DNA Animation](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](https://eq19.github.io).
 
 ## What it does?
 
