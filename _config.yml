@@ -39,13 +39,13 @@ exclude:
 # Social links:
 social_links: true  # If true show social links
 rss: true # For add icon to link feed.xml
-facebook:
+facebook: thangckt5
 git:
 gitlab:
 github:
 gplus:
 instagram:
-linkedin:
+linkedin: thangckt
 reedit:
 spotify:
 pinterest:
