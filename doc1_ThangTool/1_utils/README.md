@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# *module* utils
+# thatool.utils
 
 This module contains classes and functions to handle some stuffs.
 

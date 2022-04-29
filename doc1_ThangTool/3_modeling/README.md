@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# *module* modeling 
+# thatool.modeling 
 
 This module contains classes and functions to create the models of atomic systems.
 

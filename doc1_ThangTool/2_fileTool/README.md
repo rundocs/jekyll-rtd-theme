@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-# *module* filetool
+# thatool.filetool
 
 This module contains classes and functions to handle tasks realted to file-types.
 
