@@ -14,6 +14,8 @@ This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphi
 
 [![DNA Recombination](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](/)
 
+![Recombination Steps](https://user-images.githubusercontent.com/36441664/84945702-c7a10380-b111-11ea-894a-ba31a23732a7.jpeg)
+
 ## Quick start
 
 ```yml
