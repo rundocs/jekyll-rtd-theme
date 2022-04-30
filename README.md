@@ -5,7 +5,7 @@
 
 This theme is inspired by [jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme) acting as a [remote-theme](https://www.siteleaf.com/blog/remote-themes/) on our project pages that runs using the algorithm of [DNA Recombination](https://eq19.github.io).
 
-[![DNA Animation](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](https://eq19.github.io).
+[![DNA Animation](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](https://eq19.github.io/hexagon).
 
 ![Twin Pairs](https://user-images.githubusercontent.com/36441664/73700083-28f2a800-4718-11ea-97b3-2e9a738dc09e.png)
 
