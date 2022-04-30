@@ -25,6 +25,8 @@ Each cycles will have a total of five (5) steps prime algorithm on base 114-31=8
 
 ## Quick start
 
+![Tetractys](https://user-images.githubusercontent.com/36441664/85205823-ea1c6200-b347-11ea-8d6f-1ab3f9ec95c8.gif)
+
 ```yml
 remote_theme: rundocs/jekyll-rtd-theme
 ```
