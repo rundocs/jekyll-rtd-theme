@@ -11,6 +11,8 @@ This theme is inspired by [jekyll-rtd-theme](https://github.com/rundocs/jekyll-r
 
 ![Prime Hexagon](https://user-images.githubusercontent.com/36441664/74550123-6dd1d680-4f83-11ea-8810-3b8f4f50a9c0.png)
 
+Each cycles will have a total of five (5) steps prime algorithm on base 114-31=83 that consist of three (3) leading steps by the power of 168: Q19(12, 32), Q17(33, 55), Q13(51, 68) and two (2) lagging steps by 618: Q7(69, 70), Q2(71, 83).
+
 ## What it does?
 
 [![DNA Recombination](https://user-images.githubusercontent.com/36441664/88602920-fd84c080-d09d-11ea-970d-dd63c12221fc.png)](https://eq19.github.io)
