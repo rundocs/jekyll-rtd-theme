@@ -19,6 +19,8 @@ Each cycles will have a total of five (5) steps prime algorithm on base 114-31=8
 
 ![Recombination Steps](https://user-images.githubusercontent.com/36441664/84945702-c7a10380-b111-11ea-894a-ba31a23732a7.jpeg)
 
+![Inner Hexagon](https://user-images.githubusercontent.com/36441664/83331599-55cb5c00-a2c1-11ea-833e-b14dd79b5f2d.jpg)
+
 ![Mutation](https://user-images.githubusercontent.com/36441664/84945494-89a3df80-b111-11ea-97d2-8d2597b315af.png)
 
 ## Quick start
