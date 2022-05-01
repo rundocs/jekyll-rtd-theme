@@ -47,6 +47,76 @@ Documentation that can guide how to create with Github pages, please refer to [r
 - SEO (404, robots.txt, sitemap.xml)
 - Canonical Link (Open Graph, Twitter Card, Schema data)
 
+
+## Options
+
+| name          | default value        | description       |
+| ------------- | -------------------- | ----------------- |
+| `title`       | repo name            |                   |
+| `description` | repo description     |                   |
+| `url`         | user domain or cname |                   |
+| `baseurl`     | repo name            |                   |
+| `lang`        | `en`                 |                   |
+| `direction`   | `auto`               | `ltr` or `rtl`    |
+| `highlighter` | `rouge`              | Cannot be changed |
+
+```yml
+# folders sort
+readme_index:
+  with_frontmatter: true
+
+meta:
+  key1: value1
+  key2: value2
+  .
+  .
+  .
+
+google:
+  gtag:
+  adsense:
+
+mathjax: # this will prased to json, default: {}
+
+mermaid:
+  custom:     # mermaid link
+  initialize: # this will prased to json, default: {}
+
+scss:   # also _includes/extra/styles.scss
+script: # also _includes/extra/script.js
+
+translate:
+  # shortcodes
+  danger:
+  note:
+  tip:
+  warning:
+  # 404
+  not_found:
+  # copyright
+  revision:
+  # search
+  searching:
+  search:
+  search_docs:
+  search_results:
+  search_results_found: # the "#" in this translate will replaced with results size!
+  search_results_not_found:
+
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+```
+
+### [5th Step: Q5(89, 29)](https://eq19.github.io/maps)
+
+The bilateral sum 9 will then double this 43 to 86 and act as the lexer while the prime 71 and 109 will act as the parser. This will compensate the other primes by the other of circles of the metatron which consist of 6 internal and 6 external.
+
+[![generate the prime](https://user-images.githubusercontent.com/36441664/163196031-b29f162d-c9af-4dc4-b25c-9256127a4aa4.jpg)](https://www.primesdemystified.com/First1000Primes.html)
+
+Let's assign another pairs in to the center of default. Take a note that the last rows has a sum of 43 which covered by **prime 71 up to 109**. See what is happen by the 13th circle.
+
 ```
 Scheme 13:9
 ===========
@@ -112,67 +182,19 @@ True Prime Vektors ζ(s):
 ----------------------+-----+                                                ---
 ```
 
-## Options
+See that this configuration showing a kind of turbulences which leads to a gap of Δ19 in the central of _[Metatron](#1st-step-q1910-29)_ where the replication is initiated by **Δ18 of 50(68)**. This scheme is taken as a basic algorithm for the mechanism of DNA generation from RNA.
 
-| name          | default value        | description       |
-| ------------- | -------------------- | ----------------- |
-| `title`       | repo name            |                   |
-| `description` | repo description     |                   |
-| `url`         | user domain or cname |                   |
-| `baseurl`     | repo name            |                   |
-| `lang`        | `en`                 |                   |
-| `direction`   | `auto`               | `ltr` or `rtl`    |
-| `highlighter` | `rouge`              | Cannot be changed |
+[![DNA generation from RNA](https://user-images.githubusercontent.com/36441664/100724943-01cb3c80-33f6-11eb-8564-c5a9ced2b668.png)](https://translate.google.com/translate?js=n&sl=id&tl=en&u=https://github.com/chetabahana/chetabahana.github.io/wiki#operasi)
 
-```yml
-# folders sort
-readme_index:
-  with_frontmatter: true
+```note
+The chemical structure of RNA is very similar to that of DNA, but differs in three primary ways:
 
-meta:
-  key1: value1
-  key2: value2
-  .
-  .
-  .
+* Unlike double-stranded DNA, RNA is usually **a single-stranded molecule ssRNA** in many of its biological roles and consists of much shorter chains of nucleotides. However, double-stranded RNA (dsRNA) can form and (moreover) a single RNA molecule can, by complementary base pairing, form intrastrand double helixes, as in tRNA.
+* While the sugar-phosphate "backbone" of DNA contains deoxyribose, RNA contains ribose instead. Ribose has a hydroxyl group attached to the pentose ring in the 2' position, whereas deoxyribose does not. The hydroxyl groups in the ribose backbone make RNA more chemically labile than DNA by lowering the activation energy of hydrolysis.
+* The complementary base to adenine in DNA is thymine, whereas in RNA, it is uracil, which is an unmethylated form of thymine.
 
-google:
-  gtag:
-  adsense:
-
-mathjax: # this will prased to json, default: {}
-
-mermaid:
-  custom:     # mermaid link
-  initialize: # this will prased to json, default: {}
-
-scss:   # also _includes/extra/styles.scss
-script: # also _includes/extra/script.js
-
-translate:
-  # shortcodes
-  danger:
-  note:
-  tip:
-  warning:
-  # 404
-  not_found:
-  # copyright
-  revision:
-  # search
-  searching:
-  search:
-  search_docs:
-  search_results:
-  search_results_found: # the "#" in this translate will replaced with results size!
-  search_results_not_found:
-
-plugins:
-  - jemoji
-  - jekyll-avatar
-  - jekyll-mentions
+_(Source: [Wikipedia](https://en.wikipedia.org/wiki/RNA#Comparison_with_DNA))_
 ```
 
-## The license
+Besides it, there is also strong signal that this parser will have the correlation with Φ=1,618 of _[(Golden Ratio)](https://www.google.com/search?q=Golden+Ratio)_ that leads to a kind of **gap and turbulences** in [the primes geometri](https://github.com/chetabahana) which hold the key of [<code>init</code>](https://eq19.github.io/maps) as the road map to π(1000x1000).
 
-The theme is available as open source under the terms of the MIT License
