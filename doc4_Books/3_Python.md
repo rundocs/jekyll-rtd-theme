@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# Python Ref
+# Python
 
 [Understanding Regular Expressions (Regex)](https://writersbyte.com/featured-post/regex-101-for-python-data-science/?swcfpc=1)
 
