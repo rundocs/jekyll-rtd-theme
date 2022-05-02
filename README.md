@@ -117,7 +117,7 @@ The bilateral sum 9 will then double this 43 to 86 and act as the lexer while th
 
 Let's assign another pairs in to the center of default. Take a note that the last rows has a sum of 43 which covered by **prime 71 up to 109**. See what is happen by the 13th circle.
 
-```yml
+```json
 Scheme 13:9
 ===========
 (1){1}-7:   7’
