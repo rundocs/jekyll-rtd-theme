@@ -9,7 +9,7 @@ This scheme is inspired by [jekyll-rtd-theme](https://github.com/rundocs/jekyll-
 
 The codes is built mainly with the algorithm of 66 out of the sum of the numbers 30 and 36. The main difference between them two is that 36 framed by twin primes.
 
-![Twin Pairs](https://user-images.githubusercontent.com/36441664/73700083-28f2a800-4718-11ea-97b3-2e9a738dc09e.png)
+[![Twin Pairs](https://user-images.githubusercontent.com/36441664/73700083-28f2a800-4718-11ea-97b3-2e9a738dc09e.png)](https://eq19.github.io/quantum)
 
 This Δ(19 vs 18) scenario will duplicate the loops of 618 as π(89²) of 1000 Primes. Thus its behaviour will return to 168 Primes of π(1000) out of the adjacent scheme.
 
