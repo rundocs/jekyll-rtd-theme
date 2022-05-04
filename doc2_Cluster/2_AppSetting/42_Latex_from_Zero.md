@@ -31,7 +31,7 @@ BibTeX: bibtex.exe auxDIR/%
 Defaul Complier: Latexmk
 --> Commands:
 latexmk:  latexmk -pdf   -silent -synctex=1 % -auxdir=auxDIR -f -recorder-  
-BibTeX: bibtex.exe auxDIR/%
+BibTeX: bibtex.exe %
 -->  Install "strawberry perl": https://strawberryperl.com/
 ```
 Log File Seach Paths (in build): `auxDIR`. Log file is important to figure out the error. So if use --aux-directory, must add "Additional Search Paths" for "Log File" is auxDIR
