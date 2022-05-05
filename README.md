@@ -11,7 +11,6 @@ It's fun if you find something helpful here. In other cases, it isn't my busines
 >
 
 <!-- add picutres in table-->
-|            |             |
 | :--------: | :----------- |
 | <!-- ![](./assets/images/my_picture3x3.jpg) --> <br>
 <img src="./assets/images/my_picture3x3.jpg" style="border-radius: 50%" /> <br>
