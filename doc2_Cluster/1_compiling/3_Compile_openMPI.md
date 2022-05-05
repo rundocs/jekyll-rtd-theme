@@ -4,9 +4,10 @@ sort: 3
 
 # Compiling OpenMPI-4
 
-[Open MPI](https://www.open-mpi.org/) is a Message Passing Interface (MPI) library project combining technologies and resources from several other projects (FT-MPI, LA-MPI, LAM/MPI, and PACX-MPI).
+| -- | -- |
+![pic](https://www.open-mpi.org/images/open-mpi-logo.png) | [Open MPI](https://www.open-mpi.org/) is a Message Passing Interface (MPI) library project combining technologies and resources from several other projects (FT-MPI, LA-MPI, LAM/MPI, and PACX-MPI).
 
-![pic](https://www.open-mpi.org/images/open-mpi-logo.png)
+
 
 **NOTEs:**
 - Some applications require C++11, this is only supported on GCC 4.8 or newer, which is not always available on system, then newer GCC need to be installed before compiling Openmpi.
