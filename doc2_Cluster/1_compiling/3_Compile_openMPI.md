@@ -19,11 +19,13 @@ sort: 3
   - OpenMPI-4 use UCX by default (openMPI 4.0,3 --> ucx-1.7 or older).
   - consider using linker
     - lld linker: 
+    
     ```shell 
     module load llvm/llvm-gcc10-lld                   # to use lld  
     LDFLAGS="-fuse-ld=lld -lrt"   
     ```
     - gold linker:
+    
     ```shell 
     module load tool_dev/binutils-2.32                                         
     LDFLAGS="-fuse-ld=gold -lrt"     
