@@ -12,7 +12,7 @@ This page dedicates to my personal arbitrary notes and does not reflect either c
 
 These notes are improvised and inevitable for some rare situations but helpless for almost others. 
 
-It's fun if you find something value here. In other cases, it isn't my business.
+It's fun if you find something valid here. In other cases, it isn't my business.
 
 ```tip
 You cannot teach a man anything, you can only help him find it within himself. - Galileo Galilei (1564–1642)
