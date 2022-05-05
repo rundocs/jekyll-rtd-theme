@@ -8,9 +8,7 @@ sort: 3
 | -- | -- |
 ![pic](https://www.open-mpi.org/images/open-mpi-logo.png) | [Open MPI](https://www.open-mpi.org/) is a Message Passing Interface (MPI) library project combining technologies and resources from several other projects (FT-MPI, LA-MPI, LAM/MPI, and PACX-MPI).
 
-
-
-**NOTEs:**
+```note
 - Some applications require C++11, this is only supported on GCC 4.8 or newer, which is not always available on system, then newer GCC need to be installed before compiling Openmpi.
 - Make sure to build OpenMPI with 64-bit support. To check whether the currently available OpenMPI do support 64-bit or not, type this:
 `ompi_info -a | grep 'Fort integer size'. If the output is 8, then it supports 64-bit. If output is 4, then it just supports 32-bit.* configuration for 64-bit support:
@@ -21,15 +19,19 @@ sort: 3
 - OpenMPI-4 use UCX by default (openMPI 4.0,3 --> ucx-1.7 or older).
 - consider using linker
   - lld linker: 
+  
   ```shell 
   module load llvm/llvm-gcc10-lld                   # to use lld  
   LDFLAGS="-fuse-ld=lld -lrt"   
   ```
   - gold linker:
+  
   ```shell 
   module load tool_dev/binutils-2.32                                         
   LDFLAGS="-fuse-ld=gold -lrt"     
   ```
+```
+  
 
 ## 1. Download:
 
