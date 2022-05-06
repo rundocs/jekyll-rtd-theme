@@ -12,7 +12,7 @@
 *
 *  collect data
 *
-{% endcomment %}{% if my_feed.myId > 114 %}{% assign myId = my_feed.myId | modulo: 100 %}{% else %}{% assign myId = my_feed.myId %}{% endif %}{% for hashs in my_datas %}{% for hash in hashs %}{% if hash[1].id == myId %}{% assign data = hash[1] %}{% endif %}{% endfor %}{%- endfor -%}{% if page.redirect.from or my_feed.path == 'feed.json' or my_feed.ext == '.json' %}{
+{% endcomment %}{% if my_feed.myId > 114 %}{% assign myId = my_feed.myId | modulo: 100 %}{% else %}{% assign myId = my_feed.myId %}{% endif %}{% for hashs in my_datas %}{% for hash in hashs %}{% if hash[1].id == myId %}{% assign data = hash[1] %}{% endif %}{% endfor %}{%- endfor -%}{% if page.redirect.from or my_feed.path contains 'feed.json' or my_feed.ext == '.json' %}{
 {%- comment %}
 *
 *  collect item
@@ -35,9 +35,9 @@
 *
 *  collect root
 *
-{% endcomment %}{% assign my_roots = site.data.roots %}{% if my_feed.path != 'feed.json' %}
+{% endcomment %}{% assign my_roots = site.data.roots %}{% unless my_feed.path contains 'feed.json' %}
         {{ data.items[0] | jsonify }},{% assign my_pos = my_feed.pos | minus: 1 %}
         {"root": {{ my_roots[my_pos] | jsonify }}}
 {%- if page.layout != 'feeds' %},{% else %}
     ]
-}{%- endif %}{% endif %}{% endif -%}
+}{%- endif %}{% endunles %}{% endif -%}

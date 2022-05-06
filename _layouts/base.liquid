@@ -33,7 +33,7 @@
 *  render the feeds output
 *  JSON.pretty_generate(@data)
 *
-{% endcomment %}{% assign my_size = 2 %}{{ page.path }}{% if page.path == 'feed.json' %}
+{% endcomment %}{% assign my_size = 2 %}{% if page.path contains 'feed.json' %}
 {% include items.liquid %}{{ my_tab }}{{ my_tab }}}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}{% if page.path != 'index.html' and page.ext != '.md' %}{% if page.layout == 'redirect' %}{% include leads.liquid %}{% endif %}
 {{ my_tab }}]
 }
