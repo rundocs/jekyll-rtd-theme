@@ -24,7 +24,7 @@
 *  index the feeds output
 *
 {% endcomment %}{% capture my_capture %}
-{% if page.path != 'index.html' %}{% include items.rb %}{% endif %}{% for i in (1..my_size) %}{{ my_tab }}{% endfor %}}{% endcapture %}{% assign my_captures = my_captures | push: my_capture %}{% endfor %}{% assign my_feeds = '' | split: ',' %}{% for feed in feeds %}{% assign my_dir = feed.path | split: '/' | pop | join: '/' %}{% if my_dir == my_base %}{% assign my_feeds = my_feeds | push: feed %}{% endif %}{% endfor %}{% comment %}
+{% if page.path != 'index.html' %}{% include items.liquid %}{% endif %}{% for i in (1..my_size) %}{{ my_tab }}{% endfor %}}{% endcapture %}{% assign my_captures = my_captures | push: my_capture %}{% endfor %}{% assign my_feeds = '' | split: ',' %}{% for feed in feeds %}{% assign my_dir = feed.path | split: '/' | pop | join: '/' %}{% if my_dir == my_base %}{% assign my_feeds = my_feeds | push: feed %}{% endif %}{% endfor %}{% comment %}
 *
 *  collect the feeds output
 *
@@ -34,7 +34,7 @@
 *  JSON.pretty_generate(@data)
 *
 {% endcomment %}{% assign my_size = 2 %}{% if page.path == 'feed.json' %}
-{% include items.rb %}{{ my_tab }}{{ my_tab }}}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}{% if page.path != 'index.html' and page.ext != '.md' %}{% if page.layout == 'redirect' %}{% include leads.rb %}{% endif %}
+{% include items.liquid %}{{ my_tab }}{{ my_tab }}}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}{% if page.path != 'index.html' and page.ext != '.md' %}{% if page.layout == 'redirect' %}{% include leads.rb %}{% endif %}
 {{ my_tab }}]
 }
 {% else %}{% comment %}
