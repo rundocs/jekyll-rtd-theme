@@ -12,6 +12,15 @@ debug:
 readme_index:
   with_frontmatter: true
 
+collections:
+  leads:
+    output: true
+  feeds:
+    output: true
+    permalink: /:categories/:title:output_ext
+  posts:
+    permalink: /:categories/:year/:y_day/:month/:hour/:minute/:second/:title:output_ext
+
 plugins:
   - jemoji
   - jekyll-gist
