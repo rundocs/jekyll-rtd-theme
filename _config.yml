@@ -1,15 +1,3 @@
-theme: null
-title: ₠Quantum
-base_tag: basic-grammar
-
-debug:
-  dist: false
-  compress: true
-  shortcodes: true
-
-readme_index:
-  with_frontmatter: true
-
 # General Settings
 # https://jekyllrb.com/docs/configuration/
 # https://jekyllrb.com/docs/configuration/options/
@@ -29,6 +17,18 @@ form_engines:
 - cloudcannon
 - formspree
 - formbucket
+
+theme: null
+title: ₠Quantum
+base_tag: basic-grammar
+
+debug:
+  dist: false
+  compress: true
+  shortcodes: true
+
+readme_index:
+  with_frontmatter: true
 
 # Repository Settings
 # https://blog.webjeda.com/jekyll-redirect/
