@@ -1,5 +1,6 @@
 theme: null
 title: ₠Quantum
+basedir: _feeds
 base_tag: basic-grammar
 
 debug:

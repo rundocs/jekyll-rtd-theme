@@ -1,0 +1,14 @@
+---
+title: dummy
+layout: default
+category: object
+---
+{% comment %}
+*
+*  This layout loops through a collection called `posts` and collect site data and configured
+*  with permalink: /:categories/:year/:y_day/:month/:hour/:minute/:second/:title:output_ext
+*
+*  You may see the running code here:
+*  https://chetabahana.github.io/object/2018/132/05/00/00/00/dummy.json
+*
+{% endcomment %}{%- include data.rb -%}{%- include feeds.rb -%}
