@@ -7,7 +7,7 @@
 *  You may see the running code here:
 *  https://chetabahana.github.io/feed.json
 *
-{% endcomment %}{% if data == null %}{% include data.rb %}{% endif %}{% assign my_base = site.basedir %}{% assign my_atributs = 'id, key, link, weight, title, next, content, output, previous, redirect_from, relative_path, collection, excerpt, category, categories, ext, layout, tags, path, url, draft, slug, pos, myId, type, primes, value, object, frame, ratio, pairs, zones' | split:', ' %}{% assign my_tab = '    ' %}{% assign my_path = '' | split: ',' %}{% comment %}
+{% endcomment %}{% if data == null %}{% include data.liquid %}{% endif %}{% assign my_base = site.basedir %}{% assign my_atributs = 'id, key, link, weight, title, next, content, output, previous, redirect_from, relative_path, collection, excerpt, category, categories, ext, layout, tags, path, url, draft, slug, pos, myId, type, primes, value, object, frame, ratio, pairs, zones' | split:', ' %}{% assign my_tab = '    ' %}{% assign my_path = '' | split: ',' %}{% comment %}
 *
 *  get the maximum size of feeds
 *
