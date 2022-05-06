@@ -72,8 +72,7 @@ encoding: utf-8
 livereload: true
 limit_posts: 1000
 timezone: Asia/Jakarta
-collections_dir: assets
-remote_theme: eQ19/scheme
+collections_dir: docs/assets
 excerpt_separator: <!--end_excerpt-->
 
 # Plugins Setting
