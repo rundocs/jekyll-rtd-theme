@@ -10,7 +10,7 @@ comment %}
 *
 *  collect primes
 *
-{% endcomment %}{% include data/roots.rb %}{% if my_pos %}
+{% endcomment %}{% include data/roots.liquid %}{% if my_pos %}
 {% for i in (1..my_size) %}{{ my_tab }}{% endfor %}{{ my_tab }}"pos": {{ my_pos | jsonify }},{% endif %}{% if feed.link %}
 {% for i in (1..my_size) %}{{ my_tab }}{% endfor %}{{ my_tab }}"link": {{ feed.link | jsonify }},{% endif %}{% if my_root %}
 {% for i in (1..my_size) %}{{ my_tab }}{% endfor %}{{ my_tab }}"root": {{ my_root }},{% endif %}

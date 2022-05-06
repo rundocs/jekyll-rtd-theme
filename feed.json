@@ -44,6 +44,6 @@ layout: feed
 *  }
 *
 *  To provide it with an online work you may see the main code here:
-*  https://github.com/chetabahana/chetabahana.github.io/blob/Chetabahana/_layouts/feed.rb
+*  https://github.com/chetabahana/chetabahana.github.io/blob/Chetabahana/_layouts/feed.liquid
 *
 {%- endcomment -%}

@@ -53,7 +53,7 @@ weight: 5
 *  We will count how many id's that required to be assigned on different proses that is uniq only
 *
 *  Consider that cyclic is happen every Δ100 so such proses on id: 102 would be the plot of id: 2
-*  https://github.com/chetabahana/chetabahana.github.io/blob/Chetabahana/_includes/data/primes.rb
+*  https://github.com/chetabahana/chetabahana.github.io/blob/Chetabahana/_includes/data/primes.liquid
 *
 *  - From id: 102 to 168 on first collumn is the same plot of id: 2 to 68 shown on collumn 2 to 4
 *  - Therefore id: 102 to 168 is the part of Δ31 to 200 from Δ329 which takes id: 1 up to id: 329  
