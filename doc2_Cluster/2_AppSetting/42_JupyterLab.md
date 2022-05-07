@@ -4,6 +4,10 @@ sort: 42
 
 # Jupyterlab
 
+```note
+Some packages such as: ovito, pysimm,... just support py36. So need to install python on env-base conda with python36, then create env py36 to avoid conflict errors.
+```
+
 ## Use multil envs in Notebook
 - ref: https://tinyurl.com/y7hcfvws ;  https://tinyurl.com/y7hcfvws
 
