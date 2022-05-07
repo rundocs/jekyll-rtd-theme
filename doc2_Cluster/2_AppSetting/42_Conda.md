@@ -261,7 +261,8 @@ mamba install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely s
 ## env for polymer package: pysimm
 conda create -n py37pysimm python=3.7
 conda activate py37pysimm
-conda install -y -c conda-forge jupyterlab numpy pandas matplotlib scipy
+conda install -y -c conda-forge jupyterlab numpy pandas matplotlib scipy 
+conda install -c conda-forge ambertools  # just run on linux
 
 
 ## env for ovito interpreter
