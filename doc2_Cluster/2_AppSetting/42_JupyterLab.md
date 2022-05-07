@@ -9,9 +9,9 @@ Some packages such as: ovito, pysimm,... just support py36. So, python on env-ba
 ```
 
 ```python
-conda activate base 
-conda clean --all
-conda install python=3.6
+## revert your environment back to the original state before you installed any additional packages:
+conda install --revision 0
+python install python=3.6
 ```
 
 ## Use multil envs in Notebook
