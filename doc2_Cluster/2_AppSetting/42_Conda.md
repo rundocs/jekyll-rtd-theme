@@ -230,27 +230,31 @@ pip install lmfit
 ### Some env
 ```note 
 - Should use python 3.6 in base env
-- use mamba for faster, install mamba into the base environment:
-```python
-conda install mamba -n base -c conda-forge
+- use mamba for faster
 ```
+
+install mamba into the base environment:
+```python
+conda install -n base mamba -c conda-forge
+conda install -n base nb_conda
 ```
 
 ```python
 ## env for general use
-conda create -n py37
+conda create -n py37 python=3.7
 conda activate py37
 conda install -y -c conda-forge jupyterlab
 
 ## env for polymer package: mbuild
-conda create -n py37mbuild
+conda create -n py37mbuild python=3.7
 conda activate py37mbuild
 conda install -y -c conda-forge jupyterlab
 
 ## env for polymer package: pysimm
 conda create -n py36pysimm python=3.6
 conda activate py36pysimm
-conda install -y -c conda-forge jupyterlab
+mamba install jupyterlab numpy
+
 
 ## env for ovito interpreter
 conda create -n py36ovito python=3.6
