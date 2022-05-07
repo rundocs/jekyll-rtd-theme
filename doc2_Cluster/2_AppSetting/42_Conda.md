@@ -1,5 +1,5 @@
 ---
-sort: 42
+sort: 1
 ---
 
 # Conda
@@ -153,8 +153,14 @@ source activate py37env
 Remove env:  conda  env  remove   -n  myenv
 
 
-II.2. Install & Update packages in Conda
+### Install & Update packages in Conda
 install a package also replaces the current package. open Anaconda_Prompt
+
+#### Uninstall all packages
+```
+conda clean --yes --all
+```
+
 4.1 Searching for packages: To see if a specific package, such as SciPy, is available for installation:
 conda search  scipy
 conda search -c conda-forge mpi4py     # find package
