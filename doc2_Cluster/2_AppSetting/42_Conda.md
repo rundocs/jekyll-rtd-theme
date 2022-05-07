@@ -232,7 +232,7 @@ conda install --revision 0
 ```
 
 
-### Some envs
+## Some setting envs
 ```note 
 - Should use python 3.7 in base-env (mimimum supported by conda, conflict DLL py36 and py37)
 - use mamba for faster
@@ -243,13 +243,15 @@ Install mamba into the base environment:
 ```python
 conda install -n base mamba -c conda-forge
 conda install -n base nb_conda
+conda -y -c conda-forge jupyterlab=3.4
 ```
 
+Install in envs
 ```python
 ## env for general use
 conda create -n py37 python=3.7
 conda activate py37
-mamba install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy
+conda install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy
 
 ## env for polymer package: mbuild
 conda create -n py37mbuild python=3.7
@@ -257,9 +259,9 @@ conda activate py37mbuild
 mamba install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy mbuild
 
 ## env for polymer package: pysimm
-conda create -n py36pysimm python=3.6
-conda activate py36pysimm
-mamba install jupyterlab numpy
+conda create -n py37pysimm python=3.7
+conda activate py37pysimm
+conda install -y -c conda-forge jupyterlab numpy pandas matplotlib
 
 
 ## env for ovito interpreter
