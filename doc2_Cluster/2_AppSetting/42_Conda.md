@@ -227,7 +227,11 @@ pip install lmfit
 
 ### Some env
 ```note 
-Should use python 3.6 in base env
+- Should use python 3.6 in base env
+- use mamba for faster, install mamba into the base environment:
+  ```python
+  conda install mamba -n base -c conda-forge
+  ```
 ```
 
 ```python
