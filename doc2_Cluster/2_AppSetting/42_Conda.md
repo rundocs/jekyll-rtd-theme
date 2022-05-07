@@ -226,14 +226,20 @@ python lib for curve fitting
 https://lmfit.github.io/lmfit-py/model.html
 pip install lmfit
 ```
-
-### Some env
-```note 
-- Should use python 3.6 in base env
-- use mamba for faster
+#### reset all packages in an environment
+```python
+conda install --revision 0
 ```
 
-install mamba into the base environment:
+
+### Some envs
+```note 
+- Should use python 3.7 in base env
+- use mamba for faster
+- Use multi python in jupyterlab: `conda install -n base nb_conda`
+```
+
+Install mamba into the base environment:
 ```python
 conda install -n base mamba -c conda-forge
 conda install -n base nb_conda
@@ -244,6 +250,7 @@ conda install -n base nb_conda
 conda create -n py37 python=3.7
 conda activate py37
 conda install -y -c conda-forge jupyterlab
+mamba install -y -c conda-forge ele numpy pandas
 
 ## env for polymer package: mbuild
 conda create -n py37mbuild python=3.7
