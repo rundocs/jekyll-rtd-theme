@@ -1,0 +1,28 @@
+        <div class="templatemo-welcome" id="chetabahana-{{ page.title | downcase }}">
+            <div class="container">
+                <div class="templatemo-slogan text-center">
+                    <span class="txt_darkgrey">Welcome to </span><a href="{{ site.project_link }}">Chetabahana</a>
+                    <p class="txt_slogan"><i>{{ site.slogan }}</i></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="templatemo-service">
+            <div class="container">
+                <div class="row">{% assign title = page.title | downcase %}{% assign posts = site.posts | sort: 'weight' | where_exp:"item", "item.path contains title" %}{% for post in posts %}
+                    <div class="col-md-4">
+                        <div class="templatemo-service-item">
+                            <div>
+                                <a href="{{ post.href }}" class="external-link"><img src="{{ post.src }}" alt="icon"/></a>
+                                <span class="templatemo-service-item-header">{{ post.title }}</span>
+                            </div>
+                            {{ post.excerpt }}
+                            <div class="text-center">
+                                <a href="{{ post.link }}" class="templatemo-btn-read-more btn btn-orange external-link">Read More</a>
+                            </div>
+                            <br class="clearfix"/>
+                        </div>
+                    </div>{% endfor %}
+                </div>
+            </div><!-- /container -->
+        </div><!-- /{{ page.title }} -->

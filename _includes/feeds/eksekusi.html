@@ -1,0 +1,38 @@
+        <div class="templatemo-blog" id="chetabahana-{{ page.title | downcase }}">
+            <div class="container">
+                <div class="row">
+                    <div class="templatemo-line-header" style="margin-top: 0px;" >
+                        <div class="text-center">
+                            <h4>{{ page.title }}</h4>
+                        </div>
+                    </div>
+                    <br class="clearfix"/>
+                </div>
+                <div class="blog_box">{% assign title = page.title | downcase %}{% assign posts = site.posts | sort: 'weight' | where_exp:"item", "item.path contains title" %}{% for post in posts %}
+                    <div class="col-sm-5 col-md-6 blog_post">
+                        <ul itemscope itemtype="https://schema.org/Article" class="list-inline">
+                            <li class="col-md-4">
+                                <ul class="left-inline">
+                                    <li><span class="blog_header"><a href="https://marketleader.github.io/{{ post.href }}" class="link_darkgrey external-link" target="_blank"><span class="txt_darkgrey">Fase-{{ post.weight }}</span></a></span></li>
+                                    <li><a href="https://www.youtube.com/embed/?listType=playlist&list={{ post.src }}" class="external-link" target="_blank"><span>Tutorial PlayList</span></a></li>
+                                    <li><iframe allowfullscreen="" src="https://www.youtube.com/embed/?listType=playlist&list={{ post.src }}"></iframe></li>
+                                    <li><span><a href="https://github.com/MarketLeader/{{ post.href }}" class="external-link" target="_blank"><img alt="Blog Situs Toko" src="https://img.shields.io/badge/repo-1-green.svg"></a>&nbsp;<a href="https://github.com/MarketLeader/{{ post.href }}/wiki" class="external-link" target="_blank"><img alt="Kelola Situs Toko" src="https://img.shields.io/badge/wiki-1-green.svg"></a>&nbsp;<a href="{{ post.link }}" class="external-link" target="_blank"><img alt="Optimasi Shop SEO" src="https://img.shields.io/badge/i/o-1-green.svg"></a></span></li>
+                               </ul>
+                            </li>
+                            <li  class="col-md-8">
+                                <div class="pull-left">
+                                    <span class="blog_header"><a class="link_darkgrey external-link" href="{{ post.href }}" target="_blank"><span itemprop="headline" class="txt_darkgrey">{{ post.title }}</span></a></span><br/>
+                                    <span>Hosted by : <a href="{{ post.link }}" class="external-link" target="_blank"><span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ post.host }}</span></span></a></span>
+                                </div>
+                                <div class="pull-right">
+                                    <a class="btn btn-orange external-link" href="https://github.com/MarketLeader/{{ post.href }}/wiki" role="button" target="_blank"><span itemprop="articleSection">Explore Wiki</span></a>
+                                </div>
+                                <div class="clearfix"> </div>
+                                <p itemprop="articleBody" class="blog_text">{{ post.excerpt }}
+                                <meta itemprop="datePublished" content="2015-09-06T08:00:00+18:42"/>
+                            </li>
+                        </ul>
+                    </div> <!-- /.blog_post {{ post.weight }} -->{% endfor %}
+               </div>
+            </div>
+        </div><!-- /{{ page.title }}-->

@@ -1,0 +1,21 @@
+        <div class="templatemo-team" id="chetabahana-{{ page.title | downcase }}">
+            <div class="container">
+                <div class="row">
+                    <div class="templatemo-line-header">
+                        <div class="text-center">
+                            <h4>{{ page.title }}</h4>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <ul class="row row_team">{% for card in data.cards %}
+                        <li class="col-lg-3 col-md-3 col-sm-6 ">
+                            <div>
+                                <div class="member-thumb">
+                                    {{ card.html }}
+                                </div>
+                            </div>
+                        </li>{% endfor %}
+                    </ul>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /{{ page.title }}-->

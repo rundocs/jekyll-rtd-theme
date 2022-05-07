@@ -1,0 +1,28 @@
+        <div id="chetabahana-{{ page.title | downcase }}" class="chetabahana-{{ page.title | downcase }}">
+            <div class="container">
+                <div class="row">
+                    <div class="templatemo-line-header">
+                        <h4>{{ page.title }}</h4>
+                    </div>{% capture attribute_name %}{{ data.title | handleize }}-{{ data.id }}-paket{% endcapture %}
+                    <div class="col-md-4 skema_left">
+                        <label for="{{ attribute_name }}">Paket:</label>
+                        <select class="theme" name="attributes[{{ attribute_name }}]" id="{{ attribute_name }}">
+                            <option value="hand" selected>Bagan</option>
+                            <option value="simple">Diagram</option>
+                            <option value="tracking">Mapping</option>
+                        </select><!-- ref: https://gist.github.com/JJediny/a466eed62cee30ad45e2 -->
+                        <p>Tipe Diagram: <a id="type" href="/sequence" style="text-transform:capitalize;" target='_blank'>Sequence</a></p>
+                        <p id="tautan">Tautan: <a id="js" href="/diagram.js?t={{'now' | date: '%s' }}" target='_blank'>js</a> / <a id="xml" href="/feed.xml" target='_blank'>xml</a> / <a id="json" href="/feed.json" target='_blank'>json</a> / <a id="file" href="/feed.xslt.xml" target='_blank'>file</a> / <a id="link" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fchetabahana.github.io%2F" target='_blank'>link</a> / <a id="from" href="https://api.github.com/users/chetabahana/repos" target='_blank'>from</a> / <a id="to" href="https://api.github.com/orgs/MarketLeader/repos" target='_blank'>to</a> / <a id="docs" href="https://docs.github.com/en" target='_blank'>docs</a></p>
+                        <div class="editor-wrapper">
+                            <div id="editor" class="editor">{{ data.property }}</div>
+                        </div>
+                        <p>Literatur: <a href="https://github.com/chetabahana/chetabahana.github.io/wiki/Skema#modulasi">Konsep </a> - <a id="doc" href="https://github.com/chetabahana/chetabahana.github.io/wiki/Programming">Program</a> - <a href="https://github.com/chetabahana/chetabahana.github.io">Sumber</a> - <a href="https://github.com/chetabahana/chetabahana.github.io/actions">Proses</a> - <a href="https://github.com/chetabahana/chetabahana.github.io/releases">Realisasi</a>.</p>
+                        <p>Silahkan <a href='https://jsfiddle.net/chetabahana/rrxnah40/'>sunting</a> dan <a href='#chetabahana-diskusi' class='internal-link'>usulkan</a> gambar <a href="#" class="download">bagannya..</a></p>
+                    </div>
+                    <div class="col-md-8 skema_right">
+                        <div class="loadingImg"></div><div id="diagram" class="diagram"></div>
+                        <div id="graphiql"></div ><div id="viewport"><canvas></canvas></div >
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /{{ page.title }}-->
