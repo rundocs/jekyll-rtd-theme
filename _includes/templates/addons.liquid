@@ -20,15 +20,15 @@
                 </a>
             </dd>
             <dd>
-                <a href="{{ docs.issues_url }}" title="{{ __.open_issues | default: 'Open issues' }}: {{ rest.open_issues }}">
+                <a href="{{ docs.actions_url }}" title="{{ __.open_issues | default: 'Actions' }}: {{ rest.open_issues }}">
                     <i class="fa fa-question-circle-o"></i>
-                    {{ __.issues | default: "Issues" }}
+                    {{ __.issues | default: "Actions" }}
                 </a>
             </dd>
             <dd>
-                <a href="{{ docs.zip_url }}" title="{{ __.size | default: 'Size' }}: {{ rest.size }} Kb">
+                <a href="{{ docs.wiki_url }}" title="{{ __.size | default: 'Size' }}: {{ rest.size }} Kb">
                     <i class="fa fa-download"></i>
-                    {{ __.download | default: "Download" }}
+                    {{ __.download | default: "Wiki" }}
                 </a>
             </dd>
         </dl>
@@ -38,8 +38,9 @@
             <a href="{{ site.baseurl }}/" title="{{ site.title }}">Repo</a>
             is courtesy of 
             <a href="https://github.com/eq19">₠Quantum Project</a>.<br>
-			Find all of them on 
-            <a href="{{ docs.repository_url }}">Project Maps</a>.
+			Find all of them on Project 
+            <a href="https://www.eq19.com/maps">Maps</a> and 
+			<a href="https://www.eq19.com/feed">Feed</a>.
         </div>
     </div>
 </div>
