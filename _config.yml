@@ -172,6 +172,10 @@ kramdown:
 # https://jekyllrb.com/docs/configuration/webrick/
 # https://en.wikipedia.org/wiki/Content_Security_Policy
 
+google:
+  gtag: GTM-PGWT4RS
+  adsense: ca-pub-3677197599836940
+
 webrick:
   headers:
     Content-Security-Policy: default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';
