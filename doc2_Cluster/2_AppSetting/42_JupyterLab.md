@@ -8,6 +8,12 @@ sort: 42
 Some packages such as: ovito, pysimm,... just support py36. So, python on env-base conda must be installed with python36, then create env py36 to avoid conflict errors.
 ```
 
+```python
+conda activate base 
+conda clean --all
+conda install python=3.6
+```
+
 ## Use multil envs in Notebook
 - ref: https://tinyurl.com/y7hcfvws ;  https://tinyurl.com/y7hcfvws
 
