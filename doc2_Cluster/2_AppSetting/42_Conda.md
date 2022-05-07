@@ -225,3 +225,37 @@ https://lmfit.github.io/lmfit-py/model.html
 pip install lmfit
 ```
 
+### Some env
+```note 
+Should use python 3.6 in base env
+```
+
+```python
+## env for general use
+conda create -n py37
+conda activate py37
+conda install -y -c conda-forge jupyterlab
+
+## env for polymer package: mbuild
+conda create -n py37mbuild
+conda activate py37mbuild
+conda install -y -c conda-forge jupyterlab
+
+## env for polymer package: pysimm
+conda create -n py36pysimm python=3.6
+conda activate py36pysimm
+conda install -y -c conda-forge jupyterlab
+
+## env for ovito interpreter
+conda create -n py36ovito python=3.6
+conda activate py36ovito
+conda install -y -c conda-forge jupyterlab
+
+```
+
+
+
+
+
+
+
