@@ -234,9 +234,9 @@ conda install --revision 0
 
 ### Some envs
 ```note 
-- Should use python 3.7 in base env (mimimum supported by conda, conflict DLL py36 and py37)
+- Should use python 3.7 in base-env (mimimum supported by conda, conflict DLL py36 and py37)
 - use mamba for faster
-- Use multi python in jupyterlab: `conda install -n base nb_conda`
+- Use multi python in jupyterlab: `conda install -n base nb_conda`, and must select to open notebook by jupyterlab in base-env
 ```
 
 Install mamba into the base environment:
