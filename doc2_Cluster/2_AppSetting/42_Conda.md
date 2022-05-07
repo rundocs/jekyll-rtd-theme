@@ -4,7 +4,8 @@ sort: 1
 
 # Conda
 
-I. Install Anaconda on Linux (USC-locally installation)
+## Installation
+### I. Install Anaconda on Linux (USC-locally installation)
 Download Anaconda installer for Linux.
 https://repo.anaconda.com/miniconda/
                           Anaconda3-2019.03-Linux-x86_64
@@ -87,11 +88,12 @@ https://stackoverflow.com/questions/22885134/how-to-load-virtualenv-using-enviro
 4) Using vi, the Unix Visual Editor
 
 
-II. Install Miniconda on Windows
+### II. Install Miniconda on Windows
 Anaconda: https://www.anaconda.com/distribution/#windows
 Miniconda: https://repo.anaconda.com/miniconda/
 make anaconda available in cmd windows, and can double click to open jypyter file
 add 3 new environment variable path: Environment Variables --> System Variables --> path --> edit
+
 ```
 C:\DevProgram\miniconda3
 C:\DevProgram\miniconda3\Scripts
