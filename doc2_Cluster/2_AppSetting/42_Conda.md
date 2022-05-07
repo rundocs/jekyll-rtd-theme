@@ -234,7 +234,7 @@ conda install --revision 0
 
 ### Some envs
 ```note 
-- Should use python 3.7 in base env
+- Should use python 3.7 in base env (mimimum supported by conda, conflict DLL py36 and py37)
 - use mamba for faster
 - Use multi python in jupyterlab: `conda install -n base nb_conda`
 ```
@@ -249,13 +249,12 @@ conda install -n base nb_conda
 ## env for general use
 conda create -n py37 python=3.7
 conda activate py37
-conda install -y -c conda-forge jupyterlab
-mamba install -y -c conda-forge ele numpy pandas
+mamba install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy
 
 ## env for polymer package: mbuild
 conda create -n py37mbuild python=3.7
 conda activate py37mbuild
-conda install -y -c conda-forge jupyterlab
+mamba install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy mbuild
 
 ## env for polymer package: pysimm
 conda create -n py36pysimm python=3.6
