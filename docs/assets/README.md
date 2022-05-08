@@ -1,6 +1,5 @@
 ---
 sort: 2
-layout: feed
 ---
 
 # This is a long menu
