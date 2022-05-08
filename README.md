@@ -1,3 +1,6 @@
+---
+sort: 2
+---
 # scheme
 
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
