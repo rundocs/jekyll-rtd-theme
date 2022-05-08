@@ -11,7 +11,7 @@
 *
 *  get the maximum size of feeds
 *
-{% endcomment %}{% assign my_size = 1 %}{% assign feeds = site.feeds | sort:0 %}{{ feeds | jsonify }}{% for feed in feeds %}{% assign my_split = feed.path | split: '/' %}{% assign size = my_split | size %}{% if size > my_size %}{% assign my_path = my_path | push: size %}{% assign my_size = size %}{% endif %}{% endfor %}{% comment %}
+{% endcomment %}{% assign my_size = 1 %}{% assign feeds = site.feeds | sort:0 %}{% for feed in feeds %}{% assign my_split = feed.path | split: '/' %}{% assign size = my_split | size %}{% if size > my_size %}{% assign my_path = my_path | push: size %}{% assign my_size = size %}{% endif %}{% endfor %}{{ my_size | jsonify }}{% comment %}
 *
 *  sort feeds base on weight (reversed order)
 *
