@@ -599,7 +599,7 @@ You may check the running code starting with [Sequence Diagram](https://chetabah
 
 [![Sequence Diagram](https://user-images.githubusercontent.com/36441664/107134254-ee22e180-6922-11eb-9465-3dd64ebf7dca.png)](https://chetabahana.github.io/#chetabahana-skema?pad=2)
 
-Clicking each of objects will turn to 6 (six) diagrams by the cycle form of [prime hexagon](https://github.com/chetabahana/hexagon) which is then return to the beginning. So in order to get code able to run online then the 168 is provided in [json](/../../../feed.json) while 618 in [xml](/../../../feeds.xml).
+Clicking each of objects will turn to 6 (six) diagrams by the cycle form of [prime hexagon](https://github.com/chetabahana/hexagon) which is then return to the beginning. So in order to get code able to run online then the 168 is provided in [json](https://www.eq19.com/scheme/feed.json) while 618 in [xml](https://www.eq19.com/scheme/feeds.xml).
 
 [![generate the prime](https://user-images.githubusercontent.com/36441664/69475449-ce77ca00-0dff-11ea-964e-cc959db0740a.png)](https://github.com/eq19)
 
