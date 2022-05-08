@@ -37,6 +37,12 @@ remote_theme: rundocs/jekyll-rtd-theme
 
 You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
 
+```
+{% raw %}{% include list.liquid all=true %}{% endraw %}
+
+{% include list.liquid all=true %}
+```
+
 ## Usage
 
 Documentation that can guide how to create with Github pages, please refer to [rundocs.io](https://rundocs.io) for details
