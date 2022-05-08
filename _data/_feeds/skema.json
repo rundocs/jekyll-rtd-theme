@@ -1,0 +1,6 @@
+{
+    "id": 54,
+    "title": "skema",
+    "style": {},
+    "property": "Title: Bagan Eksekusi\nparticipant Buka Toko\nparticipant Stok Barang\nparticipant Merchant Center\nparticipant Peluang Terbaik\nparticipant Portfolio\nparticipant Network\nBuka Toko-->Stok Barang: Optimasi\nStok Barang->Merchant Center: Cloud-Task-API\nMerchant Center->Peluang Terbaik: Cloud-Site-API\nPeluang Terbaik->>Portfolio: Google-Ads-API\nPortfolio->>Stok Barang: Google-Trend-API\nPortfolio-->>Network: eShop SEO\n"
+}

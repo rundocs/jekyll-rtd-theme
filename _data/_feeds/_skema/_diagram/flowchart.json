@@ -1,0 +1,59 @@
+{
+    "id": 57,
+    "title": "flowchart",
+    "js": "feeds/skema/diagram/flowchart.js",
+    "items": [
+        {
+            "style": 
+                {
+                    "x": 5,
+                    "y": -5,
+                    "font-size": 15,
+                    "line-width": 3,
+                    "line-length": 50,
+                    "text-margin": 10,
+                    "font-color": "black",
+                    "line-color": "black",
+                    "element-color": "black",
+                    "fill": "white",
+                    "yes-text": "yes",
+                    "no-text": "no",
+                    "arrow-end": "block",
+                    "scale": 1,
+                    "symbols":
+                        {
+                        "start":
+                            {
+                                "font-color": "red",
+                                "element-color": "green",
+                                "class": "flowchart"
+                            },
+                        "end":
+                            {
+                                "font-color": "red",
+                                "element-color": "green",
+                                "class": "flowchart"
+                            }
+                        },
+                    "flowstate":
+                        {
+                            "past": {"font-size": 15},
+                            "current": {"font-weight": "bold"},
+                            "future": {"font-weight": "bold"},
+                            "invalid": {"font-weight": "bold"},
+                            "approved": {"font-weight": "bold", "yes-text": "DITERIMA", "no-text": "DITOLAK"},
+                            "rejected": {"font-weight": "bold", "yes-text": "LULUS", "no-text": "TIDAK LULUS"}
+                        }
+            },
+            "guide": {
+                "xml": "/feed/feeds/main.xml",
+                "link": "https://en.wikipedia.org/wiki/Centered_hexagonal_number",
+                "file": "flowchart/flowchart-latest.js",
+                "from": "https://marketleader.github.io/Cloud-Site-API/",
+                "to": "http://chetabahana.github.io/raphael/",
+                "docs": "https://techdows.com/2016/02/notepad-6-9-adds-folder-as-workspace.html"
+            },
+            "skema": "st=>start: Get|past\ne=>end: Set|past\nop1=>operation: Input|future\nop2=>operation: Output|future\nsub1=>subroutine: Let Query|current\nsub2=>subroutine: Let Result|current\nuji1=>condition: Uji Query|rejected\nuji2=>condition: Uji Result|approved\nio1=>inputoutput: Fix Query|invalid\nio2=>parallel: Fix Result|invalid\nst->op1(right)->sub1\nsub1(right)->uji1(yes, right)->sub2\nuji1(no)->io1(left)->sub1\nsub2->uji2(yes, right)->op2\nuji2(no)->io2(path1, left)->io1\nio2(path2, right)->sub2\nop2->e\n"
+        }
+    ]
+}

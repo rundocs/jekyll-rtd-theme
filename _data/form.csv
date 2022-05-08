@@ -1,0 +1,1476 @@
+root,lexer,parser,grammar
+27;28;42,I,1,run away;flee
+27;28;4A,I,13,refuse
+27;2A;4A,I,264,come;bring
+27;2A;4A,IV,271,give
+27;2B;31,I,1,transmit;be related
+27;2B;31,IV,5,prefer
+27;2C;31,I,1,work for recompense
+27;2C;31,X,2,hire
+27;2C;44,II,2,appoint
+27;2E;30,I,127,take;seize
+27;2E;30,III,9,call;account;punish
+27;2E;30,VIII,124,take
+27;2E;31,II,15,delay;give respite
+27;2E;31,V,3,delay;stay behind
+27;2E;31,X,6,delay;postpone
+27;2F;4A,II,5,discharge;deliver
+27;30;46,I,23,permit
+27;30;46,II,3,announce;proclaim
+27;30;46,IV,2,announce
+27;30;46,V,2,announce;declare
+27;30;46,X,12,ask permission
+27;30;4A,IV,15,harm;trouble
+27;32;31,IV,1,strengthen
+27;32;32,I,1,incite
+27;32;41,I,1,approach
+27;33;31,I,1,take captive
+27;33;33,II,3,found
+27;33;41,IV,1,anger
+27;33;48,I,4,grieve
+27;41;43,I,16,delude;turn away
+27;41;44,I,3,set
+27;43;44,I,93,eat;consume
+27;44;2A,I,1,deprive
+27;44;41,II,5,join;reconcile
+27;44;45,I,3,suffer
+27;44;48,I,1,spare
+27;44;48,IV,1,swear;vow
+27;44;48,VIII,1,swear
+27;45;31,I,77,order;command
+27;45;31,VIII,2,consult
+27;45;46,I,20,feel secure
+27;45;46,IV,537,believe
+27;45;46,VIII,1,be entrusted
+27;46;33,IV,5,perceive
+27;46;33,X,1,ask permission
+27;46;4A,I,1,come (time)
+27;48;28,II,1,repeat
+27;48;2F,I,1,tire
+27;48;4A,I,5,seek shelter
+27;48;4A,IV,9,give shelter
+27;4A;2F,II,9,support;strengthen
+28;27;33,I,40,be wretched;be evil
+28;27;33,VIII,2,grieve
+28;2A;43,II,1,cut off
+28;2A;44,V,1,devote
+28;2B;2B,I,5,disperse
+28;2C;33,VII,1,gush;flow
+28;2D;2B,I,1,search;scratch
+28;2E;33,I,5,diminish;deprive
+28;2E;44,I,10,be stingy;withhold
+28;2F;27,I,12,begin;originate
+28;2F;27,IV,3,originate
+28;2F;39,VIII,1,innovate
+28;2F;44,II,23,change
+28;2F;44,IV,3,substitute
+28;2F;44,V,3,exchange
+28;2F;44,X,3,replace
+28;2F;48,I,11,become apparent
+28;2F;48,IV,15,reveal;disclose
+28;30;31,II,1,squander;waste
+28;31;27,I,1,bring inexistence
+28;31;27,II,2,absolve;clear
+28;31;27,IV,2,heal;cure
+28;31;27,V,5,disown
+28;31;2C,V,1,display
+28;31;2D,I,3,leave;cease
+28;31;31,I,2,be good;be kind
+28;31;32,I,5,come forth;go out
+28;31;32,II,2,make manifest
+28;31;42,I,1,be dazzled;be frightened
+28;31;43,III,8,bless
+28;31;43,VI,9,be blessed
+28;31;45,IV,1,determine;conclude
+28;33;31,I,1,scowl;frown
+28;33;33,I,1,crumble;crush
+28;33;37,I,16,extend;stretch
+28;33;44,IV,2,give up;destruction
+28;33;45,V,1,smile
+28;34;31,II,38,give glad tidings
+28;34;31,III,2,have relations
+28;34;31,IV,1,receive glad tidings
+28;34;31,X,7,rejoice
+28;35;31,I,3,perceive;watch
+28;35;31,II,1,be made;see
+28;35;31,IV,29,see
+28;37;27,II,1,lag behind
+28;37;31,I,1,take lightly
+28;37;34,I,5,seize
+28;37;44,I,1,become futile
+28;37;44,IV,4,make vain;nullify
+28;37;46,I,2,be concealed
+28;39;2B,I,52,raise;resurrect;send
+28;39;2B,VII,1,send forth
+28;39;2B;31,I,2,overturn;scatter
+28;39;2F,I,2,become distant;take away
+28;39;2F,III,1,lengthen
+28;3A;4A,I,25,seek;oppress
+28;3A;4A,VII,6,be appropiate
+28;3A;4A,VIII,34,seek
+28;42;4A,I,3,remain
+28;42;4A,IV,1,spare;remain
+28;43;4A,I,5,weep
+28;43;4A,IV,1,make weep
+28;44;33,IV,1,despair
+28;44;39,I,1,swallow
+28;44;3A,I,40,reach
+28;44;3A,II,6,convey
+28;44;3A,IV,5,convey
+28;44;48,I,20,test
+28;44;48,IV,2,test
+28;44;48,VIII,8,test;try
+28;46;4A,I,11,construct;build
+28;47;2A,I,2,be bewildered;be dumbfounded
+28;47;44,VIII,1,pray humbly
+28;48;27,I,6,incur;turn back
+28;48;27,II,6,settle
+28;48;27,V,4,settle
+28;48;31,I,2,perish
+28;4A;2A,I,1,spend the night
+28;4A;2A,II,4,plan by night
+28;4A;2F,I,1,be perished
+28;4A;36,IX,3,become white
+28;4A;39,III,6,pledge allegiance
+28;4A;39,VI,1,make commercial transaction
+28;4A;46,II,35,make clear
+28;4A;46,IV,1,explain
+28;4A;46,V,18,become clear
+28;4A;46,X,1,make clear
+2A;28;28,I,2,perish
+2A;28;31,II,2,destory
+2A;28;39,I,9,follow
+2A;28;39,IV,15,follow
+2A;28;39,VIII,136,follow
+2A;31;41,IV,3,give luxury
+2A;31;43,I,40,leave
+2A;42;46,IV,1,perfect
+2A;44;44,I,1,put down
+2A;44;48,I,61,recite
+2A;45;45,I,4,be fulfilled;be completed
+2A;45;45,IV,16,fulfill;complete;perfect
+2A;48;28,I,63,repent;turn
+2A;4A;47,I,1,wander
+2B;28;2A,I,1,be firm
+2B;28;2A,II,10,make firm
+2B;28;2A,IV,2,restrain;confirm
+2B;28;37,II,1,make lag behind
+2B;2E;46,IV,2,battle;subdue
+2B;42;41,I,6,find;gain dominance
+2B;42;44,I,4,be heavy
+2B;42;44,IV,1,be heavy
+2B;42;44,VI,1,be heavy
+2B;45;31,IV,2,bear fruit
+2B;46;4A,I,1,fold up
+2B;46;4A,X,1,except
+2B;48;28,II,1,reward
+2B;48;28,IV,3,reward
+2B;48;31,IV,5,raise;plough
+2C;27;31,I,3,cry for help
+2C;28;4A,I,1,bring;gather
+2C;28;4A,VIII,10,choose
+2C;2B;2B,VIII,1,uproot
+2C;2D;2F,I,12,reject;deny
+2C;2F;44,III,25,argue;dispute
+2C;31;2D,I,1,commit
+2C;31;2D,VIII,1,commit
+2C;31;31,I,1,drag
+2C;31;39,V,1,sip
+2C;31;45,I,3,let incite
+2C;31;45,IV,5,commit crime
+2C;31;4A,I,57,flow;run
+2C;32;39,I,1,show intolerance;be perturbed
+2C;32;4A,I,73,reward;recompense
+2C;32;4A,III,1,recompense
+2C;33;33,V,1,spy
+2C;39;44,I,340,make
+2C;41;48,I,1,forsake
+2C;44;28,IV,1,raise
+2C;44;2F,I,2,flog
+2C;44;48,I,2,reveal
+2C;44;48,II,2,reveal
+2C;45;2D,I,1,run wild
+2C;45;39,I,22,gather;collect
+2C;45;39,IV,4,resolve;agree;put;together
+2C;45;39,VIII,2,gather
+2C;46;28,I,1,keep away
+2C;46;28,II,1,remove from
+2C;46;28,V,1,avoid
+2C;46;28,VIII,9,avoid
+2C;46;2D,I,2,incline
+2C;46;46,I,1,cover
+2C;47;2F,III,27,strive
+2C;47;31,I,5,speak loudly
+2C;47;32,II,2,furnish
+2C;47;44,I,5,be ignorant
+2C;48;28,I,1,carve
+2C;48;28,IV,8,answer;respond
+2C;48;28,X,28,answer;respond
+2C;48;31,III,1,be neighbours
+2C;48;31,IV,6,protect
+2C;48;31,X,1,seek protection
+2C;48;32,III,4,cross;pass beyond
+2C;48;32,VI,1,overlook
+2C;48;33,I,1,enter
+2C;48;39,I,1,be hungry
+2C;4A;27,I,278,come
+2D;28;28,II,1,endear
+2D;28;28,IV,64,love;like
+2D;28;28,X,4,prefer
+2D;28;31,I,2,delight
+2D;28;33,I,2,detain
+2D;28;37,I,12,become worthless
+2D;28;37,IV,4,make worthless
+2D;2C;2C,I,1,perform pilgrimage;argue
+2D;2C;2C,III,12,argue
+2D;2C;2C,VI,1,dispute
+2D;2F;2B,II,3,report;narate
+2D;2F;2B,IV,3,cause;bring about
+2D;2F;2F,I,2,oppose
+2D;2F;2F,III,2,oppose
+2D;30;31,I,12,fear;beware
+2D;30;31,II,2,warn
+2D;31;28,III,2,wage war
+2D;31;2B,I,1,sow
+2D;31;35,I,3,desire
+2D;31;36,II,2,urge;encourage
+2D;31;41,II,4,distort
+2D;31;42,II,3,burn
+2D;31;42,VIII,1,burn
+2D;31;43,II,1,move
+2D;31;45,II,39,forbid;make unlawful
+2D;31;4A,I,1,seek
+2D;32;46,I,37,grieve
+2D;33;28,I,44,think
+2D;33;28,III,3,take;account
+2D;33;28,VIII,3,take inaccount;expect;think
+2D;33;2F,I,3,envy
+2D;33;31,X,1,tire
+2D;33;33,I,1,inquire;kill
+2D;33;33,IV,3,perceive
+2D;33;33,V,1,inquire
+2D;33;46,I,3,be the best;be good
+2D;33;46,IV,21,do good
+2D;34;31,I,37,gather;raise
+2D;35;2D;35,I,1,become manifest
+2D;35;2F,I,1,reap
+2D;35;31,I,2,restrain;besiege
+2D;35;31,IV,2,hold back;wrap up
+2D;35;44,II,1,make apparent
+2D;35;46,IV,5,guard;protect
+2D;35;4A,IV,10,count;calculate;enumerate
+2D;36;31,I,7,approach;attend
+2D;36;31,IV,3,bring
+2D;36;36,I,2,feel the urge
+2D;36;36,VI,1,feel the urge
+2D;37;45,I,1,crush
+2D;41;38,I,7,guard;protect
+2D;41;38,III,4,guard
+2D;41;38,X,1,be entrusted
+2D;41;41,I,1,border
+2D;41;48,IV,1,press
+2D;42;42,I,20,justify;prove true
+2D;42;42,IV,4,justify;establish
+2D;42;42,X,2,be guilty;have right
+2D;43;45,I,45,judge
+2D;43;45,II,2,make judge
+2D;43;45,IV,2,perfect;establish
+2D;43;45,VI,1,judge
+2D;44;41,I,12,swear
+2D;44;42,I,1,shave
+2D;44;44,I,14,descend;be lawful
+2D;44;44,IV,20,make lawful
+2D;44;4A,II,4,adorn
+2D;45;2F,I,1,praise
+2D;45;44,I,41,carry;bear
+2D;45;44,II,5,place;entrust
+2D;45;44,VIII,3,carry;bear
+2D;45;4A,I,1,heat
+2D;46;2B,I,1,break oath
+2D;46;43,VIII,1,destroy
+2D;48;30,X,2,overcome;have advantage
+2D;48;31,I,1,return
+2D;48;31,III,2,talk
+2D;48;37,IV,17,surround;encompass
+2D;48;44,I,3,come
+2D;4A;2F,I,1,avoid
+2D;4A;36,I,1,menstruate
+2D;4A;41,I,1,be unjust
+2D;4A;42,I,10,surround;encompass;envelope
+2D;4A;4A,I,7,live
+2D;4A;4A,II,4,greet
+2D;4A;4A,IV,51,give life
+2D;4A;4A,X,9,let live;be shy;be ashamed
+2E;28;2A,IV,2,be humble
+2E;28;2B,I,1,be bad
+2E;28;37,V,1,confound
+2E;28;48,I,1,subside
+2E;2A;45,I,5,seal
+2E;2F;39,I,2,deceive
+2E;2F;39,III,2,deceive
+2E;30;44,I,1,forsake
+2E;31;28,IV,1,destroy
+2E;31;2C,I,53,go out;come out;depart;leave
+2E;31;2C,IV,99,bring forth;drive out
+2E;31;2C,X,4,bring out
+2E;31;31,I,12,fall
+2E;31;35,I,4,guess;lie
+2E;31;42,I,4,falsely attribute;tear
+2E;32;4A,I,1,be disgraced
+2E;32;4A,IV,12,disgrace
+2E;33;27,I,1,be despised
+2E;33;31,I,16,lose
+2E;33;31,IV,2,give less;make deficient
+2E;33;41,I,8,cause;swallow
+2E;34;39,I,2,become humble
+2E;34;4A,I,40,fear
+2E;35;35,VIII,2,choose
+2E;35;41,I,2,fasten
+2E;35;45,VIII,8,dispute
+2E;36;39,I,1,be soft
+2E;37;27,IV,2,err;make mistake
+2E;37;28,III,3,address
+2E;37;37,I,1,write
+2E;37;41,I,3,snatch
+2E;37;41,V,3,do away with;sweep;take away
+2E;41;2A,III,1,be silent
+2E;41;2A,VI,2,murmur
+2E;41;36,I,3,lower
+2E;41;41,I,3,be light
+2E;41;41,II,8,lighten
+2E;41;41,X,3,take lightly;bluff
+2E;41;4A,I,6,hide
+2E;41;4A,IV,18,conceal;hide
+2E;41;4A,X,3,hide
+2E;44;2F,I,2,live forever
+2E;44;2F,IV,2,adhere
+2E;44;35,I,1,seclude
+2E;44;35,IV,2,choose;be sincere
+2E;44;35,X,1,select
+2E;44;37,I,1,mix
+2E;44;37,III,1,associate
+2E;44;37,VIII,3,join;absorb;mingle
+2E;44;39,I,1,remove
+2E;44;41,I,5,succeed;come after
+2E;44;41,II,1,leave behind
+2E;44;41,III,2,oppose;differ
+2E;44;41,IV,14,break;fail
+2E;44;41,V,1,remain behind
+2E;44;41,VIII,35,differ
+2E;44;41,X,5,grant succession
+2E;44;42,I,184,create
+2E;44;48,I,25,pass away
+2E;44;48,II,1,leave
+2E;44;48,V,1,become empty
+2E;48;36,I,9,engage in idle talk;converse vainly
+2E;48;41,I,83,fear;be afraid
+2E;48;41,II,4,frighten;threaten
+2E;48;44,II,3,bestow
+2E;48;46,I,5,betray
+2E;48;46,VIII,2,deceive
+2E;4A;28,I,4,fail
+2E;4A;31,V,2,select;choose
+2E;4A;31,VIII,4,choose
+2E;4A;44,II,1,seem
+2F;28;31,II,4,dispose;arrange
+2F;28;31,IV,4,turn away;depart
+2F;28;31,V,4,ponder
+2F;2D;36,IV,2,refute
+2F;2D;48,I,1,spread
+2F;2E;44,I,76,enter
+2F;2E;44,IV,42,admit
+2F;31;27,I,4,avert;repel;prevent
+2F;31;27,VI,1,dispute
+2F;31;2C,X,2,gradually lead
+2F;31;33,I,5,study;learn
+2F;31;43,IV,6,overtake;grasp
+2F;31;43,VI,3,overtake;arrest
+2F;31;4A,I,12,know
+2F;31;4A,IV,17,make known
+2F;33;33,I,1,bury
+2F;33;48,I,1,bury
+2F;39;39,I,2,thrust;repulse
+2F;39;48,I,170,call;invite;pray
+2F;39;48,VIII,3,call;ask
+2F;41;39,I,5,defend;deliver;repel
+2F;41;39,III,1,defend
+2F;43;43,I,2,crush;level
+2F;44;44,I,7,indicate;show;direct
+2F;44;48,I,1,come down
+2F;44;48,IV,2,present;let down
+2F;45;2F;45,I,1,destroy
+2F;45;31,II,8,destroy
+2F;45;3A,I,1,break
+2F;46;48,I,2,approach;draw
+2F;47;46,IV,2,compromise
+2F;48;31,I,1,revolve
+2F;48;31,IV,1,carry out
+2F;48;44,III,1,alternate
+2F;48;45,I,7,be as long as
+2F;4A;46,I,1,acknowledge
+2F;4A;46,VI,1,contract
+30;28;2D,I,5,slaughter;sacrifice
+30;28;2D,II,3,slaughter
+30;2E;31,VIII,1,store
+30;31;27,I,6,create;produce;multiply
+30;31;48,I,1,scatter
+30;43;31,I,84,remember;mention
+30;43;31,II,18,remind
+30;43;31,V,51,receive admonition
+30;43;31,VIII,1,remember
+30;43;48,II,1,slaughter
+30;44;44,I,1,humiliate
+30;44;44,II,2,tame
+30;44;44,IV,1,humiliate
+30;47;28,I,35,go;take away
+30;47;28,IV,11,remove;take away
+30;47;44,I,1,forget
+30;48;2F,I,1,keep back
+30;48;42,I,36,taste
+30;48;42,IV,22,cause taste
+30;4A;39,IV,1,spread
+31;27;4A,I,271,see
+31;27;4A,III,2,show off
+31;27;4A,IV,40,show
+31;27;4A,VI,2,come in sight
+31;28;2D,I,1,profit
+31;28;35,V,13,await
+31;28;37,I,3,strengthen;make firm
+31;28;37,III,1,be constant
+31;28;48,I,4,increase;swell
+31;28;48,II,2,bring up
+31;28;48,IV,2,increase;make numerous
+31;2A;39,I,1,enjoy
+31;2A;44,II,2,recite
+31;2C;2C,I,1,shake
+31;2C;39,I,79,return
+31;2C;39,VI,1,return
+31;2C;41,I,2,quake
+31;2C;45,I,5,stone
+31;2C;48,I,22,hope;expect;desire
+31;2C;48,IV,3,defer;postpone
+31;2D;28,I,2,be vast
+31;2D;45,I,28,have mercy
+31;2F;2F,I,36,turn back;return
+31;2F;2F,V,1,waver
+31;2F;2F,VIII,8,turn back;return
+31;2F;41,I,1,be close behind
+31;2F;4A,I,1,perish
+31;2F;4A,IV,3,ruin
+31;2F;4A,V,1,fall
+31;32;42,I,61,provide
+31;33;44,IV,130,send
+31;33;48,I,1,make
+31;34;2F,I,1,be led aright
+31;36;39,I,1,suckle
+31;36;39,IV,5,nurse;suckle
+31;36;39,X,1,suckle
+31;36;48,I,38,be pleased
+31;36;48,IV,3,please;satisfy
+31;36;48,VI,2,agree
+31;36;48,VIII,3,approve
+31;39;4A,I,2,pasture;observe
+31;39;4A,III,2,observe
+31;3A;28,I,4,desire;prefer
+31;41;39,I,22,raise
+31;42;28,I,3,respect
+31;42;28,V,2,be vigilant
+31;42;28,VIII,4,watch
+31;42;4A,I,1,ascend
+31;42;4A,VIII,1,ascend
+31;43;28,I,9,ride;embark
+31;43;28,II,1,assemble
+31;43;33,IV,2,cast back;plunge
+31;43;36,I,3,flee;strike
+31;43;39,I,5,bow
+31;43;45,I,1,heap
+31;43;46,I,2,incline
+31;45;4A,I,9,throw;accuse
+31;47;28,I,3,fear
+31;47;28,IV,1,terrify
+31;47;28,X,1,terrify
+31;47;42,I,5,cover
+31;47;42,IV,3,be hard on;overburden;cover
+31;48;2D,IV,1,bring
+31;48;2F,III,8,seduce;demand;get permission
+31;48;2F,IV,139,intend;desire;want;wish
+31;48;3A,I,3,turn
+31;4A;28,VIII,9,doubt
+31;4A;46,I,1,cover
+32;2C;31,VIII,1,repell
+32;2C;48,IV,2,drive
+32;2D;32;2D,I,1,draw away
+32;31;39,I,2,plant;sow
+32;31;4A,VIII,1,look down
+32;39;45,I,13,claim
+32;41;41,I,1,hasten
+32;43;48,I,1,purify
+32;43;48,II,12,purify
+32;43;48,V,8,purify
+32;44;32;44,I,3,shake
+32;44;41,IV,4,bring near
+32;44;42,IV,1,make slip
+32;44;44,I,2,slip
+32;44;44,IV,1,make slip
+32;44;44,X,1,make slip
+32;46;4A,I,2,commit adultery
+32;47;42,I,3,depart;perish
+32;48;2C,II,5,marry;be paired
+32;48;2F,V,1,take provision
+32;48;31,I,1,visit
+32;48;31,VI,1,incline away
+32;48;44,I,3,cease
+32;4A;2F,I,49,increase
+32;4A;2F,VIII,8,increase
+32;4A;3A,I,6,deviate;turn away;swerve
+32;4A;3A,IV,2,deviate
+32;4A;44,I,8,cease
+32;4A;44,II,1,seperate
+32;4A;44,V,1,be apart
+32;4A;46,II,26,make fair-seeming
+32;4A;46,V,1,beautify
+33;27;44,I,106,ask
+33;27;44,VI,9,question;ask;inquire
+33;27;45,I,3,tire
+33;28;28,I,2,insult
+33;28;2A,I,1,have Sabbath
+33;28;2D,I,2,swim;float
+33;28;2D,II,42,glorify;praise
+33;28;3A,IV,1,bestow
+33;28;42,I,20,precede
+33;28;42,III,1,race
+33;28;42,VIII,5,race
+33;2A;31,VIII,1,cover
+33;2C;2F,I,35,prostrate
+33;2C;31,I,1,burn
+33;2C;31,II,1,overflow
+33;2C;46,I,3,imprison
+33;2C;48,I,1,cover with darkness
+33;2D;28,I,2,drag
+33;2D;2A,IV,1,destroy
+33;2D;31,I,3,bewitch;delude
+33;2E;31,I,11,ridicule;mock
+33;2E;31,II,22,subject;impose
+33;2E;31,X,1,mock
+33;2E;37,I,2,anger;enrage
+33;2E;37,IV,1,anger
+33;31;2D,I,1,take out
+33;31;2D,II,3,release
+33;31;31,I,1,please
+33;31;31,IV,18,conceal
+33;31;39,III,9,hasten
+33;31;41,IV,6,be extravagant;exceed;transgress
+33;31;42,I,4,steal
+33;31;42,VIII,1,steal
+33;31;4A,I,1,pass;set out
+33;31;4A,IV,6,travel;take
+33;37;2D,I,1,spread out
+33;37;31,I,1,write
+33;37;48,I,1,attack
+33;39;2F,I,1,be glad
+33;39;31,II,1,set ablaze
+33;39;4A,I,20,strive;run
+33;41;31,IV,1,brighten
+33;41;39,I,1,drag
+33;41;43,I,2,shed
+33;41;47,I,1,fool
+33;42;37,I,3,fall;regret
+33;42;37,III,1,drop
+33;42;37,IV,3,cause;toll;cause;fall
+33;42;4A,I,12,water;give drink
+33;42;4A,IV,8,give drink
+33;42;4A,X,2,ask for water
+33;43;2A,I,1,calm
+33;43;31,II,1,dazzle
+33;43;46,I,15,dwell;live;rest
+33;43;46,IV,5,make dwell;settle;lodge
+33;44;28,I,1,snatch away
+33;44;2E,I,1,withdraw
+33;44;2E,VII,2,pass;detach
+33;44;37,II,2,give power
+33;44;41,I,5,pass (before)
+33;44;41,IV,2,do before;send before
+33;44;42,I,1,smite
+33;44;43,I,12,insert;make enter
+33;44;44,V,1,slip away
+33;44;45,II,6,submit;greet;pay
+33;44;45,IV,22,submit
+33;45;39,I,78,hear;listen
+33;45;39,IV,13,make hear
+33;45;39,V,1,listen
+33;45;39,VIII,16,listen
+33;45;46,IV,1,nourish
+33;45;48,II,8,name
+33;46;47,V,1,change with time
+33;47;45,III,1,draw
+33;48;27,I,30,be evil
+33;48;27,IV,5,do evil
+33;48;2F,IX,2,become black
+33;48;31,V,1,climb over
+33;48;3A,IV,1,swallow
+33;48;42,I,7,drive
+33;48;44,II,4,entice;suggest
+33;48;45,I,4,afflict
+33;48;45,IV,1,pasture
+33;48;4A,I,1,level
+33;48;4A,II,13,fashion;proportion
+33;48;4A,III,1,level
+33;48;4A,VIII,35,be equal;be alike;establish
+33;4A;2D,I,1,move about
+33;4A;31,I,16,travel
+33;4A;31,II,5,move
+33;4A;44,I,1,flow
+33;4A;44,IV,1,cause flow
+34;28;47,II,1,make appear
+34;28;47,VI,4,look alike;seem alike
+34;2C;31,I,1,arise
+34;2E;35,I,1,stare
+34;2F;2F,I,6,strengthen
+34;2F;2F,VIII,1,blow furiously
+34;31;28,I,15,drink
+34;31;28,IV,1,make drink
+34;31;2D,I,5,expand;open
+34;31;2F,II,1,disperse
+34;31;39,I,2,ordain
+34;31;42,IV,1,shine
+34;31;43,III,1,be a partner
+34;31;43,IV,71,associate partners
+34;31;4A,I,4,sell
+34;31;4A,VIII,21,buy;purchase;exchange
+34;37;37,IV,1,be unjust
+34;39;31,I,25,perceive;realize
+34;39;31,IV,2,perceive;be aware
+34;39;44,VIII,1,flare
+34;3A;41,I,1,impassion
+34;3A;44,I,1,keep busy
+34;41;39,I,5,intercede
+34;41;42,IV,2,fear;be afraid
+34;41;4A,I,2,heal;cure
+34;42;42,I,2,make difficult;cleave
+34;42;42,III,7,oppose
+34;42;42,V,3,split
+34;42;42,VII,5,split
+34;42;48,I,4,suffer;be wretched;be distressed
+34;43;31,I,46,be grateful;give thanks
+34;43;48,I,1,complain
+34;43;48,VIII,1,complain
+34;45;2A,IV,1,rejoice
+34;45;32,VIII,1,shrink with aversion
+34;45;44,VIII,2,contain
+34;47;2F,I,44,testify;bear witness
+34;47;2F,IV,7,make witness
+34;47;2F,X,2,call;witness
+34;47;48,VIII,8,desire
+34;48;31,III,1,consult
+34;48;31,IV,1,point
+34;48;4A,I,1,scald
+34;4A;27,I,236,will;wish
+34;4A;39,I,1,spread
+35;28;28,I,4,pour
+35;28;2D,II,1,seize in the morning
+35;28;2D,IV,28,become
+35;28;31,I,58,be patient
+35;28;31,III,1,be patient
+35;28;31,VIII,3,be patient;be steadfast
+35;28;48,I,1,incline
+35;2D;28,I,1,protect
+35;2D;28,III,2,keep company
+35;2F;2F,I,37,turn away;avert;hinder
+35;2F;2F,II,1,hinder
+35;2F;31,I,1,proceed
+35;2F;31,IV,1,take away
+35;2F;39,I,1,proclaim
+35;2F;39,II,1,have headache
+35;2F;39,V,1,be divided
+35;2F;41,I,4,turn away
+35;2F;42,I,15,be truthful;fulfill
+35;2F;42,II,10,accept truth;admit;confirm;believe
+35;2F;42,V,6,give charity
+35;2F;4A,V,1,give attention
+35;31;2E,VIII,1,cry
+35;31;2E,X,1,cry for help
+35;31;31,IV,4,persist
+35;31;41,I,14,divert;turn away
+35;31;41,II,10,explain
+35;31;41,VII,1,turn away
+35;31;45,I,1,pluck
+35;39;2F,I,1,ascend
+35;39;2F,IV,1,run uphill
+35;39;2F,V,1,climb
+35;39;31,II,1,turn
+35;39;42,I,2,faint;fall dead
+35;3A;48,I,2,incline
+35;41;2D,I,6,overlook
+35;41;48,IV,2,choose
+35;41;48,VIII,12,choose
+35;43;43,I,1,strike
+35;44;28,I,2,crucify
+35;44;28,II,4,crucify
+35;44;2D,I,2,be righteous
+35;44;2D,IV,28,correct;reform;improve;make peace
+35;44;48,II,12,pray;bless
+35;44;4A,I,13,burn
+35;44;4A,II,1,burn
+35;44;4A,IV,4,burn
+35;44;4A,VIII,2,warm
+35;45;45,I,2,become deaf
+35;45;45,IV,1,make deaf
+35;46;39,I,15,make;construct;do
+35;46;39,VIII,1,choose
+35;47;31,I,1,melt
+35;48;28,IV,64,strike;befall;bestow
+35;48;31,I,1,incline
+35;48;31,II,4,form;fashion;shape
+35;48;45,I,2,fast
+35;4A;2F,VIII,1,hunt
+35;4A;31,I,1,reach
+36;2D;43,I,7,laugh
+36;2D;43,IV,1,make laugh
+36;2D;48,I,1,expose
+36;31;28,I,55,strike;set forth
+36;31;31,I,19,harm
+36;31;31,III,3,suffer;be harmed
+36;31;31,VIII,7,force;compell
+36;31;39,I,1,humble
+36;31;39,V,3,humble
+36;39;41,I,2,weaken
+36;39;41,III,9,double;multiply
+36;39;41,X,8,be oppressed
+36;44;44,I,53,go astray;err;lose
+36;44;44,IV,64,let go astray;mislead
+36;45;45,I,2,draw (near)
+36;47;27,III,1,imitate
+36;48;27,IV,3,light;flash;glow
+36;4A;39,IV,10,let go waste;neglect
+36;4A;41,II,1,offer hospitality
+36;4A;42,I,7,straiten
+36;4A;42,II,1,distress
+37;28;39,I,11,seal
+37;2D;48,I,1,spread
+37;31;2D,I,1,cast
+37;31;2F,I,3,send away;drive away
+37;39;45,I,5,eat;taste;feed
+37;39;45,IV,13,feed
+37;39;45,X,1,ask for food
+37;39;46,I,1,defame
+37;3A;4A,I,12,transgress;overflow
+37;3A;4A,IV,1,make transgress
+37;41;27,IV,3,extinguish;put out
+37;41;42,I,3,begin
+37;44;28,I,1,seek
+37;44;39,I,2,rise
+37;44;39,IV,1,inform
+37;44;39,VIII,7,look
+37;44;42,II,10,divorce
+37;44;42,VII,9,set out;proceeed;go forth
+37;45;2B,I,2,to;touch
+37;45;33,I,5,blind;destory;obliterate
+37;45;39,I,8,hope;desire
+37;45;46,XII,9,be satisfied;be secure;be content
+37;47;31,I,1,purify
+37;47;31,II,9,purify
+37;47;31,V,5,cleanse;purify
+37;48;39,I,2,obey
+37;48;39,II,1,prompt
+37;48;39,IV,72,obey
+37;48;39,V,2,volunteer
+37;48;39,X,42,be able;to;be capable
+37;48;41,I,8,circulate;go around
+37;48;41,V,2,walk;circumambulate
+37;48;42,II,1,encircle the neck
+37;48;42,IV,1,afford
+37;48;44,I,3,prolong;grow long
+37;48;44,VI,1,prolong
+37;48;4A,I,1,fold
+37;4A;28,I,3,seem suitable;remit;do well
+37;4A;31,I,1,fly
+37;4A;31,V,3,ascribe an evil omen
+38;41;31,IV,1,give victory
+38;44;44,I,9,continue;remain
+38;44;44,II,2,shade
+38;44;45,I,110,oppress;wrong
+38;44;45,IV,1,darken
+38;45;27,I,1,suffer from thirst
+38;46;46,I,47,think;assume;guess
+38;47;31,I,10,appear;become manifest
+38;47;31,III,6,support;back
+38;47;31,IV,8,make apparent;reveal
+38;47;31,VI,2,support
+39;28;27,I,1,care
+39;28;2B,I,1,be amused
+39;28;2F,I,122,worship
+39;28;2F,II,1,enslave
+39;28;31,I,1,interpret
+39;28;31,VIII,1,learn a lesson
+39;28;33,I,2,frown
+39;2A;28,X,4,ask for favor
+39;2A;2F,IV,14,prepare
+39;2A;44,I,1,drag
+39;2A;48,I,5,be insolent;exceed;rebell
+39;2B;31,I,1,discover
+39;2B;31,IV,1,make known
+39;2B;48,I,5,act wickedly;commit evil
+39;2C;28,I,8,wonder;be amazed;be astonished
+39;2C;28,IV,11,please;impress
+39;2C;32,I,1,be unable
+39;2C;32,IV,4,escape
+39;2C;44,I,5,hasten
+39;2C;44,II,5,hasten
+39;2C;44,IV,1,make hasten
+39;2C;44,V,1,hurry
+39;2C;44,X,19,seek;hasten
+39;2F;2F,I,7,count
+39;2F;2F,II,1,count
+39;2F;2F,IV,20,prepare
+39;2F;2F,VIII,1,count
+39;2F;44,I,14,be just
+39;2F;48,I,3,transgress;pass beyond
+39;2F;48,III,1,be enemies
+39;2F;48,V,3,transgress
+39;2F;48,VIII,15,transgress
+39;30;28,II,41,punish
+39;30;31,VIII,5,make excuse
+39;31;2C,I,5,ascend
+39;31;34,I,2,erect;construct
+39;31;36,I,11,display;present;expose;turn away
+39;31;36,II,1,hint
+39;31;36,IV,32,turn away
+39;31;41,I,20,know;recognize
+39;31;41,II,2,make known
+39;31;41,VI,2,know;recognize
+39;31;41,VIII,3,acknowledge;confess
+39;31;48,VIII,1,seize
+39;31;4A,I,1,unclothe
+39;32;28,I,2,escape
+39;32;31,II,3,honour;assist
+39;32;32,I,1,overpower
+39;32;32,II,1,strengthen
+39;32;32,IV,1,honor
+39;32;44,I,1,set aside
+39;32;44,VIII,7,withdraw;leave;keep away
+39;32;45,I,4,resolve;decide;determine
+39;33;31,VI,1,disagree
+39;33;39;33,I,1,depart
+39;33;4A,I,30,perhaps
+39;34;31,III,1,live
+39;34;48,I,1,turn away
+39;35;31,I,2,press
+39;35;45,I,3,save;protect
+39;35;45,VIII,5,hold fast
+39;35;45,X,1,save
+39;35;4A,I,27,disobey
+39;36;36,I,2,bite
+39;36;44,I,2,hinder;constrain
+39;37;44,II,1,leave untended
+39;37;48,I,1,take
+39;37;48,IV,8,give
+39;38;45,II,2,honor
+39;38;45,IV,1,make great
+39;41;41,X,3,refrain;be chaste
+39;41;48,I,27,forgive;pardon
+39;42;28,II,2,look back;return
+39;42;28,III,6,retaliate
+39;42;28,IV,1,penalize
+39;42;2F,I,1,pledge
+39;42;2F,II,1,contract
+39;42;31,I,5,hamstrung
+39;42;44,I,49,understand;reason
+39;43;41,I,1,devote
+39;44;45,I,382,know
+39;44;45,II,41,teach
+39;44;45,V,2,learn
+39;44;46,IV,12,declare;reveal;proclaim
+39;44;48,I,20,be exalted;be high
+39;44;48,IV,8,come
+39;44;48,X,1,overcome
+39;45;2F,V,1,intend
+39;45;31,I,4,maintain;build on
+39;45;31,II,5,grant life
+39;45;31,VIII,1,perform Umrah
+39;45;31,X,1,settle
+39;45;44,I,276,do;work
+39;45;47,I,7,wander blindly
+39;45;4A,I,7,be blind
+39;45;4A,II,1,obscure
+39;46;2A,I,3,suffer;be distressed
+39;46;2A,IV,1,put indifficulty
+39;46;48,I,1,be humbled
+39;47;2F,I,6,make a covenant;promise
+39;47;2F,III,11,make a covenant
+39;48;2F,I,18,return
+39;48;2F,IV,18,return
+39;48;30,I,10,seek refuge
+39;48;30,IV,1,seek refuge
+39;48;30,X,4,seek refuge
+39;48;44,I,1,oppress
+39;48;46,IV,2,help
+39;48;46,VI,2,help
+39;48;46,X,4,seek help
+39;4A;28,I,1,cause defect
+39;4A;4A,I,2,tire
+3A;2F;31,III,2,leave behind
+3A;2F;48,I,3,leave early
+3A;31;28,I,2,set
+3A;31;31,I,15,deceive;delude
+3A;31;41,VIII,1,take
+3A;31;42,IV,17,drown
+3A;31;48,IV,2,overpower;arouse
+3A;33;44,I,1,wash
+3A;33;44,VIII,1,bathe
+3A;34;48,I,13,cover
+3A;34;48,II,3,cover
+3A;34;48,IV,4,cover
+3A;34;48,V,1,cover
+3A;34;48,X,2,cover
+3A;36;28,I,6,be angry
+3A;36;36,I,4,lower
+3A;37;34,IV,1,darken
+3A;41;31,I,65,forgive
+3A;41;31,X,40,ask forgiveness
+3A;41;44,I,1,neglect
+3A;41;44,IV,1,make heedless
+3A;44;28,I,15,overcome;defeat
+3A;44;38,I,2,be stern
+3A;44;38,X,1,become thick
+3A;44;42,II,1,close
+3A;44;44,I,5,defraud;chain;shackle
+3A;44;48,I,2,exceed
+3A;44;4A,I,1,boil
+3A;45;32,VI,1,wink
+3A;45;36,IV,1,close
+3A;46;45,I,2,take as war booty
+3A;46;4A,I,15,avail;prosper
+3A;46;4A,IV,28,avail;enrich
+3A;46;4A,X,4,be self-sufficient
+3A;48;2B,IV,1,be relieved
+3A;48;2B,X,4,seek help
+3A;48;35,I,1,dive
+3A;48;4A,I,3,err;go astray
+3A;48;4A,IV,8,mislead;lead astray
+3A;4A;28,VIII,1,backbite
+3A;4A;2B,IV,1,be given rain
+3A;4A;31,II,4,change
+3A;4A;31,V,1,change
+3A;4A;36,I,2,subside;fall short
+3A;4A;38,I,3,anger;enrage
+41;2A;27,I,1,cease
+41;2A;2D,I,16,open;give victory
+41;2A;2D,II,1,open
+41;2A;2D,X,3,seek victory
+41;2A;31,I,1,invent
+41;2A;31,II,1,subside
+41;2A;42,I,1,part
+41;2A;46,I,23,persecute;test;try
+41;2A;4A,IV,5,give ruling;explain;advise
+41;2A;4A,X,6,seek ruling;inquire;ask
+41;2C;31,I,2,give lie
+41;2C;31,II,6,cause gush
+41;2C;31,V,1,gush forth
+41;2C;31,VII,1,gush forth
+41;2F;4A,I,1,ransom
+41;2F;4A,III,1,ransom
+41;2F;4A,VIII,7,offer ransom
+41;31;2C,I,1,be cleft asunder
+41;31;2D,I,16,rejoice
+41;31;31,I,6,flee
+41;31;34,I,1,spread
+41;31;36,I,9,specify;ordain;make obligatory
+41;31;37,I,1,hasten
+41;31;37,II,5,neglect;fail
+41;31;3A,I,2,finish
+41;31;3A,IV,3,pour
+41;31;42,I,5,divide
+41;31;42,II,9,differentiate;make distinction
+41;31;42,III,1,part
+41;31;42,V,8,be divided
+41;31;4A,I,1,invent
+41;31;4A,VIII,50,invent
+41;32;32,X,3,incite;scare;drive out
+41;32;39,I,3,be terrified;be afraid
+41;32;39,II,1,remove fear
+41;33;2D,I,2,make room
+41;33;2D,V,1,make room
+41;33;2F,I,3,be corrupted;be ruined
+41;33;2F,IV,15,cause corruption
+41;33;42,I,10,disobey defiantly
+41;34;44,I,4,lose courage
+41;35;44,I,5,set out;depart;judge
+41;35;44,II,17,make clear;explain in detail
+41;36;2D,I,1,shame
+41;36;36,VII,3,rush;disperse
+41;36;44,II,17,bestow;prefer;favor
+41;36;44,V,1,assert superiority
+41;36;48,IV,1,go
+41;37;31,I,10,create
+41;37;31,VII,1,be cleft asunder
+41;39;44,I,88,do
+41;42;2F,I,2,miss
+41;42;2F,V,1,inspect
+41;42;47,I,19,understand
+41;42;47,V,1,obtain understanding
+41;43;31,II,1,think
+41;43;31,V,17,ponder;reflect
+41;43;47,V,1,wonder
+41;44;2D,IV,27,succeed
+41;44;42,VII,1,part
+41;46;2F,II,1,weaken in mind
+41;47;45,II,1,give understanding
+41;48;2A,I,3,escape
+41;48;31,I,3,overflow;gush forth;boil up
+41;48;32,I,3,be successful;attain
+41;48;36,II,1,entrust
+41;48;42,IV,1,recover
+41;4A;27,I,3,return
+41;4A;27,IV,3,give;restore
+41;4A;27,V,1,incline
+41;4A;36,I,2,overflow
+41;4A;36,IV,7,depart
+42;28;31,IV,1,provide a grave
+42;28;33,VIII,1,acquire
+42;28;36,I,5,withhold;withdraw;close
+42;28;44,I,9,accept
+42;28;44,IV,9,approach
+42;28;44,V,10,accept
+42;2A;31,I,1,be stingy
+42;2A;44,I,83,kill
+42;2A;44,II,4,kill
+42;2A;44,III,54,fight
+42;2A;44,VIII,4,fight
+42;2D;45,VIII,1,attempt
+42;2F;2F,I,4,tear
+42;2F;31,I,25,restrict;control;have power
+42;2F;31,II,16,determine;plot
+42;2F;33,II,1,sanctify
+42;2F;45,I,2,precede;proceed
+42;2F;45,II,27,send forth;offer
+42;2F;45,V,2,precede;proceed
+42;2F;45,X,4,advance;precede
+42;2F;48,VIII,1,follow
+42;30;41,I,9,cast;throw;hurl
+42;31;27,I,16,read;recite
+42;31;27,IV,1,make recite
+42;31;28,I,11,approach;go near
+42;31;28,II,5,bring close
+42;31;28,VIII,5,approach;go near
+42;31;31,I,5,cool;comfort
+42;31;31,IV,4,ratify;affirm
+42;31;31,X,1,remain
+42;31;36,I,1,pass
+42;31;36,IV,6,lend;loan
+42;31;41,VIII,4,commit;acquire;earn
+42;33;37,IV,3,be just
+42;33;45,I,2,distribute
+42;33;45,III,1,swear
+42;33;45,IV,20,swear
+42;33;45,VI,1,distribute
+42;33;45,X,1,seek division
+42;33;48,I,3,harden
+42;34;39;31,IV,1,shiver
+42;35;2F,I,1,be moderate
+42;35;31,I,1,shorten
+42;35;31,IV,1,cease
+42;35;35,I,20,narrate
+42;35;45,I,1,shatter
+42;36;36,VII,1,collapse
+42;36;4A,I,59,decree;decide;judge
+42;37;39,I,12,cut
+42;37;39,II,12,cut;divide
+42;37;39,V,5,cut;severe
+42;39;2F,I,12,sit
+42;41;48,I,1,pursue
+42;41;48,II,4,send;follow
+42;44;28,I,1,return
+42;44;28,II,6,turn;alternate
+42;44;28,V,1,turn around
+42;44;28,VII,17,turn back;return
+42;44;39,IV,1,withhold
+42;44;44,I,1,be little
+42;44;44,II,1,make few
+42;44;44,IV,1,carry
+42;44;4A,I,1,be displeased
+42;46;2A,I,2,be obedient
+42;46;37,I,4,despair
+42;47;31,I,1,oppress
+42;48;44,I,1618,say
+42;48;44,V,2,fabricate;make up
+42;48;45,I,33,stand up;rise;establish
+42;48;45,IV,54,establish
+42;48;45,X,10,be upright;be straight;stand firm
+42;4A;36,II,2,appoint;destine
+43;28;28,I,1,cast
+43;28;2A,I,3,be disgraced
+43;28;31,I,8,be great
+43;28;31,II,4,magnify
+43;28;31,IV,1,admire greatly
+43;28;31,V,2,be arrogant
+43;28;31,X,40,be arrogant
+43;28;43;28,I,1,overturn
+43;2A;28,I,49,write;prescribe;ordain
+43;2A;28,III,1,give writing
+43;2A;28,VIII,1,write
+43;2A;45,I,21,conceal;hide
+43;2B;31,I,2,be many;be numerous
+43;2B;31,II,1,increase
+43;2B;31,IV,2,be many;be frequent
+43;2B;31,X,3,multiply;acquire more
+43;2F;31,VII,1,fall and lose luster
+43;2F;4A,IV,1,withhold
+43;30;28,I,11,deny;lie
+43;30;28,II,176,deny;reject
+43;31;45,II,2,honor
+43;31;45,IV,4,honor;make comfortable;be generous
+43;31;47,I,17,dislike;hate
+43;31;47,II,1,make hateful
+43;31;47,IV,5,compel;force
+43;33;28,I,62,earn
+43;33;28,VIII,5,earn
+43;33;48,I,3,clothe;cover
+43;34;37,I,1,strip away
+43;34;41,I,14,remove;uncover
+43;41;31,I,289,disbelieve
+43;41;31,II,14,remove
+43;41;31,IV,1,be ngrateful;deny
+43;41;41,I,8,restrain;withhold;avert
+43;41;44,I,3,take charge;nurse;rear
+43;41;44,II,1,put in care
+43;41;44,IV,1,entrust
+43;41;4A,I,32,be sufficient
+43;44;27,I,1,protect
+43;44;41,II,7,burden
+43;44;45,II,20,speak
+43;44;45,V,4,speak
+43;45;44,IV,2,perfect;complete
+43;46;32,I,3,hoard
+43;46;46,IV,3,conceal
+43;48;2F,I,24,be near;nearly do;almost do
+43;48;31,II,3,wrap
+43;48;46,I,1358,be
+43;48;4A,I,1,brand
+43;4A;2F,I,8,scheme;plot;plan
+43;4A;44,I,2,measure
+43;4A;44,VIII,2,measure
+43;4A;46,X,2,give in;submit
+44;28;2B,I,30,remain;stay;hesitate;delay
+44;28;33,I,11,obscure;confuse;mix;wear
+44;2C;2C,I,2,persist
+44;2D;2F,IV,3,deviate;distort
+44;2D;42,I,2,join
+44;2D;42,IV,4,join
+44;30;30,I,1,delight
+44;32;45,IV,3,compel;make adhere
+44;37;41,V,1,be cautious
+44;38;4A,I,1,blaze
+44;39;28,I,9,play
+44;39;46,I,23,curse
+44;3A;48,I,1,make noise
+44;41;2A,I,1,turn away
+44;41;2A,VIII,2,look back
+44;41;2D,I,1,burn
+44;41;38,I,1,utter
+44;41;41,VIII,1,wind
+44;41;48,IV,3,find
+44;42;37,VIII,2,pick
+44;42;41,I,3,swallow
+44;42;45,VIII,1,swallow
+44;42;4A,I,14,receive;meet
+44;42;4A,II,6,grant;receive
+44;42;4A,III,3,they meet
+44;42;4A,IV,71,cast;throw;meet;offer
+44;42;4A,V,4,cast;throw;offer
+44;42;4A,VIII,7,meet
+44;45;32,I,3,criticize;insult
+44;45;33,I,4,to;touch;have contact
+44;45;33,VIII,1,seek
+44;45;45,I,2,bring forward;come
+44;47;2B,I,2,loll the;tongue
+44;47;45,IV,1,inspire
+44;47;48,I,1,distract;divert
+44;47;48,IV,4,distract;divert
+44;48;2A,I,1,not be
+44;48;45,I,3,blame
+44;48;45,VI,1,blame
+44;48;4A,I,3,distort
+44;48;4A,II,1,turn aside
+44;4A;2A,I,1,deprive
+44;4A;33,I,89,not be
+44;4A;46,I,2,deal gently;relax
+44;4A;46,IV,1,make pliable
+45;2A;39,II,18,grant;bestow;provide
+45;2A;39,V,11,enjoy
+45;2A;39,X,6,profit;benifit;enjoy
+45;2B;44,V,1,assume a likeness
+45;2D;35,II,2,purify;purge
+45;2D;42,I,2,destroy
+45;2D;46,VIII,2,test;examine
+45;2D;48,I,3,eliminate;erase
+45;2F;2F,I,13,spread;extend;prolong
+45;2F;2F,IV,10,reinforce;extend;provide;aid
+45;31;2C,I,2,release
+45;31;2D,I,1,be insolent
+45;31;2F,I,1,persist
+45;31;31,I,10,pass;continue
+45;31;36,I,1,be ill
+45;31;4A,I,4,dispute;doubt
+45;31;4A,III,1,argue
+45;31;4A,VIII,5,dispute;doubt
+45;32;42,II,2,disintegrate;disperse
+45;33;2D,I,3,wipe
+45;33;2E,I,1,transform
+45;33;33,I,56,to;touch
+45;33;33,VI,2,to;touch
+45;33;43,II,1,hold fast
+45;33;43,IV,18,retain;withhold
+45;33;43,X,3,grasp;hold fast
+45;33;48,IV,1,reach evening
+45;34;4A,I,21,walk
+45;36;4A,I,4,go on;continue;pass
+45;37;31,IV,7,shower;send rain
+45;37;48,V,1,swagger
+45;43;2B,I,4,stay;remain
+45;43;31,I,22,plot;scheme;plan
+45;43;46,II,13,establish
+45;43;46,IV,1,give power
+45;44;27,I,6,fill
+45;44;27,VIII,1,fill
+45;44;43,I,44,possess;have power
+45;44;44,IV,3,dictate
+45;44;48,IV,9,give respite
+45;46;39,I,12,prevent
+45;46;46,I,16,favor
+45;46;4A,I,3,wish
+45;46;4A,II,2,arouse desire
+45;46;4A,IV,3,emit
+45;46;4A,V,6,wish
+45;47;2F,I,1,prepare
+45;47;2F,II,1,spread
+45;47;44,II,2,give respite
+45;47;44,IV,1,give respite
+45;48;2A,I,39,die
+45;48;2A,IV,21,cause death
+45;48;2C,I,1,surge
+45;48;31,I,2,shake;sway
+45;4A;2F,I,3,shake
+45;4A;31,I,1,get provision
+45;4A;32,I,2,sepearte;distinguish;stand apart
+45;4A;32,V,1,burst
+45;4A;32,VIII,1,stand apart
+45;4A;44,I,3,deviate;assult;incline
+46;27;4A,I,3,distance;become remote;keep away
+46;28;27,II,46,inform
+46;28;27,IV,4,inform
+46;28;27,X,1,ask;inform
+46;28;2A,I,1,produce
+46;28;2A,IV,16,make grow
+46;28;30,I,10,throw;cast
+46;28;30,VIII,2,withdraw
+46;28;32,VI,1,call
+46;28;37,X,1,draw correct conclusion
+46;2A;42,I,1,raise
+46;2B;31,VIII,1,scatter
+46;2C;48,I,2,save;escape
+46;2C;48,II,37,save;deliver
+46;2C;48,III,1,consult privately
+46;2C;48,IV,23,save
+46;2C;48,VI,4,hold secret counsel
+46;2D;2A,I,4,carve
+46;2D;31,I,1,sacrifice
+46;2F;48,I,1,call
+46;2F;48,III,44,call
+46;30;31,I,4,vow;worn
+46;30;31,IV,44,warn
+46;32;39,I,10,take way;remove;withdraw
+46;32;39,III,1,dispute
+46;32;39,VI,7,dispute;disagree
+46;32;3A,I,4,cause discord
+46;32;41,IV,2,be intoxicated
+46;32;44,I,6,descend;bring down
+46;32;44,II,62,send down;reveal
+46;32;44,IV,183,send down;reveal
+46;32;44,V,7,descend;bring down
+46;33;2E,I,2,abolish;abrogate
+46;33;2E,X,1,transcribe
+46;33;41,I,3,scatter;blow away;blast
+46;33;44,I,2,descend;hasten
+46;33;4A,I,35,forget
+46;33;4A,IV,7,make forget
+46;34;27,II,1,bring up
+46;34;27,IV,20,produce;raise
+46;34;31,I,3,spread;lay open
+46;34;31,IV,3,raise;revive;resurrect
+46;34;31,VIII,3,disperse
+46;34;32,I,2,rise
+46;34;32,IV,1,raise
+46;35;28,I,2,be fixed;labour
+46;35;2A,IV,2,listen;play attention
+46;35;2D,I,5,advise
+46;35;31,I,59,help
+46;35;31,VI,1,help
+46;35;31,VIII,7,defend;help
+46;35;31,X,2,seek help
+46;36;2C,I,1,roast
+46;37;42,I,9,speak
+46;37;42,IV,2,make speak
+46;38;31,I,87,look;see
+46;38;31,IV,12,give respite
+46;38;31,VIII,8,wait
+46;39;42,I,1,shout
+46;39;45,I,18,be excellent
+46;39;45,II,1,favor
+46;39;45,IV,17,bestow favor
+46;3A;36,IV,1,shake
+46;41;2E,I,19,blow;breathe
+46;41;2F,I,4,be exhausted
+46;41;30,I,3,pass
+46;41;31,I,8,go forth
+46;41;33,V,1,breathe
+46;41;33,VI,1,aspire
+46;41;34,I,1,pasture
+46;41;39,I,31,profit;benifit
+46;41;42,III,2,be hypocritical
+46;41;42,IV,68,spend
+46;41;4A,I,1,exile
+46;42;28,II,1,explore
+46;42;30,IV,4,save
+46;42;30,X,1,take back
+46;42;31,I,1,blow
+46;42;35,I,7,decrease;reduce;lessen
+46;42;36,I,6,break
+46;42;36,IV,1,weigh
+46;42;45,I,4,resent;take revenge
+46;42;45,VIII,6,take retribution
+46;43;2B,I,6,break (oath)
+46;43;2D,I,14,marry
+46;43;2D,IV,3,marry
+46;43;2D,X,1,marry
+46;43;31,I,1,feel unfamiliar
+46;43;31,II,1,disguise
+46;43;31,IV,3,deny
+46;43;33,I,1,turn
+46;43;33,II,1,reverse
+46;43;35,I,2,turn
+46;43;41,X,3,disdain
+46;47;31,I,2,repel
+46;47;4A,I,32,forbid
+46;47;4A,VI,1,forbid
+46;47;4A,VIII,16,refrain;cease;desist
+46;48;27,I,1,burden
+46;48;28,IV,11,turn
+46;4A;44,I,11,reach
+47;27;2A,I,4,bring
+47;28;37,I,8,go down
+47;2C;2F,V,1,arise from sleep for prayer
+47;2C;31,I,5,avoid
+47;2C;31,III,16,emigrate
+47;2C;39,I,1,sleep
+47;2F;45,II,1,demolish
+47;2F;4A,I,144,guide
+47;2F;4A,VIII,40,be guided
+47;31;39,I,2,rush;hasten
+47;32;27,X,21,mock;ridicule
+47;32;32,I,1,shake
+47;32;32,VIII,4,stir;move
+47;32;45,I,2,defeat
+47;34;34,I,1,bring down leaves
+47;44;43,I,5,die;be destroyed
+47;44;43,IV,51,destroy
+47;44;44,IV,4,to;be dedicated
+47;45;45,I,8,determine;plan;plot;desire
+47;45;45,IV,1,worry
+47;48;2F,I,11,be Jewish
+47;48;31,VII,1,collapse
+47;48;46,IV,2,humiliate
+47;48;4A,I,8,desire
+47;48;4A,X,1,entice
+47;4A;27,II,2,facilitate
+47;4A;2A,I,1,Come on
+47;4A;2C,I,2,wither;dry
+47;4A;45,I,1,roam
+48;28;42,IV,1,destroy
+48;2A;31,I,1,deprive
+48;2B;42,III,1,bound
+48;2B;42,IV,1,bind
+48;2C;28,I,1,be down
+48;2C;2F,I,106,find
+48;2C;33,IV,3,feel;sense
+48;2C;41,IV,1,make expedition
+48;2C;44,I,3,feel fear;be afraid
+48;2C;47,II,2,direct;turn
+48;2C;47,V,1,turn
+48;2D;4A,IV,72,reveal;inspire
+48;2F;2F,I,17,love;wish
+48;2F;39,I,1,disregard
+48;2F;39,II,1,forsake
+48;30;31,I,45,leave;forsake
+48;31;2B,I,13,inherit
+48;31;2B,IV,12,make inherit
+48;31;2F,I,2,come
+48;31;2F,IV,1,lead
+48;31;4A,III,4,hide;conceal;cover
+48;31;4A,IV,1,ignite
+48;31;4A,VI,2,hide
+48;32;31,I,7,bear
+48;32;39,I,3,set in rows
+48;32;39,IV,2,grant power
+48;32;46,I,3,weigh
+48;33;37,I,1,penetrate the center
+48;33;39,I,6,encompass;extend
+48;33;42,I,1,envelops
+48;33;42,VIII,1,be full
+48;33;45,I,1,brand
+48;33;48;33,I,4,whisper
+48;35;41,I,13,attribute;ascribe
+48;35;44,I,10,join;reach
+48;35;44,II,1,convey
+48;35;4A,I,1,make
+48;35;4A,II,11,enjoin
+48;35;4A,IV,5,make;instruct;enjoin
+48;35;4A,VI,5,enjoin;transmit
+48;36;39,I,21,deliver;give birth
+48;36;39,IV,1,be active
+48;37;27,I,3,step;trod;trample
+48;37;27,III,1,adjust
+48;39;2F,I,70,promise
+48;39;2F,III,4,appoint
+48;39;2F,IV,1,threaten
+48;39;2F,VI,1,make an appointment
+48;39;38,I,15,instruct;advise;preach
+48;39;4A,I,1,be conscious
+48;39;4A,IV,2,hoard;keep
+48;41;36,IV,1,hasten
+48;41;42,II,1,cause reconciliation
+48;41;4A,II,18,pay in full;fulfill
+48;41;4A,IV,18,fulfill
+48;41;4A,V,24,pass away;die
+48;41;4A,X,1,take in full
+48;42;28,I,1,spread
+48;42;2A,II,1,be gathered;an appointed time
+48;42;2F,IV,5,kindle;heat;ignite;light
+48;42;2F,X,1,kindle
+48;42;31,II,1,respect
+48;42;39,I,12,fall;occur;fulfill
+48;42;39,IV,1,cause
+48;42;41,I,3,make stand
+48;42;4A,I,16,save;protect
+48;42;4A,VIII,166,be righteous;fear (Allah)
+48;43;27,V,1,lean
+48;43;27,VIII,1,recline
+48;43;32,I,1,strike
+48;43;44,II,2,entrust;put in charge
+48;43;44,V,40,put trust
+48;44;2C,I,3,penetrate;pass
+48;44;2C,IV,10,cause enter
+48;44;2F,I,9,beget;be born
+48;44;4A,I,1,be close
+48;44;4A,II,30,turn
+48;44;4A,V,78,turn
+48;46;4A,I,1,slacken
+48;47;28,I,22,grant;bestow
+48;47;46,I,5,weaken
+4A;27;33,I,8,despair
+4A;27;33,X,2,despair;give up hope
+4A;33;31,II,11,make easy
+4A;33;31,V,2,be easy
+4A;33;31,X,2,obtain with ease
+4A;42;46,IV,12,believe firmly
+4A;42;46,X,2,be convinced;be certain
+4A;45;45,V,3,aim;do tayammum

@@ -1,0 +1,18 @@
+{
+   "id": 65,
+   "title": "publikasi",
+   "cards":[
+        {
+           "html":"<div class='github-card' data-github='Chetabahana' data-width='250' data-height='400' data-theme='medium'></div>"
+        },
+        {
+           "html":"<div class='github-card' data-github='MarketLeader' data-width='250' data-height='400' data-theme='medium'></div>"
+        },
+        {
+           "html":"<a class='twitter-timeline' data-width='250' data-height='400' href='https://twitter.com/chetabahana?ref_src=twsrc%5Etfw'>Tweets by chetabahana</a> <script async src='https://platform.twitter.com/widgets.js'></script>"
+        },
+        {
+           "html":"<div id='fb-root'></div><script async defer crossorigin='anonymous' src='https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v5.0&appId=347564432313610&autoLogAppEvents=1'></script><div class='fb-page' data-href='https://www.facebook.com/chetabahana/' data-tabs='timeline' data-width='250' data-height='400' data-small-header='false' data-adapt-container-width='false' data-hide-cover='false' data-show-facepile='false'><blockquote cite='https://www.facebook.com/chetabahana/' class='fb-xfbml-parse-ignore'><a href='https://www.facebook.com/chetabahana/'>Chetabahana</a></blockquote></div>"
+        }
+    ]
+}
