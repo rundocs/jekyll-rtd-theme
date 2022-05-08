@@ -1,0 +1,22 @@
+{
+    "id": 58,
+    "title": "sequence",
+    "js": "feeds/skema/diagram/sequence.js",
+    "items": [
+        {
+            "style": {
+                "theme": "simple",
+                "font-size": 15
+            },
+            "guide": {
+                "xml": "/feeds.xml",
+                "link": "https://en.wikipedia.org/wiki/CoffeeScript",
+                "file": "sequence/js/sequence-diagram-snap-min.js",
+                "from": "https://coffeescript.org/#overview",
+                "to": "https://coffeescript.org/v1/annotated-source/grammar.html",
+                "docs": "https://chetabahana.github.io/styles/skema/doc/index.html"
+            },
+            "skema": "Title: Bagan Eksekusi\nparticipant Buka Toko\nparticipant Stok Barang\nparticipant Merchant Center\nparticipant Peluang Terbaik\nparticipant Portfolio\nparticipant Network\nBuka Toko-->Stok Barang: Optimasi\nStok Barang->Merchant Center: Cloud-Task-API\nMerchant Center->Peluang Terbaik: Cloud-Site-API\nPeluang Terbaik->>Portfolio: Google-Ads-API\nPortfolio->>Stok Barang: Google-Trend-API\nPortfolio-->>Network: eShop SEO\n"
+        }
+    ]
+}

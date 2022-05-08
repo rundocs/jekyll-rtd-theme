@@ -1,0 +1,22 @@
+{
+    "id": 62,
+    "title": "tree",
+    "js": "feeds/skema/diagram/tree.js",
+    "items": [
+        {
+            "style": {
+                "theme": "simple",
+                "font-size": 14
+            },
+            "guide": {
+                "xml": "/feed/feeds/user.xml",
+                "link": "https://chetabahana.github.io/tree/doc/guides/writing-tests.html",
+                "file": "tree/test/fixtures/three.graphql/build.js",
+                "from": "https://github.com/chetabahana/scenetree/blob/gh-pages/node_modules/three/examples/js/loaders/VRMLLoader.js",
+                "to": "https://github.com/chetabahana/threejs/blob/master/examples/js/loaders/VRMLLoader.js#L5",
+                "docs": "https://nodejs.org/api/all.json"
+            },
+            "skema": "## Render a scene into a viewport with\n## a PerspectiveCamera and a Scene containing\n## a Mesh constructed with a BoxGeometry and\n## a MeshBasicMaterial\nquery render($width: Float,\n$height: Float,\n#$rotateX: Float,\n#$rotateY: Float\n$tickr: Float) {\n## Describes renderer\nWebGLRenderer {\n## set viewport width/height based on context inputs\nsetSize(width: $width, height: $height)\n\n## Configures a PerspectiveCamera\nPerspectiveCamera(fov: 75, aspect: 1, near: 1, far: 10000) {\nsetPosition(z: 500)\n}\n\n## Describes a Scene\nScene {\n\n## Describes a named Mesh\na: Mesh(name: \"box-a\") {\nsetRotation(x: $tickr)\nsetPosition(x: 200, y: 200)\n...BoxWireframe\n}\n\nb: Mesh(name: \"box-b\") {\nsetPosition(x: -200, y: -200)\nsetRotation(y: $tickr)\n...Box\n}\n\nc: Mesh(name: \"box-c\") {\nsetRotation(z: $tickr)\nsetPosition(x: 0)\n...Box\n}\n}\n}\n}\n\nfragment BoxWireframe on Mesh {\n## Contruct geometry and material for mesh\nBoxGeometry(width: 100, height: 100, depth: 100)\nMeshBasicMaterial(wireframe: true)\n}\n\nfragment Box on Mesh {\nBoxGeometry(width: 100, height: 100, depth: 100)\nMeshBasicMaterial(wireframe: false)\n}\n"
+        }
+    ]
+}
