@@ -5,27 +5,31 @@ sort: 1
 # Conda
 
 ## Installation
+
 ### I. Install Anaconda on Linux (USC-locally installation)
-Download Anaconda installer for Linux.
-https://repo.anaconda.com/miniconda/
-                          Anaconda3-2019.03-Linux-x86_64
+
+Download [Anaconda installer for Linux](https://repo.anaconda.com/miniconda/)
+```
+Anaconda3-2019.03-Linux-x86_64
+```
 
 Consider Miniconda for light, and reduce error
+```
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
 
-Put this file in folder: /uhome/p001cao/local/W_Source_Code
+Put this file in folder: `/uhome/p001cao/local/W_Source_Code`
 
 ```shell
 cd /uhome/p001cao/local/W_Source_Code
-# Installing:
+
 module load compiler/gcc-11.2
 export PATH=/uhome/p001cao/local/app/compiler/gcc-11.2/bin:$PATH
-export CC=gcc
-export CXX=g++
-export FORTRAN=gfortran
-##
+export CC=gcc  export CXX=g++  export FORTRAN=gfortran
+
 bash Miniconda3-py37_4.9.2-Linux-x86_64.sh -u
-#or bash Miniconda3-py37_4.9.2-Linux-x86_64.sh 
+# or bash Miniconda3-py37_4.9.2-Linux-x86_64.sh 
+
 choose folder to install:   /uhome/p001cao/local/app/miniconda3
 running conda init?  NO
 ... finish
@@ -61,6 +65,7 @@ or :
 set     topdir          /uhome/p001cao/local/Anaconda3
 module load conda3
 ```
+```
 if [ module-info mode load ] {
    puts stdout "source   $topdir/bin/activate py27env"
 }
@@ -72,7 +77,7 @@ pip     update     --all
 Or use conda with specific name of env
 module load conda3
 conda install -n py37env numpy scipy
-
+```
 ```
 # or 
 module load conda3
@@ -101,16 +106,21 @@ C:\DevProgram\miniconda3\Library\bin
 ```
 
 - for environment named py37 (should not use to avoid errors, maybe in tf)
+```
 C:\DevProgram\miniconda3\envs\py37
 C:\DevProgram\miniconda3\envs\py37\Scripts
 C:\DevProgram\miniconda3\envs\py37\Library\bin
+```
 
 - Set default environment in anaconda On Windows: https://tinyurl.com/y2meq2wm
 right-lick on: Anaconda Powershell Prompt (miniconda3) shorcut --> properties -->Target:
+```
 change: ...; conda activate 'C:\DevProgram\miniconda3'
 to : ...; conda activate 'C:\DevProgram\miniconda3\envs\py37'
+```
 
 ## III. Environments management & install packages
+
 With conda, you can create, export, list, remove, and update environments that have different versions of Python and/or packages installed in them. Switching or moving between environments is called activating the environment
 1. To see list of all environments:
 conda info --envs             # or
@@ -121,15 +131,18 @@ conda list -n myenv
 conda list -n py37env 
 If the environment is activated,
 conda list
- 2. Create an environment
+
+2. Create an environment
 To create an environment with a specific version of Python:
+```
 conda create -n py36mpi python=3.6
 conda create -n py27env python=2.7
 To create an environment with a specific version of a package:
 conda create -n py36mpi python=3.6 scipy=1.3.1 numpy=1.16.5
-OR:
+## or:
 conda create -n py37env python=3.7 
 conda install -n py37env scipy=1.3.1 numpy=1.16.5
+```
 
 The default packages are installed every time you create a new environment. To create an environment with no install default packages:
 conda create --no-default-packages -n myenv python
@@ -155,26 +168,29 @@ source activate py37env
 Remove env:  conda  env  remove   -n  myenv
 
 
-### Install & Update packages in Conda
+## Install & Update packages in Conda
 install a package also replaces the current package. open Anaconda_Prompt
-
-#### Uninstall all packages
 ```
+### Uninstall all packages
 conda clean --yes --all
 ```
 
 4.1 Searching for packages: To see if a specific package, such as SciPy, is available for installation:
+```
 conda search  scipy
 conda search -c conda-forge mpi4py     # find package
 conda search -c intel       mpi4py      # in used
 conda search -c anaconda    mpi4py  
+```
 
 4.2 Installing packages: in conda prompt, activated environment
+```
 conda activate  myenv
 conda install python=3.6     # to use intel-mpi4py on window
 conda install -c intel mpi4py=3.0.0=py36_intel_0
 Install into specific environment:
 conda install -n py37ompi scipy=1.3.1 numpy=1.16.5 python=3.7.4 
+```
 Ref:
 https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 https://protostar.space/why-you-need-python-environments-and-how-to-manage-them-with-conda
@@ -256,7 +272,8 @@ conda install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely s
 ## env for polymer package: mbuild
 conda create -n py37mbuild python=3.7
 conda activate py37mbuild
-mamba install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy mbuild
+conda install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy 
+conda install -y -c conda-forge mbuild rdkit py3Dmol
 
 ## env for polymer package: pysimm
 conda create -n py37pysimm python=3.7
@@ -266,8 +283,8 @@ conda install -c conda-forge ambertools  # just run on linux
 
 
 ## env for ovito interpreter
-conda create -n py36ovito python=3.6
-conda activate py36ovito
+conda create -n py37ovito python=3.7
+conda activate py37ovito
 conda install -y -c conda-forge jupyterlab
 
 ```
