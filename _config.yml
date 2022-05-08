@@ -207,7 +207,7 @@ flow_labels:
 # https://stackoverflow.com/a/17260660/4058484
 # https://stackoverflow.com/a/30828197/4058484
 
-baseurl: ""
+# baseurl: ""
 basedir: _feeds
 username: chetabahana
 organization: marketleader
