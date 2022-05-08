@@ -15,7 +15,7 @@
 *
 *  sort feeds base on weight (reversed order)
 *
-{% endcomment %}{% assign feeds = site.feeds | sort: 'weight' %}{% assign my_paths = '' | split: ',' %}{% for my_size in my_path reversed %}{% for feed in feeds %}{% assign my_dir = feed.path | split: '/' | pop | join: '/' %}{% unless my_dir == my_base %}{% assign my_split = feed.path | split: '/' %}{% assign size = my_split | size %}{% if size == my_size %}{% assign my_paths = my_paths | push: feed %}{% endif %}{% endunless %}{% endfor %}{% endfor %}{{ my_paths | jsonify }}{% comment %}
+{% endcomment %}{% assign feeds = site.feeds | sort: 'weight' %}{% assign my_paths = '' | split: ',' %}{% for my_size in my_path reversed %}{% for feed in feeds %}{% assign my_dir = feed.path | split: '/' | pop | join: '/' %}{% unless my_dir == my_base %}{% assign my_split = feed.path | split: '/' %}{% assign size = my_split | size %}{% if size == my_size %}{% assign my_paths = my_paths | push: feed %}{{ feed.path | jsonify }}{% endif %}{% endunless %}{% endfor %}{% endfor %}{% comment %}
 *
 *  capture each outputs
 *
