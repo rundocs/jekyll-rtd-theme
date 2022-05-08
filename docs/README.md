@@ -139,12 +139,6 @@ Let's assign another pairs (5, 7, 11, 13, 17,19) in to a combination so it will 
 
 See that this flows starting from π(10) and finalize by pairing of Δ12. So here we can get the idea of **10 number becoming 10 primes**.
 
-```
-{% raw %}{% include list.liquid all=true %}{% endraw %}
-
-{% include list.liquid all=true %}
-```
-
 Let's discuss in more detail about the said primes.
 
 ### [2nd Step: Q17(30, 36)](/../../../classes)
