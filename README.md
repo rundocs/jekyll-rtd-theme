@@ -35,7 +35,7 @@ The First Series: 1, 2, 4, 8 is the doubling sequence. The even numbers are asso
 The type of progression, which combines both the additive and multiplicative growth procedures of the other two progressions, is called ‘harmonic’.  The most important and mysterious characteristic of this form of harmonic, proportional progression is the fact that the inverse of any harmonic progression is an arithmetic progression.  Thus 2, 3, 4, 5…is an **ascending arithmetic** progression, while the inverse series (1/2, 1/3, ¼, 1/5…) is a **descending harmonic** progression. _(Source: [Cosmic-Core](https://www.cosmic-core.org/free/pythagorean-mathematics-gnomons-the-lambda-and-the-tetraktys/))_.
 ```
 
-These two parallel yet inversing progressions not only provide the foundations of music, but more generally provide a mathematical model with which to investigate the complementary or opposed symmetries of  dualized, yet harmonically integrated, whole.  For this reason the musical metaphor was the cornerstone of ancient philosophy, applicable to both physical and metaphysical domains.
+These two strips follow the shape of an inverted “V” or the “Platonic Lambda”. Lambda is the 11th letter of the Greek alphabet. The triangular form represents its divine nature like the tetraktys that act as our [base frame](/docs). 
 
 ![Inner Hexagon](https://user-images.githubusercontent.com/36441664/83331599-55cb5c00-a2c1-11ea-833e-b14dd79b5f2d.jpg)
 
