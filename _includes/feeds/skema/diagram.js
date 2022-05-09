@@ -260,7 +260,7 @@
         if (!init) init = editor.getValue();
 
         if (!link) link = $('#tautan a').clone();
-        if (!feed) feed = '{{ site.json_link }}?t=' + $.now();
+        if (!feed) feed = '/feed.json?t=' + $.now();
 
         if ($(".theme").val() == 'hand' && pad) pad = null;
         else if (!pad) pad = (params.pad)? (params.pad * 1): null;
