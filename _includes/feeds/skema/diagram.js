@@ -260,7 +260,7 @@
         if (!init) init = editor.getValue();
 
         if (!link) link = $('#tautan a').clone();
-        if (!feed) feed = '/feed.json?t=' + $.now();
+        if (!feed) feed = '{{ site.json_link }}?t=' + $.now();
 
         if ($(".theme").val() == 'hand' && pad) pad = null;
         else if (!pad) pad = (params.pad)? (params.pad * 1): null;
@@ -279,7 +279,7 @@
             *  loop(3‘) => 2
             *
             *  This will finaly land to id: 128
-            *  https://chetabahana.github.io/feed.json
+            *  https://eq19.github.io/feed.json
             *  https://github.com/chetabahana/chetabahana.github.io/blob/Chetabahana/assets/_feeds/skema/diagram.js
             *
             *                  },
