@@ -2,8 +2,8 @@
 sort: 4
 ---
 
-# thatool.free_energy_cal 
+# thatool.free_energy
 
-This module contains classes and functions relate to the calcualtion of free energy.
+This module contains classes and functions related to the calcualtion of free energy.
 
 {% include list.liquid all=true %}
