@@ -2,10 +2,10 @@ title: Thang's Notes
 lang: en
 description: You cannot teach a man anything, you can only help him find it within himself. —– Galileo Galilei (1564–1642)
 
-# theme: null
+theme: null
 # remote_theme: rundocs/jekyll-rtd-theme
 
-dark_theme_toggle        : false
+dark_theme_toggle        : true
 
 # debug:
 #   compress: true
