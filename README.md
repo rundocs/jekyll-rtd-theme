@@ -27,6 +27,12 @@ Each cycles will have a total of five (5) steps prime algorithm on base 114-31=8
 
 ![Inner Hexagon](https://user-images.githubusercontent.com/36441664/83331599-55cb5c00-a2c1-11ea-833e-b14dd79b5f2d.jpg)
 
+```note
+The type of progression, which combines both the additive and multiplicative growth procedures of the other two progressions, is called ‘harmonic’.  The most important and mysterious characteristic of this form of harmonic, proportional progression is the fact that the inverse of any harmonic progression is an arithmetic progression.  Thus 2, 3, 4, 5…is an ascending arithmetic progression, while the inverse series (1/2, 1/3, ¼, 1/5…) is a descending harmonic progression. (Source: [Cosmic Core](https://www.cosmic-core.org/free/pythagorean-mathematics-gnomons-the-lambda-and-the-tetraktys/)_
+```
+
+These two parallel yet inversing progressions not only provide the foundations of music, but more generally provide a mathematical model with which to investigate the complementary or opposed symmetries of  dualized, yet harmonically integrated, whole.  For this reason the musical metaphor was the cornerstone of ancient philosophy, applicable to both physical and metaphysical domains.
+
 ![Mutation](https://user-images.githubusercontent.com/36441664/84945494-89a3df80-b111-11ea-97d2-8d2597b315af.png)
 
 ## Quick start
