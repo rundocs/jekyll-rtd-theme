@@ -16,4 +16,29 @@ pip install -e .
 <!-- ![pic](https://icme.hpc.msstate.edu/mediawiki/images/e/e7/4kovito.gif) -->
 ![pic](figure/hBN_PMMA.gif)
 
+```
+thatool
+    │   data.py  
+    │
+    └───filetool
+    │   │   define_script.py
+    |   |   LmpFrame.py
+    │   │   ...
+    │   
+    └───free_energy_cal
+    │   │   Helmholtz_excess_UF.py
+    │   |   replica_logPD_intergration.py
+    │   │   ...
+    └───modeling
+    │   │   box_orientation.py
+    │   |   crystal3D.py
+    │   │   ...
+    └───utils
+    │   │   coord_rotation.py
+    │   |   unit_convert.py
+    │   │   ...
+    |   
+```
+
+
 {% include list.liquid all=true %}
