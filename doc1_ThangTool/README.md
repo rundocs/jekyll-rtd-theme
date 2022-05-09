@@ -20,7 +20,7 @@ pip install -e .
 
 | | |
 |-|-|
-{% include list.liquid all=true %} |  ```
+{% include list.liquid all=true %} |  <pre> ```
 thatool
     │   data.py  
     │
@@ -42,4 +42,4 @@ thatool
     │   |   unit_convert.py
     │   │   ...
     |   
-```
+``` </pre>
