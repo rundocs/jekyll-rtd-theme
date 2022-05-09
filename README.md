@@ -25,9 +25,9 @@ Each cycles will have a total of five (5) steps prime algorithm on base 114-31=8
 
 ### The Lambda
 
-The Lambda is a numerical-geometric figure that was studied by the ancient Greeks. It was described by Plato in the Timaeus as the ‘World Soul’. Plato states that God created the Cosmic Soul using two mathematical strips of 1, 2, 4, 8 and 1, 3, 9, 27.
+The Lambda is a numerical-geometric figure that was studied by the ancient Greeks. It was described by Plato in the Timaeus as the ‘World Soul’. Plato states that God created the Cosmic Soul using two mathematical strips of (1, 2, 4, 8) and (1, 3, 9, 27).
 
-The First Series: 1, 2, 4, 8 is the doubling sequence. The even numbers are associated with the _passive feminine principle_. The Second Series: 1, 3, 9, 27 is the tripling sequence. These odd numbers are associated with the _active masculine principle_.
+The First Series: (1, 2, 4, 8) is the doubling sequence. The even numbers are associated with the _passive feminine principle_. The Second Series: (1, 3, 9, 27) is the tripling sequence. These odd numbers are associated with the _active masculine principle_.
 
 ![Tetractys](https://user-images.githubusercontent.com/36441664/85205823-ea1c6200-b347-11ea-8d6f-1ab3f9ec95c8.gif)
 
@@ -35,7 +35,7 @@ The First Series: 1, 2, 4, 8 is the doubling sequence. The even numbers are asso
 The type of progression, which combines both the additive and multiplicative growth procedures of the other two progressions, is called ‘harmonic’.  The most important and mysterious characteristic of this form of harmonic, proportional progression is the fact that the inverse of any harmonic progression is an arithmetic progression.  Thus 2, 3, 4, 5…is an **ascending arithmetic** progression, while the inverse series (1/2, 1/3, ¼, 1/5…) is a **descending harmonic** progression. _(Source: [Cosmic-Core](https://www.cosmic-core.org/free/pythagorean-mathematics-gnomons-the-lambda-and-the-tetraktys/))_.
 ```
 
-These two strips follow the shape of an inverted “V” or the “Platonic Lambda”. Lambda is the 11th letter of the Greek alphabet. The triangular form represents its divine nature like the tetraktys that act as our [base frame](/docs). 
+These two strips follow the shape of an inverted “V” or the “Platonic Lambda”. Lambda is the 11th letter of the Greek alphabet. The triangular form represents its divine nature like the tetraktys acting as our [base frame](/docs). 
 
 ![Inner Hexagon](https://user-images.githubusercontent.com/36441664/83331599-55cb5c00-a2c1-11ea-833e-b14dd79b5f2d.jpg)
 
