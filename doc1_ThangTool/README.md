@@ -17,9 +17,6 @@ pip install -e .
 ![pic](figure/hBN_PMMA.gif)
 
 
-
-| | |
-|-|-|
 {% include list.liquid all=true %} 
 
 ```
