@@ -2,7 +2,7 @@
 sort: 42
 ---
 
-# Orgarnize and packing python Lib
+# Orgarnize and packing python packages
 
 ## Directory & File Structure
 Create folders and files as following structure:
