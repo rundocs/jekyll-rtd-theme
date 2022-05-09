@@ -16,7 +16,11 @@ pip install -e .
 <!-- ![pic](https://icme.hpc.msstate.edu/mediawiki/images/e/e7/4kovito.gif) -->
 ![pic](figure/hBN_PMMA.gif)
 
-```
+
+
+| | |
+|-|-|
+{% include list.liquid all=true %} |  ```
 thatool
     │   data.py  
     │
@@ -39,7 +43,3 @@ thatool
     │   │   ...
     |   
 ```
-
-| | |
-|-|-|
-{% include list.liquid all=true %} |
