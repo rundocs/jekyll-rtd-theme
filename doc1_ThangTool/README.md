@@ -40,4 +40,6 @@ thatool
     |   
 ```
 
-{% include list.liquid all=true %}
+| | |
+|-|-|
+{% include list.liquid all=true %} |
