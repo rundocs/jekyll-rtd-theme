@@ -27,14 +27,12 @@ Each cycles will have a total of five (5) steps prime algorithm on base 114-31=8
 
 The Lambda is a numerical-geometric figure that was studied by the ancient Greeks. It was described by Plato in the Timaeus as the ‘World Soul’. Plato states that God created the Cosmic Soul using two mathematical strips of 1, 2, 4, 8 and 1, 3, 9, 27.
 
-These two strips follow the shape of an inverted “V” or the **Platonic Lambda**. Lambda is the 11th letter of the Greek alphabet. It is triangular in nature, like the tetraktys discussed below. The triangular form represents its divine nature.
-
 The First Series: 1, 2, 4, 8 is the doubling sequence. As we discussed above, the even numbers are associated with the _passive feminine principle_. The Second Series: 1, 3, 9, 27 is the tripling sequence. These odd numbers are associated with the _active masculine principle_.
 
 ![Tetractys](https://user-images.githubusercontent.com/36441664/85205823-ea1c6200-b347-11ea-8d6f-1ab3f9ec95c8.gif)
 
 ```note
-The type of progression, which combines both the additive and multiplicative growth procedures of the other two progressions, is called ‘harmonic’.  The most important and mysterious characteristic of this form of harmonic, proportional progression is the fact that the inverse of any harmonic progression is an arithmetic progression.  Thus 2, 3, 4, 5…is an **ascending arithmetic** progression, while the inverse series (1/2, 1/3, ¼, 1/5…) is a **descending harmonic** progression. _(Source: [Cosmic Core](https://www.cosmic-core.org/free/pythagorean-mathematics-gnomons-the-lambda-and-the-tetraktys/)_
+The type of progression, which combines both the additive and multiplicative growth procedures of the other two progressions, is called ‘harmonic’.  The most important and mysterious characteristic of this form of harmonic, proportional progression is the fact that the inverse of any harmonic progression is an arithmetic progression.  Thus 2, 3, 4, 5…is an **ascending arithmetic** progression, while the inverse series (1/2, 1/3, ¼, 1/5…) is a **descending harmonic** progression. _(Source: [Cosmic-Core](https://www.cosmic-core.org/free/pythagorean-mathematics-gnomons-the-lambda-and-the-tetraktys/))_.
 ```
 
 These two parallel yet inversing progressions not only provide the foundations of music, but more generally provide a mathematical model with which to investigate the complementary or opposed symmetries of  dualized, yet harmonically integrated, whole.  For this reason the musical metaphor was the cornerstone of ancient philosophy, applicable to both physical and metaphysical domains.
