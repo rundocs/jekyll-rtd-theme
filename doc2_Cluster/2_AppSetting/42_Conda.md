@@ -267,12 +267,12 @@ Install in envs
 ## env for general use
 conda create -n py37 python=3.7
 conda activate py37
-conda install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy
+conda install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy natsort
 
 ## env for polymer package: mbuild
 conda create -n py37mbuild python=3.7
 conda activate py37mbuild
-conda install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy 
+conda install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy natsort
 conda install -y -c conda-forge mbuild rdkit py3Dmol
 
 ## env for polymer package: pysimm
