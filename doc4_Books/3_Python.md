@@ -8,7 +8,7 @@ sort: 3
 
 [A Primer on Scientific Programming withPython](http://202.91.76.90:81/fdScript/RootOfEBooks/E%20BOOKS%20COLLECTION%202020%20%20DATA%202/CSE/A%20Primer%20on%20Scientific%20Programming%20with%20Python.pdf)
 
-[Data Science from Scratch](https://github.com/thangckt/note/tree/thang-branch/doc4_Books/pdf/Data Science from Scratch.pdf)
+[Data Science from Scratch](https://github.com/thangckt/note/tree/thang-branch/doc4_Books/pdf/Data_Science_from_Scratch.pdf)
 
 
 ## Cheatsheet
