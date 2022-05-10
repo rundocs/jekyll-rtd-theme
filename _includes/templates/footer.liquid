@@ -51,9 +51,9 @@
         {%- assign created_time = rest_created_at | date: "%Y" -%}
         {%- assign updated_time = rest_updated_at | date: "%Y" -%}
         {%- if created_time == updated_time -%}
-            {{- created_time -}},
+            {{- created_time -}}
         {%- else -%}
-            {{- created_time }}-{{ updated_time -}},
+            {{- created_time }}-{{ updated_time -}}
         {%- endif -%}
     </span>
     <i class="fa fa-copyright"></i>
