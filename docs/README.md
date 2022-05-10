@@ -1,7 +1,3 @@
----
-sort: 1
----
-
 # Theme Scheme
 
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
