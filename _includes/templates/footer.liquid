@@ -22,6 +22,7 @@
 
 <hr>
 
+{% comment %} old footnote
 <div class="copyright text-center text-gray" role="contentinfo">
     <i class="fa fa-copyright"></i>
     <span class="time">
@@ -39,5 +40,24 @@
     {{ __.revision | default: "Revision" }}
     <a class="text-gray" href="{{ docs.repository_url }}/commit/{{ docs.build_revision }}" title="{{ docs.build_revision }}" rel="noreferrer" target="_blank">
         {{- docs.build_revision | slice: 0, 7 -}}
+    </a>
+</div>
+{% endcomment %}
+
+
+{% comment %} Thang's footnote {% endcomment %}
+<div class="copyright text-center text-gray" role="contentinfo">
+    <span class="time">
+        {%- assign created_time = rest_created_at | date: "%Y" -%}
+        {%- assign updated_time = rest_updated_at | date: "%Y" -%}
+        {%- if created_time == updated_time -%}
+            {{- created_time -}},
+        {%- else -%}
+            {{- created_time }}-{{ updated_time -}},
+        {%- endif -%}
+    </span>
+    <i class="fa fa-copyright"></i>
+    <a class="text-gray" href="{{ docs.owner_url }}" rel="noreferrer" target="_blank">
+        {{- author -}}
     </a>
 </div>
