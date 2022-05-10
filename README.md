@@ -3,17 +3,17 @@
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-This theme is inspired by [jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme) acting as a [remote-theme](https://www.siteleaf.com/blog/remote-themes/) on [our project pages](https://eq19.github.io/) that runs using the scheme algorithm of [DNA Recombination](https://eq19.github.io/quantum/#next-release).
+This theme is inspired by [jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme) acting as a [remote-theme](https://www.siteleaf.com/blog/remote-themes/) on [our project pages](/../../../) that runs using the scheme algorithm of [DNA Recombination](/../../../quantum/#next-release).
 
-[![DNA Animation](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](https://eq19.github.io/quantum/#next-release)
+[![DNA Animation](https://user-images.githubusercontent.com/36441664/87265280-9b985880-c4ec-11ea-8af1-403fe5648fc5.gif)](/../../../quantum/#next-release)
 
 The codes is built mainly with the algorithm of 66 out of the sum of the numbers 30 and 36. The main difference between them two is that 36 framed by twin primes.
 
-[![Twin Pairs](https://user-images.githubusercontent.com/36441664/73700083-28f2a800-4718-11ea-97b3-2e9a738dc09e.png)](https://eq19.github.io/quantum)
+[![Twin Pairs](https://user-images.githubusercontent.com/36441664/73700083-28f2a800-4718-11ea-97b3-2e9a738dc09e.png)](/../../../quantum)
 
 This Δ(19 vs 18) scenario will duplicate the loops of 618 as π(89²) of 1000 Primes. Thus its behaviour will return to 168 Primes of π(1000) out of the adjacent scheme.
 
-[![Prime Hexagon](https://user-images.githubusercontent.com/36441664/74550123-6dd1d680-4f83-11ea-8810-3b8f4f50a9c0.png)](https://eq19.github.io/hexagon)
+[![Prime Hexagon](https://user-images.githubusercontent.com/36441664/74550123-6dd1d680-4f83-11ea-8810-3b8f4f50a9c0.png)](/../../../hexagon)
 
 Each cycles will have a total of five (5) steps prime algorithm on base 114-31=83 that consist of three (3) leading steps by the power of 168: Q19(12, 32), Q17(33, 50), Q13(51, 68) and two (2) lagging steps by 618: Q7(69, 70), Q2(71, 83).
 
@@ -131,7 +131,7 @@ plugins:
   - jekyll-mentions
 ```
 
-### [5th Step: Q5(89, 29)](https://eq19.github.io/maps)
+### [5th Step: Q5(89, 29)](/../../../maps)
 
 The bilateral sum 9 will then double this 43 to 86 and act as the lexer while the prime 71 and 109 will act as the parser. This will compensate the other primes by the other of circles of the metatron which consist of 6 internal and 6 external.
 
@@ -218,7 +218,7 @@ The chemical structure of RNA is very similar to that of DNA, but differs in thr
 _(Source: [Wikipedia](https://en.wikipedia.org/wiki/RNA#Comparison_with_DNA))_
 ```
 
-Besides it, there is also strong signal that this parser will have the correlation with Φ=1,618 of _[(Golden Ratio)](https://www.google.com/search?q=Golden+Ratio)_ that leads to a kind of **gap and turbulences** in [the primes geometri](https://github.com/chetabahana) which hold the key of [<code>init</code>](https://eq19.github.io/maps) as the road map to π(1000x1000).
+Besides it, there is also strong signal that this parser will have the correlation with Φ=1,618 of _[(Golden Ratio)](https://www.google.com/search?q=Golden+Ratio)_ that leads to a kind of **gap and turbulences** in [the primes geometri](https://github.com/chetabahana) which hold the key of [<code>init</code>](/../../../maps) as the road map to π(1000x1000).
 
 ```
 
