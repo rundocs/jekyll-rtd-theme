@@ -4,7 +4,7 @@ sort: 1
 
 # *class* LmpFrame
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L17)
-```python 
+```python
 LmpFrame(
    dump_file = None, data_file = None, atom_style = 'auto', pdb_file = None,
    xyz_file = None, from_df = None
@@ -27,9 +27,9 @@ This class create a data-object (single configuration) for the analysis of compu
 This class implemented several ways to create `lmpFRAME` object
 - create an empty data object
 - createFRAME object with input data
-- read from DUMP file 
-- read from DATA file 
-- read frome PDB file 
+- read from DUMP file
+- read from DATA file
+- read frome PDB file
 
 
 **Args**
@@ -58,9 +58,9 @@ FMTstr(str) default format for float numbers, don't use %g because it will lost 
 ```python
 # empty object
 da = thatool.lmpFRAME()
-# oject with input data 
+# oject with input data
 da = thatool.lmpFRAME(from_df=df)
-# from DUMP file 
+# from DUMP file
 da = thatool.lmpFRAME(dump_file='test.cfg')
 # from DATA file
 da = thatool.lmpFRAME(data_file='mydata.dat')
@@ -76,11 +76,11 @@ da = thatool.lmpFRAME(pdb_file='test.pdb')
 **Methods:**
 
 
-### .createFRAME
+## .createFRAME
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L134)
 ```python
 .createFRAME(
-   DataFrame, box = None, box_angle = None
+   DataFrame, box = None, box_angle = None## .
 )
 ```
 
@@ -109,7 +109,7 @@ The method to create new FRAME object with input data.
         da = filetool.lmpFRAME(from_df=df)
 ```
 
-### .readDUMP
+## .readDUMP
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L171)
 ```python
 .readDUMP(
@@ -140,9 +140,9 @@ The method to create FRAME object by reading DUMP file.
         da = filetool.lmpFRAME(dump_file='mydata.cfg')
 ```
 ---
-        use list comprehension in code to get better performance                
+        use list comprehension in code to get better performance
 
-### .readDATA
+## .readDATA
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L234)
 ```python
 .readDATA(
@@ -152,7 +152,7 @@ The method to create FRAME object by reading DUMP file.
 
 ---
 The method to create FRAME object by reading DATA file.
-The style of atomistic system.The format of "data file" depend on the definition of ["atom_style"](https://lammps.sandia.gov/doc/atom_style.html). 
+The style of atomistic system.The format of "data file" depend on the definition of ["atom_style"](https://lammps.sandia.gov/doc/atom_style.html).
 See [list of atom_style format](https://lammps.sandia.gov/doc/read_data.html#description). Can be detected automatically, or explicitly setting
 - atomic      : atom-ID atom-type x y z
 - charge      : atom-ID atom-type q x y z
@@ -180,7 +180,7 @@ See [list of atom_style format](https://lammps.sandia.gov/doc/read_data.html#des
 ---
         ```
 
-### .readPDB
+## .readPDB
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L449)
 ```python
 .readPDB(
@@ -215,7 +215,7 @@ The method to create FRAME object by reading PDB file.
 da = filetool.lmpFRAME(pdb_file='mydata.pdb')
 ```
 
-### .readXYZ
+## .readXYZ
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L507)
 ```python
 .readXYZ(
@@ -243,7 +243,7 @@ The method to create FRAME object by reading XYZ file.
 da = filetool.lmpFRAME(pdb_file='mydata.pdb')
 ```
 
-### .writeDUMP
+## .writeDUMP
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L525)
 ```python
 .writeDUMP(
@@ -264,7 +264,7 @@ The method to write DUMP file.
 
 **Returns**
 
-* **file**  : the DUMP file 
+* **file**  : the DUMP file
 
 
 **Examples**
@@ -273,7 +273,7 @@ The method to write DUMP file.
 da.writeDUMP('test.cfg', column=['id','type','x','y','z'], FMTstr='%.4f')
 ```
 
-### .writeDATA
+## .writeDATA
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L594)
 ```python
 .writeDATA(
@@ -298,7 +298,7 @@ The method to write DATA file.
 
 **Returns**
 
-* **file**  : the DUMP file 
+* **file**  : the DUMP file
 
 
 **Examples**
@@ -307,7 +307,7 @@ The method to write DATA file.
 da.writeDATA('test.dat', atom_style='atomic', iFlag=False, vel=False, FMT='%.4f')
 ```
 
-### .writeXYZ
+## .writeXYZ
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L773)
 ```python
 .writeXYZ(
@@ -328,7 +328,7 @@ The `method` to write XYZ file.
 
 **Returns**
 
-* **file**  : the XYZ file 
+* **file**  : the XYZ file
 
 
 **Examples**
@@ -337,7 +337,7 @@ The `method` to write XYZ file.
 da.writeXYZ('test.xyz')
 ```
 
-### .writePDB
+## .writePDB
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L824)
 ```python
 .writePDB(
@@ -357,7 +357,7 @@ The method to write [PDB file](https://zhanggroup.org/SSIPe/pdb_atom_format.html
 
 **Returns**
 
-* **file**  : the PDB file 
+* **file**  : the PDB file
 
 
 **Examples**
@@ -366,7 +366,7 @@ The method to write [PDB file](https://zhanggroup.org/SSIPe/pdb_atom_format.html
 da.writePDB('test.pdb')
 ```
 
-### .addColumn
+## .addColumn
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L931)
 ```python
 .addColumn(
@@ -387,7 +387,7 @@ The method to add new columns to da.atom.
 
 **Returns**
 
-* **Obj** (LmpFrame) : Update da.atom 
+* **Obj** (LmpFrame) : Update da.atom
 
 
 **Examples**
@@ -396,7 +396,7 @@ The method to add new columns to da.atom.
 da.addColumn(df, myColumn=['col1','col2'], replace=True)
 ```
 
-### .deleteColumn
+## .deleteColumn
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L971)
 ```python
 .deleteColumn(
@@ -416,7 +416,7 @@ The method to delete columns from da.atom.
 
 **Returns**
 
-* **Obj** (LmpFrame) : Update da.atom 
+* **Obj** (LmpFrame) : Update da.atom
 
 
 **Examples**
@@ -425,7 +425,7 @@ The method to delete columns from da.atom.
 da.deleteColumn(delColumns=['col1','col2'])
 ```
 
-### .set_mass
+## .set_mass
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L992)
 ```python
 .set_mass(
@@ -445,16 +445,16 @@ element_dict={'type': list_values, 'atom_symbol':list_values}
 
 **Returns**
 
-* **Obj** (LmpFrame) : Update da.atom 
+* **Obj** (LmpFrame) : Update da.atom
 
 
 **Examples**
 
 ```python
 da.set_mass(element_dict={'type':[1,2,3], 'atom_symbol':['C','H','N']})
-``` 
+```
 
-### .combine_frame
+## .combine_frame
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1027)
 ```python
 .combine_frame(
@@ -475,7 +475,7 @@ The method to combine 2 Lammps Frames.
         + 'comXYZ': align based on COM
         + 'minXYZ': align based on left corner
         + 'maxXYZ': align based on right corner
-* **shift_XYZ** (list, optional) : shift a distance from COM aligment. Defaults to [0,0,0].    
+* **shift_XYZ** (list, optional) : shift a distance from COM aligment. Defaults to [0,0,0].
 * **separate_XYZ** (list, optional) : Separate 2 frame with a specific value. Defaults to [0,0,0].
 * **merge_box** (bool, optional) : choose to merge box or not. Defaults to True.
 * **use_box** (str, optional) : be used as the box size if merge_box=False. Defaults to 'box1'.
@@ -484,12 +484,12 @@ The method to combine 2 Lammps Frames.
 Return:
         Update LmpFrame da1
 
-        ``` 
+        ```
 
 TO DO:
         combine box_angle
 
-### .unwrap_coord_DATA
+## .unwrap_coord_DATA
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1197)
 ```python
 .unwrap_coord_DATA(
@@ -514,7 +514,7 @@ The method to upwrap coords in DATA file.
 ---
         cannot unwrap_coord_data if iFlags are not available.
 
-### .change_atom_type
+## .change_atom_type
 [source](https://hide_url.com\blob\main\../thatool/filetool/LmpFrame.py\#L1237)
 ```python
 .change_atom_type(
@@ -542,4 +542,4 @@ The method to change types of atoms in system.
 
 ```python
 da.chage_atom_type([1,2,3], 2)
-``` 
+```
