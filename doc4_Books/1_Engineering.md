@@ -72,6 +72,8 @@ sort: 1
 
 [Data Science from Scratch](/pdf/Data_Science_from_Scratch.pdf)
 
+[Computational mechanics](https://cooperrc.github.io/computational-mechanics/README.html)
+
 ## ML
 
 [Physics-based Deep Learning - N. Thuerey](https://arxiv.org/pdf/2109.05237.pdf)
