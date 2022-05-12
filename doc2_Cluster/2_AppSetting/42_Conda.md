@@ -274,7 +274,8 @@ pip install lmfit
 conda create -n py37mbuild python=3.7
 conda activate py37mbuild
 conda install -y -c conda-forge jupyterlab ele numpy pandas matplotlib shapely scipy natsort
-conda install -y -c conda-forge mbuild rdkit py3Dmol
+conda install -y -c conda-forge parmed foyer rdkit py3Dmol mdtraj
+pip install git+https://github.com/thangckt/mbuild.git@thang
 
 ## env for polymer package: pysimm
 conda create -n py37pysimm python=3.7
