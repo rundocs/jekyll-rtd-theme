@@ -5,7 +5,7 @@
 
 |     |     |
 | :---: | :--- | 
-<img src="./assets/images/my_picture3x3.jpg" style="border-radius: 50%; border: 2px solid #555;" height="200"/> | ![](./assets/images/hello_world.png)
+<img src="./assets/images/my_picture3x3.jpg" style="border-radius: 50%; border: 2px dashed gold;" height="200"/> | ![](./assets/images/hello_world.png)
 [![](./assets/images/icon_email.png)](mailto:caothangckt@gmail.com)  [![](./assets/images/icon_linkedin.jpg)](https://www.linkedin.com/in/thang-nguyen-5b458a218)  [![](./assets/images/icon_messenger.png)](https://www.facebook.com/thangckt5)  [![](./assets/images/icon_ORCID.png)](https://orcid.org/0000-0001-9826-5397) |
 
 This page dedicates to my personal arbitrary notes and does not reflect either community or third party rules. 
