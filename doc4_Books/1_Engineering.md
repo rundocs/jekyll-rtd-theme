@@ -26,8 +26,6 @@ sort: 1
 
 ## Advanced Mechanics
 
-[Chemistry](https://openstax.org/books/chemistry-2e/pages/preface)
-
 [Advanced Engineering Dynamics - Harrison](http://202.91.76.90:81/fdScript/RootOfEBooks/MED/Advanced%20Engineering%20Dynamics.pdf)
 
 [Fundamentals of Protein Structure and Function](http://202.91.76.90:81/fdScript/RootOfEBooks/E%20BOOKS%20COLLECTION%202020%20%20DATA%202/CHEM/Fundamentals%20of%20Protein%20Structure%20and%20Function%20-%20E%20Buxbaum.pdf)
@@ -37,6 +35,17 @@ sort: 1
 [Quantum Mechanics: Concepts and applications](http://202.91.76.90:81/fdScript/RootOfEBooks/E%20BOOKS%20COLLECTION%202020%20%20DATA%202/PHYSICS/Quantum%20Mechanics%20Concepts%20and%20Applications%20Second%20Edition%20by%20Nouredine%20Zettili.pdf)
 
 [Quantum Theory and Statistical Thermodynamics](http://202.91.76.90:81/fdScript/RootOfEBooks/E%20BOOKS%20COLLECTION%202020%20%20DATA%202/PHYSICS/Quantum%20Theory%20and%20Statistical%20Thermodynamics%20Principles%20and%20Worked%20Examples%20by%20Peter%20Hertel%20(1).pdf)
+
+## Sciences
+
+[Chemistry](https://openstax.org/books/chemistry-2e/pages/preface)
+
+[Physic 1](https://openstax.org/books/university-physics-volume-1/pages/preface)
+
+[Physic 2](https://openstax.org/books/university-physics-volume-2/pages/preface)
+
+[Physic 3](https://openstax.org/books/university-physics-volume-3/pages/preface)
+
 
 ## Mathematics
 
