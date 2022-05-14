@@ -26,7 +26,7 @@ sort: 1
 
 ## Advanced Mechanics
 
-[Chemistry](https://opentextbc.ca/chemistry/)
+[Chemistry](https://openstax.org/books/chemistry-2e/pages/preface)
 
 [Advanced Engineering Dynamics - Harrison](http://202.91.76.90:81/fdScript/RootOfEBooks/MED/Advanced%20Engineering%20Dynamics.pdf)
 
