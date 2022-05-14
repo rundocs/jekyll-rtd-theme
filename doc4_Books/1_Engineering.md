@@ -26,6 +26,8 @@ sort: 1
 
 ## Advanced Mechanics
 
+[Chemistry](https://opentextbc.ca/chemistry/)
+
 [Advanced Engineering Dynamics - Harrison](http://202.91.76.90:81/fdScript/RootOfEBooks/MED/Advanced%20Engineering%20Dynamics.pdf)
 
 [Fundamentals of Protein Structure and Function](http://202.91.76.90:81/fdScript/RootOfEBooks/E%20BOOKS%20COLLECTION%202020%20%20DATA%202/CHEM/Fundamentals%20of%20Protein%20Structure%20and%20Function%20-%20E%20Buxbaum.pdf)
