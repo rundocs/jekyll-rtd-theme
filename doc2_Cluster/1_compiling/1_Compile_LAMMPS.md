@@ -461,13 +461,12 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
 -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_VTK=no -DPKG_H5MD=no \
 -DPKG_MESONT=no -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_KIM=no -DPKG_SCAFACOS=no \
--DPKG_ML-PACE=no -DPKG_ML-QUIP=no -DPKG_ML-HDNNP=no -DPKG_MDI=no \
+-DPKG_ML-PACE=yes -DPKG_ML-QUIP=no -DPKG_ML-HDNNP=no -DPKG_MDI=no \
 -DPKG_PLUMED=yes \
 -DFFT=FFTW3 \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/gccOMPI4-dev
 
 make -j 16 && make install
-
 ```
 
 ```shell
