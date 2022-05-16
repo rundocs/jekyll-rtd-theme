@@ -4,10 +4,7 @@ sort: 6
 
 # Compiling UCX
 
-
-https://github.com/openucx/ucx/wiki/OpenMPI-and-OpenSHMEM-installation-with-UCX
-##################################
-UCX need to compile OpenMPI to use InfiniBand
+UCX is need to compile OpenMPI to use InfiniBand
 
 To use UCX you need to
 Get the recent release from https://github.com/openucx/ucx/releases
@@ -18,16 +15,21 @@ $ mpirun -mca btl self -mca pml ucx ....
 To control which device and what transport are being used you can add following env variables:
 $ mpirun -mca btl self -mca pml ucx -x UCX_NET_DEVICES=mlx5_0:1 -x UCX_TLS=rc,shm ....
 Try to experiment with different TLS's see here for more info.
-##################################
+
+https://github.com/openucx/ucx/wiki/OpenMPI-and-OpenSHMEM-installation-with-UCX
 
 https://github.com/openucx/ucx/wiki
 
-##NOTE:
+```note
 * OpenMPI 4.0,3 support ucx 1.7 or older
 * OpenMPI 4.0,4 support newer ucx
+```
 
-## 1. install from Source (work now, but should not be use to avoid runtime errors)
+## 1. install from Source 
+```note
+- work now, but should not be use to avoid runtime errors
 - Requirements: autoconf-2.69b, libtool-2.4.6, automake-1.14
+```
 
 ```shell
 git clone --branch master https://github.com/openucx/ucx.git  ucx-master
@@ -50,7 +52,10 @@ export LDFLAGS="-fuse-ld=gold -lrt"
 --prefix=/home1/p001cao/local/app/tool_dev/ucx-master
 ```
 
-## 2. install from UCX pre-configured Release --> no need ./autogen.h)
+## 2. install from UCX pre-configured Release 
+- no need ./autogen.h
+- ver 1.12.1 will cause error: not found auvx.h
+
 ```shell
 wget https://github.com/openucx/ucx/releases/download/v1.12.0/ucx-1.12.0.tar.gz
 tar xvf ucx-1.12.0.tar.gz
