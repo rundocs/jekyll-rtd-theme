@@ -19,6 +19,11 @@ See [this link](https://blog.jupyter.org/jupyterlab-desktop-app-now-available-b8
 ## configuration files
 https://github.com/jupyterlab/jupyterlab-desktop#configuration-files
 
+```note
+To use multi envs in App, remember to choose PYTHON-path as the base-env conda. Can change this by change "pythonPath" is this file:
+%APPDATA%\jupyterlab-desktop\jupyterlab-desktop-data
+```
+
 
 
 ## 2. Use multil envs in Notebook
