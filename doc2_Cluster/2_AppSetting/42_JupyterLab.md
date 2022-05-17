@@ -16,6 +16,9 @@ JupyterLab App is the cross-platform standalone application distribution of Jupy
 
 See [this link](https://blog.jupyter.org/jupyterlab-desktop-app-now-available-b8b661b17e9a)
 
+## configuration files
+https://github.com/jupyterlab/jupyterlab-desktop#configuration-files
+
 
 
 ## 2. Use multil envs in Notebook
