@@ -1,8 +1,23 @@
+{%- assign site_dirs = '' | split: ',' -%}
+{%- assign site_files = '' | split: ',' -%}
+{%- assign my_collection = '' | split: ',' -%}
+
+{%- for collection in site.collections -%}
+	{%- for item in site[collection.label] -%}	
+		{%- assign my_collection = my_collection | push: item -%}
+	{%- endfor -%}
+{%- endfor -%}
+
 {%- assign site_pages = site.html_pages
     | sort: "path"
     | sort: "sort"
     | where_exp: "item", "item.url != '/404.html'"
     | where_exp: "item", "item.url != '/search.html'" -%}
 
-{%- assign site_dirs  = site_pages | where_exp: "item", "item.dir == item.url" -%}
-{%- assign site_files = site_pages | where_exp: "item", "item.dir != item.url" -%}
+{%- for item in site_pages -%}
+	{%- if item.path contains 'README.md' -%}	
+		{%- assign site_dirs = site_dirs | push: item -%}
+	{%- else -%}
+		{%- assign site_files = site_files | push: item -%}
+	{%- endif -%}
+{%- endfor -%}

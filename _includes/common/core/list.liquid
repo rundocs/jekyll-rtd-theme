@@ -1,5 +1,8 @@
 {%- include common/rest/site_pages.liquid -%}
-{%- include common/rest/workdir.liquid workdir=page.dir -%}
+
+{%- assign page_dir = page.path | split: '/' | pop | join: '/' | append: '/' -%}
+{%- if page.dir -%}{%- assign page_dir = page_dir | prepend: '/' -%}{%- endif -%}
+{%- include common/rest/workdir.liquid workdir=page_dir -%}
 
 {%- for item in workdir_files %}
 - [{{ item.title | default: item.name }}]({{ item.url | relative_url }})
