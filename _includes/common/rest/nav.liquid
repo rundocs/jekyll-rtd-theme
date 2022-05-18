@@ -1,11 +1,10 @@
-{%- assign page_dir = page.path | split: '/' | pop | join: '/' | append: '/' -%}
-{%- if page.dir -%}{%- assign page_dir = page_dir | prepend: '/' -%}{%- endif -%}
-{%- include common/rest/workdir.liquid workdir=page_dir -%}
+{%- assign item = page -%}{%- include common/rest/item_dir.liquid -%}
+{%- include common/rest/workdir.liquid workdir=item_dir -%}
 
 {% comment %} prev and next {% endcomment %}
 {%- assign index = 0 -%}
 {%- for item in workdir_files %}
-    {%- if item.url == page.url %}
+    {%- if item.path contains 'README.md' -%}
         {%- assign index = forloop.index -%}
     {%- endif %}
 {%- endfor -%}

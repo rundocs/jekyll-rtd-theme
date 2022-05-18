@@ -17,10 +17,7 @@
 <ul>
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
-		{%- assign item_dir = item.path | split: '/' | pop | join: '/' | append: '/' -%}
-		{%- if item.dir -%}
-			{%- assign item_dir = item_dir | prepend: '/' -%}
-		{%- endif -%}
+		{%- include common/rest/item_dir.liquid -%}
         {%- assign level = item_dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}

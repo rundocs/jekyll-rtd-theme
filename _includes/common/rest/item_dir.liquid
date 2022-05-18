@@ -1,0 +1,7 @@
+{%- if item.url == "/" -%}
+    {%- assign item_dir = "/" -%}
+{%- elsif item.dir -%}
+	{%- assign item_dir = item.dir -%}
+{%- else -%}	
+	{%- assign item_dir = item.path | split: "/" | pop | join: "/" | append: "/" -%}
+{%- endif -%}
