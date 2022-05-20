@@ -9,7 +9,8 @@
         {{ dir.title | default: dir.url }}
     </a>
 {%- else %}
-    <a class="d-flex flex-items-baseline" href="{{ dir.url | relative_url }}">
+	{%- assign counter = counter | plus: 1 -%}
+    <a id="{{ counter }}" class="d-flex flex-items-baseline" href="{{ dir.url | relative_url }}">
         {{ dir.title | default: dir.url }}
     </a>
 {%- endif -%}
