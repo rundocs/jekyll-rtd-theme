@@ -1,6 +1,5 @@
 theme: null
 title: ₠Quantum
-base_tag: basic-grammar
 
 debug:
   dist: false
