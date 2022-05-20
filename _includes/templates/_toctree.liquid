@@ -17,6 +17,7 @@
 <ul>
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
+		{%- assign counter | plus: 1 -%}
 		{%- include common/rest/item_dir.liquid -%}
         {%- assign level = item_dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
         {%- capture current -%}
@@ -24,7 +25,7 @@
         {%- endcapture %}
 
         <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
-            <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
+            <a id={{ counter }} class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
                 {%- if item.sort -%}
                     {{ item.sort }}. {{ item.title | default: item.name }}
                 {%- else -%}
