@@ -17,7 +17,7 @@
 <ul>
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
-		{%- assign counter | plus: 1 -%}
+		{%- assign counter = counter | plus: 1 -%}
 		{%- include common/rest/item_dir.liquid -%}
         {%- assign level = item_dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
         {%- capture current -%}
