@@ -20,5 +20,6 @@
     {%- endfor %}
 </ul>
 
+{%- assign counter = 0 -%}
 {% comment %} list the root dirs {% endcomment %}
 {%- for workdir in workdir_dirs %}{% include templates/_toctree.liquid %}{% endfor -%}

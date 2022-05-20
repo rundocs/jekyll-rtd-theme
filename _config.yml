@@ -1,6 +1,5 @@
+theme: null
 title: ₠Quantum
-base_tag: basic-grammar
-remote_theme: eQ19/hexagon
 
 debug:
   dist: false
