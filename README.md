@@ -218,8 +218,6 @@ The chemical structure of RNA is very similar to that of DNA, but differs in thr
 _(Source: [Wikipedia](https://en.wikipedia.org/wiki/RNA#Comparison_with_DNA))_
 ```
 
-Besides it, there is also strong signal that this parser will have the correlation with Φ=1,618 of _[(Golden Ratio)](https://www.google.com/search?q=Golden+Ratio)_ that leads to a kind of **gap and turbulences** in [the primes geometri](https://github.com/chetabahana) which hold the key of [<code>init</code>](/../../../maps) as the road map to π(1000x1000).
+Besides it, there is also strong signal that this parser will have the correlation with Φ=1,618 of _[(Golden Ratio)](https://www.google.com/search?q=Golden+Ratio)_ that leads to a kind of **gap and turbulences** in [the primes geometri](https://github.com/chetabahana) which hold the key of [<code>init</code>](/../../../map) as the road map to π(1000x1000).
 
 ```
-
-
