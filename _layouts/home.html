@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% include head_base.html %}
+</head>
+<body>
+<div class="page">
+{% include header.html %}
+<section id="blogArchive">      
+	<div class="container">
+		<div class="row">
+			<div class="blog-breadcrumbs-area">
+				<div class="blog-breadcrumbs-left">
+					<h1 class="header_2">{{ site.topic }}</h1>
+				</div>
+				<div class="blog-breadcrumbs-right">
+					<ol class="breadcrumb">
+						<li>You are here</li>
+						<li><a href="/">Home</a></li>                  
+						<li><a href="/programs">Programs</a></li>
+						<li><a href="{{ site.path }}">{{ site.topic }}</a></li>
+						<li class="active"><a href="https://github.com/hyip/{{ site.github.repository_name }}/blob/gh-pages/{{ page.path }}">Source Link</a></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>      
+</section>    
+<!--========================================================
+                          CONTENT
+=========================================================-->
+<section id="l-main">
+<div class="container">
+	<div class="row">
+		<div id="content" class="col-xs-12 col-sm-9 col-sm-push-3">
+			{{ content }}
+		</div>
+		<div class="col-xs-12 col-sm-3 col-sm-pull-9 sidebar">
+			{% include sidebar.html %}
+		</div>
+	</div>
+</div>
+{% include social_media.html %}
+</section>
+</div>
+{% include footer.html %}
+</body>
+</html>
