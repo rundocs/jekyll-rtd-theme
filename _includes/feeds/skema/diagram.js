@@ -279,7 +279,7 @@
             *  loop(3‘) => 2
             *
             *  This will finaly land to id: 128
-            *  https://eq19.github.io/feed.json
+            *  https://www.eq19.com/feed.json
             *  https://github.com/chetabahana/chetabahana.github.io/blob/Chetabahana/assets/_feeds/skema/diagram.js
             *
             *                  },

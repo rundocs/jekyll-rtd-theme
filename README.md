@@ -19,7 +19,7 @@ Each cycles will have a total of five (5) steps prime algorithm on base 114-31=8
 
 ## What it does?
 
-[![DNA Recombination](https://user-images.githubusercontent.com/36441664/88602920-fd84c080-d09d-11ea-970d-dd63c12221fc.png)](https://eq19.github.io)
+[![DNA Recombination](https://user-images.githubusercontent.com/36441664/88602920-fd84c080-d09d-11ea-970d-dd63c12221fc.png)](https://www.eq19.com)
 
 ![Recombination Steps](https://user-images.githubusercontent.com/36441664/84945702-c7a10380-b111-11ea-894a-ba31a23732a7.jpeg)
 
