@@ -1,0 +1,38 @@
+{% include header.html %}
+<!--========================================================
+						  CONTENT
+=========================================================-->
+<section id="content"><div class="ic">eQuantum Project | Site Building, Monitoring System, Business Networking, Project Mapping</div>
+<div class="container">
+	<div class="row wrap_11">
+		<div class="grid_12">
+			<div class="wrap_10">
+				<div class="box_6">
+					<div class="put-left">
+						<div class="caption">
+							<a href="{{ page.url }}"><img src="/images/index-3_img03.jpg" alt="Image 1"/></a>
+							<p class="text_2 color_1">
+								{{ page.category }} :: {{ page.title }}
+							</p>
+						</div>
+					</div>
+					<div class="caption">
+						<p class="text_3">
+							{{ page.content }}
+						</p>
+						<a class="btn_2" href="{{ page.url | replace:page.title,'' }}">back to {{ page.category }}</a>
+						<hr>
+						{% include disqus_load.html %}
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% include social_media.html %}
+</section>
+</div>
+{% include footer.html %}
+</body>
+</html>

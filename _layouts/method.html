@@ -1,0 +1,98 @@
+{% include header.html %}
+<!--========================================================
+					  CONTENT
+=========================================================-->
+<section id="content"><div class="ic">eQuantum Project | Site Building, Monitoring System, Business Networking, Project Mapping</div>
+<div class="container">
+	<div class="row wrap_11">
+		<div class="grid_8">
+			<div class="wrap_10">
+				<h2 class="header_2 indent_3">Topics</h2>
+				{% for post in site.posts reversed %}
+				{% if post.path contains page.url %}
+				<div class="box_6">
+					<div class="put-left">
+						<div class="caption">
+							<a href="{{ page.url }}{{ post.title | downcase}}"><img src="/images/index-3_img01.jpg" alt="{{ page.title }} :: {{ post.title }}"/></a>
+							<p class="text_2 color_1">
+								{{ page.title | downcase}} :: {{ post.title }}
+							</p>
+						</div>
+					</div>
+					<div class="caption">
+						<h3 class="text_2 color_2"><a href="{{ page.url }}{{ post.title | downcase}}">{{ post.title | capitalize }}</a></h3>
+						<p class="text_3">
+							{{ post.excerpt }}
+						</p>
+						<a class="btn_2" href="{{ page.url }}{{ post.title | downcase}}">read more</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<div class="grid_4">
+			<div class="wrap_10">
+				<h2 class="header_2 indent_3">
+					Categories
+				</h2>
+				<ul class="list_2 text_3 color_5">
+					<li><a href="#">trading</a></li>
+					<li><a href="#">finance</a></li>
+					<li><a href="#">hosting</a></li>
+					<li><a href="#">investment</a></li>
+					<li><a href="#">loan</a></li>
+					<li><a href="#">credit</a></li>
+					<li><a href="#">map direction</a></li>
+					<li><a href="#">process definition</a></li>
+					<li><a href="#">fund</a></li>
+					<li><a href="#">analysis</a></li>
+					<li><a href="#">concept</a></li>
+					<li><a href="#">script</a></li>
+					<li><a href="#">program</a></li>
+					<li><a href="#">earn money</a></li>
+					<li><a href="#">monitor script</a></li>
+					<li><a href="#">real investment</a></li>
+					<li><a href="#">mind mapping</a></li>
+					<li><a href="#">software</a></li>
+					<li><a href="#">mapping diagrams</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="grid_4">
+			<div class="wrap_10">
+				<h2 class="header_2 indent_3">
+					Tagging
+				</h2>
+				<ul class="list_2 text_3 color_5">
+					<li><a href="#">online investment</a></li>
+					<li><a href="#">high yield investment</a></li>
+					<li><a href="#">investment scam</a></li>
+					<li><a href="#">quantum programs</a></li>
+					<li><a href="#">quantum monitor</a></li>
+					<li><a href="#">quantum forum</a></li>
+					<li><a href="#">quantum paypal</a></li>
+					<li><a href="#">quantum calculator</a></li>
+					<li><a href="#">legit quantum</a></li>
+					<li><a href="#">quantum analysis</a></li>
+					<li><a href="#">quantum sites</a></li>
+					<li><a href="#">quantum script</a></li>
+					<li><a href="#">paying quantum programs</a></li>
+					<li><a href="#">perfect money</a></li>
+					<li><a href="#">quantum monitor script</a></li>
+					<li><a href="#">real quantum investment</a></li>
+					<li><a href="#">longest running quantum</a></li>
+					<li><a href="#">current paying quantums</a></li>
+					<li><a href="#">all monitor quantum</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{% include social_media.html %}
+</section>
+</div>
+{% include footer.html %}
+</body>
+</html>

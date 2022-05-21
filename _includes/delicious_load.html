@@ -1,0 +1,41 @@
+<script type="text/javascript">
+var niceTime = (function(){
+    var ints = {
+    second: 1,
+    minute: 60,
+    hour: 3600,
+    day: 86400,
+    week: 604800,
+    month: 2592000,
+    year: 31536000
+    };
+    return function(time){
+    time = +new Date(time);
+    var gap = ((+new Date()) - time) / 1000,
+    amount, measure;
+    for (var i in ints){
+    if (gap > ints[i]){ measure = i; }
+    }
+    amount = gap / ints[measure];
+    amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
+    amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';
+    return amount;
+    };
+})();
+
+$.getJSON("http://del.icio.us/v2/rss/tophyipsinfo?callback=?",
+    {
+    count: "3"
+    },
+    function(data){
+        $.each(data, function(i, item){
+            var title = item.d;
+            var url = item.u;
+            var date = item.dt;
+            $("#delicious-bookmarks").append('<li>['+title+']('+url+') <time class="date">'+niceTime(date)+'<time></li>');
+        });
+        $(".ajax-loader").css("display","none");
+    }
+);
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
