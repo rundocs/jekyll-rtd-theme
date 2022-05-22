@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-{% include head_base.html %}
+{% include posts/head_base.html %}
 </head>
 <body>
 <div class="page">
-{% include header.html %}
+{% include posts/header.html %}
 <section id="blogArchive">      
 	<div class="container">
 		<div class="row">
@@ -18,8 +18,7 @@
 						<li>You are here</li>
 						<li><a href="/">Home</a></li>                  
 						<li><a href="/programs">Programs</a></li>
-						<li><a href="{{ site.path }}">{{ site.topic }}</a></li>
-						<li class="active"><a href="https://github.com/hyip/{{ site.github.repository_name }}/blob/gh-pages/{{ page.path }}">Source Link</a></li>
+						<li class="active">{{ site.topic }}</li>
 					</ol>
 				</div>
 			</div>
@@ -36,13 +35,13 @@
 			{{ content }}
 		</div>
 		<div class="col-xs-12 col-sm-3 col-sm-pull-9 sidebar">
-			{% include sidebar.html %}
+			{% include posts/sidebar.html %}
 		</div>
 	</div>
 </div>
 {% include social_media.html %}
 </section>
 </div>
-{% include footer.html %}
+{% include posts/footer.html %}
 </body>
 </html>
