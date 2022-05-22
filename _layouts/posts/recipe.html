@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-{% include head_base.html %}
-{% include head_recipe.html %}
+{% include posts/head_base.html %}
+{% include posts/head_recipe.html %}
 </head>
 <body>
 <div class="page">
-{% include header.html %}
+{% include posts/header.html %}
 <section id="blogArchive">      
 	<div class="container">
 		<div class="row">
@@ -42,13 +42,13 @@
 			{% include disqus_load.html %}
 		</div>
 		<div class="col-xs-12 col-sm-3 col-sm-pull-9 sidebar">
-			{% include sidebar.html %}
+			{% include posts/sidebar.html %}
 		</div>
 	</div>
 </div>
 {% include social_media.html %}
 </section>
 </div>
-{% include footer.html %}
+{% include posts/footer.html %}
 </body>
 </html>
