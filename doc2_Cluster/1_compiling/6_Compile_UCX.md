@@ -25,7 +25,9 @@ https://github.com/openucx/ucx/wiki
 * OpenMPI 4.0,4 support newer ucx
 ```
 
-## 1. install from Source 
+## From Source vs. pre-configured Release
+
+### 1. install from Source
 ```note
 - work now, but should not be use to avoid runtime errors
 - Requirements: autoconf-2.69b, libtool-2.4.6, automake-1.14
@@ -36,7 +38,7 @@ git clone --branch master https://github.com/openucx/ucx.git  ucx-master
 cd ucx-master
 module load tool_dev/autoconf-2.69b
 module load tool_dev/automake-1.14
-module load tool_dev/libtool-2.4.6 
+module load tool_dev/libtool-2.4.6
 # export ACLOCAL_PATH=/home1/p001cao/local/app/tool_dev/libtool-2.4.6/share/aclocal
 ./autogen.sh
 mkdir build  &&  cd build
@@ -52,7 +54,7 @@ export LDFLAGS="-fuse-ld=gold -lrt"
 --prefix=/home1/p001cao/local/app/tool_dev/ucx-master
 ```
 
-## 2. install from UCX pre-configured Release 
+### 2. install from UCX pre-configured Release
 - no need ./autogen.h
 - ver 1.12.1 will cause error: not found auvx.h
 
@@ -63,9 +65,11 @@ cd ucx-1.12.0
 mkdir build && cd build
 ```
 
-## USC2
+## Compile with GCC
+
+### USC2
 ```note
-- Error: No components were able to be opened in the pml framework: not solve 
+- Error: No components were able to be opened in the pml framework: not solve
 - do not use GCC-11 to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 ```
@@ -96,9 +100,9 @@ CFLAGS="-I$myNUMA/include" \
 ```
 
 
-## USC1 (eagle)
+### USC1 (eagle)
 ```shell
-module load tool_dev/binutils-2.36              # gold 
+module load tool_dev/binutils-2.36              # gold
 module load compiler/gcc-11.2
 
 export PATH=$PATH:/uhome/p001cao/local/app/compiler/gcc-11.2/bin
@@ -143,8 +147,8 @@ myNUMA=/home1/p001cao/local/app/tool_dev/numactl-2.0.13
 LDFLAGS="-fuse-ld=gold -lrt  -L$myNUMA/lib -Wl,-rpath,$myNUMA/lib" \
 CFLAGS="-I$myNUMA/include" \
 ##--
-export myKNEM=/home1/p001cao/local/app/tool_dev/knem1.1.3    
-export myOFI=/home1/p001cao/local/app/tool_dev/libfabric-1.10.1 
+export myKNEM=/home1/p001cao/local/app/tool_dev/knem1.1.3
+export myOFI=/home1/p001cao/local/app/tool_dev/libfabric-1.10.1
 --with-verbs=${myOFI} --with-knem=${myKNEM} \
 https://developer.arm.com/tools-and-software/server-and-hpc/help/porting-and-tuning/building-open-mpi-with-openucx/running-openmpi-with-openucx
 ```
@@ -158,7 +162,7 @@ export LD_LIBRARY_PATH=/home1/p001cao/local/app/intel/xe19u5/compilers_and_libra
 export LD_LIBRARY_PATH=/home1/p001cao/local/app/tool_dev/glibc-2.18/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/lib
 
-export myKNEM=/home1/p001cao/local/app/tool_dev/knem1.1.3    
+export myKNEM=/home1/p001cao/local/app/tool_dev/knem1.1.3
 export myOFI=/home1/p001cao/local/app/tool_dev/libfabric-1.10.1
 ##--
 ../contrib/configure-release --disable-numa --enable-mt LDFLAGS="-fuse-ld=lld -lrt" \
@@ -203,7 +207,7 @@ tar xvf rdma-core-30.0.tar.gz
 cd rdma-core-30.0
 ####
 module load compiler/gcc-10.1.0
-module load tool_dev/cmake-3.17.2 
+module load tool_dev/cmake-3.17.2
 module load tool_dev/libnl-3.0
 module load tool_dev/libtool-2.4.6
 
@@ -219,12 +223,12 @@ cd numactl-2.0.13
 module load tool_dev/autoconf-2.69b
 ./autogen.sh
 #--
-mkdir build && cd build 
+mkdir build && cd build
 ../configure --prefix=/home1/p001cao/local/app/tool_dev/numactl-2.0.13
 
 
 3. openMPI/UCX: libfabric ()
-wget https://github.com/ofiwg/libfabric/releases/tag/v1.11.1/libfabric-1.11.1.tar.bz2 
+wget https://github.com/ofiwg/libfabric/releases/tag/v1.11.1/libfabric-1.11.1.tar.bz2
 If building directly from the libfabric git tree, run './autogen.sh' before the configure step.
 #--
 module load tool_dev/autoconf-2.69b
@@ -232,7 +236,7 @@ module load tool_dev/autoconf-2.69b
 ##
 tar -xvf libfabric-1.11.1.tar.bz2
 cd libfabric-1.11.1
-module load compiler/gcc-10.2  
+module load compiler/gcc-10.2
 
 ## IB cluster
 ./configure --prefix=/uhome/p001cao/local/app/tool_dev/libfabric-1.11.1-IB
@@ -240,13 +244,13 @@ module load compiler/gcc-10.2
 ## noIB cluster
 ./configure --prefix=/uhome/p001cao/local/app/tool_dev/libfabric-1.11.1-noIB
 
-## module 
+## module
 prepend-path PKG_CONFIG_PATH $topdir/lib/pkgconfig
 
 
 4. openMPI/UCX: KNEM
 https://knem.gitlabpages.inria.fr/
-tar zxvf knem-1.1.4.tar.gz 
+tar zxvf knem-1.1.4.tar.gz
 cd knem-1.1.4
 ./configure --prefix=/uhome/p001cao/local/app/tool_dev/knem-1.1.4
 
@@ -265,7 +269,7 @@ cd xpmem-2.6.3
 
 
 
-## 3. Make module file 
+### 3. Make module file
 at directory: /uhome/p001cao/local/share/lmodfiles/GCC --> create file "gcc-11.2"
 
 ```shell
@@ -276,6 +280,25 @@ prepend-path    PATH                $topdir/bin
 prepend-path    INCLUDE 	        $topdir/include
 prepend-path    LD_LIBRARY_PATH     $topdir/lib
 
-prepend-path    PKG_CONFIG_PATH 	$topdir/lib/pkgconfig  
+prepend-path    PKG_CONFIG_PATH 	$topdir/lib/pkgconfig
 ```
 
+## Compile with LLVM
+
+### USC2
+
+```note
+
+```
+
+```shell
+# module load tool_dev/binutils-2.37              # gold
+module load compiler/llvm-14
+
+export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-10.3/bin
+export CC=gcc export CXX=g++ export FORTRAN=gfortran
+export LDFLAGS="-fuse-ld=gold -lrt"
+
+../configure --enable-mt  \
+--prefix=/home1/p001cao/local/app/tool_dev/ucx-1.12-llvm
+```
