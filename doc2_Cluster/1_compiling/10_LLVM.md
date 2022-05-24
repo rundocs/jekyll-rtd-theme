@@ -34,10 +34,10 @@ mkdir build && cd build
 ## USC2: Tachyon
 
 ```note
-- use `-DCMAKE_CXX_STANDARD=17` to avoid no digit exponent.
+- May need GCC >= 9
+- Use `-DCMAKE_CXX_STANDARD=17` to avoid no digit exponent.
 - Dont use -DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind", will cause error. Instead, use DLLVM_ENABLE_PROJECTS="compiler-rt;libc;libcxx;libcxxabi;libunwind" [see](https://llvm.org/docs/GettingStarted.html#id20)
 - Dont install target X86, may cause error with 'libc'.
-- May need GCC >= 9
 ```
 
 ```shell
