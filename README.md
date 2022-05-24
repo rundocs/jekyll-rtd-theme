@@ -1,7 +1,6 @@
 ---
 title: Concept
 layout: concept
-permalink: /concept
 ---
 # Concept
 
