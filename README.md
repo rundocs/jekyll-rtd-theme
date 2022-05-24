@@ -1,6 +1,6 @@
 ---
-title: Theme
-layout: concept
+title: parser
+layout: parser
 ---
 # Theme
 
