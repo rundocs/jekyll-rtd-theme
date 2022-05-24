@@ -1,5 +1,5 @@
 ---
-title: Concept
+title: Theme
 layout: concept
 ---
 # Theme
