@@ -19,16 +19,16 @@ This note is not to tell about what is [LAMMPS](https://www.lammps.org)? but the
 - OpenMPI may the fastest
 - There is no longer USER_ packages from Jul-2021
 - Need CMAKE, newer is better (a newer Cmake version may reduce the probability of error during compiling). Basic cmake:
-  
+
 ```shell
 cmake -D OPTION_A=VALUE_A -D OPTION_B=VALUE_B ...     ../cmake make
 ```
 
 - Module evironment
-  
+
 ```shell
 module load <module_name>
-module display <module_name> 
+module display <module_name>
 ```
 
 - Only one installation for `eagle/lion/leopard/cheetah`, but need to load different OpenMPI for each cluster. Also need to load Conda to overwrite default python of the system (different Ver. of python may cause runtime error)
@@ -108,8 +108,8 @@ copy new pair_eam.cpp & pair_eam.h into /src and delete corresponding files in /
 - or use FFTW3 from intel_mkl: (not support long-double precision)
 
 ```shell
--D FFT=FFTW3 
--D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2018/compilers_and_libraries_2018.0.128/linux/mkl/include/fftw 
+-D FFT=FFTW3
+-D FFTW3_INCLUDE_DIRS=/uhome/p001cao/local/intel/xe2018/compilers_and_libraries_2018.0.128/linux/mkl/include/fftw
 ```
 
 7.**LAPACK & BLAS*
@@ -127,7 +127,7 @@ copy new pair_eam.cpp & pair_eam.h into /src and delete corresponding files in /
 ```shell
   export myLAPACK=/uhome/p001cao/local/app/lapack-3.10/liblapack.a
   export myBLAS=/uhome/p001cao/local/app/lapack-3.10/libblas.a
-  
+
   -DLAPACK_LIBRARIES=${myLAPACK} -DBLAS_LIBRARIES=${myBLAS}
   ```
 
@@ -150,8 +150,8 @@ copy new pair_eam.cpp & pair_eam.h into /src and delete corresponding files in /
 For multicore CPUs using OpenMP, set these 2 variables.
 
 ```shell
--DKokkos_ARCH_WSM=yes                 # HOSTARCH = HOST from list above 
--DKokkos_ENABLE_OPENMP=yes 
+-DKokkos_ARCH_WSM=yes                 # HOSTARCH = HOST from list above
+-DKokkos_ENABLE_OPENMP=yes
 -DBUILD_OMP=yes
 ```
 
@@ -177,15 +177,15 @@ For multicore CPUs using OpenMP, set these 2 variables.
 ##change lines:
     # URL http...... (line 65)
     # URL_MD5
-## into: 
-      GIT_REPOSITORY https://github.com/plumed/plumed2.git 
+## into:
+      GIT_REPOSITORY https://github.com/plumed/plumed2.git
       GIT_TAG master                            # hack-the-tree   v2.6.2   v2.7b
 
       CONFIGURE_COMMAND <SOURCE_DIR>/configure  ....   ...
                   --enable-modules=all --enable-asmjit --disable-external-blas --disable-external-lapack
       ...
-## add this command after line 76 (inside ExternalProject_Add(...)): 
-      UPDATE_COMMAND "" 
+## add this command after line 76 (inside ExternalProject_Add(...)):
+      UPDATE_COMMAND ""
 ```
 
 - **self-build PLUMED:** Configure Plumed to use Internal LAPACK&BLAS: (no need install BLAS&LAPACK or MKL+GSL)
@@ -209,7 +209,7 @@ compile QUIP the minimum requirements are:
     GIT_REPOSITORY "https://github.com/libAtoms/QUIP/"
     GIT_TAG          5989901       #   origin/public
     ...
-    UPDATE_COMMAND "" 
+    UPDATE_COMMAND ""
 ```
 
 13.**MLIAP**
@@ -227,11 +227,11 @@ compile QUIP the minimum requirements are:
 open file: ../cmake/Modules/Packages/USER-SMD.cmake
 
 ```shell
-## change: 
+## change:
     URL http...... (line 12)
     URL_MD5
 ## into:
-    GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git 
+    GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git
     GIT_TAG  3.3.7
 ```
 
@@ -241,7 +241,7 @@ open file: ../cmake/Modules/Packages/USER-SMD.cmake
 - compatible with VMD 1.9 and 1.9.1
 - [Compile VMD](http://www.ks.uiuc.edu/Research/vmd/plugins/doxygen/compiling.html)
   - **compile plugins** (just this is need for Lammps) [see this](https://www.discngine.com/blog/2019/5/25/building-the-vmd-molfile-plugin-from-source-code)
-  
+
 ```shell
 tar zxvf vmd-1.9.src.tar.gz
 cd plugins
@@ -294,9 +294,9 @@ export pyROOT=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps
 ```shell
 export pyEXE=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/bin/python
 export pyINC=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/include/python3.7m
-export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.7m.a  
+export pyLIB=/uhome/p001cao/local/app/miniconda3/envs/py37Lammps/lib/libpython3.7m.a
 
--DPython_EXECUTABLE=${pyEXE} -DPython_INCLUDE_DIR=${pyINC} -DPython_LIBRARY=${pyLIB} 
+-DPython_EXECUTABLE=${pyEXE} -DPython_INCLUDE_DIR=${pyINC} -DPython_LIBRARY=${pyLIB}
 ```
 
 ## Compiling with GCC + OMPI
@@ -374,13 +374,13 @@ module load tool_dev/binutils-2.35                # gold
 ```
 
 ```shell
-cd lammps_master 
+cd lammps_master
 mkdir build   &&   cd build
 
 # module load tool_dev/gsl-2.6
 module load tool_dev/binutils-2.36         # gold
 module load tool_dev/cmake-3.21
-module load fftw/fftw3.3.10-ompi5.0-gcc11.2            
+module load fftw/fftw3.3.10-ompi5.0-gcc11.2
 module load mpi/ompi5.0.0-gcc11.2
 
 export PATH=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-eagle/bin:$PATH
@@ -438,11 +438,11 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 
 ```shell
 #module load mpi/ompi4.0.4-gcc10.1.0-lld
-#module load llvm/llvm-gcc10-lld                    # to use lld 
+#module load llvm/llvm-gcc10-lld                    # to use lld
 
 git pull origin develop
 
-module load tool_dev/binutils-2.37                # gold 
+module load tool_dev/binutils-2.37                # gold
 module load tool_dev/cmake-3.20.3
 module load fftw/fftw3.3.10-ompi4.1.3-gcc10.3
 module load mpi/ompi4.1.3-gcc10.3
@@ -477,7 +477,7 @@ make -j 16 && make install
 #### use OMPI5
 
 ```shell
-module load tool_dev/binutils-2.37                # gold 
+module load tool_dev/binutils-2.37                # gold
 module load tool_dev/cmake-3.20.3
 module load fftw/fftw3.3.10-ompi5.0-gcc11.2
 module load mpi/ompi5.0.0-gcc10.3
@@ -505,8 +505,8 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 - This does not work, due to OMPI3 error
 
 ```shell
-module load tool_dev/binutils-2.37                # gold 
-module load cmake/3.16.2 
+module load tool_dev/binutils-2.37                # gold
+module load cmake/3.16.2
 module load fftw/3.3.8/gcc-7.4.0/ompi-3.1.4/double
 module load mpi/gcc-7.4.0/ompi/3.1.4
 
@@ -582,7 +582,7 @@ module load fftw/fftw3.3.8-ompi4.1-gcc7.4
 
 export PATH=$PATH:/home/thang/local/app/openmpi/4.1.1-gcc7.4-cuda/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
-# python (require py3) 
+# python (require py3)
 export pyROOT=/home/thang/local/app/miniconda3/envs/py37Lammps
 # cuda
 export CUDA_PATH=/home/thang/local/app/cuda-10.2
@@ -614,7 +614,7 @@ sudo apt-get install -y fftw-dev
 
 ```shell
 module load ompi/4.1.0-gcc7.5-cuda10.2      # cuda-10 only support to gcc-8
-module load cmake-3.18.3 
+module load cmake-3.18.3
 
 export PATH=$PATH:/opt/app/openmpi/4.1.0-gcc7.5-cuda10.2/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
@@ -671,13 +671,13 @@ export myGCC=/home1/p001cao/local/app/compiler/gcc-9.2.0
 ```
 
 ```shell
-module load mpi/ompi4.0.3-gcc9.2.0 
-module load tool_dev/gsl-2.6 
+module load mpi/ompi4.0.3-gcc9.2.0
+module load tool_dev/gsl-2.6
 module load tool_dev/cmake-3.17.2
 
-module load tool_dev/binutils-2.32    
-module load tool_dev/tbb-2020.2 
- export TBB_MALLOC_LIBRARY 
+module load tool_dev/binutils-2.32
+module load tool_dev/tbb-2020.2
+ export TBB_MALLOC_LIBRARY
  export TBB_MALLOC_INCLUDE_DIR
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold -lrt" \
@@ -695,7 +695,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 
 ```shell
 module load mpi/ompi4.1.0-gcc10.2
-module load tool_dev/binutils-2.35                # gold 
+module load tool_dev/binutils-2.35                # gold
 module load tool_dev/cmake-3.18.0
 module load fftw/fftw3.3.8-ompi4.1-gcc10.2
 
@@ -726,8 +726,8 @@ openMPI & MKL must be installed in conda
 Note: not yet support ucx
 
 ```shell
-conda install -c conda-forge cmake mkl mkl-include libjpeg-turbo libpng 
-conda install -c conda-forge openmpi openmpi-mpicc openmpi-mpicxx openmpi-mpifort 
+conda install -c conda-forge cmake mkl mkl-include libjpeg-turbo libpng
+conda install -c conda-forge openmpi openmpi-mpicc openmpi-mpicxx openmpi-mpifort
 
 # infiniBand
 conda install -c conda-forge libibverbs-cos6-x86_64
@@ -748,7 +748,7 @@ cmake  -C ../cmake/presets/all_on.cmake \
 -D PKG_USER-PLUMED=no -D DOWNLOAD_PLUMED=no -D PLUMED_MODE=shared \
 -D FFT=MKL \
 -D MKL_LIBRARY=/home1/p001cao/local/miniconda3/envs/py37ompi/lib \
--D CMAKE_C_COMPILER=mpicc -D CMAKE_CXX_COMPILER=mpic++ -D CMAKE_Fortran_COMPILER=mpifort \../cmake 
+-D CMAKE_C_COMPILER=mpicc -D CMAKE_CXX_COMPILER=mpic++ -D CMAKE_Fortran_COMPILER=mpifort \../cmake
 ```
 
 ## E. Compile Lammps19 with openMPI4.0.1-gcc7.4.0 on CAN
@@ -773,63 +773,10 @@ cmake  -C ../cmake/presets/all_on.cmake \
 ../cmake
 ```
 
-B. Lammps on USC2
-
-4. OMPI-clang
-
-
-OpenMP Compiler compatibility info: Some compilers do not fully support the default(none) directive 
-and others (e.g. GCC version 9 and beyond) may implement OpenMP 4.0 semantics 
-
-
-# run this 
-
-cd /src/USER-OMP 
-./hack_openmp_for_pgi_gcc9.sh
 
 
 
-#NOTE: 
-
-* The above incompatibility is solved with lammps/15Apr2020: https://github.com/lammps/lammps/pull/1651 
-* Clang support openMP 4.5
-* Ninja-cmake available from lammps/19Mar20
-* from lammps/15Apr2020, lammps develop OpenMP with Clang 
-
-```shell
-git clone --branch patch_15Apr2020 https://github.com/lammps/lammps.git lammps_patch_15Apr2020 
-cd lammps_patch_15Apr2020 
-git checkout master
-git pull origin master
-mkdir build 
-cd build
-
-##
-
-module load mpi/ompi4.0.3-clang10 
-module load plumed2/2.7htt-clang 
-module load cmake-3.15.1
-
-cmake ../cmake -C ../cmake/presets/all_on.cmake \
--DBUILD_MPI=yes -DLAMMPS_MACHINE=mpi \
--DBUILD_OMP=yes -DPKG_USER-OMP=yes -DPKG_USER-INTEL=no \
--DBUILD_LIB=yes -DBUILD_SHARED_LIBS=yes -DLAMMPS_EXCEPTIONS=yes \
--DPKG_GPU=no -DPKG_LATTE=no -DPKG_KOKKOS=no -DPKG_KIM=no -DPKG_MSCG=no \
--DDOWNLOAD_VORO=yes -DDOWNLOAD_EIGEN3=yes \
--DPKG_USER-ADIOS=no -DPKG_USER-NETCDF=no -DPKG_USER-QUIP=no -DPKG_USER-SCAFACOS=no \
--DPKG_USER-QMMM=no -DPKG_USER-VTK=no -DPKG_USER-H5MD=no \
--DPKG_USER-PLUMED=yes -DDOWNLOAD_PLUMED=no -DPLUMED_MODE=shared \
--DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpic++ -DCMAKE_Fortran_COMPILER=mpifort \
--DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/15Apr20-clang
-```
-
-
-
-
-# USC1
--DCMAKE_INSTALL_PREFIX=/uhome/p001cao/local/app/lammps/19Mar20-clang
-
-5. MVAPICH-GCC
+## MVAPICH-GCC
 
 module load mpi/mvapich2-2.3.2-gcc9.2.0
 module load plumed2/2.7htt-mvapich
@@ -946,7 +893,7 @@ module load mpi/impi-xe19u5
 module load intel/mkl-xe19u5
 module load plumed2/2.6httIMPI
 module load conda/py37
-module load cmake-3.15.1 
+module load cmake-3.15.1
 
 configuration
 cd lammps-folder
@@ -989,12 +936,12 @@ prepend-path    INCLUDE                            $topdir/include/lammps
 ```shell
 module load compiler/gcc-10.2              # must load before impi
 module load intel/compiler-xe19u5           # intel include lld linker  require GLIBC 2.15
-module load intel/mkl-xe19u5  
-module load intel/impi-xe19u5           
+module load intel/mkl-xe19u5
+module load intel/impi-xe19u5
 source mpivars.sh release
 module load tool_dev/cmake-3.18.0
 module load tool_dev/gsl-2.6
-module load tool_dev/binutils-2.32                # gold 
+module load tool_dev/binutils-2.32                # gold
 
 export PATH=$PATH:/home1/p001cao/local/app/intel/xe19u5/compilers_and_libraries_2019.5.281/linux/bin
 export CC=mpiicc
@@ -1017,13 +964,53 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 module load intel/tbb-xe20u2
 ##-- edit /cmake/Modules/FindTBB_MALLOC.cmake
 find_path(TBB_MALLOC_INCLUDE_DIR NAMES tbb.h PATHS $ENV{TBBROOT}/include/tbb)
-find_library(TBB_MALLOC_LIBRARY NAMES tbbmalloc PATHS $ENV{TBBROOT}/lib/intel64/gcc4.8)     
+find_library(TBB_MALLOC_LIBRARY NAMES tbbmalloc PATHS $ENV{TBBROOT}/lib/intel64/gcc4.8)
 ##--
 -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld -lrt" \
 source compilervars.sh intel64
 source mklvars.sh intel64
 ```
 
+
+
+## Compiling with LLVM + OMPI
+
+### USC2 (centos 6.9)
+
+```shell
+git pull origin develop
+mkdir build_LLVM && cd build_LLVM
+
+module load tool_dev/binutils-2.37
+module load tool_dev/cmake-3.20.3
+module load fftw/fftw3.3.10-ompi4.1.3-clang14
+module load mpi/ompi4.1.3-clang14
+
+export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.3-clang14/bin
+export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
+## python (require py3) & BLAS+LAPACK
+export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
+
+cmake ../cmake -C ../cmake/presets/all_on.cmake \
+-DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld -lrt" \
+-DPython_ROOT_DIR=${pyROOT} \
+-DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
+-DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=no \
+-DPKG_INTEL=no -DPKG_GPU=no -DPKG_KOKKOS=no \
+-DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_VTK=no -DPKG_H5MD=no \
+-DPKG_MESONT=no -DPKG_LATTE=no -DPKG_MSCG=no -DPKG_ATC=no -DPKG_KIM=no -DPKG_SCAFACOS=no \
+-DPKG_ML-PACE=yes -DPKG_ML-QUIP=no -DPKG_ML-HDNNP=no -DPKG_MDI=no \
+-DPKG_PLUMED=yes \
+-DFFT=FFTW3 \
+-DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/llvmOMPI4-dev
+
+make -j 16 && make install
+```
+
+
+
+
 [Markdown basic syntax](https://www.markdownguide.org/basic-syntax)
 
 [Kramdown basic syntax](https://kramdown.gettalong.org/converter/html.html#math-support)
+

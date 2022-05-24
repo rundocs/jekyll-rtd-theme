@@ -28,6 +28,7 @@ https://github.com/openucx/ucx/wiki
 ## From Source vs. pre-configured Release
 
 ### 1. install from Source
+
 ```note
 - work now, but should not be use to avoid runtime errors
 - Requirements: autoconf-2.69b, libtool-2.4.6, automake-1.14
@@ -116,7 +117,6 @@ export CC=gcc export CXX=g++ export FORTRAN=gfortran
 ../configure --enable-mt --prefix=/uhome/p001cao/local/app/tool_dev/ucx-1.11
 ```
 
-
 Option:
 
 ```shell
@@ -181,27 +181,27 @@ export myOFI=/home1/p001cao/local/app/tool_dev/libfabric-1.10.1
 
 List of main transports and aliases
 https://github.com/openucx/ucx/wiki/UCX-environment-parameters
-all	use all the available transports.
-sm	all shared memory transports.
-shm	same as "sm".
-ugni	ugni_rdma and ugni_udt.
-rc	RC (=reliable connection), and UD (=unreliable datagram) for connection bootstrap.
+all use all the available transports.
+sm  all shared memory transports.
+shm same as "sm".
+ugni    ugni_rdma and ugni_udt.
+rc  RC (=reliable connection), and UD (=unreliable datagram) for connection bootstrap.
 "accelerated" transports are used if possible.
-ud	UD transport, "accelerated" is used if possible.
-dc	DC - Mellanox scalable offloaded dynamic connection transport
-rc_x	Same as "rc", but using accelerated transports only
-rc_v	Same as "rc", but using Verbs-based transports only
-ud_x	Same as "ud", but using accelerated transports only
-ud_v	Same as "ud", but using Verbs-based transports only
-tcp	TCP over SOCK_STREAM sockets
-rdmacm	Use RDMACM connection management for client-server API
-sockcm	Use sockets-based connection management for client-server API
-cuda_copy	Use cu\*Memcpy for hostcuda device self transfers but also to detect cuda memory
-gdr_copy	Use GDRcopy library for hostcuda device self transfers
-cuda_ipc	Use CUDA-IPC for cuda devicedevice transfers over PCIe/NVLINK
-rocm_copy	Use for host-rocm device transfers
-rocm_ipc	Use IPC for rocm device-device transfers
-self	Loopback transport to communicate within the same process
+ud  UD transport, "accelerated" is used if possible.
+dc  DC - Mellanox scalable offloaded dynamic connection transport
+rc_x    Same as "rc", but using accelerated transports only
+rc_v    Same as "rc", but using Verbs-based transports only
+ud_x    Same as "ud", but using accelerated transports only
+ud_v    Same as "ud", but using Verbs-based transports only
+tcp     TCP over SOCK_STREAM sockets
+rdmacm  Use RDMACM connection management for client-server API
+sockcm  Use sockets-based connection management for client-server API
+cuda_copy   Use cu\*Memcpy for hostcuda device self transfers but also to detect cuda memory
+gdr_copy    Use GDRcopy library for hostcuda device self transfers
+cuda_ipc    Use CUDA-IPC for cuda devicedevice transfers over PCIe/NVLINK
+rocm_copy   Use for host-rocm device transfers
+rocm_ipc    Use IPC for rocm device-device transfers
+self    Loopback transport to communicate within the same process
 
 ## II. UCX optional Libs
 
@@ -313,18 +313,25 @@ prepend-path    PKG_CONFIG_PATH     $topdir/lib/pkgconfig
 
 ### USC2
 
+```note
+- ucx-1.12.1 cause compiling error. use ucx-1.12.0
+- error can not solve now.
+```
+
 ```shell
 tar xvf ucx-1.12.1.tar.gz
 cd ucx-1.12.1
 mkdir build && cd build
 
-# module load tool_dev/binutils-2.37
+module load tool_dev/binutils-2.37
 module load compiler/llvm-14          # clang + lld
 
 export PATH=$PATH:/home1/p001cao/local/app/compiler/llvm-14/bin
 export CC=clang export CXX=clang++ export FORTRAN=flang
 export LDFLAGS="-fuse-ld=lld -lrt"
+export CXXFLAGS="-std=c++11"
 
-../configure --enable-mt  \
+../configure --enable-mt \
 --prefix=/home1/p001cao/local/app/tool_dev/ucx-1.12-llvm
+
 ```

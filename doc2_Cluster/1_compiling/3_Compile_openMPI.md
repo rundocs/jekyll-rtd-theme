@@ -18,20 +18,20 @@ sort: 3
   - consider to use [UCX](https://openucx.org/introduction/)
   - OpenMPI-4 use UCX by default (openMPI 4.0,3 --> ucx-1.7 or older).
   - consider using linker
-    - lld linker: 
-    
-    ```shell 
-    module load llvm/llvm-gcc10-lld                   # to use lld  
-    LDFLAGS="-fuse-ld=lld -lrt"   
+    - lld linker:
+
+    ```shell
+    module load llvm/llvm-gcc10-lld                   # to use lld
+    LDFLAGS="-fuse-ld=lld -lrt"
     ```
     - gold linker:
-    
-    ```shell 
-    module load tool_dev/binutils-2.32                                         
-    LDFLAGS="-fuse-ld=gold -lrt"     
+
+    ```shell
+    module load tool_dev/binutils-2.32
+    LDFLAGS="-fuse-ld=gold -lrt"
     ```
 ```
-  
+
 
 ## 1. Download:
 
@@ -56,7 +56,7 @@ export myUCX=/uhome/p001cao/local/app/tool_dev/ucx-1.9
 ```
 
 ### USC1: (Cenntos 6.5)
-```note 
+```note
 - should use gold-linker to avoid compiling error
 - UCX cause error: ib_md.c:329  UCX  ERROR ibv_reg_mr(address=0x145cb580, length=263504, access=0xf) failed: Resource temporarily unavailable. So dont use UCX on this server.
 ```
@@ -69,7 +69,7 @@ export myKNEM=/uhome/p001cao/local/app/tool_dev/knem-1.1.4
 #### InfiniBand cluster
 ```shell
 cd openmpi-4.1.1
-mkdir build_eagle && cd build_eagle 
+mkdir build_eagle && cd build_eagle
 
 ../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
 --with-sge --without-ucx --with-verbs --with-knem=${myKNEM} \
@@ -91,10 +91,10 @@ make install
 ```
 
 ### USC2: (Cenntos 6.9)
-- On Tacheon, UCX may give better performance. 
+- On Tacheon, UCX may give better performance.
 - Do not use GCC-11, to avoid error. this does not work `export CFLAGS='-gdwarf-4 -gstrict-dwarf'`
 
-```shell 
+```shell
 cd openmpi-4.1.3
 mkdir buildGCC && cd buildGCC
 ##
@@ -115,7 +115,7 @@ make  -j 16 && make install
 
 
 **without UCX**
-```shell 
+```shell
 module load tool_dev/binutils-2.35                        # gold
 module load compiler/gcc-10.3
 export LDFLAGS="-fuse-ld=gold -lrt"
@@ -125,7 +125,7 @@ export LDFLAGS="-fuse-ld=gold -lrt"
 ```
 
 ### CANlab: (Cenntos 5.8)
-```shell 
+```shell
 module load gcc/gcc-7.4.0
 
 ../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran \
@@ -158,12 +158,12 @@ module load gcc/gcc-7.4.0
   ```
 
 #### compile OpenMPI
-```shell 
+```shell
 cd openmpi-4.1.1
 mkdir build && cd build
 
 module load compiler/gcc-7.4   # cuda-10 only support to gcc-8
-module load binutils-2.35 
+module load binutils-2.35
 
 ../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran \
 --with-sge --without-ucx \
@@ -177,7 +177,7 @@ module load binutils-2.35
 #### InfiniBand cluster
 ```shell
 cd openmpi-4.1.1
-mkdir build_eagle && cd build_eagle 
+mkdir build_eagle && cd build_eagle
 ```
 ```shell
 module load intel/compiler-xe19u5
@@ -199,7 +199,7 @@ module load intel/compiler-xe19u5       # lld
 ##
 export PATH=/home1/p001cao/local/app/intel/xe19u5/compilers_and_libraries_2019.5.281/linux/bin/intel64:$PATH
 export CC=icc  export CXX=icpc  export FORTRAN=ifort
-export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.8-intel  
+export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.8-intel
 
 ../configure CC=icc CXX=icpc FC=ifort F77=ifort LDFLAGS="-fuse-ld=lld -lrt" \
 --with-sge --without-verbs --with-ucx=${myUCX} \
@@ -207,21 +207,21 @@ export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.8-intel
 ```
 
 
-## 4. Make module file 
+## 4. Make module file
 at directory: /uhome/p001cao/local/share/lmodfiles/mpi--> create file "ompi4.1.1-gcc11.2-noUCX"
 
 ```shell
 # for Tcl script use only
 module load compiler/gcc-11.2
-module load tool_dev/binutils-2.37 
+module load tool_dev/binutils-2.37
 
 set     topdir          /uhome/p001cao/local/app/openmpi/4.1.1-gcc11.2-noUCX-eagle
 
 prepend-path   PATH                $topdir/bin
 prepend-path   LD_LIBRARY_PATH     $topdir/lib
-prepend-path   INCLUDE             $topdir/include 
+prepend-path   INCLUDE             $topdir/include
 
-prepend-path   PKG_CONFIG_PATH 	   $topdir/lib/pkgconfig          # this is required 
+prepend-path   PKG_CONFIG_PATH 	   $topdir/lib/pkgconfig          # this is required
 ```
 
 **Check:**
@@ -247,21 +247,21 @@ export myUCX=/uhome/p001cao/local/app/tool_dev/ucx-1.11
 
 ```shell
 cd openmpi-5.0.0
-mkdir build_eagle && cd build_eagle 
+mkdir build_eagle && cd build_eagle
 
 ../configure CC=gcc CXX=g++ FC=gfortran F77=gfortran LDFLAGS="-fuse-ld=gold -lrt" \
 --with-sge --with-ucx=${myUCX}  \
 --prefix=/uhome/p001cao/local/app/openmpi/5.0.0-gcc11.2-eagle
 ```
 
+### USC2 (Cenntos 6.9)
 
-### USC2: (Cenntos 6.9)
-- On Tacheon, UCX may give better performance. 
+- On Tacheon, UCX may give better performance.
 
-```shell 
-module load tool_dev/autoconf-2.69b 
+```shell
+module load tool_dev/autoconf-2.69b
 module load tool_dev/libtool-2.4.6
-module load tool_dev/automake-1.14 
+module load tool_dev/automake-1.14
 git clone --branch v5.0.x --recursive  https://github.com/open-mpi/ompi.git openmpi_5
 cd openmpi_5
 ./autogen.pl
@@ -280,4 +280,26 @@ export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12               ## UCX
 --prefix=/home1/p001cao/local/app/openmpi/5.0.0-gcc10.3
 
 make -j 16 && make install
+```
+
+## 2. Compiling OpenMPI + Clang
+
+### USC2(Cenntos 6.9)
+
+```shell
+cd openmpi-4.1.3
+mkdir build_clang && cd build_clang
+
+module load tool_dev/binutils-2.37
+module load compiler/llvm-14          # clang + lld
+
+export PATH=$PATH:/home1/p001cao/local/app/compiler/llvm-14/bin
+export CC=clang export CXX=clang++ export FORTRAN=flang
+export LDFLAGS="-fuse-ld=lld -lrt"
+export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12
+
+../configure --with-sge --with-ucx=${myUCX} --without-verbs \
+--prefix=/home1/p001cao/local/app/openmpi/4.1.3-clang14
+
+make  -j 16 && make install
 ```
