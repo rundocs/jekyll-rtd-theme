@@ -11,7 +11,7 @@
                     </div>
                     <nav class="nav put-right">
                         <ul class="sf-menu">
-                            <li {% if site.baseurl == "" and page.url == "/" %}class="current"{% endif %}><a href="/">Home</a>
+                            <li {% if site.baseurl == "" %}class="current"{% endif %}><a href="/">Home</a>
                                 <ul>
                                     <li><a href="/map">Site Mapping & Feeding (M+F)</a>
                                         <ul>
@@ -100,7 +100,7 @@
                                     </li>
                                </ul>
                             </li>
-                            <li {% if page.url == "/program" %}class="current"{% endif %}><a href="/program">Program</a>
+                            <li {% if site.baseurl == "/program" %}class="current"{% endif %}><a href="/program">Program</a>
                                 <ul>
                                     <li><a href="/maps/script">Project Introduction</a></li>
                                     <li><a href="/feed/work">Site Rating</a></li>
@@ -118,7 +118,7 @@
                                     <li><a href="/world">Networking</a></li>
                                 </ul-->
                             </li>
-                            <li {% if page.url == "/mappings" %}class="current"{% endif %}><a href="/mappings">Mapping</a>
+                            <li {% if site.baseurl == "/quantum" %}class="current"{% endif %}><a href="/quantum">quantum</a>
                                 <ul>
                                     <li><a href="/attribute">Attribute</a></li>
                                     <li><a href="/artifacts">Artifacts</a></li>
