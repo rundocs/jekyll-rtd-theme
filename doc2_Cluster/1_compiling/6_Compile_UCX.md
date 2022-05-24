@@ -55,8 +55,11 @@ export LDFLAGS="-fuse-ld=gold -lrt"
 ```
 
 ### 2. install from UCX pre-configured Release
-- no need ./autogen.h
+
+```note
+- This way no need ./autogen.h
 - ver 1.12.1 will cause error: not found auvx.h
+```
 
 ```shell
 wget https://github.com/openucx/ucx/releases/download/v1.12.0/ucx-1.12.0.tar.gz
@@ -68,6 +71,7 @@ mkdir build && cd build
 ## Compile with GCC
 
 ### USC2
+
 ```note
 - Error: No components were able to be opened in the pml framework: not solve
 - do not use GCC-11 to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf'
@@ -87,6 +91,7 @@ export LDFLAGS="-fuse-ld=gold -lrt"
 ```
 
 Option:
+
 ```shell
 export CFLAGS='-gdwarf-4 -gstrict-dwarf'
 myKNEM=/home1/p001cao/local/app/tool_dev/knem-1.1.4
@@ -99,8 +104,8 @@ CFLAGS="-I$myNUMA/include" \
 ../contrib/configure-release  --enable-optimizations
 ```
 
-
 ### USC1 (eagle)
+
 ```shell
 module load tool_dev/binutils-2.36              # gold
 module load compiler/gcc-11.2
@@ -113,6 +118,7 @@ export CC=gcc export CXX=g++ export FORTRAN=gfortran
 
 
 Option:
+
 ```shell
 myKNEM=/uhome/p001cao/local/app/tool_dev/knem-1.1.4
 myNUMA=/uhome/p001cao/local/app/tool_dev/numactl-2.0.13
@@ -123,6 +129,7 @@ CFLAGS="-I$myNUMA/include" \
 ```
 
 Other options:
+
 ```shell
 --disable-numa
 --with-rc --with-ud --with-dc --with-ib-hw-tm --with-dm --with-cm \
@@ -153,7 +160,9 @@ export myOFI=/home1/p001cao/local/app/tool_dev/libfabric-1.10.1
 https://developer.arm.com/tools-and-software/server-and-hpc/help/porting-and-tuning/building-open-mpi-with-openucx/running-openmpi-with-openucx
 ```
 
-####2. Intel
+## Complie with Intel
+
+```shell
 module load intel/compiler-xe19u5
 export PATH=/home1/p001cao/local/app/intel/xe19u5/compilers_and_libraries_2019.5.281/linux/bin/intel64:$PATH
 export CC=icc  export CXX=icpc  export FORTRAN=ifort
@@ -164,11 +173,11 @@ export LD_LIBRARY_PATH=/usr/local/lib
 
 export myKNEM=/home1/p001cao/local/app/tool_dev/knem1.1.3
 export myOFI=/home1/p001cao/local/app/tool_dev/libfabric-1.10.1
-##--
+
 ../contrib/configure-release --disable-numa --enable-mt LDFLAGS="-fuse-ld=lld -lrt" \
 --with-verbs=${myOFI} --with-knem=${myKNEM} \
 --prefix=/home1/p001cao/local/app/tool_dev/ucx-1.8-intel
-
+```
 
 List of main transports and aliases
 https://github.com/openucx/ucx/wiki/UCX-environment-parameters
@@ -193,47 +202,56 @@ cuda_ipc	Use CUDA-IPC for cuda devicedevice transfers over PCIe/NVLINK
 rocm_copy	Use for host-rocm device transfers
 rocm_ipc	Use IPC for rocm device-device transfers
 self	Loopback transport to communicate within the same process
-II. UCX optional Libs
-1. rdma-core (fail)
+
+## II. UCX optional Libs
+
+### 1. rdma-core (fail)
+
 UCX detects the exiting libraries on the build machine and enables/disables support for various features accordingly. If some of the modules UCX was built with are not found during runtime, they will be silently disabled.
 Basic shared memory and TCP support - always enabled
 Optimized shared memory - requires knem or xpmem drivers. On modern kernels also CMA (cross-memory-attach) mechanism will be used.
 RDMA support - requires rdma-core or libibverbs library.
 NVIDIA GPU support - requires Cuda drives
 AMD GPU support - requires ROCm drivers
+
+```shell
 git clone https://github.com/linux-rdma/rdma-core  rdma-core
 cd rdma-core
 tar xvf rdma-core-30.0.tar.gz
 cd rdma-core-30.0
-####
+
 module load compiler/gcc-10.1.0
 module load tool_dev/cmake-3.17.2
 module load tool_dev/libnl-3.0
 module load tool_dev/libtool-2.4.6
 
 export LD_LIBRARY_PATH=/home1/p001cao/local/app/tool_dev/libnl-3.0/lib:$LD_LIBRARY_PATH ./build.sh
+```
 
+### 2. libnuma-devel
 
-
-2. libnuma-devel
 https://github.com/numactl/numactl
+
+```shell
 tar xzf numactl-2.0.13.tar.gz
 cd numactl-2.0.13
-##--
+
 module load tool_dev/autoconf-2.69b
 ./autogen.sh
-#--
+
 mkdir build && cd build
 ../configure --prefix=/home1/p001cao/local/app/tool_dev/numactl-2.0.13
+```
 
+### 3. openMPI/UCX: libfabric ()
 
-3. openMPI/UCX: libfabric ()
 wget https://github.com/ofiwg/libfabric/releases/tag/v1.11.1/libfabric-1.11.1.tar.bz2
 If building directly from the libfabric git tree, run './autogen.sh' before the configure step.
-#--
+
+```shell
 module load tool_dev/autoconf-2.69b
 ./autogen.sh
-##
+
 tar -xvf libfabric-1.11.1.tar.bz2
 cd libfabric-1.11.1
 module load compiler/gcc-10.2
@@ -246,30 +264,38 @@ module load compiler/gcc-10.2
 
 ## module
 prepend-path PKG_CONFIG_PATH $topdir/lib/pkgconfig
+```
 
+### 4. openMPI/UCX: KNEM
 
-4. openMPI/UCX: KNEM
 https://knem.gitlabpages.inria.fr/
+
+```shell
 tar zxvf knem-1.1.4.tar.gz
 cd knem-1.1.4
 ./configure --prefix=/uhome/p001cao/local/app/tool_dev/knem-1.1.4
+```
 
-5. openMPI/UCX: XPMEM
+### 5. openMPI/UCX: XPMEM
+
 https://github.com/hjelmn/xpmem/releases/tag/v2.6.3
+
 https://github.com/hjelmn/xpmem/wiki/Installing-XPMEM
 --> cannot install: require linux kernel 4.x
+
+```shell
 check: uname -a
-##--
+```
+
+```shell
 tar zxvf xpmem-2.6.3.tar.gz
 cd xpmem-2.6.3
-##--
 
 ./configure --prefix=/home1/p001cao/local/app/tool_dev/xpmem-2.6.2
-
-
-
+```
 
 ### 3. Make module file
+
 at directory: /uhome/p001cao/local/share/lmodfiles/GCC --> create file "gcc-11.2"
 
 ```shell
@@ -277,27 +303,27 @@ at directory: /uhome/p001cao/local/share/lmodfiles/GCC --> create file "gcc-11.2
 set     topdir          /home1/p001cao/local/app/tool_dev/ucx-1.11
 
 prepend-path    PATH                $topdir/bin
-prepend-path    INCLUDE 	        $topdir/include
+prepend-path    INCLUDE             $topdir/include
 prepend-path    LD_LIBRARY_PATH     $topdir/lib
 
-prepend-path    PKG_CONFIG_PATH 	$topdir/lib/pkgconfig
+prepend-path    PKG_CONFIG_PATH     $topdir/lib/pkgconfig
 ```
 
 ## Compile with LLVM
 
 ### USC2
 
-```note
-
-```
-
 ```shell
-# module load tool_dev/binutils-2.37              # gold
-module load compiler/llvm-14
+tar xvf ucx-1.12.1.tar.gz
+cd ucx-1.12.1
+mkdir build && cd build
 
-export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-10.3/bin
-export CC=gcc export CXX=g++ export FORTRAN=gfortran
-export LDFLAGS="-fuse-ld=gold -lrt"
+# module load tool_dev/binutils-2.37
+module load compiler/llvm-14          # clang + lld
+
+export PATH=$PATH:/home1/p001cao/local/app/compiler/llvm-14/bin
+export CC=clang export CXX=clang++ export FORTRAN=flang
+export LDFLAGS="-fuse-ld=lld -lrt"
 
 ../configure --enable-mt  \
 --prefix=/home1/p001cao/local/app/tool_dev/ucx-1.12-llvm

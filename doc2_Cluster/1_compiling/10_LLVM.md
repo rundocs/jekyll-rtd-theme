@@ -34,29 +34,37 @@ mkdir build && cd build
 ## USC2: Tachyon
 
 ```note
-- Update Binutils and use GCC-11
 - use `-DCMAKE_CXX_STANDARD=17` to avoid no digit exponent.
+- Dont use -DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind", will cause error. Instead, use DLLVM_ENABLE_PROJECTS="compiler-rt;libc;libcxx;libcxxabi;libunwind" [see](https://llvm.org/docs/GettingStarted.html#id20)
+- Dont install target X86, may cause error with 'libc'.
+- May need GCC >= 9
 ```
 
 ```shell
-tar xvf llvm-project-llvmorg-14.0.3.tar.gz
-cd llvm-project-llvmorg-14.0.3
+# tar xvf llvm-project-llvmorg-14.0.3.tar.gz
+# cd llvm-project-llvmorg-14.0.3
+
+git clone -b release/14.x https://github.com/llvm/llvm-project.git llvm-14
+cd llvm-14
 mkdir build && cd build
 
 module load tool_dev/cmake-3.20.3
 module load conda/py37Lammps
 module load tool_dev/binutils-2.37
-module load compiler/gcc-11.2
+module load compiler/gcc-10.3
 
-export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-11.2/bin
+export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-10.3/bin
 export CC=gcc export CXX=g++ export FORTRAN=gfortran
 export LDFLAGS="-fuse-ld=gold -lrt"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DCMAKE_CXX_STANDARD=17 \
--DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;compiler-rt;libc;libclc;libcxx;libcxxabi;libunwind;lld;openmp;polly;pstl;mlir" \
--DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14.0.3
+-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;flang;libclc;lld;lldb;openmp;polly;pstl;mlir" \
+-DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind" \
+-DLLVM_TARGETS_TO_BUILD="AArch64;AMDGPU;PowerPC;SystemZ" \
+-DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
 
+make -j 16 && make install
 ```
 
 ### Module file
@@ -65,7 +73,7 @@ at directory: /home1/p001cao/local/1myModfiles/compiler --> create file "llvm-14
 
 ```shell
 # for Tcl script use only
-set     topdir          /home1/p001cao/local/app/compiler/llvm-14.0.3
+set     topdir          /home1/p001cao/local/app/compiler/llvm-14
 set     version         clang-14.0
 
 prepend-path    PATH                    $topdir/bin
