@@ -11,7 +11,7 @@
                     </div>
                     <nav class="nav put-right">
                         <ul class="sf-menu">
-                            <li {% if site.baseurl == "" %}class="current"{% endif %}><a href="/">Home</a>
+                            <li {% if site.baseurl == "" and page.url == "/" %}class="current"{% endif %}><a href="/">Home</a>
                                 <ul>
                                     <li><a href="/map">Site Mapping & Feeding (M+F)</a>
                                         <ul>
