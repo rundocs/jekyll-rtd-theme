@@ -1,0 +1,28 @@
+---
+layout: base
+---
+{% comment %}
+*
+*  This loop loops through a collection called `feeds` with category 'section'
+*  and sorts it by the front matter variable 'weight' and than render
+*  each of the {{ output }} with their own layout
+*
+*  Difference between Section, Container and Div:
+*  - Section: Has standard full width of viewport and cannot have nested sections
+*  - Container: Same as Div but locked at 940 pixel width and auto-placed in center of page
+*  - Div: Same as a container without restrictions and can have nested divs
+*
+*  To provide it with an online work you may see the running code here:
+*  https://chetabahana.github.io/
+*
+{% endcomment %}
+{%- assign sections = site.feeds | sort: 'weight' | where_exp:"item", "item.category == 'section'" -%}
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+{% for section in sections %}
+{{ section.output }}
+{% endfor %}
+    </body>
+</html>
+
