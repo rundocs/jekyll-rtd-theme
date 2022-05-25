@@ -287,19 +287,20 @@ make -j 16 && make install
 ### USC2(Cenntos 6.9)
 
 ```shell
-cd openmpi-4.1.3
+tar xvf openmpi-4.1.4rc1.tar.gz
+cd openmpi-4.1.4rc1
 mkdir build_clang && cd build_clang
 
-module load tool_dev/binutils-2.37
 module load compiler/llvm-14          # clang + lld
 
-export PATH=$PATH:/home1/p001cao/local/app/compiler/llvm-14/bin
-export CC=clang export CXX=clang++ export FORTRAN=flang
+export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
+export PATH=$PATH:${myCOMPILER}/bin
+export CC=clang export CXX=clang++ export FC=gfortran
 export LDFLAGS="-fuse-ld=lld -lrt"
-export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12
+export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12-llvm
 
 ../configure --with-sge --with-ucx=${myUCX} --without-verbs \
---prefix=/home1/p001cao/local/app/openmpi/4.1.3-clang14
+--prefix=/home1/p001cao/local/app/openmpi/4.1.4-clang14
 
 make  -j 16 && make install
 ```

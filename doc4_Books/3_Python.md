@@ -13,4 +13,6 @@ sort: 3
 
 [Basic Concepts of Chemical Engineering Thermodynamics](https://allinfoche.blogspot.com/2021/10/basic-concepts-of-chemical-engineering.html?m=1)
 
+[Markdown basic syntax](https://www.markdownguide.org/basic-syntax)
 
+[Kramdown basic syntax](https://kramdown.gettalong.org/converter/html.html#math-support)

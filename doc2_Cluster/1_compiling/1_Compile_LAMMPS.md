@@ -971,8 +971,6 @@ source compilervars.sh intel64
 source mklvars.sh intel64
 ```
 
-
-
 ## Compiling with LLVM + OMPI
 
 ### USC2 (centos 6.9)
@@ -983,16 +981,17 @@ mkdir build_LLVM && cd build_LLVM
 
 module load tool_dev/binutils-2.37
 module load tool_dev/cmake-3.20.3
-module load fftw/fftw3.3.10-ompi4.1.3-clang14
-module load mpi/ompi4.1.3-clang14
+module load fftw/fftw3.3.10-ompi4.1.4-clang14
+module load mpi/ompi4.1.4-clang14
 
-export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.3-clang14/bin
-export CC=mpicc  export CXX=mpic++  export FC=mpifort  export F90=mpif90
+export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
+export PATH=$PATH:${myCOMPILER}/bin
+export CC=mpicc  export CXX=mpic++  export FC=mpifort
+export LDFLAGS="-fuse-ld=lld -lrt"
 ## python (require py3) & BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
--DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld -lrt" \
 -DPython_ROOT_DIR=${pyROOT} \
 -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=mpi -DPKG_OPENMP=yes \
 -DLAMMPS_EXCEPTIONS=yes -DBUILD_SHARED_LIBS=no \
@@ -1006,11 +1005,3 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 
 make -j 16 && make install
 ```
-
-
-
-
-[Markdown basic syntax](https://www.markdownguide.org/basic-syntax)
-
-[Kramdown basic syntax](https://kramdown.gettalong.org/converter/html.html#math-support)
-

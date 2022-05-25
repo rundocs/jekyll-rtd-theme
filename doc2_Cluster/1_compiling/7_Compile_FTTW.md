@@ -95,12 +95,14 @@ prepend-path    PKG_CONFIG_PATH     $topdir/lib/pkgconfig
 cd fftw-3.3.10
 mkdir build_LLVM && cd build_LLVM
 
-module load mpi/ompi4.1.3-clang14
-export PATH=$PATH:/home1/p001cao/local/app/openmpi/4.1.3-clang14/bin
-export CC=mpicc  export CXX=mpic++  export FORTRAN=mpifort  export F90=mpif90
+module load mpi/ompi4.1.4-clang14
+
+export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
+export PATH=$PATH:${myCOMPILER}/bin
+export CC=mpicc  export CXX=mpic++  export FC=mpifort
 export LDFLAGS="-fuse-ld=lld -lrt"
 
 ../configure --enable-sse2 \
 --enable-threads --enable-openmp --enable-mpi --enable-shared \
---prefix=/home1/p001cao/local/app/fftw/3.3.10-ompi4.1.3-clang14
+--prefix=/home1/p001cao/local/app/fftw/3.3.10-ompi4.1.4-clang14
 ```

@@ -315,21 +315,20 @@ prepend-path    PKG_CONFIG_PATH     $topdir/lib/pkgconfig
 
 ```note
 - ucx-1.12.1 cause compiling error. use ucx-1.12.0
-- error can not solve now.
+- "-fuse-ld=lld -lrt" error with ucx-1.12.0. So use 'gold' temporary
 ```
 
 ```shell
-tar xvf ucx-1.12.1.tar.gz
-cd ucx-1.12.1
+tar xvf ucx-1.12.0.tar.gz
+cd ucx-1.12.0
 mkdir build && cd build
 
-module load tool_dev/binutils-2.37
 module load compiler/llvm-14          # clang + lld
 
-export PATH=$PATH:/home1/p001cao/local/app/compiler/llvm-14/bin
-export CC=clang export CXX=clang++ export FORTRAN=flang
-export LDFLAGS="-fuse-ld=lld -lrt"
-export CXXFLAGS="-std=c++11"
+export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
+export PATH=$PATH:${myCOMPILER}/bin
+export CC=clang export CXX=clang++ export FC=flang
+export LDFLAGS="-fuse-ld=gold -lrt"
 
 ../configure --enable-mt \
 --prefix=/home1/p001cao/local/app/tool_dev/ucx-1.12-llvm

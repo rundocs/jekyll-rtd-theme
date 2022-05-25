@@ -38,6 +38,7 @@ mkdir build && cd build
 - Use `-DCMAKE_CXX_STANDARD=17` to avoid no digit exponent.
 - Dont use -DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind", will cause error. Instead, use DLLVM_ENABLE_PROJECTS="compiler-rt;libc;libcxx;libcxxabi;libunwind" [see](https://llvm.org/docs/GettingStarted.html#id20). 'compiler-rt;libc;libcxx;libcxxabi' may error.
 - Dont install target X86, may cause error with 'libc'.
+- must use `-DGCC_INSTALL_PREFIX -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64"` to have right link to libc.
 - See https://llvm.org/docs/CMake.html
 ```
 
@@ -54,17 +55,36 @@ module load conda/py37Lammps
 module load tool_dev/binutils-2.37
 module load compiler/gcc-10.3
 
-export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-10.3/bin
+export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-10.3
+
+export PATH=$PATH:${myCOMPILER}/bin
 export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DCMAKE_CXX_STANDARD=17 \
 -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;flang;libclc;lld;openmp;polly;pstl;mlir" \
--DCMAKE_C_COMPILE=gcc -DCMAKE_CXX_COMPILE=g++ \
+-DGCC_INSTALL_PREFIX=${myCOMPILER} \
+-DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
 
 make -j 16 && make install
+```
+
+check:
+
+```shell
+module load mpi/ompi4.1.3-clang14
+clang -v
+```
+
+Options:
+
+```shell
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${myCOMPILER}/lib
+
+-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;flang;libclc;lld;openmp;polly;pstl;mlir" \  # "clang;flang;lld;openmp"
+-DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 ```
 
 ### Module file
