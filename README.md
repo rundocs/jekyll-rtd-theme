@@ -1,7 +1,3 @@
----
-title: parser
-layout: parser
----
 # Theme
 
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
