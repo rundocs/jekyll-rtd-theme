@@ -33,22 +33,18 @@
             {{- created_time }}-{{ updated_time -}},
         {%- endif -%}
     </span>
-    <a class="text-gray" href="{{ docs.owner_url }}" rel="noreferrer" target="_blank">
-        {{- author -}}
-    </a>
-    {{ __.revision | default: "Revision" }}
-    <a class="text-gray" href="{{ docs.repository_url }}/commit/{{ docs.build_revision }}" title="{{ docs.build_revision }}" rel="noreferrer" target="_blank">
-        {{- docs.build_revision | slice: 0, 7 -}}
+    <a class="text-gray" href="https://in2wise.com" rel="noreferrer" target="_blank">
+      in2wise
     </a>
     {% unless site.url contains "rundocs.io" %}
         <br>
         <div class="generator">
-            Built with
-            <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v{{ docs.versions.github-pages }}">GitHub Pages</a>
-            using a
-            <a href="https://github.com/{{ theme_alias | split: '@' | first }}" rel="noreferrer" target="_blank" title="{{ generator }} v{{ version }}">theme</a>
-            provided by
-            <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>.
+            Contact us<br>
+            <a href="https://in2wise.com" rel="noreferrer" target="_blank"><i class="fa fa-home" aria-hidden="true">in2wise.com</i></a><br>
+            <a href="mailto:platform@in2wise.com" rel="noreferrer" target="_blank"><i class="fa fa-envelope" aria-hidden="true">platform@in2wise.com</i></a><br>
+            <a href="tel:042-335-8785" rel="noreferrer" target="_blank"><i class="fa fa-phone" aria-hidden="true">042-335-8785</i></a><br>
+            <i class="fa fa-building" aria-hidden="true">서울) 서울특별시 마포구 큰우물로 75 성지빌딩 1206호</i>
+            <i class="fa fa-building" aria-hidden="true">대전) 대전 유성구 가정로 218 한국전자통신연구원 융합기술연구생산센터 233-3</i>
         </div>
     {% endunless %}
 </div>
