@@ -114,7 +114,7 @@
 							{% for repository in site.github.public_repositories %}
 							<li>						
 							  Name: <a href="{{ repository.html_url }}" target="_blank">{{ repository.name }}</a> 
-							  {% if repository.fork %} (Forked){% endif %} - 
+							  {% if repository.fork %} (Forked){% endif %}<br>
 							  Homepage: [<a href="{{ repository.homepage }}" target="_blank">{{ repository.homepage }}</a>]<br>
 							  {{ repository.description }}<hr>
 							</li>						
