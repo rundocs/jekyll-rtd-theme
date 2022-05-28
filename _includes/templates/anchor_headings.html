@@ -58,7 +58,7 @@
   {% assign maxHeader = include.h_max | default: 6 %}
   {% assign beforeHeading = include.beforeHeading %}
   {% assign headerAttrs = include.headerAttrs %}
-  {% assign nodes = include.html | split: '<h' %}{{ nodes | size }}
+  {% assign nodes = include.html | split: '<h' %}
 
   {% capture edited_headings %}{% endcapture %}
 
@@ -169,4 +169,4 @@
 
     {% capture edited_headings %}{{ edited_headings }}{{ new_heading }}{% endcapture %}
   {% endfor %}
-{% endcapture %}{% assign headingsWorkspace = '' %}
+{% endcapture %}{% assign headingsWorkspace = '' %}{{ edited_headings | strip }}
