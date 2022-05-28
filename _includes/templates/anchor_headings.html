@@ -69,10 +69,6 @@
       {% continue %}
     {% endif %}
 	
-    {% unless node contains "Tabulate Prime by The Power of 168" %}
-      {% continue %}
-    {% endunless %}	
-	
     {% assign nextChar = node | replace: '"', '' | strip | slice: 0, 1 %}
     {% assign headerLevel = nextChar | times: 1 %}
 
@@ -86,6 +82,10 @@
         {% capture node %}<h{{ node }}{% endcapture %}
       {% endunless %}
 
+      {% unless node contains "Tabulate Prime by The Power of 168" %}
+        {% continue %}
+      {% endunless %}	
+	
       {% capture edited_headings %}{{ edited_headings }}{{ node }}{% endcapture %}
       {% continue %}
     {% endif %}
