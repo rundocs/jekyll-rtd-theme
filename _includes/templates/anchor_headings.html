@@ -49,6 +49,7 @@
       * bodyPrefix    (string) :  ''    - Anything that should be inserted inside of the heading tag _before_ its anchor and content
       * bodySuffix    (string) :  ''    - Anything that should be inserted inside of the heading tag _after_ its anchor and content
       * generateId    (true)   :  false - Set to true if a header without id should generate an id to use.
+      * headerTitle   (string) :  ''    - Only take the content under the title
 
     Output:
       The original HTML with the addition of anchors inside of all of the h1-h6 headings.
@@ -59,13 +60,14 @@
   {% assign beforeHeading = include.beforeHeading %}
   {% assign headerAttrs = include.headerAttrs %}
   {% assign nodes = include.html | split: '<h' %}
-
+  {% assign headerTitle = include.headerTitle %}
+  
   {% capture edited_headings %}{% endcapture %}
 
   {% for _node in nodes %}
     {% capture node %}{{ _node | strip }}{% endcapture %}
 
-    {% unless node contains "Tabulate Prime by The Power of 168" %}
+    {% unless node contains headerTitle %}
       {% continue %}
     {% endunless %}	
 	
