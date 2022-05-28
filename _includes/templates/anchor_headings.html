@@ -68,7 +68,11 @@
     {% if node == "" %}
       {% continue %}
     {% endif %}
-
+	
+    {% unless node contains "Tabulate Prime by The Power of 168" %}
+      {% continue %}
+    {% endunless %}	
+	
     {% assign nextChar = node | replace: '"', '' | strip | slice: 0, 1 %}
     {% assign headerLevel = nextChar | times: 1 %}
 
