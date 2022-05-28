@@ -58,16 +58,16 @@
   {% assign maxHeader = include.h_max | default: 6 %}
   {% assign beforeHeading = include.beforeHeading %}
   {% assign headerAttrs = include.headerAttrs %}
-  {% assign nodes = include.html | split: '<h' %}
+  {% assign nodes = include.html | split: '<h' %}{{ nodes | size }}
 
   {% capture edited_headings %}{% endcapture %}
 
   {% for _node in nodes %}
     {% capture node %}{{ _node | strip }}{% endcapture %}
 
-    {% if node == "" %}
+    {% unless node contains "Tabulate Prime by The Power of 168" %}
       {% continue %}
-    {% endif %}
+    {% endunless %}	
 	
     {% assign nextChar = node | replace: '"', '' | strip | slice: 0, 1 %}
     {% assign headerLevel = nextChar | times: 1 %}
@@ -82,10 +82,6 @@
         {% capture node %}<h{{ node }}{% endcapture %}
       {% endunless %}
 
-      {% unless node contains "Tabulate Prime by The Power of 168" %}
-        {% continue %}
-      {% endunless %}	
-	
       {% capture edited_headings %}{{ edited_headings }}{{ node }}{% endcapture %}
       {% continue %}
     {% endif %}
@@ -173,4 +169,4 @@
 
     {% capture edited_headings %}{{ edited_headings }}{{ new_heading }}{% endcapture %}
   {% endfor %}
-{% endcapture %}{% assign headingsWorkspace = '' %}{{ edited_headings | strip }}
+{% endcapture %}{% assign headingsWorkspace = '' %}
