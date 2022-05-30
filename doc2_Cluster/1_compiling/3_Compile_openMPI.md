@@ -287,8 +287,8 @@ make -j 16 && make install
 ### USC2(Cenntos 6.9)
 
 ```shell
-tar xvf openmpi-4.1.4rc1.tar.gz
-cd openmpi-4.1.4rc1
+tar xvf openmpi-4.1.4.tar.gz
+cd openmpi-4.1.4
 mkdir build_clang && cd build_clang
 
 module load compiler/llvm-14          # clang + lld
