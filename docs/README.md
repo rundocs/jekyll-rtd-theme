@@ -23,17 +23,17 @@ layer|  i  |   f
   3  +-----+      36 » 6®
      |  6  | 19
 -----+-----+---------
-*
+
 References:
 https://www.youtube.com/watch?v=fQL4KRH3wUQ&t=202s
 https://primes.utm.edu/curios/page.php?curio_id=2817
-*
+
 ```
 ```
-*
+
 True Prime Pairs:
 (5,7), (11,13), (17,19)
-*
+
 layer | node | sub |  i  |  f
 ------+------+-----+----------
       |      |     |  1  | 
@@ -72,14 +72,14 @@ layer | node | sub |  i  |  f
       |      |  9  +-----+
       |      |     |  18 |
 ------|------|-----+-----+------
-*
+
 References:
 https://chetabahana.github.io/images/skema/spin.png
 https://chetabahana.github.io/images/skema/minor.png
-*
+
 ```
 ```
-*
+
 layer | node | sub |  i  |  f
 ------+------+-----+----------
       |      |     |  1  | (5)
@@ -119,14 +119,14 @@ layer | node | sub |  i  |  f
       |      |     |  18 |
 ------|------|-----+-----+------
                    | (19)| ----> 1√
-*
+
 References:
 https://www.hexspin.com/0-1-and-negative-numbers/
 https://chetabahana.github.io/images/skema/hexagon.png
-*
+
 ```
 ```
-*
+
 layer | node | sub |  i  |  f
 ------+------+-----+----------
       |      |     |  1  | (2,3)√
@@ -165,14 +165,14 @@ layer | node | sub |  i  |  f
       |      |  9  +-----+
       |      |     |  18 |
 ------|------|-----+-----+------
-*
+
 Referencea:
 https://chetabahana.github.io/images/skema/first.png
 https://chetabahana.github.io/images/skema/hexagon.png
-*
+
 ```
 ```
-*
+
 layer | node | sub |  i  |  f
 ------+------+-----+----------
       |      |     |  1  | 2x -----
@@ -211,10 +211,10 @@ layer | node | sub |  i  |  f
       |      |  9  +-----+
       |      |     |  18 |
 ------|------|-----+-----+------
-*
+
 ```
 ```
-*
+
 layer | node | sub |  i  |  f
 ------+------+-----+----------
       |      |     |  1  |  2x
@@ -253,10 +253,10 @@ layer | node | sub |  i  |  f
       |      |  9  +-----+
       |      |     |  18 |
 ------|------|-----+-----+------
-*
+
 ```
 ```
-*
+
 layer | node | sub |  i  |  f
 ------+------+-----+----------
       |      |     |  1  |  2,3 <-(2x)= (13-11)x --
@@ -295,10 +295,10 @@ layer | node | sub |  i  |  f
       |      |  9  +-----+
       |      |     |  18 |
 ------|------|-----+-----+------
-*
+
 ```
 ```
-*
+
 layer | node | sub |  i  |  k  |  f
 ------+------+-----+-----+-----+-----
       |      |     |  1  | 1,2 |  2,3 -- 2x = (13-11)x --
@@ -337,5 +337,5 @@ layer | node | sub |  i  |  k  |  f
       |      |  9  +-----+
       |      |     |  18 |
 ------|------|-----+-----+------
-*
+
 ```
