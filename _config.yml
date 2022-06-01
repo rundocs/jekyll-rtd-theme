@@ -5,7 +5,7 @@ description: You cannot teach a man anything, you can only help him find it with
 theme: null
 # remote_theme: rundocs/jekyll-rtd-theme
 
-dark_theme_toggle        : true
+dark_theme_toggle       : true
 
 # debug:
 #   compress: true
