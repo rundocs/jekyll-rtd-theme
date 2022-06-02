@@ -67,7 +67,7 @@ google:
 
 # comments
 comments:
-	provider : "facebook"
+	provider : facebook
 	facebook:
 		appid : 868567211203282
 		num_posts : # 5 (default)
