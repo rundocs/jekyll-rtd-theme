@@ -67,8 +67,8 @@ google:
 
 # comments
 comments:
-	provider : facebook
-	facebook:
-		appid : 868567211203282
-		num_posts : # 5 (default)
-		colorscheme : # "light" (default), "dark"
+  provider : "facebook"
+  facebook:
+    appid : 868567211203282
+    num_posts : # 5 (default)
+    colorscheme : # "light" (default), "dark"
