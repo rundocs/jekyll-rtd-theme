@@ -3,7 +3,7 @@
 
 {%- assign id = 1                         -%}
 {%- assign sqrt = 2                       -%}
-{%- assign prime = '2,3' | split: ','     -%}
+{%- assign prime = '1,2' | split: ','     -%}
 
 {%- for num in (3 .. MAX)                 -%}
 {%-   assign mod = num | modulo: 2        -%}
