@@ -42,3 +42,54 @@
 *  ----------------------+-----+                                                ---
 *
 {%- endcomment -%}
+<table border="1">
+  <tr>
+    <td width="100">id</td>
+    <td width="100">num</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+{%- assign MAX = 10000                    -%}
+{%- assign MAX_SQRT = 100                 -%}
+
+{%- assign id = 1                         -%}
+{%- assign sqrt = 2                       -%}
+
+{%- for num in (3 .. MAX)                 -%}
+{%-   assign mod = num | modulo: 2        -%}
+{%-   if mod == 0                         -%}
+{%-     continue                          -%}
+{%-   endif                               -%}
+
+{%-   assign bad = false                  -%}
+
+{%-   for i in (sqrt .. MAX_SQRT)         -%}
+{%-     assign pow = i | times: i         -%}
+{%-     if pow >= num                     -%}
+{%-       assign sqrt = i                 -%}
+{%-       break                           -%}
+{%-     endif                             -%}
+{%-   endfor                              -%}
+
+{%-   for i in (3 .. sqrt)                -%}
+{%-     assign mod = num | modulo: i      -%}
+{%-     if mod == 0                       -%}
+{%-       assign bad = true               -%}
+{%-       break                           -%}
+{%-     endif                             -%}
+{%-   endfor                              -%}
+
+{%-   if bad                              -%}
+{%-     continue                          -%}
+{%-   endif                               -%}
+
+{%-   assign id = id | plus: 1            -%}
+  <tr>
+    <td>{{- id -}}</td>
+    <td>{{- num -}}</td>
+  </tr>
+{%- endfor                                -%}
+
+</table>
