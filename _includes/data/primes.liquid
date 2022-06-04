@@ -1,15 +1,13 @@
 {%- assign sqrt = 2                       -%}
 {%- assign max_sqrt = 100                 -%}
 {%- assign prime = '1,2' | split: ','     -%}
-{%- assign n = include.n | default: 10000 -%}
+{%- assign n = include.n | default: 1000  -%}
 
 {%- for num in (3 .. n)                   -%}
 {%-   assign mod = num | modulo: 2        -%}
 {%-   if mod == 0                         -%}
 {%-     continue                          -%}
 {%-   endif                               -%}
-
-{%-   assign bad = false                  -%}
 
 {%-   for i in (sqrt .. max_sqrt)         -%}
 {%-     assign pow = i | times: i         -%}
@@ -19,6 +17,7 @@
 {%-     endif                             -%}
 {%-   endfor                              -%}
 
+{%-   assign bad = false                  -%}
 {%-   for i in (3 .. sqrt)                -%}
 {%-     assign mod = num | modulo: i      -%}
 {%-     if mod == 0                       -%}
