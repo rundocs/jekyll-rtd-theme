@@ -25,8 +25,6 @@ Each cycles will have a total of five (5) steps prime algorithm on base 114-31=8
 
 ### The Lambda
 
-![Parser](https://user-images.githubusercontent.com/36441664/170870566-6b856e7c-49dc-4c0d-a043-7fb672079571.png)
-
 The Lambda is a numerical-geometric figure that was studied by the ancient Greeks. It was described by Plato in the Timaeus as the ‘World Soul’. Plato states that God created the Cosmic Soul using two mathematical strips of (1, 2, 4, 8) and (1, 3, 9, 27).
 
 The First Series: (1, 2, 4, 8) is the doubling sequence. The even numbers are associated with the _passive feminine principle_. The Second Series: (1, 3, 9, 27) is the tripling sequence. These odd numbers are associated with the _active masculine principle_.
@@ -38,6 +36,8 @@ The type of progression, which combines both the additive and multiplicative gro
 ```
 
 These two strips follow the shape of an inverted “V” or the “Platonic Lambda”. Lambda is the 11th letter of the Greek alphabet. The triangular form represents its divine nature like the tetraktys acting as our [base frame](/docs). 
+
+![Parser](https://user-images.githubusercontent.com/36441664/170870566-6b856e7c-49dc-4c0d-a043-7fb672079571.png)
 
 ![Inner Hexagon](https://user-images.githubusercontent.com/36441664/83331599-55cb5c00-a2c1-11ea-833e-b14dd79b5f2d.jpg)
 
