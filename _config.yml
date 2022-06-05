@@ -121,6 +121,9 @@ defaults:
     values:
       layout: "redirect"
 
+readme_index:
+  with_frontmatter: false
+  
 # Permalinks
 # https://jekyllrb.com/docs/permalinks/
 # feeds: https://chetabahana.github.io/main/tree.json
