@@ -110,10 +110,10 @@ defaults:
       layout: "feeds"
   -
     scope:
-      path: "docs"
+      path: ""
       type: "pages"
     values:
-      layout: "pages"
+      layout: "parser"
   -
     scope:
       path: ""
@@ -121,9 +121,6 @@ defaults:
     values:
       layout: "redirect"
 
-readme_index:
-  with_frontmatter: false
-  
 # Permalinks
 # https://jekyllrb.com/docs/permalinks/
 # feeds: https://chetabahana.github.io/main/tree.json
