@@ -44,8 +44,8 @@
 						<li><a href="/">Home</a></li>{% if page.layout == "method" or page.layout == "pages" %}
 						<li><a href="/concept">Concept</a></li>{% endif %}                  
 						{% if page.layout == "method" %}<li><a href="{{ page.url }}">{{ page.title }}{% elsif page.layout == "pages" %}<li><a href="{{ page.url | replace:page.title,'' }}">{{ page.category }}</a></li><li><a href="{{ page.url }}">{{ page.title }}{% else %}<li><a href="{{ page.url }}">{{ page.layout }}{% endif %}</a></li>
-						<li class="active"><a href="https://github.com/eq19/{{ site.github.repository_name }}/blob/master/{{ page.path }}">Source Link</a></li>
-					</ol><hr>
+						<li class="active"><a href="{% github_edit_link %}">Source Link</a></li>
+					</ol>
 				</div>
 			</div>
 		</div>
