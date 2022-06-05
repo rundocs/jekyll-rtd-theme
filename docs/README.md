@@ -5,6 +5,9 @@
 
 {% include list.liquid all=true %}
 ```
+
+![10 primes](https://user-images.githubusercontent.com/36441664/85206005-39af5d80-b349-11ea-851a-56309342b53f.png)
+
 ```
 True Prime Pairs:
 (5,7), (11,13), (17,19)
