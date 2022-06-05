@@ -27,6 +27,12 @@ Each cycles will have a total of five (5) steps prime algorithm on base 114-31=8
 
 The Lambda is a numerical-geometric figure that was studied by the ancient Greeks. It was described by Plato in the Timaeus as the ‘World Soul’. Plato states that God created the Cosmic Soul using two mathematical strips of (1, 2, 4, 8) and (1, 3, 9, 27).
 
+```
+{% raw %}{% include list.liquid all=true %}{% endraw %}
+
+{% include list.liquid all=true %}
+```
+
 The First Series: (1, 2, 4, 8) is the doubling sequence. The even numbers are associated with the _passive feminine principle_. The Second Series: (1, 3, 9, 27) is the tripling sequence. These odd numbers are associated with the _active masculine principle_.
 
 ![Tetractys](https://user-images.githubusercontent.com/36441664/85205823-ea1c6200-b347-11ea-8d6f-1ab3f9ec95c8.gif)
@@ -50,12 +56,6 @@ remote_theme: rundocs/jekyll-rtd-theme
 ```
 
 You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
-
-```
-{% raw %}{% include list.liquid all=true %}{% endraw %}
-
-{% include list.liquid all=true %}
-```
 
 ## Usage
 
