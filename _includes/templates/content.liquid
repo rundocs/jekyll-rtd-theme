@@ -16,7 +16,7 @@
         <hr>
         <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article">
             <div class="markdown-body" itemprop="articleBody">
-                {{ content }}
+                {% raw %}{{ content }}{% endraw %}
             </div>
         </div>
         {% include templates/footer.liquid %}
