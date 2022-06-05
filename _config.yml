@@ -110,7 +110,7 @@ defaults:
       layout: "feeds"
   -
     scope:
-      path: ""
+      path: "docs"
       type: "pages"
     values:
       layout: "pages"
