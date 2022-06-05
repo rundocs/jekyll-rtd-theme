@@ -1,4 +1,4 @@
-<div class="navigation-top d-flex flex-justify-between">
+<!-- div class="navigation-top d-flex flex-justify-between">
     <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
         <li class="breadcrumb-item">
             <a class="no-underline" href="{{ site.baseurl }}/" title="{{ docs.source.path }}">
@@ -30,4 +30,24 @@
     <a class="edit" href="{% github_edit_link %}" title="{{ __.edit | default: 'Edit on GitHub'}}" rel="noreferrer" target="_blank">
         <i class="fa fa-edit"></i>
     </a>
-</div>
+</div -->
+<section id="blogArchive">      
+	<div class="container">
+		<div class="row">
+			<div class="blog-breadcrumbs-area">
+				<div class="blog-breadcrumbs-left">
+					<h1 class="header_2">{% if page.category %}{{ page.category }}: {% endif %}{{ site.title }}</h1>
+				</div>
+				<div class="blog-breadcrumbs-right">
+					<ol class="breadcrumb">
+						<li>You are here</li>
+						<li><a href="/">Home</a></li>{% if page.layout == "method" or page.layout == "pages" %}
+						<li><a href="/concept">Concept</a></li>{% endif %}                  
+						{% if page.layout == "method" %}<li><a href="{{ page.url }}">{{ page.title }}{% elsif page.layout == "pages" %}<li><a href="{{ page.url | replace:page.title,'' }}">{{ page.category }}</a></li><li><a href="{{ page.url }}">{{ page.title }}{% else %}<li><a href="{{ page.url }}">{{ page.layout }}{% endif %}</a></li>
+						<li class="active"><a href="https://github.com/eq19/{{ site.github.repository_name }}/blob/master/{{ page.path }}">Source Link</a></li>
+					</ol><hr>
+				</div>
+			</div>
+		</div>
+	</div>      
+</section>
