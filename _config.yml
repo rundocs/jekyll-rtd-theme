@@ -113,7 +113,7 @@ defaults:
       path: ""
       type: "pages"
     values:
-      layout: "parser"
+      layout: "pages"
   -
     scope:
       path: ""
