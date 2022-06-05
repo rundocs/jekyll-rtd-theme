@@ -1,4 +1,4 @@
-{%- include data/primes.liquid max=1000 -%}
+{%- include data/primes.liquid -%}
 <!--========================================================
                           HEADER
 =========================================================-->
@@ -130,7 +130,7 @@
                                     <li><a href="/quantum">[13]38,39</a>
                                         <ul>
                                             <li><a href="/news/scripting">(58)138:4,5</a></li>
-                                            <li><a href="/news/scripting">(59)139=109+30:14</a></li>
+                                            <li><a href="/news/scripting">(59)139=109+30:14→{{ prime | size | minus: 1 }}</a></li>
                                         </ul>
 									</li>
                                 </ul>
@@ -196,7 +196,7 @@
                                             <li><a href="/news/scripting">(86)166</a></li>
                                             <li><a href="/news/scripting">(87)167</a></li>
                                             <li><a href="/sites/recording">(88)168</a></li>
-                                            <li><a href="/sites/recording">(89){{ prime | size }}=139+30</a></li>
+                                            <li><a href="/sites/recording">(89)169=139+30</a></li>
                                         </ul>
 									</li>
                                 </ul>
