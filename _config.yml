@@ -110,10 +110,10 @@ defaults:
       layout: "feeds"
   -
     scope:
-      path: ""
+      path: "docs"
       type: "pages"
     values:
-      layout: "parser"
+      layout: "pages"
   -
     scope:
       path: ""
