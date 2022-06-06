@@ -110,12 +110,6 @@ defaults:
       layout: "feeds"
   -
     scope:
-      path: "docs"
-      type: "pages"
-    values:
-      layout: "pages"
-  -
-    scope:
       path: ""
       type: "leads"
     values:
