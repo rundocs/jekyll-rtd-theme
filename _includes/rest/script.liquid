@@ -1,7 +1,12 @@
-<script src="{{ base }}/assets/js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery-migrate-1.2.1.js"></script>
+    <script src="/js/jquery.equalheights.js"></script>
+    <script src="/js/isotope.min.js"></script>
+	<script src="/js/script.js"></script>
+    <script src="{{ base }}/assets/js/theme{% if site.debug.dist != false %}.min{% endif %}.js"></script>
+    <!-- script src="//load.sumome.com/" data-sumo-site-id="2b0c75104f236f75954a2d200c80651a1ebf311e7f2c868ac12d7284ecd4fbd4" async="async"></script -->
 
 {%- if extra_script.size > 0 -%}
     <script>{{ extra_script }}</script>
 {%- endif -%}
 
-<script src="{{ base }}/assets/js/theme{% if site.debug.dist != false %}.min{% endif %}.js"></script>
