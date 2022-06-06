@@ -1,4 +1,32 @@
 ---
-layout: null
+layout: tasks/compress
 ---
-       {%- include templates/content.liquid -%}
+
+{% raw %}{%- include rest/defaults.liquid -%}{% endraw %}
+{% raw %}{%- include common/rest/defaults.liquid -%}{% endraw %}
+
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="{{ direction }}">
+    <head>
+        {% raw %}{%- include common/metadata.liquid -%}{% endraw %}
+        {% raw %}{%- include common/title.liquid -%}{% endraw %}
+        {% raw %}{%- include common/twitter_cards.liquid -%}{% endraw %}
+        {% raw %}{%- include common/opengraph.liquid -%}{% endraw %}
+        {% raw %}{%- include common/schema.liquid -%}{% endraw %}
+        {% raw %}{%- include common/links.liquid -%}{% endraw %}
+        {% raw %}{%- include rest/styles.liquid -%}{% endraw %}
+        {% raw %}{%- include common/script.liquid -%}{% endraw %}
+        {%- include extra/head.html -%}
+    </head>
+    <body class="container">
+        {% raw %}{%- include templates/sidebar.liquid -%}{% endraw %}
+        {%- include templates/content.liquid -%}
+        {% raw %}{%- include templates/addons.liquid -%}{% endraw %}
+        {% raw %}{%- include rest/script.liquid -%}{% endraw %}
+        {%- include common/mermaid.liquid -%}
+        {%- include common/mathjax.liquid -%}
+        {%- include common/google_gtag.liquid -%}
+        {%- include common/google_adsense.liquid -%}
+        {%- include extra/body.html -%}
+    </body>
+</html>

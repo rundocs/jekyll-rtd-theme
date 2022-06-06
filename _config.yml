@@ -174,7 +174,7 @@ kramdown:
 
 google:
   gtag: GTM-PGWT4RS
-  adsense: ca-pub-3677197599836940
+  #adsense: ca-pub-3677197599836940
 
 webrick:
   headers:
