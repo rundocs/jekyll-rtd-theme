@@ -13,3 +13,10 @@ sort: 2
 [Đường về nô lệ - F.A. Hayek](/pdf/duong-ve-no-le.pdf)
 
 
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=603001774396823&autoLogAppEvents=1" nonce="QnNzJTRX"></script>
+
+
+<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="" data-numposts="5"></div>
