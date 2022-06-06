@@ -1,10 +1,5 @@
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{% if page.category %}{% assign words = page.category | split: ' ' %}{% capture categorycase %}{% for word in words %}{{ word | capitalize | append: ' ' }}{% endfor %}{% endcapture %}{{ categorycase }}: {{ page.title | capitalize }} - {{ site.description_page_category }}{% elsif page.title %}{{ page.title }} - {{ site.description_page_title }}{% else %}{{ site.description }}{% endif %}">
 
-    <title>{% if page.category %}{{ categorycase }}: {{ page.title | capitalize }} | Courtesy of eQuantum Project{% elsif page.title %}{{ page.title }} | eQuantum Project - System Mapping and Definition{% else %}eQuantum Project | A Unique Mapping System - Open Source{% endif %}</title>
-
+    
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
