@@ -1,4 +1,5 @@
-    <meta charset="utf-8">
+    
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no">
     <meta name="description" content="{% if page.category %}{% assign words = page.category | split: ' ' %}{% capture categorycase %}{% for word in words %}{{ word | capitalize | append: ' ' }}{% endfor %}{% endcapture %}{{ categorycase }}: {{ page.title | capitalize }} - {{ site.description_page_category }}{% elsif page.title %}{{ page.title }} - {{ site.description_page_title }}{% else %}{{ site.description }}{% endif %}">
