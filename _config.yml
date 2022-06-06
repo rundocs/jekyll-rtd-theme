@@ -70,5 +70,6 @@ comments:
   provider : "facebook"
   facebook:
     appid : 603001774396823
-    num_posts : # 5 (default)
+    num_posts : 10 # 5 (default)
     colorscheme : # "light" (default), "dark"
+    order_by : "reverse_time"
