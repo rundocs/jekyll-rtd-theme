@@ -20,8 +20,8 @@ form_engines:
 
 debug:
   dist: false
-  compress: true
-  shortcodes: true
+  compress: false
+  shortcodes: false
 
 # Repository Settings
 # https://blog.webjeda.com/jekyll-redirect/
