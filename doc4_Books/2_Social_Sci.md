@@ -19,4 +19,4 @@ sort: 2
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=603001774396823&autoLogAppEvents=1" nonce="QnNzJTRX"></script>
 
 
-<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="" data-numposts="5"></div>
+<div class="fb-comments" data-href="https://thangckt.github.io/doc/doc4_Books/2_Social_Sci.html" data-width="" data-numposts="5"></div>
