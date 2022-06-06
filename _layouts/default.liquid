@@ -17,8 +17,10 @@ layout: tasks/compress
         {%- include common/script.liquid -%}
         {%- include common/schema.liquid -%}
         {%- include extra/head.html %}
+        {%- include common/google_gtag.liquid -%}
     </head>
     <body class="page">
+        {%- include common/google_noscript.liquid -%}
         {%- include templates/menu.html %}
         {%- include templates/breadcrumbs.liquid -%}
         {%- include templates/content.liquid -%}
@@ -27,7 +29,6 @@ layout: tasks/compress
         {%- include rest/script.liquid -%}
         {%- include common/mermaid.liquid -%}
         {%- include common/mathjax.liquid -%}
-        {%- include common/google_gtag.liquid -%}
         {%- include common/google_adsense.liquid -%}
     </body>
 </html>
