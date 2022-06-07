@@ -29,12 +29,9 @@
 {%-     endif                             -%}
 {%-   endfor                              -%}
 
-{%-   if bad                              -%}
-{%-     continue                          -%}
-{%-   endif                               -%}
-
-{%-   assign prime = prime | push: num    -%}
-{%-   if num == 29 %}
+{%- if bad -%}{%-  continue -%}{%- endif -%}
+{%- assign prime = prime | push: num -%}
+{%- case num %}{% when 3 %}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
@@ -61,7 +58,7 @@
 											</li>
 									   </ul>
 									</li>
-{%-   elsif num == 109 %}
+{% when 31 %}
 									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer">Lexer</a>
 										<ul>
 											<li><a href="/map">[4]11</a>
@@ -101,7 +98,7 @@
 											</li>
 										</ul>
 									</li>
-{%-   elsif num == 599 %}
+{% when 113 %}
 									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser">Parser</a>
 										<ul>
 											<li><a href="/maps/script">[8]10,11,12,13</a>
@@ -169,7 +166,7 @@
 											<li><a href="/world">Networking</a></li>
 										</ul-->
 									</li>
-{%-   elsif num == 4397 %}
+{% when 601 %}
 									<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar">Grammar</a>
 										<ul>
 											<li><a href="/attribute">[14]40,41</a>
@@ -228,7 +225,7 @@
 											</li>
 										</ul>
 									</li>
-{%-   elsif num == 7919                   %}
+{% when 9973 %}
 									<li{% if site.baseurl == "/about" %} class="current"{% endif %}><a href="/about">About</a></li>
-{%    endif                               -%}
-{%- endfor                                -%}
+{%- endcase -%}
+{%- endfor -%}
