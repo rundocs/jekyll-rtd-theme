@@ -21,5 +21,5 @@
 <div class="page">
 	{% include templates/menu.html %}
 	{% include templates/breadcrumbs.liquid %}
-	{% include parser.html %}
+	{% include {{ base | append: ".html" }} %}
 </div>
