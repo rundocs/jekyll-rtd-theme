@@ -2,8 +2,10 @@
 {%- include templates/facebook.html -%}
 
 <!-- Display comments -->
-<section class="fb-comments" data-href="{{ site.url }}{{ page.url }}" 
-         data-mobile="true" data-num-posts="{{ site.comments.facebook.num_posts | default: 5 }}" 
-         data-width="100%" data-colorscheme="{{ site.comments.facebook.colorscheme | default: 'light' }}"
+<section class="fb-comments" 
+         data-href="{{ site.url }}{{ page.url }}" 
+         data-num-posts="{{ site.comments.facebook.num_posts | default: 5 }}" 
+         data-colorscheme="{{ site.comments.facebook.colorscheme | default: 'light' }}"
+         data-mobile="true" data-width="100%"
 ></section>
 
