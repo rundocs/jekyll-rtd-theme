@@ -61,7 +61,7 @@
 											</li>
 									   </ul>
 									</li>
-{%-   elsif num == 109                     %}
+{%-   elsif num == 109 %}
 									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer">Lexer</a>
 										<ul>
 											<li><a href="/map">[4]11</a>
@@ -101,8 +101,7 @@
 											</li>
 										</ul>
 									</li>
-{%    endif                               -%}
-{%- endfor                                -%}
+{%-   elsif num == 599 %}
 									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser">Parser</a>
 										<ul>
 											<li><a href="/maps/script">[8]10,11,12,13</a>
@@ -170,6 +169,7 @@
 											<li><a href="/world">Networking</a></li>
 										</ul-->
 									</li>
+{%-   elsif num == 4397 %}
 									<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar">Grammar</a>
 										<ul>
 											<li><a href="/attribute">[14]40,41</a>
@@ -228,4 +228,7 @@
 											</li>
 										</ul>
 									</li>
+{%-   elsif num == 10000                   %}
 									<li{% if site.baseurl == "/about" %} class="current"{% endif %}><a href="/about">About</a></li>
+{%    endif                               -%}
+{%- endfor                                -%}
