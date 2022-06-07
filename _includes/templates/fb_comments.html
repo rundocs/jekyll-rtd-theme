@@ -1,11 +1,12 @@
 <!-- Initiate facebook -->
-{%- include templates/facebook.html -%}
+<!-- {%- include templates/facebook.html -%} -->
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=603001774396823&autoLogAppEvents=1" nonce="HXWOnNWI"></script>
 
 <!-- Display comments -->
-<section class="fb-comments" 
-         data-href="{{ site.url }}{{ page.url }}" 
+<div class="fb-comments" data-href="{{ site.url }}{{ page.url }}" 
          data-num-posts="{{ site.comments.facebook.num_posts | default: 5 }}" 
          data-colorscheme="{{ site.comments.facebook.colorscheme | default: 'light' }}"
-         data-mobile="true" data-width="100%"
-></section>
+         data-mobile="true" data-width="100%"></div>
 
