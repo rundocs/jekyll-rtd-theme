@@ -34,7 +34,7 @@
 {%-   endif                               -%}
 
 {%-   assign prime = prime | push: num    -%}
-{%- endfor                                -%}
+{%-   if num == 29                         %}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
@@ -61,6 +61,8 @@
 											</li>
 									   </ul>
 									</li>
+{%    endif                               -%}
+{%- endfor                                -%}
 									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer">Lexer</a>
 										<ul>
 											<li><a href="/map">[4]11</a>
