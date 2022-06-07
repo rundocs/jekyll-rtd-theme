@@ -27,9 +27,10 @@
 {%-     endif                             -%}
 {%-   endfor                              -%}
 
-{%- if bad -%}{%-  continue -%}{%- endif -%}
+{%- if bad -%}{%- continue -%}{%- endif -%}
 {%- assign prime = prime | push: num -%}
-{%- case num %}{% when 3 %}
+{%- assign size = prime | size -%}
+{%- case size %}{% when 3 %}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
@@ -40,7 +41,7 @@
 													<li><a href="/map/merging">(4)7=π(10)</a></li>
 												</ul>
 											</li>
-{% when 11 %}
+{% when 4 %}
 											 <li><a href="/sites">[2]17</a>
 												<ul>
 													<li><a href="/sites/introduction">(5)11</a></li>
@@ -49,7 +50,7 @@
 													<li><a href="/sites/nature">(8)19=π(10→19)</a></li>
 												</ul>
 											</li>
-{% when 23 %}
+{% when 8 %}
 											<li><a href="/news">[3]13-1</a>
 												<ul>
 													<li><a href="/news/reading">(8)23</a></li>
@@ -58,7 +59,7 @@
 											</li>
 									   </ul>
 									</li>
-{% when 31 %}
+{% when 10 %}
 									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer">Lexer</a>
 										<ul>
 											<li><a href="/map">[4]11</a>
@@ -68,7 +69,7 @@
 													<li><a href="/map/overall">(13)41→twin</a></li>
 												</ul>
 											</li>
-{% when 43 %}
+{% when 13 %}
 											<li><a href="/sites">[5]7+12</a>
 												<ul>
 													<li><a href="/sites/route">(14)43→twin</a></li>
@@ -77,7 +78,7 @@
 													<li><a href="/sites/recording">(17)59→twin</a></li>
 												</ul>
 											</li>
-{% when 61 %}
+{% when 17 %}
 											<li><a href="/status">[6]5+13</a>
 												<ul>
 													<li><a href="/status/nature">(18)61→twin</a></li>
@@ -85,7 +86,7 @@
 													<li><a href="/status/rating">(20)71→twin</a></li>
 												</ul>
 											</li>
-{% when 73 %}
+{% when 20 %}
 											<li><a href="/news">[7]18+13+12</a>
 												<ul>
 													<li><a href="/news/reading">(21)73→twin</a></li>
@@ -101,7 +102,7 @@
 											</li>
 										</ul>
 									</li>
-{% when 113 %}
+{% when 29 %}
 									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser">Parser</a>
 										<ul>
 											<li><a href="/maps/script">[8]10,11,12,13</a>
@@ -156,12 +157,12 @@
 											<li><a href="/quantum">[13]38,39</a>
 												<ul>
 													<li><a href="/news/scripting">(58)138:4,5</a></li>
-													<li><a href="/news/scripting">(59){{ prime | size | minus: 1 }}→139=109+30:14</a></li>
+													<li><a href="/news/scripting">(59)139=109+30:14</a></li>
 												</ul>
 											</li>
 										</ul>
 									</li>
-{% when 601 %}
+{% when 59 %}
 									<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar">Grammar</a>
 										<ul>
 											<li><a href="/attribute">[14]40,41</a>
@@ -220,7 +221,7 @@
 											</li>
 										</ul>
 									</li>
-{% when 9973 %}
+{% when 89 %}
 									<li{% if site.baseurl == "/about" %} class="current"{% endif %}><a href="/about">About</a></li>
 {%- endcase -%}
 {%- endfor -%}
