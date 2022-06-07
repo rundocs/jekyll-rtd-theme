@@ -1,8 +1,6 @@
 {%- assign prime = '1,2' | split: ','     -%}
-
 {%- assign n = include.n | default: 100   -%}
 {%- assign min = include.min | default: 2 -%}
-
 {%- assign j = n | times: n               -%}
 {%- assign max = include.max | default: j -%}
 
