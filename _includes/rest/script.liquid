@@ -1,9 +1,9 @@
-		<script src="/assets/js/jquery.js"></script>
-		<script src="/assets/js/jquery-migrate-1.2.1.js"></script>
-		<script src="/assets/js/jquery.equalheights.js"></script>
-		<script src="/assets/js/isotope.min.js"></script>
-		<script src="/assets/js/script.js"></script>
-		<script src="/assets/js/theme{% if site.debug.dist != false %}.min{% endif %}.js"></script>
+		<script src="/{{ base }}/assets/js/jquery.js"></script>
+		<script src="/{{ base }}/assets/js/jquery-migrate-1.2.1.js"></script>
+		<script src="/{{ base }}/assets/js/jquery.equalheights.js"></script>
+		<script src="/{{ base }}/assets/js/isotope.min.js"></script>
+		<script src="/{{ base }}/assets/js/script.js"></script>
+		<script src="/{{ base }}/assets/js/theme{% if site.debug.dist != false %}.min{% endif %}.js"></script>
 		{%- if extra_script.size > 0 -%}
 		<script>{{ extra_script }}</script>
 		{%- endif -%}
