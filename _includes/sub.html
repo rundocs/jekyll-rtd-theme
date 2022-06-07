@@ -61,8 +61,7 @@
 											</li>
 									   </ul>
 									</li>
-{%    endif                               -%}
-{%- endfor                                -%}
+{%-   elsif num == 109                     %}
 									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer">Lexer</a>
 										<ul>
 											<li><a href="/map">[4]11</a>
@@ -102,6 +101,8 @@
 											</li>
 										</ul>
 									</li>
+{%    endif                               -%}
+{%- endfor                                -%}
 									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser">Parser</a>
 										<ul>
 											<li><a href="/maps/script">[8]10,11,12,13</a>
