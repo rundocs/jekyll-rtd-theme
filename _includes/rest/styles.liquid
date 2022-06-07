@@ -1,9 +1,9 @@
+		<link rel="stylesheet" href="{{ base }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
 		<link rel="stylesheet" href="{{ base }}/assets/css/grid.css">
 		<link rel="stylesheet" href="{{ base }}/assets/css/style.css">
 		<link rel="stylesheet" href="{{ base }}/assets/css/camera.css"/>
 		<link rel="stylesheet" href="{{ base }}/assets/css/isotope.css"/>
 		<link rel="stylesheet" href="{{ base }}/assets/css/owl.carousel.css"/>
-		<!--link rel="stylesheet" href="{{ base }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css"-->
 		{%- if extra_scss.size > 0 -%}
 		<style>{{ extra_scss | scssify | strip_newlines }}</style>
 		{%- endif -%}
