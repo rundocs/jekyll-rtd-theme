@@ -69,7 +69,6 @@ google:
 # comments
 comments:
   facebook:
-    appid :  # 960603704635756 # should not use this
     num_posts : 10 # 5 (default)
     colorscheme : # "light" (default), "dark"
-    order_by : "reverse_time"
+    order_by : "reverse_time"   # "reverse_time"(default), "time"
