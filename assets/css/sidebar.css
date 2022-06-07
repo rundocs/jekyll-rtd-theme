@@ -1,0 +1,123 @@
+.sidebar {
+  font-weight: 200;
+}
+.sidebar .brand {
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.sidebar .toggle-btn {
+  display: none;
+}
+.sidebar ul,
+.sidebar li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+.sidebar ul :not(collapsed) .arrow:before,
+.sidebar li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.sidebar ul .active,
+.sidebar li .active {
+}
+.sidebar ul .sub-menu li.active,
+.sidebar li .sub-menu li.active {
+}
+.sidebar ul .sub-menu li.active a,
+.sidebar li .sub-menu li.active a {
+}
+.sidebar ul .sub-menu li,
+.sidebar li .sub-menu li {
+  border: none;
+  line-height: 28px;
+  margin-left: 0px;
+}
+.sidebar ul .sub-menu li:hover,
+.sidebar li .sub-menu li:hover {
+  background-color: #020203;
+}
+.sidebar ul .sub-menu li:before,
+.sidebar li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.sidebar li {
+  padding-left: 0px;
+}
+.sidebar li a {
+  text-decoration: none;
+}
+.sidebar li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.sidebar li:hover {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .sidebar .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .sidebar .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
