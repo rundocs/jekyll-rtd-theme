@@ -45,6 +45,7 @@
 {%-   assign width = prime | size         -%}
 {%-   unless cell contains width          -%}
 {%-     assign cell = cell | push: width  -%}
+{%-     assign array[0] = array[0] | push: width  -%}
 {%-   endunless                           -%}
 
 {%-   assign weight = cell | size         -%}
@@ -128,7 +129,7 @@
 											</li>
 										</ul>
 									</li>
-{%- when 10 -%}
+{%- when 10 -%}{{ array | jsonify }}
 									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser">Parser</a>
 										<ul>
 											<li><a href="/maps/script">[8]10,11,12,13</a>
@@ -188,7 +189,7 @@
 											</li>
 										</ul>
 									</li>
-{% when 39 %}
+{% when 39 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar">Grammar</a>
 										<ul>
 											<li><a href="/attribute">[14]40,41</a>
@@ -231,7 +232,7 @@
 													<li><a href="/sites/recording">(79)159</a></li>
 												</ul>
 											</li>
-{% when 69 %}
+{% when 69 %}{{ array | jsonify }}
 											<li><a href="/track">[19]69</a>
 												<ul>
 													<li><a href="/news/encoding">(80)160</a></li>
