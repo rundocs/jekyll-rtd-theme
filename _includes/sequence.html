@@ -7,9 +7,10 @@
 {%- assign row = '' | split: ','          -%}
 {%- assign blok = '' | split: ','         -%}
 {%- assign cell = '' | split: ','         -%}
+
 {%- assign prime = '' | split: ','        -%}
-{%-   assign prime = prime | push: 1        -%}
-{%-   assign prime = prime | push: 2        -%}
+{%- assign prime = prime | push: 1        -%}
+{%- assign prime = prime | push: 2        -%}
 
 {%- assign array = '' | split: ','        -%}
 {%- assign array = array | push: id       -%}
@@ -17,8 +18,6 @@
 {%- assign array = array | push: blok     -%}
 {%- assign array = array | push: cell     -%}
 {%- assign array = array | push: prime    -%}
-
-{{ array | jsonify }}
 
 {%- for num in (3 .. max)                 -%}
 {%-   assign mod = num | modulo: 2        -%}
