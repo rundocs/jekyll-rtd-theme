@@ -46,18 +46,13 @@
 {%-     continue                          -%}
 {%-   endif                               -%}
 
-{%-   assign temp = array                 -%}
 {%-   assign array = '' | split: ','      -%}
-
-{%-   for item in temp reversed           -%}
-{%-     assign item = item | push: num    -%}
-{%-     assign array = array | push: item -%}
-{%-   endfor                              -%}
+{%-   assign prime = prime | push: num    -%}
+{%-   assign array = array | push: item   -%}
 
 {%-   comment                             -%}
 {%-     if item contains size             -%}
 {%-     endif                             -%}
-{%-   assign prime = prime | push: num    -%}
 {%-   assign size = prime | size          -%}
 {%-   endcomment                          -%}
 {%-   case num                           -%}
