@@ -3,7 +3,7 @@
 {%- assign blok = '1,2' | split: ','      -%}
 {%- assign cell = '1,2' | split: ','      -%}
 {%- assign prime = '1,2' | split: ','     -%}
-{%- assign array = [id, row, blok, cell]  -%}
+{%- assign array = '' | split: ';' -%}{%- assign array[0] = id  -%}{%- assign array[1] = row  -%}
 
 {{ array | jsonify }}
 {%- assign n = include.n | default: 100   -%}
