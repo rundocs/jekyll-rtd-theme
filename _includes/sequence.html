@@ -46,7 +46,7 @@
 
 {%-   if bad -%}{%- continue -%}{%- endif -%}
 {%-   assign prime = prime | push: num    -%}
-
+{%-     assign size = prime | size        -%}
 {%-   comment                             -%}
 {%-   assign temp = array                 -%}
 {%-   assign array = '' | split: ','      -%}
@@ -59,7 +59,7 @@
 {%-   endfor                              -%}
 {%-   endcomment                          -%}
 
-{% case width %}{% when 3 %}{{ array | jsonify }}
+{% case size %}{% when 3 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
