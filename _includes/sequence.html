@@ -19,7 +19,7 @@
 {%- assign temp = array                   -%}
 {%- assign array = '' | split: ','        -%}
 
-{%- for item in array                     -%}
+{%- for item in temp                     -%}
 {%-   assign item = item | push: 1        -%}
 {%-   assign item = item | push: 2        -%}
 {%-   assign array = array | push: item   -%}
