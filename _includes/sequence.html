@@ -32,14 +32,15 @@
 {%-     endif                             -%}
 {%-   endfor                              -%}
 
-{%- if bad -%}{%- continue -%}{%- endif -%}
-{%- assign prime = prime | push: num -%}
-{%- assign size = prime | size -%}
-{%- assign row = '1,2' | split: ',' -%}
-{%- if size contains row %}
-{%-     assign row = row | push: num -%}
-{%-     endif                             -%}
-{%- case size %}{% when 3 %}
+{%-   if bad -%}{%- continue -%}{%- endif -%}
+{%-   assign prime = prime | push: num    -%}
+
+{%-   assign width = prime | size         -%}
+{%-   unless cell contains width          -%}
+{%-     assign cell = cell | push: width  -%}
+{%-   endunless                           -%}
+
+{%- case width %}{% when 3 %}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
