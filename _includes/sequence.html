@@ -8,22 +8,16 @@
 {%- assign blok = '' | split: ','         -%}
 {%- assign cell = '' | split: ','         -%}
 {%- assign prime = '' | split: ','        -%}
-{%- assign array = '' | split: ','        -%}
+{%-   assign prime = prime | push: 1        -%}
+{%-   assign prime = prime | push: 2        -%}
 
+{%- assign array = '' | split: ','        -%}
 {%- assign array = array | push: id       -%}
 {%- assign array = array | push: row      -%}
 {%- assign array = array | push: blok     -%}
 {%- assign array = array | push: cell     -%}
 {%- assign array = array | push: prime    -%}
 
-{%- assign temp = array                   -%}
-{%- assign array = '' | split: ','        -%}
-
-{%- for item in temp                     -%}
-{%-   assign item = item | push: 1        -%}
-{%-   assign item = item | push: 2        -%}
-{%-   assign array = array | push: item   -%}
-{%- endfor                                -%}
 {{ array | jsonify }}
 
 {%- for num in (3 .. max)                 -%}
