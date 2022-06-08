@@ -40,6 +40,21 @@
 {%-     assign cell = cell | push: width  -%}
 {%-   endunless                           -%}
 
+{%-   assign weight = cell | size         -%}
+{%-   unless blok contains weight         -%}
+{%-     assign blok = blok | push: weight -%}
+{%-   endunless                           -%}
+
+{%-   assign expanse = blok | size        -%}
+{%-   unless row contains expanse         -%}
+{%-     assign row = row | push: expanse  -%}
+{%-   endunless                           -%}
+
+{%-   assign sequence = row | size        -%}
+{%-   unless id contains sequence         -%}
+{%-     assign id = id | push: sequence   -%}
+{%-   endunless                           -%}
+
 {%- case width %}{% when 3 %}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
