@@ -50,8 +50,6 @@
 
 {%-   assign temp = array                 -%}
 {%-   assign array = '' | split: ','      -%}
-{%-   assign prime = prime | push: num    -%}
-{%-   assign size = prime | size          -%}
 
 {%-   for item in temp reversed           -%}
 {%-     assign item = item | push: num    -%}
@@ -61,10 +59,12 @@
 {%-   comment                             -%}
 {%-     if item contains size             -%}
 {%-     endif                             -%}
+{%-   assign prime = prime | push: num    -%}
+{%-   assign size = prime | size          -%}
 {%-   endcomment                          -%}
 {%-   case num                           -%}
 
-{% when 3 %}{{ array | jsonify }}
+{% when 29 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
