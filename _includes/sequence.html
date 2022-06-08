@@ -3,9 +3,13 @@
 {%- assign blok = '1,2' | split: ','      -%}
 {%- assign cell = '1,2' | split: ','      -%}
 {%- assign prime = '1,2' | split: ','     -%}
-{%- assign array = '' | split: ';' -%}{%- assign array[0] = id  -%}{%- assign array[1] = row  -%}
 
+{%- assign array = '' | split: ';' -%}
+{%- assign array = array | push: id  -%}
+{%- assign array = array | push: row  -%}
+{%- assign array = array | push: cell -%}
 {{ array | jsonify }}
+
 {%- assign n = include.n | default: 100   -%}
 {%- assign j = n | times: n               -%}
 {%- assign min = include.min | default: 2 -%}
