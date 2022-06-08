@@ -16,11 +16,16 @@
 {%- assign array = array | push: cell     -%}
 {%- assign array = array | push: prime    -%}
 
+{%- assign temp = array                   -%}
+{%- assign array = '' | split: ','        -%}
+
 {%- for item in array                     -%}
 {%-   assign item = item | push: 1        -%}
 {%-   assign item = item | push: 2        -%}
+{%-   assign array = array | push: item   -%}
 {%- endfor                                -%}
 {{ array | jsonify }}
+
 {%- for num in (3 .. max)                 -%}
 {%-   assign mod = num | modulo: 2        -%}
 {%-   if mod == 0                         -%}
