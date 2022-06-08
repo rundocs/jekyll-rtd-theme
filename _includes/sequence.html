@@ -1,8 +1,17 @@
-{%- assign id = '1,2' | split: ','        -%}
-{%- assign row = '1,2' | split: ','       -%}
-{%- assign blok = '1,2' | split: ','      -%}
-{%- assign cell = '1,2' | split: ','      -%}
-{%- assign prime = '1,2' | split: ','     -%}
+{%- assign id = '' | split: ','        -%}
+{%- assign id = id | push: 1 -%}{%- assign id = id | push: 2 -%}
+
+{%- assign row = '' | split: ','        -%}
+{%- assign row = row | push: 1 -%}{%- assign row = row | push: 2 -%}
+
+{%- assign blok = '' | split: ','        -%}
+{%- assign blok = blok | push: 1 -%}{%- assign blok = blok | push: 2 -%}
+
+{%- assign cell = '' | split: ','        -%}
+{%- assign cell = cell | push: 1 -%}{%- assign cell = cell | push: 2 -%}
+
+{%- assign prime = '' | split: ','        -%}
+{%- assign prime = prime | push: 1 -%}{%- assign prime = prime | push: 2 -%}
 
 {%- assign n = include.n | default: 100   -%}
 {%- assign j = n | times: n               -%}
