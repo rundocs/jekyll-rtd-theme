@@ -36,24 +36,24 @@
 {%-   assign prime = prime | push: num    -%}
 
 {%-   assign width = prime | size         -%}
-{%-   unless cell contains width          -%}
+{%-   if cell contains width          -%}
 {%-     assign cell = cell | push: width  -%}
-{%-   endunless                           -%}
+{%-   endif                           -%}
 
 {%-   assign weight = cell | size         -%}
-{%-   unless blok contains weight         -%}
+{%-   if blok contains weight         -%}
 {%-     assign blok = blok | push: weight -%}
-{%-   endunless                           -%}
+{%-   endif                           -%}
 
 {%-   assign expanse = blok | size        -%}
-{%-   unless row contains expanse         -%}
+{%-   if row contains expanse         -%}
 {%-     assign row = row | push: expanse  -%}
-{%-   endunless                           -%}
+{%-   endif                           -%}
 
 {%-   assign sequence = row | size        -%}
-{%-   unless id contains sequence         -%}
+{%-   if id contains sequence         -%}
 {%-     assign id = id | push: sequence   -%}
-{%-   endunless                           -%}
+{%-   endif                           -%}
 
 {%- assign array = '' | split: ','        -%}
 {%- assign array = array | push: id       -%}
