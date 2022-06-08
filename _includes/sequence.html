@@ -4,13 +4,6 @@
 {%- assign cell = '1,2' | split: ','      -%}
 {%- assign prime = '1,2' | split: ','     -%}
 
-{%- assign array = '' | split: ','        -%}
-{%- assign array = array | push: id       -%}
-{%- assign array = array | push: row      -%}
-{%- assign array = array | push: blok     -%}
-{%- assign array = array | push: cell     -%}
-{%- assign array = array | push: prime    -%}
-
 {%- assign n = include.n | default: 100   -%}
 {%- assign j = n | times: n               -%}
 {%- assign min = include.min | default: 2 -%}
@@ -45,7 +38,6 @@
 {%-   assign width = prime | size         -%}
 {%-   unless cell contains width          -%}
 {%-     assign cell = cell | push: width  -%}
-{%-     assign array[0] = array[0] | push: width  -%}
 {%-   endunless                           -%}
 
 {%-   assign weight = cell | size         -%}
@@ -62,6 +54,13 @@
 {%-   unless id contains sequence         -%}
 {%-     assign id = id | push: sequence   -%}
 {%-   endunless                           -%}
+
+{%- assign array = '' | split: ','        -%}
+{%- assign array = array | push: id       -%}
+{%- assign array = array | push: row      -%}
+{%- assign array = array | push: blok     -%}
+{%- assign array = array | push: cell     -%}
+{%- assign array = array | push: prime    -%}
 
 {%- case width %}{% when 3 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
