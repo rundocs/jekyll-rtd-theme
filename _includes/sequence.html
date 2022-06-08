@@ -47,16 +47,13 @@
 {%-   if bad -%}{%- continue -%}{%- endif -%}
 {%-   assign prime = prime | push: num    -%}
 
-{%-   for item in array reversed          -%}
+{%-   assign temp = array                 -%}
+{%-   assign array = '' | split: ','      -%}
+{%-   for item in temp reversed          -%}
 {%-     assign size = prime | size        -%}
 {%-     if item contains size             -%}
 {%-       assign item = item | push: size -%}
 {%-     endif                             -%}
-{%-   endfor                              -%}
-
-{%-   assign temp = array                 -%}
-{%-   assign array = '' | split: ','      -%}
-{%-   for item in temp                    -%}
 {%-     assign array = array | push: item -%}
 {%-   endfor                              -%}
 
