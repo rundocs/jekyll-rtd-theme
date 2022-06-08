@@ -1,22 +1,25 @@
-{%- assign id = '' | split: ','        -%}
-{%- assign id = id | push: 1 -%}{%- assign id = id | push: 2 -%}
-
-{%- assign row = '' | split: ','        -%}
-{%- assign row = row | push: 1 -%}{%- assign row = row | push: 2 -%}
-
-{%- assign blok = '' | split: ','        -%}
-{%- assign blok = blok | push: 1 -%}{%- assign blok = blok | push: 2 -%}
-
-{%- assign cell = '' | split: ','        -%}
-{%- assign cell = cell | push: 1 -%}{%- assign cell = cell | push: 2 -%}
-
-{%- assign prime = '' | split: ','        -%}
-{%- assign prime = prime | push: 1 -%}{%- assign prime = prime | push: 2 -%}
-
 {%- assign n = include.n | default: 100   -%}
 {%- assign j = n | times: n               -%}
 {%- assign min = include.min | default: 2 -%}
 {%- assign max = include.max | default: j -%}
+
+{%- assign id = '' | split: ','           -%}
+{%- assign row = '' | split: ','          -%}
+{%- assign blok = '' | split: ','         -%}
+{%- assign cell = '' | split: ','         -%}
+{%- assign prime = '' | split: ','        -%}
+
+{%- assign array = '' | split: ','        -%}
+{%- assign array = array | push: id       -%}
+{%- assign array = array | push: row      -%}
+{%- assign array = array | push: blok     -%}
+{%- assign array = array | push: cell     -%}
+{%- assign array = array | push: prime    -%}
+
+{%- for item in array                     -%}
+{%-   assign item = item | push: 1        -%}
+{%-   assign item = item | push: 2        -%}
+{%- endfor                                -%}
 
 {%- for num in (3 .. max)                 -%}
 {%-   assign mod = num | modulo: 2        -%}
@@ -44,32 +47,18 @@
 {%-   if bad -%}{%- continue -%}{%- endif -%}
 {%-   assign prime = prime | push: num    -%}
 
-{%-   assign width = prime | size         -%}
-{%-   if cell contains width          -%}
-{%-     assign cell = cell | push: width  -%}
-{%-   endif                           -%}
+{%-   for item in array reversed          -%}
+{%-     assign size = prime | size        -%}
+{%-     if item contains size             -%}
+{%-       assign item = item | push: size -%}
+{%-     endif                             -%}
+{%-   endfor                              -%}
 
-{%-   assign weight = cell | size         -%}
-{%-   if blok contains weight         -%}
-{%-     assign blok = blok | push: weight -%}
-{%-   endif                           -%}
-
-{%-   assign expanse = blok | size        -%}
-{%-   if row contains expanse         -%}
-{%-     assign row = row | push: expanse  -%}
-{%-   endif                           -%}
-
-{%-   assign sequence = row | size        -%}
-{%-   if id contains sequence         -%}
-{%-     assign id = id | push: sequence   -%}
-{%-   endif                           -%}
-
-{%- assign array = '' | split: ','        -%}
-{%- assign array = array | push: id       -%}
-{%- assign array = array | push: row      -%}
-{%- assign array = array | push: blok     -%}
-{%- assign array = array | push: cell     -%}
-{%- assign array = array | push: prime    -%}
+{%-   assign temp = array                 -%}
+{%-   assign array = '' | split: ','      -%}
+{%-   for item in temp                    -%}
+{%-     assign array = array | push: item -%}
+{%-   endfor                              -%}
 
 {% case width %}{% when 3 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
