@@ -1,8 +1,3 @@
-{%- assign n = include.n | default: 100   -%}
-{%- assign j = n | times: n               -%}
-{%- assign min = include.min | default: 2 -%}
-{%- assign max = include.max | default: j -%}
-
 {%- assign id = '' | split: ','           -%}
 {%- assign row = '' | split: ','          -%}
 {%- assign blok = '' | split: ','         -%}
@@ -12,12 +7,10 @@
 {%- assign prime = prime | push: 1        -%}
 {%- assign prime = prime | push: 2        -%}
 
-{%- assign array = '' | split: ','        -%}
-{%- assign array = array | push: id       -%}
-{%- assign array = array | push: row      -%}
-{%- assign array = array | push: blok     -%}
-{%- assign array = array | push: cell     -%}
-{%- assign array = array | push: prime    -%}
+{%- assign n = include.n | default: 100   -%}
+{%- assign j = n | times: n               -%}
+{%- assign min = include.min | default: 2 -%}
+{%- assign max = include.max | default: j -%}
 
 {%- for num in (3 .. max)                 -%}
 {%-   assign mod = num | modulo: 2        -%}
