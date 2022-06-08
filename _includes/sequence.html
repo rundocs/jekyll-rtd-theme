@@ -62,8 +62,9 @@
 {%-     if item contains size             -%}
 {%-     endif                             -%}
 {%-   endcomment                          -%}
+{%-   case size                           -%}
 
-{% case size %}{% when 3 %}{{ array | jsonify }}
+{% when 3 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
