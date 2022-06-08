@@ -20,7 +20,7 @@
 {%-   assign item = item | push: 1        -%}
 {%-   assign item = item | push: 2        -%}
 {%- endfor                                -%}
-
+{{ array | jsonify }}
 {%- for num in (3 .. max)                 -%}
 {%-   assign mod = num | modulo: 2        -%}
 {%-   if mod == 0                         -%}
