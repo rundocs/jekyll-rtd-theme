@@ -44,19 +44,23 @@
 {%-     endif                             -%}
 {%-   endfor                              -%}
 
-{%-   if bad -%}{%- continue -%}{%- endif -%}
-{%-   assign prime = prime | push: num    -%}
-{%-     assign size = prime | size        -%}
-{%-   comment                             -%}
+{%-   if bad                              -%}
+{%-     continue                          -%}
+{%-   endif                               -%}
+
 {%-   assign temp = array                 -%}
 {%-   assign array = '' | split: ','      -%}
+{%-   assign prime = prime | push: num    -%}
+{%-   assign size = prime | size          -%}
+
 {%-   for item in temp reversed           -%}
-{%-     assign size = prime | size        -%}
-{%-     if item contains size             -%}
-{%-       assign item = item | push: size -%}
-{%-     endif                             -%}
+{%-     assign item = item | push: size   -%}
 {%-     assign array = array | push: item -%}
 {%-   endfor                              -%}
+
+{%-   comment                             -%}
+{%-     if item contains size             -%}
+{%-     endif                             -%}
 {%-   endcomment                          -%}
 
 {% case size %}{% when 3 %}{{ array | jsonify }}
