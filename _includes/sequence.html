@@ -3,6 +3,7 @@
 {%- assign blok = '1,2' | split: ','      -%}
 {%- assign cell = '1,2' | split: ','      -%}
 {%- assign prime = '1,2' | split: ','     -%}
+{%- assign array = [id, row, blok, cell]  -%}
 
 {%- assign n = include.n | default: 100   -%}
 {%- assign j = n | times: n               -%}
