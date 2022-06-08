@@ -1,7 +1,10 @@
 {%- assign id = '' | split: ','           -%}
-{%- assign row = '' | split: ','          -%}
 {%- assign blok = '' | split: ','         -%}
 {%- assign cell = '' | split: ','         -%}
+
+{%- assign row = '' | split: ','          -%}
+{%- assign row = row | push: 1            -%}
+{%- assign row = row | push: 2            -%}
 
 {%- assign prime = '' | split: ','        -%}
 {%- assign prime = prime | push: 1        -%}
@@ -43,12 +46,15 @@
 {%-   assign prime = prime | push: num    -%}
 {%-   assign array = array | push: prime  -%}
 
-{%-   comment                             -%}
-{%-     if item contains size             -%}
-{%-     endif                             -%}
 {%-   assign size = prime | size          -%}
+{%-   if row contains size                -%}
+{%-     assign row = row | push: size     -%}
+{%-   endif                               -%}
+{%-   assign array = array | push: row    -%}
+
+{%-   comment                             -%}
 {%-   endcomment                          -%}
-{%-   case num                           -%}
+{%-   case num                            -%}
 
 {% when 29 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
