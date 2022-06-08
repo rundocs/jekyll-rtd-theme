@@ -50,6 +50,8 @@
 
 {%-   assign temp = array                 -%}
 {%-   assign array = '' | split: ','      -%}
+{%-   assign prime = prime | push: num    -%}
+{%-   assign size = prime | size          -%}
 
 {%-   for item in temp reversed           -%}
 {%-     assign item = item | push: num    -%}
@@ -57,8 +59,6 @@
 {%-   endfor                              -%}
 
 {%-   comment                             -%}
-{%-   assign prime = prime | push: num    -%}
-{%-   assign size = prime | size          -%}
 {%-     if item contains size             -%}
 {%-     endif                             -%}
 {%-   endcomment                          -%}
