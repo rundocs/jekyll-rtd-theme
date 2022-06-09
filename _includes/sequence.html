@@ -41,13 +41,13 @@
 {%-   endif                               -%}
 
 {%-   assign prime = prime | push: num    -%}
-{%-   assign weight = prime | size        -%}
+{%-   assign size = prime | size        -%}
 
-{%-   if prime contains weight            -%}
-{%-     assign blok = blok | push: weight -%}
-{%-     assign size = blok | size         -%}
-{%-     if blok contains size             -%}
-{%-       assign row = row | push: size   -%}
+{%-   if prime contains size            -%}
+{%-     assign blok = blok | push: size -%}
+{%-     assign weight = blok | size         -%}
+{%-     if blok contains weight             -%}
+{%-       assign row = row | push: weight   -%}
 {%-     endif                             -%}
 {%-   endif                               -%}
 
