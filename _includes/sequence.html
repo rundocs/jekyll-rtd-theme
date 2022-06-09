@@ -66,7 +66,8 @@
 {%-   assign array = array | push: blok   -%}
 {%-   assign array = array | push: row    -%}
 {%-   case weight                          %}
-{%    when 4 %}{{ array | jsonify }}
+
+{%-   when 4 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
@@ -133,7 +134,7 @@
 											</li>
 										</ul>
 									</li>
-{% when 10 %}{{ array | jsonify }}
+{%- when 10 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser">Parser</a>
 										<ul>
 											<li><a href="/maps/script">[8]10,11,12,13</a>
@@ -193,7 +194,7 @@
 											</li>
 										</ul>
 									</li>
-{% when 39 %}{{ array | jsonify }}
+{%- when 39 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar">Grammar</a>
 										<ul>
 											<li><a href="/attribute">[14]40,41</a>
@@ -236,7 +237,7 @@
 													<li><a href="/sites/recording">(79)159</a></li>
 												</ul>
 											</li>
-{% when 69 %}{{ array | jsonify }}
+{%- when 69 %}{{ array | jsonify }}
 											<li><a href="/track">[19]69</a>
 												<ul>
 													<li><a href="/news/encoding">(80)160</a></li>
@@ -253,7 +254,7 @@
 											</li>
 										</ul>
 									</li>
-{% when 1229 %}
+{%- when 1229 %}
 									<li{% if site.baseurl == "/about" %} class="current"{% endif %}><a href="/about">About</a></li>
 {%- endcase -%}
 {%- endfor -%}
