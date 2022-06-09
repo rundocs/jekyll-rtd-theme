@@ -12,6 +12,7 @@
 
 {%- assign cell = '' | split: ','         -%}
 {%- assign cell = cell | push: 0          -%}
+{%- assign cell = cell | push: 1          -%}
 
 {%- assign prime = '' | split: ','        -%}
 {%- assign prime = prime | push: 1        -%}
@@ -50,7 +51,7 @@
 {%-   endif                               -%}
 
 {%-   assign prime = prime | push: num    -%}
-{%-   assign weight = prime | size        -%}
+{%-   assign weight = prime | size | minus: 1 -%}
 {%-   assign cell = cell | push: weight   -%}
 
 {%-   if prime contains weight            -%}
