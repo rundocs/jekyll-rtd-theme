@@ -51,11 +51,10 @@
 {%-   endif                               -%}
 
 {%-   assign prime = prime | push: num    -%}
-{%-   assign array = array | push: prime  -%}
+{%-   assign weight = prime | size        -%}
 
-{%-   assign size = prime | size          -%}
-{%-   if prime contains size              -%}
-{%-     assign row = row | push: size     -%}
+{%-   if prime contains weight            -%}
+{%-     assign row = row | push: weight   -%}
 {%-     assign size = row | size          -%}
 {%-     if row contains size              -%}
 {%-       assign blok = blok | push: size -%}
@@ -63,10 +62,11 @@
 {%-   endif                               -%}
 
 {%-   assign array = '' | split: ','      -%}
-{%-   assign array = array | push: row    -%}
+{%-   assign array = array | push: prime  -%}
 {%-   assign array = array | push: blok   -%}
+{%-   assign array = array | push: row    -%}
 
-{%-   case size                           -%}
+{%-   case weight                         -%}
 {%-   when 4 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
