@@ -1,72 +1,72 @@
-{%- assign id = '' | split: ','           -%}
-{%- assign row = '' | split: ','          -%}
-{%- assign cell = '' | split: ','         -%}
-{%- assign block = '' | split: ','        -%}
+{%- assign id = '' | split: ','             -%}
+{%- assign row = '' | split: ','            -%}
+{%- assign cell = '' | split: ','           -%}
+{%- assign block = '' | split: ','          -%}
 
-{%- assign prime = '' | split: ','        -%}
-{%- assign prime = prime | push: 2        -%}
+{%- assign prime = '' | split: ','          -%}
+{%- assign prime = prime | push: 2          -%}
 
-{%- assign n = include.n | default: 100   -%}
-{%- assign j = n | times: n               -%}
-{%- assign min = include.min | default: 2 -%}
-{%- assign max = include.max | default: j -%}
+{%- assign n = include.n | default: 100     -%}
+{%- assign j = n | times: n                 -%}
+{%- assign min = include.min | default: 2   -%}
+{%- assign max = include.max | default: j   -%}
 
-{%- for num in (3 .. max)                 -%}
-{%-   assign mod = num | modulo: 2        -%}
-{%-   if mod == 0                         -%}
-{%-     continue                          -%}
-{%-   endif                               -%}
+{%- for num in (3 .. max)                   -%}
+{%-   assign mod = num | modulo: 2          -%}
+{%-   if mod == 0                           -%}
+{%-     continue                            -%}
+{%-   endif                                 -%}
 
-{%-   for i in (min .. n)                 -%}
-{%-     assign pow = i | times: i         -%}
-{%-     if pow >= num                     -%}
-{%-       assign min = i                  -%}
-{%-       break                           -%}
-{%-     endif                             -%}
-{%-   endfor                              -%}
+{%-   for i in (min .. n)                   -%}
+{%-     assign pow = i | times: i           -%}
+{%-     if pow >= num                       -%}
+{%-       assign min = i                    -%}
+{%-       break                             -%}
+{%-     endif                               -%}
+{%-   endfor                                -%}
 
-{%-   assign bad = false                  -%}
-{%-   for i in (3 .. min)                 -%}
-{%-     assign mod = num | modulo: i      -%}
-{%-     if mod == 0                       -%}
-{%-       assign bad = true               -%}
-{%-       break                           -%}
-{%-     endif                             -%}
-{%-   endfor                              -%}
+{%-   assign bad = false                    -%}
+{%-   for i in (3 .. min)                   -%}
+{%-     assign mod = num | modulo: i        -%}
+{%-     if mod == 0                         -%}
+{%-       assign bad = true                 -%}
+{%-       break                             -%}
+{%-     endif                               -%}
+{%-   endfor                                -%}
 
-{%-   if bad                              -%}
-{%-     continue                          -%}
-{%-   endif                               -%}
+{%-   if bad                                -%}
+{%-     continue                            -%}
+{%-   endif                                 -%}
 
-{%-   assign array = '' | split: ','      -%}
-{%-   assign prime = prime | push: num    -%}
+{%-   assign array = '' | split: ','        -%}
+{%-   assign prime = prime | push: num      -%}
 
-{%-   assign size = prime | size          -%}
-{%-   if prime contains size              -%}
-{%-     assign block = block | push: size -%}
+{%-   assign size = prime | size            -%}
+{%-   if prime contains size                -%}
+{%-     assign block = block | push: size   -%}
 
-{%-     assign width = block | size       -%}
-{%-     if block contains width           -%}
+{%-     assign width = block | size         -%}
+{%-     if block contains width             -%}
 {%-       assign cell = cell | push: width  -%}
 
-{%-       assign weight = cell | size      -%}
-{%-       if cell contains weight          -%}
+{%-       assign weight = cell | size       -%}
+{%-       if cell contains weight           -%}
 {%-         assign row = row | push: weight -%}
 
-	{%-       assign expanse = row | size      -%}
-	{%-       if row contains expanse          -%}
-	{%-         assign id = id | push: expanse -%}
+{%-	       assign expanse = row | size      -%}
+{%-	       if row contains expanse          -%}
+{%-	         assign id = id | push: expanse -%}
 
-	{%-       endif                           -%}
-	{%-     endif                             -%}
-{%-     endif                             -%}
-{%-   endif                               -%}
+{%-	       endif                            -%}
+{%-	     endif                              -%}
+{%-     endif                               -%}
+{%-   endif                                 -%}
 
-{%-   assign array = array | push: id     -%}
-{%-   assign array = array | push: row    -%}
-{%-   assign array = array | push: cell   -%}
-{%-   assign array = array | push: block  -%}
-{%-   case size                           -%}
+{%-   assign array = array | push: id       -%}
+{%-   assign array = array | push: row      -%}
+{%-   assign array = array | push: cell     -%}
+{%-   assign array = array | push: block    -%}
+{%-   case size                             -%}
 
 {% when 29 %}{{ array | jsonify }}
 										<ul>
