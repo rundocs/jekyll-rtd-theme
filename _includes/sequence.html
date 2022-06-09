@@ -62,9 +62,9 @@
 {%-   endif                               -%}
 
 {%-   assign array = '' | split: ','      -%}
-{%-   assign array = array | push: prime  -%}
-{%-   assign array = array | push: blok   -%}
 {%-   assign array = array | push: row    -%}
+{%-   assign array = array | push: blok   -%}
+{%-   assign array = array | push: prime  -%}
 {%-   case weight                         -%}
 
 {% when 4 %}{{ array | jsonify }}
