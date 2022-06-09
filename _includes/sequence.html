@@ -68,7 +68,8 @@
 {%-   assign array = array | push: block    -%}
 {%-   case size                             -%}
 
-{% when 29 %}{{ array | jsonify }}
+{% when 29 %}
+									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/" title="{{ array | jsonify }}">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
 												<ul>
@@ -94,8 +95,8 @@
 											</li>
 									   </ul>
 									</li>
-{% when 109 %}{{ array | jsonify }}
-									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer">Lexer</a>
+{% when 109 %}
+									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer" title="{{ array | jsonify }}">Lexer</a>
 										<ul>
 											<li><a href="/map">[4]11</a>
 												<ul>
@@ -134,8 +135,8 @@
 											</li>
 										</ul>
 									</li>
-{% when 1229 %}{{ array | jsonify }}
-									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser">Parser</a>
+{% when 1229 %}
+									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser" title="{{ array | jsonify }}">Parser</a>
 										<ul>
 											<li><a href="/maps/script">[8]10,11,12,13</a>
 												<ul>
