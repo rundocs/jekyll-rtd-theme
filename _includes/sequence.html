@@ -11,8 +11,7 @@
 {%- assign blok = blok | push: 2          -%}
 
 {%- assign cell = '' | split: ','         -%}
-{%- assign cell = cell | push: 1          -%}
-{%- assign cell = cell | push: 2          -%}
+{%- assign cell = cell | push: 0          -%}
 
 {%- assign prime = '' | split: ','        -%}
 {%- assign prime = prime | push: 1        -%}
@@ -52,6 +51,7 @@
 
 {%-   assign prime = prime | push: num    -%}
 {%-   assign weight = prime | size        -%}
+{%-   assign cell = cell | push: weight   -%}
 
 {%-   if prime contains weight            -%}
 {%-     assign blok = blok | push: weight -%}
@@ -64,6 +64,7 @@
 {%-   assign array = '' | split: ','      -%}
 {%-   assign array = array | push: row    -%}
 {%-   assign array = array | push: blok   -%}
+{%-   assign array = array | push: cell   -%}
 {%-   assign array = array | push: prime  -%}
 {%-   case weight                         -%}
 
