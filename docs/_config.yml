@@ -61,12 +61,12 @@ exclude:
   - webpack.config.js
   - jekyll-rtd-theme.gemspec
 
-theme: null
 encoding: utf-8
 livereload: true
 limit_posts: 1000
 timezone: Asia/Jakarta
-collections_dir: docs/assets
+collections_dir: assets
+remote_theme: eQ19/parser
 excerpt_separator: <!--end_excerpt-->
 
 # Plugins Setting
