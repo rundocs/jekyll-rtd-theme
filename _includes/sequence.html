@@ -94,7 +94,6 @@
 												</ul>
 											</li>
 									   </ul>
-            {% include common/core/toctree.liquid %}
 									</li>
 {% when 109 %}
 									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer" id={{ size }} title="{{ array | jsonify }}">Lexer</a>
@@ -256,4 +255,4 @@
 											</li>
 										</ul>
 									</li>
-									<li{% if site.baseurl == "/about" %} class="current"{% endif %}><a href="/about">About</a></li>
+									<li{% if site.baseurl == "/about" %} class="current"{% endif %}><a href="/about">About</a>{% include common/core/toctree.liquid %}</li>
