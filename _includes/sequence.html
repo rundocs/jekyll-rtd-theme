@@ -54,7 +54,7 @@
 {%-   assign array = '' | split: ','      -%}
 {%-   assign array = array | push: row    -%}
 {%-   assign array = array | push: blok   -%}
-{%-   case weight                         -%}
+{%-   case size                         -%}
 
 {% when 29 %}{{ array | jsonify }}
 										<ul>
