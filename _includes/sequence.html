@@ -67,7 +67,7 @@
 {%-   assign array = array | push: prime  -%}
 {%-   case weight                         -%}
 
-{% when 4 %}{{ array | jsonify }}
+{% when 5 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
@@ -94,7 +94,7 @@
 											</li>
 									   </ul>
 									</li>
-{% when 7 %}{{ array | jsonify }}
+{% when 8 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer">Lexer</a>
 										<ul>
 											<li><a href="/map">[4]11</a>
@@ -134,7 +134,7 @@
 											</li>
 										</ul>
 									</li>
-{% when 10 %}{{ array | jsonify }}
+{% when 11 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser">Parser</a>
 										<ul>
 											<li><a href="/maps/script">[8]10,11,12,13</a>
