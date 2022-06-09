@@ -69,7 +69,7 @@
 {%-   case size                             -%}
 
 {% when 29 %}
-									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/" title="{{ array | jsonify }}">Home</a>
+									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/" id={{ size }} title="{{ array | jsonify }}">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
 												<ul>
@@ -96,7 +96,7 @@
 									   </ul>
 									</li>
 {% when 109 %}
-									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer" title="{{ array | jsonify }}">Lexer</a>
+									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer" id={{ size }} title="{{ array | jsonify }}">Lexer</a>
 										<ul>
 											<li><a href="/map">[4]11</a>
 												<ul>
@@ -136,7 +136,7 @@
 										</ul>
 									</li>
 {% when 1229 %}
-									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser" title="{{ array | jsonify }}">Parser</a>
+									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser" id={{ size }} title="{{ array | jsonify }}">Parser</a>
 										<ul>
 											<li><a href="/maps/script">[8]10,11,12,13</a>
 												<ul>
@@ -197,7 +197,7 @@
 									</li>
 {%- endcase -%}
 {%- endfor -%}
-									<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar">Grammar</a>
+									<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar" id=10143>Grammar</a>
 										<ul>
 											<li><a href="/attribute">[14]40,41</a>
 												<ul>

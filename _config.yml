@@ -163,6 +163,7 @@ kramdown:
   math_engine_opts configuration: mathjax
  
 # Custom Headers
+# https://shopify.github.io/liquid/
 # https://jekyllrb.com/docs/configuration/webrick/
 # https://en.wikipedia.org/wiki/Content_Security_Policy
 
