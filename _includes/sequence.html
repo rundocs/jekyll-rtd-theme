@@ -47,13 +47,11 @@
 {%-   assign array = array | push: prime  -%}
 
 {%-   assign size = prime | size          -%}
-{%-   if prime contains size                -%}
+{%-   if prime contains size              -%}
 {%-     assign row = row | push: size     -%}
 {%-   endif                               -%}
 {%-   assign array = array | push: row    -%}
 
-{%-   comment                             -%}
-{%-   endcomment                          -%}
 {%-   case num                            -%}
 
 {% when 29 %}{{ array | jsonify }}
