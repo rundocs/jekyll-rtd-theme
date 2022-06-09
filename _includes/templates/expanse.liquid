@@ -9,7 +9,9 @@
 							</div>
 							<nav class="nav put-right">
 								<ul class="sf-menu">
+									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 {% include sequence.html %}
+									<li{% if site.baseurl == "/about" %} class="current"{% endif %}><a href="/about">About</a></li>
 								</ul>
 							</nav>
 						</div>
