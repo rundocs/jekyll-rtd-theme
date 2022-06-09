@@ -1,10 +1,13 @@
 {%- assign id = '' | split: ','           -%}
-{%- assign blok = '' | split: ','         -%}
 {%- assign cell = '' | split: ','         -%}
 
 {%- assign row = '' | split: ','          -%}
 {%- assign row = row | push: 1            -%}
 {%- assign row = row | push: 2            -%}
+
+{%- assign blok = '' | split: ','         -%}
+{%- assign blok = blok | push: 1          -%}
+{%- assign blok = blok | push: 2          -%}
 
 {%- assign prime = '' | split: ','        -%}
 {%- assign prime = prime | push: 1        -%}
