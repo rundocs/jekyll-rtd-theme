@@ -51,7 +51,7 @@
 {%-       assign row = row | push: width   -%}
 
 {%-       assign weight = row | size         -%}
-{%-       if id contains weight             -%}
+{%-       if row contains weight             -%}
 {%-         assign id = id | push: weight   -%}
 {%-       endif                             -%}
 
