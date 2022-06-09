@@ -41,17 +41,25 @@
 {%-   endif                               -%}
 
 {%-   assign prime = prime | push: num    -%}
-{%-   assign size = prime | size        -%}
 
+{%-   assign size = prime | size        -%}
 {%-   if prime contains size            -%}
 {%-     assign blok = blok | push: size -%}
-{%-     assign weight = blok | size         -%}
-{%-     if blok contains weight             -%}
-{%-       assign row = row | push: weight   -%}
+
+{%-     assign width = blok | size         -%}
+{%-     if blok contains width             -%}
+{%-       assign row = row | push: width   -%}
+
+{%-       assign weight = row | size         -%}
+{%-       if id contains weight             -%}
+{%-         assign id = id | push: weight   -%}
+{%-       endif                             -%}
+
 {%-     endif                             -%}
 {%-   endif                               -%}
 
 {%-   assign array = '' | split: ','      -%}
+{%-   assign array = array | push: id    -%}
 {%-   assign array = array | push: row    -%}
 {%-   assign array = array | push: blok   -%}
 {%-   case size                         -%}
