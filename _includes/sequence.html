@@ -1,7 +1,7 @@
 {%- assign id = '' | split: ','           -%}
 {%- assign row = '' | split: ','          -%}
 {%- assign cell = '' | split: ','         -%}
-{%- assign block = '' | split: ','         -%}
+{%- assign block = '' | split: ','        -%}
 
 {%- assign prime = '' | split: ','        -%}
 {%- assign prime = prime | push: 2        -%}
@@ -57,10 +57,10 @@
 {%-   endif                               -%}
 
 {%-   assign array = '' | split: ','      -%}
-{%-   assign array = array | push: id    -%}
+{%-   assign array = array | push: id     -%}
 {%-   assign array = array | push: row    -%}
-{%-   assign array = array | push: block   -%}
-{%-   case size                         -%}
+{%-   assign array = array | push: block  -%}
+{%-   case size                           -%}
 
 {% when 29 %}{{ array | jsonify }}
 										<ul>
