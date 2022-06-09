@@ -1,5 +1,6 @@
 {%- assign id = '' | split: ','           -%}
-{%- assign cell = '' | split: ','         -%}
+{%- assign id = id | push: 1              -%}
+{%- assign id = id | push: 2              -%}
 
 {%- assign row = '' | split: ','          -%}
 {%- assign row = row | push: 1            -%}
@@ -8,6 +9,10 @@
 {%- assign blok = '' | split: ','         -%}
 {%- assign blok = blok | push: 1          -%}
 {%- assign blok = blok | push: 2          -%}
+
+{%- assign cell = '' | split: ','         -%}
+{%- assign cell = cell | push: 1          -%}
+{%- assign cell = cell | push: 2          -%}
 
 {%- assign prime = '' | split: ','        -%}
 {%- assign prime = prime | push: 1        -%}
@@ -45,19 +50,19 @@
 {%-     continue                          -%}
 {%-   endif                               -%}
 
-{%-   assign array = '' | split: ','      -%}
 {%-   assign prime = prime | push: num    -%}
 {%-   assign array = array | push: prime  -%}
 
 {%-   assign size = prime | size          -%}
 {%-   if prime contains size              -%}
 {%-     assign row = row | push: size     -%}
+{%-     assign size = row | size          -%}
+{%-     if row contains size              -%}
+{%-       assign blok = blok | push: size -%}
+{%-     endif                             -%}
+{%-   endif                               -%}
 
-{%-   assign size = row | size            -%}
-{%-   if row contains size                -%}
-{%-     assign blok = blok | push: size   -%}
-{%-   endif                               -%}
-{%-   endif                               -%}
+{%-   assign array = '' | split: ','      -%}
 {%-   assign array = array | push: row    -%}
 {%-   assign array = array | push: blok   -%}
 
