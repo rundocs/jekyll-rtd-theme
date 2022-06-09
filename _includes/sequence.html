@@ -66,7 +66,6 @@
 {%-   assign array = array | push: row    -%}
 {%-   assign array = array | push: blok   -%}
 {%-   assign array = array | push: cell   -%}
-{%-   assign array = array | push: prime  -%}
 {%-   case weight                         -%}
 
 {% when 10 %}{{ array | jsonify }}
