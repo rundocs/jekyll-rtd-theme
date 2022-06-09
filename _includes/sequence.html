@@ -52,9 +52,9 @@
 {%-   endif                               -%}
 {%-   assign array = array | push: row    -%}
 
-{%-   case num                            -%}
+{%-   case size                           -%}
 
-{% when 29 %}{{ array | jsonify }}
+{% when 3 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
