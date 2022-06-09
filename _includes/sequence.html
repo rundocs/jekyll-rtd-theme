@@ -52,8 +52,13 @@
 {%-   endif                               -%}
 {%-   assign array = array | push: row    -%}
 
-{%-   case size                           -%}
+{%-   assign size = row | size            -%}
+{%-   if row contains size                -%}
+{%-     assign blok = blok | push: size   -%}
+{%-   endif                               -%}
+{%-   assign array = array | push: blok   -%}
 
+{%-   case size                           -%}
 {%- when 4 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
