@@ -1,9 +1,7 @@
 {%- assign id = '' | split: ','           -%}
 {%- assign row = '' | split: ','          -%}
-{%- assign blok = '' | split: ','         -%}
-
 {%- assign cell = '' | split: ','         -%}
-{%- assign cell = cell | push: 1          -%}
+{%- assign block = '' | split: ','         -%}
 
 {%- assign prime = '' | split: ','        -%}
 {%- assign prime = prime | push: 2        -%}
@@ -42,18 +40,18 @@
 
 {%-   assign prime = prime | push: num    -%}
 
-{%-   assign size = prime | size        -%}
-{%-   if prime contains size            -%}
-{%-     assign blok = blok | push: size -%}
+{%-   assign size = prime | size          -%}
+{%-   if prime contains size              -%}
+{%-     assign block = block | push: size -%}
 
-{%-     assign width = blok | size         -%}
-{%-     if blok contains width             -%}
-{%-       assign row = row | push: width   -%}
+{%-     assign width = block | size       -%}
+{%-     if block contains width           -%}
+{%-       assign row = row | push: width  -%}
 
-{%-       assign weight = row | size         -%}
-{%-       if row contains weight             -%}
-{%-         assign id = id | push: weight   -%}
-{%-       endif                             -%}
+{%-       assign weight = row | size      -%}
+{%-       if row contains weight          -%}
+{%-         assign id = id | push: weight -%}
+{%-       endif                           -%}
 
 {%-     endif                             -%}
 {%-   endif                               -%}
@@ -61,7 +59,7 @@
 {%-   assign array = '' | split: ','      -%}
 {%-   assign array = array | push: id    -%}
 {%-   assign array = array | push: row    -%}
-{%-   assign array = array | push: blok   -%}
+{%-   assign array = array | push: block   -%}
 {%-   case size                         -%}
 
 {% when 29 %}{{ array | jsonify }}
