@@ -54,10 +54,10 @@
 {%-   assign weight = prime | size        -%}
 
 {%-   if prime contains weight            -%}
-{%-     assign row = row | push: weight   -%}
-{%-     assign size = row | size          -%}
+{%-     assign blok = blok | push: weight -%}
+{%-     assign size = blok | size         -%}
 {%-     if row contains size              -%}
-{%-       assign blok = blok | push: size -%}
+{%-       assign row = row | push: size   -%}
 {%-     endif                             -%}
 {%-   endif                               -%}
 
