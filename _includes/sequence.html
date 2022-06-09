@@ -65,8 +65,8 @@
 {%-   assign array = array | push: prime  -%}
 {%-   assign array = array | push: blok   -%}
 {%-   assign array = array | push: row    -%}
+{%-   case weight                         -%}
 
-{%   case weight                           %}
 {% when 4 %}{{ array | jsonify }}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 										<ul>
