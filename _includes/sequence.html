@@ -7,8 +7,8 @@
 {%- assign row = row | push: 2            -%}
 
 {%- assign blok = '' | split: ','         -%}
+{%- assign blok = blok | push: 1          -%}
 {%- assign blok = blok | push: 2          -%}
-{%- assign blok = blok | push: 3          -%}
 
 {%- assign cell = '' | split: ','         -%}
 {%- assign cell = cell | push: 1          -%}
