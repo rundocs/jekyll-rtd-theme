@@ -169,9 +169,17 @@
 											</li>
 										</ul>
 									</li>
-{%- endcase -%}
-{%- endfor -%}
-									<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar" id=10143 title="{{ array | jsonify }}">Grammar</a>
+{%- endcase                                -%}
+{%- endfor                                 -%}
+{%- if site.data.roots                     -%}
+{%-   for item in site.data.roots          -%}
+{%-     assign prime = item.key            -%}
+{%-     if prime > 10000                   -%}
+{%-        include common/core/size.liquid -%}
+{%-     endif                              -%}
+{%-   endfor                               -%}
+{%- endif                                  -%}
+								<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar" id=10143 title="{{ array | jsonify }}">Grammar</a>
 										<ul>
 											<li><a href="/attribute">[14]40,41</a>
 												<ul>
