@@ -1,6 +1,7 @@
 # Parser
 
 Forming the seven by three to four lies twelve. Pairing them to even produces a total of twenty four (24).
+<!--end_excerpt-->
 In our concept these process would present the total hours and days that stays fix in time cycle (24/7).
 
 ## Project Introduction
