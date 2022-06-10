@@ -1,4 +1,5 @@
 		<section id="content">
+			{% include templates/toc.html html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
 			<div class="ic">eQuantum Project | Site Building, Monitoring System, Business Networking, Project Mapping</div>
 			{% include templates/anchor_headings.html html=content headerTitle='Usage'%}	
 			<div class="container">
