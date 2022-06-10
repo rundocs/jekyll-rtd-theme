@@ -38,7 +38,9 @@
 {%-     continue                            -%}
 {%-   endif                                 -%}
 
+{%-   assign array = '' | split: ','        -%}
 {%-   assign prime = prime | push: num      -%}
+
 {%-   assign size = prime | size            -%}
 {%-   if prime contains size                -%}
 {%-     assign block = block | push: size   -%}
@@ -51,23 +53,209 @@
 {%-       if cell contains weight           -%}
 {%-         assign row = row | push: weight -%}
 
-{%-	        assign expanse = row | size      -%}
-{%-	        if row contains expanse          -%}
-{%-	          assign id = id | push: expanse -%}
+{%-	       assign expanse = row | size      -%}
+{%-	       if row contains expanse          -%}
+{%-	         assign id = id | push: expanse -%}
 
 {%-	       endif                            -%}
 {%-	     endif                              -%}
 {%-     endif                               -%}
 {%-   endif                                 -%}
 
-{%-   assign array = '' | split: ','        -%}
 {%-   assign array = array | push: id       -%}
 {%-   assign array = array | push: row      -%}
 {%-   assign array = array | push: cell     -%}
 {%-   assign array = array | push: block    -%}
-
 {%-   case size                             -%}
-{%-     include templates/size.html         -%}
-{%-   endcase                               -%}
 
-{%- endfor                                  -%}
+{% when 29 %}
+									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/" id={{ size }} title="{{ array | jsonify }}">Home</a>
+										<ul>
+											<li><a href="/concept">[1]19</a>
+												<ul>
+													<li><a href="/map/routine">(1)2</a></li>
+													<li><a href="/map/spreading">(2)3</a></li>
+													<li><a href="/map/employment">(3)5</a></li>
+													<li><a href="/map/merging">(4)7=π(10)</a></li>
+												</ul>
+											</li>
+											 <li><a href="/sites">[2]17</a>
+												<ul>
+													<li><a href="/sites/introduction">(5)11</a></li>
+													<li><a href="/sites/repository">(6)13</a></li>
+													<li><a href="/sites/portraying">(7)17</a></li>
+													<li><a href="/sites/nature">(8)19=π(10→19)</a></li>
+												</ul>
+											</li>
+											<li><a href="/news">[3]13-1</a>
+												<ul>
+													<li><a href="/news/reading">(8)23</a></li>
+													<li><a href="/news/writing">(10){{ prime[10] }}=π(19→29)</a></li>
+												</ul>
+											</li>
+									   </ul>
+									</li>
+        <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation">
+            {% include common/core/toctree.liquid %}
+        </div>
+{% when 109 %}
+									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer" id={{ size }} title="{{ array | jsonify }}">Lexer</a>
+										<ul>
+											<li><a href="/map">[4]11</a>
+												<ul>
+													<li><a href="/map/settlement">(11){{ prime[11] }}→twin</a></li>
+													<li><a href="/map/comparison">(12)37</a></li>
+													<li><a href="/map/overall">(13)41→twin</a></li>
+												</ul>
+											</li>
+											<li><a href="/sites">[5]7+12</a>
+												<ul>
+													<li><a href="/sites/route">(14)43→twin</a></li>
+													<li><a href="/sites/channel">(15)47</a></li>
+													<li><a href="/sites/feedback">(16)53</a></li>
+													<li><a href="/sites/recording">(17)59→twin</a></li>
+												</ul>
+											</li>
+											<li><a href="/status">[6]5+13</a>
+												<ul>
+													<li><a href="/status/nature">(18)61→twin</a></li>
+													<li><a href="/status/info">(19)67</a></li>
+													<li><a href="/status/rating">(20)71→twin</a></li>
+												</ul>
+											</li>
+											<li><a href="/news">[7]18+13+12</a>
+												<ul>
+													<li><a href="/news/reading">(21)73→twin</a></li>
+													<li><a href="/news/writing">(22)79</a></li>
+													<li><a href="/news/scripting">(23)83</a></li>
+													<li><a href="/news/encoding">(24)89</a></li>
+													<li><a href="/news/key">(25)97</a></li>
+													<li><a href="/news/formation">(26)101→twin</a></li>
+													<li><a href="/news/mapping">(27)103→twin</a></li>
+													<li><a href="/news/formation">(28)107→twin</a></li>
+													<li><a href="/news/mapping">(29)109→twin</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+{% when 1229 %}
+									<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser" id={{ size }} title="{{ array | jsonify }}">Parser</a>
+										<ul>
+											<li><a href="/maps/script">[8]10,11,12,13</a>
+												<ul>
+													<li><a href="/news/reading">(30)110</a></li>
+													<li><a href="/news/writing">(31)111</a></li>
+													<li><a href="/news/scripting">(32)112</a></li>
+													<li><a href="/news/encoding">(33)113</a></li>
+												</ul>
+											</li>
+											<li><a href="/feed/work">[9]14,15</a>
+												<ul>
+													<li><a href="/news/scripting">(34)114:3,95=
+													(1000-50)/10</a></li>
+													<li><a href="/news/encoding">(35)115:3</a></li>
+													<li><a href="/news/scripting">(36)116:6</a></li>
+													<li><a href="/news/encoding">(37)117:6</a></li>
+													<li><a href="/news/scripting">(38)118:6</a></li>
+													<li><a href="/sites/recording">(39)119:6</a></li>
+												</ul>
+											</li>
+											<li><a href="/parser/site">[10]20</a>
+												<ul>
+													<li><a href="/sites/recording">(40)120:6</a></li>
+													<li><a href="/news/reading">(41)121:6</a></li>
+													<li><a href="/news/writing">(42)122:6</a></li>
+													<li><a href="/news/scripting">(43)123:6</a></li>
+													<li><a href="/news/encoding">(44)124:6</a></li>
+													<li><a href="/news/scripting">(45)125:6</a></li>
+												</ul>
+											</li>
+											<li><a href="/tunnel/social">[11]26~32(7x)</a>
+												<ul>
+													<li><a href="/news/encoding">(46)126:7,6</a></li>
+													<li><a href="/news/encoding">(47)127:6,9,10</a></li>
+													<li><a href="/news/scripting">(48)128:7</a></li>
+													<li><a href="/news/encoding">(49)129:7</a></li>
+													<li><a href="/news/encoding">(50)130:7</a></li>
+													<li><a href="/news/scripting">(51)131:6</a></li>
+													<li><a href="/news/encoding">(52)132:6,7</a></li>
+													<li><a href="/news/encoding">(53)133:7</a></li>
+													<li><a href="/news/scripting">(54)134:7</a></li>
+													<li><a href="/news/encoding">(55)135:7</a></li>
+												</ul>
+											</li>
+											<li><a href="/classes/project">[12]36</a>
+												<ul>
+													<li><a href="/news/encoding">(56)136:13</a></li>
+													<li><a href="/news/scripting">(57)137:13</a></li>
+												</ul>
+											</li>
+											<li><a href="/quantum">[13]38,39</a>
+												<ul>
+													<li><a href="/news/scripting">(58)138:4,5</a></li>
+													<li><a href="/news/scripting">(59)139=109+30:14</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+{%- endcase -%}
+{%- endfor -%}
+									<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar" id=10143>Grammar</a>
+										<ul>
+											<li><a href="/attribute">[14]40,41</a>
+												<ul>
+													<li><a href="/news/encoding">(60)140</a></li>
+													<li><a href="/news/scripting">(61)141</a></li>
+													<li><a href="/news/encoding">(62)142</a></li>
+													<li><a href="/news/scripting">(63)143</a></li>
+													<li><a href="/news/scripting">(64)144</a></li>
+													<li><a href="/news/scripting">(65)145</a></li>
+													<li><a href="/news/scripting">(66)146</a></li>
+													<li><a href="/news/scripting">(67)147</a></li>
+												</ul>
+											</li>
+											<li><a href="/artifacts">[15]42</a>
+												<ul>
+													<li><a href="/sites/recording">(68)148</a></li>
+													<li><a href="/sites/recording">(69)149</a></li>
+												</ul>
+											</li>
+											<li><a href="/method">[16]43,44,45,46</a>
+												<ul>
+													<li><a href="/news/encoding">(70)150</a></li>
+													<li><a href="/news/scripting">(71)151</a></li>
+													<li><a href="/news/encoding">(72)152</a></li>
+												</ul>
+											</li>
+											<li><a href="/model">[17]50</a>
+												<ul>
+													<li><a href="/news/scripting">(73)153</a></li>
+													<li><a href="/news/scripting">(74)154</a></li>
+													<li><a href="/news/scripting">(75)155</a></li>
+													<li><a href="/news/scripting">(76)156</a></li>
+												</ul>
+											</li>
+											<li><a href="/trace">[18]68</a>
+												<ul>
+													<li><a href="/news/scripting">(77)157</a></li>
+													<li><a href="/sites/recording">(78)158</a></li>
+													<li><a href="/sites/recording">(79)159</a></li>
+												</ul>
+											</li>
+											<li><a href="/track">[19]69</a>
+												<ul>
+													<li><a href="/news/encoding">(80)160</a></li>
+													<li><a href="/news/scripting">(81)161</a></li>
+													<li><a href="/news/encoding">(82)162</a></li>
+													<li><a href="/news/scripting">(83)163</a></li>
+													<li><a href="/news/scripting">(84)164</a></li>
+													<li><a href="/news/scripting">(85)165</a></li>
+													<li><a href="/news/scripting">(86)166</a></li>
+													<li><a href="/news/scripting">(87)167</a></li>
+													<li><a href="/sites/recording">(88)168</a></li>
+													<li><a href="/sites/recording">(89)169=139+30</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li{% if site.baseurl == "/about" %} class="current"{% endif %}><a href="/about">About</a></li>
