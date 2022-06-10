@@ -118,7 +118,7 @@
       {% if html_id == "" %}
         {% assign html_id = false %}
       {% endif %}
-      {% capture headerAttrs %}{{ headerAttrs }} id="%html_id%" class="text_2 color_2"{% endcapture %}
+      {% capture headerAttrs %}{{ headerAttrs }} id="%html_id%"{% endcapture %}
     {% endif %}
 
     <!-- Build the anchor to inject for our heading -->
