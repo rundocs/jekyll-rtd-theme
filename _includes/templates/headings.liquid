@@ -67,7 +67,8 @@
 
   {%- for _node in nodes -%}
 	{%- assign excerptParts = _node | split: "<!--end_excerpt-->" -%}
-	{%- assign excerptPart = excerptParts[0] | replace: '<p>', '<p class="text_3">' -%}
+	{%- capture part -%}{% include tabs.liquid size=10 %}<p class="text_3">{%- endcapture -%}
+	{%- assign excerptPart = excerptParts[0] | replace: '<p>', part -%}
     {%- capture node -%}{{- excerptPart | strip -}}</p>{%- endcapture -%}
     
 	{%- if headerTitle -%}
