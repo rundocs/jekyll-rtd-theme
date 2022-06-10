@@ -429,9 +429,8 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 ### 2. USC2 (Tachyon)
 
 ```note
-- Use GCC-11 need also update GCC-conda = 11
-`conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`. But dont use this to void requiring higher GLIBC.
-- Use `conda install -c conda-forge zlib=1.2.11` to avoid requirement of GLIBC2.14
+- python > 3.7.12 require to update GCC-conda=11
+`conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`. But dont use this to void requiring higher GLIBC. Also, `zlib=1.2.12` require GLIBC=2.14. So that to void these errors, use `conda install -c conda-forge libstdcxx-ng=10 libgcc-ng=10 libgfortran-ng=10 zlib=1.2.11 python=3.7.12`
 - Do not use GCC-11 to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf' not solve this error
 - install openBLAS for LAPACK and BLAS, so need load GSL
 - use static link for openBLAS, so need to export it and set cmake var
