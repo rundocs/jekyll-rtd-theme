@@ -29,7 +29,7 @@ export CC=gcc  export CXX=g++  export FC=gfortran
 
 bash Miniconda3-py37_4.9.2-Linux-x86_64.sh -u
 
-choose folder to install:   /uhome1/p001cao/local/app/miniconda3
+choose folder to install:   /home1/p001cao/local/app/miniconda3
 running conda init?  NO
 ... finish
 ```
@@ -51,10 +51,10 @@ create 2 evironments: python37, python27
 
 ```shell
 module load conda/conda3
-conda create -n py37ompi python=3.7.5
+conda create -n py37Lammps python=3.7.5
 ```
 
-create module files for environments, create file into folder  /uhome/p001cao/local/share/lmodfiles/conda/py37ompi
+create module files for environments, create file into folder  /uhome/p001cao/local/share/lmodfiles/conda/py37Lammps
 
 ```shell
 set     topdir          /uhome/p001cao/local/Miniconda3/envs/py37ompi
