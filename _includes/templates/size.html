@@ -1,48 +1,4 @@
-{%- assign id = '' | split: ','             -%}
-{%- assign row = '' | split: ','            -%}
-{%- assign cell = '' | split: ','           -%}
-{%- assign block = '' | split: ','          -%}
-
-{%- assign prime = '' | split: ','          -%}
-{%- assign prime = prime | push: 2          -%}
-
-{%- assign n = include.n | default: 100     -%}
-{%- assign j = n | times: n                 -%}
-{%- assign min = include.min | default: 2   -%}
-{%- assign max = include.max | default: j   -%}
-
-{%- for num in (3 .. max)                   -%}
-{%-   assign mod = num | modulo: 2          -%}
-{%-   if mod == 0                           -%}
-{%-     continue                            -%}
-{%-   endif                                 -%}
-
-{%-   for i in (min .. n)                   -%}
-{%-     assign pow = i | times: i           -%}
-{%-     if pow >= num                       -%}
-{%-       assign min = i                    -%}
-{%-       break                             -%}
-{%-     endif                               -%}
-{%-   endfor                                -%}
-
-{%-   assign bad = false                    -%}
-{%-   for i in (3 .. min)                   -%}
-{%-     assign mod = num | modulo: i        -%}
-{%-     if mod == 0                         -%}
-{%-       assign bad = true                 -%}
-{%-       break                             -%}
-{%-     endif                               -%}
-{%-   endfor                                -%}
-
-{%-   if bad                                -%}
-{%-     continue                            -%}
-{%-   endif                                 -%}
-
-{%-   assign prime = prime | push: num      -%}
-{%-   include common/core/size.liquid       -%}
-{%-   case size                             -%}
-
-{% when 29 %}
+{% when 109 %}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/" id={{ size }} title="{{ array | jsonify }}">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
@@ -69,8 +25,7 @@
 											</li>
 									   </ul>
 									</li>
-{% when 109 %}
-									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer" id={{ size }} title="{{ array | jsonify }}">Lexer</a>
+									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer">Lexer</a>
 										<ul>
 											<li><a href="/map">[4]11</a>
 												<ul>
@@ -169,16 +124,6 @@
 											</li>
 										</ul>
 									</li>
-{%- endcase                                -%}
-{%- endfor                                 -%}
-{%- if site.data.roots                     -%}
-{%-   for item in site.data.roots          -%}
-{%-     assign prime = item.key | times: 1 -%}
-{%-     if prime > 10000                   -%}
-{%-        include common/core/size.liquid -%}
-{%-     endif                              -%}
-{%-   endfor                               -%}
-{%- endif                                  -%}
 								<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar" id=10143 title="{{ array | jsonify }}">Grammar</a>
 										<ul>
 											<li><a href="/attribute">[14]40,41</a>
