@@ -28,10 +28,10 @@
 {%- include templates/headings.html html=content h_min=2 h_max=2 -%}
 {%- for heading in headings | shift -%}
 {%-   if forloop.first %}{% continue %}{% endif %}
+{%-   assign my_num = my_num | plus: 1 %}
 								<div class="element-item grid_4 c1">
 									<div class="box_7">
 										<div class="img-wrap">
-{%-   assign my_num = my_num | plus: 1 %}
 											<a href="/info/project"><img src="/images/index-2_img0{{ my_num }}.jpg" alt="Project Introduction"/></a>
 										</div>
 										<div class="caption">
@@ -42,6 +42,7 @@
 												ultries wertolio dasererat rutrume. In mollis erat mattis
 												neque cilisis, sit amet ultries
 											</p>
+											{{ heading }}
 											<a class="btn_2" href="/info/project">read more</a>
 										</div>
 									</div>
