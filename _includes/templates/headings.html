@@ -67,7 +67,8 @@
 
   {% for _node in nodes %}
 	{% assign excerptParts = _node | split: "<!--end_excerpt-->" %}
-    {% capture node %}{{ excerptParts[0] | strip }}</p>{% endcapture %}
+	{% assign excerptPart = excerptParts[0] | replace: '<p>', '<p class="text_3">' %}
+    {% capture node %}{{ excerptPart | strip }}</p>{% endcapture %}
     
 	{% if headerTitle %}
       {% unless node contains headerTitle %}
