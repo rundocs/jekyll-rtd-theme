@@ -156,11 +156,11 @@
     {% capture new_heading %}
       <h{{ _hAttrToStrip }}
         {{ include.bodyPrefix }}
-        {% if beforeHeading %}
+        {%- if beforeHeading -%}
           {{ anchor }}{{ header }}
-        {% else %}
+        {%- else-%}
           {{ header }}{{ anchor }}
-        {% endif %}
+        {%- endif -%}
         {{ include.bodySuffix }}
       </h{{ headerLevel }}>
     {% endcapture %}
