@@ -66,7 +66,7 @@
 
   {% for _node in nodes %}
 	{% assign excerptParts = _node | split: "<!--end_excerpt-->" %}
-    {% capture node %}{{ excerptParts[0] | strip }}{% endcapture %}
+    {% capture node %}{{ excerptParts[0] | strip }}</p>{% endcapture %}
     
 	{% if headerTitle %}
       {% unless node contains headerTitle %}
@@ -87,7 +87,7 @@
         {% capture node %}<h{{ node }}{% endcapture %}
       {% endunless %}
 
-      {% capture edited_headings %}{{ edited_headings }}{{ node }}</p>{% endcapture %}
+      {% capture edited_headings %}{{ edited_headings }}{{ node }}{% endcapture %}
       {% continue %}
     {% endif %}
 
