@@ -18,8 +18,11 @@
 				</div>
 			</div>
 			
-{% include templates/anchor_headings.html html=content h_min=2 h_max=2 %}
-	
+{%- include templates/anchor_headings.html html=content h_min=2 h_max=2 -%}
+{%- for heading in headings -%}
+{{ heading }}
+{%- endfor -%}
+
 			<div class="bg_1 wrap_17">
 				<div class="container">
 					<div class="row">
