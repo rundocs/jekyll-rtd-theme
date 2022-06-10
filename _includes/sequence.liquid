@@ -1,9 +1,7 @@
 {%- assign id = '' | split: ','             -%}
 {%- assign row = '' | split: ','            -%}
 {%- assign cell = '' | split: ','           -%}
-
 {%- assign block = '' | split: ','          -%}
-{%- assign block = block | push: 1          -%}
 
 {%- assign prime = '' | split: ','          -%}
 {%- assign prime = prime | push: 2          -%}
@@ -53,9 +51,9 @@
 {%-       if cell contains weight           -%}
 {%-         assign row = row | push: weight -%}
 
-{%-	       assign expanse = row | size      -%}
-{%-	       if row contains expanse          -%}
-{%-	         assign id = id | push: expanse -%}
+{%-	        assign expanse = row | size      -%}
+{%-	        if row contains expanse          -%}
+{%-	          assign id = id | push: expanse -%}
 
 {%-	       endif                            -%}
 {%-	     endif                              -%}
