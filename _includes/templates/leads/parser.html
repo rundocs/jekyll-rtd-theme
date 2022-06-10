@@ -27,6 +27,7 @@
 {%- assign my_num = 0 -%}
 {%- include templates/headings.html html=content h_min=2 h_max=2 -%}
 {%- for heading in headings | shift -%}
+{%-   if forloop.first %}{% continue %}{% endif %}
 {%-   assign my_num = my_num | plus: 1 %}
 								<div class="element-item grid_4 c1">
 									<div class="box_7">
