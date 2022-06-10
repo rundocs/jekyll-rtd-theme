@@ -156,9 +156,9 @@
       <h{{ _hAttrToStrip }}
         {{ include.bodyPrefix }}
         {% if beforeHeading %}
-          {{ header }}{{ anchor }}
-        {% else %}
           {{ anchor }}{{ header }}
+        {% else %}
+          {{ header }}{{ anchor }}
         {% endif %}
         {{ include.bodySuffix }}
       </h{{ headerLevel }}>
