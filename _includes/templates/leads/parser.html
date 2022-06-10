@@ -23,22 +23,27 @@
 				<div class="container">
 					<div class="row">
 						<div class="grid_12">
+							<div class="isotope row">
 {%- include templates/headings.html html=content h_min=2 h_max=2 -%}
 {%- for heading in headings -%}
-							<div class="isotope row">
 								<div class="element-item grid_4 c1">
 									<div class="box_7">
 										<div class="img-wrap">
 											<a href="/info/project"><img src="/images/index-2_img01.jpg" alt="Project Introduction"/></a>
 										</div>
 										<div class="caption">
-{{ heading }}
-											<a class="btn_2" href="/info/project">read more</a>
-										</div>
+											<h3 class="text_2 color_2"><a href="/info/project">Project Introduction</a></h3>
+											<p class="text_3">
+												Horem ipsum dolor sit amettetur ing elit. In mollis erat mattis neque
+												cilisis, sit amet <br/>
+												ultries wertolio dasererat rutrume. In mollis erat mattis
+												neque cilisis, sit amet ultries
+											</p>
+											<a class="btn_2" href="/info/project">read more</a></div>
 									</div>
 								</div>
+{%- endfor -%}							
 							</div>
-{%- endfor -%}
 						</div>
 					</div>
 				</div>
