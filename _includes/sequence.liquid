@@ -67,8 +67,5 @@
 {%-   assign array = array | push: cell     -%}
 {%-   assign array = array | push: block    -%}
 
-{%-   case size                             -%}
-{%-     include templates/size.html         -%}
-{%-   endcase                               -%}
-
 {%- endfor                                  -%}
+{%-     include templates/size.html         -%}
