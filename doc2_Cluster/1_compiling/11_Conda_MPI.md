@@ -7,6 +7,8 @@ sort: 11
 ```note
 - Use conda to manage all necessary libs in Linux.
 - However, this way cannot use openmpi with clang. So install clang in conda and use clang to compile openmpi
+- Python > 3.7.12 require to update GCC-conda=11
+`conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`. But dont use this to void requiring higher GLIBC. Also, `zlib=1.2.12` require GLIBC=2.14. So that to void these errors, use `conda install -c conda-forge libstdcxx-ng=10 libgcc-ng=10 libgfortran-ng=10 zlib=1.2.11 python=3.7.12`
 ```
 
 ## USC2 Tachyon (centos 6.9)
@@ -51,10 +53,10 @@ create 2 evironments: python37, python27
 
 ```shell
 module load conda/conda3
-conda create -n py37Lammps python=3.7.5
+conda create -n py37llvm python=3.7.5
 ```
 
-create module files for environments, create file into folder  /uhome/p001cao/local/share/lmodfiles/conda/py37Lammps
+create module files for environments, create file into folder  /uhome/p001cao/local/share/lmodfiles/conda/py37llvm
 
 ```shell
 set     topdir          /uhome/p001cao/local/Miniconda3/envs/py37ompi
@@ -69,10 +71,10 @@ Don't install ompi
 
 ```shell
 module load conda/conda3
-source activate py37ompi
+source activate py37llvm
 
-conda install -c conda-forge cmake libgcc-ng=12.1 libgcc-devel_linux-64 ruamel_yaml
-conda install -c asmeurer glibc
+conda install -c asmeurer glibc       # may error
+conda install -c conda-forge cmake libstdcxx-ng=10 libgcc-ng=10 libgfortran-ng=10 zlib=1.2.11 python=3.7.12
 ```
 
 1.LLVM
@@ -86,6 +88,8 @@ conda install -c conda-forge llvm clang flang libclang lld llvm-openmp llvm-tool
 ```shell
 conda install -c conda-forge ucx
 ```
+
+## OpenMPI
 
 
 
@@ -119,3 +123,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 
 make -j 16 && make install
 ```
+
+
+## Ref
+Update GLIBC: https://gist.github.com/michaelchughes/85287f1c6f6440c060c3d86b4e7d764b
