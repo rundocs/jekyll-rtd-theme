@@ -66,10 +66,12 @@
 
   {% for _node in nodes %}
     {% capture node %}{{ _node | strip }}{% endcapture %}
-
-    {% unless node contains headerTitle %}
-      {% continue %}
-    {% endunless %}	
+    
+	{% if headerTitle %}
+      {% unless node contains headerTitle %}
+        {% continue %}
+      {% endunless %}	
+    {% endif %}
 	
     {% assign nextChar = node | replace: '"', '' | strip | slice: 0, 1 %}
     {% assign headerLevel = nextChar | times: 1 %}
