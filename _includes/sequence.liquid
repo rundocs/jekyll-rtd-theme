@@ -1,7 +1,7 @@
 {%- assign id = '' | split: ','             -%}
-{%- assign row = '' | split: ','            -%}
-{%- assign cell = '' | split: ','           -%}
-{%- assign block = '' | split: ','          -%}
+{%- assign arm = '' | split: ','            -%}
+{%- assign bond = '' | split: ','           -%}
+{%- assign parts = '' | split: ','          -%}
 
 {%- assign prime = '' | split: ','          -%}
 {%- assign prime = prime | push: 2          -%}
@@ -43,18 +43,18 @@
 
 {%-   assign size = prime | size            -%}
 {%-   if prime contains size                -%}
-{%-     assign block = block | push: size   -%}
+{%-     assign parts = parts | push: size   -%}
 
-{%-     assign width = block | size         -%}
-{%-     if block contains width             -%}
-{%-       assign cell = cell | push: width  -%}
+{%-     assign width = parts | size         -%}
+{%-     if parts contains width             -%}
+{%-       assign bond = bond | push: width  -%}
 
-{%-       assign weight = cell | size       -%}
-{%-       if cell contains weight           -%}
-{%-         assign row = row | push: weight -%}
+{%-       assign weight = bond | size       -%}
+{%-       if bond contains weight           -%}
+{%-         assign arm = arm | push: weight -%}
 
-{%-	       assign expanse = row | size      -%}
-{%-	       if row contains expanse          -%}
+{%-	       assign expanse = arm | size      -%}
+{%-	       if arm contains expanse          -%}
 {%-	         assign id = id | push: expanse -%}
 
 {%-	       endif                            -%}
@@ -63,8 +63,8 @@
 {%-   endif                                 -%}
 
 {%-   assign array = array | push: id       -%}
-{%-   assign array = array | push: row      -%}
-{%-   assign array = array | push: cell     -%}
-{%-   assign array = array | push: block    -%}
+{%-   assign array = array | push: arm      -%}
+{%-   assign array = array | push: bond     -%}
+{%-   assign array = array | push: parts    -%}
 
 {%- endfor                                  -%}
