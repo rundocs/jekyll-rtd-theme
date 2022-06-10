@@ -1,4 +1,4 @@
-{% when 109 %}
+{% when 29 %}
 									<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/" id={{ size }} title="{{ array | jsonify }}">Home</a>
 										<ul>
 											<li><a href="/concept">[1]19</a>
@@ -25,7 +25,8 @@
 											</li>
 									   </ul>
 									</li>
-									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer">Lexer</a>
+{% when 109 %}
+									<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer" id={{ size }} title="{{ array | jsonify }}">Lexer</a>
 										<ul>
 											<li><a href="/map">[4]11</a>
 												<ul>
