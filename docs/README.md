@@ -330,7 +330,8 @@ layer | node | sub |  i  |  f
 
 ```
 On top of them, as we’re formalizing our Networking System, 
-Public Discussion into several media's i.e. Hyip Blog, Forum, News, Group, Community, and Channel which Formation covers six (6) Sozializing Plan in sequential of Hyip Monitoring & Rating(1), Marketing Strategy(2), Application Script(3), Topic Discussion(4), News & Blogging(5), and Social Coding(6
+<!--end_excerpt-->
+we are expanding our Public Discussion into several media's i.e. Hyip Blog, Forum, News, Group, Community, and Channel which Formation covers six (6) Sozializing Plan in sequential of Hyip Monitoring & Rating(1), Marketing Strategy(2), Application Script(3), Topic Discussion(4), News & Blogging(5), and Social Coding(6
 ```
 
 layer | node | sub |  i  |  k  |  f

@@ -65,7 +65,7 @@
   {% capture edited_headings %}{% endcapture %}
 
   {% for _node in nodes %}
-    {% capture node %}{{ _node | strip }}{% endcapture %}
+    {% capture node %}{% assign excerptParts = _node | split: "<!--end_excerpt-->" %}{{ excerptParts[1] | strip_newlines | truncatewords: 50 }}{% endcapture %}
     
 	{% if headerTitle %}
       {% unless node contains headerTitle %}
