@@ -25,11 +25,13 @@
 						<div class="grid_12">
 							<div class="isotope row">
 {%- include templates/headings.html html=content h_min=2 h_max=2 -%}
+{%- assign my_num = 0 -%}
 {%- for heading in headings -%}
+{%-   assign my_num = my_num | plus: 1 -%}
 								<div class="element-item grid_4 c1">
 									<div class="box_7">
 										<div class="img-wrap">
-											<a href="/info/project"><img src="/images/index-2_img0{% increment my_variable %}.jpg" alt="Project Introduction"/></a>
+											<a href="/info/project"><img src="/images/index-2_img0{ my_num %}.jpg" alt="Project Introduction"/></a>
 										</div>
 										<div class="caption">
 											<h3 class="text_2 color_2"><a href="/info/project">Project Introduction</a></h3>
