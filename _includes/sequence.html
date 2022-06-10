@@ -173,7 +173,7 @@
 {%- endfor                                 -%}
 {%- if site.data.roots                     -%}
 {%-   for item in site.data.roots          -%}
-{%-     assign prime = item.key            -%}
+{%-     assign prime = item.key | times: 1 -%}
 {%-     if prime > 10000                   -%}
 {%-        include common/core/size.liquid -%}
 {%-     endif                              -%}
