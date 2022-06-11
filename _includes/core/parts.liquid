@@ -2,8 +2,7 @@
 {%- assign arm = '' | split: ','            -%}
 {%- assign bond = '' | split: ','           -%}
 {%- assign parts = '' | split: ','          -%}
-
-{%- assign prime = '' | split: ','          -%}
+{%- assign primes = '' | split: ','          -%}
 
 {%- capture current -%}
 <li><a href="/">Home</a>
@@ -43,12 +42,12 @@
 {%-   endif                                 -%}
 
 {%-   assign array = '' | split: ','        -%}
-{%-   assign prime = prime | push: num      -%}
-{%-   assign size = prime | size            -%}
+{%-   assign primes = primes | push: num      -%}
+{%-   assign size = primes | size            -%}
 
 {%- include core/_parts.liquid -%}
 
-{%-   if prime contains size                -%}
+{%-   if primes contains size                -%}
 {%-     assign parts = parts | push: size   -%}
 
 {%-     assign width = parts | size         -%}
