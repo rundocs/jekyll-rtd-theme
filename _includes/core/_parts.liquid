@@ -1,6 +1,12 @@
-{%- assign node = '<li><a href="/">{{ size }}</a></li>' -%}
+{%- capture tab -%}
+{% include tabs.liquid size=11 %}
+{%- endcapture -%}
+
+{%- capture node -%}
+{{ tab }}<li><a href="/">{{ size }}</a></li>
+{%- endcapture -%}
 
 {%- capture current -%}
 {{ current }}
-{% include tabs.liquid size=11 %}{{ node }}
+{{ node }}
 {%- endcapture -%}
