@@ -2,7 +2,7 @@
 layout: tasks/compress
 ---
 
-{%- include rest/defaults.liquid -%}
+{%- include extra/rest/defaults.liquid -%}
 {%- include leads/rest/defaults.liquid -%}
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ layout: tasks/compress
         {% include leads/twitter_cards.liquid %}
         {% include leads/opengraph.liquid %}
         {% include leads/links.liquid %}
-        {% include rest/styles.liquid %}
+        {% include extra/rest/styles.liquid %}
         {%- include leads/title.liquid -%}
         {%- include leads/script.liquid -%}
         {%- include leads/schema.liquid -%}
@@ -23,7 +23,7 @@ layout: tasks/compress
         {% include templates/content.liquid %}
         {% include templates/addons.liquid %}
         {% include extra/body.html %}
-        {%- include rest/script.liquid %}
+        {%- include extra/rest/script.liquid %}
         {%- include leads/mermaid.liquid -%}
         {%- include leads/mathjax.liquid -%}
         {%- include leads/adsense.liquid -%}
