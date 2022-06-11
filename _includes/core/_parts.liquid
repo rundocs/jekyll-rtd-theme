@@ -3,10 +3,10 @@
 {%- endcapture -%}
 
 {%- capture node -%}
-{{ tab }}<li><a href="/">{{ size }}</a></li>
+<li><a href="/">{{ size }}</a></li>
 {%- endcapture -%}
 
 {%- capture current -%}
 {{ current }}
-{{ node }}
+{{ tab }}{{ node }}
 {%- endcapture -%}
