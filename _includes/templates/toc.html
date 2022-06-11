@@ -79,6 +79,7 @@
     {% assign firstHeader = true %}
     {% assign currLevel = 0 %}
     {% assign lastLevel = 0 %}
+    {% assign lastLevel = 0 %}
 
     {% capture listModifier %}{% if orderedList %}ol{% else %}ul{% endif %}{% endcapture %}
 
@@ -133,7 +134,7 @@
             {% endif %}
 
             {% if include.anchor_filter %}
-			    {% if forloop.first %}
+			    {% if firstHeader %}
 				   {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="*"{% endcapture %}
 				{% endif %}
                 {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="c{{ forloop.index }}"{% endcapture %}
