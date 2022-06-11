@@ -45,7 +45,7 @@
 {%-   assign primes = primes | push: num    -%}
 {%-   assign size = primes | size           -%}
 
-{%- include core/_parts.liquid -%}
+{%-   include core/_parts.liquid            -%}
 
 {%-   if primes contains size               -%}
 {%-     assign parts = parts | push: size   -%}
