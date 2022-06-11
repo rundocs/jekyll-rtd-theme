@@ -6,8 +6,8 @@
 {%- assign prime = '' | split: ','          -%}
 {%- assign prime = prime | push: 2          -%}
 {%- capture current -%}
-{%- include tabs.liquid size=9 -%}<li><a href="/">Home</a>
-{%- include tabs.liquid size=10 -%}<ul>
+{% include tabs.liquid size=9 %}<li><a href="/">Home</a>
+{% include tabs.liquid size=10 %}<ul>
 {%- endcapture -%}
 
 {%- assign n = include.n | default: 100     -%}
@@ -45,7 +45,7 @@
 {%-   assign array = '' | split: ','        -%}
 {%-   assign prime = prime | push: num      -%}
 
-{% include core/_parts.liquid %}
+{%- include core/_parts.liquid -%}
 
 {%-   assign size = prime | size            -%}
 {%-   if prime contains size                -%}
