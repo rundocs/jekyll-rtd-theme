@@ -1,0 +1,28 @@
+a.big.button {
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1em;
+  background: transparent;
+  border: solid 3px #2badad;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  font-family: montserrat, sans-serif;
+}
+a.big.button,
+a.big.button:visited {
+  color: #2badad;
+  text-decoration: none;
+}
+a.big.button:hover {
+  background: #2badad;
+}
+a.big.button:hover,
+a.big.button:hover:visited {
+  color: #fff;
+}
