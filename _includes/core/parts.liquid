@@ -6,8 +6,8 @@
 {%- assign prime = '' | split: ','          -%}
 {%- assign prime = prime | push: 2          -%}
 {%- capture current -%}
-{% include tabs.liquid size=11 %}<li><a href="/">Home</a>
-{% include tabs.liquid size=12 %}<ul>
+{% include tabs.liquid size=9 %}<li><a href="/">Home</a>
+{% include tabs.liquid size=10 %}<ul>
 {%- endcapture -%}
 
 {%- assign n = include.n | default: 100     -%}
@@ -76,7 +76,7 @@
 {%- endfor                                  -%}
 {%- capture current -%}
 {{ current }}
-{% include tabs.liquid size=12 %}</ul>
-{% include tabs.liquid size=11 %}</li>
+{% include tabs.liquid size=10 %}</ul>
+{% include tabs.liquid size=9 %}</li>
 {%- endcapture -%}
 {{ current }}
