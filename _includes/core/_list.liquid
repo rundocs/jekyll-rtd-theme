@@ -13,4 +13,4 @@
 {% include tabs.liquid size=size_p1 %}- [{{ item.title | default: item.name }}]({{ item.url | relative_url }})
 {%- endfor -%}
 
-{%- for workdir in workdir_dirs %}{% include common/core/_list.liquid %}{% endfor -%}
+{%- for workdir in workdir_dirs %}{% include core/_list.liquid %}{% endfor -%}
