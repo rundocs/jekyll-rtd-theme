@@ -45,10 +45,10 @@
 
 {%-   assign array = '' | split: ','        -%}
 {%-   assign prime = prime | push: num      -%}
+{%-   assign size = prime | size            -%}
 
 {%- include core/_parts.liquid -%}
 
-{%-   assign size = prime | size            -%}
 {%-   if prime contains size                -%}
 {%-     assign parts = parts | push: size   -%}
 
