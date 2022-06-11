@@ -136,7 +136,7 @@
 			    {% if forloop.first %}
 				   {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="*"{% endcapture %}
 				{% endif %}
-                {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="c1"{% endcapture %}
+                {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="c{{ forloop.index }}"{% endcapture %}
             {% endif %}
 
             {% capture listItem %}<a{{ anchorAttributes }}>{{ anchorBody }}</a>{% endcapture %}
