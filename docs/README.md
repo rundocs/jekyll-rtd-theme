@@ -3,7 +3,7 @@ Forming the seven by three to four lies twelve. Pairing them to even produces a 
 <!--end_excerpt-->
 In our concept these process would present the total hours and days that stays fix in time cycle (24/7).
 
-## Project Introduction
+## Introduction
 In short, our concept is all about formation. An easy example, counting the total number of an individual duplicated in pair will become three. 
 <!--end_excerpt-->
 
@@ -84,7 +84,7 @@ https://chetabahana.github.io/images/skema/spin.png
 https://chetabahana.github.io/images/skema/minor.png
 
 ```
-## Site Rating
+## Rating
 The mapping covers also the nature of life object. In humans, each cell normally contains twenty-three pairs of chromosomes, for a total of forty-six. 
 <!--end_excerpt-->
 Twenty-two of these pairs, called autosomes, look the same in both males and females. Combine with the last pair, the sex chromosomes, which differ between males and females (females have two copies of the X chromosome, while males have one X and one Y chromosome), i
@@ -136,7 +136,7 @@ https://chetabahana.github.io/images/skema/hexagon.png
 
 ```
 
-## Monitoring Script
+## Monitoring
 in our concept, employs by means of hexagonal array of twenty four (24). 
 <!--end_excerpt-->
 Going deeper into the process of DNA Replication in a chromosome, you may find a conjunction with the routes on all processes happen in our Mapping Diagram, where, at last, the routes generate their channels in hexagonal form that coherence with twelve to twelve by six to six in pairs running like hours in cycle (24).
@@ -235,7 +235,7 @@ layer | node | sub |  i  |  f
 
 ```
 
-## Social Coding
+## Coding
 The project is made in the purpose of getting a possibility to build an interface to generate an integrated info by setting the formation. 
 <!--end_excerpt-->
 On this project, the formation of three to four takes place to start. The three presents Hyip(1), Concept(2), and Program(3), while the four are Site Building(3), Monitoring System(2), Business Networking(3), and Project Mapping(4)
