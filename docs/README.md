@@ -3,7 +3,7 @@ Forming the seven by three to four lies twelve. Pairing them to even produces a 
 <!--end_excerpt-->
 In our concept these process would present the total hours and days that stays fix in time cycle (24/7).
 
-## Introduction
+## Intro
 In short, our concept is all about formation. An easy example, counting the total number of an individual duplicated in pair will become three. 
 <!--end_excerpt-->
 
@@ -136,7 +136,7 @@ https://chetabahana.github.io/images/skema/hexagon.png
 
 ```
 
-## Monitoring
+## Monitor
 in our concept, employs by means of hexagonal array of twenty four (24). 
 <!--end_excerpt-->
 Going deeper into the process of DNA Replication in a chromosome, you may find a conjunction with the routes on all processes happen in our Mapping Diagram, where, at last, the routes generate their channels in hexagonal form that coherence with twelve to twelve by six to six in pairs running like hours in cycle (24).
@@ -188,7 +188,7 @@ https://chetabahana.github.io/images/skema/hexagon.png
 
 ```
 
-## Team Work
+## Team
 One Nature is contributed to seven (7) by three fo four. On other side, combining one Nature, two Form, and three Route become six in total. Three by four complement one to six. Both are formed hexagonal.
 <!--end_excerpt-->
 As our mapping is generated in seven (7) kind of unique processes, so when the concept is implemented then its form will intent to acquire the optimal solution on every run to become unified as time cycle (24/7).
@@ -282,7 +282,7 @@ layer | node | sub |  i  |  f
 
 ```
 
-## Networking
+## Network
 We have started our documentation of our mapping as shown here by diagram (available also in slide and video version) which begin with our Project Information in general. 
 <!--end_excerpt-->
 We will also introduce our initial Repository along with the Wiki. We are going to setup our Portal for all the 'eQ19 Script' that belong to the Project on GitHub, BitBucket, and SourceForge as well as our Script Portal on the most well-known programming like PHP, Python, Java, Go with possible also Node.js, Scala, Clojure, and Ruby.
