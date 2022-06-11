@@ -186,5 +186,11 @@
             {% assign nodes = jekyll_toc | split: '>' %}
             {% capture jekyll_toc %}<{{ listModifier }}{{ rootAttributes }}>{{ nodes | shift | join: '>' }}>{% endcapture %}
         {% endif %}
+		
+		{% if include.anchor_filter %}
+			{% assign nodeEnd = "<li><a href="#" data-filter="*">Show All</a></li></ul>" %}
+			{% assign jekyll_toc = jekyll_toc | replace: "</ul>", nodeEnd %}
+		{% endif %}		
+		
     {% endif %}
 {% endcapture %}{% assign tocWorkspace = '' %}{{ deprecation_warnings }}{{ jekyll_toc -}}
