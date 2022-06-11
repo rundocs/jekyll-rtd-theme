@@ -169,6 +169,10 @@
         {% capture jekyll_toc %}{{ jekyll_toc }}</li></{{ listModifier }}>{% endcapture %}
     {% endfor %}
 
+	{% if include.anchor_filter %}
+        {% capture jekyll_toc %}<li><a href="#" data-filter="*">Show All</a></li>{{ jekyll_toc }}{% endcapture %}
+ 	{% endif %}
+
     {% if jekyll_toc != '' %}
         {% assign rootAttributes = '' %}
         {% if include.class and include.class != blank %}
