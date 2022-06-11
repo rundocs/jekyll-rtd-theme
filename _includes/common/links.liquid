@@ -23,9 +23,5 @@
 	{%- comment %} apple-touch-icon {% endcomment -%}
 		<link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/apple-touch-icon-300x300.jpg">
 
-	{%- comment %} dns-prefetch {% endcomment %}
+	{%- comment %} dns-prefetch {% endcomment -%}
 		<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
-	{% if extra_scss.size > 0 %}
-		<style>{{ extra_scss | scssify | strip_newlines }}</style>
-	{%- endif -%}
