@@ -1,6 +1,6 @@
-{%- include common/rest/site_pages.liquid -%}
-{%- include common/rest/workdir.liquid -%}
-{%- assign item = page -%}{%- include common/rest/item_dir.liquid -%}
+{%- include leads/rest/site_pages.liquid -%}
+{%- include leads/rest/workdir.liquid -%}
+{%- assign item = page -%}{%- include leads/rest/item_dir.liquid -%}
 
 {%- assign base = item_dir | append: "temp/" | split: "/" | size -%}
 {%- assign size = workdir_level | minus: base -%}

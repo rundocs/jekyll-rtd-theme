@@ -1,11 +1,11 @@
 {%- assign counter = 0 -%}
-{%- include common/rest/workdir.liquid %}
+{%- include leads/rest/workdir.liquid %}
 
 {% comment %} list the root files {% endcomment %}
 <ul>
     {%- for item in workdir_files -%}
 		{%- assign counter = counter | plus: 1 -%}
-		{%- include common/rest/item_dir.liquid -%}
+		{%- include leads/rest/item_dir.liquid -%}
         {%- assign level = item_dir | append: "temp" | replace_first: "/", "" | split: "/" | size -%}
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}

@@ -3,30 +3,30 @@ layout: tasks/compress
 ---
 
 {%- include rest/defaults.liquid -%}
-{%- include common/rest/defaults.liquid -%}
+{%- include leads/rest/defaults.liquid -%}
 
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ direction }}">
     <head>
-        {% include common/metadata.liquid %}
-        {% include common/twitter_cards.liquid %}
-        {% include common/opengraph.liquid %}
-        {% include common/links.liquid %}
+        {% include leads/metadata.liquid %}
+        {% include leads/twitter_cards.liquid %}
+        {% include leads/opengraph.liquid %}
+        {% include leads/links.liquid %}
         {% include rest/styles.liquid %}
-        {%- include common/title.liquid -%}
-        {%- include common/script.liquid -%}
-        {%- include common/schema.liquid -%}
-        {% include common/gtag.liquid %}
+        {%- include leads/title.liquid -%}
+        {%- include leads/script.liquid -%}
+        {%- include leads/schema.liquid -%}
+        {% include leads/gtag.liquid %}
     </head>
     <body>
-        {% include common/noscript.liquid %}
+        {% include leads/noscript.liquid %}
         {% include templates/content.liquid %}
         {% include templates/addons.liquid %}
         {% include extra/body.html %}
         {%- include rest/script.liquid %}
-        {%- include common/mermaid.liquid -%}
-        {%- include common/mathjax.liquid -%}
-        {%- include common/adsense.liquid -%}
-        {%- include common/sumo.liquid -%}
+        {%- include leads/mermaid.liquid -%}
+        {%- include leads/mathjax.liquid -%}
+        {%- include leads/adsense.liquid -%}
+        {%- include leads/sumo.liquid -%}
     </body>
 </html>
