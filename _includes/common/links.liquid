@@ -1,6 +1,3 @@
-	{%- comment %} dns-prefetch {% endcomment %}
-		<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
 	{%- comment %} canonical link {% endcomment -%}
 	{%- if prev -%}
 		<link rel="prev" href="{{ prev.url | absolute_url }}">
@@ -26,6 +23,9 @@
 	{%- comment %} apple-touch-icon {% endcomment -%}
 		<link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/apple-touch-icon-300x300.jpg">
 
-		{% if extra_scss.size > 0 %}
+	{%- comment %} dns-prefetch {% endcomment %}
+		<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+	{% if extra_scss.size > 0 %}
 		<style>{{ extra_scss | scssify | strip_newlines }}</style>
-		{%- endif -%}
+	{%- endif -%}
