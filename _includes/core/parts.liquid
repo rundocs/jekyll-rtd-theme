@@ -9,7 +9,7 @@
 {%- assign n = include.n | default: 100     -%}
 {%- assign j = n | times: n                 -%}
 {%- assign min = include.min | default: 2   -%}
-{%- assign max = include.max | default: j   -%}
+{%- assign max = include.max | default: 10   -%}
 
 {%- for num in (3 .. max)                   -%}
 {%-   assign mod = num | modulo: 2          -%}
@@ -40,7 +40,7 @@
 
 {%-   assign array = '' | split: ','        -%}
 {%-   assign prime = prime | push: num      -%}
-
+{% include core/_parts.liquid %}
 {%-   assign size = prime | size            -%}
 {%-   if prime contains size                -%}
 {%-     assign parts = parts | push: size   -%}
