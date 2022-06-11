@@ -134,10 +134,9 @@
             {% endif %}
 
             {% if include.anchor_filter %}
-			    {% if firstHeader %}
-				   {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="*"{% endcapture %}
-				{% endif %}
-                {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="c{{ forloop.index }}"{% endcapture %}
+			    {% if firstHeader %}{% assign nodeID = 0 %}{% endif %}
+				{% assign nodeID = nodeID | plus: 1 %}
+                {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="c{{ nodeID }}"{% endcapture %}
             {% endif %}
 
             {% capture listItem %}<a{{ anchorAttributes }}>{{ anchorBody }}</a>{% endcapture %}
