@@ -46,6 +46,7 @@
             * submenu_class (string) :   ''   - add custom class(es) for each child group of headings; has support for '%level%' placeholder which is the current "submenu" heading level
             * base_url      (string) :   ''   - add a base url to the TOC links for when your TOC is on another page than the actual content
             * anchor_class  (string) :   ''   - add custom class(es) for each anchor element
+            * anchor_filter (string) :   ''   - add custom filter for each anchor element
             * skip_no_ids   (bool)   : false  - skip headers that do not have an `id` attribute
 
         Output:
@@ -129,6 +130,10 @@
 
             {% if include.anchor_class %}
                 {% capture anchorAttributes %}{{ anchorAttributes }} class="{{ include.anchor_class | split: '.' | join: ' ' }}"{% endcapture %}
+            {% endif %}
+
+            {% if include.anchor_filter %}
+                {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="c1"{% endcapture %}
             {% endif %}
 
             {% capture listItem %}<a{{ anchorAttributes }}>{{ anchorBody }}</a>{% endcapture %}
