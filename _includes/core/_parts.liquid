@@ -5,18 +5,10 @@
 {%-     endcapture                          -%}
 {%-   endif                                 -%}
 
-{%- capture tab -%}
-{% include tabs.liquid size=11 %}
-{%- endcapture -%}
-
-{%- capture node -%}
-<li><a href="/" id={{ id }} title="[1;1;1]">({{ num }})</a></li>
-{%- endcapture -%}
-
-{%- capture current -%}
-{{ current }}
-{{ tab }}{{ node }}
-{%- endcapture -%}
+{%-   capture current                       -%}
+{{      current                              }}
+{%      include tabs.liquid size=11 %}<li><a href="/" id={{ id }} title="[1;1;1]">({{ num }})</a></li>
+{%-   endcapture                            -%}
 
 {%-   if id == 10                           -%}
 {%-     capture current                     -%}
