@@ -64,26 +64,27 @@
 {%-     if parts contains width             -%}
 {%-       assign bond = bond | push: width  -%}
 {%-       assign weight = bond | size       -%}
-{%-     assign id = id | plus: 1            -%}
+{%-       assign id = id | plus: 1          -%}
 {%-       assign tag = "*"                    -%}
 {%-       include core/_parts.liquid        -%}
 
 {%-       if bond contains weight           -%}
 {%-         assign arm = arm | push: weight -%}
 {%-	        assign expanse = arm | size     -%}
-{%-     assign id = id | plus: 1            -%}
+{%-         assign id = id | plus: 1        -%}
 {%-         include core/_parts.liquid      -%}
 
 {%-	        if arm contains expanse         -%}
 {%-	          assign io = io | push: expanse -%}
 {%-	          assign eq = io | size     -%}
-{%-     assign id = id | plus: 1            -%}
+{%-           assign id = id | plus: 1      -%}
 {%-           include core/_parts.liquid    -%}
 {%-         endif                           -%}
 
 {%-	      endif                            -%}
 {%-	    endif                              -%}
-
+{%-	  else                            -%}
+{%-     include core/_parts.liquid          -%}
 {%-   endif                                 -%}
 
 {%- endfor                                  -%}
