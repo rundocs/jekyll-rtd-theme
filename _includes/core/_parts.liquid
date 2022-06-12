@@ -34,7 +34,7 @@
 
 {%-     capture current                     -%}
 {{        current                            }}
-{%        include tabs.liquid size=11 %}<li><a href="/" id={{ expanse }} title="[{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | default: 1 }}]">({{ num }}){{ tag }}</a></li>
+{%        include tabs.liquid size=11 %}<li><a href="/" id={{ expanse }} title="[{{ weight | default: 1 }};{{ width | default: 1 }};{{ weight | default: 1 }};{{ size | default: 1 }}]">({{ num }}){{ tag }}</a></li>
 {%-     endcapture                          -%}
 {%-       continue        -%}
 
