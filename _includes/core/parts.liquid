@@ -58,7 +58,7 @@
 {%-     assign parts = parts | push: order   -%}
 {%-     assign width = parts | size         -%}
 
-{%-     if width <= 10                      -%}
+{%-     if width < 10                      -%}
 {%-       assign id = id | plus: width      -%}
 {%-       include core/_parts.liquid        -%}
 {%-       continue        -%}
@@ -68,7 +68,7 @@
 {%-       assign bond = bond | push: width  -%}
 {%-       assign weight = bond | size       -%}
 
-{%-       if weight <= 10                      -%}
+{%-       if weight < 10                      -%}
 {%-         assign id = id | plus: bond      -%}
 {%-         include core/_parts.liquid        -%}
 {%-       continue        -%}
@@ -78,7 +78,7 @@
 {%-         assign arm = arm | push: weight -%}
 {%-	        assign expanse = arm | size     -%}
 
-{%-         if expanse <= 10                      -%}
+{%-         if expanse < 10                      -%}
 {%-           assign id = id | plus: expanse      -%}
 {%-           include core/_parts.liquid        -%}
 {%-       continue        -%}
@@ -88,7 +88,7 @@
 {%-	          assign io = io | push: expanse -%}
 {%-	          assign eq = io | size     -%}
 
-{%-           if eq <= 10                      -%}
+{%-           if eq < 10                      -%}
 {%-             assign id = id | plus: eq      -%}
 {%-             include core/_parts.liquid        -%}
 {%-       continue        -%}
