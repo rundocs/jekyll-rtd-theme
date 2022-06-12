@@ -52,18 +52,17 @@
 {%-   if order <= 10                        -%}
 {%-     assign id = order                   -%}
 {%-     include core/_parts.liquid          -%}
-{%-       continue        -%}
 {%-   endif                                 -%}
 
 {%-   if primes contains order              -%}
 {%-     assign parts = parts | push: order  -%}
 {%-     assign width = parts | size         -%}
 
-{%-     if width < 10                      -%}
-{%-       assign id = id | plus: 1      -%}
+{%-     if width < 10                       -%}
+{%-       assign id = id | plus: 1          -%}
 {%-       include core/_parts.liquid        -%}
-{%-       continue        -%}
 {%-     endif                               -%}
+{%-   endif                               -%}
 
 {%-     if parts contains width             -%}
 {%-       assign bond = bond | push: width  -%}
@@ -72,7 +71,6 @@
 {%-       if weight < 10                      -%}
 {%-         assign id = id | plus: bond      -%}
 {%-         include core/_parts.liquid        -%}
-{%-       continue        -%}
 {%-       endif                               -%}
 
 {%-       if bond contains weight           -%}
@@ -82,7 +80,6 @@
 {%-         if expanse < 10                      -%}
 {%-           assign id = id | plus: expanse      -%}
 {%-           include core/_parts.liquid        -%}
-{%-       continue        -%}
 {%-         endif                               -%}
 
 {%-	        if arm contains expanse         -%}
@@ -92,13 +89,11 @@
 {%-           if eq < 10                      -%}
 {%-             assign id = id | plus: eq      -%}
 {%-             include core/_parts.liquid        -%}
-{%-       continue        -%}
 {%-           endif                               -%}
 
 {%-	        endif                            -%}
 {%-	      endif                            -%}
 {%-	    endif                              -%}
-{%-   endif                               -%}
 
 {%- endfor                                  -%}
 {%-     capture current                     -%}
