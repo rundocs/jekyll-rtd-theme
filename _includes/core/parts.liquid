@@ -43,7 +43,10 @@
 
 {%-   assign primes = primes | push: num    -%}
 {%-   assign id = primes | size             -%}
-{%-   include core/_parts.liquid            -%}
+
+{%-   if id <= 10                           -%}
+{%-     include core/_parts.liquid          -%}
+{%-   endif                                 -%}
 
 {%-   assign size = primes | size           -%}
 {%-   if primes contains size               -%}
