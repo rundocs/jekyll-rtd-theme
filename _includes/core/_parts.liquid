@@ -1,4 +1,6 @@
-{%-   if id == 11                           -%}
+{% comment %}   spin 7 to 13   {% endcomment %}
+
+{%-   if id == 10 | plus: 1                 -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
@@ -7,7 +9,9 @@
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 
-{%-   elsif id == 30                           -%}
+{% comment %}  spin 13 to 43   {% endcomment %}
+
+{%-   elsif id == 29 | plus: 1              -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
@@ -16,7 +20,9 @@
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 
-{%-   elsif id == 102                           -%}
+{% comment %}  spin 43 to 89   {% endcomment %}
+
+{%-   elsif id == 109 | plus: 1             -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
@@ -24,8 +30,8 @@
 {%        include tabs.liquid size=9 %}<li><a href="/grammar" id={{ id }}>Grammar</a>
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
+{%-   endif                                 -%}
 
-{%-   endif                                   -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=11 %}<li><a href="/" id={{ id }} title="[{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | default: 1 }}]">({{ num }}){{ tag }}</a></li>
