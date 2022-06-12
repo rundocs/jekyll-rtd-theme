@@ -42,8 +42,8 @@
 {%-   endif                                 -%}
 
 {%-   assign primes = primes | push: num    -%}
-{%-          assign id = primes | size          -%}
-{%-          include core/_parts.liquid     -%}
+{%-   assign id = primes | size             -%}
+{%-   include core/_parts.liquid            -%}
 
 {%-   assign size = primes | size           -%}
 {%-   if primes contains size               -%}
