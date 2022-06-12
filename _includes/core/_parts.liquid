@@ -17,30 +17,30 @@
 {%-       assign bond = bond | push: width  -%}
 {%-       assign weight = bond | size       -%}
 
-{%-       if weight <= 10                      -%}
-{%-         assign id = id | plus: bond      -%}
-{%-       endif                               -%}
+{%-       if weight <= 10                   -%}
+{%-         assign id = id | plus: bond     -%}
+{%-       endif                             -%}
 
 {%-       if bond contains weight           -%}
 {%-         assign arm = arm | push: weight -%}
-{%-	        assign expanse = arm | size     -%}
+{%-	        assign expand = arm | size      -%}
 
-{%-         if expanse <= 10                      -%}
-{%-           assign id = id | plus: expanse      -%}
-{%-         endif                               -%}
+{%-         if expand <= 10                 -%}
+{%-           assign id = id | plus: expand -%}
+{%-         endif                           -%}
 
-{%-	        if arm contains expanse         -%}
-{%-	          assign io = io | push: expanse -%}
+{%-	        if arm contains expand          -%}
+{%-	          assign io = io | push: expand -%}
 {%-	          assign eq = io | size     -%}
 
-{%-           if eq <= 10                      -%}
-{%-             assign id = id | plus: eq      -%}
-{%-           endif                               -%}
+{%-           if eq <= 10                   -%}
+{%-             assign id = id | plus: eq   -%}
+{%-           endif                         -%}
 
-{%-	        endif                            -%}
-{%-	      endif                            -%}
-{%-	    endif                              -%}
-{%-   endif                               -%}
+{%-	        endif                           -%}
+{%-	      endif                             -%}
+{%-	    endif                               -%}
+{%-   endif                                 -%}
 
 {%-   if id == 10                           -%}
 {%-     capture current                     -%}
