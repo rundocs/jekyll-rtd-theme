@@ -47,15 +47,15 @@
 {%-   endif                                 -%}
 
 {%-   assign primes = primes | push: num    -%}
-{%-   assign size = primes | size           -%}
+{%-   assign order = primes | size           -%}
 
-{%-   if size <= 10                         -%}
-{%-     assign id = size                    -%}
+{%-   if order <= 10                         -%}
+{%-     assign id = order                    -%}
 {%-     include core/_parts.liquid          -%}
 {%-   endif                                 -%}
 
-{%-   if primes contains size               -%}
-{%-     assign parts = parts | push: size   -%}
+{%-   if primes contains order               -%}
+{%-     assign parts = parts | push: order   -%}
 {%-     assign width = parts | size         -%}
 
 {%-     if width <= 10                      -%}
