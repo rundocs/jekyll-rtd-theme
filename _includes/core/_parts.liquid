@@ -1,7 +1,7 @@
 {%-   if id == 1                            -%}
 {%-     capture current                     -%}
-<li><a href="/" id=1 title="[1;1;1]">Home</a>
-{%      include tabs.liquid size=10 %}<ul>
+{%        include tabs.liquid size=9 %}<li><a href="/" id=1 title="[1;1;1]">Home</a>
+{%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 {%-   endif                                 -%}
 
@@ -23,7 +23,7 @@
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
 {%        include tabs.liquid size=9 %}</li>
-{%        include tabs.liquid size=9 %}<li><a href="/lexer">Lexer</a>
+include tabs.liquid size=11<li><a href="/lexer">Lexer</a>
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 {%-   endif                                 -%}
