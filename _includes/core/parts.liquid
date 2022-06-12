@@ -58,6 +58,7 @@
 {%-   if primes contains order              -%}
 {%-     assign parts = parts | push: order  -%}
 {%-     assign width = parts | size         -%}
+{%-     assign id = id | plus: 1            -%}
 {%-     assign tag = "*"                    -%}
 {%-     include core/_parts.liquid          -%}
 
