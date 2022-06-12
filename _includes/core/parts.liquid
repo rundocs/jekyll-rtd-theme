@@ -84,6 +84,7 @@
 {%-	      endif                            -%}
 {%-	    endif                              -%}
 {%-	  else                            -%}
+{%-     assign id = id | plus: 1            -%}
 {%-     include core/_parts.liquid          -%}
 {%-   endif                                 -%}
 
