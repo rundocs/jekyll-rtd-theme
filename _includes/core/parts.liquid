@@ -1,4 +1,4 @@
-{%- assign id = '' | split: ','             -%}
+{%- assign id = 1             -%}
 {%- assign arm = '' | split: ','            -%}
 {%- assign bond = '' | split: ','           -%}
 {%- assign parts = '' | split: ','          -%}
@@ -45,6 +45,7 @@
 
 {%-   assign primes = primes | push: num    -%}
 {%-   assign size = primes | size           -%}
+{%-   assign id = id | plus: 1           -%}
 
 {%-   include core/_parts.liquid            -%}
 
