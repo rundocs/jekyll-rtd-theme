@@ -42,13 +42,13 @@
 {%-   endif                                 -%}
 
 {%-   assign primes = primes | push: num    -%}
-{%-   assign id = primes | size             -%}
+{%-   assign size = primes | size           -%}
 
-{%-   if id <= 10                           -%}
+{%-   if size <= 10                         -%}
+{%-     assign id = size                    -%}
 {%-     include core/_parts.liquid          -%}
 {%-   endif                                 -%}
 
-{%-   assign size = primes | size           -%}
 {%-   if primes contains size               -%}
 {%-     assign parts = parts | push: size   -%}
 
