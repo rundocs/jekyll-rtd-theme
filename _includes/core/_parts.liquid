@@ -1,10 +1,48 @@
-{%-   if id == 1                            -%}
-{%-     capture current                      %}
-{%        include tabs.liquid size=9 %}<li><a href="/" id={{ id }} title="[1;1;1]">Home</a>
-{%        include tabs.liquid size=10 %}<ul>
-{%-     endcapture                          -%}
+{%-   assign primes = primes | push: num    -%}
+{%-   assign order = primes | size          -%}
 
-{%-   elsif id == 10                           -%}
+{%-   if order <= 10                        -%}
+{%-     assign id = order                   -%}
+{%-   endif                                 -%}
+
+{%-   if primes contains order              -%}
+{%-     assign parts = parts | push: order  -%}
+{%-     assign width = parts | size         -%}
+
+{%-     if width <= 10                      -%}
+{%-       assign id = id | plus: width      -%}
+{%-     endif                               -%}
+
+{%-     if parts contains width             -%}
+{%-       assign bond = bond | push: width  -%}
+{%-       assign weight = bond | size       -%}
+
+{%-       if weight <= 10                      -%}
+{%-         assign id = id | plus: bond      -%}
+{%-       endif                               -%}
+
+{%-       if bond contains weight           -%}
+{%-         assign arm = arm | push: weight -%}
+{%-	        assign expanse = arm | size     -%}
+
+{%-         if expanse <= 10                      -%}
+{%-           assign id = id | plus: expanse      -%}
+{%-         endif                               -%}
+
+{%-	        if arm contains expanse         -%}
+{%-	          assign io = io | push: expanse -%}
+{%-	          assign eq = io | size     -%}
+
+{%-           if eq <= 10                      -%}
+{%-             assign id = id | plus: eq      -%}
+{%-           endif                               -%}
+
+{%-	        endif                            -%}
+{%-	      endif                            -%}
+{%-	    endif                              -%}
+{%-   endif                               -%}
+
+{%-   if id == 10                           -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>

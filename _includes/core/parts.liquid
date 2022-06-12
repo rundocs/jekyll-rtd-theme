@@ -1,13 +1,18 @@
+{%- assign id = 1                           -%}
 {%- assign io = '' | split: ','             -%}
 {%- assign arm = '' | split: ','            -%}
 {%- assign bond = '' | split: ','           -%}
 {%- assign parts = '' | split: ','          -%}
-
 {%- assign primes = '' | split: ','         -%}
 {%- assign primes = primes | push: 2        -%}
 
-{%- assign id = primes | size               -%}
-{%- include core/_parts.liquid              -%}
+{%- capture li                              -%}
+<a href="/" id=1 title="[1;1;1]">Home</a>
+{%- endcapture                              -%}
+{%- capture current                          %}
+{%    include tabs.liquid size=9 %}<li>{{ li }}
+{%    include tabs.liquid size=10 %}<ul>
+{%- endcapture                              -%}
 
 {%- assign n = include.n | default: 100     -%}
 {%- assign j = n | times: n                 -%}
@@ -41,59 +46,12 @@
 {%-     continue                            -%}
 {%-   endif                                 -%}
 
-{%-   assign primes = primes | push: num    -%}
-{%-   assign size = primes | size           -%}
-
-{%-   if size <= 10                         -%}
-{%-     assign id = size                    -%}
-{%-     include core/_parts.liquid          -%}
-{%-   endif                                 -%}
-
-{%-   if primes contains size               -%}
-{%-     assign parts = parts | push: size   -%}
-{%-     assign width = parts | size         -%}
-
-{%-     if width <= 10                      -%}
-{%-       assign id = id | plus: width      -%}
-{%-       include core/_parts.liquid        -%}
-{%-     endif                               -%}
-
-{%-     if parts contains width             -%}
-{%-       assign bond = bond | push: width  -%}
-{%-       assign weight = bond | size       -%}
-
-{%-       if weight <= 10                      -%}
-{%-         assign id = id | plus: bond      -%}
-{%-         include core/_parts.liquid        -%}
-{%-       endif                               -%}
-
-{%-       if bond contains weight           -%}
-{%-         assign arm = arm | push: weight -%}
-{%-	        assign expanse = arm | size     -%}
-
-{%-         if expanse <= 10                      -%}
-{%-           assign id = id | plus: expanse      -%}
-{%-           include core/_parts.liquid        -%}
-{%-         endif                               -%}
-
-{%-	        if arm contains expanse         -%}
-{%-	          assign io = io | push: expanse -%}
-{%-	          assign eq = io | size     -%}
-
-{%-           if eq <= 10                      -%}
-{%-             assign id = id | plus: eq      -%}
-{%-             include core/_parts.liquid        -%}
-{%-           endif                               -%}
-
-{%-	        endif                            -%}
-{%-	      endif                            -%}
-{%-	    endif                              -%}
-{%-   endif                               -%}
-
+{%-   include core/_parts.liquid            -%}
 {%- endfor                                  -%}
-{%-     capture current                     -%}
-{{        current                            }}
-{%        include tabs.liquid size=10 %}</ul>
-{%        include tabs.liquid size=9 %}</li>
-{%-     endcapture                          -%}
-{{  current -}}
+
+{%- capture current                         -%}
+{{    current                                }}
+{%    include tabs.liquid size=10 %}</ul>
+{%    include tabs.liquid size=9 %}</li>
+{%- endcapture                              -%}
+{{  current                                 -}}
