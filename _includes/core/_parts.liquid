@@ -28,7 +28,7 @@
 {%-   endif                                   -%}
 {%-     capture current                     -%}
 {{        current                            }}
-{%        include tabs.liquid size=11 %}<li><a href="/" id={{ id }} title="[1;1;{{ id }}]">({{ num }})</a></li>
+{%        include tabs.liquid size=11 %}<li><a href="/" id={{ id }} title="[1;1;{{ id }}]">({{ num }}){{ tag }}</a></li>
 {%-     endcapture                          -%}
 {%-       continue        -%}
 
