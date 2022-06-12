@@ -11,6 +11,14 @@
 {%- assign min = include.min | default: 2   -%}
 {%- assign max = include.max | default: j   -%}
 
+{%- capture li                              -%}
+<a href="/" id=1 title="[1;1;1]">Home</a>
+{%- endcapture                              -%}
+{%- capture current                          %}
+{%    include tabs.liquid size=9 %}<li>{{ li }}
+{%    include tabs.liquid size=10 %}<ul>
+{%- endcapture                              -%}
+
 {%- for num in (3 .. max)                   -%}
 {%-   assign mod = num | modulo: 2          -%}
 {%-   if mod == 0                           -%}
@@ -68,3 +76,9 @@
 {%-   assign array = array | push: parts    -%}
 
 {%- endfor                                  -%}
+{%- capture current                         -%}
+{{    current                            }}
+{%      include tabs.liquid size=10 %}</ul>
+{%      include tabs.liquid size=9 %}</li>
+{%-   endcapture                            -%}
+{{  current -}}
