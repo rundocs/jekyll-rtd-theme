@@ -52,32 +52,34 @@
 
 {%-   if order <= 10                        -%}
 {%-     assign id = order                   -%}
-{%-   else                                  -%}
-{%-     assign id = id | plus: 1            -%}
 {%-   endif                                 -%}
 
 {%-   if primes contains order              -%}
 {%-     assign parts = parts | push: order  -%}
 {%-     assign width = parts | size         -%}
+{%-     assign id = id | plus: 1            -%}
 {%-     assign tag = "*"                    -%}
 {%-     include core/_parts.liquid          -%}
 
 {%-     if parts contains width             -%}
 {%-       assign bond = bond | push: width  -%}
 {%-       assign weight = bond | size       -%}
+{%-     assign id = id | plus: 1            -%}
 {%-       assign tag = "*"                    -%}
 {%-       include core/_parts.liquid        -%}
 
 {%-       if bond contains weight           -%}
 {%-         assign arm = arm | push: weight -%}
 {%-	        assign expanse = arm | size     -%}
-{%-         include core/_parts.liquid        -%}
+{%-     assign id = id | plus: 1            -%}
+{%-         include core/_parts.liquid      -%}
 
 {%-	        if arm contains expanse         -%}
 {%-	          assign io = io | push: expanse -%}
 {%-	          assign eq = io | size     -%}
-{%-           include core/_parts.liquid        -%}
-{%-         endif                               -%}
+{%-     assign id = id | plus: 1            -%}
+{%-           include core/_parts.liquid    -%}
+{%-         endif                           -%}
 
 {%-	      endif                            -%}
 {%-	    endif                              -%}
