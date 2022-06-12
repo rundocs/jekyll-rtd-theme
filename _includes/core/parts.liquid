@@ -60,16 +60,16 @@
 {%-     assign parts = parts | push: order  -%}
 {%-     assign width = parts | size         -%}
 {%-     assign tag = "*"                    -%}
+{%-     include core/_parts.liquid          -%}
 {%-   endif                                 -%}
 
-{%-   include core/_parts.liquid tag=tag     -%}
+{%-   include core/_parts.liquid            -%}
 
 {%-     if parts contains width             -%}
 {%-       assign bond = bond | push: width  -%}
 {%-       assign weight = bond | size       -%}
 
 {%-       if weight < 10                      -%}
-{%-         assign id = id | plus: bond      -%}
 {%-         include core/_parts.liquid        -%}
 {%-       endif                               -%}
 
