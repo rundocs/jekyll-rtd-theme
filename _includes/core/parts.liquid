@@ -60,8 +60,13 @@
 
 {%-     if parts contains width             -%}
 {%-       assign bond = bond | push: width  -%}
-
 {%-       assign weight = bond | size       -%}
+
+{%-     if weight <= 10                      -%}
+{%-       assign id = id | plus: weight      -%}
+{%-       include core/_parts.liquid        -%}
+{%-     endif                               -%}
+
 {%-       if bond contains weight           -%}
 {%-         assign arm = arm | push: weight -%}
 
