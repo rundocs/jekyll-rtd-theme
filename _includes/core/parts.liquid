@@ -60,7 +60,10 @@
 {%-     assign width = parts | size         -%}
 {%-     assign id = id | plus: 1            -%}
 {%-     assign tag = "*"                    -%}
-{%-     include core/_parts.liquid          -%}
+
+{%-     if width <= 10                      -%}
+{%-       include core/_parts.liquid        -%}
+{%-	    endif                              -%}
 
 {%-     if parts contains width             -%}
 {%-       assign bond = bond | push: width  -%}
