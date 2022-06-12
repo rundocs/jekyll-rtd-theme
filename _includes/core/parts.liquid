@@ -60,7 +60,7 @@
 {%-     assign width = parts | size         -%}
 
 {%-     if width < 10                      -%}
-{%-       assign id = id | plus: width      -%}
+{%-       assign id = id | plus: 1      -%}
 {%-       include core/_parts.liquid        -%}
 {%-       continue        -%}
 {%-     endif                               -%}
