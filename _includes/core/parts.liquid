@@ -44,12 +44,12 @@
 {%-   if primes contains size               -%}
 {%-     assign parts = parts | push: size   -%}
 
+{%-          assign id = parts | size          -%}
+{%-          include core/_parts.liquid     -%}
+
 {%-     assign width = parts | size         -%}
 {%-     if parts contains width             -%}
 {%-       assign bond = bond | push: width  -%}
-
-{%-          assign id = bond | size          -%}
-{%-          include core/_parts.liquid     -%}
 
 {%-       assign weight = bond | size       -%}
 {%-       if bond contains weight           -%}
