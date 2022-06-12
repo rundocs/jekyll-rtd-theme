@@ -3,14 +3,8 @@
 {%        include tabs.liquid size=9 %}<li><a href="/" id={{ id }} title="[1;1;1]">Home</a>
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
-{%-   else                                  -%}
-{%-     capture current                     -%}
-{{        current                            }}
-{%        include tabs.liquid size=11 %}<li><a href="/" id={{ id }} title="[1;1;1]">({{ num }})</a></li>
-{%-     endcapture                          -%}
-{%-   endif                                 -%}
 
-{%-   if id == 10                           -%}
+{%-   elsif id == 10                           -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
@@ -18,9 +12,8 @@
 {%        include tabs.liquid size=9 %}<li><a href="/lexer">Lexer</a>
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
-{%-   endif                                 -%}
 
-{%-   if id == 39                           -%}
+{%-   elsif == 39                           -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
@@ -28,14 +21,19 @@
 {%        include tabs.liquid size=9 %}<li><a href="/parser">Parser</a>
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
-{%-   endif                                 -%}
 
-{%-   if id == 69                           -%}
+{%-   elsif == 68                           -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
 {%        include tabs.liquid size=9 %}</li>
 {%        include tabs.liquid size=9 %}<li><a href="/grammar">Grammar</a>
 {%        include tabs.liquid size=10 %}<ul>
+{%-     endcapture                          -%}
+
+{%-   else                                  -%}
+{%-     capture current                     -%}
+{{        current                            }}
+{%        include tabs.liquid size=11 %}<li><a href="/" id={{ id }} title="[1;1;1]">({{ num }})</a></li>
 {%-     endcapture                          -%}
 {%-   endif                                 -%}
