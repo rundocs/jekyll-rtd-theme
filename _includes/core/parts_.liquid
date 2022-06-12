@@ -64,7 +64,7 @@
 {%-	       assign expanse = arm | size      -%}
 {%-	       if arm contains expanse          -%}
 {%-	         assign id = id | push: expanse -%}
-
+{%-          include core/_parts.liquid     -%}
 {%-	       endif                            -%}
 {%-	     endif                              -%}
 {%-     endif                               -%}
