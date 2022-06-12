@@ -60,7 +60,6 @@
 {%-   if primes contains order              -%}
 {%-     assign parts = parts | push: order  -%}
 {%-     assign tag = "*"                    -%}
-{%-   endif                                 -%}
 
 {%-   assign width = parts | size           -%}
 {%-   if width <= 10                        -%}
@@ -70,7 +69,6 @@
 {%-   if parts contains width             -%}
 {%-     assign bond = bond | push: width    -%}
 {%-     assign tag = "*"                      -%}
-{%-   endif                                 -%}
 
 {%-   assign weight = bond | size           -%}
 {%-   if weight <= 10                        -%}
@@ -80,7 +78,6 @@
 {%-   if bond contains weight               -%}
 {%-     assign arm = arm | push: weight     -%}
 {%-     assign tag = "*"                      -%}
-{%-	  endif                                -%}
 
 {%-	  assign expanse = arm | size           -%}
 {%-   if expanse <= 10                        -%}
@@ -90,13 +87,16 @@
 {%-	  if arm contains expanse               -%}
 {%-	    assign io = io | push: expanse       -%}
 {%-     assign tag = "*"                      -%}
-{%-	  endif                                -%}
 
 {%-	  assign eq = io | size             -%}
 {%-   if eq <= 10                        -%}
 {%-     include core/_parts.liquid          -%}
 {%-	  endif                                -%}
 
+{%-   endif                                 -%}
+{%-   endif                                 -%}
+{%-	  endif                                -%}
+{%-	  endif                                -%}
 {%- endfor                                  -%}
 {%-     capture current                     -%}
 {{        current                            }}
