@@ -1,3 +1,10 @@
+{%-   if id == 1                            -%}
+{%-     capture current                     -%}
+<li><a href="/" id=1 title="[1;1;1]">Home</a>
+{%      include tabs.liquid size=10 %}<ul>
+{%-     endcapture                          -%}
+{%-   endif                                 -%}
+
 {%- capture tab -%}
 {% include tabs.liquid size=11 %}
 {%- endcapture -%}
