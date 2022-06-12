@@ -39,13 +39,12 @@
 {%-   endif                                 -%}
 
 {%-   assign primes = primes | push: num    -%}
+{%-          assign id = primes | size          -%}
+{%-          include core/_parts.liquid     -%}
 
 {%-   assign size = primes | size           -%}
 {%-   if primes contains size               -%}
 {%-     assign parts = parts | push: size   -%}
-
-{%-          assign id = parts | size          -%}
-{%-          include core/_parts.liquid     -%}
 
 {%-     assign width = parts | size         -%}
 {%-     if parts contains width             -%}
