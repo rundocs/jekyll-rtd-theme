@@ -49,7 +49,51 @@
 {%-   assign primes = primes | push: num    -%}
 {%-   assign order = primes | size          -%}
 
+{%-   if order <= 10                        -%}
+{%-     assign id = order                   -%}
 {%-     include core/_parts.liquid          -%}
+{%-   endif                                 -%}
+
+{%-   if primes contains order              -%}
+{%-     assign parts = parts | push: order  -%}
+{%-     assign width = parts | size         -%}
+
+{%-     if width < 10                       -%}
+{%-       assign id = id | plus: 1          -%}
+{%-       include core/_parts.liquid        -%}
+{%-     endif                               -%}
+{%-   endif                               -%}
+
+{%-     if parts contains width             -%}
+{%-       assign bond = bond | push: width  -%}
+{%-       assign weight = bond | size       -%}
+
+{%-       if weight < 10                      -%}
+{%-         assign id = id | plus: bond      -%}
+{%-         include core/_parts.liquid        -%}
+{%-       endif                               -%}
+
+{%-       if bond contains weight           -%}
+{%-         assign arm = arm | push: weight -%}
+{%-	        assign expanse = arm | size     -%}
+
+{%-         if expanse < 10                      -%}
+{%-           assign id = id | plus: expanse      -%}
+{%-           include core/_parts.liquid        -%}
+{%-         endif                               -%}
+
+{%-	        if arm contains expanse         -%}
+{%-	          assign io = io | push: expanse -%}
+{%-	          assign eq = io | size     -%}
+
+{%-           if eq < 10                      -%}
+{%-             assign id = id | plus: eq      -%}
+{%-             include core/_parts.liquid        -%}
+{%-           endif                               -%}
+
+{%-	        endif                            -%}
+{%-	      endif                            -%}
+{%-	    endif                              -%}
 
 {%- endfor                                  -%}
 {%-     capture current                     -%}
