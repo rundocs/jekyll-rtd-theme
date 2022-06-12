@@ -62,33 +62,40 @@
 {%-     assign tag = "*"                    -%}
 {%-   endif                                 -%}
 
-{%-     assign width = parts | size         -%}
-{%-     if width <= 10                      -%}
-{%-       include core/_parts.liquid        -%}
-{%-	    endif                              -%}
+{%-   assign width = parts | size           -%}
+{%-   if width <= 10                        -%}
+{%-     include core/_parts.liquid          -%}
+{%-	  endif                                -%}
 
-{%-     if parts contains width             -%}
-{%-       assign bond = bond | push: width  -%}
-{%-       assign weight = bond | size       -%}
-{%-       assign id = id | plus: 1          -%}
-{%-       assign tag = "*"                    -%}
-{%-       include core/_parts.liquid        -%}
+{%-   if parts contains width             -%}
+{%-     assign bond = bond | push: width    -%}
+{%-     assign tag = "*"                      -%}
+{%-   endif                                 -%}
 
-{%-       if bond contains weight           -%}
-{%-         assign arm = arm | push: weight -%}
-{%-	        assign expanse = arm | size     -%}
-{%-         assign id = id | plus: 1        -%}
-{%-         include core/_parts.liquid      -%}
+{%-   assign weight = bond | size           -%}
+{%-   if weight <= 10                        -%}
+{%-     include core/_parts.liquid         -%}
+{%-	  endif                                -%}
 
-{%-	        if arm contains expanse         -%}
-{%-	          assign io = io | push: expanse -%}
-{%-	          assign eq = io | size     -%}
-{%-           assign id = id | plus: 1      -%}
-{%-           include core/_parts.liquid    -%}
-{%-         endif                           -%}
+{%-   if bond contains weight               -%}
+{%-     assign arm = arm | push: weight     -%}
+{%-     assign tag = "*"                      -%}
+{%-	  endif                                -%}
 
-{%-	      endif                            -%}
-{%-	    endif                              -%}
+{%-	  assign expanse = arm | size           -%}
+{%-   if expanse <= 10                        -%}
+{%-     include core/_parts.liquid          -%}
+{%-	  endif                                -%}
+
+{%-	  if arm contains expanse               -%}
+{%-	    assign io = io | push: expanse       -%}
+{%-     assign tag = "*"                      -%}
+{%-	  endif                                -%}
+
+{%-	  assign eq = io | size             -%}
+{%-   if eq <= 10                        -%}
+{%-     include core/_parts.liquid          -%}
+{%-	  endif                                -%}
 
 {%- endfor                                  -%}
 {%-     capture current                     -%}
