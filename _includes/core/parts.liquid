@@ -43,7 +43,6 @@
 {%-     continue                            -%}
 {%-   endif                                 -%}
 
-{%-   assign array = '' | split: ','        -%}
 {%-   assign primes = primes | push: num    -%}
 {%-   assign size = primes | size           -%}
 
@@ -68,11 +67,6 @@
 {%-	     endif                              -%}
 {%-     endif                               -%}
 {%-   endif                                 -%}
-
-{%-   assign array = array | push: id       -%}
-{%-   assign array = array | push: arm      -%}
-{%-   assign array = array | push: bond     -%}
-{%-   assign array = array | push: parts    -%}
 
 {%- endfor                                  -%}
 {%- capture current -%}
