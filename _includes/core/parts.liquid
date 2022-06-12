@@ -52,10 +52,10 @@
 
 {%-   if order <= 10                        -%}
 {%-     assign id = order                   -%}
-{%-     include core/_parts.liquid          -%}
+{%-   else                                 -%}
+{%-     assign id = id | plus: 1          -%}
 {%-   endif                                 -%}
 
-{%-   assign id = id | plus: 1          -%}
 {%-   if primes contains order              -%}
 {%-     assign parts = parts | push: order  -%}
 {%-     assign width = parts | size         -%}
