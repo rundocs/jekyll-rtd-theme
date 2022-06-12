@@ -62,27 +62,33 @@
 {%-       assign bond = bond | push: width  -%}
 {%-       assign weight = bond | size       -%}
 
-{%-     if weight <= 10                      -%}
-{%-       assign id = id | plus: weight      -%}
-{%-       include core/_parts.liquid        -%}
-{%-     endif                               -%}
+{%-       if weight <= 10                      -%}
+{%-         assign id = id | plus: bond      -%}
+{%-         include core/_parts.liquid        -%}
+{%-       endif                               -%}
 
 {%-       if bond contains weight           -%}
 {%-         assign arm = arm | push: weight -%}
 {%-	        assign expanse = arm | size     -%}
 
-{%-     if expanse <= 10                      -%}
-{%-       assign id = id | plus: expanse      -%}
-{%-       include core/_parts.liquid        -%}
-{%-     endif                               -%}
+{%-         if expanse <= 10                      -%}
+{%-           assign id = id | plus: expanse      -%}
+{%-           include core/_parts.liquid        -%}
+{%-         endif                               -%}
 
 {%-	        if arm contains expanse         -%}
-{%-	         assign io = io | push: expanse -%}
+{%-	          assign io = io | push: expanse -%}
+{%-	          assign eq = io | size     -%}
 
-{%-	       endif                            -%}
-{%-	     endif                              -%}
-{%-     endif                               -%}
-{%-   endif                                 -%}
+{%-           if eq <= 10                      -%}
+{%-             assign id = id | plus: eq      -%}
+{%-             include core/_parts.liquid        -%}
+{%-           endif                               -%}
+
+{%-	        endif                            -%}
+{%-	      endif                            -%}
+{%-	    endif                              -%}
+{%-   endif                               -%}
 
 {%- endfor                                  -%}
 {%-     capture current                     -%}
