@@ -61,6 +61,7 @@
 {%-     if width <= 10                      -%}
 {%-       assign id = id | plus: width      -%}
 {%-       include core/_parts.liquid        -%}
+{%-       continue        -%}
 {%-     endif                               -%}
 
 {%-     if parts contains width             -%}
@@ -70,6 +71,7 @@
 {%-       if weight <= 10                      -%}
 {%-         assign id = id | plus: bond      -%}
 {%-         include core/_parts.liquid        -%}
+{%-       continue        -%}
 {%-       endif                               -%}
 
 {%-       if bond contains weight           -%}
@@ -79,6 +81,7 @@
 {%-         if expanse <= 10                      -%}
 {%-           assign id = id | plus: expanse      -%}
 {%-           include core/_parts.liquid        -%}
+{%-       continue        -%}
 {%-         endif                               -%}
 
 {%-	        if arm contains expanse         -%}
@@ -88,6 +91,7 @@
 {%-           if eq <= 10                      -%}
 {%-             assign id = id | plus: eq      -%}
 {%-             include core/_parts.liquid        -%}
+{%-       continue        -%}
 {%-           endif                               -%}
 
 {%-	        endif                            -%}
