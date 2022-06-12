@@ -6,6 +6,9 @@
 {%- assign primes = '' | split: ','         -%}
 {%- assign primes = primes | push: 2        -%}
 
+{%- assign id = primes | size               -%}
+{%- include core/_parts.liquid              -%}
+
 {%- assign n = include.n | default: 100     -%}
 {%- assign j = n | times: n                 -%}
 {%- assign min = include.min | default: 2   -%}
