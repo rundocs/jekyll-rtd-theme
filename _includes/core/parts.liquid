@@ -52,16 +52,17 @@
 
 {%-   if order <= 10                        -%}
 {%-     assign id = order                   -%}
-{%-   else                                 -%}
-{%-     assign id = id | plus: 1          -%}
+{%-   else                                  -%}
+{%-     assign id = id | plus: 1            -%}
 {%-   endif                                 -%}
 
 {%-   if primes contains order              -%}
 {%-     assign parts = parts | push: order  -%}
 {%-     assign width = parts | size         -%}
-{%-     assign tag = "*"          -%}
-{%-   endif                               -%}
-{%-   include core/_parts.liquid tag=tag       -%}
+{%-     assign tag = "*"                    -%}
+{%-   endif                                 -%}
+
+{%-   include core/_parts.liquid tag=tag     -%}
 
 {%-     if parts contains width             -%}
 {%-       assign bond = bond | push: width  -%}
