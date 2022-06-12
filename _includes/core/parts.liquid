@@ -69,10 +69,14 @@
 {%-     endif                               -%}
 {%-   endif                                 -%}
 
-{%- endfor                                  -%}
+
+{%-   if id == 29               -%}
 {%- capture current -%}
 {{ current }}
 {% include tabs.liquid size=10 %}</ul>
 {% include tabs.liquid size=9 %}</li>
 {%- endcapture -%}
 {{ current }}
+{%-   endif                                 -%}
+
+{%- endfor                                  -%}
