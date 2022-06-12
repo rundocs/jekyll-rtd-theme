@@ -45,7 +45,7 @@
 
 {%-   assign primes = primes | push: num    -%}
 {%-   assign size = primes | size           -%}
-{%-   assign id = id | plus: 1           -%}
+{%-   assign id = id | plus: 1              -%}
 
 {%-   include core/_parts.liquid            -%}
 
@@ -67,46 +67,6 @@
 {%-	       endif                            -%}
 {%-	     endif                              -%}
 {%-     endif                               -%}
-{%-   endif                                 -%}
-
-
-{%-   if id == 10                           -%}
-{%-     capture current                     -%}
-{{        current                            }}
-{%        include tabs.liquid size=10 %}</ul>
-{%        include tabs.liquid size=9 %}</li>
-{%        include tabs.liquid size=9 %}<li><a href="/lexer">Lexer</a>
-{%        include tabs.liquid size=10 %}<ul>
-{%-     endcapture                          -%}
-{%-   endif                                 -%}
-
-{%-   if id == 29                           -%}
-{%-     capture current                     -%}
-{{        current                            }}
-{%        include tabs.liquid size=10 %}</ul>
-{%        include tabs.liquid size=9 %}</li>
-{%        include tabs.liquid size=9 %}<li><a href="/parser">Parser</a>
-{%        include tabs.liquid size=10 %}<ul>
-{%-     endcapture                          -%}
-{%-   endif                                 -%}
-
-{%-   if id == 109                          -%}
-{%-     capture current                     -%}
-{{        current                            }}
-{%        include tabs.liquid size=10 %}</ul>
-{%        include tabs.liquid size=9 %}</li>
-{%        include tabs.liquid size=9 %}<li><a href="/grammar">Grammar</a>
-{%        include tabs.liquid size=10 %}<ul>
-{%-     endcapture                          -%}
-{%-   endif                                 -%}
-
-{%-   if id == 1229                         -%}
-{%-     capture current                     -%}
-{{        current                            }}
-{%        include tabs.liquid size=10 %}</ul>
-{%        include tabs.liquid size=9 %}</li>
-{%        include tabs.liquid size=9 %}<li><a href="/about">About</a>
-{%-     endcapture                          -%}
 {%-   endif                                 -%}
 
 {%- endfor                                  -%}
