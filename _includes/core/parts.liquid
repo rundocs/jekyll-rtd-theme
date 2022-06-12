@@ -1,4 +1,4 @@
-{%- assign id = 0                           -%}
+{%- assign io = '' | split: ','             -%}
 {%- assign arm = '' | split: ','            -%}
 {%- assign bond = '' | split: ','           -%}
 {%- assign parts = '' | split: ','          -%}
@@ -39,11 +39,8 @@
 {%-   endif                                 -%}
 
 {%-   assign primes = primes | push: num    -%}
+
 {%-   assign size = primes | size           -%}
-{%-   assign id = id | plus: 1              -%}
-
-{%-   include core/_parts.liquid            -%}
-
 {%-   if primes contains size               -%}
 {%-     assign parts = parts | push: size   -%}
 
@@ -55,9 +52,12 @@
 {%-       if bond contains weight           -%}
 {%-         assign arm = arm | push: weight -%}
 
-{%-	       assign expanse = arm | size      -%}
-{%-	       if arm contains expanse          -%}
-{%-	         assign id = id | push: expanse -%}
+{%-	        assign expanse = arm | size     -%}
+{%-	        if arm contains expanse         -%}
+{%-	         assign io = io | push: expanse -%}
+
+{%-          assign id = io | size          -%}
+{%-          include core/_parts.liquid     -%}
 
 {%-	       endif                            -%}
 {%-	     endif                              -%}
