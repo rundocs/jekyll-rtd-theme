@@ -53,14 +53,16 @@
 {%-   if order <= 10                        -%}
 {%-     assign id = order                   -%}
 {%-     include core/_parts.liquid          -%}
+{%-   else                                 -%}
+{%-     assign id = id | plus: 1            -%}
 {%-   endif                                 -%}
 
 {%-   if primes contains order              -%}
 {%-     assign parts = parts | push: order  -%}
-{%-     assign width = parts | size         -%}
-{%-     assign id = id | plus: 1            -%}
 {%-     assign tag = "*"                    -%}
+{%-   endif                                 -%}
 
+{%-     assign width = parts | size         -%}
 {%-     if width <= 10                      -%}
 {%-       include core/_parts.liquid        -%}
 {%-	    endif                              -%}
@@ -87,7 +89,6 @@
 
 {%-	      endif                            -%}
 {%-	    endif                              -%}
-{%-   endif                                 -%}
 
 {%- endfor                                  -%}
 {%-     capture current                     -%}
