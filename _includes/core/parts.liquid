@@ -51,8 +51,13 @@
 
 {%-   if primes contains size               -%}
 {%-     assign parts = parts | push: size   -%}
-
 {%-     assign width = parts | size         -%}
+
+{%-     if width <= 10                      -%}
+{%-       assign id = id | plus: width      -%}
+{%-       include core/_parts.liquid        -%}
+{%-     endif                               -%}
+
 {%-     if parts contains width             -%}
 {%-       assign bond = bond | push: width  -%}
 
