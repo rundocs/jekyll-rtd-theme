@@ -1,47 +1,3 @@
-{%-   assign primes = primes | push: num    -%}
-{%-   assign order = primes | size          -%}
-
-{%-   if order <= 10                        -%}
-{%-     assign id = order                   -%}
-{%-   endif                                 -%}
-
-{%-   if primes contains order              -%}
-{%-     assign parts = parts | push: order  -%}
-{%-     assign width = parts | size         -%}
-
-{%-     if width <= 10                      -%}
-{%-       assign id = id | plus: width      -%}
-{%-     endif                               -%}
-
-{%-     if parts contains width             -%}
-{%-       assign bond = bond | push: width  -%}
-{%-       assign weight = bond | size       -%}
-
-{%-       if weight <= 10                   -%}
-{%-         assign id = id | plus: bond     -%}
-{%-       endif                             -%}
-
-{%-       if bond contains weight           -%}
-{%-         assign arm = arm | push: weight -%}
-{%-	        assign expand = arm | size      -%}
-
-{%-         if expand <= 10                 -%}
-{%-           assign id = id | plus: expand -%}
-{%-         endif                           -%}
-
-{%-	        if arm contains expand          -%}
-{%-	          assign io = io | push: expand -%}
-{%-	          assign eq = io | size     -%}
-
-{%-           if eq <= 10                   -%}
-{%-             assign id = id | plus: eq   -%}
-{%-           endif                         -%}
-
-{%-	        endif                           -%}
-{%-	      endif                             -%}
-{%-	    endif                               -%}
-{%-   endif                                 -%}
-
 {%-   if id == 10                           -%}
 {%-     capture current                     -%}
 {{        current                            }}
@@ -51,7 +7,7 @@
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 
-{%-   elsif == 39                           -%}
+{%-   elsif id == 39                           -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
@@ -60,7 +16,7 @@
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 
-{%-   elsif == 68                           -%}
+{%-   elsif id == 68                           -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
