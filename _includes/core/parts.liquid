@@ -69,8 +69,13 @@
 
 {%-       if bond contains weight           -%}
 {%-         assign arm = arm | push: weight -%}
-
 {%-	        assign expanse = arm | size     -%}
+
+{%-     if expanse <= 10                      -%}
+{%-       assign id = id | plus: expanse      -%}
+{%-       include core/_parts.liquid        -%}
+{%-     endif                               -%}
+
 {%-	        if arm contains expanse         -%}
 {%-	         assign io = io | push: expanse -%}
 
