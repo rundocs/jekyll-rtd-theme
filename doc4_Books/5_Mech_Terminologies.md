@@ -10,9 +10,9 @@ sort: 5
 
 - **Toughness** is the ability of a material to absorb energy and plastically deform without fracturing. Other definition, is the amount of energy per unit volume that a material can absorb before rupturing.
 
-$ Toughness = \frac{energy} {volume} = \int_0^ $
+$$ Toughness = \frac{energy} {volume} = \int_0^{\epsilon_{rupture}} $$
 
-- To be tough, a material must be both strong and ductile
+- To be tough, a material must be both strong (high UTS) and ductile.
 
 
 ## Strength vs stifness
