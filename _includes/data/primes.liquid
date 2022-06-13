@@ -1,3 +1,4 @@
+{%- assign array = '' | split: ','          -%}
 {%- assign primes = '' | split: ','         -%}
 {%- assign primes = primes | push: 2        -%}
 {%- assign n = include.n | default: 100     -%}
@@ -37,6 +38,6 @@
 {%-   assign order = primes | size          -%}
 {%-   assign tag = ""                       -%}
 
-{%-   include templates/parts.html          -%}
+{%-   include templates/node.html          -%}
 
 {%- endfor                                  -%}
