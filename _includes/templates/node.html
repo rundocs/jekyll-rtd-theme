@@ -1,4 +1,3 @@
-{%- assign array = '' | split: ','          -%}
 {%-   if primes contains order              -%}
 {%-     assign parts = parts | push: order  -%}
 {%-     include core/parts.liquid           -%}
@@ -44,7 +43,7 @@
 {%-   capture note                          -%}
 ({{ num }}){{ tag }}
 {%-   endcapture                            -%}
-{%- assign array = current | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
+{%- assign nodes = current | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
 {%-   capture title                         -%}
 [{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | default: 1 }}] 
 {%-   endcapture                            -%}
