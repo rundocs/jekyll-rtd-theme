@@ -18,4 +18,4 @@ sort: 3
 [Kramdown basic syntax](https://kramdown.gettalong.org/converter/html.html#math-support)
 
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/KadShdGbxqk/0.jpg)](https://www.youtube.com/watch?v=KadShdGbxqk)
+
