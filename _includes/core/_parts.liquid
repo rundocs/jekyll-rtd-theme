@@ -1,33 +1,33 @@
 {% comment %} 10+1=11  {% endcomment %}
 
-{%-   if id == 11                -%}
+{%-   if order == 11                -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
 {%        include tabs.liquid size=9 %}</li>
-{%        include tabs.liquid size=9 %}<li><a href="/lexer" id={{ id }} title="{{ lexer }}: Spin 7 to 109 via 30 of 1+29 (10th prime)">Lexer</a>
+{%        include tabs.liquid size=9 %}<li><a href="/lexer" id={{ order }} title="{{ lexer }}: Spin 7 to 109 via 30 of 1+29 (10th prime)">Lexer</a>
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 
 {% comment %} 29+1=30 {% endcomment %}
 
-{%-   elsif id == 30             -%}
+{%-   elsif order == 30             -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
 {%        include tabs.liquid size=9 %}</li>
-{%        include tabs.liquid size=9 %}<li><a href="/parser" id={{ id }} title="{{ parser }}: Spin 13 to 43 via 139=109+30 (1st-step of 36 on the 1st-layer)">Parser</a>
+{%        include tabs.liquid size=9 %}<li><a href="/parser" id={{ order }} title="{{ parser }}: Spin 13 to 43 via 139=109+30 (1st-step of 36 on the 1st-layer)">Parser</a>
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 
 {% comment %} 109+1=110 {% endcomment %}
 
-{%-   elsif id == 110                       -%}
+{%-   elsif order == 110                       -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
 {%        include tabs.liquid size=9 %}</li>
-{%        include tabs.liquid size=9 %}<li><a href="/grammar" id={{ id }} title="{{ grammar }}: Spin 19 of (43 to 89) via 169=139+30 (2nd-step of 36 on the 2nd-layer)">Grammar</a>
+{%        include tabs.liquid size=9 %}<li><a href="/grammar" id={{ order }} title="{{ grammar }}: Spin 19 of (43 to 89) via 169=139+30 (2nd-step of 36 on the 2nd-layer)">Grammar</a>
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 
@@ -44,6 +44,6 @@
 {%-   endcapture                            -%}
 {%-   capture current                       -%}
 {{      current                              }}
-{%        include tabs.liquid size=11 %}<li><a href="/" id={{ id }} title="{{ title }}">{{ note }}</a></li>
+{%        include tabs.liquid size=11 %}<li><a href="/" id={{ order }} title="{{ title }}">{{ note }}</a></li>
 {%-   endcapture                            -%}
 {%-   continue                              -%}
