@@ -1,4 +1,5 @@
 {%-   if primes contains order              -%}
+{%-     assign parts = parts | push: order  -%}
 {%-     include core/parts.liquid           -%}
 {%-   endif                                 -%}
 

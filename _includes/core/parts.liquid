@@ -1,3 +1,5 @@
 {%- for item in array                       -%}
-{%-   include core/_parts.liquid            -%}
+{%-   assign part = item                    -%}
+{%-   assign deep = forloop.index           -%}
+{%-   include core/_parts.liquid deep=deep  -%}
 {%- endfor                                  -%}
