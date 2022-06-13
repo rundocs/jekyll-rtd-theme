@@ -11,7 +11,7 @@
 									<ul class="sf-menu">
 										<li><a href="/" id=1 title="{{ mapping }}*: Spin 168=π(1000) as Lexer and 618=1000/Φ as Parser">Home</a>
 											<ul>
-												{%- include data/primes.liquid %}{{ current -}}
+												{%- include data/primes.liquid %}{{ current }}
 											</ul>
 										</li>
 										<li><a href="/about" id={{ order }} title="Current: {{ title }} of {{ note }} from Mapping: {{ mapping }}">About</a></li>
@@ -22,4 +22,3 @@
 					</div>
 				</div>
 			</header>
-{%- assign array = current | strip | newline_to_br | strip_newlines | split: "<br />"  -%}{{ array | size }}{{ array | jsonify }}
