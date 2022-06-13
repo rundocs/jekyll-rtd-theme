@@ -20,6 +20,11 @@
     {%- endif %}
 {%- endfor -%}
 
+{%- assign id = '' | split: ',' -%}
+{%- assign arm = '' | split: ',' -%}
+{%- assign bond = '' | split: ',' -%}
+{%- assign parts = '' | split: ',' -%}
+
 {%- capture lexer %}[7;13;29;109](102){% endcapture -%}
 {%- capture parser %}[13;43;66;139](329){% endcapture -%}
 {%- capture grammar %}[19;68;89;168](289){% endcapture -%}

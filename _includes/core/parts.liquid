@@ -1,11 +1,7 @@
-{%- assign id = '' | split: ','             -%}
-{%- assign arm = '' | split: ','            -%}
-{%- assign bond = '' | split: ','           -%}
-{%- assign parts = '' | split: ','          -%}
 {%- assign primes = '' | split: ','         -%}
 {%- assign primes = primes | push: 2        -%}
-
 {%- assign n = include.n | default: 100     -%}
+
 {%- assign j = n | times: n                 -%}
 {%- assign min = include.min | default: 2   -%}
 {%- assign max = include.max | default: 109 -%}
@@ -44,4 +40,3 @@
 {%-   include core/_parts.liquid            -%}
 
 {%- endfor                                  -%}
-{{  current                                 -}}
