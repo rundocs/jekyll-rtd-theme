@@ -1,3 +1,3 @@
 array deep = {{ forloop.index }}
-{%- assign part = include.part | push: 5      -%}
+{%- assign part = item | push: 5      -%}
 {{ part | jsonify }}
