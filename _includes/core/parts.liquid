@@ -5,6 +5,5 @@
 {%-   include core/_parts.liquid   -%}
 {%- endfor                                  -%}
 
-{%- assign array = '' | split: ','          -%}
 {%- assign array = array | push: part       -%}
 {{ array | jsonify }}
