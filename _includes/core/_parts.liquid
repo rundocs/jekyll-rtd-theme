@@ -38,7 +38,8 @@
 {%-   endcapture                            -%}
 {%- assign array = current | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
 {%-   capture title                         -%}
-[{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | default: 1 }}] {%-   endcapture                            -%}
+[{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | default: 1 }}] 
+{%-   endcapture                            -%}
 {%-   capture current                       -%}
 {{      current                              }}
 {%        include tabs.liquid size=11 %}<li><a href="/" id={{ id }} title="{{ title }}">{{ note }}</a></li>
