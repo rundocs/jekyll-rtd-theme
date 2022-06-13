@@ -11,6 +11,10 @@
 {%- assign min = include.min | default: 2   -%}
 {%- assign max = include.max | default: j   -%}
 
+{%- capture lexer %}[7;13;29;109](102){% endcapture -%}
+{%- capture parser %}[13;43;66;139](329){% endcapture -%}
+{%- capture grammar %}[19;69;89;168](289){% endcapture -%}
+
 {%- for num in (3 .. max)                   -%}
 {%-   assign mod = num | modulo: 2          -%}
 {%-   if mod == 0                           -%}
