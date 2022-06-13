@@ -2,7 +2,5 @@
 {%- assign array = array | push: parts      -%}
 
 {%- for item in array                       -%}
-{%-   assign part = item                    -%}
-{%-   assign deep = forloop.index           -%}
-{%-   include core/_parts.liquid deep=deep  -%}
+{%-   include core/_parts.liquid part=item  -%}
 {%- endfor                                  -%}

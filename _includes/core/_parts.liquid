@@ -1,3 +1,2 @@
-{%- assign deep = include.deep | default: 1 -%}
-array deep = {{ deep }}
-{{ part | jsonify }}
+array deep = {{ forloop.index }}
+{{ include.part | jsonify }}
