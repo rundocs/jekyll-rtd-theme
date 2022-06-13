@@ -1,4 +1,4 @@
-{% comment %}   spin 7 to 13   {% endcomment %}
+{% comment %} 10+1=11  {% endcomment %}
 
 {%-   if id == 11                -%}
 {%-     capture current                     -%}
@@ -9,7 +9,7 @@
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 
-{% comment %}  spin 13 to 43   {% endcomment %}
+{% comment %} 29+1=30 {% endcomment %}
 
 {%-   elsif id == 30             -%}
 {%-     capture current                     -%}
@@ -20,9 +20,9 @@
 {%        include tabs.liquid size=10 %}<ul>
 {%-     endcapture                          -%}
 
-{% comment %}  spin 43 to 89   {% endcomment %}
+{% comment %} 109+1=110 {% endcomment %}
 
-{%-   elsif id == 140                       -%}
+{%-   elsif id == 110                       -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=10 %}</ul>
@@ -33,7 +33,7 @@
 
 {%-   endif                                 -%}
 
-{%- comment %}10+29+109+(109-100)²+100x10=229+1000=π(10000){% endcomment -%}
+{%- comment %}10+29+109+(109-100)²+100x10=π(10000){% endcomment -%}
 
 {%-   capture note                          -%}
 ({{ num }}){{ tag }}
