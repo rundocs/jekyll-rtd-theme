@@ -1,46 +1,46 @@
-		<!--div class="addons-wrap d-flex flex-column overflow-y-auto">
-			<div class="status d-flex flex-justify-between p-2">
-				<div class="title p-1">
-					<i class="fa fa-book"></i> Repository
+			<!--div class="addons-wrap d-flex flex-column overflow-y-auto">
+				<div class="status d-flex flex-justify-between p-2">
+					<div class="title p-1">
+						<i class="fa fa-book"></i> Repository
+					</div>
+					<div class="branch p-1">
+						<span class="name">
+							{{ docs.source.branch }}
+						</span>
+						<i class="fa fa-caret-down"></i>
+					</div>
 				</div>
-				<div class="branch p-1">
-					<span class="name">
-						{{ docs.source.branch }}
-					</span>
-					<i class="fa fa-caret-down"></i>
+				<div class="addons d-flex flex-column height-full p-2 d-none">
+					<dl>
+						<dt>{{ __.github | default: "GitHub" }}</dt>
+						<dd>
+							<a href="{{ docs.repository_url }}" title="{{ __.stars | default: 'Stars' }}: {{ rest.stargazers_count }}">
+								<i class="fa fa-github"></i>
+								{{ __.homepage | default: "Code" }}
+							</a>
+						</dd>
+						<dd>
+							<a href="{{ docs.actions_url }}" title="{{ __.open_issues | default: 'Actions' }}: {{ rest.open_issues }}">
+								<i class="fa fa-question-circle-o"></i>
+								{{ __.issues | default: "Actions" }}
+							</a>
+						</dd>
+						<dd>
+							<a href="{{ docs.wiki_url }}" title="{{ __.size | default: 'Size' }}: {{ rest.size }} Kb">
+								<i class="fa fa-download"></i>
+								{{ __.download | default: "Wiki" }}
+							</a>
+						</dd>
+					</dl>
+					<hr>
+					<div class="license f6 pb-2">
+						This
+						<a href="{{ site.baseurl }}/" title="{{ site.title }}">Repo</a>
+						is courtesy of 
+						<a href="https://github.com/eq19">₠Quantum Project</a>.<br>
+						Find all of them on Project 
+						<a href="https://www.eq19.com/maps">Maps</a> and 
+						<a href="https://www.eq19.com/feed">Feed</a>.
+					</div>
 				</div>
-			</div>
-			<div class="addons d-flex flex-column height-full p-2 d-none">
-				<dl>
-					<dt>{{ __.github | default: "GitHub" }}</dt>
-					<dd>
-						<a href="{{ docs.repository_url }}" title="{{ __.stars | default: 'Stars' }}: {{ rest.stargazers_count }}">
-							<i class="fa fa-github"></i>
-							{{ __.homepage | default: "Code" }}
-						</a>
-					</dd>
-					<dd>
-						<a href="{{ docs.actions_url }}" title="{{ __.open_issues | default: 'Actions' }}: {{ rest.open_issues }}">
-							<i class="fa fa-question-circle-o"></i>
-							{{ __.issues | default: "Actions" }}
-						</a>
-					</dd>
-					<dd>
-						<a href="{{ docs.wiki_url }}" title="{{ __.size | default: 'Size' }}: {{ rest.size }} Kb">
-							<i class="fa fa-download"></i>
-							{{ __.download | default: "Wiki" }}
-						</a>
-					</dd>
-				</dl>
-				<hr>
-				<div class="license f6 pb-2">
-					This
-					<a href="{{ site.baseurl }}/" title="{{ site.title }}">Repo</a>
-					is courtesy of 
-					<a href="https://github.com/eq19">₠Quantum Project</a>.<br>
-					Find all of them on Project 
-					<a href="https://www.eq19.com/maps">Maps</a> and 
-					<a href="https://www.eq19.com/feed">Feed</a>.
-				</div>
-			</div>
-		</div-->
+			</div-->
