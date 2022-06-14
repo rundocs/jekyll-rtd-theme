@@ -3,7 +3,7 @@
 {%-     include core/parts.liquid           -%}
 {%-   endif                                 -%}
 
-{% comment %} 10+1=11  {% endcomment %}
+{% comment %} 10th+1=30  {% endcomment %}
 
 {%-   if order == 30                        -%}
 {%-     capture current                     -%}
@@ -14,7 +14,7 @@
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
-{% comment %} 10th+1=30 {% endcomment %}
+{% comment %} (10th)th+1=110 {% endcomment %}
 
 {%-   elsif order == 110                     -%}
 {%-     capture current                     -%}
@@ -25,7 +25,7 @@
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
-{% comment %} (10th)th+1=110 {% endcomment %}
+{% comment %} ((10th)th)+1=600 {% endcomment %}
 
 {%-   elsif order == 600                    -%}
 {%-     capture current                     -%}
