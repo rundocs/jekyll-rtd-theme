@@ -9,12 +9,12 @@
 								</div>
 								<nav class="nav put-right">
 									<ul class="sf-menu">
-										<li><a href="/" id=1 title="{{ mapping }}*: Spin 168=π(1000) as Lexer and 618=1000/Φ as Parser">Home</a>
+										<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/" id=1 title="{{ mapping }}*: Spin 168=π(1000) as Lexer and 618=1000/Φ as Parser">Home</a>
 											<ul>
 												{%- include data/primes.liquid %}{{ current }}
 											</ul>
 										</li>
-										<li><a href="/about" id={{ order }} title="Current: {{ title }} of {{ note }} from Mapping: {{ mapping }}">About</a></li>
+										<li{% if site.baseurl == "/about" %} class="current"{% endif %}><a href="/about" id={{ order }} title="Current: {{ title }} of {{ note }} from Mapping: {{ mapping }}">About</a></li>
 									</ul>
 								</nav>
 							</div>
