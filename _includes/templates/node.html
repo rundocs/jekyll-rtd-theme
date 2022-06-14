@@ -1,6 +1,6 @@
 {% comment %} 10th+1=30  {% endcomment %}
 
-{%-   if order == 30                        -%}
+{%-   if order == primes[10] | plus: 1      -%}
 {%-     assign stage = "lexer"                -%}
 {%-     capture current                     -%}
 {{        current                            }}
@@ -12,7 +12,7 @@
 
 {% comment %} (10th)th+1=110 {% endcomment %}
 
-{%-   elsif order == 110                    -%}
+{%-   elsif order == primes[29] | plus: 1                    -%}
 {%-     assign stage = "parser"               -%}
 {%-     capture current                     -%}
 {{        current                            }}
@@ -24,7 +24,7 @@
 
 {% comment %} ((10th)th)+1=600 {% endcomment %}
 
-{%-   elsif order == 600                    -%}
+{%-   elsif order == primes[109] | plus: 1                    -%}
 {%-     assign stage = "grammar"              -%}
 {%-     capture current                     -%}
 {{        current                            }}
