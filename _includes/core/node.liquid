@@ -1,6 +1,8 @@
 {%-  assign node = '<li>'                   -%}
-{%-  assign stage = stages[forloop.index0]  -%}
-{%-  assign title = titles[forloop.index0]  -%}
+{%-  assign index = forloop.index0          -%}
+
+{%-  assign stage = stages[index]           -%}
+{%-  assign title = titles[index]           -%}
 
 {%-  assign baseurl = stage | prepend: "/"  -%}
 {%-  if site.baseurl == baseurl             -%}
@@ -8,15 +10,15 @@
 {%-  endif                                  -%}
 
 {%-  assign node = node
-       | prepend: '<a href="'
-       | prepend: baseurl
-       | prepend: '" id='
-       | prepend: item
-       | prepend: ' title="'
-       | prepend: title
-       | prepend: '">'
-       | prepend: stage
-       | prepend: '</a>'                    -%}
+       | append: '<a href="'
+       | append: baseurl
+       | append: '" id='
+       | append: item
+       | append: ' title="'
+       | append: title
+       | append: '">'
+       | append: stage
+       | append: '</a>'                    -%}
 
 {%-  capture nodes                          -%}
 {{     nodes                                 }}
