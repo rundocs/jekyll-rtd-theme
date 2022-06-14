@@ -4,13 +4,13 @@
 ({{ num }}){{ tag }}
 {%-   endcapture                            -%}
 
-{%- assign nodes = node | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
+{%- assign strip = nodes | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
 {%-   capture title                         -%}
 [{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | default: 1 }}] 
 {%-   endcapture                            -%}
 
-{%-   capture node                       -%}
-{{      node                              }}
+{%-   capture nodes                       -%}
+{{      nodes                             }}
 {%        include tabs.liquid size=12 %}<li><a href="/" id={{ order }} title="{{ title }}">{{ note }}</a></li>
 {%-   endcapture                            -%}
 {%-   continue                              -%}
