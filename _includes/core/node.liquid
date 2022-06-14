@@ -7,11 +7,11 @@
 
 {%-     assign baseurl = stage | prepend: "/" -%}
 {% if site.baseurl == baseurl           -%}
-{%-  assign current = ' class="current"' -%}
+{%-  assign current = '<li class="current">' -%}
 {% endif                                  %}
 
 {%-     capture current                     -%}
-<li{{ current }}><a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}">stage</a>
+{{ current }}<a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}">{{ stage }}</a>
 {%-     endcapture                          -%}
 
 {%-     capture nodes                     -%}
@@ -29,11 +29,11 @@
 
 {%-     assign baseurl = stage | prepend: "/" -%}
 {% if site.baseurl == baseurl           -%}
-{%-  assign current = ' class="current"' -%}
+{%-  assign current = '<li class="current">' -%}
 {% endif                                  %}
 
 {%-     capture current                     -%}
-<li{{ current }}><a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}">stage</a>
+{{ current }}<a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}">{{ stage }}</a>
 {%-     endcapture                          -%}
 
 {%-     capture nodes                     -%}
@@ -51,11 +51,11 @@
 
 {%-     assign baseurl = stage | prepend: "/" -%}
 {% if site.baseurl == baseurl           -%}
-{%-  assign current = ' class="current"' -%}
+{%-  assign current = '<li class="current">' -%}
 {% endif                                  %}
 
 {%-     capture current                     -%}
-<li{{ current }}><a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}">stage</a>
+{{ current }}<a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}">{{ stage }}</a>
 {%-     endcapture                          -%}
 
 {%-     capture nodes                     -%}
