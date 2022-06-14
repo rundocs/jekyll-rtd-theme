@@ -1,16 +1,19 @@
 {% comment %} 10th+1=30  {% endcomment %}
 
-{%-     capture current                     -%}
-{%-     endcapture                          -%}
+{%-     assign current = ""                -%}
 
 {%-   if order == 30                        -%}
 {%-     assign stage = "lexer"                -%}
+
+{% if site.baseurl == "/lexer" %}
+{%-  assign current = ' class="current"' -%}
+{% endif                                  %}
 
 {%-     capture node                     -%}
 {{        node                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer" id={{ order }} title="{{ lexer }}: Spin 7 to 109 via 30 of 1+29 (10th prime)">Lexer</a>
+{%        include tabs.liquid size=10 %}<li{{ current }}><a href="/lexer" id={{ order }} title="{{ lexer }}: Spin 7 to 109 via 30 of 1+29 (10th prime)">Lexer</a>
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
@@ -35,6 +38,11 @@
 
 {%-   elsif order == 600                    -%}
 {%-     assign stage = "grammar"              -%}
+
+{%-     capture current                     -%}
+{% if site.baseurl == "/grammar" %} class="current"{% endif %}
+{%-     endcapture                          -%}
+
 {%-     capture node                     -%}
 {{        node                            }}
 {%        include tabs.liquid size=11 %}</ul>
