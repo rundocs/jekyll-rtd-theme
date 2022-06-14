@@ -20,6 +20,14 @@
 [29;69;114;168](618)
 {%- endcapture -%}
 
+{%- comment -%}
+1 = 0 + 1
+30 = 10th prime + 1 = 29 + 1
+110 = (10th)th prime + 1 = 29th prime + 1 = 109 + 1 
+230 = (10 x 5)th prime + 1 = 50th prime + 1 = 229 + 1 
+
+{%-  endcomment -%}
+ 
 {%- assign items = items | push: 30 | push: 110 | push: 230 -%}
 {%- assign titles = titles | push: lexer | push: parser | push: grammar -%}
 {%- assign stages = stages | push: 'lexer' | push: 'parser' | push: 'grammar' -%}
