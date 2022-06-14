@@ -10,11 +10,15 @@
 {%-  assign current = ' class="current"' -%}
 {% endif                                  %}
 
+{%-     capture current                     -%}
+<li{{ current }}><a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}">stage</a>
+{%-     endcapture                          -%}
+
 {%-     capture nodes                     -%}
 {{        nodes                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}<li{{ current }}><a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}">stage</a>
+{%        include tabs.liquid size=10 %}{{ current }}
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
@@ -28,11 +32,15 @@
 {%-  assign current = ' class="current"' -%}
 {% endif                                  %}
 
+{%-     capture current                     -%}
+<li{{ current }}><a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}">stage</a>
+{%-     endcapture                          -%}
+
 {%-     capture nodes                     -%}
 {{        nodes                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}<li{{ current }}><a href="{{ baseurl }}" id={{ order }} title="{{ parser }}">stage</a>
+{%        include tabs.liquid size=10 %}{{ current }}
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
@@ -46,11 +54,15 @@
 {%-  assign current = ' class="current"' -%}
 {% endif                                  %}
 
+{%-     capture current                     -%}
+<li{{ current }}><a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}">stage</a>
+{%-     endcapture                          -%}
+
 {%-     capture nodes                     -%}
 {{        nodes                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}<li{{ current }}><a href="{{ baseurl }}" id={{ order }} title="{{ grammar }}">stage</a>
+{%        include tabs.liquid size=10 %}{{ current }}
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
