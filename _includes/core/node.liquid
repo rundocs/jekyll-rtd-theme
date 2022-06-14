@@ -2,14 +2,13 @@
 {%-  assign stage = stages[forloop.index0]  -%}
 {%-  assign title = titles[forloop.index0]  -%}
 
-{%-  assign baseurl = stage | prepend: "/"  -%}
-{%-  if site.baseurl == baseurl             -%}
+{%-  if site.baseurl == "/"stage            -%}
 {%-    assign node = '<li class="current">' -%}
 {%-  endif                                  -%}
 
 {%-  capture node                           -%}
 {{-    node                                 -}}
-<a href="{{ baseurl }}" id={{ item }} title="{{ title }}">{{ stage }}</a>
+<a href="/{{ stage }}" id={{ item }} title="{{ title }}">{{ stage }}</a>
 {%-  endcapture                             -%}
 
 {%-  capture nodes                          -%}
