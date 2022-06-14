@@ -1,6 +1,5 @@
-{%-  assign primes = primes | push: num     -%}
-{%-  assign order = primes | size           -%}
 {%-  assign tag = ""                        -%}
+{%-  assign array = '' | split: ','         -%}
 
 {%-  if primes contains order               -%}
 {%-    assign parts = parts | push: order   -%}
@@ -23,7 +22,6 @@
 {%-    endif                                -%}
 {%-  endif                                  -%}
 
-{%-  assign array = '' | split: ','         -%}
 {%-  assign array = array | push: id        -%}
 {%-  assign array = array | push: arm       -%}
 {%-  assign array = array | push: bond      -%}
@@ -31,12 +29,6 @@
 
 {%-  for item in array                      -%}
 {%-    include core/_parts.liquid           -%}
-{%-  endfor                                 -%}
-
-{%-  for item in items                      -%}
-{%-    if order == item                     -%}
-{%-      include core/node.liquid           -%}
-{%-    endif                                -%}
 {%-  endfor                                 -%}
 
 {%-  include core/_node.liquid              -%}
