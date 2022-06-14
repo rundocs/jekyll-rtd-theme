@@ -1,11 +1,12 @@
 {% comment %} 10th+1=30  {% endcomment %}
 
-{%-     assign current = ""                -%}
+{%-     assign current = ""              -%}
 
-{%-   if order == 30                        -%}
-{%-     assign stage = "lexer"                -%}
+{%-   if order == 30                     -%}
+{%-     assign stage = "lexer"           -%}
 
-{% if site.baseurl == "/lexer" %}
+{%-     assign baseurl = stage | prepend: "/" -%}
+{% if site.baseurl == baseurl           -%}
 {%-  assign current = ' class="current"' -%}
 {% endif                                  %}
 
@@ -13,7 +14,7 @@
 {{        node                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}<li{{ current }}><a href="/lexer" id={{ order }} title="{{ lexer }}: Spin 7 to 109 via 30 of 1+29 (10th prime)">Lexer</a>
+{%        include tabs.liquid size=10 %}<li{{ current }}><a href="{{ baseurl }}" id={{ order }} title="{{ lexer }}: Spin 7 to 109 via 30 of 1+29 (10th prime)">Lexer</a>
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
@@ -22,9 +23,10 @@
 {%-   elsif order == 110                    -%}
 {%-     assign stage = "parser"               -%}
 
-{%-     capture current                     -%}
-{% if site.baseurl == "/parser" %} class="current"{% endif %}
-{%-     endcapture                          -%}
+{%-     assign baseurl = stage | prepend: "/" -%}
+{% if site.baseurl == baseurl           -%}
+{%-  assign current = ' class="current"' -%}
+{% endif                                  %}
 
 {%-     capture node                     -%}
 {{        node                            }}
@@ -39,9 +41,10 @@
 {%-   elsif order == 600                    -%}
 {%-     assign stage = "grammar"              -%}
 
-{%-     capture current                     -%}
-{% if site.baseurl == "/grammar" %} class="current"{% endif %}
-{%-     endcapture                          -%}
+{%-     assign baseurl = stage | prepend: "/" -%}
+{% if site.baseurl == baseurl           -%}
+{%-  assign current = ' class="current"' -%}
+{% endif                                  %}
 
 {%-     capture node                     -%}
 {{        node                            }}
