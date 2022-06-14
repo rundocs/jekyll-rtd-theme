@@ -5,6 +5,7 @@
 {%-   if order == 30                     -%}
 {%-     assign stage = "lexer"           -%}
 
+{%-     assign baseurl = stage | prepend: "/" -%}
 {% if site.baseurl == baseurl           -%}
 {%-  assign current = '<li class="current">' -%}
 {% endif                                  %}
@@ -26,6 +27,7 @@
 {%-   elsif order == 110                    -%}
 {%-     assign stage = "parser"               -%}
 
+{%-     assign baseurl = stage | prepend: "/" -%}
 {% if site.baseurl == baseurl           -%}
 {%-  assign current = '<li class="current">' -%}
 {% endif                                  %}
@@ -47,6 +49,7 @@
 {%-   elsif order == 600                    -%}
 {%-     assign stage = "grammar"              -%}
 
+{%-     assign baseurl = stage | prepend: "/" -%}
 {% if site.baseurl == baseurl           -%}
 {%-  assign current = '<li class="current">' -%}
 {% endif                                  %}
