@@ -1,11 +1,13 @@
-{%-     assign node = '<li>'              -%}
-{%-     assign stage = stages[forloop.index0]           -%}
-{%-     assign title = titles[forloop.index0]           -%}
+{%-   if order == item                     -%}
+{
+{%-  assign node = '<li>'              -%}
+{%-  assign stage = stages[forloop.index0]           -%}
+{%-  assign title = titles[forloop.index0]           -%}
 
-{%-     assign baseurl = stage | prepend: "/" -%}
-{% if site.baseurl == baseurl           -%}
+{%-  assign baseurl = stage | prepend: "/" -%}
+{%-  if site.baseurl == baseurl           -%}
 {%-  assign node = '<li class="current">' -%}
-{% endif                                  %}
+{%-  endif                                  %}
 
 {%-     capture node                     -%}
 {{ node }}<a href="{{ baseurl }}" id={{ item }} title="{{ title }}">{{ stage }}</a>
@@ -18,3 +20,5 @@
 {%        include tabs.liquid size=10 %}{{ node }}
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
+
+{%-  endif                                  %}
