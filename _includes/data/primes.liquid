@@ -6,7 +6,7 @@
 
 {%- assign j = n | times: n                 -%}
 {%- assign min = include.min | default: 2   -%}
-{%- assign max = include.max | default: 1000 -%}
+{%- assign max = include.max | default: j   -%}
 
 {%- for num in (3 .. max)                   -%}
 {%-   assign mod = num | modulo: 2          -%}
