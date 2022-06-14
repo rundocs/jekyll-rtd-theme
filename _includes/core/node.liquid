@@ -8,7 +8,8 @@
 {%-  endif                                  -%}
 
 {%-  capture node                           -%}
-{{-    node }}<a href="{{ baseurl }}" id={{ item }} title="{{ title }}">{{ stage }}</a>
+{{-    node                                 -}}
+<a href="{{ baseurl }}" id={{ item }} title="{{ title }}">{{ stage }}</a>
 {%-  endcapture                             -%}
 
 {%-  capture nodes                          -%}
