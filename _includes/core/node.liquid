@@ -2,7 +2,7 @@
 {%-  assign stage = stages[forloop.index0]  -%}
 {%-  assign title = titles[forloop.index0]  -%}
 
-{%-  if site.baseurl == "/"stage            -%}
+{%-  if site.baseurl == stage | prefend: "/" -%}
 {%-    assign node = '<li class="current">' -%}
 {%-  endif                                  -%}
 
