@@ -4,17 +4,17 @@
 
 {%-  assign baseurl = stage | prepend: "/" -%}
 {%-  if site.baseurl == baseurl           -%}
-{%-  assign node = '<li class="current">' -%}
+{%-    assign node = '<li class="current">' -%}
 {%-  endif                                  %}
 
-{%-     capture node                     -%}
-{{ node }}<a href="{{ baseurl }}" id={{ item }} title="{{ title }}">{{ stage }}</a>
-{%-     endcapture                          -%}
+{%-  capture node                     -%}
+{{-    node }}<a href="{{ baseurl }}" id={{ item }} title="{{ title }}">{{ stage }}</a>
+{%-  endcapture                          -%}
 
-{%-     capture nodes                     -%}
-{{        nodes                            }}
-{%        include tabs.liquid size=11 %}</ul>
-{%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}{{ node }}
-{%        include tabs.liquid size=11 %}<ul>
-{%-     endcapture                          -%}
+{%-  capture nodes                     -%}
+{{     nodes                            }}
+{%     include tabs.liquid size=11 %}</ul>
+{%     include tabs.liquid size=10 %}</li>
+{%     include tabs.liquid size=10 %}{{ node }}
+{%     include tabs.liquid size=11 %}<ul>
+{%-  endcapture                          -%}
