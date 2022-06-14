@@ -7,10 +7,16 @@
 {%-    assign node = '<li class="current">' -%}
 {%-  endif                                  -%}
 
-{%-  capture node                           -%}
-{{-    node                                 -}}
-<a href="{{ baseurl }}" id={{ item }} title="{{ title }}">{{ stage }}</a>
-{%-  endcapture                             -%}
+{%-  assign node = node
+       | prepend: '<a href="'
+       | prepend: baseurl
+       | prepend: '" id='
+       | prepend: item
+       | prepend: ' title="'
+       | prepend: title
+       | prepend: '">'
+       | prepend: stage
+       | prepend: '</a>'                    -%}
 
 {%-  capture nodes                          -%}
 {{     nodes                                 }}
