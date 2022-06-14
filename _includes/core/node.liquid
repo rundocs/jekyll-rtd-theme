@@ -1,9 +1,13 @@
 {% comment %} 10th+1=30  {% endcomment %}
 
+{%-     capture current                     -%}
+{%-     endcapture                          -%}
+
 {%-   if order == 30                        -%}
 {%-     assign stage = "lexer"                -%}
-{%-     capture current                     -%}
-{{        current                            }}
+
+{%-     capture node                     -%}
+{{        node                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
 {%        include tabs.liquid size=10 %}<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer" id={{ order }} title="{{ lexer }}: Spin 7 to 109 via 30 of 1+29 (10th prime)">Lexer</a>
@@ -14,11 +18,16 @@
 
 {%-   elsif order == 110                    -%}
 {%-     assign stage = "parser"               -%}
+
 {%-     capture current                     -%}
-{{        current                            }}
+{% if site.baseurl == "/parser" %} class="current"{% endif %}
+{%-     endcapture                          -%}
+
+{%-     capture node                     -%}
+{{        node                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser" id={{ order }} title="{{ parser }}: Spin 13 to 43 via 139=109+30 (1st-step of 36 on the 1st-layer)">Parser</a>
+{%        include tabs.liquid size=10 %}<li{{ current }}><a href="/parser" id={{ order }} title="{{ parser }}: Spin 13 to 43 via 139=109+30 (1st-step of 36 on the 1st-layer)">Parser</a>
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
@@ -26,8 +35,8 @@
 
 {%-   elsif order == 600                    -%}
 {%-     assign stage = "grammar"              -%}
-{%-     capture current                     -%}
-{{        current                            }}
+{%-     capture node                     -%}
+{{        node                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
 {%        include tabs.liquid size=10 %}<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar" id={{ order }} title="{{ grammar }}: Spin 19 of (43 to 89) via 169=139+30 (2nd-step of 36 on the 2nd-layer)">Grammar</a>
