@@ -1,36 +1,36 @@
 {% comment %} 10th+1=30  {% endcomment %}
 
-{%-   if order == primes[10] | plus: 1      -%}
+{%-   if order == 30                        -%}
 {%-     assign stage = "lexer"                -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}<li{% if site.baseurl == "/{{ stage }}" %} class="current"{% endif %}><a href="/{{ stage }}" id={{ order }} title="{{ lexer }}: Spin 7 to 109 via 30 of 1+29 (10th prime)">{{ stage }}</a>
+{%        include tabs.liquid size=10 %}<li{% if site.baseurl == "/lexer" %} class="current"{% endif %}><a href="/lexer" id={{ order }} title="{{ lexer }}: Spin 7 to 109 via 30 of 1+29 (10th prime)">Lexer</a>
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
 {% comment %} (10th)th+1=110 {% endcomment %}
 
-{%-   elsif order == primes[29] | plus: 1                    -%}
+{%-   elsif order == 110                    -%}
 {%-     assign stage = "parser"               -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}<li{% if site.baseurl == "/{{ stage }}" %} class="current"{% endif %}><a href="/{{ stage }}" id={{ order }} title="{{ parser }}: Spin 13 to 43 via 139=109+30 (1st-step of 36 on the 1st-layer)">{{ stage }}</a>
+{%        include tabs.liquid size=10 %}<li{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser" id={{ order }} title="{{ parser }}: Spin 13 to 43 via 139=109+30 (1st-step of 36 on the 1st-layer)">Parser</a>
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
 {% comment %} ((10th)th)+1=600 {% endcomment %}
 
-{%-   elsif order == primes[109] | plus: 1                    -%}
+{%-   elsif order == 600                    -%}
 {%-     assign stage = "grammar"              -%}
 {%-     capture current                     -%}
 {{        current                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}<li{% if site.baseurl == "/{{ stage }}" %} class="current"{% endif %}><a href="/{{ stage }}" id={{ order }} title="{{ grammar }}: Spin 19 of (43 to 89) via 169=139+30 (2nd-step of 36 on the 2nd-layer)">{{ stage }}</a>
+{%        include tabs.liquid size=10 %}<li{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar" id={{ order }} title="{{ grammar }}: Spin 19 of (43 to 89) via 169=139+30 (2nd-step of 36 on the 2nd-layer)">Grammar</a>
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
