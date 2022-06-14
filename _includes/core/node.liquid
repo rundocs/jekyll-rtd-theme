@@ -1,24 +1,24 @@
 {% comment %} 10th+1=30  {% endcomment %}
 
-{%-     assign current = ""              -%}
+{%-     assign node = '<li>'              -%}
 
 {%-   if order == 30                     -%}
 {%-     assign stage = "lexer"           -%}
 
 {%-     assign baseurl = stage | prepend: "/" -%}
 {% if site.baseurl == baseurl           -%}
-{%-  assign current = '<li class="current">' -%}
+{%-  assign node = '<li class="current">' -%}
 {% endif                                  %}
 
-{%-     capture current                     -%}
-{{ current }}<a href="/{{ stage }}" id={{ order }} title="{{ lexer }}">{{ stage }}</a>
+{%-     capture node                     -%}
+{{ node }}<a href="/{{ stage }}" id={{ order }} title="{{ lexer }}">{{ stage }}</a>
 {%-     endcapture                          -%}
 
 {%-     capture nodes                     -%}
 {{        nodes                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}{{ current }}
+{%        include tabs.liquid size=10 %}{{ node }}
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
@@ -29,18 +29,18 @@
 
 {%-     assign baseurl = stage | prepend: "/" -%}
 {% if site.baseurl == baseurl           -%}
-{%-  assign current = '<li class="current">' -%}
+{%-  assign node = '<li class="current">' -%}
 {% endif                                  %}
 
-{%-     capture current                     -%}
-{{ current }}<a href="/{{ stage }}" id={{ order }} title="{{ lexer }}">{{ stage }}</a>
+{%-     capture node                     -%}
+{{ node }}<a href="/{{ stage }}" id={{ order }} title="{{ lexer }}">{{ stage }}</a>
 {%-     endcapture                          -%}
 
 {%-     capture nodes                     -%}
 {{        nodes                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}{{ current }}
+{%        include tabs.liquid size=10 %}{{ node }}
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
@@ -51,18 +51,18 @@
 
 {%-     assign baseurl = stage | prepend: "/" -%}
 {% if site.baseurl == baseurl           -%}
-{%-  assign current = '<li class="current">' -%}
+{%-  assign node = '<li class="current">' -%}
 {% endif                                  %}
 
-{%-     capture current                     -%}
-{{ current }}<a href="/{{ stage }}" id={{ order }} title="{{ lexer }}">{{ stage }}</a>
+{%-     capture node                     -%}
+{{ node }}<a href="/{{ stage }}" id={{ order }} title="{{ lexer }}">{{ stage }}</a>
 {%-     endcapture                          -%}
 
 {%-     capture nodes                     -%}
 {{        nodes                            }}
 {%        include tabs.liquid size=11 %}</ul>
 {%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}{{ current }}
+{%        include tabs.liquid size=10 %}{{ node }}
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
 
