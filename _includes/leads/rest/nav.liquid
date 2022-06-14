@@ -25,12 +25,6 @@
 {%- assign bond = '' | split: ',' -%}
 {%- assign parts = '' | split: ',' -%}
 
-{%- assign array = '' | split: ',' -%}
-{%- assign array = array | push: id -%}
-{%- assign array = array | push: arm -%}
-{%- assign array = array | push: bond -%}
-{%- assign array = array | push: parts -%}
-
 {%- capture lexer %}[7;13;29;109](102){% endcapture -%}
 {%- capture parser %}[13;43;66;139](329){% endcapture -%}
 {%- capture grammar %}[19;68;89;168](289){% endcapture -%}
