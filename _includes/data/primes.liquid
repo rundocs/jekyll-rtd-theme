@@ -35,10 +35,6 @@
 {%-     continue                            -%}
 {%-   endif                                 -%}
 
-{%-   assign primes = primes | push: num    -%}
-{%-   assign order = primes | size          -%}
-{%-   assign tag = ""                       -%}
-
-{%-   include templates/node.html          -%}
+{%-  include core/parts.liquid              -%}
 
 {%- endfor                                  -%}
