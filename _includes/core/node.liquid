@@ -1,10 +1,10 @@
 {%-  assign node = '<li>'                   -%}
 {%-  assign index = forloop.index0          -%}
 
-{%-  assign stage = stages[index]           -%}
 {%-  assign title = titles[index]           -%}
-
+{%-  assign stage = stages[index]           -%}
 {%-  assign baseurl = stage | prepend: "/"  -%}
+
 {%-  if site.baseurl == baseurl             -%}
 {%-    assign node = '<li class="current">' -%}
 {%-  endif                                  -%}
@@ -18,7 +18,7 @@
        | append: title
        | append: '">'
        | append: stage
-       | append: '</a>'                    -%}
+       | append: '</a>'                     -%}
 
 {%-  capture nodes                          -%}
 {{     nodes                                 }}
