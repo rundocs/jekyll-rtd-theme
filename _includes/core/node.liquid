@@ -1,9 +1,6 @@
-{% comment %} 10th+1=30  {% endcomment %}
-
 {%-     assign node = '<li>'              -%}
-
-{%-   if order == 30                     -%}
-{%-     assign stage = "lexer"           -%}
+{%-     assign stage = stages[forloop.index0]           -%}
+{%-     assign title = titles[forloop.index0]           -%}
 
 {%-     assign baseurl = stage | prepend: "/" -%}
 {% if site.baseurl == baseurl           -%}
@@ -11,7 +8,7 @@
 {% endif                                  %}
 
 {%-     capture node                     -%}
-{{ node }}<a href="/{{ stage }}" id={{ order }} title="{{ lexer }}">{{ stage }}</a>
+{{ node }}<a href="{{ baseurl }}" id={{ item }} title="{{ title }}">{{ stage }}</a>
 {%-     endcapture                          -%}
 
 {%-     capture nodes                     -%}
@@ -21,49 +18,3 @@
 {%        include tabs.liquid size=10 %}{{ node }}
 {%        include tabs.liquid size=11 %}<ul>
 {%-     endcapture                          -%}
-
-{% comment %} (10th)th+1=110 {% endcomment %}
-
-{%-   elsif order == 110                    -%}
-{%-     assign stage = "parser"               -%}
-
-{%-     assign baseurl = stage | prepend: "/" -%}
-{% if site.baseurl == baseurl           -%}
-{%-  assign node = '<li class="current">' -%}
-{% endif                                  %}
-
-{%-     capture node                     -%}
-{{ node }}<a href="/{{ stage }}" id={{ order }} title="{{ parser }}">{{ stage }}</a>
-{%-     endcapture                          -%}
-
-{%-     capture nodes                     -%}
-{{        nodes                            }}
-{%        include tabs.liquid size=11 %}</ul>
-{%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}{{ node }}
-{%        include tabs.liquid size=11 %}<ul>
-{%-     endcapture                          -%}
-
-{% comment %} ((10th)th)+1=600 {% endcomment %}
-
-{%-   elsif order == 600                    -%}
-{%-     assign stage = "grammar"              -%}
-
-{%-     assign baseurl = stage | prepend: "/" -%}
-{% if site.baseurl == baseurl           -%}
-{%-  assign node = '<li class="current">' -%}
-{% endif                                  %}
-
-{%-     capture node                     -%}
-{{ node }}<a href="/{{ stage }}" id={{ order }} title="{{ grammar }}">{{ stage }}</a>
-{%-     endcapture                          -%}
-
-{%-     capture nodes                     -%}
-{{        nodes                            }}
-{%        include tabs.liquid size=11 %}</ul>
-{%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}{{ node }}
-{%        include tabs.liquid size=11 %}<ul>
-{%-     endcapture                          -%}
-
-{%-   endif                                 -%}
