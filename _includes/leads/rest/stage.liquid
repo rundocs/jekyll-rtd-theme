@@ -4,10 +4,8 @@
 {%- assign parts = '' | split: ',' -%}
 
 {%- assign items = '' | split: ',' -%}
-{%- assign items = items | push: 30 | push: 110 | push: 600 -%}
-
 {%- assign stages = '' | split: ',' -%}
-{%- assign stages = stages | push: 'lexer' | push: 'parser' | push: 'grammar' -%}
+{%- assign titles = '' | split: ',' -%}
 
 {%- capture lexer -%}
 [7;13;29;109](102): Spin 7 to 109 via 30 of 1+29 (10th prime)
@@ -22,5 +20,6 @@
 [29;69;114;168](618)
 {%- endcapture -%}
 
-{%- assign titles = '' | split: ',' -%}
+{%- assign items = items | push: 30 | push: 110 | push: 600 -%}
 {%- assign titles = titles | push: lexer | push: parser | push: grammar -%}
+{%- assign stages = stages | push: 'lexer' | push: 'parser' | push: 'grammar' -%}
