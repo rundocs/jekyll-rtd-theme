@@ -33,13 +33,10 @@
 {%-    include core/_parts.liquid   -%}
 {%-  endfor                                  -%}
 
-{%-  assign items = '' | split: ','        -%}
-{%-  assign items = items | push: 30       -%}
-{%-  assign items = items | push: 110      -%}
-{%-  assign items = items | push: 600      -%}
-
 {%-  for item in items                       -%}
-{%-    include core/node.liquid                -%}
+{%-    if order == item                     -%}
+{%-      include core/node.liquid                -%}
+{%-    endif                                  %}
 {%-  endfor                                  -%}
 
 {%-  include core/_node.liquid               -%}

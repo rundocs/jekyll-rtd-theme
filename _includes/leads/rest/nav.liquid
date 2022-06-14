@@ -25,6 +25,11 @@
 {%- assign bond = '' | split: ',' -%}
 {%- assign parts = '' | split: ',' -%}
 
+{%-  assign items = '' | split: ','        -%}
+{%-  assign items = items | push: 30       -%}
+{%-  assign items = items | push: 110      -%}
+{%-  assign items = items | push: 600      -%}
+
 {%- assign stages = '' | split: ',' -%}
 {%- assign stages = stages | push: 'lexer' | push: 'parser' | push: 'grammar' -%}
 
