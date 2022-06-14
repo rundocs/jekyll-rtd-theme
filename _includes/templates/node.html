@@ -1,8 +1,25 @@
-{%-   if primes contains order              -%}
-{%-     assign parts = parts | push: order  -%}
-{%-     assign width = parts | size         -%}
-{%-     include core/parts.liquid           -%}
-{%-   endif                                 -%}
+{%-  if primes contains order               -%}
+{%-    assign parts = parts | push: order   -%}
+{%-    assign width = parts | size          -%}
+
+{%-    if parts contains width              -%}
+{%-      assign bond = bond | push: width   -%}
+{%-      assign weight = bond | size        -%}
+
+{%-      if bond contains weight            -%}
+{%-        assign arm = arm | push: weight  -%}
+{%-	       assign expanse = arm | size      -%}
+
+{%-	       if arm contains expanse          -%}
+{%-	         assign id = id | push: expanse -%}
+{%-	         assign eq = id | size          -%}
+{%-	       endif                            -%}
+
+{%-	     endif                              -%}
+{%-    endif                                -%}
+{%-  endif                                  -%}
+
+{%-  include core/parts.liquid              -%}
 
 {% comment %} 10th+1=30  {% endcomment %}
 
