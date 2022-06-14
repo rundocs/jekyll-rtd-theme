@@ -25,18 +25,24 @@
 {%- assign bond = '' | split: ',' -%}
 {%- assign parts = '' | split: ',' -%}
 
-{%-  assign items = '' | split: ','        -%}
-{%-  assign items = items | push: 30       -%}
-{%-  assign items = items | push: 110      -%}
-{%-  assign items = items | push: 600      -%}
+{%- assign items = '' | split: ',' -%}
+{%- assign items = items | push: 30 | push: 110 | push: 600 -%}
 
 {%- assign stages = '' | split: ',' -%}
 {%- assign stages = stages | push: 'lexer' | push: 'parser' | push: 'grammar' -%}
 
-{%- capture lexer %}[7;13;29;109](102): Spin 7 to 109 via 30 of 1+29 (10th prime){% endcapture -%}
-{%- capture parser %}[13;43;66;139](329): Spin 13 to 43 via 139=109+30 (1st-step of 36 on the 1st-layer){% endcapture -%}
-{%- capture grammar %}[19;68;89;168](289): Spin 19 of (43 to 89) via 169=139+30 (2nd-step of 36 on the 2nd-layer){% endcapture -%}
-{%- capture mapping %}[29;69;114;168](618){% endcapture -%}
+{%- capture lexer -%}
+[7;13;29;109](102): Spin 7 to 109 via 30 of 1+29 (10th prime)
+{% endcapture -%}
+{%- capture parser -%}
+[13;43;66;139](329): Spin 13 to 43 via 139=109+30 (1st-step of 36 on the 1st-layer)
+{% endcapture -%}
+{%- capture grammar -%}
+[19;68;89;168](289): Spin 19 of (43 to 89) via 169=139+30 (2nd-step of 36 on the 2nd-layer)
+{% endcapture -%}
+{%- capture mapping -%}
+[29;69;114;168](618)
+{%- endcapture -%}
 
 {%- assign titles = '' | split: ',' -%}
 {%- assign titles = titles | push: lexer | push: parser | push: grammar -%}
