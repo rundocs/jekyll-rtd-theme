@@ -5,10 +5,9 @@ sort: 2
 # Vietnamese love songs
 
 <div style="position:relative;padding-bottom:56.25%;">
-<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLQpdLg156HYKatKdwmjDEKjWdJBWrqz8M"
+<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLQpdLg156HYKatKdwmjDEKjWdJBWrqz8M&modestbranding=1"
         style="width:100%;height:100%;position:absolute;left:0px;top:0px;" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
-        sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation" ></iframe> </div>  
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe> </div>  
 
 \
 \
