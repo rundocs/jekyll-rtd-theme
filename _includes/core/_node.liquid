@@ -1,36 +1,28 @@
-{%- comment %}
-10+29+109+(109-100)²+100x10=π(10000)
-{%- assign strip = nodes | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
-{% endcomment -%}
+{%-      assign node = '<li>'                   -%}
+{%-      assign title = titles[keys_size]  -%}
+{%-      assign stage = stages[keys_size]  -%}
+{%-      assign baseurl = title | prepend: "/"  -%}
 
-{%-  assign title = '('
-       | append: order
-       | append: ')'
-       | append: tag                        -%}
+{%-      if site.baseurl == baseurl             -%}
+{%-        assign node = '<li class="current">' -%}
+{%-      endif                                  -%}
 
-{%-  assign stage = '['
-       | append: eq
-       | append: ';'
-       | append: expanse
-       | append: ';'
-       | append: weight
-       | append: ';'
-       | append: num
-       | append: ']'                        -%}
+{%-      assign node = node
+           | append: '<a href="'
+           | append: baseurl
+           | append: '" id="'
+           | append: title
+           | append: '" title="'
+           | append: stage
+           | append: '">'
+           | append: title
+           | append: '</a>'                     -%}
 
-{%-  assign node = '<li>'                   -%}
-{%-  assign node = node
-       | append: '<a href="'
-       | append: baseurl
-       | append: '" id='
-       | append: width
-       | append: ' title="'
-       | append: stage
-       | append: '">'
-       | append: title
-       | append: '</a></li>'                -%}
+{%-      capture nodes                          -%}
+{{         nodes                                 }}
+{%         include tabs.liquid size=11 %}</ul>
+{%         include tabs.liquid size=10 %}</li>
+{%         include tabs.liquid size=10 %}{{ node }}
+{%         include tabs.liquid size=11 %}<ul>
+{%-      endcapture                             -%}
 
-{%-  capture nodes                          -%}
-{{     nodes                                 }}
-{%     include tabs.liquid size=12 %}{{ node }}
-{%-  endcapture                             -%}
