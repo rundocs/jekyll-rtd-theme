@@ -52,6 +52,7 @@ Scheme:
 
  Direction:
  1 = 0 + 1
+ 11 = 10 + 1
  30 = 10th prime + 1 = 29 + 1 = 30 - 1 + 1
  110 = (10th)th prime + 1 = 29th prime + 1 = (30 - 1)th prime + 1 
  230 = (10 x 5)th prime + 1 = 50th prime + 1 = 229 + 1 = π(10000) - 1000 + 1 
@@ -60,6 +61,4 @@ Scheme:
 {%- assign keys = '' | split: ',' -%}
 {%- assign stages = '' | split: ',' -%}
 {%- assign titles = 'home,lexer,parser,grammar' | split: ',' -%}
-
-{%- assign keys = keys | push: 1 | push: 11 | push: 30 | push: 110 -%}
 {%- for item in keys %}{%- include core/_stage.liquid -%}{%- endfor -%}

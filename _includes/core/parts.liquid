@@ -19,8 +19,8 @@
 {%-	       if arm contains expanse          -%}
 {%-	         assign id = id | push: expanse -%}
 {%-	         assign eq = id | size          -%}
-{%-	       endif                            -%}
 
+{%-	       endif                            -%}
 {%-	     endif                              -%}
 {%-    endif                                -%}
 
@@ -33,6 +33,5 @@
 {%-    include core/_parts.liquid           -%}
 {%-  endfor                                 -%}
 
-{%-  include core/node.liquid               -%}
 {%-  endif                                  -%}
 
