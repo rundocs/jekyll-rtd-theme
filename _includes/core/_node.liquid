@@ -8,19 +8,21 @@
        | append: ')'
        | append: tag                        -%}
 
-{%-  assign stage = "["
+{%-  assign stage = '['
        | append: eq | default: 1
-       | append: ";"
+       | append: ';'
        | append: expanse | default: 1
-       | append: ";"
+       | append: ';'
        | append: weight | default: 1
-       | append: ";"
-       | append: width | minus: 32
-       | append: "]"                       -%}
+       | append: ';'
+       | append: width | default: 1 | minus: 32
+       | append: ']'                       -%}
 
 {%-   capture stage                        -%}
-[{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | minus: 32}}] 
+[{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | default: 1 }}] 
 {%-   endcapture                            -%}
+
+
 
 {%-  assign node = '<li>'                   -%}
 {%-  assign node = node
