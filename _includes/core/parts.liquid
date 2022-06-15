@@ -1,6 +1,9 @@
 {%-  assign tag = ""                        -%}
 {%-  assign array = '' | split: ','         -%}
 
+{%-  assign primes = primes | push: num     -%}
+{%-  assign order = primes | size           -%}
+
 {%-  if primes contains order               -%}
 {%-    assign parts = parts | push: order   -%}
 {%-    assign width = parts | size          -%}
