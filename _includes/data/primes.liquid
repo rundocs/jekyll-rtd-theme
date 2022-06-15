@@ -37,7 +37,6 @@
 
 {%-  assign primes = primes | push: num     -%}
 {%-  assign order = primes | size           -%}
-{%-  include core/parts.liquid              -%}
 
 {%-  for item in keys                       -%}
 {%-    if order == item                     -%}
@@ -45,6 +44,7 @@
 {%-    endif                                -%}
 {%-  endfor                                 -%}
 
+{%-  include core/parts.liquid              -%}
 {%-  include core/_node.liquid              -%}
 
 {%- endfor                                  -%}
