@@ -4,7 +4,7 @@ sort: 3
 
 # Classic pieces
 
-<iframe width="100%" height="56.25vw" 
+<iframe width="100%" height="auto" aspect-ratio="16/9"
         src="https://www.youtube-nocookie.com/embed/videoseries?list=PLQpdLg156HYIfKyIDKEKLbPm9GOi5Xy-7"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
