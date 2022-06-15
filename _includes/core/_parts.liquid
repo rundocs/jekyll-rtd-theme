@@ -1,1 +1,5 @@
-{%- assign deep = forloop.index -%}
+{%- assign item_size = item | size -%}
+
+{%- if item_size == 10 -%}
+{%-   assign tag = "*" -%}
+{%- endif -%}
