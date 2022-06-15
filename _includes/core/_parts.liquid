@@ -1,5 +1,5 @@
 {%- assign item_size = item | size -%}
 
-{%- if item_size == 10 -%}
+{%- if item_size == 10 and order < 600 -%}
 {%-   assign tag = "*" -%}
 {%- endif -%}
