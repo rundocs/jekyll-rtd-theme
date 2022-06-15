@@ -4,7 +4,7 @@
 {% endcomment -%}
 
 {%-  assign title = '('
-       | append: num
+       | append: order
        | append: ')'
        | append: tag                        -%}
 
@@ -15,7 +15,7 @@
        | append: ';'
        | append: weight
        | append: ';'
-       | append: order
+       | append: num
        | append: ']'                        -%}
 
 {%-  assign node = '<li>'                   -%}
