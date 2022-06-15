@@ -3,35 +3,6 @@
 {%- assign bond = '' | split: ',' -%}
 {%- assign parts = '' | split: ',' -%}
 
-{%- assign items = '' | split: ',' -%}
-{%- assign stages = '' | split: ',' -%}
-{%- assign titles = '' | split: ',' -%}
-
-{%- capture lexer -%}
-[7;13;29;109](102): Spin 7 to 109 via 30 of 1+29 (10th prime)
-{%- endcapture -%}
-{%- capture parser -%}
-[13;43;66;139](329): Spin 13 to 43 via 139=109+30 (1st-step of 36 on the 1st-layer)
-{%- endcapture -%}
-{%- capture grammar -%}
-[19;68;89;168](289): Spin 19 of (43 to 89) via 169=139+30 (2nd-step of 36 on the 2nd-layer)
-{%- endcapture -%}
-{%- capture mapping -%}
-[29;69;114;168](618)
-{%- endcapture -%}
-
-{%- comment -%}
-1 = 0 + 1
-30 = 10th prime + 1 = 29 + 1 = 30 - 1 + 1
-110 = (10th)th prime + 1 = 29th prime + 1 = (30 - 1)th prime + 1 
-230 = (10 x 5)th prime + 1 = 50th prime + 1 = 229 + 1 = π(10000) - 1000 + 1 
-{%-  endcomment -%}
-
-{%- include core/stage.liquid -%}
-{%- assign items = items | push: 30 | push: 110 | push: 230 -%}
-{%- assign titles = titles | push: lexer | push: parser | push: grammar -%}
-{%- assign stages = stages | push: 'lexer' | push: 'parser' | push: 'grammar' -%}
-
 {%- comment -%}
 Scheme:
  168 + 329 + 289 = 786
@@ -65,12 +36,26 @@ Scheme:
  Φ = 1000/618 = 1,618 (Golden Ratio) 
  Δ(1,6,18) = 61+28 = 89 (Mersenne Primes) 
  
- Faktors:
+ Faktor:
  168 = 12x14 = 8x21 = 7x24 = 6x28 = 4x42 = 3x56 = 2x84
  618 = 6x103 = 6x(100+3) = 3x206 = 3x(200+6) = 2x309 = 2x(300+9)
  1+6+8 = π(1x6x8) = π(1x48) = π(2x24) = π(3x16)= π(4x12) = π(6x8)
  
- Permutations:
+ Grammar:
  168 = 102 + 66 = 2x3x((8+9)+(2+9)) = π(Φ(289+329)) = π(Φ((8+9)²+(1+2)&29))
  168 + 618 = 168 + 329 + 289 = (7x24) + (7x47) + (8+9)² = (7x71) + (17x17)
+
+ Direction:
+ 1 = 0 + 1
+ 30 = 10th prime + 1 = 29 + 1 = 30 - 1 + 1
+ 110 = (10th)th prime + 1 = 29th prime + 1 = (30 - 1)th prime + 1 
+ 230 = (10 x 5)th prime + 1 = 50th prime + 1 = 229 + 1 = π(10000) - 1000 + 1 
 {%-  endcomment -%}
+
+{%- assign stages = '' | split: ',' -%}
+{%- assign direction = '' | split: ',' -%}
+
+{%- assign titles = 'lexer,parser,grammar' | split: ',' -%}
+{%- assign direction = direction | push: 30 | push: 110 | push: 230 -%}
+
+{%- for item in direction %}{%- include core/_stage.liquid -%}{%- endfor -%}

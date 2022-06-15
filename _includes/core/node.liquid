@@ -3,7 +3,7 @@
 
 {%-  assign title = titles[index]           -%}
 {%-  assign stage = stages[index]           -%}
-{%-  assign baseurl = stage | prepend: "/"  -%}
+{%-  assign baseurl = title | prepend: "/"  -%}
 
 {%-  if site.baseurl == baseurl             -%}
 {%-    assign node = '<li class="current">' -%}
@@ -15,9 +15,9 @@
        | append: '" id='
        | append: item
        | append: ' title="'
-       | append: title
-       | append: '">'
        | append: stage
+       | append: '">'
+       | append: title
        | append: '</a>'                     -%}
 
 {%-  capture nodes                          -%}
