@@ -15,11 +15,11 @@
        | append: ';'
        | append: weight | default: 1
        | append: ';'
-       | append: width | default: 1 | minus: 32
+       | append: width | minus: 32
        | append: ']'                       -%}
 
 {%-   capture stage                        -%}
-[{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | default: 1 }}] 
+[{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | minus: 32}}] 
 {%-   endcapture                            -%}
 
 
