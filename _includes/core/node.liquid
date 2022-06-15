@@ -1,39 +1,40 @@
-{%-  for item in keys                          -%}
+{%-  for item in keys                           -%}
 
-{%-   if forloop.first                         -%}
-{%-     continue -%}
-{%-   endif -%}
+{%-    if forloop.first                         -%}
+{%-      continue -%}
+{%-    endif -%}
 
-{%-   if width == item                         -%}
-{%-     assign node = '<li>'                   -%}
-{%-     assign title = titles[forloop.index0]  -%}
-{%-     assign stage = stages[forloop.index0]  -%}
-{%-     assign baseurl = title | prepend: "/"  -%}
+{%-    if width == item                         -%}
+{%-      assign node = '<li>'                   -%}
+{%-      assign title = titles[forloop.index0]  -%}
+{%-      assign stage = stages[forloop.index0]  -%}
+{%-      assign baseurl = title | prepend: "/"  -%}
 
-{%-     if site.baseurl == baseurl             -%}
-{%-       assign node = '<li class="current">' -%}
-{%-     endif                                  -%}
+{%-      if site.baseurl == baseurl             -%}
+{%-        assign node = '<li class="current">' -%}
+{%-      endif                                  -%}
 
-{%-     assign node = node
-          | append: '<a href="'
-          | append: baseurl
-          | append: '" id='
-          | append: width
-          | append: ' title="'
-          | append: stage
-          | append: '">'
-          | append: title
-          | append: '</a>'                     -%}
+{%-      assign node = node
+           | append: '<a href="'
+           | append: baseurl
+           | append: '" id='
+           | append: width
+           | append: ' title="'
+           | append: stage
+           | append: '">'
+           | append: title
+           | append: '</a>'                     -%}
 
-{%-     capture nodes                             -%}
-{{        nodes                                    }}
-{%        include tabs.liquid size=11 %}</ul>
-{%        include tabs.liquid size=10 %}</li>
-{%        include tabs.liquid size=10 %}{{ node    }}
-{%        include tabs.liquid size=11 %}<ul>
-{%-     endcapture                                -%}
-{%-    endif                                   -%}
+{%-      capture nodes                          -%}
+{{         nodes                                 }}
+{%         include tabs.liquid size=11 %}</ul>
+{%         include tabs.liquid size=10 %}</li>
+{%         include tabs.liquid size=10 %}{{ node }}
+{%         include tabs.liquid size=11 %}<ul>
+{%-      endcapture                             -%}
 
-{%-  endfor                                    -%}
-{%-  include core/_node.liquid                 -%}
+{%-    endif                                    -%}
+{%-  endfor                                     -%}
+
+{%-  include core/_node.liquid                  -%}
 
