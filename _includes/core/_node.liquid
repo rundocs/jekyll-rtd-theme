@@ -1,14 +1,22 @@
-{%- comment %}10+29+109+(109-100)²+100x10=π(10000){% endcomment -%}
-
-{%-   capture title                          -%}
-({{ num }}){{ tag }}
-{%-   endcapture                            -%}
-
+{%- comment %}
+10+29+109+(109-100)²+100x10=π(10000)
 {%- assign strip = nodes | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
+{% endcomment -%}
 
-{%-   capture stage                         -%}
-[{{ eq | default: 1 }};{{ expanse | default: 1 }};{{ weight | default: 1 }};{{ width | minus: 32 }}] 
-{%-   endcapture                            -%}
+{%-  assign title = '('
+       | append: num
+       | append: ')'
+       | append: tag                        -%}
+
+{%-  assign stage = '['
+       | append: eq
+       | append: ';'
+       | append: expanse
+       | append: ';'
+       | append: weight
+       | append: ';'
+       | append: width | minus: 32
+       | append: '"></a></li>'              -%}
 
 {%-  assign node = '<li>'                   -%}
 {%-  assign node = node
