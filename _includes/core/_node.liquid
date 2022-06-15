@@ -1,11 +1,11 @@
-{%-      assign node = '<li>'                   -%}
-{%-      assign title = titles[keys_size]  -%}
-{%-      assign stage = stages[keys_size]  -%}
-{%-      assign baseurl = title | prepend: "/"  -%}
+{%-      assign node = '<li>'                     -%}
+{%-      assign title = titles[keys_size]    -%}
+{%-      assign stage = stages[keys_size]    -%}
+{%-      assign baseurl = title | prepend: "/"    -%}
 
-{%-      if site.baseurl == baseurl             -%}
-{%-        assign node = '<li class="current">' -%}
-{%-      endif                                  -%}
+{%-      if site.baseurl == baseurl               -%}
+{%-        assign node = '<li class="current">'   -%}
+{%-      endif                                    -%}
 
 {%-      assign node = node
            | append: '<a href="'
@@ -16,7 +16,7 @@
            | append: stage
            | append: '">'
            | append: title
-           | append: '</a>'                     -%}
+           | append: '</a>'                       -%}
 
 {%-      assign _node = '<li>'
            | append: '<a href="'
@@ -29,7 +29,7 @@
            | append: title
            | append: '-1</a>'                     -%}
 
-{%-      capture nodes                          -%}
+{%-      capture nodes                            -%}
 {{         nodes                                 }}
 {%         include tabs.liquid size=13 %}</ul>
 {%         include tabs.liquid size=12 %}</li>
@@ -37,6 +37,14 @@
 {%         include tabs.liquid size=10 %}</li>
 {%         include tabs.liquid size=10 %}{{ node }}
 {%         include tabs.liquid size=11 %}<ul>
+{%         include tabs.liquid size=12 %}{{ _node }}
+{%         include tabs.liquid size=13 %}<ul>
+{%-      endcapture                               -%}
+
+{%-      capture nodes                          -%}
+{{         nodes                                 }}
+{%         include tabs.liquid size=13 %}</ul>
+{%         include tabs.liquid size=12 %}</li>
 {%         include tabs.liquid size=12 %}{{ _node }}
 {%         include tabs.liquid size=13 %}<ul>
 {%-      endcapture                             -%}
