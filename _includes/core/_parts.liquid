@@ -1,7 +1,6 @@
-{%- assign keys_size = keys | size -%}
-{%- assign item_size = item | size -%}
+{{%- assign item_size = item | size -%}
 
-{%- if item_size == 10 and order < 600 -%}
+{%- if item_size == 10 and keys_size < forloop.index -%}
+{%-   assign keys_size = forloop.index -%}
 {%-   assign tag = keys_size -%}
-{%-   assign keys = keys | push: forloop.index0 -%}
 {%- endif -%}
