@@ -9,9 +9,13 @@ sort: 1
 <iframe width="900" height="600"
         src="https://www.youtube.com/embed/videoseries?list=PLQpdLg156HYJiAAPXXQ3-iHMv02Ydg_tR"
         title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Vietnamese love songs
+
+<iframe width="900" height="600"
+        src="https://www.youtube-nocookie.com/embed/videoseries?list=PLQpdLg156HYKatKdwmjDEKjWdJBWrqz8M"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Classic pieces
