@@ -1,8 +1,8 @@
 {%-  for item in keys                       -%}
 {%-    if width == item                     -%}
 {%-  assign node = '<li>'                   -%}
-{%-  assign title = titles[forloop.index0]   -%}
-{%-  assign stage = stages[forloop.index0]   -%}
+{%-  assign title = titles[forloop.index0]  -%}
+{%-  assign stage = stages[forloop.index0]  -%}
 {%-  assign baseurl = title | prepend: "/"  -%}
 
 {%-  if site.baseurl == baseurl             -%}
