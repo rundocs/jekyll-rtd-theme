@@ -1,8 +1,10 @@
-{%-  assign node = '<li>'                   -%}
-{%-  assign index = forloop.index0          -%}
+{%-  if forloop.first                       -%}
+{%-    continue                             -%}
+{%-  endif                                  -%}
 
-{%-  assign title = titles[index]           -%}
-{%-  assign stage = stages[index]           -%}
+{%-  assign node = '<li>'                   -%}
+{%-  assign title = titles[forloop.index]   -%}
+{%-  assign stage = stages[forloop.index]   -%}
 {%-  assign baseurl = title | prepend: "/"  -%}
 
 {%-  if site.baseurl == baseurl             -%}

@@ -53,7 +53,7 @@ Scheme:
 {%-  endcomment -%}
 
 {%- assign stages = '' | split: ',' -%}
-{%- assign direction = '' | split: ',' -%}
+{%- assign direction = 1 | split: ',' -%}
 
 {%- assign titles = 'lexer,parser,grammar' | split: ',' -%}
 {%- assign direction = direction | push: 30 | push: 110 | push: 230 -%}
