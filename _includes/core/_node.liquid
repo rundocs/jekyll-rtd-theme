@@ -18,7 +18,8 @@
            | append: title
            | append: '</a>'                     -%}
 
-{%-      assign _node = '<a href="'
+{%-      assign _node = node
+           | append: '<a href="'
            | append: baseurl
            | append: '/1" id="'
            | append: title
