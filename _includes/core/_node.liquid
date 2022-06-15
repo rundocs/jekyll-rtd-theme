@@ -9,11 +9,11 @@
        | append: tag                        -%}
 
 {%-  assign stage = '['
-       | append: eq
+       | append: eq | default: 1
        | append: ';'
-       | append: expanse
+       | append: expanse | default: 1
        | append: ';'
-       | append: weight
+       | append: weight | default: 1
        | append: ';'
        | append: width | minus: 32
        | append: ']'                       -%}
