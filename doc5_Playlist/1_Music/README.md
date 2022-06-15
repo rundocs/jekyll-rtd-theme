@@ -2,6 +2,6 @@
 sort: 5
 ---
 
-# Playlist
+# Music
 
 {% include list.liquid all=true %}
