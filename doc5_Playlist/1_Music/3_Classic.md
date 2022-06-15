@@ -4,7 +4,7 @@ sort: 3
 
 # Classic pieces
 
-<iframe width="100%" height="56.25vw"  /* 100/56.25 = 560/315 = 1.778 */
+<iframe width="100%" height="56.25vw" 
         src="https://www.youtube-nocookie.com/embed/videoseries?list=PLQpdLg156HYIfKyIDKEKLbPm9GOi5Xy-7"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
