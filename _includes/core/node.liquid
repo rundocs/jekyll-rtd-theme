@@ -1,13 +1,6 @@
-{%-  for item in keys                           -%}
-
-{%-    if forloop.first                         -%}
-{%-      continue -%}
-{%-    endif -%}
-
-{%-    if width == item                         -%}
 {%-      assign node = '<li>'                   -%}
-{%-      assign title = titles[forloop.index0]  -%}
-{%-      assign stage = stages[forloop.index0]  -%}
+{%-      assign title = titles[keys_size]  -%}
+{%-      assign stage = stages[keys_size]  -%}
 {%-      assign baseurl = title | prepend: "/"  -%}
 
 {%-      if site.baseurl == baseurl             -%}
@@ -33,8 +26,4 @@
 {%         include tabs.liquid size=11 %}<ul>
 {%-      endcapture                             -%}
 
-{%-    endif                                    -%}
-{%-  endfor                                     -%}
-
-{%-  include core/_node.liquid                  -%}
 

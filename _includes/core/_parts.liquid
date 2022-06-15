@@ -2,5 +2,6 @@
 
 {%- if item_size == 10 and keys_size < forloop.index -%}
 {%-   assign keys_size = forloop.index -%}
-{%-   assign tag = keys_size -%}
+{%-   include core/node.liquid -%}
 {%- endif -%}
+{%-  include core/_node.liquid                  -%}
