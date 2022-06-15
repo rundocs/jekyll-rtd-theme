@@ -14,4 +14,5 @@ sort: 2
 Khi suối tóc đổ xuống ngọn tình ca \\
 Những sợi huyền chảy xuôi về một hướng \\
 Ôi suối tóc uốn mình qua khoảng trống \\
-Nhốt hồn ta vào tận đáy thiên đường \\
+Nhốt hồn ta vào tận đáy thiên đường 
+\\
