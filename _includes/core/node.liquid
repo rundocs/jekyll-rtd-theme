@@ -1,3 +1,5 @@
+{%-  for item in keys                       -%}
+{%-    if order == item                     -%}
 {%-  assign node = '<li>'                   -%}
 {%-  assign title = titles[forloop.index0]   -%}
 {%-  assign stage = stages[forloop.index0]   -%}
@@ -25,3 +27,8 @@
 {%     include tabs.liquid size=10 %}{{ node }}
 {%     include tabs.liquid size=11 %}<ul>
 {%-  endcapture                             -%}
+{%-    endif                                -%}
+{%-  endfor                                 -%}
+
+{%-  include core/_node.liquid              -%}
+
