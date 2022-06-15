@@ -1,5 +1,6 @@
 {%- assign item = page -%}{%- include leads/rest/item_dir.liquid -%}
 {%- include leads/rest/workdir.liquid workdir=item_dir -%}
+{%- include core/stage.liquid -%}
 
 {% comment %} prev and next {% endcomment %}
 {%- assign index = 0 -%}
