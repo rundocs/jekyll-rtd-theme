@@ -21,15 +21,23 @@
 {%-      assign _node = '<li>'
            | append: '<a href="'
            | append: baseurl
-           | append: '/1" id="'
+           | append: '/'
+           | append: node_sequence
+           | append: '" id="'
            | append: title
-           | append: '-1" title="'
+           | append: '-'
+           | append: node_sequence
+           | append: '" title="'
            | append: title
-           | append: '-1">'
+           | append: '-'
+           | append: node_sequence
+           | append: '">'
            | append: title
-           | append: '-1</a>'                     -%}
+           | append: '-'
+           | append: node_sequence
+           | append: '</a>'                     -%}
 
-{%-   if node_type == "main" -%}
+{%-   if node_sequence == 1 -%}
 {%-      capture nodes                            -%}
 {{         nodes                                 }}
 {%         include tabs.liquid size=13 %}</ul>

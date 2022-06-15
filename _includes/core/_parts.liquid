@@ -2,6 +2,6 @@
 
 {%- if item_size == 10 and keys_size < forloop.index -%}
 {%-   assign keys_size = forloop.index -%}
-{%-   assign node_type = "main" -%}
+{%-   assign node_sequence = 1 -%}
 {%-   include core/_node.liquid -%}
 {%- endif -%}
