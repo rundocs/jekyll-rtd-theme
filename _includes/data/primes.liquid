@@ -1,3 +1,4 @@
+{%- assign baseurl = "/"                    -%}
 {%- assign array = '' | split: ','          -%}
 {%- assign primes = '' | split: ','         -%}
 
@@ -40,7 +41,6 @@
 
 {%-  for item in keys                       -%}
 {%-    if order == item                     -%}
-{%-      assign baseurl = "/"               -%}
 {%-      include core/node.liquid           -%}
 {%-    endif                                -%}
 {%-  endfor                                 -%}
