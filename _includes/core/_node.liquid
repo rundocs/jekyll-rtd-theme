@@ -9,13 +9,13 @@
        | append: tag                        -%}
 
 {%-  assign stage = '['
-       | append: eq | default: 1
+       | append: eq | string
        | append: ';'
-       | append: expanse | default: 1
+       | append: expanse | string
        | append: ';'
-       | append: weight | default: 1
+       | append: weight | string
        | append: ';'
-       | append: width | minus: 32
+       | append: width | minus: 32 | string
        | append: ']'                       -%}
 
 {%-  assign node = '<li>'                   -%}
