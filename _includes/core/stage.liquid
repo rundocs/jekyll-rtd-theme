@@ -52,10 +52,9 @@ Scheme:
  230 = (10 x 5)th prime + 1 = 50th prime + 1 = 229 + 1 = π(10000) - 1000 + 1 
 {%-  endcomment -%}
 
+{%- assign keys = '' | split: ',' -%}
 {%- assign stages = '' | split: ',' -%}
-{%- assign direction = '' | split: ',' -%}
-
 {%- assign titles = 'home,lexer,parser,grammar' | split: ',' -%}
-{%- assign direction = direction | push: 1 | push: 30 | push: 110 | push: 230 -%}
 
-{%- for item in direction %}{%- include core/_stage.liquid -%}{%- endfor -%}
+{%- assign keys = keys | push: 1 | push: 30 | push: 110 | push: 230 -%}
+{%- for item in keys %}{%- include core/_stage.liquid -%}{%- endfor -%}
