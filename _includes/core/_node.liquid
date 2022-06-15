@@ -13,16 +13,14 @@
 {%-   endcapture                            -%}
 
 {%-  assign stage = '['
-       | append: eq | default: 1
+       | append: eq
        | append: ';'
-       | append: expanse | default: 1
+       | append: expanse
        | append: ';'
-       | append: weight | default: 1
+       | append: weight
        | append: ';'
-       | append: width | default: 1 | minus: 32
-       | append: ']'                       -%}
-
-{
+       | append: width
+       | append: ']'                        -%}
 
 {%-  assign node = '<li>'                   -%}
 {%-  assign node = node
