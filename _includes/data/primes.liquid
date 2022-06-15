@@ -37,6 +37,7 @@
 
 {%-  assign primes = primes | push: num     -%}
 {%-  assign order = primes | size           -%}
+{%-  assign baseurl = "/"                   -%}
 
 {%-  for item in keys                       -%}
 {%-    if order == item                     -%}
