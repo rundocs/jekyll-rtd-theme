@@ -1,8 +1,8 @@
 ---
-sort: 5
+sort: 4
 ---
 
-# Some Terminologies in Mechanics
+# Terminologies in Mechanics
 
 ## Toughness vs Resilience
 
