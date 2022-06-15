@@ -1,0 +1,10 @@
+---
+sort: 1
+---
+
+# Vietnamese heroic songs
+
+<iframe width="900" height="600"
+        src="https://www.youtube.com/embed/videoseries?list=PLQpdLg156HYJiAAPXXQ3-iHMv02Ydg_tR"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
