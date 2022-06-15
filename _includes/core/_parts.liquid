@@ -2,6 +2,7 @@
 
 {%- if item_size == 10 and keys_size < forloop.index -%}
 {%-   assign keys_size = forloop.index -%}
-{%-   assign group = 1 -%}
+{%-   assign node_sequence = "main" -%}
+{%-   assign group = primes[forloop.index] | plus: forloop.index -%}
 {%-   include core/_node.liquid -%}
 {%- endif -%}

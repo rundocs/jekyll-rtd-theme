@@ -37,7 +37,7 @@
            | append: group
            | append: '</a>'                     -%}
 
-{%-   if group == 1 -%}
+{%-   if node_sequence == "main" -%}
 {%-      capture nodes                            -%}
 {{         nodes                                 }}
 {%         include tabs.liquid size=13 %}</ul>
