@@ -15,7 +15,7 @@
        | append: ';'
        | append: weight
        | append: ';'
-       | append: width
+       | append: order
        | append: ']'                        -%}
 
 {%-  assign node = '<li>'                   -%}
@@ -23,7 +23,7 @@
        | append: '<a href="'
        | append: baseurl
        | append: '" id='
-       | append: order
+       | append: width
        | append: ' title="'
        | append: stage
        | append: '">'
