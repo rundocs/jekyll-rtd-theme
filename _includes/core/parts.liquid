@@ -23,7 +23,6 @@
 
 {%-	     endif                              -%}
 {%-    endif                                -%}
-{%-  endif                                  -%}
 
 {%-  assign array = array | push: id        -%}
 {%-  assign array = array | push: arm       -%}
@@ -33,4 +32,7 @@
 {%-  for item in array                      -%}
 {%-    include core/_parts.liquid           -%}
 {%-  endfor                                 -%}
+
+{%-  include core/node.liquid               -%}
+{%-  endif                                  -%}
 
