@@ -22,22 +22,22 @@
            | append: '<a href="'
            | append: baseurl
            | append: '/'
-           | append: node_sequence
+           | append: group
            | append: '" id="'
            | append: title
            | append: '-'
-           | append: node_sequence
+           | append: group
            | append: '" title="'
            | append: title
            | append: '-'
-           | append: node_sequence
+           | append: group
            | append: '">'
            | append: title
            | append: '-'
-           | append: node_sequence
+           | append: group
            | append: '</a>'                     -%}
 
-{%-   if node_sequence == 1 -%}
+{%-   if group == 1 -%}
 {%-      capture nodes                            -%}
 {{         nodes                                 }}
 {%         include tabs.liquid size=13 %}</ul>
