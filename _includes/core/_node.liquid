@@ -1,13 +1,13 @@
-{%-      assign node = '<li>'                     -%}
+{%-      assign link = '<li>'                     -%}
 {%-      assign title = titles[keys_size]    -%}
 {%-      assign stage = stages[keys_size]    -%}
 {%-      assign baseurl = title | prepend: "/"    -%}
 
 {%-      if site.baseurl == baseurl               -%}
-{%-        assign node = '<li class="current">'   -%}
+{%-        assign link = '<li class="current">'   -%}
 {%-      endif                                    -%}
 
-{%-      assign node = node
+{%-      assign link = link
            | append: '<a href="'
            | append: baseurl
            | append: '" id="'
@@ -19,7 +19,7 @@
            | append: '</a>'                       -%}
 
 {%-      assign title = 'group'                   -%}
-{%-      assign _node = '<li>'
+{%-      assign _link = '<li>'
            | append: '<a href="/'
            | append: title
            | append: '-'
@@ -38,24 +38,24 @@
            | append: group
            | append: '</a>'                     -%}
 
-{%-   if node_sequence == "main" -%}
-{%-      capture nodes                            -%}
-{{         nodes                                 }}
+{%-   if link_sequence == "main" -%}
+{%-      capture links                            -%}
+{{         links                                 }}
 {%         include tabs.liquid size=13 %}</ul>
 {%         include tabs.liquid size=12 %}</li>
 {%         include tabs.liquid size=11 %}</ul>
 {%         include tabs.liquid size=10 %}</li>
-{%         include tabs.liquid size=10 %}{{ node }}
+{%         include tabs.liquid size=10 %}{{ link }}
 {%         include tabs.liquid size=11 %}<ul>
-{%         include tabs.liquid size=12 %}{{ _node }}
+{%         include tabs.liquid size=12 %}{{ _link }}
 {%         include tabs.liquid size=13 %}<ul>
 {%-      endcapture                               -%}
 {%-   else -%}
-{%-      capture nodes                          -%}
-{{         nodes                                 }}
+{%-      capture links                          -%}
+{{         links                                 }}
 {%         include tabs.liquid size=13 %}</ul>
 {%         include tabs.liquid size=12 %}</li>
-{%         include tabs.liquid size=12 %}{{ _node }}
+{%         include tabs.liquid size=12 %}{{ _link }}
 {%         include tabs.liquid size=13 %}<ul>
 {%-      endcapture                             -%}
 {%-   endif -%}

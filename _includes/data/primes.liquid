@@ -1,7 +1,4 @@
-{%- assign baseurl = "/"                    -%}
-{%- assign array = '' | split: ','          -%}
 {%- assign primes = '' | split: ','         -%}
-
 {%- assign primes = primes | push: 2        -%}
 {%- assign n = include.n | default: 100     -%}
 
@@ -36,6 +33,7 @@
 {%-     continue                            -%}
 {%-   endif                                 -%}
 
-{%-  include core/parts.liquid              -%}
-
+{%-   assign primes = primes | push: num    -%}
 {%- endfor                                  -%}
+
+{%- include core/parts.liquid               -%}
