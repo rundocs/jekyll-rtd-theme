@@ -33,9 +33,7 @@
 
 {%-    for item in array                    -%}
 {%-      assign item_size = item | size -%}
-{%-      if item_size >= 10 -%}
 {%-      include core/_parts.liquid         -%}
-{%-      endif                              -%}
 {%-    endfor                               -%}
 
 {%-  endif                                  -%}
