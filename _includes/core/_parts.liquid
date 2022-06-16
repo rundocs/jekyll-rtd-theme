@@ -69,13 +69,12 @@ True Prime Vektors ζ(s):
 {%- assign item_size = item | size -%}
 
 {%- if item_size == 10 and keys_size < forloop.index -%}
-{%-   assign keys_size = forloop.index -%}
+
 {%-   assign node_sequence = "main" -%}
+{%-   assign keys_size = forloop.index -%}
+
 {%-   assign group = primes[forloop.index] | plus: forloop.index -%}
 {%-   assign strip = nodes | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
 {%-   include core/_node.liquid -%}
 
-{%- elsif item_size == 31 -%}
-{%-   assign node_sequence = "bravh" -%}
-{%-   include core/_node.liquid -%}
 {%- endif -%}

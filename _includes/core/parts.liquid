@@ -24,12 +24,12 @@
 {%-	     endif                              -%}
 {%-    endif                                -%}
 
+{%-  include core/node.liquid               -%}
+
 {%-  assign array = array | push: parts     -%}
 {%-  assign array = array | push: bond      -%}
 {%-  assign array = array | push: arm       -%}
 {%-  assign array = array | push: id        -%}
-
-{%-  include core/node.liquid              -%}
 
 {%-  for item in array                      -%}
 {%-    include core/_parts.liquid           -%}
