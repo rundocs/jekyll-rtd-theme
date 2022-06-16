@@ -20,9 +20,9 @@
 
 {%-      assign title = 'group'                   -%}
 {%-      assign _node = '<li>'
-           | append: '<a href="'
-           | append: baseurl
-           | append: '/'
+           | append: '<a href="/'
+           | append: title
+           | append: '-'
            | append: group
            | append: '" id="'
            | append: title
