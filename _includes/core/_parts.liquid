@@ -68,7 +68,7 @@ True Prime Vektors ζ(s):
 
 {%- assign item_size = item | size -%}
 
-{%- if item_size == 10 and keys_size < forloop.index -%}
+{%- if item_size >= 10 and keys_size < forloop.index -%}
 
 {%-   assign node_sequence = "main" -%}
 {%-   assign keys_size = forloop.index -%}
