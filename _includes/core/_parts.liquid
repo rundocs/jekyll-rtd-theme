@@ -55,6 +55,11 @@ Root Generation:
 {%-     include core/_node.liquid             -%}
 {%-   endif                                   -%}
 
+{%-   if width == 13 or order == 17  or order == 20           -%}
+{%-     assign node_sequence = "branch"       -%}
+{%-     include core/_node.liquid             -%}
+{%-   endif                                   -%}
+
 {%- comment %}
 
 True Prime Vektors ζ(s):
