@@ -60,7 +60,13 @@ Root Generation:
 {%-     include core/_node.liquid             -%}
 {%-   endif                                   -%}
 
-{%-   if weight == 42 or weight == 60  or weight == 72 -%}
+{%-   if weight == 40 or weight == 50  or weight == 60 -%}
+{%-     assign node_sequence = "branch"       -%}
+{%-     include core/_node.liquid             -%}
+{%-   endif                                   -%}
+
+
+{%-   if weight == 70 or weight == 80  or weight == 90 -%}
 {%-     assign node_sequence = "branch"       -%}
 {%-     include core/_node.liquid             -%}
 {%-   endif                                   -%}
