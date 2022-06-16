@@ -1,50 +1,39 @@
-{%- assign tag = ""                         -%}
-{%- assign baseurl = "/"                    -%}
+{%-  assign tag = ""                        -%}
+{%-  assign array = '' | split: ','         -%}
 
-{%-	assign eq = 0 -%}
-{%- assign width = 0 -%}
-{%- assign weight = 0 -%}
-{%-	assign expanse = 0 -%}
+{%-  assign primes = primes | push: num     -%}
+{%-  assign order = primes | size           -%}
 
-{%- assign id = '' | split: ',' -%}
-{%- assign arm = '' | split: ',' -%}
-{%- assign node = '' | split: ',' -%}
-{%- assign parts = '' | split: ',' -%}
+{%-  if primes contains order               -%}
+{%-    assign parts = parts | push: order   -%}
+{%-    assign width = parts | size          -%}
 
-{%- for prime in primes                     -%}
-{%-   assign array = '' | split: ','          -%}
-{%-   assign order = forloop.index          -%}
+{%-    if parts contains width              -%}
+{%-      assign bond = bond | push: width   -%}
+{%-      assign weight = bond | size        -%}
 
-{%-   if primes contains order               -%}
-{%-     assign parts = parts | push: order   -%}
-{%-     assign width = parts | size          -%}
+{%-      if bond contains weight            -%}
+{%-        assign arm = arm | push: weight  -%}
+{%-	       assign expanse = arm | size      -%}
 
-{%-     if parts contains width              -%}
-{%-       assign node = node | push: width   -%}
-{%-       assign weight = node | size        -%}
+{%-	       if arm contains expanse          -%}
+{%-	         assign id = id | push: expanse -%}
+{%-	         assign eq = id | size          -%}
+{%-	       endif                            -%}
 
-{%-       if node contains weight            -%}
-{%-         assign arm = arm | push: weight  -%}
-{%-	        assign expanse = arm | size      -%}
+{%-	     endif                              -%}
+{%-    endif                                -%}
 
-{%-	        if arm contains expanse          -%}
-{%-	          assign id = id | push: expanse -%}
-{%-	          assign eq = id | size          -%}
+{%-  assign array = array | push: parts     -%}
+{%-  assign array = array | push: bond      -%}
+{%-  assign array = array | push: arm       -%}
+{%-  assign array = array | push: id        -%}
 
-{%-	        endif                            -%}
-{%-	      endif                              -%}
-{%-     endif                                -%}
+{%-  include core/node.liquid              -%}
 
-{%-     assign array = array | push: parts     -%}
-{%-     assign array = array | push: node      -%}
-{%-     assign array = array | push: arm       -%}
-{%-     assign array = array | push: id        -%}
+{%-  for item in array                      -%}
+{%-    include core/_parts.liquid           -%}
+{%-  endfor                                 -%}
 
-{%-     include core/node.liquid              -%}
+{%-  endif                                  -%}
 
-{%-     for item in array                      -%}
-{%-       include core/_parts.liquid           -%}
-{%-     endfor                                 -%}
-
-{%-   endif                                  -%}
-{%- endfor                                 -%}
