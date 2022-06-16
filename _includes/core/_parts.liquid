@@ -60,13 +60,24 @@ Root Generation:
 {%-     include core/_node.liquid             -%}
 {%-   endif                                   -%}
 
-{%-   if weight == 40 or weight == 50  or weight == 60 -%}
+{%-   if width == 40 or width == 50  or width == 60 -%}
 {%-     assign node_sequence = "branch"       -%}
 {%-     include core/_node.liquid             -%}
 {%-   endif                                   -%}
 
 
-{%-   if weight == 70 or weight == 80  or weight == 90 -%}
+{%-   if width == 70 or width == 80  or width == 90 -%}
+{%-     assign node_sequence = "branch"       -%}
+{%-     include core/_node.liquid             -%}
+{%-   endif                                   -%}
+
+{%-   if width == 120 or width == 130  or width == 140 -%}
+{%-     assign node_sequence = "branch"       -%}
+{%-     include core/_node.liquid             -%}
+{%-   endif                                   -%}
+
+
+{%-   if width == 150 or width == 165  or width == 180 -%}
 {%-     assign node_sequence = "branch"       -%}
 {%-     include core/_node.liquid             -%}
 {%-   endif                                   -%}
