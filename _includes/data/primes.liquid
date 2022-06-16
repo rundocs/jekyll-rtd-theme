@@ -36,6 +36,7 @@
 {%-     continue                            -%}
 {%-   endif                                 -%}
 
+{%-  assign primes = primes | push: num     -%}
+{%- endfor                                  -%}
 {%-  include core/parts.liquid              -%}
 
-{%- endfor                                  -%}

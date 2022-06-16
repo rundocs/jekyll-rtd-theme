@@ -1,8 +1,8 @@
 {%-  assign tag = ""                        -%}
 {%-  assign array = '' | split: ','         -%}
 
-{%-  assign primes = primes | push: num     -%}
-{%-  assign order = primes | size           -%}
+{%- for prime in primes                     -%}
+{%-   assign order = forloop.index          -%}
 
 {%-  if primes contains order               -%}
 {%-    assign parts = parts | push: order   -%}
@@ -36,4 +36,5 @@
 {%-  endfor                                 -%}
 
 {%-  endif                                  -%}
+{%-  endfor                                 -%}
 
