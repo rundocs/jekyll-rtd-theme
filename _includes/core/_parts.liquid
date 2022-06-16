@@ -28,6 +28,30 @@ Root Generation:
  loop(10000) => π(10000) - (10th)th - 10th = 1229 - 109 - 29 = 1091
  loop(100000) => π(100000) - ((10th)th)th - (10th)th = 9592 - 599 - 109 = 8884
  root[1000] = 168 + 1091 + 8884 = 10143 = 10x10 + 43 + 100x100
+ 
+{% endcomment -%}
+
+{%- if item_size == 10                        -%}
+{%-   if keys_size < forloop.index            -%}
+
+{%-     assign node_sequence = "main"         -%}
+{%-     assign keys_size = forloop.index      -%}
+
+{%-     assign group = primes[forloop.index] 
+          | plus: forloop.index               -%}
+		
+{%-     assign strip = nodes 
+          | strip 
+          | newline_to_br 
+          | strip_newlines 
+          | split: "<br />"                   -%}
+		
+{%-     include core/_node.liquid             -%}
+
+{%-   endif                                   -%}
+{%- endif                                     -%}
+
+{%- comment %}
 
 True Prime Vektors ζ(s):
 ========================
@@ -73,23 +97,3 @@ True Prime Vektors ζ(s):
 |         102 -› 29:18| 50  | 50(68) ---------> Δ18                           |
 ----------------------+-----+                                                ---
 {% endcomment -%}
-
-{%- if item_size == 10                        -%}
-{%-   if keys_size < forloop.index            -%}
-
-{%-     assign node_sequence = "main"         -%}
-{%-     assign keys_size = forloop.index      -%}
-
-{%-     assign group = primes[forloop.index] 
-          | plus: forloop.index               -%}
-		
-{%-     assign strip = nodes 
-          | strip 
-          | newline_to_br 
-          | strip_newlines 
-          | split: "<br />"                   -%}
-		
-{%-     include core/_node.liquid             -%}
-
-{%-   endif                                   -%}
-{%- endif                                     -%}
