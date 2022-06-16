@@ -4,23 +4,32 @@
        | append: tag                        -%}
 
 {%-  assign stage = '['
-       | append: eq
+       | append: num
+       | append: ';'
+       | append: order
+       | append: ';'
+       | append: width
+       | append: ']'                        -%}
+
+{%-  assign details = '['
+       | append: weight
        | append: ';'
        | append: expanse
        | append: ';'
-       | append: weight
-       | append: ';'
-       | append: num
+       | append: eq
        | append: ']'                        -%}
 
-{%-  assign node = '<li>'                   -%}
+{%-  assign node = '<li data-id="'
+       | append: stage
+       | append: '">'                       -%}
+
 {%-  assign node = node
        | append: '<a href="'
        | append: baseurl
        | append: '" id='
        | append: width
        | append: ' aria-details="'
-       | append: stage
+       | append: details
        | append: '">'
        | append: title
        | append: '</a></li>'                -%}
