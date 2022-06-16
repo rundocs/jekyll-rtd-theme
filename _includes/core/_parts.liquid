@@ -30,6 +30,8 @@ Root Generation:
  root[1000] = 168 + 1091 + 8884 = 10143 = 10x10 + 43 + 100x100
  
 {% endcomment -%}
+{%-    for item in array                    -%}
+{%-      assign item_size = item | size     -%}
 
 {%- if item_size == 10                        -%}
 {%-   if keys_size < forloop.index            -%}
@@ -37,8 +39,6 @@ Root Generation:
 {%-     assign node_sequence = "main"         -%}
 {%-     assign keys_size = forloop.index      -%}
 
-{%-     assign group = primes[forloop.index] 
-          | plus: forloop.index               -%}
 		
 {%-     assign strip = nodes 
           | strip 
@@ -49,10 +49,12 @@ Root Generation:
 {%-     include core/_node.liquid             -%}
 {%-   endif                                   -%}
 {%- endif                                     -%}
+{%-    endfor                               -%}
 
 {%- if keys_size == forloop.index             -%}
 {%-   if order == 7 or order == 19            -%}
 {%-     assign node_sequence = "branch"       -%}
+{%-     assign group = group | plus: 1 -%}
 {%-     include core/_node.liquid             -%}
 {%-   endif                                   -%}
 {%- endif                                     -%}

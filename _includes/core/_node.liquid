@@ -2,6 +2,7 @@
 {%-      assign title = titles[keys_size]    -%}
 {%-      assign stage = stages[keys_size]    -%}
 {%-      assign baseurl = title | prepend: "/"    -%}
+{%-      assign group = group | plus: 1 -%}
 
 {%-      if site.baseurl == baseurl               -%}
 {%-        assign node = '<li class="current">'   -%}
