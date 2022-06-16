@@ -38,9 +38,9 @@ mkdir build && cd build
 ```note
 - May need GCC >= 9. GCC11 avoid 128i convert error.
 - Use `-DCMAKE_CXX_STANDARD=17` to avoid no digit exponent.
+- use -DLLVM_TARGETS_TO_BUILD="AArch64" to avoid error -mllvm.
 - Dont use -DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind", will cause error. Instead, use DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind" [see](https://llvm.org/docs/GettingStarted.html#id20). 'compiler-rt;libc;libcxx;libcxxabi;flang' may error.
 - must use `-DGCC_INSTALL_PREFIX -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64"` to have right link to libc.
-- consider -DLLVM_TARGETS_TO_BUILD="AArch64" \
 - See https://llvm.org/docs/CMake.html
 ```
 
@@ -58,8 +58,8 @@ conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11 libg
 **Install LLVM
 
 ```shell
-# tar xvf llvm-project-llvmorg-14.0.3.tar.gz
-# cd llvm-project-llvmorg-14.0.3
+# tar xvf llvm-project-llvmorg-14.0.5.tar.gz
+# cd llvm-project-llvmorg-14.0.5
 
 git clone -b release/14.x https://github.com/llvm/llvm-project.git llvm-14
 cd llvm-14
@@ -68,15 +68,16 @@ mkdir build && cd build
 module load tool_dev/cmake-3.20.3
 module load conda/py37Lammps
 module load tool_dev/binutils-2.37
-module load compiler/gcc-10.3
+module load compiler/gcc-11.2
+module load tool_dev/glibc-2.20
 
-export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-10.3
+export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
 export PATH=$PATH:${myCOMPILER}/bin                                     # :/usr/bin
 export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
--DCMAKE_CXX_STANDARD=17 \
+-DCMAKE_CXX_STANDARD=17 -DLLVM_TARGETS_TO_BUILD=AArch64 -DLLVM_ENABLE_ASSERTIONS=On \
 -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
@@ -129,10 +130,9 @@ use conda can install: gcc, glibc, cmake,... and other libs. But new GLIBC is re
 - LLDB require SWIG > 3.0
 
 ```shell
-conda create -n py37LLVM python=3.7.5
-source activate py37LLVM
+conda create -n py37llvm python=3.7.5
+source activate py37llvm
 conda install -c conda-forge gcc=11 zlib swig=3 cmake=3.20
-conda install -c asmeurer glibc
 ```
 
 **Install LLVM
@@ -140,11 +140,11 @@ conda install -c asmeurer glibc
 ```shell
 git clone -b release/14.x https://github.com/llvm/llvm-project.git llvm-14
 cd llvm-14
-mkdir build && cd build
+mkdir build_conda && cd build_conda
 
-module load conda/py37LLVM
+module load conda/py37llvm
 
-export myCOMPILER=/home1/p001cao/local/app/miniconda3/envs/py37LLVM
+export myCOMPILER=/home1/p001cao/local/app/miniconda3/envs/py37llvm
 export PATH=${myCOMPILER}/bin:$PATH                                     # :/usr/bin
 export CC=gcc export CXX=g++
 
