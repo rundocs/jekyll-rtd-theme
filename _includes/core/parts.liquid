@@ -24,19 +24,19 @@
 {%-	     endif                              -%}
 {%-    endif                                -%}
 
-{%-  include core/node.liquid               -%}
+{%-    include core/node.liquid             -%}
 
-{%-  assign array = array | push: parts     -%}
-{%-  assign array = array | push: bond      -%}
-{%-  assign array = array | push: arm       -%}
-{%-  assign array = array | push: id        -%}
+{%-    assign array = array | push: parts   -%}
+{%-    assign array = array | push: bond    -%}
+{%-    assign array = array | push: arm     -%}
+{%-    assign array = array | push: id      -%}
 
-{%-  for item in array                      -%}
-{%-    assign item_size = item | size -%}
-{%-    if item_size >= 10 -%}
-{%-    include core/_parts.liquid           -%}
-{%-    endif                                  -%}
-{%-  endfor                                 -%}
+{%-    for item in array                    -%}
+{%-      assign item_size = item | size -%}
+{%-      if item_size >= 10 -%}
+{%-      include core/_parts.liquid         -%}
+{%-      endif                              -%}
+{%-    endfor                               -%}
 
 {%-  endif                                  -%}
 
