@@ -74,4 +74,8 @@ True Prime Vektors ζ(s):
 {%-   assign group = primes[forloop.index] | plus: forloop.index -%}
 {%-   assign strip = nodes | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
 {%-   include core/_node.liquid -%}
+
+{%- elsif item_size == 31 and keys_size < forloop.index -%}
+{%-   assign node_sequence = "bravh" -%}
+{%-   include core/_node.liquid -%}
 {%- endif -%}
