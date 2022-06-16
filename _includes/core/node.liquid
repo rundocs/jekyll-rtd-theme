@@ -1,6 +1,6 @@
 {%- comment %}
 10+29+109+(109-100)²+100x10=π(10000)
-{%- assign strip = links | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
+{%- assign strip = nodes | strip | newline_to_br | strip_newlines | split: "<br />"  -%}
 {% endcomment -%}
 
 {%-  assign title = '('
@@ -18,8 +18,8 @@
        | append: num
        | append: ']'                        -%}
 
-{%-  assign link = '<li>'                   -%}
-{%-  assign link = link
+{%-  assign node = '<li>'                   -%}
+{%-  assign node = node
        | append: '<a href="'
        | append: baseurl
        | append: '" id='
@@ -30,8 +30,8 @@
        | append: title
        | append: '</a></li>'                -%}
 
-{%-  capture links                          -%}
-{{     links                                 }}
-{%     include tabs.liquid size=14 %}{{ link }}
+{%-  capture nodes                          -%}
+{{     nodes                                 }}
+{%     include tabs.liquid size=14 %}{{ node }}
 {%-  endcapture                             -%}
 
