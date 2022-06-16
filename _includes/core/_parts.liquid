@@ -51,10 +51,9 @@ Root Generation:
 {%- endif                                     -%}
 
 {%- if keys_size == 0                         -%}
-{%-   if width == 7 or width == 19            -%}
+{%-   if order == 7 or order == 19            -%}
 {%-     assign node_sequence = "branch"       -%}
 {%-     include core/_node.liquid             -%}
-{%-     continue                              -%}
 {%-   endif                                   -%}
 {%- endif                                     -%}
 
