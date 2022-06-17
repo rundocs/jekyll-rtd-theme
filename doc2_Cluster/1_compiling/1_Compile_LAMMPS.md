@@ -58,7 +58,13 @@ git pull origin develop
 
 ```note
 - include these OPTIONS in Cmake command, to build package-lib automatically:
+- python > 3.7.12 require to update GCC-conda=11: `conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`. But dont use this to void requiring higher GLIBC. Also, `zlib=1.2.12` require GLIBC=2.14. 
+- To void hidden libs by conda, need to downgrade libs versions in conda < libs in linux system. So that to void these errors, use `conda install -c conda-forge libgcc-ng=7 zlib=1.2.8 python=3.7.12`
+- Do not use GCC-11 to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf' not solve this error
+- install openBLAS for LAPACK and BLAS, so need load GSL
+- use static link for openBLAS, so need to export it and set cmake var
 ```
+
 
 1.**UFM potential**
 
@@ -428,18 +434,7 @@ prepend-path    PATH  /uhome/p001cao/local/wSourceCode/vmd/vmd-1.9/plugins/LINUX
 
 ### 2. USC2 (Tachyon)
 
-```note
-- python > 3.7.12 require to update GCC-conda=11
-`conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11`. But dont use this to void requiring higher GLIBC. Also, `zlib=1.2.12` require GLIBC=2.14. So that to void these errors, use `conda install -c conda-forge libstdcxx-ng=10 libgcc-ng=10 libgfortran-ng=10 zlib=1.2.11 python=3.7.12`
-- Do not use GCC-11 to avoid error: Dwarf Error: found dwarf version '5', use: export CFLAGS='-gdwarf-4 -gstrict-dwarf' not solve this error
-- install openBLAS for LAPACK and BLAS, so need load GSL
-- use static link for openBLAS, so need to export it and set cmake var
-```
-
 ```shell
-#module load mpi/ompi4.0.4-gcc10.1.0-lld
-#module load llvm/llvm-gcc10-lld                    # to use lld
-
 git pull origin develop
 
 module load tool_dev/binutils-2.37                # gold
