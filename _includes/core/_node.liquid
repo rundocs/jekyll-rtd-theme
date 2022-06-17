@@ -8,7 +8,7 @@
 {%-        assign class = ' class="current"'   -%}
 {%-      endif                                    -%}
 
-{%-      assign node = node
+{%-      assign node = list
            | append: class
            | append: '><a href="'
            | append: baseurl
@@ -21,8 +21,8 @@
            | append: '</a>'                       -%}
 
 {%-      assign title = 'group'                   -%}
-{%-      assign _node = '<li>'
-           | append: '<a href="/'
+{%-      assign _node = list
+           | append: '><a href="/'
            | append: title
            | append: '-'
            | append: group
@@ -49,7 +49,7 @@
 {%         include tabs.liquid size=10 %}</li>
 {%         include tabs.liquid size=10 %}{{ node }}
 {%         include tabs.liquid size=11 %}<ul>
-{%         include tabs.liquid size=12 %}{{ _node }}
+{%         include tabs.liquid size=12 %}{{ _node}}
 {%         include tabs.liquid size=13 %}<ul>
 {%-      endcapture                               -%}
 {%-   else -%}

@@ -21,11 +21,11 @@
        | append: keys_size
        | append: ')'                        -%}
 
-{%-  assign node = '<li data-id="'
+{%-  assign list = '<li data-id="'
        | append: stage
        | append: '"'                       -%}
 
-{%-  assign _node = node
+{%-  assign node = list
        | append: '><a href="'
        | append: baseurl
        | append: '" id='
@@ -38,6 +38,6 @@
 
 {%-  capture nodes                          -%}
 {{     nodes                                 }}
-{%     include tabs.liquid size=14 %}{{ _node }}
+{%     include tabs.liquid size=14 %}{{ node }}
 {%-  endcapture                             -%}
 
