@@ -45,18 +45,31 @@
 {%-     endif                                  -%}
 {%-   endfor                                   -%}
 
-{%-   if order == 7 or order == 19             -%}
-{%-     assign node_sequence = "branch"        -%}
-{%-     include core/_node.liquid              -%}
-{%-   endif                                    -%}
-
-{%-   include core/bond.liquid                 -%}
-
-{%- endif                                      -%}
-
-{%-    assign strip = nodes 
+{%- assign strip = nodes     
           | strip 
           | newline_to_br 
           | strip_newlines 
           | split: "<br />"                    -%}
 		
+	{%-   if order == 7 or order == 19             -%}
+	{%-     assign node_sequence = "branch"        -%}
+	{%-     include core/_node.liquid              -%}
+	{%-   endif                                    -%}
+
+	{%-   if width == 13 or width == 17 or width == 20 -%}
+	{%-     assign node_sequence = "branch"       -%}
+	{%-     include core/_node.liquid             -%}
+	{%-   endif                                   -%}
+
+	{%-   if width == 42 or width == 60 or width == 70 or width == 88 or width == 100 -%}
+	{%-     assign node_sequence = "branch"       -%}
+	{%-     include core/_node.liquid             -%}
+	{%-   endif                                   -%}
+
+	{%-   if width == 126 or width == 136 or width == 148 or width == 162  or width == 178 -%}
+	{%-     assign node_sequence = "branch"       -%}
+	{%-     include core/_node.liquid             -%}
+	{%-   endif                                   -%}
+
+{%- endif                                      -%}
+
