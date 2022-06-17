@@ -975,12 +975,18 @@ source mklvars.sh intel64
 
 ### USC2 (centos 6.9)
 
+```note
+- To void libs hidden by conda-lib, install libs in conda with version < in linux system.
+   + conda install -c conda-forge libgcc-ng=7 zlib=1.2.8
+```
+
 ```shell
 git pull origin develop
 mkdir build_LLVM && cd build_LLVM
 
 module load tool_dev/binutils-2.37
 module load tool_dev/cmake-3.24
+module load zlib/1.2.11
 module load fftw/fftw3.3.10-ompi4.1.4-clang14
 module load mpi/ompi4.1.4-clang14
 
