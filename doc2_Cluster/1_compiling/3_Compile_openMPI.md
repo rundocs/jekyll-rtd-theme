@@ -297,7 +297,7 @@ export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
 export PATH=$PATH:${myCOMPILER}/bin
 export CC=clang export CXX=clang++ export FC=gfortran
 export LDFLAGS="-fuse-ld=lld -lrt"
-export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.12-llvm
+export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.13-llvm
 
 ../configure --with-sge --with-ucx=${myUCX} --without-verbs \
 --prefix=/home1/p001cao/local/app/openmpi/4.1.4-clang14
