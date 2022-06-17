@@ -30,30 +30,6 @@ Root Generation:
  root[1000] = 168 + 1091 + 8884 = 10143 = 10x10 + 43 + 100x100
  
 {% endcomment -%}
-{%-    for item in array                    -%}
-{%-      assign item_size = item | size     -%}
-
-{%- if item_size == 10                        -%}
-{%-   if keys_size < forloop.index            -%}
-
-{%-     assign node_sequence = "main"         -%}
-{%-     assign keys_size = forloop.index      -%}
-		
-{%-     assign strip = nodes 
-          | strip 
-          | newline_to_br 
-          | strip_newlines 
-          | split: "<br />"                   -%}
-		
-{%-     include core/_node.liquid             -%}
-{%-   endif                                   -%}
-{%- endif                                     -%}
-{%-    endfor                               -%}
-
-{%-   if order == 7 or order == 19            -%}
-{%-     assign node_sequence = "branch"       -%}
-{%-     include core/_node.liquid             -%}
-{%-   endif                                   -%}
 
 {%-   if width == 13 or width == 17 or width == 20 -%}
 {%-     assign node_sequence = "branch"       -%}

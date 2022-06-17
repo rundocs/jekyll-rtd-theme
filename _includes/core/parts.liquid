@@ -1,37 +1,62 @@
-{%-  assign tag = ""                        -%}
-{%-  assign array = '' | split: ','         -%}
+{%- assign tag = ""                            -%}
+{%- assign array = '' | split: ','             -%}
 
-{%-  assign primes = primes | push: num     -%}
-{%-  assign order = primes | size           -%}
+{%- assign primes = primes | push: num         -%}
+{%- assign order = primes | size               -%}
 
-{%-  if primes contains order               -%}
-{%-    assign parts = parts | push: order   -%}
-{%-    assign width = parts | size          -%}
+{%- if primes contains order                   -%}
+{%-   assign parts = parts | push: order       -%}
+{%-   assign width = parts | size              -%}
 
-{%-    if parts contains width              -%}
-{%-      assign bond = bond | push: width   -%}
-{%-      assign weight = bond | size        -%}
+{%-   if parts contains width                  -%}
+{%-     assign bond = bond | push: width       -%}
+{%-     assign weight = bond | size            -%}
 
-{%-      if bond contains weight            -%}
-{%-        assign arm = arm | push: weight  -%}
-{%-	       assign expanse = arm | size      -%}
+{%-     if bond contains weight                -%}
+{%-       assign arm = arm | push: weight      -%}
+{%-	       assign expanse = arm | size         -%}
 
-{%-	       if arm contains expanse          -%}
-{%-	         assign id = id | push: expanse -%}
-{%-	         assign property = id | size    -%}
-{%-	       endif                            -%}
+{%-	       if arm contains expanse             -%}
+{%-	         assign id = id | push: expanse    -%}
+{%-	         assign property = id | size       -%}
 
-{%-	     endif                              -%}
-{%-    endif                                -%}
+{%-	       endif                               -%}
+{%-	     endif                                 -%}
+{%-   endif                                    -%}
 
-{%-    include core/node.liquid             -%}
+{%-   include core/node.liquid                 -%}
 
-{%-    assign array = array | push: parts   -%}
-{%-    assign array = array | push: bond    -%}
-{%-    assign array = array | push: arm     -%}
-{%-    assign array = array | push: id      -%}
+{%-   assign array = array | push: parts       -%}
+{%-   assign array = array | push: bond        -%}
+{%-   assign array = array | push: arm         -%}
+{%-   assign array = array | push: id          -%}
 
-{%-    include core/bond.liquid             -%}
+{%-   for item in array                        -%}
+{%-     assign item_size = item | size         -%}
 
-{%-  endif                                  -%}
+{%-     if item_size == 10                     -%}
+{%-       if keys_size < forloop.index         -%}
 
+{%-         assign node_sequence = "main"      -%}
+{%-         assign keys_size = forloop.index   -%}
+		
+{%-         include core/_node.liquid          -%}
+{%-       endif                                -%}
+{%-     endif                                  -%}
+{%-   endfor                                   -%}
+
+{%-   if order == 7 or order == 19             -%}
+{%-     assign node_sequence = "branch"        -%}
+{%-     include core/_node.liquid              -%}
+{%-   endif                                    -%}
+
+{%-   include core/bond.liquid                 -%}
+
+{%- endif                                      -%}
+
+{%-    assign strip = nodes 
+          | strip 
+          | newline_to_br 
+          | strip_newlines 
+          | split: "<br />"                    -%}
+		
