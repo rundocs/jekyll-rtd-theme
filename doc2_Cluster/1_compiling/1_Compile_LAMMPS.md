@@ -977,7 +977,8 @@ source mklvars.sh intel64
 
 ```note
 - To void libs hidden by conda-lib, install libs in conda with version < in linux system.
-   + conda install -c conda-forge libgcc-ng=7 zlib=1.2.8
+- downgrade GCC in conda
+- conda install -c conda-forge libgcc-ng=7 zlib=1.2.8
 ```
 
 ```shell
