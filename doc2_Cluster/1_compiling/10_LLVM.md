@@ -43,7 +43,7 @@ mkdir build && cd build
 - consider -DLLVM_TARGETS_TO_BUILD="AArch64".
 - must use `-DGCC_INSTALL_PREFIX -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64"` to have right link to libc.
 - Dont use -DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind". Instead, use DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind" [see](https://llvm.org/docs/GettingStarted.html#id20).
-- These modules may cause errors: 'compiler-rt;libc;libcxx;libcxxabi;flang' 
+- These modules may cause errors: ';compiler-rt;libc;libcxx;libcxxabi;libunwind' 
 
 - See more https://llvm.org/docs/CMake.html
 ```
@@ -65,6 +65,7 @@ conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11 libg
 # tar xvf llvm-project-llvmorg-14.0.5.tar.gz
 # cd llvm-project-llvmorg-14.0.5
 
+rm -r llvm-14
 git clone -b release/14.x https://github.com/llvm/llvm-project.git llvm-14
 cd llvm-14
 mkdir build && cd build
@@ -81,10 +82,10 @@ export LDFLAGS="-fuse-ld=gold -lrt"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DLLVM_TARGETS_TO_BUILD="AArch64" \
--DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang" \
+-DCMAKE_CXX_STANDARD=17 -CMAKE_C_FLAGS="-flax-vector-conversions" \
+-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;compiler-rt;flang;libc;libcxx;libcxxabi" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
--DCMAKE_CXX_STANDARD=17 -CMAKE_C_FLAGS="-flax-vector-conversions" \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
 
 make -j 16 && make install
