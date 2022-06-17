@@ -81,7 +81,7 @@ export LDFLAGS="-fuse-ld=gold -lrt"
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DCMAKE_CXX_STANDARD=17 \
 -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;libc" \
--DLLVM_ENABLE_RUNTIMES="compiler-rt;libcxx;libcxxabi;libunwind" \
+-DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 -CMAKE_C_FLAGS="-flax-vector-conversions" \
