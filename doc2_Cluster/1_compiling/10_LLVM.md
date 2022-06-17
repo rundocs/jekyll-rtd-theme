@@ -41,8 +41,10 @@ mkdir build && cd build
 - Use `-DCMAKE_CXX_STANDARD=17` to avoid no digit exponent.
 - use `CMAKE_C_FLAGS="-flax-vector-conversions"` avoid 128i convert error.
 - consider -DLLVM_TARGETS_TO_BUILD="AArch64".
-- Dont use -DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind", will cause error. Instead, use DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind" [see](https://llvm.org/docs/GettingStarted.html#id20). 'compiler-rt;libc;libcxx;libcxxabi;flang' may error.
 - must use `-DGCC_INSTALL_PREFIX -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64"` to have right link to libc.
+- Dont use -DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind". Instead, use DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind" [see](https://llvm.org/docs/GettingStarted.html#id20).
+- These modules may cause errors: 'pstl;compiler-rt;libc;libcxx;libcxxabi;flang' 
+
 - See more https://llvm.org/docs/CMake.html
 ```
 
@@ -79,7 +81,7 @@ export LDFLAGS="-fuse-ld=gold -lrt"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DLLVM_TARGETS_TO_BUILD="AArch64" \
--DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;compiler-rt;libc;libcxx;libcxxabi;libunwind" \
+-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;mlir;flang;compiler-rt;libc;libcxx;libcxxabi;libunwind" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 -DCMAKE_CXX_STANDARD=17 -CMAKE_C_FLAGS="-flax-vector-conversions" \
