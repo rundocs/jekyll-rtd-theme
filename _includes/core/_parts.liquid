@@ -1,0 +1,12 @@
+{%- assign _parts = nodes 
+          | strip 
+          | newline_to_br 
+          | split: "<br />"                -%}
+		
+{%- capture menus                          -%}
+{%-   for item in _parts                   -%}
+{%-     assign _item = item  
+		  | replace: 'branch', '*'          %}
+{{      _item                               }}
+{%   endfor                                -%}
+{%- endcapture                             -%}
