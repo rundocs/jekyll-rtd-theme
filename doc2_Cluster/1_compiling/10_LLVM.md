@@ -65,7 +65,7 @@ git clone -b release/14.x https://github.com/llvm/llvm-project.git llvm-14
 cd llvm-14
 mkdir build && cd build
 
-module load tool_dev/cmake-3.20.3
+module load tool_dev/cmake-3.24
 module load conda/py37Lammps
 module load tool_dev/binutils-2.37
 module load compiler/gcc-11.2
