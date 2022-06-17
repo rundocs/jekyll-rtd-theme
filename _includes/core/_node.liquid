@@ -1,15 +1,16 @@
-{%-      assign node = '<li>'                     -%}
 {%-      assign title = titles[keys_size]    -%}
 {%-      assign stage = stages[keys_size]    -%}
 {%-      assign baseurl = title | prepend: "/"    -%}
 {%-      assign group = group | plus: 1 -%}
 
+{%-      assign class = ''   -%}
 {%-      if site.baseurl == baseurl               -%}
-{%-        assign node = '<li class="current">'   -%}
+{%-        assign class = ' class="current"'   -%}
 {%-      endif                                    -%}
 
 {%-      assign node = node
-           | append: '<a href="'
+           | append: class
+           | append: '><a href="'
            | append: baseurl
            | append: '" id="'
            | append: title
