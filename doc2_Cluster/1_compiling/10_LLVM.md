@@ -71,7 +71,6 @@ module load tool_dev/cmake-3.24
 module load conda/py37Lammps
 module load tool_dev/binutils-2.37
 module load compiler/gcc-11.2
-module load tool_dev/glibc-2.20
 
 export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
 export PATH=$PATH:${myCOMPILER}/bin                                     # :/usr/bin
@@ -79,12 +78,13 @@ export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
--DCMAKE_CXX_STANDARD=17 \
--DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;libc" \
--DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind" \
+-DLLVM_TARGETS_TO_BUILD="AArch64" \
+-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang" \
+-DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind" \
+-DLLVM_LIBC_ENABLE_LINTING=OFF \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
--CMAKE_C_FLAGS="-flax-vector-conversions" \
+-DCMAKE_CXX_STANDARD=17 -CMAKE_C_FLAGS="-flax-vector-conversions" \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
 
 make -j 16 && make install
