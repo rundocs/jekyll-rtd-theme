@@ -24,8 +24,11 @@ make install
 ```
 
 ## USC 2 (Tacheon)
+
 ```shell
-./configure --prefix=/home1/p001cao/local/app/tool_dev/cmake-3.20.3
+module load compiler/gcc-11.2
+
+./configure --prefix=/home1/p001cao/local/app/tool_dev/cmake-3.24
 ```
 
 ## create module file
