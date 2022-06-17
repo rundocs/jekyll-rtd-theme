@@ -314,13 +314,13 @@ prepend-path    PKG_CONFIG_PATH     $topdir/lib/pkgconfig
 ### USC2
 
 ```note
-- ucx-1.12.1 cause compiling error. use ucx-1.12.0
-- "-fuse-ld=lld -lrt" error with ucx-1.12.0. So use 'gold' temporary
+- ucx-1.12.1 cause compiling error due to missing file. But ucx-1.13 work
+- "-fuse-ld=lld -lrt" error with ucx-1.12.0, so use 'gold' temporary. But lld work with ucx-1.13
 ```
 
 ```shell
-tar xvf ucx-1.12.0.tar.gz
-cd ucx-1.12.0
+tar xvf ucx-1.13.0.tar.gz
+cd ucx-1.13.0
 mkdir build && cd build
 
 module load compiler/llvm-14          # clang + lld
@@ -328,9 +328,9 @@ module load compiler/llvm-14          # clang + lld
 export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
 export PATH=$PATH:${myCOMPILER}/bin
 export CC=clang export CXX=clang++ export FC=flang
-export LDFLAGS="-fuse-ld=gold -lrt"
+export LDFLAGS="-fuse-ld=lld -lrt"
 
 ../configure --enable-mt \
---prefix=/home1/p001cao/local/app/tool_dev/ucx-1.12-llvm
+--prefix=/home1/p001cao/local/app/tool_dev/ucx-1.13-llvm
 
 ```
