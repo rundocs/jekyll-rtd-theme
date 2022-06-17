@@ -103,6 +103,35 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${myCOMPILER}/lib
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 ```
 
+**Install LLVM-libc
+
+```shell
+cd llvm-14
+mkdir build-libc && cd build-libc
+
+module load tool_dev/cmake-3.24
+module load conda/py37Lammps
+module load tool_dev/binutils-2.37
+module load compiler/gcc-11.2
+module load tool_dev/glibc-2.20
+
+export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
+export PATH=$PATH:${myCOMPILER}/bin                                     # :/usr/bin
+export CC=gcc export CXX=g++
+export LDFLAGS="-fuse-ld=gold -lrt"
+
+cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
+-DCMAKE_CXX_STANDARD=17 -DLLVM_TARGETS_TO_BUILD=AArch64 -DLLVM_ENABLE_ASSERTIONS=On \
+-DLLVM_ENABLE_PROJECTS="clang;libc;libcxx;libcxxabi;libunwind" \
+-DGCC_INSTALL_PREFIX=${myCOMPILER} \
+-DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
+-DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14-libc
+
+make -j 16 && make install
+```
+
+
+
 ### Module file
 
 at directory: /home1/p001cao/local/1myModfiles/compiler --> create file "llvm-14"
