@@ -36,12 +36,14 @@ mkdir build && cd build
 ### use GCC
 
 ```note
-- May need GCC >= 9. GCC11 avoid 128i convert error.
+- May need GCC >= 9. 
+- Update Cmake can void hidden libs error.
 - Use `-DCMAKE_CXX_STANDARD=17` to avoid no digit exponent.
-- use -DLLVM_TARGETS_TO_BUILD="AArch64" to avoid error -mllvm.
+- use `CMAKE_C_FLAGS="-flax-vector-conversions"` avoid 128i convert error.
+- consider -DLLVM_TARGETS_TO_BUILD="AArch64".
 - Dont use -DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind", will cause error. Instead, use DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind" [see](https://llvm.org/docs/GettingStarted.html#id20). 'compiler-rt;libc;libcxx;libcxxabi;flang' may error.
 - must use `-DGCC_INSTALL_PREFIX -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64"` to have right link to libc.
-- See https://llvm.org/docs/CMake.html
+- See more https://llvm.org/docs/CMake.html
 ```
 
 **Install Conda (Since LLVM require python >= 3.6)
@@ -77,10 +79,12 @@ export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
--DCMAKE_CXX_STANDARD=17 -DLLVM_TARGETS_TO_BUILD=AArch64 -DLLVM_ENABLE_ASSERTIONS=On \
--DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang" \
+-DCMAKE_CXX_STANDARD=17 \
+-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;libc" \
+-DLLVM_ENABLE_RUNTIMES="compiler-rt;libcxx;libcxxabi;libunwind" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
+-CMAKE_C_FLAGS="-flax-vector-conversions" \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
 
 make -j 16 && make install
@@ -102,35 +106,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${myCOMPILER}/lib
 -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;flang;libclc;lld;openmp;polly;pstl;mlir" \  # "clang;flang;lld;openmp"
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 ```
-
-**Install LLVM-libc
-
-```shell
-cd llvm-14
-mkdir build-libc && cd build-libc
-
-module load tool_dev/cmake-3.24
-module load conda/py37Lammps
-module load tool_dev/binutils-2.37
-module load compiler/gcc-11.2
-module load tool_dev/glibc-2.20
-
-export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
-export PATH=$PATH:${myCOMPILER}/bin                                     # :/usr/bin
-export CC=gcc export CXX=g++
-export LDFLAGS="-fuse-ld=gold -lrt"
-
-cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
--DCMAKE_CXX_STANDARD=17 -DLLVM_TARGETS_TO_BUILD=AArch64 -DLLVM_ENABLE_ASSERTIONS=On \
--DLLVM_ENABLE_PROJECTS="clang;libc;libcxx;libcxxabi;libunwind" \
--DGCC_INSTALL_PREFIX=${myCOMPILER} \
--DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
--DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14-libc
-
-make -j 16 && make install
-```
-
-
 
 ### Module file
 
