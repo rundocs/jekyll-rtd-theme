@@ -42,7 +42,7 @@ mkdir build && cd build
 - consider -DLLVM_TARGETS_TO_BUILD="AArch64".
 - must use `-DGCC_INSTALL_PREFIX -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64"` to have right link to libc.
 - Dont use -DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind". Instead, use DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind" [see](https://llvm.org/docs/GettingStarted.html#id20).
-- These modules may cause errors: compiler-rt;libc;libcxx;libcxxabi;libunwind
+- These modules may cause errors: compiler-rt;libunwind
 - Use Release/Debug
 - See more https://llvm.org/docs/CMake.html
 ```
