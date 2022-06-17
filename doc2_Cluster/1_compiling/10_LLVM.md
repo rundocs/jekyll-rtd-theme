@@ -37,14 +37,13 @@ mkdir build && cd build
 
 ```note
 - May need GCC >= 9. 
-- Update Cmake can void hidden libs error.
 - Use `-DCMAKE_CXX_STANDARD=17` to avoid no digit exponent.
 - use `CMAKE_C_FLAGS="-flax-vector-conversions"` avoid 128i convert error.
 - consider -DLLVM_TARGETS_TO_BUILD="AArch64".
 - must use `-DGCC_INSTALL_PREFIX -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64"` to have right link to libc.
 - Dont use -DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind". Instead, use DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind" [see](https://llvm.org/docs/GettingStarted.html#id20).
-- These modules may cause errors: ';compiler-rt;libc;libcxx;libcxxabi;libunwind' 
-
+- These modules may cause errors: compiler-rt;libc;libcxx;libcxxabi;libunwind
+- Use Release/Debug
 - See more https://llvm.org/docs/CMake.html
 ```
 
@@ -64,10 +63,10 @@ conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11 libg
 ```shell
 # tar xvf llvm-project-llvmorg-14.0.5.tar.gz
 # cd llvm-project-llvmorg-14.0.5
+# rm -r llvm-14
 
-rm -r llvm-14
 git clone -b release/14.x https://github.com/llvm/llvm-project.git llvm-14
-cd llvm-14
+cd llvm-14.0.5
 mkdir build && cd build
 
 module load tool_dev/cmake-3.24
@@ -81,9 +80,9 @@ export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
--DLLVM_TARGETS_TO_BUILD="AArch64" \
--DCMAKE_CXX_STANDARD=17 -CMAKE_C_FLAGS="-flax-vector-conversions" \
--DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;compiler-rt;flang;libc;libcxx;libcxxabi" \
+-DCMAKE_CXX_STANDARD=17 \
+-DCMAKE_C_FLAGS="-flax-vector-conversions" -DCMAKE_C_FLAGS_RELEASE="-flax-vector-conversions" \
+-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;libc;libcxx;libcxxabi" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
