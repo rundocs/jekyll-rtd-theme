@@ -1,13 +1,3 @@
-{%- assign id = '' | split: ',' -%}
-{%- assign arm = '' | split: ',' -%}
-{%- assign bond = '' | split: ',' -%}
-{%- assign parts = '' | split: ',' -%}
-
-{%-	assign eq = id | size -%}
-{%-	assign expanse = arm | size -%}
-{%- assign weight = bond | size -%}
-{%- assign width = parts | size -%}
-
 {%- comment -%}
 Scheme:
  168 + 329 + 289 = 786
@@ -58,8 +48,13 @@ Scheme:
 {%-  endcomment -%}
 
 {%- assign keys_size = 0 -%}
-{%- assign keys = '' | split: ',' -%}
 
+{%- assign id = '' | split: ',' -%}
+{%- assign arm = '' | split: ',' -%}
+{%- assign bond = '' | split: ',' -%}
+{%- assign parts = '' | split: ',' -%}
+
+{%- assign keys = '' | split: ',' -%}
 {%- assign stages = '' | split: ',' -%}
 {%- assign titles = 'home,lexer,parser,grammar' | split: ',' -%}
 

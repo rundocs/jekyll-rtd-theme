@@ -3,6 +3,11 @@
 {%- assign array = '' | split: ','          -%}
 {%- assign primes = '' | split: ','         -%}
 
+{%- assign width = parts | size             -%}
+{%- assign weight = bond | size             -%}
+{%-	assign expanse = arm | size             -%}
+{%-	assign property = id | size             -%}
+
 {%- assign primes = primes | push: 2        -%}
 {%- assign n = include.n | default: 100     -%}
 
