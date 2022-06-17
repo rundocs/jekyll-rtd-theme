@@ -79,9 +79,7 @@ export LDFLAGS="-fuse-ld=gold -lrt"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DLLVM_TARGETS_TO_BUILD="AArch64" \
--DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang" \
--DLLVM_ENABLE_RUNTIMES="compiler-rt;libc;libcxx;libcxxabi;libunwind" \
--DLLVM_LIBC_ENABLE_LINTING=OFF \
+-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;compiler-rt;libc;libcxx;libcxxabi;libunwind" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 -DCMAKE_CXX_STANDARD=17 -CMAKE_C_FLAGS="-flax-vector-conversions" \
