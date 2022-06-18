@@ -1,3 +1,23 @@
+{%- assign keys = keys 
+	| push: 4
+	| push: 8
+
+	| push: 13
+	| push: 17
+	| push: 20
+
+	| push: 42
+	| push: 60
+	| push: 72
+	| push: 113
+	| push: 139 
+
+	| push: 151
+	| push: 169
+	| push: 181                    
+	| push: 203                   
+	| push: 229  -%}                    
+
 {%- comment %}
 
 Scheme 13:9
@@ -25,6 +45,11 @@ Scheme 13:9
            {43}
 
 Direction:
+
+| push: 4
+| push: 8
+| push: 20
+
 | push: 13   » 5+1=6th
 | push: 17   » 5+2=7th
 | push: 20   » 5+3=8th+1
@@ -41,33 +66,10 @@ Direction:
 | push: 203  » 110+10+23th=110+10+83                   
 | push: 229  » 110+10+29th=110+10+109 » 5+1                 
 
-{% endcomment -%}
-
-{%- assign keys = keys 
-	| push: 13
-	| push: 17
-	| push: 20
-
-	| push: 42
-	| push: 60
-	| push: 72
-	| push: 113
-	| push: 139 
-
-	| push: 151
-	| push: 169
-	| push: 181                    
-	| push: 203                   
-	| push: 229  -%}                    
-
-
-{%- comment %}
-		   
-Tabulate Prime by Power of 10
 loop(10) = π(10)-π(1) = 4-0 = 4
 loop(100) = π(100)-π(10)-1th = 25-4-2 = 19
 loop(1000) = π(1000) - π(100) - 10th = 168-25-29 = 114
-*
+
 --------------------+----+----+----+----+----+----+----+----+----+-----
  True Prime Pairs Δ |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | Sum 
 ====================+====+====+====+====+====+====+====+====+====+=====

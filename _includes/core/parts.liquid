@@ -45,11 +45,6 @@
 {%-     endif                                  -%}
 {%-   endfor                                   -%}
 
-{%-   if order == 7 or order == 19             -%}
-{%-     assign node_sequence = "branch"        -%}
-{%-     include core/_node.liquid              -%}
-{%-   endif                                    -%}
-
 {%-   for key in keys                           %}
 {%-     if width == key                        -%}
 {%-       assign node_sequence = "branch"      -%}
