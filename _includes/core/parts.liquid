@@ -41,14 +41,12 @@
 {%-   for item in array                        -%}
 {%-     assign item_size = item | size         -%}
 
-{%-     if item_size == 10                     -%}
-{%-       if key_layer < forloop.index         -%}
+{%-     if item_size == 10 and width < 110     -%}
 
 {%-         assign node_sequence = "main"      -%}
 {%-         assign key_layer = forloop.index   -%}
 		
 {%-         include core/_node.liquid          -%}
-{%-       endif                                -%}
 {%-     endif                                  -%}
 {%-   endfor                                   -%}
 
