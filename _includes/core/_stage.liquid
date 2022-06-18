@@ -4,12 +4,12 @@
 	| push: 20 
 	| push: 42 
 	| push: 60 
-	| push: 70 
-	| push: 88 
-	| push: 100 
-	| push: 126 
+	| push: 72 
+	| push: 89 
+	| push: 102 
+	| push: 130 
 	| push: 136 
-	| push: 148 
+	| push: 151 
 	| push: 168
 	| push: 181                    -%}
 
@@ -38,12 +38,6 @@ Scheme 13:9
             --
            {43}
 		   
-Root Generation:
- root[1000] = π(1000) + loop(10 x 1000)  +  loop(100 x 1000) 
- loop(10000) => π(10000) - (10th)th - 10th = 1229 - 109 - 29 = 1091
- loop(100000) => π(100000) - ((10th)th)th - (10th)th = 9592 - 599 - 109 = 8884
- root[1000] = 168 + 1091 + 8884 = 10143 = 10x10 + 43 + 100x100
- 
 {% endcomment -%}
 
 {%- assign titles = 'home,lexer,parser,grammar' | split: ',' -%}
@@ -95,6 +89,12 @@ True Prime Vektors ζ(s):
 ----------------------+-----+                                                ---
 {% endcomment -%}
 
+Root Generation:
+ root[1000] = π(1000) + loop(10 x 1000)  +  loop(100 x 1000) 
+ loop(10000) => π(10000) - (10th)th - 10th = 1229 - 109 - 29 = 1091
+ loop(100000) => π(100000) - ((10th)th)th - (10th)th = 9592 - 599 - 109 = 8884
+ root[1000] = 168 + 1091 + 8884 = 10143 = 10x10 + 43 + 100x100
+ 
 {%-  comment -%}
 
       |         1st (Form)          |         2nd (Route)         |         3rd (Channel)       |
@@ -149,4 +149,9 @@ True Prime Vektors ζ(s):
   Reference:
   https://github.com/chetabahana/hexagon/pull/2
   https://www.hexspin.com/defining-the-prime-hexagon/
+
+ Here is my quote about prime numbers:
+ Finding the way of ‘how they presence’ is far more important
+ than trying to find ‘how many all of them’ are exactly exist.
+
 {%-  endcomment -%}
