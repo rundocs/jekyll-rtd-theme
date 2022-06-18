@@ -38,11 +38,11 @@
 {%-   assign array = array | push: arm         -%}
 {%-   assign array = array | push: id          -%}
 
-{%-   assign layer = array[key_layer] | size   -%}
+{%-   assign layer_size = array[layer] | size  -%}
 
-{%-   if layer == 10                           -%}
+{%-   if layer_size == 10                      -%}
 {%-     assign node_sequence = "main"          -%}
-{%-     assign key_layer = key_layer | plus: 1 -%}
+{%-     assign layer = layer | plus: 1         -%}
 {%-     include core/_node.liquid              -%}
 {%-   endif                                    -%}
 
