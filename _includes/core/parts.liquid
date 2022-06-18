@@ -1,5 +1,4 @@
 {%- assign tag = ""                            -%}
-{%- assign array = '' | split: ','             -%}
 
 {%- assign primes = primes | push: num         -%}
 {%- assign order = primes | size               -%}
@@ -33,22 +32,20 @@
 {%-     endif                                  -%}
 {%-   endfor                                   -%}
 
+{%-   assign array = '' | split: ','           -%}
 {%-   assign array = array | push: parts       -%}
 {%-   assign array = array | push: bond        -%}
 {%-   assign array = array | push: arm         -%}
 {%-   assign array = array | push: id          -%}
 
-{%-   for item in array                        -%}
-{%-     assign item_size = item | size         -%}
 
-{%-     if item_size == 10 and width < 110     -%}
+{%-     if array[key_layer] | size == 10     -%}
 
 {%-         assign node_sequence = "main"      -%}
-{%-         assign key_layer = forloop.index   -%}
+{%-         assign key_layer = key_layer | plus: 1   -%}
 		
 {%-         include core/_node.liquid          -%}
 {%-     endif                                  -%}
-{%-   endfor                                   -%}
 
 {%- endif                                      -%}
 
