@@ -42,10 +42,10 @@
 {%-     assign item_size = item | size         -%}
 
 {%-     if item_size == 10                     -%}
-{%-       if keys_size < forloop.index         -%}
+{%-       if key_layer < forloop.index         -%}
 
 {%-         assign node_sequence = "main"      -%}
-{%-         assign keys_size = forloop.index   -%}
+{%-         assign key_layer = forloop.index   -%}
 		
 {%-         include core/_node.liquid          -%}
 {%-       endif                                -%}
