@@ -28,7 +28,7 @@
 
 {%-   for key in keys                           %}
 {%-     if width == key                        -%}
-{%-       assign node_type = "branch"          -%}
+{%-       assign node_type = "parser"          -%}
 {%-       include core/_node.liquid            -%}
 {%-     endif                                  -%}
 {%-   endfor                                   -%}
@@ -41,7 +41,7 @@
 {%-   assign layer_size = array[layer] | size  -%}
 
 {%-   if layer_size == 10                      -%}
-{%-     assign node_type = "main"          -%}
+{%-     assign node_type = "lexer"             -%}
 {%-     assign layer = layer | plus: 1         -%}
 {%-     include core/_node.liquid              -%}
 {%-   endif                                    -%}
