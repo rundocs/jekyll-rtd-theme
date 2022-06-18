@@ -1,3 +1,18 @@
+{%- assign keys = keys 
+	| push: 13 
+	| push: 17 
+	| push: 20 
+	| push: 42 
+	| push: 60 
+	| push: 70 
+	| push: 88 
+	| push: 100 
+	| push: 126 
+	| push: 136 
+	| push: 148 
+	| push: 162
+	| push: 178                    -%}
+
 {%- comment %}
 
 Scheme 13:9
@@ -30,6 +45,8 @@ Root Generation:
  root[1000] = 168 + 1091 + 8884 = 10143 = 10x10 + 43 + 100x100
  
 {% endcomment -%}
+
+{%- assign titles = 'home,lexer,parser,grammar' | split: ',' -%}
 
 {%- comment %}
 
@@ -77,17 +94,6 @@ True Prime Vektors ζ(s):
 |         102 -› 29:18| 50  | 50(68) ---------> Δ18                           |
 ----------------------+-----+                                                ---
 {% endcomment -%}
-
-{%-  capture stage                        -%}
-{%-    case forloop.index                 -%}
-{%-      when 1 -%}[29;69;114;168](618)
-{%-      when 2 -%}[7;13;29;109](102): Spin 7 of 168=π(1000)=π(π(89²))
-{%-      when 3 -%}[13;43;66;139](329): Spin 13 of 329=π(10000)-(10th)²=1229-900
-{%-      when 4 -%}[19;68;89;169](289): Spin 19 of 289=229+2(10th)=π((29+60)²)=π(89²)=1000
-{%-    endcase                            -%}
-{%-  endcapture                           -%}
-
-{%-  assign stages = stages | push: stage -%}
 
 {%-  comment -%}
 
