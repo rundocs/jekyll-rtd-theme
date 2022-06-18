@@ -38,8 +38,8 @@
 {%-   assign array = array | push: arm         -%}
 {%-   assign array = array | push: id          -%}
 
-
-{%-     if array[key_layer] | size == 10     -%}
+{%-         assign tes = array[key_layer] | size      -%}
+{%-     if tes == 10     -%}
 
 {%-         assign node_sequence = "main"      -%}
 {%-         assign key_layer = key_layer | plus: 1   -%}
