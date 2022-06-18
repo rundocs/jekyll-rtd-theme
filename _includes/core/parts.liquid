@@ -56,12 +56,12 @@
 {%-     include core/_node.liquid              -%}
 {%-   endif                                    -%}
 
-{%-   for key in keys %}
+{%-   for key in keys                           %}
 {%-     if width == key                        -%}
 {%-       assign node_sequence = "branch"      -%}
 {%-       include core/_node.liquid            -%}
 {%-     endif                                  -%}
-{%-   endfor -%}
+{%-   endfor                                   -%}
 
 {%- endif                                      -%}
 

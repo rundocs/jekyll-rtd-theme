@@ -3,10 +3,15 @@
 {%- assign array = '' | split: ','          -%}
 {%- assign primes = '' | split: ','         -%}
 
-{%- assign width = parts | size             -%}
-{%- assign weight = bond | size             -%}
-{%-	assign expanse = arm | size             -%}
+{%- assign id = '' | split: ','             -%}
+{%- assign arm = '' | split: ','            -%}
+{%- assign bond = '' | split: ','           -%}
+{%- assign parts = '' | split: ','          -%}
+
 {%-	assign property = id | size             -%}
+{%-	assign expanse = arm | size             -%}
+{%- assign weight = bond | size             -%}
+{%- assign width = parts | size             -%}
 
 {%- assign primes = primes | push: 2        -%}
 {%- assign n = include.n | default: 100     -%}
