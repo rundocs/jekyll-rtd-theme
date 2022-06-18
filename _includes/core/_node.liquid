@@ -1,12 +1,12 @@
-{%-      assign title = titles[layer]    -%}
-{%-      assign stage = stages[layer]    -%}
-{%-      assign baseurl = title | prepend: "/"    -%}
-{%-      assign group = group | plus: 1 -%}
+{%-      assign title = titles[layer]           -%}
+{%-      assign stage = stages[layer]           -%}
+{%-      assign baseurl = title | prepend: "/"  -%}
+{%-      assign group = group | plus: 1         -%}
 
-{%-      assign class = ''   -%}
-{%-      if site.baseurl == baseurl               -%}
-{%-        assign class = ' class="current"'   -%}
-{%-      endif                                    -%}
+{%-      assign class = ''                      -%}
+{%-      if site.baseurl == baseurl             -%}
+{%-        assign class = ' class="current"'    -%}
+{%-      endif                                  -%}
 
 {%-      assign node = list
            | append: class
@@ -18,9 +18,9 @@
            | append: stage
            | append: '">'
            | append: title
-           | append: '</a>'                       -%}
+           | append: '</a>'                     -%}
 
-{%-      assign title = 'group'                   -%}
+{%-      assign title = 'group'                 -%}
 {%-      assign _node = list
            | append: '><a href="/'
            | append: title
@@ -40,8 +40,8 @@
            | append: group
            | append: '</a>'                     -%}
 
-{%-   if node_sequence == "main" -%}
-{%-      capture nodes                            -%}
+{%-   if node_type == "main"                    -%}
+{%-      capture nodes                          -%}
 {{         nodes                                 }}
 {%         include tabs.liquid size=13 %}</ul>
 {%         include tabs.liquid size=12 %}</li>
@@ -51,7 +51,7 @@
 {%         include tabs.liquid size=11 %}<ul>
 {%         include tabs.liquid size=12 %}{{ _node}}
 {%         include tabs.liquid size=13 %}<ul>
-{%-      endcapture                               -%}
+{%-      endcapture                             -%}
 {%-   else -%}
 {%-      capture nodes                          -%}
 {{         nodes                                 }}
