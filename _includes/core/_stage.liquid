@@ -26,22 +26,21 @@ Scheme 13:9
 {% endcomment -%}
 
 {%- assign keys = keys 
-	| push: 13  {%- comment %}13{% endcomment -%}
-	| push: 17  {%- comment %}17{% endcomment -%}  
-	| push: 20  {%- comment %}19+1{% endcomment -%}  
+	| push: 13  {%- comment %}5+1=6th{% endcomment -%}
+	| push: 17  {%- comment %}5+2=7th{% endcomment -%}  
+	| push: 20  {%- comment %}5+3=8th+1{% endcomment -%}  
 
-	| push: 42  {%- comment %}13th+11{% endcomment -%} 
-	| push: 60  {%- comment %}59+11{% endcomment -%}  
-	| push: 72  {%- comment %}18th+11{% endcomment -%}  
+	| push: 42  {%- comment %}13th+1=41+1{% endcomment -%} 
+	| push: 60  {%- comment %}17th+1=59+1{% endcomment -%}  
+	| push: 72  {%- comment %}20th+1=71+1{% endcomment -%}  
 
-	| push: 90  {%- comment %}89+1{% endcomment -%}  
-	| push: 102  {%- comment %}101+1{% endcomment -%}  
-	| push: 131  {%- comment %}31+110{% endcomment -%}  
-	| push: 137  {%- comment %}37+110{% endcomment -%}  
+	| push: 113  {%- comment %}23th+30=83th+30{% endcomment -%}  
+	| push: 139  {%- comment %}29th+30=109+30{% endcomment -%}  
 
-	| push: 151  {%- comment %}13th+110{% endcomment -%}  
-	| push: 169  {%- comment %}17th+110{% endcomment -%} 
-	| push: 181  {%- comment %}20th+110{% endcomment -%}                     
+	| push: 151  {%- comment %}13th+110=41+110{% endcomment -%}  
+	| push: 169  {%- comment %}17th+110=59+110{% endcomment -%} 
+	| push: 181  {%- comment %}20th+110=71+110{% endcomment -%}                     
+	| push: 229  {%- comment %}29th+110+10=109+120{% endcomment -%}                     
 -%}
 
 {%- comment %}
