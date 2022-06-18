@@ -50,8 +50,3 @@
 {%-  include core/parts.liquid              -%}
 
 {%- endfor                                  -%}
-		
-{%- assign strip = nodes     
-          | strip 
-          | newline_to_br 
-          | split: "<br />"                 -%}
