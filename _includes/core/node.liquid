@@ -1,6 +1,7 @@
 {%-  assign title = '('
+       | append: width
+       | append: ') '
        | append: order
-       | append: ')'
        | append: tag                        -%}
 
 {%-  assign stage = '['
