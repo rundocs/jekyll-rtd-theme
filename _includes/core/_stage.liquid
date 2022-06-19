@@ -4,6 +4,9 @@
 	| push: 13
 	| push: 17
 	| push: 20
+	| push: 42
+	| push: 60
+	| push: 72
 	| push: 168                  
 -%}                    
 
@@ -37,19 +40,17 @@ Direction:
 
 | push: 4
 | push: 8
-| push: 2
 
-| push: 11   » 5+0=5th
-| push: 13   » 5+1=6th
-| push: 17   » 5+2=7th
-| push: 20   » 5+3=8th+1
+| push: 13   » (5+1)th=6th
+| push: 17   » (5+2)th=7th
+| push: 20   » (5+3)th+1=8th+1
 
-| push: 42   » 1+13th=1+41
-| push: 60   » 1+17th=1+59 
-| push: 72   » 1+20th=1+71
-| push: 139  » 1+29+29th=30+109
-
+| push: 42   » (1+13)th=1+41
+| push: 60   » (1+17)th=1+59 
+| push: 72   » (1+20)th=1+71
+| push: 139  » (1+29+29th=30+109
 | push: 150  » 109+13th=109+41
+
 | push: 168  » 109+17th=109+59
 | push: 180  » 109+20th=109+71                  
 | push: 229  » 109+10+29th=120+109                 
