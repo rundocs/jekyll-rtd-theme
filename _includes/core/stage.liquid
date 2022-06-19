@@ -1,5 +1,8 @@
 {%- assign layer = 0 -%}
+{%- assign current_layer = 0 -%}
 {%- assign keys = '' | split: ',' -%}
+{%- assign _keys = '' | split: ',' -%}
+{%- assign _layer = '' | split: ',' -%}
 {%- assign stages = '' | split: ',' -%}
 
 {%- comment -%}
@@ -113,7 +116,10 @@ Scheme:
  230 = (10 x 5)th prime + 1 = 50th prime + 1 = 229 + 1 = π(10000) - 1000 + 1 
  
 {%-  endcomment -%}
-{%- assign keys = keys 
+{%- assign _keys = _keys 
+	| push: 4                    -%}
+
+{%- assign _layer = _layer 
 	| push: 1 
 	| push: 11 
 	| push: 30 
@@ -133,5 +139,4 @@ Scheme:
 {%-  assign stages = stages | push: stage -%}
 {%- endfor -%}
 
-{%- assign keys = '' | split: ',' -%}
 {%- include core/_stage.liquid -%}

@@ -29,6 +29,10 @@
 {%-   assign array = array | push: arm         -%}
 {%-   assign array = array | push: id          -%}
 
+{%-   if _keys contains width                  -%}
+{%-     assign tag = "*"                       -%}
+{%-   endif                                    -%}
+
 {%-   assign layer_size = array[layer] | size  -%}
 
 {%-   if layer_size == 10                      -%}
