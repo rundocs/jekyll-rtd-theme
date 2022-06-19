@@ -40,7 +40,7 @@
            | append: group
            | append: '</a>'                     -%}
 
-{%-   if node_type == "lexer"                   -%}
+{%-   if node_type == "main"                    -%}
 {%-      capture nodes                          -%}
 {{         nodes                                 }}
 {%         include tabs.liquid size=13 %}</ul>
