@@ -7,16 +7,17 @@
 {%-   assign var = grammar[index]-%}
 {%- endunless -%}
 
-{%-   assign var = var | push: property  -%}
-{%-   assign dummy = grammar -%}
-{%-           assign grammar = '' | split: ',' -%}
+{%- assign var = var | push: property  -%}
+{%- assign dummy = grammar -%}
+{%- assign grammar = '' | split: ',' -%}
 
 {%- for item in dummy                      -%}
 {%-	  if forloop.index0 == index -%}
 {%-	    assign grammar = grammar | push: var    -%}
 {%-   else   -%}
 {%-     assign grammar = grammar | push: item -%}
-{%-   endfor      -%}
+{%-   endif                                                      -%}
+{%- endfor      -%}
 
 {%-	assign property = var | size                    -%}
 
