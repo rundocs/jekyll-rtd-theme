@@ -52,12 +52,12 @@
 {%-     assign tag = "*"                       -%}
 {%-   endif                                    -%}
 
+{%-     assign layer = array | size        -%}
 {%-   assign layer_size = array[layer] | size  -%}
 
 {%-   if layer_size == 10                      -%}
 
 {%-     assign node_type = "main"              -%}
-{%-     assign layer = layer | plus: 1         -%}
 {%-     assign current_layer = layer_size      -%}
 {%-     include core/node.liquid               -%}
 {%-     include core/_node.liquid              -%}
