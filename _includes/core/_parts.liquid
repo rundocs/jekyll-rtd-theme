@@ -4,13 +4,17 @@
 {%- unless grammar[index]   -%}
 {%-   assign var = '' | split: ',' -%}
 {%- else  -%}
-{%-   assign var = grammar[index]-%}
+{%-   assign var = grammar[index] -%}
 {%- endunless -%}
 
 {%- assign var = var | push: property  -%}
-{%- assign dummy = grammar -%}
-{%- assign grammar = '' | split: ',' -%}
 
+{%- assign dummy = '' | split: ',' -%}
+{%- for item in grammar                      -%}
+{%-     assign dummy = dummy | push: item -%}
+{%- endfor      -%}
+
+{%- assign grammar = '' | split: ',' -%}
 {%- for item in dummy                      -%}
 {%-	  if forloop.index0 == index -%}
 {%-	    assign grammar = grammar | push: var    -%}
