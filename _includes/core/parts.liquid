@@ -4,40 +4,36 @@
 {%- assign order = primes | size               -%}
 
 {%- if primes contains order                   -%}
-
 {%-   unless parts                             -%}
 {%-     assign parts = '' | split: ','         -%}
 {%-   endunless                                -%}
-
 {%-   assign parts = parts | push: order       -%}
 {%-   assign width = parts | size              -%}
 
 {%-   if parts contains width                  -%}
-
 {%-     unless bond                            -%}
 {%-       assign bond = '' | split: ','        -%}
 {%-     endunless                              -%}
-
 {%-     assign bond = bond | push: width       -%}
 {%-     assign weight = bond | size            -%}
 
 {%-     if bond contains weight                -%}
-
 {%-       unless arm                           -%}
 {%-         assign arm = '' | split: ','       -%}
 {%-       endunless                            -%}
-
 {%-       assign arm = arm | push: weight      -%}
 {%-	      assign expanse = arm | size          -%}
 
 {%-	      if arm contains expanse              -%}
-
 {%-       unless id                            -%}
 {%-         assign id = '' | split: ','        -%}
 {%-       endunless                            -%}
-
 {%-	      assign id = id | push: expanse       -%}
 {%-	      assign property = id | size          -%}
+
+{%-	        if id contains property            -%}
+{%-           include core/_parts.liquid       -%}
+{%-	        endif                              -%}
 
 {%-	      endif                                -%}
 {%-	    endif                                  -%}
