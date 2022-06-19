@@ -3,13 +3,16 @@
 
 {%- unless grammar[index]                                      -%}
 {%-   assign var = '' | split: ','                  -%}
-{%-	  assign grammar = grammar | push: var    -%}
+{%- else                                                  -%}
+{%-   assign var = grammar[index]                  -%}
 {%- endunless                                                  -%}
 
-{%-	assign grammar[index] = grammar[index] | push: property    -%}
-{%-	assign property = grammar[index] | size                    -%}
+{%-   assign var = var | push: property                   -%}
+{%-	  assign grammar = grammar | push: var    -%}
 
-{%-	if grammar[index] contains property                        -%}
+{%-	assign property = var | size                    -%}
+
+{%-	if var contains property                        -%}
 
 {%-   assign _parts = nodes 
           | strip 

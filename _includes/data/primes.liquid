@@ -1,8 +1,6 @@
 {%- assign group = 1                        -%}
 {%- assign baseurl = "/"                    -%}
-
 {%- assign primes = '' | split: ','         -%}
-{%- assign grammar = '' | split: ','        -%}
 
 {%- assign primes = primes | push: 2        -%}
 {%- assign n = include.n | default: 100     -%}
