@@ -57,6 +57,12 @@
 {%-     assign array = array | push: id        -%}
 {%-   endif                                    -%}
 
+{%-   if grammar
+{%-     for item in grammar                    -%}
+{%-       assign array = array | push: item    -%}
+{%-     endfor                                 -%}
+{%-   endif                                    -%}
+
 {%-   assign array_size = array | size         -%}
 {%-   assign layer_size = array[layer] | size  -%}
 
