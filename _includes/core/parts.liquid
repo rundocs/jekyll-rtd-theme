@@ -10,6 +10,10 @@
 {%-   assign parts = parts | push: order       -%}
 {%-   assign width = parts | size              -%}
 
+{%-   if _keys contains width                  -%}
+{%-     assign tag = "*"                       -%}
+{%-   endif                                    -%}
+
 {%-   if parts contains width                  -%}
 {%-     unless bond                            -%}
 {%-       assign bond = '' | split: ','        -%}
@@ -39,10 +43,6 @@
 {%-	    endif                                  -%}
 {%-   endif                                    -%}
 
-{%-   if _keys contains width                  -%}
-{%-     assign tag = "*"                       -%}
-{%-   endif                                    -%}
-
 {%-   assign array = '' | split: ','           -%}
 {%-   if parts                                 -%}
 {%-     assign array = array | push: parts     -%}
@@ -56,7 +56,6 @@
 {%-   if id                                    -%}
 {%-     assign array = array | push: id        -%}
 {%-   endif                                    -%}
-
 
 {%-   assign array_size = array | size         -%}
 {%-   assign layer_size = array[layer] | size  -%}
@@ -75,11 +74,8 @@
 {%-     include core/_node.liquid              -%}
 
 {%-   else                                     -%}
-
 {%-     include core/node.liquid               -%}
-
 {%-   endif                                    -%}
-
 
 {%- endif                                      -%}
 
