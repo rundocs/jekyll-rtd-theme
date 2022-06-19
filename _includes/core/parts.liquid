@@ -29,19 +29,19 @@
 {%-	      assign expanse = arm | size            -%}
 
 {%-	      if arm contains expanse                -%}
-{%-       unless id                              -%}
-{%-         assign id = '' | split: ','          -%}
-{%-       endunless                              -%}
-{%-	      assign id = id | push: expanse         -%}
-{%-	      assign property = id | size            -%}
+{%-         unless id                            -%}
+{%-           assign id = '' | split: ','        -%}
+{%-         endunless                            -%}
+{%-	        assign id = id | push: expanse       -%}
+{%-	        assign property = id | size          -%}
 
 {%-	        if id contains property              -%}
 {%-           unless grammar                     -%}
 {%-             assign grammar = '' | split: ',' -%}
 {%-           endunless                          -%}
 {%-           include core/_parts.liquid         -%}
-{%-	        endif                                -%}
 
+{%-	        endif                                -%}
 {%-	      endif                                  -%}
 {%-	    endif                                    -%}
 {%-   endif                                      -%}
