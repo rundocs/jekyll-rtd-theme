@@ -39,6 +39,7 @@
 
 {%-     assign node_type = "main"              -%}
 {%-     assign layer = layer | plus: 1         -%}
+{%-     assign current_layer = layer_size      -%}
 {%-     include core/node.liquid               -%}
 {%-     include core/_node.liquid              -%}
 
