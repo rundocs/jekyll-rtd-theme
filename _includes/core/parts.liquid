@@ -62,13 +62,13 @@
 {%-   endif                                    -%}
 
 
-{%-     assign layer = array | size        -%}
+{%-     assign array_size = array | size        -%}
 {%-   assign layer_size = array[layer] | size  -%}
 
 {%-   if layer_size == 10                      -%}
 
 {%-     assign node_type = "main"              -%}
-{%-     assign current_layer = layer_size      -%}
+{%-     assign layer = layer | plus: 1         -%}
 {%-     include core/node.liquid               -%}
 {%-     include core/_node.liquid              -%}
 
