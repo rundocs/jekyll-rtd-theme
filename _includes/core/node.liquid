@@ -6,8 +6,7 @@
 {%-  assign title = '('
        | append: width
        | append: ') '
-       | append: order
-       | append: tag                         -%}
+       | append: order                       -%}
 
 {%-  assign stage = '['
        | append: num
@@ -27,7 +26,8 @@
        | append: layer
        | append: ','
        | append: array_size
-       | append: ')'                         -%}
+       | append: ')'
+       | append: tag                         -%}
 
 {%-  assign list = '<li data-id="'
        | append: stage
