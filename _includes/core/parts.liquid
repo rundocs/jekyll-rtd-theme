@@ -1,5 +1,4 @@
 {%- assign tag = ""                            -%}
-{%- assign array = '' | split: ','             -%}
 
 {%- assign primes = primes | push: num         -%}
 {%- assign order = primes | size               -%}
@@ -11,7 +10,6 @@
 {%-   endunless                                -%}
 
 {%-   assign parts = parts | push: order       -%}
-{%-   assign array = array | push: parts       -%}
 {%-   assign width = parts | size              -%}
 
 {%-   if parts contains width                  -%}
@@ -21,7 +19,6 @@
 {%-   endunless                                -%}
 
 {%-     assign bond = bond | push: width       -%}
-{%-     assign array = array | push: bond      -%}
 {%-     assign weight = bond | size            -%}
 
 {%-     if bond contains weight                -%}
@@ -31,7 +28,6 @@
 {%-   endunless                                -%}
 
 {%-       assign arm = arm | push: weight      -%}
-{%-        assign array = array | push: arm    -%}
 {%-	       assign expanse = arm | size         -%}
 
 {%-	       if arm contains expanse             -%}
@@ -41,7 +37,6 @@
 {%-   endunless                                -%}
 
 {%-	         assign id = id | push: expanse    -%}
-{%-          assign array = array | push: id   -%}
 {%-	         assign property = id | size       -%}
 
 {%-	       endif                               -%}
@@ -51,6 +46,21 @@
 {%-   if _keys contains width                  -%}
 {%-     assign tag = "*"                       -%}
 {%-   endif                                    -%}
+
+{%- assign array = '' | split: ','             -%}
+{%-   if parts                             -%}
+{%-   assign array = array | push: parts       -%}
+{%-   endif                                    -%}
+{%-   if bond                            -%}
+{%-     assign array = array | push: bond      -%}
+{%-   endif                                    -%}
+{%-   if arm                             -%}
+{%-        assign array = array | push: arm    -%}
+{%-   endif                                    -%}
+{%-   if id                            -%}
+{%-          assign array = array | push: id   -%}
+{%-   endif                                    -%}
+
 
 {%-     assign layer = array | size        -%}
 {%-   assign layer_size = array[layer] | size  -%}
