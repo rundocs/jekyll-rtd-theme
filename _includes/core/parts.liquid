@@ -62,6 +62,7 @@
 {%-   endif                                      -%}
 
 {%-   if grammar                                 -%}
+{%-     assign tag = grammar | jsonify           -%}
 {%-     for item in grammar                      -%}
 {%-       assign array = array | push: item      -%}
 {%-     endfor                                   -%}
