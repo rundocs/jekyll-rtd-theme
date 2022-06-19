@@ -1,4 +1,20 @@
-{%- assign _parts = nodes 
+{%- assign index = include.index | default: 0               -%}
+
+{%- unless grammar[index]                                   -%}
+{%-   assign grammar[index] = '' | split: ','               -%}
+{%- endunless                                               -%}
+
+{%-	assign grammar[index] = grammar[index] | push: property -%}
+{%-	assign property = grammar[index] | size                 -%}
+
+{%-	if grammar[index] contains property                     -%}
+
+{%-   assign _parts = nodes 
           | strip 
           | newline_to_br 
-          | split: "<br />"                -%}
+          | split: "<br />"                                 -%}
+
+{%-	  assign index = index | plus: 1                        -%}
+{%-   include core/_parts.liquid index=index                -%}
+
+{%- endif                                                   -%}
