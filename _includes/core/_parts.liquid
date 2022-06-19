@@ -2,7 +2,8 @@
 {%- assign property = include.property                         -%}
 
 {%- unless grammar[index]                                      -%}
-{%-   assign grammar[index] = '' | split: ','                  -%}
+{%-   assign var = '' | split: ','                  -%}
+{%-	  assign grammar = grammar | push: var    -%}
 {%- endunless                                                  -%}
 
 {%-	assign grammar[index] = grammar[index] | push: property    -%}
