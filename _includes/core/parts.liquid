@@ -24,15 +24,6 @@
 {%-	     endif                                 -%}
 {%-   endif                                    -%}
 
-{%-   include core/node.liquid                 -%}
-
-{%-   for key in keys                           %}
-{%-     if width == key                        -%}
-{%-       assign node_type = "lexer"           -%}
-{%-       include core/_node.liquid            -%}
-{%-     endif                                  -%}
-{%-   endfor                                   -%}
-
 {%-   assign array = array | push: parts       -%}
 {%-   assign array = array | push: bond        -%}
 {%-   assign array = array | push: arm         -%}
@@ -45,6 +36,15 @@
 {%-     assign layer = layer | plus: 1         -%}
 {%-     include core/_node.liquid              -%}
 {%-   endif                                    -%}
+
+{%-   for key in keys                           %}
+{%-     if width == key                        -%}
+{%-       assign node_type = "lexer"           -%}
+{%-       include core/_node.liquid            -%}
+{%-     endif                                  -%}
+{%-   endfor                                   -%}
+
+{%-   include core/node.liquid                 -%}
 
 {%- endif                                      -%}
 
