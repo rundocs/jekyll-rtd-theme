@@ -39,7 +39,8 @@
 {%-           unless grammar                     -%}
 {%-             assign grammar = '' | split: ',' -%}
 {%-           endunless                          -%}
-{%-           include core/_parts.liquid         -%}
+{%-           include core/_parts.liquid index=0
+                property=property                -%}
 
 {%-	        endif                                -%}
 {%-	      endif                                  -%}
