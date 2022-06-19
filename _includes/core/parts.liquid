@@ -5,29 +5,48 @@
 {%- assign order = primes | size               -%}
 
 {%- if primes contains order                   -%}
+
+{%-   unless parts                             -%}
+{%-      assign parts = '' | split: ','        -%}
+{%-   endunless                                -%}
+
 {%-   assign parts = parts | push: order       -%}
+{%-   assign array = array | push: parts       -%}
 {%-   assign width = parts | size              -%}
 
 {%-   if parts contains width                  -%}
+
+{%-   unless bond                             -%}
+{%-      assign bond = '' | split: ','        -%}
+{%-   endunless                                -%}
+
 {%-     assign bond = bond | push: width       -%}
+{%-     assign array = array | push: bond      -%}
 {%-     assign weight = bond | size            -%}
 
 {%-     if bond contains weight                -%}
+
+{%-   unless arm                             -%}
+{%-      assign arm = '' | split: ','        -%}
+{%-   endunless                                -%}
+
 {%-       assign arm = arm | push: weight      -%}
+{%-        assign array = array | push: arm    -%}
 {%-	       assign expanse = arm | size         -%}
 
 {%-	       if arm contains expanse             -%}
+
+{%-   unless id                             -%}
+{%-      assign id = '' | split: ','        -%}
+{%-   endunless                                -%}
+
 {%-	         assign id = id | push: expanse    -%}
+{%-          assign array = array | push: id   -%}
 {%-	         assign property = id | size       -%}
 
 {%-	       endif                               -%}
 {%-	     endif                                 -%}
 {%-   endif                                    -%}
-
-{%-   assign array = array | push: parts       -%}
-{%-   assign array = array | push: bond        -%}
-{%-   assign array = array | push: arm         -%}
-{%-   assign array = array | push: id          -%}
 
 {%-   if _keys contains width                  -%}
 {%-     assign tag = "*"                       -%}

@@ -1,8 +1,13 @@
+{%-	assign property = id | size | default: 0 -%}
+{%-	assign expanse = arm | size | default: 0 -%}
+{%- assign weight = bond | size | default: 0 -%}
+{%- assign width = parts | size | default: 0 -%}
+
 {%-  assign title = '('
        | append: width
        | append: ') '
        | append: order
-       | append: tag                        -%}
+       | append: tag                         -%}
 
 {%-  assign stage = '['
        | append: num
@@ -12,7 +17,7 @@
        | append: width
        | append: ';'
        | append: weight
-       | append: ']'                        -%}
+       | append: ']'                         -%}
 
 {%-  assign details = '['
        | append: expanse
@@ -20,11 +25,11 @@
        | append: property
        | append: ']('
        | append: layer
-       | append: ')'                        -%}
+       | append: ')'                         -%}
 
 {%-  assign list = '<li data-id="'
        | append: stage
-       | append: '"'                       -%}
+       | append: '"'                         -%}
 
 {%-  assign node = list
        | append: '><a href="'
@@ -35,10 +40,10 @@
        | append: details
        | append: '">'
        | append: title
-       | append: '</a></li>'                -%}
+       | append: '</a></li>'                 -%}
 
-{%-  capture nodes                          -%}
-{{     nodes                                 }}
-{%     include tabs.liquid size=14 %}{{ node }}
-{%-  endcapture                             -%}
+{%-  capture nodes                           -%}
+{{     nodes                                  }}
+{%     include tabs.liquid size=14 %}{{ node  }}
+{%-  endcapture                              -%}
 
