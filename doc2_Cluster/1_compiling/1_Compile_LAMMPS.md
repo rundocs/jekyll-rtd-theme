@@ -974,6 +974,7 @@ source mklvars.sh intel64
 - To void libs hidden by conda-lib, install libs in conda with version < in linux system.
 - downgrade GCC in conda
 - conda install -c conda-forge libgcc-ng=7 zlib=1.2.8
+- Now, not use python
 ```
 
 ```shell
@@ -995,7 +996,7 @@ export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12          # zlib
 
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
--DPython_ROOT_DIR=${pyROOT} -DCMAKE_C_FLAGS="-gdwarf-4 -gstrict-dwarf" \
+-DCMAKE_C_FLAGS="-gdwarf-4 -gstrict-dwarf" \
 -DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.a \
 -DBUILD_MPI=yes -DBUILD_OMP=yes -DPKG_OPENMP=yes -DLAMMPS_MACHINE=mpi -DBUILD_SHARED_LIBS=no \
 -DPKG_GPU=no -DPKG_KOKKOS=no -DPKG_INTEL=no -DPKG_MDI=no \
@@ -1008,6 +1009,9 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 make -j 16 && make install
 ```
 
+```shell
+-DPython_ROOT_DIR=${pyROOT} \
+```
 
 
 
