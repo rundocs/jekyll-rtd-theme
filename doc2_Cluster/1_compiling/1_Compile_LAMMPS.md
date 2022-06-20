@@ -995,7 +995,7 @@ export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12          # zlib
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPython_ROOT_DIR=${pyROOT} -DCMAKE_C_FLAGS="-gdwarf-4 -gstrict-dwarf" \
--DZLIB_INCLUDE_DIR="${myZLIB}" -DZLIB_LIBRARY="${myZLIB}/lib" \
+-DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.a \
 -DBUILD_MPI=yes -DBUILD_OMP=yes -DPKG_OPENMP=yes -DLAMMPS_MACHINE=mpi -DBUILD_SHARED_LIBS=no \
 -DPKG_GPU=no -DPKG_KOKKOS=no -DPKG_INTEL=no -DPKG_MDI=no \
 -DPKG_SCAFACOS=no -DPKG_ADIOS=no -DPKG_NETCDF=no -DPKG_VTK=no -DPKG_H5MD=no \
