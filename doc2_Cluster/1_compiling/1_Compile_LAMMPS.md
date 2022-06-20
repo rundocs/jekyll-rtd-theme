@@ -989,8 +989,9 @@ export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
 export PATH=$PATH:${myCOMPILER}/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort
 export LDFLAGS="-fuse-ld=lld -lrt"
-## python (require py3) & BLAS+LAPACK
+## python (require py3), BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
+export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12          # zlib
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPython_ROOT_DIR=${pyROOT} -DCMAKE_C_FLAGS="-gdwarf-4 -gstrict-dwarf" \
