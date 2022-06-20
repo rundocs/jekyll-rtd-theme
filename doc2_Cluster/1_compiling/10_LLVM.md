@@ -83,7 +83,7 @@ cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 -DCMAKE_CXX_STANDARD=17 \
 -DCMAKE_C_FLAGS="-flax-vector-conversions -gdwarf-4 -gstrict-dwarf" -DCMAKE_C_FLAGS_RELEASE="-flax-vector-conversions -gdwarf-4 -gstrict-dwarf" \
--DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib \
+-DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.a \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
 
 make -j 16 && make install
