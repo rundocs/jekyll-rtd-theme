@@ -61,4 +61,13 @@ prepend-path    LD_LIBRARY_PATH         $topdir/lib
 prepend-path    INCLUDE 	        $topdir/include
 ```
 
+## Zlib
+```shell
+wget -c --no-check-certificate https://zlib.net/zlib-1.2.12.tar.gz
+tar zxvf zlib-1.2.12.tar.gz
+cd zlib-1.2.12
+
+./configure --prefix=/home1/p001cao/local/app/tool_dev/zlib-1.2.12
+make -j16 && make install
+```
 
