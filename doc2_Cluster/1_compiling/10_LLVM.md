@@ -46,7 +46,7 @@ mkdir build && cd build
 - Use Release/Debug
 - See more https://llvm.org/docs/CMake.html
 - LLDB require SWIG > 3.0
-- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so after compile LLVM, should reinstall zlib<1.2.11 to avoid error when run LAMMPS, Or should use GCC in conda to avoid conflict.
+- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so should update  zlib>1.2.11 to hidden error. Or should use GCC in conda to avoid conflict.
 ```
 
 ```shell
@@ -68,6 +68,7 @@ mkdir build && cd build
 module load tool_dev/cmake-3.24
 module load conda/py37Lammps
 module load tool_dev/binutils-2.37
+module load tool_dev/zlib-1.2.12
 module load compiler/gcc-11.2
 
 export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
