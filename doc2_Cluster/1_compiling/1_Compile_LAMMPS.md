@@ -981,8 +981,8 @@ source mklvars.sh intel64
 git pull origin develop
 mkdir build_LLVM && cd build_LLVM
 
-module load tool_dev/binutils-2.37
 module load tool_dev/cmake-3.24
+module load tool_dev/binutils-2.37
 module load fftw/fftw3.3.10-ompi4.1.4-clang14
 module load mpi/ompi4.1.4-clang14
 
