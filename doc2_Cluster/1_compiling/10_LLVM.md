@@ -76,13 +76,14 @@ export PATH=$PATH:${myCOMPILER}/bin                                 # :/usr/bin
 export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"   
 export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12           # zlib
+export CFLAGS="-gdwarf-4 -gstrict-dwarf -fPIC -m64 -pthread -Wl,--allow-shlib-undefined -g"   # avoid error zlib-1.2.12
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;libcxx;libcxxabi" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 -DCMAKE_CXX_STANDARD=17 \
--DCMAKE_C_FLAGS="-flax-vector-conversions -gdwarf-4 -gstrict-dwarf" -DCMAKE_C_FLAGS_RELEASE="-flax-vector-conversions -gdwarf-4 -gstrict-dwarf" \
+-DCMAKE_C_FLAGS="-flax-vector-conversions" -DCMAKE_C_FLAGS_RELEASE="-flax-vector-conversions" \
 -DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.a \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
 
@@ -105,6 +106,9 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${myCOMPILER}/lib
 -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;flang;libclc;lld;openmp;polly;pstl;mlir" \  # "clang;flang;lld;openmp"
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 ```
+
+**Ref
+https://stackoverflow.com/questions/69683755/libpng-apngerror-o-requires-dynamic-r-x86-64-pc32-reloc-against-stderr
 
 ### Module file
 
