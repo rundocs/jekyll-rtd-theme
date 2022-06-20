@@ -993,8 +993,10 @@ export LDFLAGS="-fuse-ld=lld -lrt"
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
 export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12          # zlib
 
+
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
--DPython_ROOT_DIR=${pyROOT} -DCMAKE_C_FLAGS="-gdwarf-4 -gstrict-dwarf" \
+-DCMAKE_C_FLAGS="-gdwarf-4 -gstrict-dwarf" \
+-DPython_ROOT_DIR=${pyROOT} Python_USE_STATIC_LIBS=on \
 -DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.a \
 -DBUILD_MPI=yes -DBUILD_OMP=yes -DPKG_OPENMP=yes -DLAMMPS_MACHINE=mpi -DBUILD_SHARED_LIBS=no \
 -DPKG_GPU=no -DPKG_KOKKOS=no -DPKG_INTEL=no -DPKG_MDI=no \
@@ -1006,3 +1008,4 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 
 make -j 16 && make install
 ```
+
