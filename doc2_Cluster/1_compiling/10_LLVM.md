@@ -75,13 +75,15 @@ export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
 export PATH=$PATH:${myCOMPILER}/bin                                     # :/usr/bin
 export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"
+export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12       # zlib
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
--DCMAKE_CXX_STANDARD=17 \
--DCMAKE_C_FLAGS="-flax-vector-conversions -gdwarf-4 -gstrict-dwarf" -DCMAKE_C_FLAGS_RELEASE="-flax-vector-conversions -gdwarf-4 -gstrict-dwarf" \
 -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;libcxx;libcxxabi" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
+-DCMAKE_CXX_STANDARD=17 \
+-DCMAKE_C_FLAGS="-flax-vector-conversions -gdwarf-4 -gstrict-dwarf" -DCMAKE_C_FLAGS_RELEASE="-flax-vector-conversions -gdwarf-4 -gstrict-dwarf" \
+-DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
 
 make -j 16 && make install
