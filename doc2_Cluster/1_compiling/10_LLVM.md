@@ -46,12 +46,12 @@ mkdir build && cd build
 - Use Release/Debug
 - See more https://llvm.org/docs/CMake.html
 - LLDB require SWIG > 3.0
-- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so after compile LLVM, should reinstall zlib<1.2.11 to avoid error when run LAMMPS.
+- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so after compile LLVM, should reinstall zlib<1.2.11 to avoid error when run LAMMPS, Or should use GCC in conda to avoid conflict.
 ```
 
 ```shell
 source activate py37Lammps
-conda install -c conda-forge libgcc-ng=9 libstdcxx-ng=9 zlib=1.2.11
+conda install -c conda-forge libgcc-ng=9 libstdcxx-ng=9 libgomp=9 zlib=1.2.11 python=3.7
 ```
 
 **Install LLVM
@@ -121,18 +121,16 @@ prepend-path    INCLUDE                 $topdir/include
 ```
 
 ### use GCC-conda
-
 ```note
-use conda can install: gcc, glibc, cmake,... and other libs. But new GLIBC is required, so cannot use now
+use conda can install: gcc, cmake,... and other libs. But note install LLVM, since new GLIBC is required, 
 ```
 
 **Install Conda (Since LLVM require python >= 3.6)
-- LLDB require SWIG > 3.0
 
 ```shell
-conda create -n py37llvm python=3.7.5
-source activate py37llvm
-conda install -c conda-forge gcc=11 zlib swig=3 cmake=3.20
+conda create -n py37gcc12 python=3.7
+source activate py37gcc12
+conda install -c conda-forge libgcc-ng=12 libstdcxx-ng=12 libgomp=12 cmake=3 binutils
 ```
 
 **Install LLVM
@@ -142,17 +140,20 @@ git clone -b release/14.x https://github.com/llvm/llvm-project.git llvm-14
 cd llvm-14
 mkdir build_conda && cd build_conda
 
-module load conda/py37llvm
+module load conda/py37gcc12
 
-export myCOMPILER=/home1/p001cao/local/app/miniconda3/envs/py37llvm
+export myCOMPILER=/home1/p001cao/local/app/miniconda3/envs/py37gcc12
 export PATH=${myCOMPILER}/bin:$PATH                                     # :/usr/bin
 export CC=gcc export CXX=g++
+export LDFLAGS="-fuse-ld=gold -lrt"
+export CFLAGS="-gdwarf-4 -gstrict-dwarf -flax-vector-conversions"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
--DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;flang;libclc;libunwind;lld;openmp;polly;pstl;mlir" \
+-DCMAKE_CXX_STANDARD=17 \
+-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;libcxx;libcxxabi" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
--DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib -L${myCOMPILER}/lib" \
--DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
+-DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
+-DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14-conda
 
 make -j 16 && make install
 ```
