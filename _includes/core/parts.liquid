@@ -1,0 +1,90 @@
+{%- assign tag = ""                              -%}
+
+{%- assign primes = primes | push: num           -%}
+{%- assign order = primes | size                 -%}
+
+{%- if primes contains order                     -%}
+{%-   unless parts                               -%}
+{%-     assign parts = '' | split: ','           -%}
+{%-   endunless                                  -%}
+{%-   assign parts = parts | push: order         -%}
+{%-   assign width = parts | size                -%}
+
+{%-   if _keys contains width                    -%}
+{%-     assign tag = "*"                         -%}
+{%-   endif                                      -%}
+
+{%-   if parts contains width                    -%}
+{%-     unless bond                              -%}
+{%-       assign bond = '' | split: ','          -%}
+{%-     endunless                                -%}
+{%-     assign bond = bond | push: width         -%}
+{%-     assign weight = bond | size              -%}
+
+{%-     if bond contains weight                  -%}
+{%-       unless arm                             -%}
+{%-         assign arm = '' | split: ','         -%}
+{%-       endunless                              -%}
+{%-       assign arm = arm | push: weight        -%}
+{%-	      assign expanse = arm | size            -%}
+
+{%-	      if arm contains expanse                -%}
+{%-         unless id                            -%}
+{%-           assign id = '' | split: ','        -%}
+{%-         endunless                            -%}
+{%-	        assign id = id | push: expanse       -%}
+{%-	        assign property = id | size          -%}
+
+{%-	        if id contains property              -%}
+{%-           unless grammar                     -%}
+{%-             assign grammar = '' | split: ',' -%}
+{%-           endunless                          -%}
+{%-           include core/_parts.liquid index=0
+                property=property                -%}
+
+{%-	        endif                                -%}
+{%-	      endif                                  -%}
+{%-	    endif                                    -%}
+{%-   endif                                      -%}
+
+{%-   assign array = '' | split: ','             -%}
+{%-   if parts                                   -%}
+{%-     assign array = array | push: parts       -%}
+{%-   endif                                      -%}
+{%-   if bond                                    -%}
+{%-     assign array = array | push: bond        -%}
+{%-   endif                                      -%}
+{%-   if arm                                     -%}
+{%-     assign array = array | push: arm         -%}
+{%-   endif                                      -%}
+{%-   if id                                      -%}
+{%-     assign array = array | push: id          -%}
+{%-   endif                                      -%}
+
+{%-     for item in grammar                      -%}
+{%-       assign array = array | push: item      -%}
+{%-     endfor                                   -%}
+{%-     assign tag = grammar | jsonify           -%}
+
+{%-   assign array_size = array | size           -%}
+{%-   assign layer_size = array[layer] | size    -%}
+
+{%-   if layer_size == 10                        -%}
+
+{%-     assign node_type = "main"                -%}
+{%-     include core/node.liquid                 -%}
+{%-     include core/_node.liquid                -%}
+{%-     assign layer = layer | plus: 1           -%}
+
+{%-   elsif keys contains width                  -%}
+
+{%-     assign node_type = "lexer"               -%}
+{%-     include core/node.liquid                 -%}
+{%-     include core/_node.liquid                -%}
+
+{%-   else                                       -%}
+{%-     include core/node.liquid                 -%}
+{%-   endif                                      -%}
+
+{%- endif                                        -%}
+

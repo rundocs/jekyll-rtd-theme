@@ -18,8 +18,8 @@ $theme-link-hover: lighten($blue, 10%);
 $theme-link-visited: lighten($purple, 10%);
 
 // theme code
-$theme-code: $theme-black;
-$theme-code-background: $bg-gray;
+$theme-code: $theme-white;
+$theme-code-background: $theme-black;
 $theme-code-inline: $theme-red;
 $theme-code-inline-background: darken($theme-white, 2%);
 
@@ -29,6 +29,6 @@ $theme-mask-black: transparentize($theme-black, 0.9);
 
 // theme menu
 $theme-menu-width-sm: 85%;
-$theme-menu-width: 300px;
+$theme-menu-width: 289px;
 $theme-menu-background: darken($theme-black, 10%);
 $theme-menu-active-background: darken($theme-blue, 15%);

@@ -1,0 +1,46 @@
+        <div class="templatemo-slide">
+            <!-- Carousel https://stackoverflow.com/a/50276864/4058484 -->
+            <div id="templatemo-carousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#templatemo-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#templatemo-carousel" data-slide-to="1"></li>
+                    <li data-target="#templatemo-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="container">
+                            <div class="carousel-caption carousel-uppercase">
+                                <h1>{{ data.slide[0] }}</h1>
+                                <p>{{ data.slide[1] }}</p>
+                                <p><a href="#chetabahana-{{ layout.menus[0] }}" class="btn btn-lg btn-orange" role="button" style="margin: 20px;">{{ layout.menus[0] }}</a> 
+                                    <a href="#chetabahana-{{ layout.menus[1] }}" class="btn btn-lg btn-orange" role="button">{{ layout.menus[1] }}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="container">
+                            <div class="carousel-caption carousel-uppercase">
+                                <h1>{{ data.slide[2] }}</h1>
+                                <p>{{ data.slide[3] }}</p>
+                                <p><a href="#chetabahana-{{ layout.menus[2] }}" class="btn btn-lg btn-orange" role="button" style="margin: 20px;">{{ layout.menus[2] }}</a> 
+                                    <a href="#chetabahana-{{ layout.menus[3] }}" class="btn btn-lg btn-orange" role="button">{{ layout.menus[3] }}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="container">
+                            <div class="carousel-caption carousel-uppercase">
+                                <h1>{{ data.slide[4] }}</h1>
+                                <p>{{ data.slide[5] }}</p>
+                                <p><a href="#chetabahana-{{ layout.menus[4] }}" class="btn btn-lg btn-orange" role="button" style="margin: 20px;">{{ layout.menus[4] }}</a> 
+                                    <a href="#chetabahana-{{ layout.menus[5] }}" class="btn btn-lg btn-orange" role="button">{{ layout.menus[5] }}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#templatemo-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#templatemo-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a href="https://github.com/{{ site.repository }}"><img loading="eager" style="width: 149px; height: 149px; position: absolute; top: 0; right: 0; border: 0;" src="/images/github/forkme_chetabahana_project.png" alt="Fork me on GitHub" /></a>
+            </div><!-- /#templatemo-carousel -->
+        </div><!-- /{{ page.title }} -->

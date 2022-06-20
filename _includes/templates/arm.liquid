@@ -1,0 +1,28 @@
+
+			<header id="header">
+				<div id="stuck_container">
+					<div class="container">
+						<div class="row">
+							<div class="grid_12">
+								<div class="brand put-left">
+									<h1><a href="/"><img src="/images/logo.png" alt="eQuantum Project | A Unique Kind of Mapping System - Open Source"/></a></h1>
+								</div>
+								<nav class="nav put-right">
+									<ul class="sf-menu">
+										<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/" id="home" title="{{ stages | first }}*: Spin 168=π(1000) as Lexer and 618=1000/Φ as Parser">home</a>
+											<ul>
+												<li><a href="/group-1" id="group-1" title="group-1">group-1</a>
+													<ul>
+														{{- nodes }}
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li{% if site.baseurl == "/about" %} class="current"{% endif %}><a href="/about" id="about" title="Current: {{ title }} of {{ note }} from Mapping: {{ stages | first }}">about</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>

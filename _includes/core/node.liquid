@@ -1,0 +1,51 @@
+{%-	assign property = id | size | default: 0 -%}
+{%-	assign expanse = arm | size | default: 0 -%}
+{%- assign weight = bond | size | default: 0 -%}
+{%- assign width = parts | size | default: 0 -%}
+
+{%-  assign title = '('
+       | append: width
+       | append: ') '
+       | append: order                       -%}
+
+{%-  assign stage = '['
+       | append: num
+       | append: ';'
+       | append: order
+       | append: ';'
+       | append: width
+       | append: ';'
+       | append: weight
+       | append: ']'                         -%}
+
+{%-  assign details = '['
+       | append: expanse
+       | append: ';'
+       | append: property
+       | append: ']('
+       | append: layer
+       | append: ','
+       | append: array_size
+       | append: ')'
+       | append: tag                         -%}
+
+{%-  assign list = '<li data-id="'
+       | append: stage
+       | append: '"'                         -%}
+
+{%-  assign node = list
+       | append: '><a href="'
+       | append: baseurl
+       | append: '" id='
+       | append: width
+       | append: ' aria-details="'
+       | append: details
+       | append: '">'
+       | append: title
+       | append: '</a></li>'                 -%}
+
+{%-  capture nodes                           -%}
+{{     nodes                                  }}
+{%     include tabs.liquid size=14 %}{{ node  }}
+{%-  endcapture                              -%}
+

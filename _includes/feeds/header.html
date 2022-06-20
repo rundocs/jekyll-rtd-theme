@@ -1,0 +1,43 @@
+        <!-- Google Tag Manager (noscript) -->
+        <!--noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKD75D8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript -->
+        <!-- End Google Tag Manager (noscript) -->
+
+        <div class="templatemo-top-bar" id="templatemo-top">
+            <div class="container">
+                <div class="subheader">
+                    <div id="phone" class="pull-left">
+                        <img loading="eager" src="/images/icon/globe-16x16.png" alt="{{ site.description }}"/>
+                        <a href="/feed.json" target="_blank" class="link_orange"><span class="txt_orange">Site Maps </span></a>
+                    </div>
+                    <div id="email" class="pull-right">
+                        <img loading="eager" src="/images/icon/favicon-16x16.png" alt="{{ site.impressum }}"/>
+                        <a href="https://chetabahana.github.io/feed.xml" target="_blank" class="link_orange"><span class="txt_orange">Site Feed </span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+        <div class="templatemo-top-menu">
+            <div class="container">
+                <!-- Static navbar -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                            <a href="/" class="navbar-brand" title="Chetabahana"><img loading="eager" src="logo.png" alt="chetabahana-logo" title="{{ site.slogan }}" /></a>
+                        </div>
+                        <div class="navbar-collapse collapse" id="templatemo-nav-bar">
+                            <ul class="nav navbar-nav navbar-right" style="margin-top: 40px;">
+                                <li class="active"><a href="#templatemo-top">Beranda</a></li>{% for menu in layout.menus %}
+                                <li><a href="#chetabahana-{{ menu }}">{{ menu }}</a></li>{% endfor %}
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div><!--/.container-fluid -->
+                </div><!--/.navbar -->
+            </div><!-- /container -->
+        </div><!-- /top-menu -->

@@ -1,0 +1,39 @@
+{%- assign index = include.index | default: 0   -%}
+{%- assign property = include.property          -%}
+
+{%- unless grammar[index]   -%}
+{%-   assign var = '' | split: ',' -%}
+{%-   assign var = var | push: property  -%}
+{%-	  assign grammar = grammar | push: var    -%}
+{%- else  -%}
+{%-   assign var = grammar[index] -%}
+{%-   assign var = var | push: property  -%}
+
+{%-   assign dummy = '' | split: ',' -%}
+{%-   for item in grammar                      -%}
+{%-     assign dummy = dummy | push: item   -%}
+{%-   endfor      -%}
+
+{%-   assign grammar = '' | split: ','          -%}
+{%-   for item in dummy                         -%}
+{%-	    if forloop.index0 == index              -%}
+{%-	      assign grammar = grammar | push: var  -%}
+{%-     else   -%}
+{%-       assign grammar = grammar | push: item -%}
+{%-     endif                                   -%}
+{%-   endfor      -%}
+{%- endunless -%}
+
+{%-	assign property = var | size                -%}
+
+{%-	if var contains property                    -%}
+
+{%-   assign _parts = nodes 
+          | strip 
+          | newline_to_br 
+          | split: "<br />"                                    -%}
+
+{%-   assign index = index | plus: 1                           -%}
+{%-   include core/_parts.liquid index=index property=property -%}
+
+{%- endif                                                      -%}

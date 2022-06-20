@@ -15,6 +15,7 @@
   }
 
   // 400
+  max-width: 623px !important;
   font-weight: $font-weight-normal;
 
   a {
@@ -76,7 +77,7 @@
 
   .highlight pre,
   pre {
-    font-size: $font-size-small;
+    font-size: $font-size-tiny;
     border: $border;
     background-color: $theme-code-background;
   }

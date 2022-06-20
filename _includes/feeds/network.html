@@ -1,0 +1,39 @@
+        <div id="chetabahana-{{ page.title | downcase }}" class="chetabahana-{{ page.title | downcase }}">
+            <div class="container">
+                <div class="row">
+                    <div class="templatemo-line-header" >
+                        <div class="text-center">
+                            <h4>{{ page.title }}</h4>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="templatemo-feeds">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-1">
+                            <a href="/dom-to-image/" target="_blank"> <img src="images/quote.png" alt="icon" /></a>
+                        </div>
+                        <div class="col-md-7 feeds_txt"> 
+                            <span>Tentang Kami:<br><a class="vglnk" href="https://chetabahana.com">Chetabahana.com</a> | Situs Belanja Jual-Beli Barang & Promo Aneka Produk Fashion, Busana Muslim, Bayi & Anak-anak, Kecantikan, Tas, Sepatu, Peralatan Rumah Tangga, Elektronik, Makanan & Minuman Kemasan, dll. Soon The E-Shop Market Leader Will Be Owned Here!</span>
+                            <div>
+                                <div id="instafeed"></div>
+                                <div class="feedsnav">
+                                    <!-- a href="http://bufferapp.com/add" class="buffer-add-button" data-count="vertical" data-via="chetabahana"><script type="text/javascript" src="https://static.buffer.com/js/button.js"></script -->
+                                </div>
+                            </div>	
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+
+                    <div class="text-center">
+                        <div style="margin-top:60px;">
+                            <ul class="list-inline">{% for partner in data.partner %}
+                                <li class="col-sm-2 col-md-2 templatemo-partner-item">
+                                    <a href="{{ partner.href }}" title="{{ partner.text }}"> <img src="{{ partner.src }}" class="img-responsive" alt="{{ partner.text }}" /></a>
+                                </li>{% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /{{ page.title }}-->

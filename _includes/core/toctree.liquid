@@ -1,0 +1,26 @@
+{%- assign counter = 0 -%}
+{%- include leads/rest/workdir.liquid %}
+
+{% comment %} list the root files {% endcomment %}
+<ul>
+    {%- for item in workdir_files -%}
+		{%- assign counter = counter | plus: 1 -%}
+		{%- include leads/rest/item_dir.liquid -%}
+        {%- assign level = item_dir | append: "temp" | replace_first: "/", "" | split: "/" | size -%}
+        {%- capture current -%}
+            {%- if page.url == item.url %}current{% endif -%}
+        {%- endcapture %}
+        <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+            <a id="{{ counter }}" class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
+                {%- if item.sort -%}
+                    {{ item.sort }}. {{ item.title | default: item.name }}
+                {%- else -%}
+                    {{ item.title | default: item.name }}
+                {%- endif -%}
+            </a>
+        </li>
+    {%- endfor %}
+</ul>
+
+{% comment %} list the root dirs {% endcomment %}
+{%- for workdir in workdir_dirs %}{% include core/_toctree.liquid %}{% endfor -%}

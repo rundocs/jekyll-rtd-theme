@@ -1,0 +1,41 @@
+{%- assign group = 1                        -%}
+{%- assign baseurl = "/"                    -%}
+{%- assign primes = '' | split: ','         -%}
+
+{%- assign primes = primes | push: 2        -%}
+{%- assign n = include.n | default: 100     -%}
+
+{%- assign j = n | times: n                 -%}
+{%- assign min = include.min | default: 2   -%}
+{%- assign max = include.max | default: j   -%}
+
+{%- for num in (3 .. max)                   -%}
+{%-   assign mod = num | modulo: 2          -%}
+{%-   if mod == 0                           -%}
+{%-     continue                            -%}
+{%-   endif                                 -%}
+
+{%-   for i in (min .. n)                   -%}
+{%-     assign pow = i | times: i           -%}
+{%-     if pow >= num                       -%}
+{%-       assign min = i                    -%}
+{%-       break                             -%}
+{%-     endif                               -%}
+{%-   endfor                                -%}
+
+{%-   assign bad = false                    -%}
+{%-   for i in (3 .. min)                   -%}
+{%-     assign mod = num | modulo: i        -%}
+{%-     if mod == 0                         -%}
+{%-       assign bad = true                 -%}
+{%-       break                             -%}
+{%-     endif                               -%}
+{%-   endfor                                -%}
+
+{%-   if bad                                -%}
+{%-     continue                            -%}
+{%-   endif                                 -%}
+
+{%-  include core/parts.liquid              -%}
+
+{%- endfor                                  -%}

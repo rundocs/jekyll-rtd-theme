@@ -1,0 +1,40 @@
+        <div class="templatemo-portfolio" id="chetabahana-{{ page.title | downcase }}">
+            <div class="container">
+                <div class="row">
+                    <div class="templatemo-line-header" >
+                        <div class="text-center">
+                            <h4>{{ page.title }}</h4>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="templatemo-gallery-category" style="font-size:16px;">
+                         <div class="text-center">
+                            <a class="active" href=".gallery">all</a>{% assign my_array = "" | split:"," %}{% for item in data.gallery %}{% if my_array contains item.group %}{% continue %}{% else %}{% assign my_array = my_array | push: item.group %} / <a href=".gallery-{{ item.group }}">{{ item.group }}</a>{% endif %}{% endfor %}
+                        </div>
+                    </div>
+                </div> <!-- /.row -->
+                <div class="clearfix"></div>
+                <div class="text-center">
+                    <ul class="templatemo-project-gallery" >
+                        <!-- load-data-from-json-in-jekyll https://stackoverflow.com/a/50218559/4058484 -->{% for item in data.gallery %}
+                        <li class="col-lg-2 col-md-2 col-sm-2 gallery gallery-{{ item.group }}">
+                            <a class="colorbox" href="{{ item.href }}" data-group="gallery-{{ item.group }}">
+                                <div class="templatemo-project-box">
+                                     <img src="{{ item.src }}" class="img-responsive" alt="gallery" />
+                                    <div class="project-overlay">
+                                        <h5>{{ item.group }}</h5>
+                                        <hr />
+                                        <h4>{{ item.title }}</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>{% endfor %}
+                    </ul><!-- /.gallery https://stackoverflow.com/a/50299022/4058484 -->
+                </div>
+                <div class="clearfix"></div>
+                <div class="row text-center">
+                    <a href="http://toko.chetabahana.com/" target="_blank" class="btn_loadmore btn btn-lg btn-orange" role="button">Selengkapnya</a>
+                </div>
+            </div><!-- /.container -->
+        </div><!-- /{{ page.title }}-->
+ 

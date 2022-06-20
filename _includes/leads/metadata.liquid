@@ -1,0 +1,17 @@
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no">
+		<meta name="description" content="{% if page.category %}{% assign words = page.category | split: ' ' %}{% capture categorycase %}{% for word in words %}{{ word | capitalize | append: ' ' }}{% endfor %}{% endcapture %}{{ categorycase }}: {{ page.title | capitalize }} - {{ site.description_page_category }}{% elsif page.title %}{{ page.title }} - {{ site.description_page_title }}{% else %}{{ site.description }}{% endif %}">
+		<meta name="revised" content="{{ docs.build_revision }}">
+		<meta name="author" content="{{ author }}">
+		<meta name="generator" content="{{ generator }} v{{ version }}">
+
+		{%- for meta in site.meta -%}
+		<meta name="{{ meta.first }}" content="{{ meta.last }}">
+		{%- endfor -%}
+
+		<meta name="theme-color" content="{{ theme_color }}">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
