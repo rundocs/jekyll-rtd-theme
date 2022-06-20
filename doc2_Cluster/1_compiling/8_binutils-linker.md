@@ -68,6 +68,6 @@ tar zxvf zlib-1.2.12.tar.gz
 cd zlib-1.2.12
 
 ./configure --prefix=/home1/p001cao/local/app/tool_dev/zlib-1.2.12
-make -j16 && make install
+make -j16 SHARED_MODE=1 && make install
 ```
 
