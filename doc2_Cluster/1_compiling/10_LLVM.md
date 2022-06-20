@@ -65,16 +65,17 @@ git clone -b release/14.x https://github.com/llvm/llvm-project.git llvm-14
 cd llvm-14.0.5
 mkdir build && cd build
 
+module load tool_dev/binutils-2.37
+export LDFLAGS="-fuse-ld=gold -lrt"   # gold linker may error with zlib1.2.12
+
 module load tool_dev/cmake-3.24
 module load conda/py37Lammps
-module load tool_dev/binutils-2.37
 module load tool_dev/zlib-1.2.12
 module load compiler/gcc-11.2
 
 export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
 export PATH=$PATH:${myCOMPILER}/bin                                     # :/usr/bin
 export CC=gcc export CXX=g++
-export LDFLAGS="-fuse-ld=gold -lrt"
 export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12       # zlib
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
