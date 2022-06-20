@@ -67,7 +67,7 @@ wget -c --no-check-certificate https://zlib.net/zlib-1.2.12.tar.gz
 tar zxvf zlib-1.2.12.tar.gz
 cd zlib-1.2.12
 
-./configure --prefix=/home1/p001cao/local/app/tool_dev/zlib-1.2.12
-make -j16 SHARED_MODE=1 && make install
+./configure --enable-shared --prefix=/home1/p001cao/local/app/tool_dev/zlib-1.2.12
+make -j 16 && make install
 ```
 
