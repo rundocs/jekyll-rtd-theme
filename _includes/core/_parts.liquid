@@ -14,19 +14,19 @@
 {%-     assign dummy = dummy | push: item   -%}
 {%-   endfor      -%}
 
-{%-   assign grammar = '' | split: ',' -%}
-{%-   for item in dummy                      -%}
-{%-	    if forloop.index0 == index -%}
-{%-	      assign grammar = grammar | push: var    -%}
+{%-   assign grammar = '' | split: ','          -%}
+{%-   for item in dummy                         -%}
+{%-	    if forloop.index0 == index              -%}
+{%-	      assign grammar = grammar | push: var  -%}
 {%-     else   -%}
 {%-       assign grammar = grammar | push: item -%}
-{%-     endif                                                      -%}
+{%-     endif                                   -%}
 {%-   endfor      -%}
 {%- endunless -%}
 
-{%-	assign property = var | size                    -%}
+{%-	assign property = var | size                -%}
 
-{%-	if var contains property                        -%}
+{%-	if var contains property                    -%}
 
 {%-   assign _parts = nodes 
           | strip 
