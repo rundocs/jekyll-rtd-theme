@@ -45,17 +45,13 @@ mkdir build && cd build
 - These modules may cause errors: compiler-rt;libunwind;libc
 - Use Release/Debug
 - See more https://llvm.org/docs/CMake.html
+- LLDB require SWIG > 3.0
+- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so after compile LLVM, should reinstall zlib<1.2.11 to avoid error when run LAMMPS.
 ```
 
-**Install Conda (Since LLVM require python >= 3.6)
-- LLDB require SWIG > 3.0
-- should check zlib-version in conda (must < zlib=1.2.11 of centos kernel) to avoid hidden lib by conda.
-- check libgcc in conda to be the same version as GCC compiler.
-
 ```shell
-conda create -n py37LLVM python=3.7
-source activate py37LLVM
-conda install -c conda-forge libstdcxx-ng=11 libgcc-ng=11 libgfortran-ng=11 libgomp=11 zlib=1.2.11
+source activate py37Lammps
+conda install -c conda-forge libgcc-ng=9 libstdcxx-ng=9 zlib=1.2.11
 ```
 
 **Install LLVM
@@ -78,10 +74,10 @@ export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
 export PATH=$PATH:${myCOMPILER}/bin                                     # :/usr/bin
 export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"
+export CFLAGS="-gdwarf-4 -gstrict-dwarf -flax-vector-conversions"
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DCMAKE_CXX_STANDARD=17 \
--DCMAKE_C_FLAGS="-flax-vector-conversions" -DCMAKE_C_FLAGS_RELEASE="-flax-vector-conversions" \
 -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;libcxx;libcxxabi" \
 -DGCC_INSTALL_PREFIX=${myCOMPILER} \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
