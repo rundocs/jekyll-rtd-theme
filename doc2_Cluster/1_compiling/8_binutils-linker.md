@@ -20,7 +20,7 @@ Install: http://www.linuxfromscratch.org/lfs/view/development/chapter06/binutils
 tar zxvf binutils-2.37.tar.gz             
 cd binutils-2.37
 mkdir build  &&  cd build
-module load compiler/gcc-10.3
+module load compiler/gcc-11.2
 
 ../configure --enable-gold=yes --enable-ld=default --enable-lto \
 --enable-plugins --enable-shared --disable-werror \
