@@ -991,9 +991,10 @@ export CC=mpicc  export CXX=mpic++  export FC=mpifort
 ## python (require py3), BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
 export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12           # avoid zlib hidden by conda
-export myGCC=/home1/p001cao/local/app/compiler/gcc-11.2
-export LDFLAGS="-fuse-ld=lld -lrt -Wl,-rpath,${myGCC}/lib64 -L${myGCC}/lib64"  # (may) avoid link GLIBC++ in conda
+export LDFLAGS="-fuse-ld=lld -lrt"  
 export CFLAGS="-gdwarf-4 -gstrict-dwarf"                          # avoid dwarf5 error
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -v")         # (may) avoid link GLIBC++ in conda
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -lc++abi")
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPython_ROOT_DIR=${pyROOT} \
