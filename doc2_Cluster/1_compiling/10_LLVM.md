@@ -70,8 +70,8 @@ module load conda/py37Lammps
 module load tool_dev/binutils-2.37
 module load compiler/gcc-11.2
 
-export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
-export PATH=$PATH:${myCOMPILER}/bin                                 # :/usr/bin
+export myGCC=/home1/p001cao/local/app/compiler/gcc-11.2
+export PATH=$PATH:${myGCC}/bin                                 # :/usr/bin
 export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"   
 export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12           # avoid zlib hidden by conda
@@ -79,8 +79,8 @@ export CFLAGS="-gdwarf-4 -gstrict-dwarf"       # avoid dwarf5 error
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;libcxx;libcxxabi" \
--DGCC_INSTALL_PREFIX=${myCOMPILER} \
--DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
+-DGCC_INSTALL_PREFIX=${myGCC} \
+-DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myGCC}/lib64 -L${myGCC}/lib64" \
 -DCMAKE_CXX_STANDARD=17 \
 -DCMAKE_C_FLAGS="-flax-vector-conversions" -DCMAKE_C_FLAGS_RELEASE="-flax-vector-conversions" \
 -DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.so.1.2.12 \
