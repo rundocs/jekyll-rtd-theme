@@ -46,7 +46,7 @@ mkdir build && cd build
 - Use Release/Debug
 - See more https://llvm.org/docs/CMake.html
 - LLDB require SWIG > 3.0
-- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so should update  zlib>1.2.11 to hidden error. Or should use static-link (libs*.a) or use absolute path to dynamic libs (*.so) in cmake to avoid this error. Note, link a dynamic lib (*.so) to a static lib (*.a) may cause "overload runtime" error, so best way is use absolute path to dynamic libs (*.so).
+- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so should update  zlib>1.2.11 to hidden error. Or should use static-link (libs*.a) or use absolute path to dynamic libs (*.so) in cmake to avoid this error. Note, link a dynamic lib (*.so) to a static lib (*.a) may cause " Dyanmic reloc overflow runtime" error, so best way is use absolute path to dynamic libs (*.so).
 ```
 
 ```shell
@@ -108,6 +108,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${myCOMPILER}/lib
 
 **Ref
 https://stackoverflow.com/questions/69683755/libpng-apngerror-o-requires-dynamic-r-x86-64-pc32-reloc-against-stderr
+[2]. [Dynamic relocs, runtime overflows and -fPIC](https://tinyurl.com/2bw9jo5q)
 
 ### Module file
 
