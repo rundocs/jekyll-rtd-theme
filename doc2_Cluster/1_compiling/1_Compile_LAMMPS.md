@@ -986,7 +986,7 @@ module load fftw/fftw3.3.10-ompi4.1.4-clang14
 module load mpi/ompi4.1.4-clang14
 
 export myCOMPILER=/home1/p001cao/local/app/openmpi/4.1.4-clang14
-export PATH=$PATH:${myCOMPILER}/bin
+export PATH=${myCOMPILER}/bin:$PATH
 export CC=mpicc  export CXX=mpic++  export FC=mpifort
 ## python (require py3), BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
