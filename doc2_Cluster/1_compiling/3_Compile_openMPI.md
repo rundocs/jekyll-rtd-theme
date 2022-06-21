@@ -297,6 +297,7 @@ export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
 export PATH=${myCOMPILER}/bin:$PATH
 export CC=clang export CXX=clang++ export FC=gfortran
 export LDFLAGS="-fuse-ld=lld -lrt" 
+export CPPFLAGS="-nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc"     # use clang libc++
 export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.13-llvm
 
 ../configure --with-sge --with-ucx=${myUCX} --without-verbs \
