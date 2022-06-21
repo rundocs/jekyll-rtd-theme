@@ -988,13 +988,12 @@ module load mpi/ompi4.1.4-clang14
 export myCOMPILER=/home1/p001cao/local/app/openmpi/4.1.4-clang14
 export PATH=$PATH:${myCOMPILER}/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort
-export LDFLAGS="-fuse-ld=lld -lrt"
-export CFLAGS="-gdwarf-4 -gstrict-dwarf"                          # avoid dwarf5 error
 ## python (require py3), BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
 export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12           # avoid zlib hidden by conda
 export myGCC=/home1/p001cao/local/app/compiler/gcc-11.2
-export CXXFLAGS="-Wl,-rpath,${myGCC}/lib64 -L${myGCC}/lib64"     # (may) avoid link GLIBC++ in conda
+export LDFLAGS="-fuse-ld=lld -lrt -Wl,-rpath,${myGCC}/lib64 -L${myGCC}/lib64"  # (may) avoid link GLIBC++ in conda
+export CFLAGS="-gdwarf-4 -gstrict-dwarf"                          # avoid dwarf5 error
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPython_ROOT_DIR=${pyROOT} \
@@ -1005,7 +1004,6 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_PLUMED=yes -DPKG_ML-PACE=no -DPKG_ML-QUIP=no -DPKG_ML-HDNNP=no  \
 -DFFT=FFTW3 \
 -DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.so.1.2.12 \
--DCMAKE_EXE_LINKER_FLAGS="-Wl,-rpath,${myGCC}/lib64 -L${myGCC}/lib64" \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/llvmOMPI4-dev
 
 make -j 16 && make install
