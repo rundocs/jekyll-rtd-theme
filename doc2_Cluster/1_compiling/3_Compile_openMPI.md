@@ -296,8 +296,7 @@ module load compiler/llvm-14          # clang + lld
 export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
 export PATH=${myCOMPILER}/bin:$PATH
 export CC=clang export CXX=clang++ export FC=gfortran
-export LIBS="-nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc"    # use clang libc++ 
-export LDFLAGS="-fuse-ld=lld -lrt"
+export LDFLAGS="-fuse-ld=lld -lrt" 
 export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.13-llvm
 
 ../configure --with-sge --with-ucx=${myUCX} --without-verbs \
