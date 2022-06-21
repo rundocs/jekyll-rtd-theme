@@ -985,7 +985,8 @@ module load tool_dev/binutils-2.37
 module load fftw/fftw3.3.10-ompi4.1.4-clang14
 module load mpi/ompi4.1.4-clang14
 
-export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
+export myGCC=/home1/p001cao/local/app/compiler/gcc-11.2
+export myCOMPILER=/home1/p001cao/local/app/openmpi/4.1.4-clang14
 export PATH=$PATH:${myCOMPILER}/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort
 export LDFLAGS="-fuse-ld=lld -lrt"
@@ -1003,7 +1004,7 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DPKG_PLUMED=yes -DPKG_ML-PACE=no -DPKG_ML-QUIP=no -DPKG_ML-HDNNP=no  \
 -DFFT=FFTW3 \
 -DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.so.1.2.12 \
--DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
+-DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myGCC}/lib64 -L${myGCC}/lib64" \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/lammps/llvmOMPI4-dev
 
 make -j 16 && make install
