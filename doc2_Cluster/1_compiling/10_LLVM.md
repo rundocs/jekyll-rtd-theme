@@ -68,15 +68,14 @@ mkdir build && cd build
 module load tool_dev/cmake-3.24
 module load conda/py37Lammps
 module load tool_dev/binutils-2.37
-module load tool_dev/zlib-1.2.12
 module load compiler/gcc-11.2
 
 export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
 export PATH=$PATH:${myCOMPILER}/bin                                 # :/usr/bin
 export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"   
-export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12           # zlib
-export CFLAGS="-gdwarf-4 -gstrict-dwarf -fPIC -m64 -pthread -Wl,--allow-shlib-undefined -g"   # avoid error zlib-1.2.12
+export myZLIB=/home2/app/zlib/1.2.11           # avoid zlib hidden by conda
+export CFLAGS="-gdwarf-4 -gstrict-dwarf"       # avoid dwarf5 error
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lld;openmp;polly;pstl;mlir;flang;libcxx;libcxxabi" \
