@@ -971,10 +971,7 @@ source mklvars.sh intel64
 ### USC2 (centos 6.9)
 
 ```note
-- To void libs hidden by conda-lib, install libs in conda with version < in linux system.
-- downgrade GCC in conda
-- conda install -c conda-forge libgcc-ng=7 zlib=1.2.8
-- Now, not use python
+- To void libs hidden by conda-lib, set absolute path for dynamic libs (*.so). See compile LLVM
 ```
 
 ```shell
@@ -990,11 +987,10 @@ export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
 export PATH=$PATH:${myCOMPILER}/bin
 export CC=mpicc  export CXX=mpic++  export FC=mpifort
 export LDFLAGS="-fuse-ld=lld -lrt"
+export CFLAGS="-gdwarf-4 -gstrict-dwarf"       # avoid dwarf5 error
 ## python (require py3), BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
 export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12           # avoid zlib hidden by conda
-export CFLAGS="-gdwarf-4 -gstrict-dwarf"       # avoid dwarf5 error
-
 
 cmake ../cmake -C ../cmake/presets/all_on.cmake \
 -DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.so.1.2.12 \
@@ -1008,10 +1004,5 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 
 make -j 16 && make install
 ```
-
-```shell
--DPython_ROOT_DIR=${pyROOT} \
-```
-
 
 
