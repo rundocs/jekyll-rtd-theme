@@ -972,8 +972,7 @@ source mklvars.sh intel64
 
 ```note
 - To void libs hidden by conda-lib, set absolute path for dynamic libs (*.so). See compile LLVM for more information
-- Also conda need to be consistent which that being use in LLVM.
-- GCC in conda may need the same version as in linux system ` conda install -c conda-forge libgcc-ng=11 libstdcxx-ng=11 libgomp=9 zlib=1.2.11 python=3.7`
+- if error ralate to conda, just unistall libgcc and install python again `conda install -c conda-forge python=3.7`
 ```
 
 ```shell
