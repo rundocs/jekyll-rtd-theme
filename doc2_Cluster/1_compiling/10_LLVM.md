@@ -51,7 +51,7 @@ mkdir build && cd build
 
 ```shell
 source activate py37Lammps
-conda install -c conda-forge libgcc-ng=9 libstdcxx-ng=9 libgomp=9 zlib=1.2.11 python=3.7
+conda install -c conda-forge libgcc-ng=9 libstdcxx-ng=9 libstdcxx-ng=9 libgomp=9 zlib=1.2.11 python=3.7
 ```
 
 **Install LLVM
