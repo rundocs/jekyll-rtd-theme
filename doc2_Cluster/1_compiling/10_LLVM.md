@@ -127,6 +127,22 @@ prepend-path    INCLUDE                 $topdir/include
 
 ```
 
+### How to Use Clang without GCC on Linux
+```shell
+export LIBS="-nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc" 
+export CXX=clang++ 
+export CC=clang 
+```
+
+```shell
+cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ 
+-DCMAKE_EXE_LINKER_FLAGS="-nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc"
+```
+
+http://tolik1967.azurewebsites.net/clang_no_gcc.html
+
+
+
 ### use GCC-conda
 ```note
 use conda can install: gcc, cmake,... and other libs. But note install LLVM, since new GLIBC is required, 
