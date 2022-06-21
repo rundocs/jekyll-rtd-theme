@@ -46,7 +46,7 @@ mkdir build && cd build
 - Use Release/Debug
 - See more https://llvm.org/docs/CMake.html
 - LLDB require SWIG > 3.0
-- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so should update  zlib>1.2.11 to hidden error. Or should use static-link (libs*.a) in cmake to avoid this error.
+- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so should update  zlib>1.2.11 to hidden error. Or should use static-link (libs*.a) or use absolute path to dynamic libs (*.so) in cmake to avoid this error. Note, link a dynamic lib (*.so) to a static lib (*.a) may cause "overload runtime" error, so best way is use absolute path to dynamic libs (*.so).
 ```
 
 ```shell
@@ -74,7 +74,7 @@ export myCOMPILER=/home1/p001cao/local/app/compiler/gcc-11.2
 export PATH=$PATH:${myCOMPILER}/bin                                 # :/usr/bin
 export CC=gcc export CXX=g++
 export LDFLAGS="-fuse-ld=gold -lrt"   
-export myZLIB=/home2/app/zlib/1.2.11           # avoid zlib hidden by conda
+export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12           # avoid zlib hidden by conda
 export CFLAGS="-gdwarf-4 -gstrict-dwarf"       # avoid dwarf5 error
 
 cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
@@ -83,7 +83,7 @@ cmake ../llvm -DCMAKE_BUILD_TYPE=Release \
 -DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${myCOMPILER}/lib64 -L${myCOMPILER}/lib64" \
 -DCMAKE_CXX_STANDARD=17 \
 -DCMAKE_C_FLAGS="-flax-vector-conversions" -DCMAKE_C_FLAGS_RELEASE="-flax-vector-conversions" \
--DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.a \
+-DZLIB_INCLUDE_DIR=${myZLIB} -DZLIB_LIBRARY=${myZLIB}/lib/libz.so.1.2.12 \
 -DCMAKE_INSTALL_PREFIX=/home1/p001cao/local/app/compiler/llvm-14
 
 make -j 16 && make install
