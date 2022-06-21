@@ -1010,4 +1010,6 @@ cmake ../cmake -C ../cmake/presets/all_on.cmake \
 make -j 16 && make install
 ```
 
-
+```note
+- can use export CFLAGS, CXXFLAGS. This same as -DCMAKE_CXX_LINK_FLAGS
+```
