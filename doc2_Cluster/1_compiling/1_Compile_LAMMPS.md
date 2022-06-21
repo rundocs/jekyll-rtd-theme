@@ -971,7 +971,12 @@ source mklvars.sh intel64
 ### USC2 (centos 6.9)
 
 ```note
-- To void libs hidden by conda-lib, set absolute path for dynamic libs (*.so). See compile LLVM
+- To void libs hidden by conda-lib, set absolute path for dynamic libs (*.so). See compile LLVM for more information
+- Also conda need to be consistent which that being use in LLVM.
+```shell
+source activate py37Lammps
+conda install -c conda-forge libgcc-ng=9 libstdcxx-ng=10 libgomp=9 zlib=1.2.11 python=3.7
+```
 ```
 
 ```shell
