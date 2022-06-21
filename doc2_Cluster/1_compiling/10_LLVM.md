@@ -46,7 +46,7 @@ mkdir build && cd build
 - Use Release/Debug
 - See more https://llvm.org/docs/CMake.html
 - LLDB require SWIG > 3.0
-- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so should update  zlib>1.2.11 to hidden error. Or should use GCC in conda to avoid conflict.
+- LLVM require python >= 3.6, and python 3.6 require zlib>1.2.11 require GLIBC_2.14 (libgcc-ng=9). And zlib=1.2.11 will cause hidden libs by conda, so should update  zlib>1.2.11 to hidden error. Or should use static-link (libs*.a) in cmake to avoid this error.
 ```
 
 ```shell
