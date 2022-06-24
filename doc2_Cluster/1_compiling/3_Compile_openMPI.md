@@ -283,6 +283,9 @@ make -j 16 && make install
 ```
 
 ## 2. Compiling OpenMPI + Clang
+```note
+- To use clang libc++, use this link `export CPPFLAGS="-nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc" `. But might not be used?
+```
 
 ### USC2(Cenntos 6.9)
 
@@ -297,7 +300,7 @@ export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
 export PATH=${myCOMPILER}/bin:$PATH
 export CC=clang export CXX=clang++ export FC=gfortran
 export LDFLAGS="-fuse-ld=lld -lrt" 
-export CPPFLAGS="-nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc"     # use clang libc++
+export CPPFLAGS="-gdwarf-4 -gstrict-dwarf"                                 # avoid dwarf5 error
 export myUCX=/home1/p001cao/local/app/tool_dev/ucx-1.13-llvm
 
 ../configure --with-sge --with-ucx=${myUCX} --without-verbs \
