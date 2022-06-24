@@ -329,7 +329,7 @@ export myCOMPILER=/home1/p001cao/local/app/compiler/llvm-14
 export PATH=$PATH:${myCOMPILER}/bin
 export CC=clang export CXX=clang++ export FC=flang
 export LDFLAGS="-fuse-ld=lld -lrt"
-export CFLAGS="-gdwarf-4 -gstrict-dwarf"                                 # avoid dwarf5 error
+export CPPFLAGS="-gdwarf-4 -gstrict-dwarf"                                 # avoid dwarf5 error
 
 ../configure --enable-mt \
 --prefix=/home1/p001cao/local/app/tool_dev/ucx-1.13-llvm
