@@ -31,4 +31,7 @@ git config --global --unset https.proxy
 ```shell
 git reset --hard 
 ```
-
+- Fatal: Unable to connect to github.com
+```shell
+git config --global url.https://github.com/.insteadOf git://github.com/
+```
