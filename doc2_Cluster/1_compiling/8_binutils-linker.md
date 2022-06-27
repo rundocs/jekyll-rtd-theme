@@ -20,7 +20,12 @@ Install: http://www.linuxfromscratch.org/lfs/view/development/chapter06/binutils
 tar zxvf binutils-2.37.tar.gz             
 cd binutils-2.37
 mkdir build  &&  cd build
+
 module load compiler/gcc-11.2
+
+export PATH=$PATH:/home1/p001cao/local/app/compiler/gcc-11.2/bin
+export CC=gcc export CXX=g++ export FORTRAN=gfortran
+export CPPFLAGS="-gdwarf-4 -gstrict-dwarf"                                 # avoid dwarf5 error
 
 ../configure --enable-gold=yes --enable-ld=default --enable-lto \
 --enable-plugins --enable-shared --disable-werror \
