@@ -22,7 +22,7 @@ pip install jupyterlab
 
 **from source
 ```shell
-install git+git://github.com/jupyterlab/jupyterlab.git#egg=jupyterlab
+pip install git+git://github.com/jupyterlab/jupyterlab.git#egg=jupyterlab
 ```
 
 
