@@ -33,7 +33,7 @@ pip install git+git://github.com/jupyterlab/jupyterlab.git@master
 
 ```shell
 ## intall extension
-conda install -n base nb_conda nb_conda_kernels
+conda install -n base nb_conda ipykernel
 
 ## create new env
 conda create -n py37polymer python=3.7
