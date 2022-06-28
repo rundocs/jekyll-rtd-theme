@@ -27,12 +27,13 @@ pip install git+git://github.com/jupyterlab/jupyterlab.git@master
 
 
 ## 2. Use multil envs in Notebook
-- ref: https://tinyurl.com/y7hcfvws ;  https://tinyurl.com/y7hcfvws
+```note
 - must select to open notebook by jupyterlab in base-env
+```
 
 ```shell
 ## intall extension
-conda install -n base nb_conda
+conda install -n base nb_conda nb_conda_kernels
 
 ## create new env
 conda create -n py37polymer python=3.7
@@ -43,6 +44,9 @@ conda install jupyterlab
 Then we can select env in jupyterlab:
 - change kernel (this will be save for the next open of .ipynb file)
 
+Ref: 
+https://tinyurl.com/y7hcfvws 
+https://tinyurl.com/y7hcfvws
 
 ## 3. Some errors
 
