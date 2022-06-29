@@ -69,6 +69,8 @@ sort: 1
 
 [Enhanced sampling methods for molecular dynamics simulations](https://arxiv.org/pdf/2202.04164.pdf)
 
+[Theory and Modeling of Polymer Nanocomposites](https://link.springer.com/content/pdf/10.1007/978-3-030-60443-1.pdf)
+
 ## Programming
 
 [The Linux Command Line](http://202.91.76.90:81/fdScript/RootOfEBooks/E%20BOOKS%20COLLECTION%202020%20%20DATA%202/CSE/The%20Linux%20Command%20Line.pdf)
