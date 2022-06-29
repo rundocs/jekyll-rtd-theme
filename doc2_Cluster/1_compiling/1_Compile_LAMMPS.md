@@ -987,8 +987,8 @@ module load mpi/ompi4.1.4-clang14
 export myCOMPILER=/home1/p001cao/local/app/openmpi/4.1.4-clang14
 export PATH=${myCOMPILER}/bin:$PATH
 export CC=mpicc  export CXX=mpic++  export FC=mpifort
-export CPPFLAGS="-gdwarf-4 -gstrict-dwarf"                                 # avoid dwarf5 error
 export LDFLAGS="-fuse-ld=lld -lrt"  
+export CFLAGS="-gdwarf-4 -gstrict-dwarf"                                 # avoid dwarf5 error
 ## python (require py3), BLAS+LAPACK
 export pyROOT=/home1/p001cao/local/app/miniconda3/envs/py37Lammps
 export myZLIB=/home1/p001cao/local/app/tool_dev/zlib-1.2.12               # avoid zlib hidden by conda
