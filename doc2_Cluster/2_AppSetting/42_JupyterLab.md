@@ -32,13 +32,11 @@ pip install git+git://github.com/jupyterlab/jupyterlab.git@master
 ```
 
 ```shell
-## intall extension
-conda install -n base nb_conda ipykernel
-
 ## create new env
-conda create -n py37polymer python=3.7
-conda activate py37polymer
-conda install jupyterlab
+conda create -n py37mbuild python=3.7
+conda activate py37mbuild
+conda install ipykernel
+ipython kernel install --user --name=py37mbuild
 ```
 
 Then we can select env in jupyterlab:
@@ -46,7 +44,8 @@ Then we can select env in jupyterlab:
 
 Ref: 
 https://tinyurl.com/y7hcfvws 
-https://tinyurl.com/y7hcfvws
+https://tinyurl.com/y7hcfvws 
+https://tinyurl.com/2xohogjq
 
 ## 3. Some errors
 
