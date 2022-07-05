@@ -60,12 +60,14 @@ Setting.json
 Open the command palette (either with F1 or Ctrl+Shift+P)
 Type "open settings"
 ```js
-{
+}
     "files.autoSave": "afterDelay",
     
     "editor.rulers": [80 ],
 
     "workbench.colorTheme": "Monokai++",
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.visible": true,
 
     "files.associations": {
         "*.lmp": "lmps", "*.in": "lmps", "*.mod": "lmps",  "*.lmp*": "lmps", 
@@ -91,9 +93,6 @@ Type "open settings"
     },
 
    
-    "workbench.sideBar.location": "left",
-    "workbench.activityBar.visible": true,
-
     "window.zoomLevel": 0,
     "python.testing.cwd": "",
     "python.condaPath": "C:\\DevProgram\\miniconda3\\condabin",
