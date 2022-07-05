@@ -66,23 +66,11 @@ Type "open settings"
     "editor.rulers": [80 ],
 
     "workbench.colorTheme": "Monokai++",
-    "workbench.sideBar.location": "left",
-    "workbench.activityBar.visible": true,
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-    "workbench.iconTheme": "vscode-icons",
 
     "files.associations": {
-        "*.lmp": "lmps",
-        "*.in": "lmps",
-        "*.mod": "lmps",
-        "*.lmp*": "lmps",
-        "*.log": "log",
-        "*.out": "log",
+        "*.lmp": "lmps", "*.in": "lmps", "*.mod": "lmps",  "*.lmp*": "lmps", 
+        "*.log": "log", "*.out": "log",
         "*.txt": "txt",
-        "*.py": "python",
-        "*.md": "markdown"
     },
 
     "[lmps]": {
@@ -90,28 +78,29 @@ Type "open settings"
         "editor.snippetSuggestions": "none",
     },
 
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.snippetSuggestions": "none",
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": true
+    },
+
     "[markdown]": {
         "editor.tabSize": 4,
         "editor.snippetSuggestions": "none",
     },
+
    
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.visible": true,
 
     "window.zoomLevel": 0,
-
     "python.testing.cwd": "",
     "python.condaPath": "C:\\DevProgram\\miniconda3\\condabin",
     "python.defaultInterpreterPath": "C:\\DevProgram\\miniconda3\\python.exe",
 
-    "C_Cpp.updateChannel": "Insiders",
+    "txtsyntax.highlightLineBorderColor": "",
     "jupyter.sendSelectionToInteractiveWindow": true,
-
-    "security.workspace.trust.enabled": false,
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
-    "workbench.colorTheme": "Monokai++",
-
 }
 ```
 
