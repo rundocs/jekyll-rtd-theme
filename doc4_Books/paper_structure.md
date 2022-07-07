@@ -35,5 +35,5 @@ conclusion section should include the following items:
 - A list of potential improvements.
 
 ## Refs
-[1] [How to write computational scientic paper](https://www.researchgate.net/publication/339630885_How_to_effortlessly_write_a_high_quality_scientific_paper_in_the_field_of_computational_engineering_and_sciences)
+[1] [How to write computational scientic paper](https://www.researchgate.net/publication/339630885_How_to_effortlessly_write_a_high_quality_scientific_paper_in_the_field_of_computational_engineering_and_sciences) \
 [2] [How To Make Your Computational Paper Interesting](https://pubs.acs.org/doi/10.1021/acs.organomet.8b00942)
