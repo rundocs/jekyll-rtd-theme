@@ -34,6 +34,9 @@ pip install git+git://github.com/jupyterlab/jupyterlab.git@master
 ```shell
 ## create new env
 conda create -n py37mbuild python=3.7
+## opt 1
+(base)$ conda install -c conda-forge nb_conda
+## opt 2
 conda activate py37mbuild
 conda install ipykernel
 ipython kernel install --user --name=py37mbuild
