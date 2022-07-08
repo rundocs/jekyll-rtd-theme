@@ -43,6 +43,12 @@ conda install jupyterlab
 Then we can select env in jupyterlab:
 - change kernel (this will be save for the next open of .ipynb file)
 
+** remove a kernel
+```
+jupyter kernelspec list
+jupyter kernelspec uninstall unwanted-kernel
+```
+
 Ref: 
 https://tinyurl.com/y7hcfvws 
 https://tinyurl.com/y7hcfvws 
