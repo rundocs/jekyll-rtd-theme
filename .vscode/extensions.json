@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "timonwong.shellcheck",
+    "cstrap.python-snippets",
+    "xabikos.javascriptsnippets",
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    "foxundermoon.shell-format",
+    "shopify.theme-check-vscode",
+    "killalau.vscode-liquid-snippets"
+  ]
+}

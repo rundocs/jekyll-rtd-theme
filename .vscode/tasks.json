@@ -1,0 +1,33 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "NPM Update",
+      "type": "shell",
+      "isBackground": false,
+      "osx": {
+        "command": ".bash/osx/npm.sh"
+      },
+      "linux": {
+        "command": ".bash/osx/npm.sh"
+      },
+      "detail": "Update your Node.js packages for this repository",
+      "problemMatcher": []
+    },
+    {
+      "label": "Jekyll",
+      "type": "shell",
+      "isBackground": false,
+      "osx": {
+        "command": ".bash/osx/jekyll.sh"
+      },
+      "linux": {
+        "command": ".bash/osx/jekyll.sh"
+      },
+      "detail": "...",
+      "problemMatcher": []
+    },
+  ]
+}
