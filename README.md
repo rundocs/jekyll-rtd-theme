@@ -1,5 +1,6 @@
 # read-the-docs-jekyll-theme
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/JV-conseil/read-the-docs-jekyll-theme/badge)
 [![License BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](LICENSE)
 [![Become a sponsor to JV-conseil](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/JV-conseil "Become a sponsor to JV-conseil")
@@ -17,8 +18,8 @@ Read the Docs :books: like Jekyll Theme for GitHub Pages
 
 This theme is inspired by [sphinx-rtd-theme](https://github.com/read-the-docs-jekyll-theme/sphinx_rtd_theme) and refactored with:
 
--   [@primer/css](https://github.com/primer/css)
--   [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
+- [@primer/css](https://github.com/primer/css)
+- [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
 
 ## Quick start
 
@@ -34,13 +35,13 @@ Documentation that can guide how to create with Github pages, please refer to [r
 
 ## Features
 
--   Shortcodes (Toasts card, mermaid)
--   Pages Plugins (emoji, gist, avatar, mentions)
--   Auto generate sidebar
--   [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
--   Service worker (caches)
--   SEO (404, robots.txt, sitemap.xml)
--   Canonical Link (Open Graph, Twitter Card, Schema data)
+- Shortcodes (Toasts card, mermaid)
+- Pages Plugins (emoji, gist, avatar, mentions)
+- Auto generate sidebar
+- [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
+- Service worker (caches)
+- SEO (404, robots.txt, sitemap.xml)
+- Canonical Link (Open Graph, Twitter Card, Schema data)
 
 ## Options
 

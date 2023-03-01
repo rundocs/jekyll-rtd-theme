@@ -23,14 +23,6 @@ indent_size = 2
 indent_size = 2
 insert_final_newline = ignore
 
-[**/admin/vendor/**]
-indent_style = ignore
-indent_size = ignore
-
-[**/vendor/**]
-indent_style = ignore
-indent_size = ignore
-
 # Minified JavaScript files shouldn't be changed
 [**.min.js]
 indent_style = ignore

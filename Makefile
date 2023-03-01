@@ -2,7 +2,7 @@ DEBUG=JEKYLL_GITHUB_TOKEN=blank PAGES_API_URL=http://0.0.0.0
 ALIAS=read-the-docs-jekyll-theme
 
 help:
-	@echo "HomePage: https://github.com/rundocs/${ALIAS}\n"
+	@echo "HomePage: https://github.com/JV-conseil/${ALIAS}\n"
 	@echo "Usage:"
 	@echo "    make [subcommand]\n"
 	@echo "Subcommands:"
@@ -48,7 +48,7 @@ theme: dist
 	@gem install *.gem && rm -f *.gem
 
 build: dist
-	@${DEBUG} bundle exec jekyll build --safe --profile
+	@${DEBUG} bundle exec jekyll build --safe --profilemake
 
 server: dist
-	@${DEBUG} bundle exec jekyll server --safe --livereload
+	@${DEBUG} bundle exec jekyll serve --safe  --config "_config_dev.yml" --livereload

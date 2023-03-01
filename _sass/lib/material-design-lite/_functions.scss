@@ -15,5 +15,5 @@
  */
 
 @function strip-units($number) {
-    @return $number / ($number * 0 + 1);
+  @return $number / ($number * 0 + 1);
 }

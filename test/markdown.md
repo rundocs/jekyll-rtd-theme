@@ -153,7 +153,7 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 
 ```javascript
 var foo =
-    "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
+  "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
 ```
 
 Inline code inside table cells should still be distinguishable.
