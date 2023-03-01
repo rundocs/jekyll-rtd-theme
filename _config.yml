@@ -3,10 +3,10 @@ description: Read the Docs like Jekyll Theme for GitHub Pages
 
 theme: null
 
-debug:
-  compress: true
-  dist: false
-  shortcodes: true
+# debug:
+#   compress: true
+#   dist: false
+#   shortcodes: true
 
 readme_index:
   with_frontmatter: true
