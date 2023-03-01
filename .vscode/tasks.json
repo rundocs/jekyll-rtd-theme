@@ -4,11 +4,31 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "NPM update",
+      "label": "Jekyll",
+      "type": "shell",
+      "isBackground": false,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "osx": {
+        "command": ".bash/osx/jekyll.sh"
+      },
+      "linux": {
+        "command": ".bash/osx/jekyll.sh"
+      },
+      "detail": "Run server jekyll serve --config '_config_dev.yml' --livereload",
+      "problemMatcher": []
+    },
+    {
+      "label": "npm",
       "type": "shell",
       "isBackground": false,
       "presentation": {
-        "panel": "new",
+        "panel": "new"
       },
       "osx": {
         "command": ".bash/osx/npm.sh"
@@ -20,16 +40,19 @@
       "problemMatcher": []
     },
     {
-      "label": "Jekyll",
+      "label": "pipenv",
       "type": "shell",
       "isBackground": false,
+      "presentation": {
+        "panel": "new"
+      },
       "osx": {
-        "command": ".bash/osx/jekyll.sh"
+        "command": ".bash/osx/pipenv.sh"
       },
       "linux": {
-        "command": ".bash/osx/jekyll.sh"
+        "command": ".bash/osx/pipenv.sh"
       },
-      "detail": "Run server",
+      "detail": "Update your Virtual Environment (VM) for this repository",
       "problemMatcher": []
     }
   ]

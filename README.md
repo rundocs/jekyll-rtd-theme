@@ -6,6 +6,7 @@
 [![Follow JVconseil on Twitter](https://img.shields.io/twitter/follow/JVconseil.svg?style=social&logo=twitter)](https://twitter.com/JVconseil "Follow JVconseil on Twitter")
 [![Follow JVconseil on Mastodon](https://img.shields.io/mastodon/follow/109896584320509054?domain=https%3A%2F%2Ffosstodon.org)](https://fosstodon.org/@JVconseil "Follow JVconseil@fosstodon.org on Mastodon")
 [![Follow JV conseil on GitHub](https://img.shields.io/github/followers/JV-conseil?label=JV-conseil&style=social)](https://github.com/JV-conseil "Follow JV-conseil on GitHub")
+
 <!--
 ![CI](https://github.com/JV-conseil/read-the-docs-jekyll-theme/workflows/CI/badge.svg?branch=develop)
 -->
@@ -16,8 +17,8 @@ Read the Docs :books: like Jekyll Theme for GitHub Pages
 
 This theme is inspired by [sphinx-rtd-theme](https://github.com/read-the-docs-jekyll-theme/sphinx_rtd_theme) and refactored with:
 
-- [@primer/css](https://github.com/primer/css)
-- [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
+-   [@primer/css](https://github.com/primer/css)
+-   [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
 
 ## Quick start
 
@@ -33,13 +34,13 @@ Documentation that can guide how to create with Github pages, please refer to [r
 
 ## Features
 
-- Shortcodes (Toasts card, mermaid)
-- Pages Plugins (emoji, gist, avatar, mentions)
-- Auto generate sidebar
-- [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
-- Service worker (caches)
-- SEO (404, robots.txt, sitemap.xml)
-- Canonical Link (Open Graph, Twitter Card, Schema data)
+-   Shortcodes (Toasts card, mermaid)
+-   Pages Plugins (emoji, gist, avatar, mentions)
+-   Auto generate sidebar
+-   [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
+-   Service worker (caches)
+-   SEO (404, robots.txt, sitemap.xml)
+-   Canonical Link (Open Graph, Twitter Card, Schema data)
 
 ## Options
 

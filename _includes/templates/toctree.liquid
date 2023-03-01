@@ -12,7 +12,6 @@
       data-sort="{{ item.sort }}"
       data-level="{{ level }}">
       <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
-        {%- assign _name = item.name | default: '' | remove: '.md' -%}
         {%- if item.sort -%}
           {{ item.sort }}. {{ item.title | default: item.name }}
         {%- else -%}

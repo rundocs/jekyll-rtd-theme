@@ -15,5 +15,6 @@
   . ".bash/incl/_utils.sh"
   . ".bash/incl/_path.sh"
   . ".bash/incl/_debug.sh"
+  . ".bash/incl/_homebrew.sh"
   # more files
 }

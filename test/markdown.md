@@ -32,9 +32,9 @@ This is a code block following a header.
 
 #### Header 4
 
--   This is an unordered list following a header.
--   This is an unordered list following a header.
--   This is an unordered list following a header.
+- This is an unordered list following a header.
+- This is an unordered list following a header.
+- This is an unordered list following a header.
 
 ##### Header 5
 
@@ -58,9 +58,9 @@ There's a horizontal rule above and below this.
 
 Here is an unordered list:
 
--   Salt-n-Pepa
--   Bel Biv DeVoe
--   Kid 'N Play
+- Salt-n-Pepa
+- Bel Biv DeVoe
+- Kid 'N Play
 
 And an ordered list:
 
@@ -70,29 +70,29 @@ And an ordered list:
 
 And an unordered task list:
 
--   [x] Create a sample markdown document
--   [x] Add task lists to it
--   [ ] Take a vacation
+- [x] Create a sample markdown document
+- [x] Add task lists to it
+- [ ] Take a vacation
 
 And a "mixed" task list:
 
--   [ ] Steal underpants
--   ?
--   [ ] Profit!
+- [ ] Steal underpants
+- ?
+- [ ] Profit!
 
 And a nested list:
 
--   Jackson 5
-    -   Michael
-    -   Tito
-    -   Jackie
-    -   Marlon
-    -   Jermaine
--   TMNT
-    -   Leonardo
-    -   Michelangelo
-    -   Donatello
-    -   Raphael
+- Jackson 5
+  - Michael
+  - Tito
+  - Jackie
+  - Marlon
+  - Jermaine
+- TMNT
+  - Leonardo
+  - Michelangelo
+  - Donatello
+  - Raphael
 
 Definition lists can be used with HTML syntax. Definition terms are bold and italic.
 
@@ -121,11 +121,11 @@ If a table is too wide, it should condense down and/or scroll horizontally.
 
 <!-- prettier-ignore-start -->
 
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
+| Artist          | Album          | Year | Label                   | Awards                                                                                                                                                                                                                                                                          | Songs                                                                                                                                                                                                                     |
+| --------------- | -------------- | ---- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Michael Jackson | Thriller       | 1982 | Epic Records            | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical                                                | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life                                                               |
+| Prince          | Purple Rain    | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain                                                                           |
+| Beastie Boys    | License to Ill | 1986 | Mercury Records         | noawardsbutthistablecelliswide                                                                                                                                                                                                                                                  | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
 
 <!-- prettier-ignore-end -->
 

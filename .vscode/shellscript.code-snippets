@@ -35,10 +35,10 @@
     "function": {
         "prefix": ["_jvcl_::", "function"],
         "body": [
-            "_jvcl_::${1:generic_function}() {",
+            "_jvc_::${1:generic_function}() {",
             "\tlocal _bool=true",
             "\tif cmd; then _bool=false; fi",
-            "\techo ${_bool}",
+            "\techo \"\\${_bool\\}\"",
             "}"
         ],
         "description": [

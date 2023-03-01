@@ -10,13 +10,14 @@
 # Jekyll on macOS
 # <https://jekyllrb.com/docs/installation/macos/>
 #
+# bundle add github-pages --group "jekyll_plugins"
+# bundle add jekyll-avatar
+# bundle add jekyll webrick faraday-retry --group "development"
+#
 #====================================================
 
 # shellcheck disable=SC1091
 . ".bash/incl/all.sh"
-
-_jvcl_::h1 "Checking if ruby is installed..."
-brew ls --versions ruby || brew install ruby
 
 _jvcl_::gem_update() {
   local _gem _gems=("bundler")
@@ -27,25 +28,27 @@ _jvcl_::gem_update() {
   done
 }
 
-_jvcl_::bundle_doctor() {
+_jvcl_::bundle_update() {
   local _opt
-  for _opt in "install" "update" "doctor" "clean" "lock"; do
+  for _opt in "check" "doctor" "install" "update" "lock"; do
     bundle "${_opt}" --verbose
   done
 }
 
 _jvcl_::jekyll_serve() {
-  _jvcl_::h1 "Launching jekyll..."
-  jekyll clean
-  jekyll doctor
-  bundle exec jekyll serve --livereload
+  _jvcl_::h1 "Launching Jekyll..."
+  bundle exec jekyll clean
+  bundle exec jekyll doctor
+  bundle exec jekyll serve --config "_config_dev.yml" --livereload
 }
 
 _jvcl_::github_pages() {
   bundle exec github-pages health-check
 }
 
-_jvcl_::gem_update
-_jvcl_::bundle_doctor
-_jvcl_::github_pages
-_jvcl_::jekyll_serve
+if _jvcl_::brew_install_formula "ruby"; then
+  _jvcl_::gem_update
+  _jvcl_::bundle_update
+  _jvcl_::github_pages
+  _jvcl_::jekyll_serve
+fi
