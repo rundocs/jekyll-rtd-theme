@@ -44,10 +44,8 @@ gem "kramdown-parser-gfm"
 # do not have a Java counterpart.
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
-
-
 # Development
-group :jekyll_plugins do
+group :development do
   gem "faraday-retry", "~> 2.0"
   gem "webrick", "~> 1.8"
 end
