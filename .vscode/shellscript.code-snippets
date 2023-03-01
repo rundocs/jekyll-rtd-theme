@@ -28,21 +28,18 @@
             "# copyright     : Copyright (c) 2019-2023 JV-conseil",
             "#                 All rights reserved",
             "#====================================================",
-            "",
+            ""
         ],
         "description": "Shebang Bash executor"
     },
     "function": {
-        "prefix": [
-            "_jvcl_::",
-            "function"
-        ],
+        "prefix": ["_jvcl_::", "function"],
         "body": [
             "_jvcl_::${1:generic_function}() {",
             "\tlocal _bool=true",
             "\tif cmd; then _bool=false; fi",
             "\techo ${_bool}",
-            "}",
+            "}"
         ],
         "description": [
             "This defines a generic function _jvcl_::generic_function() {}.\n",
@@ -54,22 +51,16 @@
         ]
     },
     "array_loop": {
-        "prefix": [
-            "for_array",
-        ],
+        "prefix": ["for_array"],
         "body": [
             "for _item in \"${MY_ARRAY[@]}\"; do",
             "\techo \"${_item}\"",
-            "done",
+            "done"
         ],
-        "description": [
-            "Loop through an array",
-        ]
+        "description": ["Loop through an array"]
     },
     "cat": {
-        "prefix": [
-            "cat",
-        ],
+        "prefix": ["cat"],
         "body": [
             "cat <<EOF",
             "",
@@ -77,16 +68,12 @@
             " TITLE ",
             "===================",
             "",
-            "EOF",
+            "EOF"
         ],
-        "description": [
-            "Concatenate FILE(s) to standard output",
-        ]
+        "description": ["Concatenate FILE(s) to standard output"]
     },
     "case": {
-        "prefix": [
-            "case",
-        ],
+        "prefix": ["case"],
         "body": [
             "case \"\\${_choices\\}\" in",
             "",
@@ -111,7 +98,7 @@
             "Using the case statement instead of",
             "nested if statements will help you",
             "make your bash scripts more readable",
-            "and easier to maintain.",
+            "and easier to maintain."
         ]
-    },
+    }
 }

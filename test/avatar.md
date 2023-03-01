@@ -5,10 +5,10 @@ sort: 7
 # Avatar Test
 
 ```
-{% raw %}{% avatar saowang %}{% endraw %}
+{% raw %}{% avatar JV-conseil %}{% endraw %}
 ```
 
-{% avatar saowang %}
+{% avatar JV-conseil %}
 
 ```tip
 Set config `plugins: [jekyll-avatar]`

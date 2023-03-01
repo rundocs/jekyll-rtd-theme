@@ -2,34 +2,34 @@
 
 // these are values for the display CSS property
 $display-values: (
-  block,
-  flex,
-  inline,
-  inline-block,
-  inline-flex,
-  none,
-  table,
-  table-cell
+    block,
+    flex,
+    inline,
+    inline-block,
+    inline-flex,
+    none,
+    table,
+    table-cell
 ) !default;
 
 // maps edges to respective corners for border-radius
 $edges: (
-  top: (
-    top-left,
-    top-right,
-  ),
-  right: (
-    top-right,
-    bottom-right,
-  ),
-  bottom: (
-    bottom-right,
-    bottom-left,
-  ),
-  left: (
-    bottom-left,
-    top-left,
-  ),
+    top: (
+        top-left,
+        top-right,
+    ),
+    right: (
+        top-right,
+        bottom-right,
+    ),
+    bottom: (
+        bottom-right,
+        bottom-left,
+    ),
+    left: (
+        bottom-left,
+        top-left,
+    ),
 ) !default;
 
 // These are our margin and padding utility spacers. The default step size we
@@ -54,25 +54,25 @@ $spacer-6: $spacer * 5 !default; // 40px
 
 // The list of spacer values
 $spacers: (
-  $spacer-0,
-  $spacer-1,
-  $spacer-2,
-  $spacer-3,
-  $spacer-4,
-  $spacer-5,
-  $spacer-6
+    $spacer-0,
+    $spacer-1,
+    $spacer-2,
+    $spacer-3,
+    $spacer-4,
+    $spacer-5,
+    $spacer-6
 ) !default;
 
 // And the map of spacers, for easier looping:
 // @each $scale, $length in $spacer-map { ... }
 $spacer-map: (
-  0: $spacer-0,
-  1: $spacer-1,
-  2: $spacer-2,
-  3: $spacer-3,
-  4: $spacer-4,
-  5: $spacer-5,
-  6: $spacer-6,
+    0: $spacer-0,
+    1: $spacer-1,
+    2: $spacer-2,
+    3: $spacer-3,
+    4: $spacer-4,
+    5: $spacer-5,
+    6: $spacer-6,
 ) !default;
 
 // Em spacer variables
@@ -120,10 +120,10 @@ $container-xl: $width-xl !default;
 
 // Breakpoints in the form (name: length)
 $breakpoints: (
-  sm: $width-sm,
-  md: $width-md,
-  lg: $width-lg,
-  xl: $width-xl,
+    sm: $width-sm,
+    md: $width-md,
+    lg: $width-lg,
+    xl: $width-xl,
 ) !default;
 
 // This map in the form (breakpoint: variant) is used to iterate over
@@ -138,11 +138,11 @@ $breakpoints: (
 // }
 // ```
 $responsive-variants: (
-  "": "",
-  sm: "-sm",
-  md: "-md",
-  lg: "-lg",
-  xl: "-xl",
+    "": "",
+    sm: "-sm",
+    md: "-md",
+    lg: "-lg",
+    xl: "-xl",
 ) !default;
 
 // responive utility position values

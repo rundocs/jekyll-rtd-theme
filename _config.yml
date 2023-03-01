@@ -1,12 +1,12 @@
-title: jekyll-rtd-theme
-description: Just another documentation theme compatible with GitHub Pages
+title: read-the-docs-jekyll-theme
+description: Read the Docs like Jekyll Theme for GitHub Pages
 
 theme: null
 
-# debug:
-#   compress: true
-#   dist: false
-#   shortcodes: true
+debug:
+  compress: true
+  dist: false
+  shortcodes: true
 
 readme_index:
   with_frontmatter: true
@@ -28,4 +28,4 @@ exclude:
   - package.json
   - package-lock.json
   - webpack.config.js
-  - jekyll-rtd-theme.gemspec
+  - read-the-docs-jekyll-theme.gemspec

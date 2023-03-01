@@ -10,14 +10,13 @@
     <li
       class="toc level-{{ level }} {{ current }}"
       data-sort="{{ item.sort }}"
-      data-level="{{ level }}"
-    >
+      data-level="{{ level }}">
       <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
         {%- assign _name = item.name | default: '' | remove: '.md' -%}
         {%- if item.sort -%}
-          {{ item.sort }}. {{ item.title | default: _name }}
+          {{ item.sort }}. {{ item.title | default: item.name }}
         {%- else -%}
-          {{ item.title | default: _name }}
+          {{ item.title | default: item.name }}
         {%- endif -%}
       </a>
     </li>

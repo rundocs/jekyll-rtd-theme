@@ -32,9 +32,9 @@ This is a code block following a header.
 
 #### Header 4
 
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-- This is an unordered list following a header.
+-   This is an unordered list following a header.
+-   This is an unordered list following a header.
+-   This is an unordered list following a header.
 
 ##### Header 5
 
@@ -58,9 +58,9 @@ There's a horizontal rule above and below this.
 
 Here is an unordered list:
 
-- Salt-n-Pepa
-- Bel Biv DeVoe
-- Kid 'N Play
+-   Salt-n-Pepa
+-   Bel Biv DeVoe
+-   Kid 'N Play
 
 And an ordered list:
 
@@ -70,29 +70,29 @@ And an ordered list:
 
 And an unordered task list:
 
-- [x] Create a sample markdown document
-- [x] Add task lists to it
-- [ ] Take a vacation
+-   [x] Create a sample markdown document
+-   [x] Add task lists to it
+-   [ ] Take a vacation
 
 And a "mixed" task list:
 
-- [ ] Steal underpants
-- ?
-- [ ] Profit!
+-   [ ] Steal underpants
+-   ?
+-   [ ] Profit!
 
 And a nested list:
 
-- Jackson 5
-  - Michael
-  - Tito
-  - Jackie
-  - Marlon
-  - Jermaine
-- TMNT
-  - Leonardo
-  - Michelangelo
-  - Donatello
-  - Raphael
+-   Jackson 5
+    -   Michael
+    -   Tito
+    -   Jackie
+    -   Marlon
+    -   Jermaine
+-   TMNT
+    -   Leonardo
+    -   Michelangelo
+    -   Donatello
+    -   Raphael
 
 Definition lists can be used with HTML syntax. Definition terms are bold and italic.
 
@@ -153,7 +153,7 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 
 ```javascript
 var foo =
-  "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
+    "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
 ```
 
 Inline code inside table cells should still be distinguishable.

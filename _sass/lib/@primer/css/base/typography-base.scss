@@ -7,45 +7,45 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
-  margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 h1 {
-  @include h1;
+    @include h1;
 }
 h2 {
-  @include h2;
+    @include h2;
 }
 h3 {
-  @include h3;
+    @include h3;
 }
 h4 {
-  @include h4;
+    @include h4;
 }
 h5 {
-  @include h5;
+    @include h5;
 }
 h6 {
-  @include h6;
+    @include h6;
 }
 
 // Body text
 // --------------------------------------------------
 
 p {
-  margin-top: 0;
-  // stylelint-disable-next-line primer/spacing
-  margin-bottom: 10px;
+    margin-top: 0;
+    // stylelint-disable-next-line primer/spacing
+    margin-bottom: 10px;
 }
 
 small {
-  // stylelint-disable-next-line primer/typography
-  font-size: 90%;
+    // stylelint-disable-next-line primer/typography
+    font-size: 90%;
 }
 
 blockquote {
-  margin: 0;
+    margin: 0;
 }
 
 // Lists
@@ -53,25 +53,25 @@ blockquote {
 
 ul,
 ol {
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 ol ol,
 ul ol {
-  list-style-type: lower-roman;
+    list-style-type: lower-roman;
 }
 
 ul ul ol,
 ul ol ol,
 ol ul ol,
 ol ol ol {
-  list-style-type: lower-alpha;
+    list-style-type: lower-alpha;
 }
 
 dd {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 // Code
@@ -79,15 +79,15 @@ dd {
 
 tt,
 code {
-  font-family: $mono-font;
-  font-size: $font-size-small;
+    font-family: $mono-font;
+    font-size: $font-size-small;
 }
 
 pre {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: $mono-font;
-  font-size: $font-size-small;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: $mono-font;
+    font-size: $font-size-small;
 }
 
 // Octicons
@@ -96,5 +96,5 @@ pre {
 // Move this over here as a temporary override to the octicons source repo
 // instead of updating that upstream.
 .octicon {
-  vertical-align: text-bottom;
+    vertical-align: text-bottom;
 }

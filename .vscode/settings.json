@@ -40,7 +40,5 @@
     "bats"
   ],
   "shellformat.path": "/opt/homebrew/bin/shfmt",
-  "themeCheck.checkOnChange": true,
-  "themeCheck.checkOnSave": true,
-  "shopifyLiquid.shopifyCLIPath": "/opt/homebrew/bin/shopify",
+  "liquid.engine": "jekyll"
 }

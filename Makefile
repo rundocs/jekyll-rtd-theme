@@ -1,5 +1,5 @@
 DEBUG=JEKYLL_GITHUB_TOKEN=blank PAGES_API_URL=http://0.0.0.0
-ALIAS=jekyll-rtd-theme
+ALIAS=read-the-docs-jekyll-theme
 
 help:
 	@echo "HomePage: https://github.com/rundocs/${ALIAS}\n"

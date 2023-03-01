@@ -15,12 +15,11 @@
 # shellcheck disable=SC1091
 . ".bash/incl/all.sh"
 
-_jvcl_::check_install() {
+_jvcl_::h1 "Checking if ruby is installed..."
+brew ls --versions ruby || brew install ruby
+
+_jvcl_::gem_update() {
   local _gem _gems=("bundler")
-
-  _jvcl_::h1 "Checking if ruby is installed..."
-  brew ls --versions ruby || brew install ruby
-
   for _gem in "${_gems[@]}"; do
     _jvcl_::h1 "Checking if ${_gem} is installed..."
     gem info "${_gem}" || gem install "${_gem}"
@@ -37,6 +36,8 @@ _jvcl_::bundle_doctor() {
 
 _jvcl_::jekyll_serve() {
   _jvcl_::h1 "Launching jekyll..."
+  jekyll clean
+  jekyll doctor
   bundle exec jekyll serve --livereload
 }
 
@@ -44,7 +45,7 @@ _jvcl_::github_pages() {
   bundle exec github-pages health-check
 }
 
-_jvcl_::check_install
+_jvcl_::gem_update
 _jvcl_::bundle_doctor
 _jvcl_::github_pages
 _jvcl_::jekyll_serve

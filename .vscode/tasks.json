@@ -4,9 +4,12 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "NPM Update",
+      "label": "NPM update",
       "type": "shell",
       "isBackground": false,
+      "presentation": {
+        "panel": "new",
+      },
       "osx": {
         "command": ".bash/osx/npm.sh"
       },
@@ -26,8 +29,8 @@
       "linux": {
         "command": ".bash/osx/jekyll.sh"
       },
-      "detail": "...",
+      "detail": "Run server",
       "problemMatcher": []
-    },
+    }
   ]
 }

@@ -6,8 +6,8 @@ sort: 2
 
 THIS IS TOO LONG, NEED UPDATE! HERE IS SOME IDEAS:
 
-- https://primer.style/css/components/box
-- https://primer.style/css/components/toasts
+-   https://primer.style/css/components/box
+-   https://primer.style/css/components/toasts
 
 ```note
 ## This is a note

@@ -1,4 +1,7 @@
 {
+  "name": "read-the-docs-jekyll-theme",
+  "version": "2.1",
+  "description": "Read the Docs like Jekyll Theme for GitHub Pages",
   "scripts": {
     "report": "lighthouse http://127.0.0.1:4000",
     "build": "webpack --mode production",

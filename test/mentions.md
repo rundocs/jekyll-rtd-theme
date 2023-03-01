@@ -5,10 +5,10 @@ sort: 8
 # Mentions Test
 
 ```
-Hey @saowang, what do you think of this?
+Hey @JV-conseil, what do you think of this?
 ```
 
-Hey @saowang, what do you think of this?
+Hey @JV-conseil, what do you think of this?
 
 ```tip
 Set config `plugins: [jekyll-mentions]`
