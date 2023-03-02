@@ -7,7 +7,6 @@
     "xabikos.javascriptsnippets",
     "yzhang.markdown-all-in-one",
     "davidanson.vscode-markdownlint",
-    "foxundermoon.shell-format",
-    "killalau.vscode-liquid-snippets"
+    "foxundermoon.shell-format"
   ]
 }

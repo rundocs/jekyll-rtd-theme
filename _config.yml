@@ -17,14 +17,16 @@ plugins:
   - jekyll-mentions
 
 exclude:
-  - Makefile
   - CNAME
-  - LICENSE
   - Gemfile
   - Gemfile.lock
-  - requirements.txt
+  - LICENSE
+  - Makefile
   - node_modules
-  - package.json
   - package-lock.json
-  - webpack.config.js
+  - package.json
+  - Pipfile
+  - Pipfile.lock
   - read-the-docs-jekyll-theme.gemspec
+  - requirements.txt
+  - webpack.config.js
