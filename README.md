@@ -1,6 +1,6 @@
 # read-the-docs-jekyll-theme
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](.github/code_of_conduct.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](.github/CODE_OF_CONDUCT.md)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/JV-conseil/read-the-docs-jekyll-theme/badge)
 [![License BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](LICENSE)
 [![Become a sponsor to JV-conseil](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/JV-conseil "Become a sponsor to JV-conseil")
@@ -12,7 +12,7 @@
 ![CI](https://github.com/JV-conseil/read-the-docs-jekyll-theme/workflows/CI/badge.svg?branch=develop)
 -->
 
-Read the Docs :books: like Jekyll Theme for GitHub Pages
+Read the Docs 📖 like Jekyll Theme for GitHub Pages
 
 ## What it does?
 
