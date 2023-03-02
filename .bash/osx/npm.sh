@@ -24,7 +24,7 @@ _jvcl_::webpack() {
   npm run build
 }
 
-_jvc_::npm_package_version() {
+_jvcl_::npm_package_version() {
   npm info "${1%%/*}" version
 }
 

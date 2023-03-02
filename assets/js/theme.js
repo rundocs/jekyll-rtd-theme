@@ -166,7 +166,7 @@ function restore() {
       $(".sidebar").scrollTop(scroll);
     }
   }
-  $(".sidebar").scroll(function () {
+  $(".sidebar").on("scroll", function () {
     set("scroll", this.scrollTop);
     set("scrollTime", Date.now());
     set("scrollHost", location.host);
@@ -199,7 +199,7 @@ function highlight() {
   }
 }
 
-$(window).bind("hashchange", () =>
+$(window).on("hashchange", () =>
   initialize(location.hash || location.pathname)
 );
 
@@ -233,10 +233,10 @@ $(document).on("scroll", function () {
   }
 });
 
-$("#toggle").click(function () {
+$("#toggle").on("click", function () {
   $(".sidebar-wrap,.content-wrap,.addons-wrap").toggleClass("shift");
 });
-$(".status").click(function () {
+$(".status").on("click", function () {
   $(".addons").toggleClass("d-none");
 });
 
@@ -285,3 +285,51 @@ if ("serviceWorker" in navigator) {
 } else {
   debug("Service Worker not supported!");
 }
+
+/**
+ * For single README.md in docs/
+ */
+$(function () {
+  /**
+   * Test by boolean
+   * const _sidebar = $("div.sidebar > div.toctree > ul").children().length > 0 || false
+   * console.debug("Sidebar", _sidebar)
+   * if (_sidebar) return
+   */
+
+  const _sidebar = $("div.sidebar > div.toctree > ul").children().length || 0;
+  console.debug("_sidebar", _sidebar);
+  if (_sidebar) return;
+
+  $(".markdown-body h2, .markdown-body h3").each(function (index) {
+    let level_ = (parseInt(this.nodeName.slice(-1)) - 1).toString();
+    $(".toctree ul").append(
+      `<li class='toc level-${level_} tag-${this.nodeName.toLowerCase()}' data-sort='${(
+        index + 1
+      ).toString()}' data-level='${level_}'><a class='d-flex flex-items-baseline' href='#${$(
+        this
+      )
+        .text()
+        .toLowerCase()
+        .replace(/ /g, "-")
+        .replace(/[^\w-]+/g, "")}'>${$(this).text()}</a></li>`
+    );
+    $(this).attr(
+      "id",
+      $(this)
+        .text()
+        .toLowerCase()
+        .replace(/ /g, "-")
+        .replace(/[^\w-]+/g, "")
+    );
+    $(".toctree ul li:first-child a").parent().addClass("current");
+  });
+
+  $("toctree ul li").on("click", "a", function (event) {
+    var position = $($(this).attr("href")).offset().top - 190;
+    $("html, body").animate({ scrollTop: position }, 400);
+    $("toctree ul li a").parent().removeClass("current");
+    $(this).parent().addClass("current");
+    event.preventDefault();
+  });
+});
