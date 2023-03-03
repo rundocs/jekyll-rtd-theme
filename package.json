@@ -24,6 +24,7 @@
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^8.3.0",
     "css-loader": "^5.2.7",
+    "eslint-config-prettier": "^8.6.0",
     "lighthouse": "^6.5.0",
     "mini-css-extract-plugin": "^1.6.2",
     "prettier": "^2.8.4",

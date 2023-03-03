@@ -13,7 +13,8 @@
     "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    // "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"

@@ -1,5 +1,8 @@
+/* global $, ui */
+
 function search(data) {
   let text = new URL(location.href).searchParams.get("q");
+  // eslint-disable-next-line no-unused-vars
   let lang = new URL(location.href).searchParams.get("lang") || ui.lang;
 
   $("input[name='q']").val(text);
@@ -20,7 +23,8 @@ function search(data) {
       .slice(min, max)
       .replace(regexp, (match) => `<span class="bg-yellow">${match}</span>`);
   }
-  for (page of data) {
+
+  for (const page of data) {
     let [title, content] = [null, null];
     try {
       if (page.title) {
