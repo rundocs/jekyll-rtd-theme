@@ -12,7 +12,7 @@
 . ".bash/incl/all.sh"
 
 _jvcl_::pipenv_install() {
-  sudo find . -type f -name "Pipfile*" -print -delete
+  find . -type f -name "Pipfile*" -print -delete
   pipenv --rm
   pipenv --clear # clear cache
   pipenv install --verbose --dev -r ./requirements-dev.txt
