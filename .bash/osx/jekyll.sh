@@ -17,22 +17,9 @@
 #====================================================
 
 # shellcheck disable=SC1091
-. ".bash/incl/all.sh"
-
-_jvcl_::gem_update() {
-  local _gem _gems=("bundler")
-  for _gem in "${_gems[@]}"; do
-    _jvcl_::h1 "Checking if ${_gem} is installed..."
-    gem info "${_gem}" || gem install "${_gem}"
-    gem update "${_gem}"
-  done
-}
-
-_jvcl_::bundle_update() {
-  local _opt
-  for _opt in "check" "doctor" "install" "update" "lock"; do
-    bundle "${_opt}" --verbose
-  done
+{
+  . ".bash/incl/all.sh"
+  . ".bash/osx/gem.sh"
 }
 
 _jvcl_::jekyll_serve() {
@@ -46,6 +33,12 @@ _jvcl_::github_pages() {
   bundle exec github-pages health-check
 }
 
+# End sourced section
+# What is the bash equivalent to Python's `if __name__ == '__main__'`?
+# <https://stackoverflow.com/a/46004518/2477854>
+return 2>/dev/null
+
+# shellcheck disable=SC2317
 if _jvcl_::brew_install_formula "ruby"; then
   _jvcl_::gem_update
   _jvcl_::bundle_update
