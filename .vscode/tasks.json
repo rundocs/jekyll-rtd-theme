@@ -4,6 +4,19 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "gem",
+      "type": "shell",
+      "isBackground": false,
+      "osx": {
+        "command": ".bash/osx/gem.sh"
+      },
+      "linux": {
+        "command": ".bash/osx/gem.sh"
+      },
+      "detail": "Build a gem from this theme",
+      "problemMatcher": []
+    },
+    {
       "label": "Jekyll",
       "type": "shell",
       "isBackground": false,
@@ -27,9 +40,6 @@
       "label": "npm",
       "type": "shell",
       "isBackground": false,
-      "presentation": {
-        "panel": "new"
-      },
       "osx": {
         "command": ".bash/osx/npm.sh"
       },
@@ -43,9 +53,6 @@
       "label": "pipenv",
       "type": "shell",
       "isBackground": false,
-      "presentation": {
-        "panel": "new"
-      },
       "osx": {
         "command": ".bash/osx/pipenv.sh"
       },
