@@ -55,10 +55,12 @@ _jvcl_::npm_package_version() {
 _jvcl_::update_assets() {
   local _asset _dest _pkg
 
-  for _asset in "jquery" "mermaid"; do
+  for _asset in "jquery" "mermaid" "dompurify"; do
     # _dest="assets/lib/${_asset}@$(npm info "${_asset}" version)"
     # mkdir -pv "${_dest}" && cp -pvf "node_modules/${_asset}/dist/${_asset}.min.js" "${_dest}/${_asset}.min.js"
-    cp -pvf "node_modules/${_asset}/dist/${_asset}.min.js" "assets/lib/${_asset}.min.js"
+    _pkg="${_asset}.min.js"
+    if [ "${_asset}" == "dompurify" ]; then _pkg="purify.min.js"; fi
+    cp -pvf "node_modules/${_asset}/dist/${_pkg}" "assets/lib/${_pkg}"
   done
 
   for _asset in "lato-font/fonts/lato-bold" \

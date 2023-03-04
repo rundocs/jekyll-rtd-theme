@@ -1,4 +1,4 @@
-/* global $, ui */
+/* global $, DOMPurify, ui */
 
 function search(data) {
   let text = new URL(location.href).searchParams.get("q");
@@ -41,7 +41,8 @@ function search(data) {
     }
     try {
       if (page.content) {
-        page.content = $("<div/>").html(page.content).text();
+        const _sanitizeContent = DOMPurify.sanitize(page.content);
+        page.content = $("<div/>").html(_sanitizeContent).text();
         content = page.content.match(regexp);
       }
     } catch (e) {
@@ -75,7 +76,8 @@ function search(data) {
     }
   }
   if (results.length > 0 && text.length > 0) {
-    $(".search-results .content").html(results.join(""));
+    const _sanitizeResults = DOMPurify.sanitize(results.join(""));
+    $(".search-results .content").html(_sanitizeResults);
     $(".search-results .summary").html(
       ui.i18n.search_results_found.replace("#", results.length)
     );
@@ -307,6 +309,8 @@ $(function () {
 
   $(".markdown-body h2, .markdown-body h3").each(function (index) {
     let level_ = (parseInt(this.nodeName.slice(-1)) - 1).toString();
+    const _sanitizeText = DOMPurify.sanitize($(this).text());
+    console.debug("innerText", _sanitizeText);
     $(".toctree ul").append(
       `<li class='toc level-${level_} tag-${this.nodeName.toLowerCase()}' data-sort='${(
         index + 1
@@ -316,7 +320,7 @@ $(function () {
         .text()
         .toLowerCase()
         .replace(/ /g, "-")
-        .replace(/[^\w-]+/g, "")}'>${$(this).text()}</a></li>`
+        .replace(/[^\w-]+/g, "")}'>${_sanitizeText}</a></li>`
     );
     $(this).attr(
       "id",
