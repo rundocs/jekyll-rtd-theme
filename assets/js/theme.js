@@ -310,7 +310,6 @@ $(function () {
   $(".markdown-body h2, .markdown-body h3").each(function (index) {
     let level_ = (parseInt(this.nodeName.slice(-1)) - 1).toString();
     const _sanitizeText = DOMPurify.sanitize($(this).text());
-    console.debug("innerText", _sanitizeText);
     $(".toctree ul").append(
       `<li class='toc level-${level_} tag-${this.nodeName.toLowerCase()}' data-sort='${(
         index + 1

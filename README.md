@@ -1,6 +1,7 @@
 # read-the-docs-jekyll-theme
 
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/JV-conseil/read-the-docs-jekyll-theme/badge)
+[![CodeQL](https://github.com/JV-conseil/read-the-docs-jekyll-theme/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/JV-conseil/read-the-docs-jekyll-theme/actions/workflows/github-code-scanning/codeql)
 [![Become a sponsor to JV-conseil](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/JV-conseil "Become a sponsor to JV-conseil")
 [![Follow JV conseil on StackOverflow](https://img.shields.io/stackexchange/stackoverflow/r/2477854)](https://stackoverflow.com/users/2477854/jv-conseil "Follow JV conseil on StackOverflow")
 [![Follow JVconseil on Twitter](https://img.shields.io/twitter/follow/JVconseil.svg?style=social&logo=twitter)](https://twitter.com/JVconseil "Follow JVconseil on Twitter")
