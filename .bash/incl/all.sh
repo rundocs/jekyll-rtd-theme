@@ -16,7 +16,6 @@ declare -i BASH_STRICT_MODE DEBUG
   . ".bash/incl/_set.sh"
   . ".bash/incl/_aliases.sh"
   . ".bash/incl/_colors.sh"
-  . ".bash/incl/_utils.sh"
   . ".bash/incl/_debug.sh"
   . ".bash/incl/_homebrew.sh"
   # more files
