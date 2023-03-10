@@ -20,10 +20,11 @@ _jvcl_::debug() {
 
 EOF
 
-  cat /proc/version &>/dev/null
-  cat /etc/issue &>/dev/null
-  bash --version
-  python --version
+  cat /proc/version 2>/dev/null || :
+  cat /etc/issue 2>/dev/null || :
+  _jvcl_::set_show_options
+  python --version || :
+  ruby --version || :
 
   if [[ "${DEBUG}" -gt 1 ]]; then
 

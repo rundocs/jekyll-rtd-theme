@@ -25,9 +25,3 @@ _jvcl_::brew_install_formula() {
     brew ls --versions "${1}" || brew install "${1}"
   fi
 }
-
-_jvcl_::generic_function() {
-  local _bool=true
-  if cmd; then _bool=false; fi
-  echo _bool
-}

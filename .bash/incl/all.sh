@@ -7,13 +7,19 @@
 #                 All rights reserved
 #====================================================
 
+# shellcheck disable=SC2034
+declare -i BASH_STRICT_MODE DEBUG
+
 # shellcheck disable=SC1091
 {
+  . ".bash/settings.conf"
+  . ".bash/incl/_set.sh"
   . ".bash/incl/_aliases.sh"
   . ".bash/incl/_colors.sh"
   . ".bash/incl/_utils.sh"
-  . ".bash/incl/_path.sh"
   . ".bash/incl/_debug.sh"
   . ".bash/incl/_homebrew.sh"
   # more files
 }
+
+_jvcl_::debug

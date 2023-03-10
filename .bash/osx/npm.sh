@@ -73,7 +73,11 @@ _jvcl_::update_assets() {
     # _dest="assets/fonts/${_pkg}@$(npm info "${_pkg}" version)"
     _dest="assets/fonts/${_pkg}"
 
-    mkdir -pv "${_dest}" && cp -pvrf "node_modules/${_asset}/"*.{eot,svg,ttf,woff,woff2} "${_dest}"
+    mkdir -pv "${_dest}"
+    cp -pvrf "node_modules/${_asset}/"*.{woff,woff2} "${_dest}"
+    if [ "${_pkg}" == "font-awesome" ]; then
+      cp -pvrf "node_modules/${_asset}/"*.{eot,svg,ttf} "${_dest}"
+    fi
   done
 }
 

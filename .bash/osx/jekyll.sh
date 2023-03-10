@@ -10,6 +10,7 @@
 # <https://jekyllrb.com/docs/installation/macos/>
 #
 # bundle add github-pages --group "jekyll_plugins"
+# bundle add sass --group "development"
 # bundle add jekyll-avatar
 # bundle add jekyll webrick faraday-retry --group "development"
 #
@@ -29,13 +30,8 @@ _jvcl_::jekyll_serve() {
 }
 
 _jvcl_::github_pages() {
-  bundle exec github-pages health-check
+  bundle exec github-pages health-check || :
 }
-
-# End sourced section
-# What is the bash equivalent to Python's `if __name__ == '__main__'`?
-# <https://stackoverflow.com/a/46004518/2477854>
-return 2>/dev/null
 
 # shellcheck disable=SC2317
 if _jvcl_::brew_install_formula "ruby"; then
