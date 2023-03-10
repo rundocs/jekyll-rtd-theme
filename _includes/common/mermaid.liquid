@@ -1,11 +1,15 @@
-<!-- @prettify-ignore -->
 {%- if content contains '<code class="language-mermaid">' -%}
-    {%- if site.mermaid.custom -%}
-        <script src="{{ site.mermaid.custom }}"></script>
-    {%- else -%}
-        <script src="{{ base }}/assets/lib/mermaid.min.js"></script>
-    {%- endif %}
-    <script>
-        mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});
-    </script>
+  <!--
+  {%- if site.mermaid.custom -%}
+  <script src="{{ site.mermaid.custom }}"></script>
+  {%- else -%}
+  <script src="{{ base }}/assets/lib/mermaid.min.js"></script>
+  {%- endif %}
+  <script>
+  mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});
+  </script>
+  --><script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/+esm';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
 {%- endif %}

@@ -10,7 +10,7 @@
 # shellcheck disable=SC2034
 declare -i BASH_STRICT_MODE DEBUG
 
-# shellcheck disable=SC1091
+# shellcheck source=/dev/null
 {
   . ".bash/settings.conf"
   . ".bash/incl/_set.sh"

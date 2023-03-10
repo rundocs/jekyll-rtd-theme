@@ -1,5 +1,10 @@
+<!--
 <script src="{{ base }}/assets/lib/jquery.min.js"></script>
 <script src="{{ base }}/assets/lib/purify.min.js"></script>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js" integrity="sha256-qC8Lb8Kuf+7eFjyMCnpTs3ROmu80jdxpOpgMXOvgORg=" crossorigin="anonymous"></script>
 
 {%- if extra_script.size > 0 -%}
     <script>{{ extra_script }}</script>

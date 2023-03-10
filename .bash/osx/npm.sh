@@ -7,7 +7,7 @@
 #                 All rights reserved
 #====================================================
 
-# shellcheck disable=SC1091
+# shellcheck source=/dev/null
 . ".bash/incl/all.sh"
 
 _jvcl_::update_npm() {
@@ -24,6 +24,7 @@ _jvcl_::webpack() {
 }
 
 _jvcl_::npm_package_version() {
+  # shellcheck disable=SC2317
   npm info "${1%%/*}" version
 }
 
@@ -54,12 +55,8 @@ _jvcl_::npm_package_version() {
 _jvcl_::update_assets() {
   local _asset _dest _pkg
 
-  for _asset in "jquery" "mermaid" "dompurify"; do
-    # _dest="assets/lib/${_asset}@$(npm info "${_asset}" version)"
-    # mkdir -pv "${_dest}" && cp -pvf "node_modules/${_asset}/dist/${_asset}.min.js" "${_dest}/${_asset}.min.js"
-    _pkg="${_asset}.min.js"
-    if [ "${_asset}" == "dompurify" ]; then _pkg="purify.min.js"; fi
-    cp -pvf "node_modules/${_asset}/dist/${_pkg}" "assets/lib/${_pkg}"
+  for _asset in "dompurify" "jquery"; do
+    cp -pvf "node_modules/${_asset}/dist/"*.min.js "assets/lib/"
   done
 
   for _asset in "lato-font/fonts/lato-bold" \

@@ -7,7 +7,7 @@
 #                 All rights reserved
 #====================================================
 
-# shellcheck disable=SC1091
+# shellcheck source=/dev/null
 . ".bash/incl/all.sh"
 
 _jvcl_::pipenv_install() {

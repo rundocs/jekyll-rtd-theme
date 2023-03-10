@@ -16,7 +16,7 @@
 #
 #====================================================
 
-# shellcheck disable=SC1091
+# shellcheck source=/dev/null
 {
   . ".bash/incl/all.sh"
   . ".bash/osx/gem.sh"
