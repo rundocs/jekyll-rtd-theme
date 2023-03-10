@@ -3,7 +3,6 @@
 #
 # author        : JV-conseil
 # credits       : JV-conseil
-# license       : EUPL-1.2 license
 # copyright     : Copyright (c) 2019-2023 JV-conseil
 #                 All rights reserved
 #====================================================
