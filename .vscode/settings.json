@@ -1,11 +1,12 @@
 {
+  "editor.bracketPairColorization.enabled": false,
   "editor.formatOnSave": true,
+  "editor.matchBrackets": "always",
   "editor.wordWrap": "on",
+  "files.eol": "\n",
   "html.format.indentHandlebars": true,
   "html.format.indentInnerHtml": true,
   "html.format.templating": true,
-  "editor.matchBrackets": "always",
-  "editor.bracketPairColorization.enabled": false,
   "[css][scss][less]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
@@ -19,14 +20,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "liquid.engine": "jekyll",
   "scss.format.enable": false,
   "scss.format.braceStyle": "collapse",
-  "task.allowAutomaticTasks": "on",
-  "files.eol": "\n",
-  "terminal.integrated.defaultProfile.linux": "bash",
-  "terminal.integrated.defaultProfile.windows": "bash",
-  "terminal.integrated.defaultProfile.osx": "bash",
-  "shellformat.useEditorConfig": true,
   "shellformat.effectLanguages": [
     "shellscript",
     "dockerfile",
@@ -40,6 +36,9 @@
     "azcli",
     "bats"
   ],
-  "shellformat.path": "/opt/homebrew/bin/shfmt",
-  "liquid.engine": "jekyll"
+  "shellformat.useEditorConfig": true,
+  "task.allowAutomaticTasks": "on",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.windows": "bash",
+  "terminal.integrated.defaultProfile.osx": "bash"
 }
