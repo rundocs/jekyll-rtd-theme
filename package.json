@@ -7,6 +7,25 @@
     "build": "webpack --mode production",
     "format": "prettier . --check --write"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JV-conseil/read-the-docs-jekyll-theme.git"
+  },
+  "keywords": [
+    "docs",
+    "documentation",
+    "github-pages",
+    "jekyll-template",
+    "jekyll-theme",
+    "read-the-docs",
+    "rtd"
+  ],
+  "author": "@JV-conseil",
+  "license": "EUPL-1.2 license",
+  "bugs": {
+    "url": "https://github.com/JV-conseil/read-the-docs-jekyll-theme/issues"
+  },
+  "homepage": "https://github.com/JV-conseil/read-the-docs-jekyll-theme#readme",
   "dependencies": {
     "@primer/css": "^15.2.0",
     "dompurify": "^3.0.1",
@@ -21,7 +40,7 @@
     "roboto-fontface": "^0.10.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
+    "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^8.3.0",
     "css-loader": "^5.2.7",
