@@ -20,6 +20,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
   "liquid.engine": "jekyll",
   "scss.format.enable": false,
   "scss.format.braceStyle": "collapse",

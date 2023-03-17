@@ -8,6 +8,7 @@
     "yzhang.markdown-all-in-one",
     "davidanson.vscode-markdownlint",
     "foxundermoon.shell-format",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "bierner.markdown-emoji"
   ]
 }
