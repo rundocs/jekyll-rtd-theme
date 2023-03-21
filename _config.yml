@@ -3,6 +3,9 @@ description: Read the Docs like Jekyll Theme for GitHub Pages
 
 theme: null
 
+google:
+  site_verification: ChPjQbKFflPAwOF9uuYRLEodZBgPjW5CISg0gSsViN0
+
 # debug:
 #   compress: true
 #   dist: false

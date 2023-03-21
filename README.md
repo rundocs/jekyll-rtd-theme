@@ -75,9 +75,13 @@ google:
 
 mathjax: # this will prased to json, default: {}
 
-mermaid:
-  custom:     # mermaid link
-  initialize: # this will prased to json, default: {}
+# NOTE: mermaid custom link are no longer supported
+# instead mermaid is updated to the lastest version
+# available through cdn.jsdelivr.net
+# mermaid:
+#   custom:     # mermaid link
+#   initialize: # this will prased to json, default: {}
+
 
 scss:   # also _includes/extra/styles.scss
 script: # also _includes/extra/script.js

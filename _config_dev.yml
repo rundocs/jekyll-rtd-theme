@@ -10,6 +10,9 @@ debug:
 
 url: http://127.0.0.1:4000
 
+google:
+  site_verification: ChPjQbKFflPAwOF9uuYRLEodZBgPjW5CISg0gSsViN0
+
 readme_index:
   with_frontmatter: true
 
