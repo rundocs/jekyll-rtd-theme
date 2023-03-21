@@ -4,12 +4,8 @@ description: Read the Docs like Jekyll Theme for GitHub Pages
 theme: null
 
 google:
+  gtag: G-SRXFW33ENB
   site_verification: ChPjQbKFflPAwOF9uuYRLEodZBgPjW5CISg0gSsViN0
-
-# debug:
-#   compress: true
-#   dist: false
-#   shortcodes: true
 
 readme_index:
   with_frontmatter: true

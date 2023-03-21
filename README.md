@@ -72,6 +72,7 @@ meta:
 google:
   gtag:
   adsense:
+  site_verification:
 
 mathjax: # this will prased to json, default: {}
 
