@@ -1,0 +1,9 @@
+#
+# Configuring the template chooser
+# <https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template-chooser>
+#
+blank_issues_enabled: true
+contact_links:
+  - name: GitHub Security Bug Bounty
+    url: https://bounty.github.com/
+    about: Please report security vulnerabilities here.
