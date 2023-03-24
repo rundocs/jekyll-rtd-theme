@@ -6,6 +6,9 @@ theme: null
 google:
   site_verification: ChPjQbKFflPAwOF9uuYRLEodZBgPjW5CISg0gSsViN0
 
+mouseflow:
+  project_api_key: 11a6acbb-5bc8-41ac-b415-731ab78f77e0
+
 posthog:
   project_api_key: phc_f6FrCZbt951cotQoYFi5VAS7KYpyCnpgRcbknlMwBDs
 

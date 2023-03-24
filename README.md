@@ -75,6 +75,9 @@ google:
   site_verification:
 
 # GDPR compliant alternative to Google Analytics
+mouseflow:
+  project_api_key:
+
 posthog:
   project_api_key:
 
