@@ -81,6 +81,10 @@ mouseflow:
 posthog:
   project_api_key:
 
+telemetry:
+  app_id:
+  user_identifier:
+
 mathjax: # this will prased to json, default: {}
 
 # NOTE: mermaid custom link are no longer supported

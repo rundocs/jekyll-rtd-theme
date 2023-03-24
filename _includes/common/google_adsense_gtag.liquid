@@ -1,3 +1,8 @@
+<!-- @prettify-ignore -->
+{%- if site.google.adsense -%}
+    <script data-ad-client="{{ site.google.adsense }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{%- endif -%}
+
 {%- if site.google.gtag -%}
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google.gtag }}"></script>
