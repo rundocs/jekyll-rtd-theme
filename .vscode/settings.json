@@ -43,5 +43,6 @@
   "task.allowAutomaticTasks": "on",
   "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.defaultProfile.windows": "bash",
-  "terminal.integrated.defaultProfile.osx": "bash"
+  "terminal.integrated.defaultProfile.osx": "bash",
+  "liquid.format.enable": true
 }
