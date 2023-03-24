@@ -13,7 +13,8 @@ url: http://127.0.0.1:4000
 google:
   site_verification: ChPjQbKFflPAwOF9uuYRLEodZBgPjW5CISg0gSsViN0
 
-posthog: phc_f6FrCZbt951cotQoYFi5VAS7KYpyCnpgRcbknlMwBDs
+posthog:
+  project_api_key: phc_f6FrCZbt951cotQoYFi5VAS7KYpyCnpgRcbknlMwBDs
 
 readme_index:
   with_frontmatter: true

@@ -76,6 +76,7 @@ google:
 
 # GDPR compliant alternative to Google Analytics
 posthog:
+  project_api_key:
 
 mathjax: # this will prased to json, default: {}
 
