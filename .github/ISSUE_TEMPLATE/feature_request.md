@@ -1,10 +1,9 @@
 ---
 name: Feature Request 🎁
 about: Do you have ideas for new features and improvements?
-title: ''
+title: ""
 labels: feature, triage
-assignees: 'JV-conseil'
-
+assignees: "JV-conseil"
 ---
 
 <!--
@@ -16,6 +15,7 @@ assignees: 'JV-conseil'
 -->
 
 <!-- Checked checkbox should look like this: [x] -->
+
 - [ ] I have searched the [issues] of this repo and believe that this is not a duplicate.
 - [ ] If an exception occurs when executing a command, I executed it again in debug mode (`DEBUF = True` in settings).
 

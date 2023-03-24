@@ -74,8 +74,10 @@ google:
   adsense:
   site_verification:
 
-mathjax: # this will prased to json, default: {}
+# GDPR compliant alternative to Google Analytics
+posthog:
 
+mathjax: # this will prased to json, default: {}
 
 # NOTE: mermaid custom link are no longer supported
 # instead mermaid is updated to the lastest version
@@ -83,7 +85,6 @@ mathjax: # this will prased to json, default: {}
 # mermaid:
 #   custom:     # mermaid link
 #   initialize: # this will prased to json, default: {}
-
 
 scss:   # also _includes/extra/styles.scss
 script: # also _includes/extra/script.js

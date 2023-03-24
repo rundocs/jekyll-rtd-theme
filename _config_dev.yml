@@ -11,8 +11,9 @@ debug:
 url: http://127.0.0.1:4000
 
 google:
-  gtag: G-SRXFW33ENB
   site_verification: ChPjQbKFflPAwOF9uuYRLEodZBgPjW5CISg0gSsViN0
+
+posthog: phc_f6FrCZbt951cotQoYFi5VAS7KYpyCnpgRcbknlMwBDs
 
 readme_index:
   with_frontmatter: true
