@@ -22,6 +22,9 @@ posthog:
 telemetry:
   app_id: CB7D497B-DC8A-4C75-B5FD-00AAA1F60E41
 
+umami:
+  website_id: 7670b311-8c77-45fb-a36d-6fecf59bbdac
+
 readme_index:
   with_frontmatter: true
 

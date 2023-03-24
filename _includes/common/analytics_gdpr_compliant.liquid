@@ -28,3 +28,8 @@
   td.push(['app', '{{ site.telemetry.app_id }}'], ['user', 'anonymous'], ['signal']);
 </script>
 {%- endif -%}
+
+
+{%- if site.umami.website_id -%}
+<script async defer src="https://analytics.umami.is/script.js" data-website-id="{{ site.umami.website_id }}"></script>
+{%- endif -%}
