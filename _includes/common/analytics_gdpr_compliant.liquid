@@ -25,6 +25,6 @@
 <script src="https://unpkg.com/@telemetrydeck/sdk/dist/telemetrydeck.min.js" defer></script>
 <script>
   window.td = window.td || [];
-  td.push(['app', '{{ site.telemetry.app_id }}'], ['user', '{{ site.telemetry.user_identifier }}' ?? 'anonymous'], ['signal']);
+  td.push(['app', '{{ site.telemetry.app_id }}'], ['user', 'anonymous'], ['signal']);
 </script>
 {%- endif -%}
