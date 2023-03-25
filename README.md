@@ -86,6 +86,9 @@ telemetry:
   app_id:
   user_identifier:
 
+umami:
+  website_id:
+
 mathjax: # this will prased to json, default: {}
 
 # NOTE: mermaid custom link are no longer supported
