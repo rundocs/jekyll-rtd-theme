@@ -39,7 +39,7 @@ jobs:
         run: |
           LAST_TAG=$(git describe --tags --abbrev=0)
           git log ${LAST_TAG}..HEAD --no-merges --format="- %h %s @%an" > action.changelog.md
-          sed -i "s/${LAST_TAG:1}/${VERSION}/g" read-the-docs-jekyll-theme.gemspec
+          sed -i "s/${LAST_TAG:1}/${VERSION}/g" jekyll-theme-read-the-docs.gemspec
           sed -i "s/${LAST_TAG:1}/${VERSION}/g" _includes/rest/defaults.liquid
 
       - name: Prettier check and Build theme assets!

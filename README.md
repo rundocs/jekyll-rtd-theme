@@ -1,7 +1,7 @@
-# read-the-docs-jekyll-theme
+# jekyll-theme-read-the-docs
 
-![jsDelivr](https://data.jsdelivr.com/v1/package/gh/JV-conseil/read-the-docs-jekyll-theme/badge)
-[![CodeQL](https://github.com/JV-conseil/read-the-docs-jekyll-theme/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/JV-conseil/read-the-docs-jekyll-theme/actions/workflows/github-code-scanning/codeql)
+![jsDelivr](https://data.jsdelivr.com/v1/package/gh/JV-conseil/jekyll-theme-read-the-docs/badge)
+[![CodeQL](https://github.com/JV-conseil/jekyll-theme-read-the-docs/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/JV-conseil/jekyll-theme-read-the-docs/actions/workflows/github-code-scanning/codeql)
 [![Umami - GDPR compliant alternative to Google Analytics](https://img.shields.io/badge/analytics-umami-green)](https://analytics.umami.is/share/M19mr5L7jVhHuFnb/jv-conseil.github.io "Umami - GDPR compliant alternative to Google Analytics")
 [![License EUPL 1.2](https://img.shields.io/badge/License-EUPL--1.2-blue.svg)](LICENSE)
 [![Become a sponsor to JV-conseil](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/JV-conseil "Become a sponsor to JV-conseil")
@@ -11,7 +11,7 @@
 [![Follow JV conseil on GitHub](https://img.shields.io/github/followers/JV-conseil?label=JV-conseil&style=social)](https://github.com/JV-conseil "Follow JV-conseil on GitHub")
 
 <!--
-![CI](https://github.com/JV-conseil/read-the-docs-jekyll-theme/workflows/CI/badge.svg?branch=develop)
+![CI](https://github.com/JV-conseil/jekyll-theme-read-the-docs/workflows/CI/badge.svg?branch=develop)
 [![License BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](LICENSE)
 -->
 
@@ -19,7 +19,7 @@
 
 ## What it does?
 
-This theme is inspired by [sphinx-rtd-theme](https://github.com/read-the-docs-jekyll-theme/sphinx_rtd_theme) and refactored with:
+This theme is inspired by [sphinx-rtd-theme](https://github.com/jekyll-theme-read-the-docs/sphinx_rtd_theme) and refactored with:
 
 - [@primer/css](https://github.com/primer/css)
 - [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
@@ -27,7 +27,7 @@ This theme is inspired by [sphinx-rtd-theme](https://github.com/read-the-docs-je
 ## Quick start
 
 ```yml
-remote_theme: https://github.com/JV-conseil/read-the-docs-jekyll-theme
+remote_theme: https://github.com/JV-conseil/jekyll-theme-read-the-docs
 ```
 
 You can [generate][rundocs/starter] with the same files and folders from [rundocs/starter][rundocs/starter]

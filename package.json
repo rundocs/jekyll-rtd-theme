@@ -1,5 +1,5 @@
 {
-  "name": "read-the-docs-jekyll-theme",
+  "name": "jekyll-theme-read-the-docs",
   "version": "2.1",
   "description": "Read the Docs like Jekyll Theme for GitHub Pages",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JV-conseil/read-the-docs-jekyll-theme.git"
+    "url": "git+https://github.com/JV-conseil/jekyll-theme-read-the-docs.git"
   },
   "keywords": [
     "docs",
@@ -23,9 +23,9 @@
   "author": "@JV-conseil",
   "license": "EUPL-1.2",
   "bugs": {
-    "url": "https://github.com/JV-conseil/read-the-docs-jekyll-theme/issues"
+    "url": "https://github.com/JV-conseil/jekyll-theme-read-the-docs/issues"
   },
-  "homepage": "https://github.com/JV-conseil/read-the-docs-jekyll-theme#readme",
+  "homepage": "https://github.com/JV-conseil/jekyll-theme-read-the-docs#readme",
   "dependencies": {
     "@primer/css": "^15.2.0",
     "dompurify": "^3.0.1",

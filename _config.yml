@@ -1,4 +1,4 @@
-title: read-the-docs-jekyll-theme
+title: jekyll-theme-read-the-docs
 description: Read the Docs like Jekyll Theme for GitHub Pages
 
 theme: null
@@ -37,6 +37,6 @@ exclude:
   - package.json
   - Pipfile
   - Pipfile.lock
-  - read-the-docs-jekyll-theme.gemspec
+  - jekyll-theme-read-the-docs.gemspec
   - requirements.txt
   - webpack.config.js

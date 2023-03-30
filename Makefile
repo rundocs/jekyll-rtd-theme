@@ -1,5 +1,5 @@
 DEBUG=JEKYLL_GITHUB_TOKEN=blank PAGES_API_URL=http://0.0.0.0
-ALIAS=read-the-docs-jekyll-theme
+ALIAS=jekyll-theme-read-the-docs
 
 help:
 	@echo "HomePage: https://github.com/JV-conseil/${ALIAS}\n"
