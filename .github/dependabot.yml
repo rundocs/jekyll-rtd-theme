@@ -8,18 +8,15 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "daily"
-    target-branch: "develop"
+      interval: "weekly"
     versioning-strategy: "lockfile-only"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
-    target-branch: "develop"
+      interval: "weekly"
     versioning-strategy: "increase"
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
-      interval: "daily"
-    target-branch: "develop"
+      interval: "weekly"
     versioning-strategy: "increase"
