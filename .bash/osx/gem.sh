@@ -26,7 +26,7 @@ _jvcl_::gem_update() {
 _jvcl_::bundle_update() {
   local _opt
   for _opt in "check" "doctor" "install" "update" "lock"; do
-    bundle "${_opt}" --verbose
+    bundle "${_opt}" --verbose || :
   done
 }
 
