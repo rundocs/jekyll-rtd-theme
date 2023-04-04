@@ -3,9 +3,10 @@
   "version": "2.1",
   "description": "Read the Docs like Jekyll Theme for GitHub Pages",
   "scripts": {
-    "report": "lighthouse http://127.0.0.1:4000",
     "build": "webpack --mode production",
-    "format": "prettier . --check --write"
+    "dev": "webpack --watch --mode development --progress --color",
+    "format": "prettier . --check --write",
+    "report": "lighthouse http://127.0.0.1:4000"
   },
   "repository": {
     "type": "git",
@@ -35,15 +36,16 @@
     "lato-font": "^3.0.0",
     "material-design-icons": "^3.0.1",
     "material-design-lite": "^1.3.0",
-    "mermaid": "^10.0.2",
-    "npm": "^9.6.2",
+    "mermaid": "^10.1.0",
+    "npm": "^9.6.3",
     "roboto-fontface": "^0.10.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
     "babel-loader": "^8.3.0",
     "css-loader": "^5.2.7",
+    "depcheck": "^1.4.3",
     "eslint-config-prettier": "^8.8.0",
     "lighthouse": "^10.1.0",
     "mini-css-extract-plugin": "^1.6.2",

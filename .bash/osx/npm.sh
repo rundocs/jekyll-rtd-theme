@@ -16,11 +16,18 @@ _jvcl_::update_npm() {
   npm update --save --verbose
   npm list --omit=dev
   npm list
+  _jvcl_::h1 "Npm audit..."
+  npm audit || :
+  npx depcheck --detailed || :
 }
 
 _jvcl_::webpack() {
   npm run format
-  npm run build
+  if [ "${DEBUG}" -gt 2 ]; then
+    npm run dev
+  else
+    npm run build
+  fi
 }
 
 _jvcl_::npm_package_version() {
