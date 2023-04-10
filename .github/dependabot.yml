@@ -10,13 +10,22 @@ updates:
     schedule:
       interval: "weekly"
     versioning-strategy: "lockfile-only"
+    # When you use this option, the settings for this package manager will no longer affect any pull requests raised for security updates.
+    # see <https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#target-branch>
+    target-branch: "dev"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
     versioning-strategy: "increase"
+    # When you use this option, the settings for this package manager will no longer affect any pull requests raised for security updates.
+    # see <https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#target-branch>
+    target-branch: "dev"
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "weekly"
     versioning-strategy: "increase"
+    # When you use this option, the settings for this package manager will no longer affect any pull requests raised for security updates.
+    # see <https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#target-branch>
+    target-branch: "dev"
