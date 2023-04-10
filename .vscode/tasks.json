@@ -33,7 +33,7 @@
       "linux": {
         "command": ".bash/osx/jekyll.sh"
       },
-      "detail": "Run server jekyll serve --config '_config_dev.yml' --livereload",
+      "detail": "Run server jekyll serve --config '_config-dev.yml' --livereload",
       "problemMatcher": []
     },
     {

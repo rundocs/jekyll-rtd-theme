@@ -35,8 +35,8 @@ _jvcl_::npm_package_version() {
   npm info "${1%%/*}" version
 }
 
-_jvcl_::update_sass() {
-  local _asset _dest _pkg _rouge
+_jvcl_::_sass_update() {
+  local _asset _dest _pkg
 
   rm -vrf _sass/lib && mkdir -pv _sass/lib
 
@@ -49,10 +49,12 @@ _jvcl_::update_sass() {
     mkdir -pv "${_dest}" && cp -pvrf "node_modules/${_asset}" "${_dest}"
   done
 
-  # rouge@1.0.3
-  _rouge="rouge@$(npm info "rouge" version)"
-  mkdir -p _sass/lib/rouge
-  rougify style github | sass-convert --to scss >_sass/lib/rouge/github.scss
+}
+
+_jvcl_::_sass_rougify() {
+  local _folder="_sass/lib/rouge"
+  mkdir -p "${_folder}"
+  bundle exec rougify style github | bundle exec sass-convert --to scss >"${_folder}/github.scss"
 }
 
 _jvcl_::npm_package_version() {
@@ -87,14 +89,15 @@ _jvcl_::update_assets() {
 
 if _jvcl_::brew_install_formula "node"; then
   _jvcl_::update_npm
-  _jvcl_::update_sass
+  _jvcl_::_sass_update
+  _jvcl_::_sass_rougify
   _jvcl_::update_assets
   _jvcl_::webpack
 fi
 
 # depecated
 
-_jvcl_::update_sass_v1() {
+_jvcl_::_sass_update_v1() {
   local _asset _dest _pkg
 
   rm -vrf _sass/lib && mkdir -pv _sass/lib

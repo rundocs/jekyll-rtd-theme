@@ -1,8 +1,19 @@
 # Usage with a configuration file
+
 # <https://github.com/depcheck/depcheck#usage-with-a-configuration-file>
+
 ignores: [
   "@babel/*",
+  "@primer/css",
   "bower",
+  "dompurify",
   "depcheck",
+  "font-awesome",
+  "jquery",
+  "jquery.toc",
+  "lato-font",
+  "mermaid",
+  "npm",
+  "roboto-fontface",
   "webpack-cli"
 ]

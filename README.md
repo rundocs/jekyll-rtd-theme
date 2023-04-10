@@ -1,6 +1,7 @@
 # jekyll-theme-read-the-docs
 
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/JV-conseil/jekyll-theme-read-the-docs/badge)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=JV-conseil.jekyll-theme-read-the-docs)
 [![CodeQL](https://github.com/JV-conseil/jekyll-theme-read-the-docs/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/JV-conseil/jekyll-theme-read-the-docs/actions/workflows/github-code-scanning/codeql)
 [![Umami - GDPR compliant alternative to Google Analytics](https://img.shields.io/badge/analytics-umami-green)](https://analytics.umami.is/share/M19mr5L7jVhHuFnb/jv-conseil.github.io "Umami - GDPR compliant alternative to Google Analytics")
 [![License EUPL 1.2](https://img.shields.io/badge/License-EUPL--1.2-blue.svg)](LICENSE)

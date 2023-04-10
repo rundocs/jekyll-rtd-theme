@@ -51,4 +51,4 @@ build: dist
 	@${DEBUG} bundle exec jekyll build --safe --profilemake
 
 server: dist
-	@${DEBUG} bundle exec jekyll serve --safe  --config "_config_dev.yml" --livereload
+	@${DEBUG} bundle exec jekyll serve --safe  --config "_config-dev.yml" --livereload
